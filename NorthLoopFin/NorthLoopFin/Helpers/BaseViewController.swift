@@ -35,9 +35,9 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     }
     
     func showActionSheet(title : String, message : String, titleArray : [String],delegate : @escaping (UIAlertAction) ->Void) {
-        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.actionSheet)
         for values in titleArray{
-            alert.addAction(UIAlertAction(title: values, style: UIAlertActionStyle.default, handler: delegate))
+            alert.addAction(UIAlertAction(title: values, style: UIAlertAction.Style.default, handler: delegate))
         }
         self.present(alert, animated: true, completion: nil)
     }
