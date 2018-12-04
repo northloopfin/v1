@@ -30,7 +30,8 @@ class ErrorResolver {
             return errorDict[errorCode]!
         }
         else{
-           return AppConstants.ErrorMessages.SOME_ERROR_OCCURED.rawValue
+            return "Remove";
+           //return AppConstants.ErrorMessages.SOME_ERROR_OCCURED.rawValue
         }
     }
     

@@ -3,6 +3,12 @@
 import Foundation
 
 class AppUtility {
+    // Method used to get key from infolist
+    
+    class func infoForKey(_ key: String) -> String? {
+        return (Bundle.main.infoDictionary?[key] as? String)?
+            .replacingOccurrences(of: "\\", with: "")
+    }
     
     
     /// This function is used to return the formatted date form UTC date string

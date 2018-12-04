@@ -1,11 +1,13 @@
 
 
 import Foundation
+//import AppUtility
 
 struct AppConstants{
     
+    static let Base_Url = AppUtility.infoForKey("Backend Url")
+    
     enum URL: String{
-        case BASE_URL = "https://api.spacexdata.com/v3/"
         case CAPSULE_LIST = "capsules"
         case DRAGON_DETAIL = "dragons/%@"
     }
