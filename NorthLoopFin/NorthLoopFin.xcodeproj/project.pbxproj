@@ -14,6 +14,10 @@
 		1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FB21C0E062000C8F5F /* Calibri.ttf */; };
 		1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FC21C0E063000C8F5F /* Calibri Bold Italic.ttf */; };
 		1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FD21C0E063000C8F5F /* Calibri Italic.ttf */; };
+		1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0221C105BC000C8F5F /* HomeTableCell.swift */; };
+		1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D818A0321C105BC000C8F5F /* HomeTableCell.xib */; };
+		1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */; };
+		1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A021B51A32008D60CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99F21B51A32008D60CE /* ViewController.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
@@ -67,6 +71,10 @@
 		1D8189FB21C0E062000C8F5F /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		1D8189FC21C0E063000C8F5F /* Calibri Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold Italic.ttf"; sourceTree = "<group>"; };
 		1D8189FD21C0E063000C8F5F /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
+		1D818A0221C105BC000C8F5F /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		1D818A0321C105BC000C8F5F /* HomeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableCell.xib; sourceTree = "<group>"; };
+		1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableSectionCell.swift; sourceTree = "<group>"; };
+		1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableSectionCell.xib; sourceTree = "<group>"; };
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				1D8189F321C0AF96000C8F5F /* HomeViewController.swift */,
+				1D818A0221C105BC000C8F5F /* HomeTableCell.swift */,
+				1D818A0321C105BC000C8F5F /* HomeTableCell.xib */,
+				1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */,
+				1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,9 +465,11 @@
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
+				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
+				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
@@ -581,6 +595,7 @@
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
+				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
@@ -591,6 +606,7 @@
 				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
+				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
