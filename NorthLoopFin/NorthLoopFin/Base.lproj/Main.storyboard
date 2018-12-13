@@ -47,6 +47,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeBG" translatesAutoresizingMaskIntoConstraints="NO" id="AJd-5t-kUM">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="271.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Philip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N">
                                         <rect key="frame" x="25" y="100" width="200.5" height="29.5"/>
@@ -86,7 +87,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2rD-gl-dmJ" secondAttribute="bottom" constant="22" id="0P9-Fw-SYZ"/>
                                     <constraint firstItem="PLq-sg-P5N" firstAttribute="top" secondItem="hMA-Pf-jm9" secondAttribute="top" constant="100" id="B7x-Hv-YGr"/>
@@ -146,6 +147,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-943.20000000000005" y="-6.746626686656672"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OUh-oZ-gqU">
+            <objects>
+                <viewController id="qRL-2o-V64" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G5t-fD-2dh" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lpW-xo-GXq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jL6-MU-c7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="-7"/>
         </scene>
     </scenes>
     <resources>

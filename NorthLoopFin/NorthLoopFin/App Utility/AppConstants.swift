@@ -6,10 +6,12 @@ import Foundation
 struct AppConstants{
     
     static let Base_Url = AppUtility.infoForKey("Backend Url")
+    static let AuthorisationRequestHeader = "API-Key "+AppUtility.infoForKey("API Key")! 
     
     enum URL: String{
-        case CAPSULE_LIST = "capsules"
-        case DRAGON_DETAIL = "dragons/%@"
+        case TRANSACTION_LIST = "/v1/customer/transactions"
+       // case CAPSULE_LIST = "capsules"
+       // case DRAGON_DETAIL = "dragons/%@"
     }
     
     enum ErrorHandlingKeys: String{
@@ -25,5 +27,8 @@ struct AppConstants{
     enum APIRequestHeaders: String{
         case CONTENT_TYPE = "Content-Type"
         case APPLICATION_JSON = "application/json"
+        case ACCEPT = "Accept"
+        case AUTHORIZATION = "Authorization"
+        
     }
 }

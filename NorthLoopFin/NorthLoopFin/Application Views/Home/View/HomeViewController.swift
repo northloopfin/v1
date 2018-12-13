@@ -8,17 +8,22 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     @IBOutlet weak var ledgersTableView: UITableView!
-    
+    var homePresenter: HomePresenter!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTable()
         self.ledgersTableView.reloadData()
-
-        // Do any additional setup after loading the view.
+        homePresenter = HomePresenter.init(delegate: self)
+        self.getTransactionList()
+    }
+    /// This method is used to get list of Tranactions from api
+    func getTransactionList(){
+        homePresenter.sendTransactionListRequest()
     }
 }
+
 
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     //Configure table view delgates and data source
@@ -55,5 +60,12 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 70
+    }
+}
+
+extension HomeViewController:HomeDelegate{
+    //MARK: HomeDelegate
+    func didFetchedTransactionList(data: [Transaction]) {
+        print("Got Success")
     }
 }

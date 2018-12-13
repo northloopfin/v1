@@ -15,8 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
         //Setting up custon navigation controller
+        AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
+        sleep(2)
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
         let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as!  HomeViewController
         var initialNavigationController:UINavigationController
