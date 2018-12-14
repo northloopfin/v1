@@ -18,6 +18,7 @@ struct Transaction: Codable {
     let transactionPrintout: TransactionPrintout
     let assetType, assetClass: String
     let beneficiaryAccountID: String
+    let transactionDate:String
     
     enum CodingKeys: String, CodingKey {
         case paymentType = "payment_type"
@@ -56,6 +57,6 @@ struct Transaction: Codable {
         assetType = try values.decodeIfPresent(String.self, forKey: .assetType) ?? ""
         assetClass = try values.decodeIfPresent(String.self, forKey: .assetClass) ?? ""
         beneficiaryAccountID = try values.decodeIfPresent(String.self, forKey: .beneficiaryAccountID) ?? ""
-        
+        transactionDate = AppUtility.getDateFromUTCFormat(dateStr: createdAt)
     }
 }

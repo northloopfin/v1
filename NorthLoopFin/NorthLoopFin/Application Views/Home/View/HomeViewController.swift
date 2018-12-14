@@ -11,6 +11,14 @@ import UIKit
 class HomeViewController: BaseViewController {
     @IBOutlet weak var ledgersTableView: UITableView!
     var homePresenter: HomePresenter!
+    var transactionDataSource: [TransactionListModel] = [] {
+        didSet {
+            self.ledgersTableView.reloadData()
+        }
+    }
+    
+    //MARK: viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTable()
@@ -35,7 +43,8 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         self.ledgersTableView.registerTableViewHeaderFooterView(tableViewHeaderFooter: HomeTableSectionCell.self)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        let transactions = transactionDataSource[section]
+        return transactions.rowData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +57,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         return 70.0
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return self.transactionDataSource.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
@@ -65,7 +74,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
 
 extension HomeViewController:HomeDelegate{
     //MARK: HomeDelegate
-    func didFetchedTransactionList(data: [Transaction]) {
-        print("Got Success")
+    func didFetchedTransactionList(data: [TransactionListModel]) {
+        self.transactionDataSource = data
     }
 }

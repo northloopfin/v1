@@ -8,5 +8,5 @@
 
 import Foundation
 protocol HomeDelegate:BaseViewProtocol {
-    func didFetchedTransactionList(data: [Transaction])
+    func didFetchedTransactionList(data: [TransactionListModel])
 }

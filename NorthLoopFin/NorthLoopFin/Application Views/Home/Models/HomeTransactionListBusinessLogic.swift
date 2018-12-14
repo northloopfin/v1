@@ -11,7 +11,7 @@ import Foundation
 class HomeTransactionListBusinessLogic {
     
     deinit {
-        print("CapsuleListBusinessLogic deinit")
+        print("TransactionList deinit")
     }
     
     /**

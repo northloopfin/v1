@@ -33,7 +33,8 @@ class HomePresenter: ResponseCallback{
     //MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         let response = responseObject as! [Transaction]
-        self.homeDelegate?.didFetchedTransactionList(data: response)
+        let requiredData = self.createRequiredData(data: response)
+        self.homeDelegate?.didFetchedTransactionList(data: requiredData)
         self.homeDelegate?.hideLoader()
     }
     
@@ -42,4 +43,18 @@ class HomePresenter: ResponseCallback{
         self.homeDelegate?.hideLoader()
     }
     
+    //MARK: Create data to show on UI
+    func createRequiredData(data:[Transaction]) -> [TransactionListModel] {
+        var dataArr:[TransactionListModel] = []
+        let dic:Dictionary = Dictionary(grouping: data, by: {$0.transactionDate})
+        let dicKeys = Array(dic.keys)
+        for key in dicKeys {
+           // print(key)
+            //print(dic[key]!)
+            let transactionArr:[Transaction] = dic[key]!
+            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: key, rowData: transactionArr)
+            dataArr.append(transationListModel)
+        }
+        return dataArr
+    }
 }

@@ -63,6 +63,11 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+            <connections>
+                <outlet property="beneficiaryImg" destination="XSN-Pf-oG1" id="6Ej-Ym-eeX"/>
+                <outlet property="beneficiaryName" destination="RAl-lj-uY5" id="PuE-GC-l6d"/>
+                <outlet property="transactionAmt" destination="qhL-Gu-QTq" id="6e3-Nn-Ygj"/>
+            </connections>
             <point key="canvasLocation" x="89.599999999999994" y="85.457271364317847"/>
         </tableViewCell>
     </objects>
