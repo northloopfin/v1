@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F321C0AF96000C8F5F /* HomeViewController.swift */; };
+		1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */; };
+		1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F721C0CC6F000C8F5F /* GradientView.swift */; };
+		1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FA21C0E062000C8F5F /* Calibri Bold.ttf */; };
+		1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FB21C0E062000C8F5F /* Calibri.ttf */; };
+		1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FC21C0E063000C8F5F /* Calibri Bold Italic.ttf */; };
+		1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8189FD21C0E063000C8F5F /* Calibri Italic.ttf */; };
+		1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0221C105BC000C8F5F /* HomeTableCell.swift */; };
+		1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D818A0321C105BC000C8F5F /* HomeTableCell.xib */; };
+		1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */; };
+		1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */; };
+		1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0A21C10E3E000C8F5F /* UITableViewExtension.swift */; };
+		1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0C21C17DE4000C8F5F /* HomeDelegate.swift */; };
+		1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A0E21C17F35000C8F5F /* HomePresenter.swift */; };
+		1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1021C22762000C8F5F /* HomeLedgerRequestModel.swift */; };
+		1D818A1321C22987000C8F5F /* HomeTransactionListBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1221C22987000C8F5F /* HomeTransactionListBusinessLogic.swift */; };
+		1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1421C22A67000C8F5F /* TransactionListApiRequest.swift */; };
+		1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1721C239B6000C8F5F /* Transaction.swift */; };
+		1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1921C23DBD000C8F5F /* Address.swift */; };
+		1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */; };
+		1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A021B51A32008D60CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99F21B51A32008D60CE /* ViewController.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
@@ -53,6 +74,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D8189F321C0AF96000C8F5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		1D8189F721C0CC6F000C8F5F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		1D8189FA21C0E062000C8F5F /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
+		1D8189FB21C0E062000C8F5F /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
+		1D8189FC21C0E063000C8F5F /* Calibri Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold Italic.ttf"; sourceTree = "<group>"; };
+		1D8189FD21C0E063000C8F5F /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
+		1D818A0221C105BC000C8F5F /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		1D818A0321C105BC000C8F5F /* HomeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableCell.xib; sourceTree = "<group>"; };
+		1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableSectionCell.swift; sourceTree = "<group>"; };
+		1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableSectionCell.xib; sourceTree = "<group>"; };
+		1D818A0A21C10E3E000C8F5F /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		1D818A0C21C17DE4000C8F5F /* HomeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDelegate.swift; sourceTree = "<group>"; };
+		1D818A0E21C17F35000C8F5F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		1D818A1021C22762000C8F5F /* HomeLedgerRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLedgerRequestModel.swift; sourceTree = "<group>"; };
+		1D818A1221C22987000C8F5F /* HomeTransactionListBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionListBusinessLogic.swift; sourceTree = "<group>"; };
+		1D818A1421C22A67000C8F5F /* TransactionListApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListApiRequest.swift; sourceTree = "<group>"; };
+		1D818A1721C239B6000C8F5F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		1D818A1921C23DBD000C8F5F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPrintout.swift; sourceTree = "<group>"; };
+		1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModel.swift; sourceTree = "<group>"; };
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +169,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D8189EF21C0AF59000C8F5F /* Home */,
+			);
+			path = "Application Views";
+			sourceTree = "<group>";
+		};
+		1D8189EF21C0AF59000C8F5F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1D8189F221C0AF70000C8F5F /* Models */,
+				1D8189F121C0AF68000C8F5F /* View */,
+				1D8189F021C0AF60000C8F5F /* Presenter */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1D8189F021C0AF60000C8F5F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1D818A0E21C17F35000C8F5F /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D8189F121C0AF68000C8F5F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D8189F321C0AF96000C8F5F /* HomeViewController.swift */,
+				1D818A0221C105BC000C8F5F /* HomeTableCell.swift */,
+				1D818A0321C105BC000C8F5F /* HomeTableCell.xib */,
+				1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */,
+				1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */,
+				1D818A0C21C17DE4000C8F5F /* HomeDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D8189F221C0AF70000C8F5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D818A1021C22762000C8F5F /* HomeLedgerRequestModel.swift */,
+				1D818A1221C22987000C8F5F /* HomeTransactionListBusinessLogic.swift */,
+				1D818A1421C22A67000C8F5F /* TransactionListApiRequest.swift */,
+				1D818A1721C239B6000C8F5F /* Transaction.swift */,
+				1D818A1921C23DBD000C8F5F /* Address.swift */,
+				1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */,
+				1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D8189F921C0E04C000C8F5F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1D8189FC21C0E063000C8F5F /* Calibri Bold Italic.ttf */,
+				1D8189FA21C0E062000C8F5F /* Calibri Bold.ttf */,
+				1D8189FD21C0E063000C8F5F /* Calibri Italic.ttf */,
+				1D8189FB21C0E062000C8F5F /* Calibri.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		297FB99121B51A32008D60CE = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +258,8 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				1D8189F921C0E04C000C8F5F /* Fonts */,
+				1D8189EE21C0AF49000C8F5F /* Application Views */,
 				297FB9F621B6521A008D60CE /* App Utility */,
 				297FB9F321B64EB8008D60CE /* Configuration */,
 				297FB9D721B54909008D60CE /* API Manager */,
@@ -196,9 +304,12 @@
 		297FB9CE21B531DE008D60CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1D818A0A21C10E3E000C8F5F /* UITableViewExtension.swift */,
 				297FB9D121B5322D008D60CE /* BaseViewController.swift */,
 				297FB9D221B5322D008D60CE /* BaseViewProtocol.swift */,
 				297FB9CF21B53211008D60CE /* ReachabilityManager.swift */,
+				1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */,
+				1D8189F721C0CC6F000C8F5F /* GradientView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -381,9 +492,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
+				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
+				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
+				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
+				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
+				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
 			);
@@ -505,19 +622,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
+				1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
+				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
+				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
+				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
+				1D818A1321C22987000C8F5F /* HomeTransactionListBusinessLogic.swift in Sources */,
+				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
+				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
+				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
+				1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
+				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
+				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
+				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
+				1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
+				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,

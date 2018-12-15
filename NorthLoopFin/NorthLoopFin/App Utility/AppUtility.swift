@@ -17,7 +17,7 @@ class AppUtility {
     ///   - dateStr: UTC date in string
     ///   - format: Required date format
     /// - Returns: Reqiuired date in string
-    class func getDateFromUTCFormat(dateStr: String, format: String = "dd/MM/yyyy") -> String {
+    class func getDateFromUTCFormat(dateStr: String, format: String = "dd MMMM YYYY") -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -25,6 +25,24 @@ class AppUtility {
         guard let date = dateFormatter.date(from: dateStr) else { return "" }
         dateFormatter.locale = Locale(identifier:"en_US_POSIX")
         return AppUtility.getFormattedDate(withFormat: format, date: date)
+    }
+    
+    //This function return date in form 8th December 2018
+    class  func getDateFromUTCFormatUsingNumberOrdinal(dateStr: String, format: String = "MMMM YYYY")->String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.timeZone = TimeZone(identifier:"UTC")
+        guard let date = dateFormatter.date(from: dateStr) else { return "" }
+        dateFormatter.locale = Locale(identifier:"en_US_POSIX")
+        
+        //We need to change only day so getting that component from Calender
+        let calendar = Calendar.current
+        let dateComponent = calendar.component(.day, from: date)
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .ordinal
+        let day = numberFormatter.string(from: dateComponent as NSNumber)
+        dateFormatter.dateFormat = format
+        return "\(day!) \(dateFormatter.string(from: date))"
     }
     
     /// Format date with given format

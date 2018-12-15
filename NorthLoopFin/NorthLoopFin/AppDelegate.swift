@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        //Setting up custon navigation controller
+        AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
+        sleep(2)
+        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as!  HomeViewController
+        var initialNavigationController:UINavigationController
+        initialNavigationController = UINavigationController(rootViewController:homeVC)
+        //Making Navigation bar transparent throughout application
+        initialNavigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        initialNavigationController.navigationBar.shadowImage = UIImage()
+        initialNavigationController.navigationBar.isTranslucent = true
+        self.window?.rootViewController = initialNavigationController
+        self.window?.makeKeyAndVisible()
         return true
     }
 

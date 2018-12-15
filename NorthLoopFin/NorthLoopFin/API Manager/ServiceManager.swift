@@ -85,7 +85,8 @@ class ServiceManager: NSObject  {
         self.delegate = responseCallBack
 
         // Checking the rechability of Network
-        if ReachabilityManager.shared.isNetworkAvailable {
+        print(ReachabilityManager.shared.isNetworkAvailable)
+        //if ReachabilityManager.shared.isNetworkAvailable {
 
             // Instantiate session manager
             let manager:AFHTTPSessionManager = self.sessionManager()
@@ -102,11 +103,11 @@ class ServiceManager: NSObject  {
 
             // Calling Api with NSURLRequest and session Manager and fetching Response from server
             self.dataTaskWithRequestAndSessionManager(request, sessionManager: manager, returningClass:returningClass)
-        }else{
+        //}else{
 
             // Generating common network error
-            self.delegate?.onError(getNetworkError() , errorObject: nil)
-        }
+         //   self.delegate?.onError(getNetworkError() , errorObject: nil)
+       //}
     }
     
     
