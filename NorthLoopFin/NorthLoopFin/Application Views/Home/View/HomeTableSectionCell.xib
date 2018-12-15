@@ -46,6 +46,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="dateTxt" destination="GPk-Hx-T1b" id="SeV-un-Jv3"/>
+            </connections>
             <point key="canvasLocation" x="138.40000000000001" y="257.27136431784112"/>
         </view>
     </objects>

@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableSectionCell: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var dateTxt: UILabel!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -17,5 +18,8 @@ class HomeTableSectionCell: UITableViewHeaderFooterView {
         // Drawing code
     }
     */
-
+    func bindData(data:TransactionListModel){
+        self.dateTxt.text = AppUtility.getDateFromUTCFormatUsingNumberOrdinal(dateStr: data.sectionTitle)
+        
+    }
 }

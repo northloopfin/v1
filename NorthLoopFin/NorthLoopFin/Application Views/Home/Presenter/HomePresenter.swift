@@ -52,7 +52,8 @@ class HomePresenter: ResponseCallback{
            // print(key)
             //print(dic[key]!)
             let transactionArr:[Transaction] = dic[key]!
-            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: key, rowData: transactionArr)
+            let section = transactionArr[0].createdAt
+            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: section, rowData: transactionArr)
             dataArr.append(transationListModel)
         }
         return dataArr

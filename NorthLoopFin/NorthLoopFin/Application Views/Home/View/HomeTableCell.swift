@@ -25,7 +25,7 @@ class HomeTableCell: UITableViewCell {
     }
     func bindData(data: Transaction){
         self.beneficiaryName.text = data.transactionPrintout.beneficiaryname
-        self.transactionAmt.text = String(data.amount)
+        self.transactionAmt.text = "$" + String(data.amount)
     }
     
 }
