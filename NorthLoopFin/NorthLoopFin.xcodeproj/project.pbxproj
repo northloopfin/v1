@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */; };
+		1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */; };
+		1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */; };
+		1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758D21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift */; };
+		1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */; };
 		1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F321C0AF96000C8F5F /* HomeViewController.swift */; };
 		1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */; };
 		1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F721C0CC6F000C8F5F /* GradientView.swift */; };
@@ -74,6 +79,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHistoryCell.swift; sourceTree = "<group>"; };
+		1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryCell.xib; sourceTree = "<group>"; };
+		1D51758D21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHistoryTableHeader.swift; sourceTree = "<group>"; };
+		1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryTableHeader.xib; sourceTree = "<group>"; };
 		1D8189F321C0AF96000C8F5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1D8189F721C0CC6F000C8F5F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -169,9 +179,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D51758321C5008600BCF9E4 /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1D51758621C500A200BCF9E4 /* Presenter */,
+				1D51758521C5009C00BCF9E4 /* View */,
+				1D51758421C5009500BCF9E4 /* Model */,
+			);
+			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		1D51758421C5009500BCF9E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D51758521C5009C00BCF9E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */,
+				1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */,
+				1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */,
+				1D51758D21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift */,
+				1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D51758621C500A200BCF9E4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D51758321C5008600BCF9E4 /* TransactionDetail */,
 				1D8189EF21C0AF59000C8F5F /* Home */,
 			);
 			path = "Application Views";
@@ -494,12 +541,14 @@
 			files = (
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
+				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
+				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
@@ -644,12 +693,15 @@
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
+				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
+				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
+				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,

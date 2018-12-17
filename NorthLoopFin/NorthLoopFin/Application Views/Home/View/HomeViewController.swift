@@ -30,6 +30,13 @@ class HomeViewController: BaseViewController {
     func getTransactionList(){
         homePresenter.sendTransactionListRequest()
     }
+    ///Move to detail screen
+    func moveToDetailScreen(detailModel:Transaction){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
+       transactionDetailController.detailModel = detailModel
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }
 
 
@@ -71,6 +78,10 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.moveToDetailScreen(detailModel: transactionDataSource[indexPath.section].rowData[indexPath.row])
     }
 }
 
