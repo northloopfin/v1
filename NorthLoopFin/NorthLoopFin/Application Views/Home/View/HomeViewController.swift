@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: BaseViewController {
     @IBOutlet weak var ledgersTableView: UITableView!
     var homePresenter: HomePresenter!
+    @IBOutlet weak var contentView: GradientView!
     var transactionDataSource: [TransactionListModel] = [] {
         didSet {
             self.ledgersTableView.reloadData()
@@ -21,11 +22,22 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateUIWithData()
         self.configureTable()
         self.ledgersTableView.reloadData()
         homePresenter = HomePresenter.init(delegate: self)
         self.getTransactionList()
     }
+    
+    func updateUIWithData(){
+        let shadowOffst = CGSize.init(width: 0, height: 9)
+        let shadowOpacity = 0.21
+        let shadowRadius = 72
+        //let shadowColor = UIColor.blue
+        let shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
+        self.contentView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+    }
+    
     /// This method is used to get list of Tranactions from api
     func getTransactionList(){
         homePresenter.sendTransactionListRequest()
@@ -57,6 +69,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableCell = tableView.dequeueReusableCell(withIdentifier: "HomeTableCell") as! HomeTableCell
         let rowData = transactionDataSource[indexPath.section].rowData[indexPath.row]
+        cell.selectionStyle = .none
         cell.bindData(data: rowData)
         return cell
     }

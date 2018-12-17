@@ -81,5 +81,4 @@ class AppUtility {
             return false
         }
     }
-    
 }

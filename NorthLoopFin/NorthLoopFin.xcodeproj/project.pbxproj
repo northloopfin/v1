@@ -12,6 +12,9 @@
 		1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */; };
 		1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758D21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift */; };
 		1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */; };
+		1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */; };
+		1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */; };
+		1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */; };
 		1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F321C0AF96000C8F5F /* HomeViewController.swift */; };
 		1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */; };
 		1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F721C0CC6F000C8F5F /* GradientView.swift */; };
@@ -84,6 +87,9 @@
 		1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryCell.xib; sourceTree = "<group>"; };
 		1D51758D21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHistoryTableHeader.swift; sourceTree = "<group>"; };
 		1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryTableHeader.xib; sourceTree = "<group>"; };
+		1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLetterSpace.swift; sourceTree = "<group>"; };
 		1D8189F321C0AF96000C8F5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1D8189F721C0CC6F000C8F5F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -357,6 +363,9 @@
 				297FB9CF21B53211008D60CE /* ReachabilityManager.swift */,
 				1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */,
 				1D8189F721C0CC6F000C8F5F /* GradientView.swift */,
+				1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */,
+				1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */,
+				1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -672,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
+				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
@@ -680,6 +690,7 @@
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1D818A1321C22987000C8F5F /* HomeTransactionListBusinessLogic.swift in Sources */,
+				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
@@ -693,6 +704,7 @@
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
+				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
@@ -883,6 +895,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3QD6LL9PP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -891,6 +904,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
 				);
 				INFOPLIST_FILE = NorthLoopFin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -908,6 +922,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3QD6LL9PP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -916,6 +931,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
 				);
 				INFOPLIST_FILE = NorthLoopFin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1078,6 +1094,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3QD6LL9PP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -1086,6 +1103,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
 				);
 				INFOPLIST_FILE = NorthLoopFin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1207,6 +1225,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3QD6LL9PP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -1215,6 +1234,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
 				);
 				INFOPLIST_FILE = NorthLoopFin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

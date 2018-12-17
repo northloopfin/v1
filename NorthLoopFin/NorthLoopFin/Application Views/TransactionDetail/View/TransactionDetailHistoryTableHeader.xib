@@ -21,17 +21,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Starbucks History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joK-ew-d9S">
-                    <rect key="frame" x="21" y="17" width="109" height="15"/>
-                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="12"/>
-                    <color key="textColor" red="0.63137254901960782" green="0.58431372549019611" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-Dj-eAd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Starbucks History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joK-ew-d9S" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <rect key="frame" x="21" y="17" width="109" height="15"/>
+                            <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="12"/>
+                            <color key="textColor" red="0.63137254901960782" green="0.58431372549019611" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                    <real key="value" value="0.40000000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="joK-ew-d9S" firstAttribute="leading" secondItem="fcN-Dj-eAd" secondAttribute="leading" constant="21" id="B04-xY-49K"/>
+                        <constraint firstItem="joK-ew-d9S" firstAttribute="centerY" secondItem="fcN-Dj-eAd" secondAttribute="centerY" id="hJE-B6-lHy"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="joK-ew-d9S" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="21" id="8EP-eg-9oi"/>
-                <constraint firstItem="joK-ew-d9S" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NBD-3p-hFM"/>
+                <constraint firstItem="fcN-Dj-eAd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Z6A-w2-n3v"/>
+                <constraint firstItem="fcN-Dj-eAd" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="c0n-m0-7FJ"/>
+                <constraint firstItem="fcN-Dj-eAd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gIK-zw-kzd"/>
+                <constraint firstItem="fcN-Dj-eAd" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="pkN-TI-e7P"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
