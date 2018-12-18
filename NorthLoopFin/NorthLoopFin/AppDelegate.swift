@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialNavigationController:UINavigationController
         initialNavigationController = UINavigationController(rootViewController:homeVC)
         //Making Navigation bar transparent throughout application
-        initialNavigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        initialNavigationController.navigationBar.shadowImage = UIImage()
-        initialNavigationController.navigationBar.isTranslucent = true
+        initialNavigationController.navigationBar.makeTransparent()
         self.window?.rootViewController = initialNavigationController
         self.window?.makeKeyAndVisible()
         return true

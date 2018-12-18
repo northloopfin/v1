@@ -28,6 +28,10 @@ class HomeViewController: BaseViewController {
         homePresenter = HomePresenter.init(delegate: self)
         self.getTransactionList()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.makeTransparent()
+    }
     
     func updateUIWithData(){
         let shadowOffst = CGSize.init(width: 0, height: 9)

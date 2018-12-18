@@ -30,12 +30,8 @@ class TransactionDetailViewController: BaseViewController {
     func setupNavigationBar(){
         // Set navigation Bar to normal translucent
         self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: UIColor.init(red: 77, green: 57, blue: 68))
-        self.navigationController?.navigationBar.topItem?.title = "Transactions"
-        
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = nil
-        self.navigationController?.navigationBar.tintColor = nil
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.topItem?.title = "Transaction"
+        self.navigationController?.navigationBar.makeNormal()
         var colors = [UIColor]()
         colors.append(UIColor(red: 252/255, green: 252/255, blue: 250/255, alpha: 0.3))
         colors.append(UIColor(red: 248/255, green: 247/255, blue: 244/255, alpha: 1))

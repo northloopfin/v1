@@ -25,4 +25,20 @@ extension UINavigationBar {
         attrs[.foregroundColor] = color
         titleTextAttributes = attrs
     }
+    /// - Parameter tint: tint color (default is .white).
+    func makeTransparent(withTint tint: UIColor = .white) {
+        isTranslucent = true
+        backgroundColor = .clear
+        barTintColor = .clear
+        setBackgroundImage(UIImage(), for: .default)
+        tintColor = tint
+        titleTextAttributes = [.foregroundColor: tint]
+        shadowImage = UIImage()
+    }
+    func makeNormal() {
+        isTranslucent = true
+        shadowImage = nil
+        tintColor = nil
+        setBackgroundImage(nil, for: .default)
+    }    
 }
