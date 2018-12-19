@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var containerView: GradientView!
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var beneficiaryNameLbl: UILabel!
     @IBOutlet weak var transactionPurposeLbl: UILabel!
@@ -25,6 +27,12 @@ class TransactionDetailViewController: BaseViewController {
         self.configureTable()
         self.historyTableView.reloadData()
         // Do any additional setup after loading the view.
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.loadGoogleMap()
+        
     }
     //Create gradient for navigation bar
     func setupNavigationBar(){
@@ -62,6 +70,12 @@ class TransactionDetailViewController: BaseViewController {
     //Method to go back to previous screen
     @objc func goBack(){
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    func loadGoogleMap(){
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 2.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        self.mapView = mapView
     }
 }
 //MARK:- UITableView Delegate and DataSource

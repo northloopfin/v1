@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //Setting up custon navigation controller
         AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
+        AppLaunchSetup.shareInstance.initialiseThirdPartyIfAny()
         sleep(2)
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
         let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as!  HomeViewController

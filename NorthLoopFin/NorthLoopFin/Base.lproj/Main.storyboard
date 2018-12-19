@@ -197,7 +197,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vjb-85-sng">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vjb-85-sng" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="307"/>
                                 <color key="backgroundColor" red="0.0" green="0.41960784309999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -372,7 +372,7 @@ W1s 2Bx,UK</string>
                         <outlet property="addressLbl" destination="iM7-B5-dPj" id="bKt-JG-wYh"/>
                         <outlet property="amtLbl" destination="Skz-G2-2dH" id="q2P-Bo-eoq"/>
                         <outlet property="beneficiaryNameLbl" destination="Lrt-U8-D5L" id="9I9-FX-FUP"/>
-                        <outlet property="containerView" destination="I07-P7-y2W" id="7V9-Ef-bCm"/>
+                        <outlet property="containerView" destination="I07-P7-y2W" id="zbS-vm-w8J"/>
                         <outlet property="historyTableView" destination="kkJ-94-sM7" id="V4I-Ss-6eH"/>
                         <outlet property="timestampLbl" destination="MaF-Ti-2b9" id="SV5-BD-DvZ"/>
                         <outlet property="transactionPurposeLbl" destination="lWa-xy-LGK" id="0zO-kx-0BL"/>

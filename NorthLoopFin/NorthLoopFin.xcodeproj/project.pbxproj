@@ -38,6 +38,8 @@
 		1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */; };
 		1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */; };
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
+		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
+		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A021B51A32008D60CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99F21B51A32008D60CE /* ViewController.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
@@ -115,6 +117,8 @@
 		1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModel.swift; sourceTree = "<group>"; };
 		1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
+		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */,
+				1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */,
 				EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +426,8 @@
 		9523A88CDB8DFF968C534DCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D9EFE0821C9259C004C1C77 /* CoreData.framework */,
+				1D9EFE0621C92592004C1C77 /* CoreLocation.framework */,
 				8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */,
 				74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */,
 				8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */,
@@ -458,6 +466,7 @@
 				297FB99721B51A32008D60CE /* Frameworks */,
 				297FB99821B51A32008D60CE /* Resources */,
 				840BB24BFD122C126081276C /* [CP] Embed Pods Frameworks */,
+				5C0EB00185306D92FFF5D202 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -629,6 +638,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C0EB00185306D92FFF5D202 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FE75CC05BDD42ECB6A06D04 /* [CP] Check Pods Manifest.lock */ = {

@@ -14,25 +14,38 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
   - ReachabilitySwift (4.3.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - GoogleMaps
+  - GooglePlaces
   - ReachabilitySwift
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - GoogleMaps
+    - GooglePlaces
     - ReachabilitySwift
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f32bc23e7191f42e843e6308b0e7b23a52cb3926
+PODFILE CHECKSUM: 8072505f7816c2b70ab2d84bb69e4925168989c1
 
 COCOAPODS: 1.5.3
