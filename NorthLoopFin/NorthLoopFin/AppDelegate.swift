@@ -19,15 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //Setting up custon navigation controller
         AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
+        AppLaunchSetup.shareInstance.initialiseThirdPartyIfAny()
         sleep(2)
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
         let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as!  HomeViewController
         var initialNavigationController:UINavigationController
         initialNavigationController = UINavigationController(rootViewController:homeVC)
         //Making Navigation bar transparent throughout application
-        initialNavigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        initialNavigationController.navigationBar.shadowImage = UIImage()
-        initialNavigationController.navigationBar.isTranslucent = true
+        initialNavigationController.navigationBar.makeTransparent()
         self.window?.rootViewController = initialNavigationController
         self.window?.makeKeyAndVisible()
         return true

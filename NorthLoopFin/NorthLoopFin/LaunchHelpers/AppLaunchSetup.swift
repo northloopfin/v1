@@ -1,6 +1,7 @@
 
 import Foundation
 import AFNetworking
+import GoogleMaps
 
 class AppLaunchSetup: NSObject {
     
@@ -19,5 +20,8 @@ class AppLaunchSetup: NSObject {
     func startMonitoringNetworkRechability(){
         ReachabilityManager.shared.startMonitoring()
         AFNetworkReachabilityManager.shared().startMonitoring()
+    }
+    func initialiseThirdPartyIfAny(){
+        GMSServices.provideAPIKey(AppConstants.GoogleMapAPIKey ?? "")
     }
 }

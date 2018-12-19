@@ -4,9 +4,10 @@ import Foundation
 //import AppUtility
 
 struct AppConstants{
-    
+    static let contentLayerName = "contentLayer"
     static let Base_Url = AppUtility.infoForKey("Backend Url")
-    static let AuthorisationRequestHeader = "API-Key "+AppUtility.infoForKey("API Key")! 
+    static let AuthorisationRequestHeader = "API-Key "+AppUtility.infoForKey("API Key")!
+    static let GoogleMapAPIKey = AppUtility.infoForKey("Google Map Key")
     
     enum URL: String{
         case TRANSACTION_LIST = "/v1/customer/transactions"

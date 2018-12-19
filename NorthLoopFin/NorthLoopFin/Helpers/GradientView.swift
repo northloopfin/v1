@@ -12,8 +12,8 @@ import UIKit
 @IBDesignable
 class GradientView: UIView {
     
-    @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
-    @IBInspectable var endColor:     UIColor = .white { didSet { updateColors() }}
+    @IBInspectable var startColor:   UIColor = UIColor(red: 255/255, green: 254/255, blue: 246/255, alpha: 1.0) { didSet { updateColors() }}
+    @IBInspectable var endColor:     UIColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0) { didSet { updateColors() }}
     @IBInspectable var startLocation: Double =   0.05 { didSet { updateLocations() }}
     @IBInspectable var endLocation:   Double =   0.95 { didSet { updateLocations() }}
     @IBInspectable var horizontalMode:  Bool =  false { didSet { updatePoints() }}
@@ -46,3 +46,4 @@ class GradientView: UIView {
         updateColors()
     }
 }
+
