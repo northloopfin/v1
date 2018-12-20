@@ -18,6 +18,7 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var timestampLbl: UILabel!
     @IBOutlet weak var amtLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var transactionImg: UIImageView!
     var detailModel:Transaction!
     
     override func viewDidLoad() {
@@ -59,11 +60,16 @@ class TransactionDetailViewController: BaseViewController {
     func updateUIForRecievedData(){
         
         //set shadow to container view
-        let shadowOffst = CGSize.init(width: 0, height: -55)
-        let shadowOpacity = 0.1
-        let shadowRadius = 49
-        let shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
+        var shadowOffst = CGSize.init(width: 0, height: -55)
+        var shadowOpacity = 0.1
+        var shadowRadius = 49
+        var shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
         self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        shadowOffst = CGSize.init(width: 0, height: 6)
+        shadowOpacity = 0.9
+        shadowRadius = 16
+        shadowColor = UIColor.init(red: 0, green: 107, blue: 79)
+        self.transactionImg.layer.addShadowAndRoundedCorners(roundedCorner: 31, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         self.beneficiaryNameLbl.text = self.detailModel.transactionPrintout.beneficiaryname
         self.amtLbl.text = "$" + String(self.detailModel.amount)
     }
