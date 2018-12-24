@@ -1,14 +1,14 @@
 //
-//  WelcomeViewController.swift
+//  VerifyAddressViewController.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 19/12/18.
+//  Created by Daffolapmac-19 on 21/12/18.
 //  Copyright © 2018 NorthLoop. All rights reserved.
 //
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class VerifyAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +16,7 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func loginClicked(_ sender: Any) {
-    }
-    
-    @IBAction func createAccountClicked(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
+
     /*
     // MARK: - Navigation
 

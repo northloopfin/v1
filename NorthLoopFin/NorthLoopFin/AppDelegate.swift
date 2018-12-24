@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppLaunchSetup.shareInstance.initialiseThirdPartyIfAny()
         sleep(2)
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        let homeVC = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as!  SignUpFormViewController
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController") as!  WelcomeViewController
         var initialNavigationController:UINavigationController
         initialNavigationController = UINavigationController(rootViewController:homeVC)
         //Making Navigation bar transparent throughout application
