@@ -20,6 +20,11 @@
 		1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */; };
 		1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */; };
 		1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */; };
+		1D790E0821D33A6A0088107A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0721D33A6A0088107A /* Validations.swift */; };
+		1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0921D355450088107A /* ScanIDOptionsView.swift */; };
+		1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */; };
+		1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0D21D393D10088107A /* CameraHandler.swift */; };
+		1D790E1021D4A3F30088107A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D790E0F21D4A3F30088107A /* MobileCoreServices.framework */; };
 		1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F321C0AF96000C8F5F /* HomeViewController.swift */; };
 		1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */; };
 		1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F721C0CC6F000C8F5F /* GradientView.swift */; };
@@ -108,6 +113,11 @@
 		1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLetterSpace.swift; sourceTree = "<group>"; };
+		1D790E0721D33A6A0088107A /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		1D790E0921D355450088107A /* ScanIDOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDOptionsView.swift; sourceTree = "<group>"; };
+		1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonWithSpacing.swift; sourceTree = "<group>"; };
+		1D790E0D21D393D10088107A /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		1D790E0F21D4A3F30088107A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1D8189F321C0AF96000C8F5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1D8189F721C0CC6F000C8F5F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -188,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D790E1021D4A3F30088107A /* MobileCoreServices.framework in Frameworks */,
 				1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */,
 				1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */,
 				EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */,
@@ -437,6 +448,10 @@
 				1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */,
 				1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */,
 				1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */,
+				1D790E0721D33A6A0088107A /* Validations.swift */,
+				1D790E0921D355450088107A /* ScanIDOptionsView.swift */,
+				1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */,
+				1D790E0D21D393D10088107A /* CameraHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -485,6 +500,7 @@
 		9523A88CDB8DFF968C534DCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D790E0F21D4A3F30088107A /* MobileCoreServices.framework */,
 				1D9EFE0821C9259C004C1C77 /* CoreData.framework */,
 				1D9EFE0621C92592004C1C77 /* CoreLocation.framework */,
 				8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */,
@@ -755,6 +771,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SACodedTextField/SACodedTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -765,6 +782,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SACodedTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -785,6 +803,7 @@
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
 				1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */,
+				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
@@ -814,11 +833,14 @@
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
+				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
+				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
+				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,

@@ -10,21 +10,118 @@ import UIKit
 
 class OTPViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var otpField1: UITextField!
+    @IBOutlet weak var otpField2: UITextField!
+    @IBOutlet weak var otpField3: UITextField!
+    @IBOutlet weak var otpField4: UITextField!
+    @IBOutlet weak var doneBtn: UIButton!
 
-        // Do any additional setup after loading the view.
+    @IBAction func resendOTPClicked(_ sender: Any) {
+    }
+    @IBAction func doneClicked(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.updateTextFieldUI()
+        self.doneBtn.isEnabled = false
     }
-    */
+    
+    
+    
+    func updateTextFieldUI(){
+        //Set action for each OTP Text Input
+        otpField1.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        otpField2.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        otpField3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        otpField4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        //Define Style for OTP text input
+        let placeholderColor=UIColor.init(red: 155, green: 155, blue: 155)
+        let placeholderFont = UIFont.init(name: "Calibri", size: 16)
+        let textfieldBorderColor = UIColor.init(red: 226, green: 226, blue: 226)
+        let textFieldBorderWidth = 1.0
+        let textfieldCorber = 5.0
+        //Apply style to OTP text input
+        self.otpField1.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+         self.otpField2.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+         self.otpField3.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+         self.otpField4.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+    }
+    //Move Focus to next OTP text input when single OTP entered
+    @objc func textFieldDidChange(textField: UITextField){
+        let text = textField.text
+        if  text?.count == 1 {
+            switch textField{
+            case otpField1:
+                self.addShadow(view: otpField1)
+                otpField2.becomeFirstResponder()
+            case otpField2:
+                self.addShadow(view: otpField2)
+                otpField3.becomeFirstResponder()
+            case otpField3:
+                self.addShadow(view: otpField3)
+                otpField4.becomeFirstResponder()
+            case otpField4:
+                self.addShadow(view: otpField4)
+                checkForEmptyField()
+                otpField4.resignFirstResponder()
+            default:
+                break
+            }
+        }
+        if  text?.count == 0 {
+            switch textField{
+            case otpField1:
+                self.removeShadow(view: otpField1)
+                otpField2.becomeFirstResponder()
+            case otpField2:
+                self.removeShadow(view: otpField2)
+                otpField3.becomeFirstResponder()
+            case otpField3:
+                self.removeShadow(view: otpField3)
+                otpField4.becomeFirstResponder()
+            case otpField4:
+                self.removeShadow(view: otpField4)
+                otpField4.becomeFirstResponder()
+            default:
+                break
+            }
+        }
+        else{
+            
+        }
+    }
+    
+    //Check for empty OTP Field
+    func checkForEmptyField(){
+        if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)!){
+            self.activateNext()
+        }
+    }
+    
+    // Will activate net button so that user can move to next screen
+    func activateNext(){
+        self.doneBtn.backgroundColor = UIColor.init(red: 161, green: 149, blue: 133)
+        self.doneBtn.isEnabled=true
+        
+    }
+    
+    func addShadow(view:UITextField){
+        //set shadow to container view
+        let shadowOffst = CGSize.init(width: 0, height: 26)
+        let shadowOpacity = 0.15
+        let shadowRadius = 30
+        let shadowColor = UIColor.init(red: 77, green: 68, blue: 57)
+        view.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+    }
+    func removeShadow(view:UITextField){
+        view.layer.removeShadow()
+    }
+}
 
+extension OTPViewController:UITextFieldDelegate{
+    
 }

@@ -2,6 +2,7 @@
 import Foundation
 import AFNetworking
 import GoogleMaps
+import IQKeyboardManagerSwift
 
 class AppLaunchSetup: NSObject {
     
@@ -23,5 +24,6 @@ class AppLaunchSetup: NSObject {
     }
     func initialiseThirdPartyIfAny(){
         GMSServices.provideAPIKey(AppConstants.GoogleMapAPIKey ?? "")
+        IQKeyboardManager.shared.enable = true
     }
 }
