@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ScanIDViewController: UIViewController {
-    private var idFront:UIImage!
-    private var idBack:UIImage!
+class ScanIDViewController: BaseViewController {
+    private var idFront:UIImage = UIImage()
+    private var idBack:UIImage = UIImage()
     
     private var isFront:Bool = false
     
@@ -22,8 +22,30 @@ class ScanIDViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.nextBtn.isEnabled=false
+        self.setupRightNavigationBar()
         self.optionsView.wordsArray = ["Passport","Driver License","State ID"]
     }
+    
+    func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.goBack)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    //Method to go back to previous screen
+    @objc func goBack(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let color = Colors.Mercury226226226
+        self.scanFrontView.addDashedBorder(width: self.scanFrontView.frame.size.width, height: self.scanFrontView.frame.size.height, lineWidth: 1, lineDashPattern: [6,3], strokeColor: color, fillColor: UIColor.clear)
+        self.scanBackView.addDashedBorder(width: self.scanBackView.frame.size.width, height: self.scanBackView.frame.size.height, lineWidth: 1, lineDashPattern: [6,3], strokeColor: color, fillColor: UIColor.clear)
+    }
+    
+    
     @IBAction func nextClicked(_ sender: Any) {
         // move to Selfie Screen
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -44,16 +66,26 @@ class ScanIDViewController: UIViewController {
         CameraHandler.shared.imagePickedBlock = { (image) in
             if self.isFront{
                 self.idFront = image
+                self.addBorder(view: self.scanFrontView)
             }else{
                 self.idBack = image
+                self.addBorder(view: self.scanBackView)
             }
             self.changeApperanceOfNextBtn()
         }
     }
+    
+    //Add Border to given view
+    func addBorder(view:UIView){
+        view.removeDashedBorder(view)
+        let color = Colors.Mercury226226226
+        let width = 1.0
+        view.addBorderWithColorWidth(color: color, width: CGFloat(width))
+    }
     func changeApperanceOfNextBtn(){
         if (self.idFront.size.width != 0 && self.idBack.size.width != 0 ){
             self.nextBtn.isEnabled = true
-            self.nextBtn.backgroundColor = UIColor.init(red: 161, green: 149, blue: 133)
+            self.nextBtn.backgroundColor = Colors.Zorba161149133
         }
     }
 }

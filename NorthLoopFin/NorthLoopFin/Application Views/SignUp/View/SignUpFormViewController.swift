@@ -8,28 +8,36 @@
 
 import UIKit
 
-class SignUpFormViewController: UIViewController {
+class SignUpFormViewController: BaseViewController {
 
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nextBtn: UIButton!
+    var presenter:PhoneVerificationStartPresenter!
+    
     @IBAction func nextClicked(_ sender: Any) {
-        //if (validateForm()){
-            moveToOTPScreen()
-        //}
+         validateForm()
     }
     //Validate form for empty text , valid email, valid phone
-    func validateForm()->Bool{
-        if (!(self.phoneTextField.text?.isEmpty)! && !(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)!){
+    func validateForm(){
                 if (Validations.isValidEmail(email: self.emailTextField.text!)){
-                    return true
+                    if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
+                        self.callPhoneVerificationAPI()
+                        moveToOTPScreen()
+                    }else{
+                        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
                 }else{
-                    return false
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
             }
-        }
-        return false
     }
+    
+    //Call Phone Verification Service
+    func callPhoneVerificationAPI(){
+        presenter.sendPhoneVerificationRequest()
+    }
+    
     //Move to OTP screen
     func moveToOTPScreen(){
         
@@ -37,15 +45,37 @@ class SignUpFormViewController: UIViewController {
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
+        self.inactivateNextBtn()
+        self.setupRightNavigationBar()
         updateTextFieldUI()
     }
     
+    func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.goBack)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    //Method to go back to previous screen
+    @objc func goBack(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     func updateTextFieldUI(){
-        let placeholderColor=UIColor.init(red: 155, green: 155, blue: 155)
+        self.firstNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.lastNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        
+        let placeholderColor=Colors.DustyGray155155155
         let placeholderFont = UIFont.init(name: "Calibri", size: 16)
-        let textfieldBorderColor = UIColor.init(red: 226, green: 226, blue: 226)
+        let textfieldBorderColor = Colors.Mercury226226226
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
 
@@ -59,5 +89,38 @@ class SignUpFormViewController: UIViewController {
         self.phoneTextField.setLeftPaddingPoints(19)
         self.emailTextField.setLeftPaddingPoints(19)
     }
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        if ((textField.text?.isEmpty)!){
+            self.inactivateNextBtn()
+        }
+    }
+    
+    func activateNextBtn(){
+        self.nextBtn.isEnabled=true
+        self.nextBtn.backgroundColor = Colors.Zorba161149133
+    }
+    
+    func inactivateNextBtn(){
+        self.nextBtn.isEnabled=false
+        self.nextBtn.backgroundColor = Colors.Alto224224224
+    }
 }
+
+extension SignUpFormViewController:UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)!){
+                self.activateNextBtn()
+        }
+    }
+}
+extension SignUpFormViewController:PhoneVerificationDelegate{
+    func didCheckOTP(result: PhoneVerifyCheck) {
+        print("Check")
+    }
+    func didSentOTP(result:PhoneVerifyStart){
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
+    }
+}
+
 

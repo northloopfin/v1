@@ -8,23 +8,27 @@
 
 import UIKit
 
-class AllDoneViewController: UIViewController {
+class AllDoneViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setupRightNavigationBar()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.goBack)
+        navigationItem.leftBarButtonItem = leftBarItem
     }
-    */
-
+    //Method to go back to previous screen
+    @objc func goBack(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    @IBAction func doneClicked(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }

@@ -54,6 +54,16 @@
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
+		1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE47FC21D5F129003EFECA /* Colors.swift */; };
+		1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */; };
+		1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */; };
+		1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */; };
+		1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */; };
+		1DFE480B21D745DF003EFECA /* PhoneVerificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480A21D745DF003EFECA /* PhoneVerificationDelegate.swift */; };
+		1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */; };
+		1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */; };
+		1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */; };
+		1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A021B51A32008D60CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99F21B51A32008D60CE /* ViewController.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
@@ -147,6 +157,16 @@
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		1DFE47FC21D5F129003EFECA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequestMobel.swift; sourceTree = "<group>"; };
+		1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationStartAPIRequest.swift; sourceTree = "<group>"; };
+		1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationBusinessLogic.swift; sourceTree = "<group>"; };
+		1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationStartPresenter.swift; sourceTree = "<group>"; };
+		1DFE480A21D745DF003EFECA /* PhoneVerificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationDelegate.swift; sourceTree = "<group>"; };
+		1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyStart.swift; sourceTree = "<group>"; };
+		1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckPresenter.swift; sourceTree = "<group>"; };
+		1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckAPIRequest.swift; sourceTree = "<group>"; };
+		1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyCheck.swift; sourceTree = "<group>"; };
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +257,8 @@
 		1D1E5A6E21C9C78D0036E998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1DFE480121D71B32003EFECA /* SIgnupForm */,
+				1DFE480021D71B22003EFECA /* Twilio */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +274,7 @@
 				1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */,
 				1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */,
 				1D908FD121CCF837005C96BB /* AllDoneViewController.swift */,
+				1DFE480A21D745DF003EFECA /* PhoneVerificationDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +282,8 @@
 		1D1E5A7021C9C79D0036E998 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */,
+				1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -363,6 +388,26 @@
 				1D8189FB21C0E062000C8F5F /* Calibri.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1DFE480021D71B22003EFECA /* Twilio */ = {
+			isa = PBXGroup;
+			children = (
+				1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */,
+				1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */,
+				1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */,
+				1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */,
+				1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */,
+				1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */,
+			);
+			path = Twilio;
+			sourceTree = "<group>";
+		};
+		1DFE480121D71B32003EFECA /* SIgnupForm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SIgnupForm;
 			sourceTree = "<group>";
 		};
 		297FB99121B51A32008D60CE = {
@@ -493,6 +538,7 @@
 			children = (
 				297FB9F721B65240008D60CE /* AppConstants.swift */,
 				297FB9F821B65240008D60CE /* AppUtility.swift */,
+				1DFE47FC21D5F129003EFECA /* Colors.swift */,
 			);
 			path = "App Utility";
 			sourceTree = "<group>";
@@ -542,6 +588,7 @@
 				297FB99821B51A32008D60CE /* Resources */,
 				840BB24BFD122C126081276C /* [CP] Embed Pods Frameworks */,
 				5C0EB00185306D92FFF5D202 /* [CP] Copy Pods Resources */,
+				1DFE47FB21D5BA29003EFECA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -693,6 +740,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1DFE47FB21D5BA29003EFECA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 253fd6a8b3676b3538374eac9591863cfea49d5b c870d98543fecb4164685d342cd3493d78bc6e16ae1ca7026628cb984cb5dbbc\n";
+		};
 		300CBC9FE6BE42DEC96DBA4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,9 +838,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SACodedTextField/SACodedTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -784,9 +847,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SACodedTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -812,12 +873,15 @@
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
+				1DFE480B21D745DF003EFECA /* PhoneVerificationDelegate.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1D818A1321C22987000C8F5F /* HomeTransactionListBusinessLogic.swift in Sources */,
+				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
+				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
@@ -828,18 +892,22 @@
 				1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
+				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
+				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
+				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
+				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
@@ -847,10 +915,13 @@
 				1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
+				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
+				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
+				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

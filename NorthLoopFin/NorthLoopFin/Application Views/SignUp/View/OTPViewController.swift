@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OTPViewController: UIViewController {
+class OTPViewController: BaseViewController {
 
     @IBOutlet weak var otpField1: UITextField!
     @IBOutlet weak var otpField2: UITextField!
@@ -16,21 +16,39 @@ class OTPViewController: UIViewController {
     @IBOutlet weak var otpField4: UITextField!
     @IBOutlet weak var doneBtn: UIButton!
 
+    var presenter:PhoneVerificationCheckPresenter!
+
     @IBAction func resendOTPClicked(_ sender: Any) {
+        
     }
     @IBAction func doneClicked(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        var OTPString = self.otpField1.text+self.otpField2.text+self.otpField3.text+self.otpField4.text
+        self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateTextFieldUI()
+        self.setupRightNavigationBar()
         self.doneBtn.isEnabled = false
+        self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
     }
     
-    
+    func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.goBack)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    //Method to go back to previous screen
+    @objc func goBack(){
+        self.navigationController?.popViewController(animated: false)
+    }
     
     func updateTextFieldUI(){
         //Set action for each OTP Text Input
@@ -39,9 +57,9 @@ class OTPViewController: UIViewController {
         otpField3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         otpField4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         //Define Style for OTP text input
-        let placeholderColor=UIColor.init(red: 155, green: 155, blue: 155)
+        let placeholderColor=Colors.DustyGray155155155
         let placeholderFont = UIFont.init(name: "Calibri", size: 16)
-        let textfieldBorderColor = UIColor.init(red: 226, green: 226, blue: 226)
+        let textfieldBorderColor = Colors.Mercury226226226
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         //Apply style to OTP text input
@@ -104,7 +122,7 @@ class OTPViewController: UIViewController {
     
     // Will activate net button so that user can move to next screen
     func activateNext(){
-        self.doneBtn.backgroundColor = UIColor.init(red: 161, green: 149, blue: 133)
+        self.doneBtn.backgroundColor = Colors.Zorba161149133
         self.doneBtn.isEnabled=true
         
     }
@@ -114,7 +132,7 @@ class OTPViewController: UIViewController {
         let shadowOffst = CGSize.init(width: 0, height: 26)
         let shadowOpacity = 0.15
         let shadowRadius = 30
-        let shadowColor = UIColor.init(red: 77, green: 68, blue: 57)
+        let shadowColor = Colors.Taupe776857
         view.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
     func removeShadow(view:UITextField){
@@ -123,5 +141,16 @@ class OTPViewController: UIViewController {
 }
 
 extension OTPViewController:UITextFieldDelegate{
+    
+}
+extension OTPViewController:PhoneVerificationDelegate{
+    func didSentOTP(result: PhoneVerifyStart) {
+        
+    }
+    
+    func didCheckOTP(result:PhoneVerifyCheck){
+
+    }
+    
     
 }

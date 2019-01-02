@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol BaseViewProtocol:class {
+@objc protocol BaseViewProtocol:class {
     func showLoader()
     func hideLoader()
     func showErrorAlert(_ alertTitle : String , alertMessage : String)

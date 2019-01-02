@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialNavigationController = UINavigationController(rootViewController:homeVC)
         //Making Navigation bar transparent throughout application
         initialNavigationController.navigationBar.makeTransparent()
+//        let barButtonAppearance = UIBarButtonItem.appearance()
+//        let backButton = UIImage.init(named: "Back")
+//        let backButtonImage = backButton?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 10)
+//        barButtonAppearance.setBackButtonBackgroundImage(backButtonImage, for: .normal, barMetrics: .default)
         self.window?.rootViewController = initialNavigationController
         self.window?.makeKeyAndVisible()
         return true

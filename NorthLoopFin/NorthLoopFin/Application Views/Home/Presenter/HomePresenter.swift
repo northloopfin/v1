@@ -16,7 +16,7 @@ class HomePresenter: ResponseCallback{
     init(delegate responseDelegate:HomeDelegate){
         self.homeDelegate = responseDelegate
     }
-    //MARK:- Methods to make decision and call CapsuleList Api.
+    //MARK:- Methods to make decision and call  Api.
     
     func sendTransactionListRequest(){
         self.homeDelegate?.showLoader()
@@ -49,8 +49,6 @@ class HomePresenter: ResponseCallback{
         let dic:Dictionary = Dictionary(grouping: data, by: {$0.transactionDate})
         let dicKeys = Array(dic.keys)
         for key in dicKeys {
-           // print(key)
-            //print(dic[key]!)
             let transactionArr:[Transaction] = dic[key]!
             let section = transactionArr[0].createdAt
             let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: section, rowData: transactionArr)

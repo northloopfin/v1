@@ -38,7 +38,7 @@ class TransactionDetailViewController: BaseViewController {
     //Create gradient for navigation bar
     func setupNavigationBar(){
         // Set navigation Bar to normal translucent
-        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: UIColor.init(red: 77, green: 57, blue: 68))
+        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
         self.navigationController?.navigationBar.topItem?.title = "Transaction"
         self.navigationController?.navigationBar.makeNormal()
         var colors = [UIColor]()
@@ -63,7 +63,7 @@ class TransactionDetailViewController: BaseViewController {
         var shadowOffst = CGSize.init(width: 0, height: -55)
         var shadowOpacity = 0.1
         var shadowRadius = 49
-        var shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
+        var shadowColor = Colors.Zorba161149133
         self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         shadowOffst = CGSize.init(width: 0, height: 6)
         shadowOpacity = 0.9

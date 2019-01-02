@@ -38,7 +38,7 @@ class HomeViewController: BaseViewController {
         let shadowOpacity = 0.21
         let shadowRadius = 72
         //let shadowColor = UIColor.blue
-        let shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
+        let shadowColor = Colors.Zorba161149133
         self.contentView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
     
