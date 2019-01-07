@@ -7,30 +7,55 @@
 //
 
 import UIKit
+import Auth0
 
 class SignUpFormViewController: BaseViewController {
 
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+   // @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
+    
     var presenter:PhoneVerificationStartPresenter!
+    var profile: UserInfo!
+
     
     @IBAction func nextClicked(_ sender: Any) {
          validateForm()
     }
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
-                if (Validations.isValidEmail(email: self.emailTextField.text!)){
+                //if (Validations.isValidEmail(email: self.emailTextField.text!)){
                     if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
-                        self.callPhoneVerificationAPI()
-                        moveToOTPScreen()
+//                        self.callPhoneVerificationAPI()
+//                        moveToOTPScreen()
+                        self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
                     }else{
                         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
-                }else{
-                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
-            }
+//                }else{
+//                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
+//            }
+    }
+    
+    func addUserMetaData(firstName: String, lastName: String, phone:String){
+        guard let accessToken = SessionManager.shared.credentials?.accessToken else {
+            return print("Failed to retrieve access token")
+        }
+        print(self.profile.sub)
+        Auth0
+            .users(token: accessToken)
+            .patch(self.profile.sub, userMetadata: ["first_name": firstName,"last_name":lastName,"phone_number":phone])
+            .start { result in
+                switch(result) {
+                case .success(_):
+                    self.callPhoneVerificationAPI()
+                    self.moveToOTPScreen()
+                    print("Success")
+                case .failure(let error):
+                    print("Failed to retrieve profile: \(String(describing: error))")
+                }
+        }
     }
     
     //Call Phone Verification Service
@@ -49,6 +74,7 @@ class SignUpFormViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
+        profile = SessionManager.shared.profile
         self.inactivateNextBtn()
         self.setupRightNavigationBar()
         updateTextFieldUI()
@@ -70,7 +96,7 @@ class SignUpFormViewController: BaseViewController {
     func updateTextFieldUI(){
         self.firstNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.lastNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+       // self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
         let placeholderColor=Colors.DustyGray155155155
@@ -81,13 +107,13 @@ class SignUpFormViewController: BaseViewController {
 
         self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        //self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
         self.phoneTextField.setLeftPaddingPoints(19)
-        self.emailTextField.setLeftPaddingPoints(19)
+        //self.emailTextField.setLeftPaddingPoints(19)
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -109,7 +135,9 @@ class SignUpFormViewController: BaseViewController {
 
 extension SignUpFormViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)!){
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)!)
+        //(self.emailTextField.text?.isEmpty)!)
+            {
                 self.activateNextBtn()
         }
     }

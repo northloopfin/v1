@@ -11,6 +11,7 @@ import UIKit
 class SetPasswordViewController: BaseViewController {
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!    
     @IBOutlet weak var termsPrivacyLbl: LabelWithLetterSpace!
     
@@ -35,19 +36,22 @@ class SetPasswordViewController: BaseViewController {
     
     //Action called when done button clicked
     @IBAction func doneClicked(_ sender: Any) {
-        
-        if (Validations.isValidPassword(password: self.passwordTextField.text ?? "")){
-            if(Validations.matchTwoStrings(string1: self.passwordTextField.text!, string2: self.confirmPasswordTextField.text!)){
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
-                self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        if(Validations.isValidEmail(email: self.emailTextField.text ?? "")){
+            if (Validations.isValidPassword(password: self.passwordTextField.text ?? "")){
+                if(Validations.matchTwoStrings(string1: self.passwordTextField.text!, string2: self.confirmPasswordTextField.text!)){
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
+                    self.navigationController?.pushViewController(transactionDetailController, animated: false)
+                }else{
+                    //error for unmatched passwords
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_DONOT_MATCH.rawValue)
+                }
             }else{
-                //error for unmatched passwords
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_DONOT_MATCH.rawValue)
+                //error for invalid password
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_NOT_VALID.rawValue)
             }
         }else{
-            //error for invalid password
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_NOT_VALID.rawValue)
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
         }
     }
     
@@ -58,6 +62,7 @@ class SetPasswordViewController: BaseViewController {
         
         self.passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.confirmPasswordTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
 
         let placeholderColor=Colors.DustyGray155155155
         let placeholderFont = UIFont.init(name: "Calibri", size: 16)
@@ -67,9 +72,12 @@ class SetPasswordViewController: BaseViewController {
         
         self.passwordTextField.applyAttributesWithValues(placeholderText: "Password *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.confirmPasswordTextField.applyAttributesWithValues(placeholderText: "Confirm Password *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.passwordTextField.setLeftPaddingPoints(19)
         self.confirmPasswordTextField.setLeftPaddingPoints(19)
+        self.emailTextField.setLeftPaddingPoints(19)
+
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -93,7 +101,7 @@ class SetPasswordViewController: BaseViewController {
 extension SetPasswordViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if (!(self.passwordTextField.text?.isEmpty)! && !(self.confirmPasswordTextField.text?.isEmpty)! ){
+        if (!(self.passwordTextField.text?.isEmpty)! && !(self.confirmPasswordTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)! ){
             
             self.changeApperanceOfDone()
         }

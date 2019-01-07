@@ -29,8 +29,8 @@ class PhoneVerificationBusinessLogic {
     
     func performPhoneVerificationCheck(withPhoneVerification model:PhoneVerificationRequestModel, presenterDelagte:ResponseCallback)->Void {
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests()
-        
-       // PhoneVerificationStartAPIRequest().makeAPIRequest(withReqFormData: phoneVerificationModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        PhoneVerificationCheckAPIRequest().makeAPIRequest(withReqFormData: model, errorResolver: errorResolver, responseCallback: presenterDelagte)
+       
     }
 }
 

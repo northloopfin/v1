@@ -13,7 +13,9 @@ struct AppConstants{
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"
         case TRANSACTION_LIST = "/v1/customer/transactions"
-        case TWILIO_PHONE_VERIFICATION_ENDPOINT = "phones/verification/start"
+        case TWILIO_PHONE_VERIFICATION_START_ENDPOINT = "phones/verification/start"
+        case TWILIO_PHONE_VERIFICATION_CHECK_ENDPOINT = "phones/verification/check"
+
     }
     
     enum ErrorHandlingKeys: String{

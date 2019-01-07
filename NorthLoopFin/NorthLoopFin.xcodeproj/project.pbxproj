@@ -12,6 +12,9 @@
 		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
 		1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */; };
 		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
+		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
+		1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */; };
+		1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */; };
 		1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */; };
 		1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */; };
 		1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */; };
@@ -115,6 +118,9 @@
 		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 		1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth0ApiCallManager.swift; sourceTree = "<group>"; };
 		1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHistoryCell.swift; sourceTree = "<group>"; };
 		1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryCell.xib; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		1D1E5A6D21C9C76B0036E998 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				1D3AA52D21E35FCB0075DBD0 /* Auth0 */,
 				1D1E5A7021C9C79D0036E998 /* Presenter */,
 				1D1E5A6F21C9C7960036E998 /* View */,
 				1D1E5A6E21C9C78D0036E998 /* Model */,
@@ -286,6 +293,15 @@
 				1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D3AA52D21E35FCB0075DBD0 /* Auth0 */ = {
+			isa = PBXGroup;
+			children = (
+				1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */,
+				1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */,
+			);
+			path = Auth0;
 			sourceTree = "<group>";
 		};
 		1D51758321C5008600BCF9E4 /* TransactionDetail */ = {
@@ -447,6 +463,7 @@
 				297FB9A121B51A32008D60CE /* Main.storyboard */,
 				297FB9A421B51A34008D60CE /* Assets.xcassets */,
 				297FB9A621B51A34008D60CE /* LaunchScreen.storyboard */,
+				1D3AA52B21E024520075DBD0 /* Auth0.plist */,
 				297FB9A921B51A34008D60CE /* Info.plist */,
 			);
 			path = NorthLoopFin;
@@ -698,6 +715,7 @@
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
+				1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,18 +854,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -868,6 +890,7 @@
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
+				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
@@ -881,6 +904,7 @@
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
+				1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,

@@ -18,6 +18,7 @@ class PhoneVerificationCheckPresenter: ResponseCallback{
     }
     
     func sendPhoneVerificationCheckRequest(code:String){
+        self.phoneVerificationDelegate?.showLoader()
         let requestModel = PhoneVerificationRequestModel.Builder()
             .addRequestHeader(key:AppConstants.APIRequestHeaders.TWILIO_AUTHORIZATION_KEY.rawValue, value: AppConstants.TwilioAPIKey!)
             .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.COUNTRY_CODE.rawValue, value: "91" as AnyObject)
@@ -28,7 +29,7 @@ class PhoneVerificationCheckPresenter: ResponseCallback{
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        print("Success")
+        self.phoneVerificationDelegate?.didCheckOTP(result: responseObject as! PhoneVerifyCheck)
         self.phoneVerificationDelegate?.hideLoader()
     }
     

@@ -18,6 +18,7 @@ class PhoneVerificationStartPresenter: ResponseCallback{
     }
     
     func sendPhoneVerificationRequest(){
+        self.phoneVerificationDelegate?.showLoader()
         let requestModel = PhoneVerificationRequestModel.Builder()
             .addRequestHeader(key:AppConstants.APIRequestHeaders.TWILIO_AUTHORIZATION_KEY.rawValue, value: AppConstants.TwilioAPIKey!)
             .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.VIA.rawValue

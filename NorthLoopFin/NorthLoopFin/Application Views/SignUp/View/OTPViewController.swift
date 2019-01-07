@@ -17,16 +17,18 @@ class OTPViewController: BaseViewController {
     @IBOutlet weak var doneBtn: UIButton!
 
     var presenter:PhoneVerificationCheckPresenter!
+    var sendPresenter:PhoneVerificationStartPresenter!
 
     @IBAction func resendOTPClicked(_ sender: Any) {
-        
+        self.callPhoneVerificationAPI()
+    }
+    //Call Phone Verification Service Start
+    func callPhoneVerificationAPI(){
+        sendPresenter.sendPhoneVerificationRequest()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        var OTPString = self.otpField1.text+self.otpField2.text+self.otpField3.text+self.otpField4.text
+        let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
         self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class OTPViewController: BaseViewController {
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled = false
         self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
+        self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
     }
     
     func setupRightNavigationBar(){
@@ -145,12 +148,11 @@ extension OTPViewController:UITextFieldDelegate{
 }
 extension OTPViewController:PhoneVerificationDelegate{
     func didSentOTP(result: PhoneVerifyStart) {
-        
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
     }
-    
     func didCheckOTP(result:PhoneVerifyCheck){
-
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
-    
-    
 }

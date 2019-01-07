@@ -71,7 +71,15 @@ class PhoneVerificationRequestModel {
      
      -returns: String containg end point
      */
-    func getEndPoint()->String{
-        return AppConstants.URL.TWILIO_BASE_URL.rawValue  +  AppConstants.URL.TWILIO_PHONE_VERIFICATION_ENDPOINT.rawValue
+    func getStartEndPoint()->String{
+        return AppConstants.URL.TWILIO_BASE_URL.rawValue  +  AppConstants.URL.TWILIO_PHONE_VERIFICATION_START_ENDPOINT.rawValue
+    }
+    /**
+     This method is used for getting CapsuleList end point
+     
+     -returns: String containg end point
+     */
+    func getCheckEndPoint()->String{
+        return AppConstants.URL.TWILIO_BASE_URL.rawValue  +  AppConstants.URL.TWILIO_PHONE_VERIFICATION_CHECK_ENDPOINT.rawValue
     }
 }

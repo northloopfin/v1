@@ -12,3 +12,10 @@ protocol PhoneVerificationDelegate: BaseViewProtocol{
      func didSentOTP(result:PhoneVerifyStart)
      func didCheckOTP(result:PhoneVerifyCheck)
 }
+
+protocol Auth0Delegates {
+    func didLoggedIn()
+    func didRetreivedProfile()
+    func didUpdatedProfile()
+    func didLoggedOut()
+}

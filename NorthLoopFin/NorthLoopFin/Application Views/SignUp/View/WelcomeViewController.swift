@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Auth0
 
 class WelcomeViewController: BaseViewController {
 
@@ -20,18 +21,68 @@ class WelcomeViewController: BaseViewController {
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        self.showSignUp()
     }
-    /*
-    // MARK: - Navigation
+    
+    func showSignUp(){
+        guard let clientInfo = plistValues(bundle: Bundle.main) else { return }
+        SessionManager.shared.patchMode = true
+        Auth0
+            .webAuth()
+            .scope("openid profile offline_access read:current_user update:current_user_metadata")
+            .audience("https://" + clientInfo.domain + "/api/v2/")
+            .start {
+                switch $0 {
+                case .failure(let error):
+                    print("Error: \(error)")
+                case .success(let credentials):
+                    if(!SessionManager.shared.store(credentials: credentials)) {
+                        print("Failed to store credentials")
+                    } else {
+                        SessionManager.shared.retrieveProfile { error in
+                            DispatchQueue.main.async {
+                                guard error == nil else {
+                                    print("Failed to retrieve profile: \(String(describing: error))")
+                                    return
+                                }
+                                //self.performSegue(withIdentifier: "ShowProfileNonAnimated", sender: nil)
+                                self.moveToNextScreen()
+                            }
+                        }
+                    }
+                }
+        }
+    }
+    
+    func moveToNextScreen(){
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
+                self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    /// Get values for Auth0 signup from plist
+    ///
+    /// - Parameter bundle: Main Bundle
+    /// - Returns: clientId,domain
+    
+    func plistValues(bundle: Bundle) -> (clientId: String, domain: String)? {
+        guard
+            let path = bundle.path(forResource: "Auth0", ofType: "plist"),
+            let values = NSDictionary(contentsOfFile: path) as? [String: Any]
+            else {
+                print("Missing Auth0.plist file with 'ClientId' and 'Domain' entries in main bundle!")
+                return nil
+        }
+        
+        guard
+            let clientId = values["ClientId"] as? String,
+            let domain = values["Domain"] as? String
+            else {
+                print("Auth0.plist file at \(path) is missing 'ClientId' and/or 'Domain' entries!")
+                print("File currently has the following entries: \(values)")
+                return nil
+        }
+        return (clientId: clientId, domain: domain)
     }
-    */
 
 }

@@ -23,7 +23,7 @@ class PhoneVerificationCheckAPIRequest:ApiRequestProtocol {
      */
     func makeAPIRequest(withReqFormData reqFromData: PhoneVerificationRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
         
-        self.apiRequestUrl = reqFromData.getEndPoint()
+        self.apiRequestUrl = reqFromData.getCheckEndPoint()
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
         
        // ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: PhoneVerifyStart.self)
