@@ -18,7 +18,7 @@ class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var nextBtn: UIButton!
     
     var presenter:PhoneVerificationStartPresenter!
-    var profile: UserInfo!
+    var auth0Mngr:Auth0ApiCallManager!
 
     
     @IBAction func nextClicked(_ sender: Any) {
@@ -39,23 +39,7 @@ class SignUpFormViewController: BaseViewController {
     }
     
     func addUserMetaData(firstName: String, lastName: String, phone:String){
-        guard let accessToken = SessionManager.shared.credentials?.accessToken else {
-            return print("Failed to retrieve access token")
-        }
-        print(self.profile.sub)
-        Auth0
-            .users(token: accessToken)
-            .patch(self.profile.sub, userMetadata: ["first_name": firstName,"last_name":lastName,"phone_number":phone])
-            .start { result in
-                switch(result) {
-                case .success(_):
-                    self.callPhoneVerificationAPI()
-                    self.moveToOTPScreen()
-                    print("Success")
-                case .failure(let error):
-                    print("Failed to retrieve profile: \(String(describing: error))")
-                }
-        }
+        auth0Mngr.auth0UpdateUserMetadata(firstName: firstName, lastName: lastName, phone: phone)
     }
     
     //Call Phone Verification Service
@@ -74,7 +58,8 @@ class SignUpFormViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        profile = SessionManager.shared.profile
+        auth0Mngr = Auth0ApiCallManager.init(delegate: self)
+
         self.inactivateNextBtn()
         self.setupRightNavigationBar()
         updateTextFieldUI()
@@ -147,8 +132,41 @@ extension SignUpFormViewController:PhoneVerificationDelegate{
         print("Check")
     }
     func didSentOTP(result:PhoneVerifyStart){
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
+        //self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
+        self.moveToOTPScreen()
     }
+}
+extension SignUpFormViewController:Auth0Delegates{
+    func didLoggedIn() {
+        
+    }
+    
+    func didRetreivedProfile() {
+        
+    }
+    
+    func didUpdatedProfile() {
+        self.callPhoneVerificationAPI()
+    }
+    
+    func didLoggedOut() {
+        
+    }
+    
+    func didFailed(err: Error) {
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: err.localizedDescription)
+    }
+}
+extension SignUpFormViewController:RailsBankDelegate{
+    func didUserCreated() {
+        <#code#>
+    }
+    
+    func didFailedWithError(err: Error) {
+        <#code#>
+    }
+    
+    
 }
 
 

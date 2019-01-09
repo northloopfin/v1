@@ -32,6 +32,8 @@ class SessionManager {
     var profile: UserInfo?
     var credentials: Credentials?
     var patchMode: Bool = false
+    var railsBankUserId = ""
+    
 
     private init () {
         self.credentialsManager = CredentialsManager(authentication: Auth0.authentication())

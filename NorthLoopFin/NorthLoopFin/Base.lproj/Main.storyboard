@@ -1767,6 +1767,63 @@ to your registered address</string>
             </objects>
             <point key="canvasLocation" x="4951.1999999999998" y="-42.728635682158924"/>
         </scene>
+        <!--My Card View Controller-->
+        <scene sceneID="l2D-ZD-JaG">
+            <objects>
+                <viewController id="iZA-6I-3a2" customClass="MyCardViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aLA-tj-KiY" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeBanner" translatesAutoresizingMaskIntoConstraints="NO" id="s90-AS-2Ul">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myCardsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ty3-Be-C6L">
+                                <rect key="frame" x="76" y="64" width="168" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="168" id="04H-fq-hPs"/>
+                                    <constraint firstAttribute="height" constant="116" id="hEy-Zy-iuS"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-ZG-mVm">
+                                <rect key="frame" x="25" y="203" width="270" height="335.5"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ur-EL-Rch">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="335.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2ur-EL-Rch" secondAttribute="trailing" id="Fea-LE-v8I"/>
+                                    <constraint firstItem="2ur-EL-Rch" firstAttribute="top" secondItem="cPw-ZG-mVm" secondAttribute="top" id="JmC-0V-PS3"/>
+                                    <constraint firstItem="2ur-EL-Rch" firstAttribute="leading" secondItem="cPw-ZG-mVm" secondAttribute="leading" id="it3-lj-jeO"/>
+                                    <constraint firstAttribute="bottom" secondItem="2ur-EL-Rch" secondAttribute="bottom" id="lh2-Nl-RXi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ty3-Be-C6L" firstAttribute="top" secondItem="Yk2-OX-k7j" secondAttribute="top" constant="44" id="33H-Ov-K5c"/>
+                            <constraint firstItem="cPw-ZG-mVm" firstAttribute="height" secondItem="aLA-tj-KiY" secondAttribute="height" multiplier="0.591" id="59D-sw-RwD"/>
+                            <constraint firstItem="Ty3-Be-C6L" firstAttribute="leading" secondItem="Yk2-OX-k7j" secondAttribute="leading" constant="76" id="GXC-AA-pF0"/>
+                            <constraint firstItem="cPw-ZG-mVm" firstAttribute="leading" secondItem="Yk2-OX-k7j" secondAttribute="leading" constant="25" id="Oa5-10-lBg"/>
+                            <constraint firstItem="Yk2-OX-k7j" firstAttribute="trailing" secondItem="cPw-ZG-mVm" secondAttribute="trailing" constant="25" id="hW1-Aq-SeM"/>
+                            <constraint firstItem="cPw-ZG-mVm" firstAttribute="top" secondItem="Ty3-Be-C6L" secondAttribute="bottom" constant="23" id="o6B-j0-V9t"/>
+                            <constraint firstItem="Yk2-OX-k7j" firstAttribute="trailing" secondItem="Ty3-Be-C6L" secondAttribute="trailing" constant="76" id="r7p-UC-oAs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yk2-OX-k7j"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="cPw-ZG-mVm" id="JuG-CR-evb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vm-wK-vvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5604.375" y="-43.309859154929576"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SelfieTime" width="152" height="153"/>
@@ -1775,6 +1832,7 @@ to your registered address</string>
         <image name="done" width="107" height="107"/>
         <image name="homeBanner" width="375" height="331"/>
         <image name="mobileVerifiaction" width="67" height="96"/>
+        <image name="myCardsLogo" width="204" height="170"/>
         <image name="openCamera" width="31" height="25"/>
         <image name="passowrdBg" width="79" height="61"/>
         <image name="registeredAddress" width="126" height="91"/>

@@ -57,12 +57,16 @@
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
+		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
+		1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */; };
+		1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */; };
+		1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */; };
 		1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE47FC21D5F129003EFECA /* Colors.swift */; };
 		1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */; };
 		1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */; };
 		1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */; };
 		1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */; };
-		1DFE480B21D745DF003EFECA /* PhoneVerificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480A21D745DF003EFECA /* PhoneVerificationDelegate.swift */; };
+		1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480A21D745DF003EFECA /* SignupDelegates.swift */; };
 		1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */; };
 		1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */; };
 		1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */; };
@@ -163,12 +167,16 @@
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
+		1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableCell.swift; sourceTree = "<group>"; };
+		1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCardTableCell.xib; sourceTree = "<group>"; };
+		1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardOtionsModel.swift; sourceTree = "<group>"; };
 		1DFE47FC21D5F129003EFECA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequestMobel.swift; sourceTree = "<group>"; };
 		1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationStartAPIRequest.swift; sourceTree = "<group>"; };
 		1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationBusinessLogic.swift; sourceTree = "<group>"; };
 		1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationStartPresenter.swift; sourceTree = "<group>"; };
-		1DFE480A21D745DF003EFECA /* PhoneVerificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationDelegate.swift; sourceTree = "<group>"; };
+		1DFE480A21D745DF003EFECA /* SignupDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDelegates.swift; sourceTree = "<group>"; };
 		1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyStart.swift; sourceTree = "<group>"; };
 		1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckPresenter.swift; sourceTree = "<group>"; };
 		1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckAPIRequest.swift; sourceTree = "<group>"; };
@@ -264,6 +272,7 @@
 		1D1E5A6E21C9C78D0036E998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1DF64E1121E5A766008774CE /* Auth0 */,
 				1DFE480121D71B32003EFECA /* SIgnupForm */,
 				1DFE480021D71B22003EFECA /* Twilio */,
 			);
@@ -281,7 +290,7 @@
 				1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */,
 				1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */,
 				1D908FD121CCF837005C96BB /* AllDoneViewController.swift */,
-				1DFE480A21D745DF003EFECA /* PhoneVerificationDelegate.swift */,
+				1DFE480A21D745DF003EFECA /* SignupDelegates.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1DF64E1221E5D51A008774CE /* My Card */,
 				1D1E5A6D21C9C76B0036E998 /* SignUp */,
 				1D51758321C5008600BCF9E4 /* TransactionDetail */,
 				1D8189EF21C0AF59000C8F5F /* Home */,
@@ -404,6 +414,48 @@
 				1D8189FB21C0E062000C8F5F /* Calibri.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1DF64E1121E5A766008774CE /* Auth0 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth0;
+			sourceTree = "<group>";
+		};
+		1DF64E1221E5D51A008774CE /* My Card */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1721E5FDC1008774CE /* Presenter */,
+				1DF64E1621E5FDBA008774CE /* View */,
+				1DF64E1521E5FDB3008774CE /* Model */,
+			);
+			path = "My Card";
+			sourceTree = "<group>";
+		};
+		1DF64E1521E5FDB3008774CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DF64E1621E5FDBA008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1321E5D546008774CE /* MyCardViewController.swift */,
+				1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */,
+				1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E1721E5FDC1008774CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1DFE480021D71B22003EFECA /* Twilio */ = {
@@ -702,6 +754,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
@@ -896,10 +949,11 @@
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
-				1DFE480B21D745DF003EFECA /* PhoneVerificationDelegate.swift in Sources */,
+				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1D818A1321C22987000C8F5F /* HomeTransactionListBusinessLogic.swift in Sources */,
+				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
 				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
@@ -914,6 +968,7 @@
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */,
+				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
@@ -934,6 +989,7 @@
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
+				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
 				1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */,

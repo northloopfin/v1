@@ -1,7 +1,9 @@
 
 
 import Foundation
-//import AppUtility
+import UIKit
+
+let StoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
 struct AppConstants{
     static let contentLayerName = "contentLayer"

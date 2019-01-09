@@ -13,9 +13,16 @@ protocol PhoneVerificationDelegate: BaseViewProtocol{
      func didCheckOTP(result:PhoneVerifyCheck)
 }
 
-protocol Auth0Delegates {
+protocol Auth0Delegates :BaseViewProtocol{
     func didLoggedIn()
     func didRetreivedProfile()
     func didUpdatedProfile()
     func didLoggedOut()
+    func didFailed(err:Error)
+}
+
+protocol RailsBankDelegate:BaseViewProtocol {
+    func didUserCreated()
+    func didFailedWithError(err:Error)
+    
 }

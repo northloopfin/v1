@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="MyCardTableCell" customModule="NorthLoopFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock Your Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgh-cA-fIS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="40" y="14" width="108" height="22"/>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                        <color key="textColor" red="0.30196078431372547" green="0.26666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                <real key="value" value="0.13"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="je9-5E-Azo">
+                        <rect key="frame" x="251" y="9.5" width="51" height="31"/>
+                        <color key="onTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="thumbTintColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </switch>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtO-cz-Pej">
+                        <rect key="frame" x="0.0" y="47.5" width="320" height="2"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="cdW-ef-uhr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Hgh-cA-fIS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7t7-OB-hRl"/>
+                    <constraint firstAttribute="trailing" secondItem="je9-5E-Azo" secondAttribute="trailing" constant="20" id="9nK-vL-qga"/>
+                    <constraint firstAttribute="trailing" secondItem="DtO-cz-Pej" secondAttribute="trailing" id="D8R-Lg-9n6"/>
+                    <constraint firstItem="Hgh-cA-fIS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="GA7-E2-lKy"/>
+                    <constraint firstItem="je9-5E-Azo" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Hgh-cA-fIS" secondAttribute="trailing" constant="103" id="GXn-CU-wZJ"/>
+                    <constraint firstItem="DtO-cz-Pej" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QJd-cb-epo"/>
+                    <constraint firstItem="je9-5E-Azo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eBK-Xy-mhC"/>
+                    <constraint firstAttribute="bottom" secondItem="DtO-cz-Pej" secondAttribute="bottom" id="oyw-IK-KDM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lock" destination="je9-5E-Azo" id="3qC-2c-nSd"/>
+                <outlet property="optionLbl" destination="Hgh-cA-fIS" id="EIn-N3-3hJ"/>
+            </connections>
+            <point key="canvasLocation" x="80" y="152.47376311844079"/>
+        </tableViewCell>
+    </objects>
+</document>
