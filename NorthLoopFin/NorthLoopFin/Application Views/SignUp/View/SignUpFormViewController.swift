@@ -147,6 +147,8 @@ extension SignUpFormViewController:Auth0Delegates{
     
     func didUpdatedProfile() {
         self.callPhoneVerificationAPI()
+        UserInformationUtility.sharedInstance.isLoggedIn = true
+        UserInformationUtility.sharedInstance.saveUser(islogged: true)
     }
     
     func didLoggedOut() {
@@ -159,11 +161,11 @@ extension SignUpFormViewController:Auth0Delegates{
 }
 extension SignUpFormViewController:RailsBankDelegate{
     func didUserCreated() {
-        <#code#>
+        
     }
     
     func didFailedWithError(err: Error) {
-        <#code#>
+        
     }
     
     

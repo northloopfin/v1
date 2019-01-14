@@ -20,7 +20,7 @@ class Auth0ApiCallManager: NSObject {
     }
     /// Will initiate Auth0 Signup and store access token in Session Manager
     func auth0SignUp(){
-        self.auth0Delegate?.showLoader()
+//        self.auth0Delegate?.showLoader()
         guard let clientInfo = plistValues(bundle: Bundle.main) else { return }
         SessionManager.shared.patchMode = true
         Auth0

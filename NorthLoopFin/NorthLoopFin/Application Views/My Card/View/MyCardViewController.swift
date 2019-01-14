@@ -17,7 +17,9 @@ class MyCardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.prepareViewData()
         self.configureTableView()
+        self.optionsTableView.reloadData()
     }
     
     
@@ -41,7 +43,7 @@ class MyCardViewController: BaseViewController {
         let shadowOpacity = 0.1
         let shadowRadius = 49
         let shadowColor = Colors.Zorba161149133
-        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         self.setNavigationBarTitle()
         self.setupRightNavigationBar()
     }
@@ -51,7 +53,6 @@ class MyCardViewController: BaseViewController {
     func setNavigationBarTitle(){
     self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
         self.navigationController?.navigationBar.topItem?.title = "My Card"
-        self.navigationController?.navigationBar.makeNormal()
     }
     
     //Methode initialises the rightbutton for navigation
@@ -71,7 +72,7 @@ class MyCardViewController: BaseViewController {
 
 extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
     func configureTableView(){
-        self.optionsTableView.rowHeight = 50;
+        self.optionsTableView.rowHeight = 70;
         self.optionsTableView.delegate=self
         self.optionsTableView.dataSource=self
         self.optionsTableView.registerTableViewCell(tableViewCell: MyCardTableCell.self)
@@ -88,7 +89,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 50.0
+        return 70.0
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

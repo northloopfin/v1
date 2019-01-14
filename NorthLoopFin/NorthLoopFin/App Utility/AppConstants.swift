@@ -11,6 +11,8 @@ struct AppConstants{
     static let AuthorisationRequestHeader = "API-Key "+AppUtility.infoForKey("API Key")!
     static let GoogleMapAPIKey = AppUtility.infoForKey("Google Map Key")
     static let TwilioAPIKey = AppUtility.infoForKey("Twilio Key")
+    static let UserDefaultKeyForUser = "UserInformation"
+
 
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"
@@ -52,5 +54,14 @@ struct AppConstants{
         case AUTHORIZATION = "Authorization"
         case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
         
+    }
+    
+    enum SideMenuOptions:String {
+        case MYCARD = "My Card"
+        case SETTINGS = "Settings"
+        case TRANSFER = "Transfer"
+        case MYACCOUNT = "My Accounts"
+        case GOALS = "Goals"
+        case EXPENSES = "Expenses"
     }
 }

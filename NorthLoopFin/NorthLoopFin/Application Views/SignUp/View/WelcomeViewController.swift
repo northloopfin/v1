@@ -19,6 +19,11 @@ class WelcomeViewController: BaseViewController {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.isLoginScreenOpened = true
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyCardViewController") as! MyCardViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {
