@@ -14,6 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Auth0 (1.14.0):
+    - SimpleKeychain
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
@@ -21,31 +26,55 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - IQKeyboardManagerSwift (6.2.0)
+  - MFSideMenu (0.5.5)
+  - PWSwitch (1.1.2)
   - ReachabilitySwift (4.3.0)
+  - SimpleKeychain (0.8.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Auth0 (~> 1.5)
+  - Crashlytics
+  - Fabric
   - GoogleMaps
   - GooglePlaces
+  - IQKeyboardManagerSwift
+  - MFSideMenu
+  - PWSwitch
   - ReachabilitySwift
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Auth0
+    - Crashlytics
+    - Fabric
     - GoogleMaps
     - GooglePlaces
+    - IQKeyboardManagerSwift
+    - MFSideMenu
+    - PWSwitch
     - ReachabilitySwift
+    - SimpleKeychain
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Auth0: 6ba27a720fe99ccf2fd4c69c051948d4036ac26d
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
+  PWSwitch: 399db6ef5dd8417f9a1e9f82cb70602f10a6c38f
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 8072505f7816c2b70ab2d84bb69e4925168989c1
+PODFILE CHECKSUM: 3c06f5bbdab027c4abca7ac070d87652d54326bd
 
 COCOAPODS: 1.5.3

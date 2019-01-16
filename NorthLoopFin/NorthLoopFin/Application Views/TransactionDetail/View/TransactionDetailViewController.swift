@@ -18,11 +18,12 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var timestampLbl: UILabel!
     @IBOutlet weak var amtLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var transactionImg: UIImageView!
     var detailModel:Transaction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
+        self.setNavigationBarTitle()
         self.updateUIForRecievedData()
         self.configureTable()
         self.historyTableView.reloadData()
@@ -35,9 +36,9 @@ class TransactionDetailViewController: BaseViewController {
         
     }
     //Create gradient for navigation bar
-    func setupNavigationBar(){
+    func setNavigationBarTitle(){
         // Set navigation Bar to normal translucent
-        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: UIColor.init(red: 77, green: 57, blue: 68))
+        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
         self.navigationController?.navigationBar.topItem?.title = "Transaction"
         self.navigationController?.navigationBar.makeNormal()
         var colors = [UIColor]()
@@ -47,28 +48,33 @@ class TransactionDetailViewController: BaseViewController {
         self.setupRightNavigationBar()
     }
     //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
+    override func setupRightNavigationBar(){
         let leftBarItem = UIBarButtonItem()
         leftBarItem.style = UIBarButtonItem.Style.plain
         leftBarItem.target = self
         leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
+        leftBarItem.action = #selector(self.popController)
         navigationItem.leftBarButtonItem = leftBarItem
     }
     //Update Values on UI
     func updateUIForRecievedData(){
         
         //set shadow to container view
-        let shadowOffst = CGSize.init(width: 0, height: -55)
-        let shadowOpacity = 0.1
-        let shadowRadius = 49
-        let shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
+        var shadowOffst = CGSize.init(width: 0, height: -55)
+        var shadowOpacity = 0.1
+        var shadowRadius = 49
+        var shadowColor = Colors.Zorba161149133
         self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        shadowOffst = CGSize.init(width: 0, height: 6)
+        shadowOpacity = 0.9
+        shadowRadius = 16
+        shadowColor = UIColor.init(red: 0, green: 107, blue: 79)
+        self.transactionImg.layer.addShadowAndRoundedCorners(roundedCorner: 31, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         self.beneficiaryNameLbl.text = self.detailModel.transactionPrintout.beneficiaryname
         self.amtLbl.text = "$" + String(self.detailModel.amount)
     }
     //Method to go back to previous screen
-    @objc func goBack(){
+    @objc func popController(){
         self.navigationController?.popViewController(animated: false)
     }
     

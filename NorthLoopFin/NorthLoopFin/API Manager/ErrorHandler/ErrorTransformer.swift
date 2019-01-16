@@ -10,7 +10,8 @@ class ErrorTransformer {
         let errorModel : ErrorModel = ErrorModel()
         if let errorDict : Dictionary<String,Any>  = errorObject as? Dictionary<String,Any> {
             //Prepare custom error object here....
-            
+            //for Twilio 
+            errorModel.setErrorMessage(errorDict["message"] as! String)
         }else{
 
             if ErrorTransformer.errorMessageForUnknownError(errorResponse.code) != ""{

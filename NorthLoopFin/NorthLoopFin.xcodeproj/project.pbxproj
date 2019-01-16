@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881B21CB6E2100187439 /* OTPViewController.swift */; };
+		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
+		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
+		1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */; };
+		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
+		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
+		1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */; };
+		1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */; };
 		1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */; };
 		1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */; };
 		1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */; };
@@ -15,6 +23,15 @@
 		1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */; };
 		1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */; };
 		1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */; };
+		1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */; };
+		1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */; };
+		1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */; };
+		1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */; };
+		1D790E0821D33A6A0088107A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0721D33A6A0088107A /* Validations.swift */; };
+		1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0921D355450088107A /* ScanIDOptionsView.swift */; };
+		1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */; };
+		1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0D21D393D10088107A /* CameraHandler.swift */; };
+		1D790E1021D4A3F30088107A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D790E0F21D4A3F30088107A /* MobileCoreServices.framework */; };
 		1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F321C0AF96000C8F5F /* HomeViewController.swift */; };
 		1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */; };
 		1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8189F721C0CC6F000C8F5F /* GradientView.swift */; };
@@ -36,10 +53,43 @@
 		1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1921C23DBD000C8F5F /* Address.swift */; };
 		1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */; };
 		1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */; };
+		1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */; };
+		1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908FD121CCF837005C96BB /* AllDoneViewController.swift */; };
+		1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D913EF421EC55C6009D7E52 /* CommonTable.swift */; };
+		1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D913EF621EC5666009D7E52 /* CommonTable.xib */; };
+		1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */; };
+		1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */; };
 		1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */; };
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
+		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
+		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
+		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
+		1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */; };
+		1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */; };
+		1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */; };
+		1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E2021E61824008774CE /* SideMenuViewController.swift */; };
+		1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E2221E666F9008774CE /* SideMenuTableCell.swift */; };
+		1DF64E2521E666F9008774CE /* SideMenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF64E2321E666F9008774CE /* SideMenuTableCell.xib */; };
+		1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E2621E88964008774CE /* SideMenuDelgates.swift */; };
+		1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E2A21E8B3B9008774CE /* SettingsViewController.swift */; };
+		1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E2E21E8B3ED008774CE /* TransferViewController.swift */; };
+		1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E3221E8B40B008774CE /* MyAccountViewController.swift */; };
+		1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E3621E8B432008774CE /* GoalsViewController.swift */; };
+		1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E3A21E8B456008774CE /* ExpensesViewController.swift */; };
+		1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E3D21E8E00B008774CE /* UserDefaults.swift */; };
+		1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E3F21E8E01A008774CE /* UserInformationUtility.swift */; };
+		1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE47FC21D5F129003EFECA /* Colors.swift */; };
+		1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */; };
+		1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */; };
+		1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */; };
+		1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */; };
+		1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480A21D745DF003EFECA /* SignupDelegates.swift */; };
+		1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */; };
+		1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */; };
+		1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */; };
+		1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A021B51A32008D60CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99F21B51A32008D60CE /* ViewController.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
@@ -86,6 +136,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0A881B21CB6E2100187439 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
+		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
+		1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth0ApiCallManager.swift; sourceTree = "<group>"; };
 		1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHistoryCell.swift; sourceTree = "<group>"; };
 		1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryCell.xib; sourceTree = "<group>"; };
@@ -94,6 +152,15 @@
 		1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLetterSpace.swift; sourceTree = "<group>"; };
+		1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCollectionViewCell.xib; sourceTree = "<group>"; };
+		1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		1D790E0721D33A6A0088107A /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		1D790E0921D355450088107A /* ScanIDOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDOptionsView.swift; sourceTree = "<group>"; };
+		1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonWithSpacing.swift; sourceTree = "<group>"; };
+		1D790E0D21D393D10088107A /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		1D790E0F21D4A3F30088107A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1D8189F321C0AF96000C8F5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1D8189F521C0B0CF000C8F5F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1D8189F721C0CC6F000C8F5F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -115,10 +182,43 @@
 		1D818A1921C23DBD000C8F5F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPrintout.swift; sourceTree = "<group>"; };
 		1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModel.swift; sourceTree = "<group>"; };
+		1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAddressViewController.swift; sourceTree = "<group>"; };
+		1D908FD121CCF837005C96BB /* AllDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneViewController.swift; sourceTree = "<group>"; };
+		1D913EF421EC55C6009D7E52 /* CommonTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTable.swift; sourceTree = "<group>"; };
+		1D913EF621EC5666009D7E52 /* CommonTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTable.xib; sourceTree = "<group>"; };
+		1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableCell.swift; sourceTree = "<group>"; };
+		1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTableCell.xib; sourceTree = "<group>"; };
 		1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
+		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
+		1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableCell.swift; sourceTree = "<group>"; };
+		1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCardTableCell.xib; sourceTree = "<group>"; };
+		1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardOtionsModel.swift; sourceTree = "<group>"; };
+		1DF64E2021E61824008774CE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		1DF64E2221E666F9008774CE /* SideMenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableCell.swift; sourceTree = "<group>"; };
+		1DF64E2321E666F9008774CE /* SideMenuTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableCell.xib; sourceTree = "<group>"; };
+		1DF64E2621E88964008774CE /* SideMenuDelgates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelgates.swift; sourceTree = "<group>"; };
+		1DF64E2A21E8B3B9008774CE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1DF64E2E21E8B3ED008774CE /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
+		1DF64E3221E8B40B008774CE /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		1DF64E3621E8B432008774CE /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		1DF64E3A21E8B456008774CE /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		1DF64E3D21E8E00B008774CE /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		1DF64E3F21E8E01A008774CE /* UserInformationUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationUtility.swift; sourceTree = "<group>"; };
+		1DFE47FC21D5F129003EFECA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequestMobel.swift; sourceTree = "<group>"; };
+		1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationStartAPIRequest.swift; sourceTree = "<group>"; };
+		1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationBusinessLogic.swift; sourceTree = "<group>"; };
+		1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationStartPresenter.swift; sourceTree = "<group>"; };
+		1DFE480A21D745DF003EFECA /* SignupDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDelegates.swift; sourceTree = "<group>"; };
+		1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyStart.swift; sourceTree = "<group>"; };
+		1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckPresenter.swift; sourceTree = "<group>"; };
+		1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckAPIRequest.swift; sourceTree = "<group>"; };
+		1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyCheck.swift; sourceTree = "<group>"; };
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D790E1021D4A3F30088107A /* MobileCoreServices.framework in Frameworks */,
 				1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */,
 				1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */,
 				EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */,
@@ -195,6 +296,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1E5A6D21C9C76B0036E998 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				1D3AA52D21E35FCB0075DBD0 /* Auth0 */,
+				1D1E5A7021C9C79D0036E998 /* Presenter */,
+				1D1E5A6F21C9C7960036E998 /* View */,
+				1D1E5A6E21C9C78D0036E998 /* Model */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		1D1E5A6E21C9C78D0036E998 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1121E5A766008774CE /* Auth0 */,
+				1DFE480121D71B32003EFECA /* SIgnupForm */,
+				1DFE480021D71B22003EFECA /* Twilio */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D1E5A6F21C9C7960036E998 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */,
+				1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */,
+				1D0A881B21CB6E2100187439 /* OTPViewController.swift */,
+				1D0A881D21CBC28400187439 /* ScanIDViewController.swift */,
+				1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */,
+				1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */,
+				1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */,
+				1D908FD121CCF837005C96BB /* AllDoneViewController.swift */,
+				1DFE480A21D745DF003EFECA /* SignupDelegates.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D1E5A7021C9C79D0036E998 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */,
+				1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D3AA52D21E35FCB0075DBD0 /* Auth0 */ = {
+			isa = PBXGroup;
+			children = (
+				1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */,
+				1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */,
+			);
+			path = Auth0;
+			sourceTree = "<group>";
+		};
 		1D51758321C5008600BCF9E4 /* TransactionDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,9 +387,34 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1D6B7EDE21EDE3AE0075D58E /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				1D6B7EDF21EDE3B50075D58E /* View */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		1D6B7EDF21EDE3B50075D58E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D6B7EDE21EDE3AE0075D58E /* Help */,
+				1DF64E3821E8B437008774CE /* Expenses */,
+				1DF64E3421E8B415008774CE /* Goals */,
+				1DF64E3021E8B3F2008774CE /* MyAccount */,
+				1DF64E2C21E8B3C0008774CE /* Transfer */,
+				1DF64E2821E8B37E008774CE /* Settings */,
+				1DF64E1E21E617F0008774CE /* SideMenu */,
+				1DF64E1221E5D51A008774CE /* My Card */,
+				1D1E5A6D21C9C76B0036E998 /* SignUp */,
 				1D51758321C5008600BCF9E4 /* TransactionDetail */,
 				1D8189EF21C0AF59000C8F5F /* Home */,
 			);
@@ -296,6 +477,191 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		1D913EF321EC5584009D7E52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D913EF421EC55C6009D7E52 /* CommonTable.swift */,
+				1D913EF621EC5666009D7E52 /* CommonTable.xib */,
+				1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */,
+				1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */,
+				1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1DF64E1121E5A766008774CE /* Auth0 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth0;
+			sourceTree = "<group>";
+		};
+		1DF64E1221E5D51A008774CE /* My Card */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1721E5FDC1008774CE /* Presenter */,
+				1DF64E1621E5FDBA008774CE /* View */,
+				1DF64E1521E5FDB3008774CE /* Model */,
+			);
+			path = "My Card";
+			sourceTree = "<group>";
+		};
+		1DF64E1521E5FDB3008774CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DF64E1621E5FDBA008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1321E5D546008774CE /* MyCardViewController.swift */,
+				1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */,
+				1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E1721E5FDC1008774CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1DF64E1E21E617F0008774CE /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E1F21E61802008774CE /* View */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		1DF64E1F21E61802008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E2021E61824008774CE /* SideMenuViewController.swift */,
+				1DF64E2221E666F9008774CE /* SideMenuTableCell.swift */,
+				1DF64E2321E666F9008774CE /* SideMenuTableCell.xib */,
+				1DF64E2621E88964008774CE /* SideMenuDelgates.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E2821E8B37E008774CE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E2921E8B38B008774CE /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1DF64E2921E8B38B008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E2A21E8B3B9008774CE /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E2C21E8B3C0008774CE /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E2D21E8B3DF008774CE /* View */,
+			);
+			path = Transfer;
+			sourceTree = "<group>";
+		};
+		1DF64E2D21E8B3DF008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E2E21E8B3ED008774CE /* TransferViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E3021E8B3F2008774CE /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E3121E8B3FD008774CE /* View */,
+			);
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
+		1DF64E3121E8B3FD008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E3221E8B40B008774CE /* MyAccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E3421E8B415008774CE /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E3521E8B422008774CE /* View */,
+			);
+			path = Goals;
+			sourceTree = "<group>";
+		};
+		1DF64E3521E8B422008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E3621E8B432008774CE /* GoalsViewController.swift */,
+				1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */,
+				1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E3821E8B437008774CE /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E3921E8B441008774CE /* View */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		1DF64E3921E8B441008774CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF64E3A21E8B456008774CE /* ExpensesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF64E3C21E8DF9F008774CE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1D913EF321EC5584009D7E52 /* Views */,
+				1DF64E3F21E8E01A008774CE /* UserInformationUtility.swift */,
+				1DF64E3D21E8E00B008774CE /* UserDefaults.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1DFE480021D71B22003EFECA /* Twilio */ = {
+			isa = PBXGroup;
+			children = (
+				1DFE480221D735F4003EFECA /* PhoneVerificationRequestMobel.swift */,
+				1DFE480421D73625003EFECA /* PhoneVerificationStartAPIRequest.swift */,
+				1DFE480621D739BC003EFECA /* PhoneVerificationBusinessLogic.swift */,
+				1DFE480C21D9F4E0003EFECA /* PhoneVerifyStart.swift */,
+				1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */,
+				1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */,
+			);
+			path = Twilio;
+			sourceTree = "<group>";
+		};
+		1DFE480121D71B32003EFECA /* SIgnupForm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SIgnupForm;
+			sourceTree = "<group>";
+		};
 		297FB99121B51A32008D60CE = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +687,7 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				1DF64E3C21E8DF9F008774CE /* Common */,
 				1D8189F921C0E04C000C8F5F /* Fonts */,
 				1D8189EE21C0AF49000C8F5F /* Application Views */,
 				297FB9F621B6521A008D60CE /* App Utility */,
@@ -333,6 +700,7 @@
 				297FB9A121B51A32008D60CE /* Main.storyboard */,
 				297FB9A421B51A34008D60CE /* Assets.xcassets */,
 				297FB9A621B51A34008D60CE /* LaunchScreen.storyboard */,
+				1D3AA52B21E024520075DBD0 /* Auth0.plist */,
 				297FB9A921B51A34008D60CE /* Info.plist */,
 			);
 			path = NorthLoopFin;
@@ -378,6 +746,11 @@
 				1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */,
 				1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */,
 				1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */,
+				1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */,
+				1D790E0721D33A6A0088107A /* Validations.swift */,
+				1D790E0921D355450088107A /* ScanIDOptionsView.swift */,
+				1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */,
+				1D790E0D21D393D10088107A /* CameraHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -419,6 +792,7 @@
 			children = (
 				297FB9F721B65240008D60CE /* AppConstants.swift */,
 				297FB9F821B65240008D60CE /* AppUtility.swift */,
+				1DFE47FC21D5F129003EFECA /* Colors.swift */,
 			);
 			path = "App Utility";
 			sourceTree = "<group>";
@@ -426,6 +800,7 @@
 		9523A88CDB8DFF968C534DCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D790E0F21D4A3F30088107A /* MobileCoreServices.framework */,
 				1D9EFE0821C9259C004C1C77 /* CoreData.framework */,
 				1D9EFE0621C92592004C1C77 /* CoreLocation.framework */,
 				8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */,
@@ -467,6 +842,7 @@
 				297FB99821B51A32008D60CE /* Resources */,
 				840BB24BFD122C126081276C /* [CP] Embed Pods Frameworks */,
 				5C0EB00185306D92FFF5D202 /* [CP] Copy Pods Resources */,
+				1DFE47FB21D5BA29003EFECA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -563,19 +939,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
+				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
+				1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */,
+				1DF64E2521E666F9008774CE /* SideMenuTableCell.xib in Resources */,
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
+				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
+				1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +999,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1DFE47FB21D5BA29003EFECA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 253fd6a8b3676b3538374eac9591863cfea49d5b c870d98543fecb4164685d342cd3493d78bc6e16ae1ca7026628cb984cb5dbbc\n";
 		};
 		300CBC9FE6BE42DEC96DBA4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -696,16 +1096,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -720,43 +1130,86 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
+				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
+				1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */,
+				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
+				1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */,
 				1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */,
+				1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
+				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
+				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
+				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
+				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
+				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1D818A1321C22987000C8F5F /* HomeTransactionListBusinessLogic.swift in Sources */,
+				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
+				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
+				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
+				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
+				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
+				1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */,
+				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
+				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
+				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
+				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
+				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
+				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
+				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
 				1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */,
+				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
+				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
+				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
+				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
+				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
+				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
+				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
+				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
+				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
+				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
+				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
+				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
+				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
+				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
+				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
+				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
 				1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
+				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
+				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
+				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
+				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

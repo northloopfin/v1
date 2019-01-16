@@ -2,6 +2,9 @@
 import Foundation
 import AFNetworking
 import GoogleMaps
+import IQKeyboardManagerSwift
+import Fabric
+import Crashlytics
 
 class AppLaunchSetup: NSObject {
     
@@ -23,5 +26,7 @@ class AppLaunchSetup: NSObject {
     }
     func initialiseThirdPartyIfAny(){
         GMSServices.provideAPIKey(AppConstants.GoogleMapAPIKey ?? "")
+        IQKeyboardManager.shared.enable = true
+        Fabric.with([Crashlytics.self])
     }
 }

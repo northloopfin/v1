@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import MFSideMenu
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var sideMenuViewController:SideMenuViewController!
+    let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
+    var isLoginScreenOpened = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -21,15 +25,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
         AppLaunchSetup.shareInstance.initialiseThirdPartyIfAny()
         sleep(2)
-        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        let homeVC = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as!  HomeViewController
-        var initialNavigationController:UINavigationController
-        initialNavigationController = UINavigationController(rootViewController:homeVC)
-        //Making Navigation bar transparent throughout application
-        initialNavigationController.navigationBar.makeTransparent()
-        self.window?.rootViewController = initialNavigationController
-        self.window?.makeKeyAndVisible()
+        
+        //For Testing only
+        UserInformationUtility.sharedInstance.saveUser(islogged: false)
+        self.initialViewController()
         return true
+    }
+    
+    func initialViewController() ->Void
+    {
+        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
+        if (UserInformationUtility.sharedInstance.getUser()){
+            var initialNavigationController:UINavigationController
+
+            sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
+            let homeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as!  HomeViewController
+            initialNavigationController = UINavigationController(rootViewController:homeViewController)
+            sideMenuViewController.delegate = homeViewController as? SideMenuDelegate
+            initialNavigationController.navigationBar.makeTransparent()
+            containerViewController.leftMenuViewController=sideMenuViewController
+            containerViewController.centerViewController=initialNavigationController
+            containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+            containerViewController.shadow.enabled=true;
+            containerViewController.panMode = MFSideMenuPanModeDefault;
+            self.window?.rootViewController = containerViewController
+
+        }else{
+            var initialNavigationController1:UINavigationController
+
+            let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+            
+            initialNavigationController1 = UINavigationController(rootViewController:welcomeViewController)
+            initialNavigationController1.navigationBar.makeTransparent()
+            self.window?.rootViewController = initialNavigationController1
+
+        }
+        self.window?.makeKeyAndVisible()
+//        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+//
+//        sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
+//
+//        var initialNavigationController:UINavigationController
+//
+//        initialNavigationController = UINavigationController(rootViewController:welcomeViewController)
+//
+//        containerViewController.leftMenuViewController=sideMenuViewController
+//        containerViewController.centerViewController=initialNavigationController
+//        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+//        containerViewController.shadow.enabled=true;
+//        containerViewController.panMode = MFSideMenuPanModeDefault;
+//        self.window?.rootViewController = containerViewController
+//        self.window?.makeKeyAndVisible()
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

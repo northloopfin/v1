@@ -35,6 +35,9 @@ extension CALayer {
             addShadowWithRoundedCorners()
         }
     }
+    func removeShadow(){
+        self.masksToBounds=true
+    }
     private func addShadowWithRoundedCorners() {
         if let contents = self.contents {
             masksToBounds = false

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MFSideMenu
 
 class HomeViewController: BaseViewController {
     @IBOutlet weak var ledgersTableView: UITableView!
@@ -24,21 +25,45 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         self.updateUIWithData()
         self.configureTable()
+        self.setupRightNavigationBar()
+        // enable the menu slide animation
+        //[menuContainerViewController setMenuSlideAnimationEnabled:YES];
+        
+        // control the exaggeration of the menu slide animation
+        //[menuContainerViewController setMenuSlideAnimationFactor:3.0f];
+        self.menuContainerViewController.menuSlideAnimationEnabled = true
+        self.menuContainerViewController.menuSlideAnimationFactor = 3.0
         self.ledgersTableView.reloadData()
         homePresenter = HomePresenter.init(delegate: self)
         self.getTransactionList()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.makeTransparent()
     }
     
+    //Methode initialises the rightbutton for navigation
+    override func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.openMenu)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    //Method to go back to previous screen
+    @objc func openMenu(){
+        self.menuContainerViewController.setMenuState(MFSideMenuStateLeftMenuOpen, completion: {})
+    }
+    
+
     func updateUIWithData(){
         let shadowOffst = CGSize.init(width: 0, height: 9)
         let shadowOpacity = 0.21
         let shadowRadius = 72
         //let shadowColor = UIColor.blue
-        let shadowColor = UIColor.init(red: 161, green: 149, blue: 133)
+        let shadowColor = Colors.Zorba161149133
         self.contentView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
     
@@ -107,4 +132,69 @@ extension HomeViewController:HomeDelegate{
     func didFetchedTransactionList(data: [TransactionListModel]) {
         self.transactionDataSource = data
     }
+}
+
+extension HomeViewController:SideMenuDelegate{
+    func moveToScreen(screen: AppConstants.SideMenuOptions) {
+        switch screen {
+        case .MYCARD:
+            self.navigateToMyCard()
+        case .HELP:
+            self.navigateToHelp()
+        case .TRANSFER:
+            self.navigateToTransfer()
+        case .MYACCOUNT:
+            self.navigateToMyAccount()
+        case .GOALS:
+            self.navigateToGoals()
+        case .EXPENSES:
+            self.navigateToExpenses()
+        default:
+            break
+        }
+    }
+    
+    func navigateToMyCard(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyCardViewController") as! MyCardViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToSettings(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToTransfer(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransferViewController") as! TransferViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToMyAccount(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToGoals(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "GoalsViewController") as! GoalsViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToExpenses(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToHelp(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
 }

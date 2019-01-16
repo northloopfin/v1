@@ -16,6 +16,25 @@ class BaseViewController: UIViewController, BaseViewProtocol {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.goBack)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    
+    func setNavigationBarTitle(title:String){
+        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
+        self.navigationController?.navigationBar.topItem?.title = title
+    }
+    
+    @objc func goBack(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    
     func showLoader() {
         SVProgressHUD.show()
     }

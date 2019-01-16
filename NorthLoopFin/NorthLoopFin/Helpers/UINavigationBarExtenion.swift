@@ -40,5 +40,13 @@ extension UINavigationBar {
         shadowImage = nil
         tintColor = nil
         setBackgroundImage(nil, for: .default)
-    }    
+    }
+//    func setupRightNavigationBar(vc:UIViewController,callBack:goback){
+//        let leftBarItem = UIBarButtonItem()
+//        leftBarItem.style = UIBarButtonItem.Style.plain
+//        leftBarItem.target = self
+//        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
+//        leftBarItem.action = #selector(goback.self)
+//        vc.navigationItem.leftBarButtonItem = leftBarItem
+//    }
 }
