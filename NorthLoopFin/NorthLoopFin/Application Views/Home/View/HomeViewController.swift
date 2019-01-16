@@ -44,7 +44,7 @@ class HomeViewController: BaseViewController {
     }
     
     //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
+    override func setupRightNavigationBar(){
         let leftBarItem = UIBarButtonItem()
         leftBarItem.style = UIBarButtonItem.Style.plain
         leftBarItem.target = self
@@ -139,8 +139,8 @@ extension HomeViewController:SideMenuDelegate{
         switch screen {
         case .MYCARD:
             self.navigateToMyCard()
-        case .SETTINGS:
-            self.navigateToSettings()
+        case .HELP:
+            self.navigateToHelp()
         case .TRANSFER:
             self.navigateToTransfer()
         case .MYACCOUNT:
@@ -190,4 +190,11 @@ extension HomeViewController:SideMenuDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
+    func navigateToHelp(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
 }

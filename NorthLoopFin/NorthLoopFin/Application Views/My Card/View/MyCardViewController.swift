@@ -44,29 +44,8 @@ class MyCardViewController: BaseViewController {
         let shadowRadius = 49
         let shadowColor = Colors.Zorba161149133
         self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-        self.setNavigationBarTitle()
+        self.setNavigationBarTitle(title: "My Card")
         self.setupRightNavigationBar()
-    }
-    
-    
-    /// Methode to set title of screen
-    func setNavigationBarTitle(){
-    self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
-        self.navigationController?.navigationBar.topItem?.title = "My Card"
-    }
-    
-    //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
-    }
-    
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
     }
 }
 

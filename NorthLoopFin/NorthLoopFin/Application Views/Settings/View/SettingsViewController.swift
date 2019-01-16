@@ -8,33 +8,28 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
+class SettingsViewController: BaseViewController {
+    @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var customView: CommonTable!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         // Do any additional setup after loading the view.
     }
-    func prepareView(){
-        self.setNavigationBarTitle()
-        self.setupRightNavigationBar()
-    }
-    /// Methode to set title of screen
-    func setNavigationBarTitle(){
-        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
-        self.navigationController?.navigationBar.topItem?.title = "Settings"
-    }
     
-    //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
+    override func viewDidLayoutSubviews() {
+        let shadowOffst = CGSize.init(width: 0, height: -55)
+        let shadowOpacity = 0.1
+        let shadowRadius = 49
+        let shadowColor = Colors.Zorba161149133
+        self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
+    func prepareView(){
+        let dataSource:[String] = ["Notification Settings", "App Settings"]
+        customView.dataSource = dataSource
+        customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
+        self.setNavigationBarTitle(title: "Settings")
+        self.setupRightNavigationBar()
     }
 }

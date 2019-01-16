@@ -21,18 +21,6 @@ class SelfieViewController: BaseViewController {
         self.nextBtn.isEnabled=false
         // Do any additional setup after loading the view.
     }
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
-    }
-    //Method to go back to previous screen
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
-    }
     
     override func viewDidLayoutSubviews() {
         let color = Colors.Mercury226226226

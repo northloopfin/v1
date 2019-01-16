@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri Bold.ttf">
+            <string>Calibri-Bold</string>
+        </array>
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GoalCollectionViewCell" id="gTV-IL-0wX" customClass="GoalCollectionViewCell" customModule="NorthLoopFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="187" height="212"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="187" height="212"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaa-Dq-eEf">
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="212"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jab-pz-rLR">
+                        <rect key="frame" x="0.0" y="138" width="187" height="74"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aruba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYr-2n-YLt" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="31" y="3" width="64" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="cfU-ka-AmS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
+                                <color key="textColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$550/700" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvc-4B-5FS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="31" y="35" width="71" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="1Sz-XA-aD7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tvc-4B-5FS" secondAttribute="bottom" constant="17" id="Fhi-hf-uvf"/>
+                            <constraint firstItem="vYr-2n-YLt" firstAttribute="leading" secondItem="jab-pz-rLR" secondAttribute="leading" constant="31" id="I43-mu-qkb"/>
+                            <constraint firstItem="tvc-4B-5FS" firstAttribute="top" secondItem="vYr-2n-YLt" secondAttribute="bottom" constant="1" id="Jzt-uV-St0"/>
+                            <constraint firstItem="vYr-2n-YLt" firstAttribute="top" secondItem="jab-pz-rLR" secondAttribute="top" constant="3" id="cjJ-p4-Ckt"/>
+                            <constraint firstItem="tvc-4B-5FS" firstAttribute="leading" secondItem="jab-pz-rLR" secondAttribute="leading" constant="31" id="dXO-Rz-KmH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jab-pz-rLR" secondAttribute="trailing" id="C0U-50-bQQ"/>
+                <constraint firstItem="qaa-Dq-eEf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RJW-vJ-pEt"/>
+                <constraint firstAttribute="bottom" secondItem="jab-pz-rLR" secondAttribute="bottom" id="XAT-AH-N8J"/>
+                <constraint firstItem="jab-pz-rLR" firstAttribute="trailing" secondItem="qaa-Dq-eEf" secondAttribute="trailing" id="npn-ac-rcH"/>
+                <constraint firstItem="jab-pz-rLR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wub-dm-WoB"/>
+                <constraint firstItem="jab-pz-rLR" firstAttribute="bottom" secondItem="qaa-Dq-eEf" secondAttribute="bottom" id="y0o-te-DWF"/>
+                <constraint firstItem="jab-pz-rLR" firstAttribute="leading" secondItem="qaa-Dq-eEf" secondAttribute="leading" id="yyy-Lk-IEK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="138" height="132"/>
+            <connections>
+                <outlet property="amountLbl" destination="tvc-4B-5FS" id="46F-FX-EuQ"/>
+                <outlet property="goalNameLbl" destination="vYr-2n-YLt" id="u2j-dP-bt5"/>
+                <outlet property="goalsImage" destination="qaa-Dq-eEf" id="4tP-xg-Vjy"/>
+            </connections>
+            <point key="canvasLocation" x="169" y="52"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -20,15 +20,14 @@ class SideMenuViewController: UIViewController {
         self.configureTableView()
         self.optionsTableView.reloadData()
     }
-
     
     func prepareViewData(){
-        self.data.append("My Card")
-        self.data.append("Settings")
-        self.data.append("Transfer")
-        self.data.append("My Account")
-        self.data.append("Goals")
-        self.data.append("Expenses")
+        self.data.append(AppConstants.SideMenuOptions.MYCARD.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.TRANSFER.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.GOALS.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
     }
 }
 
@@ -62,16 +61,15 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
             case 0:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.MYCARD)
             case 1:
-                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.SETTINGS)
-            case 2:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.TRANSFER)
-            case 3:
+            case 2:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.MYACCOUNT)
-            case 4:
+            case 3:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.GOALS)
-            case 5:
+            case 4:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
-        
+            case 5:
+                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
             default:
                 break
         }

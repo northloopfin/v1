@@ -23,7 +23,7 @@ class TransactionDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar()
+        self.setNavigationBarTitle()
         self.updateUIForRecievedData()
         self.configureTable()
         self.historyTableView.reloadData()
@@ -36,7 +36,7 @@ class TransactionDetailViewController: BaseViewController {
         
     }
     //Create gradient for navigation bar
-    func setupNavigationBar(){
+    func setNavigationBarTitle(){
         // Set navigation Bar to normal translucent
         self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
         self.navigationController?.navigationBar.topItem?.title = "Transaction"
@@ -48,12 +48,12 @@ class TransactionDetailViewController: BaseViewController {
         self.setupRightNavigationBar()
     }
     //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
+    override func setupRightNavigationBar(){
         let leftBarItem = UIBarButtonItem()
         leftBarItem.style = UIBarButtonItem.Style.plain
         leftBarItem.target = self
         leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
+        leftBarItem.action = #selector(self.popController)
         navigationItem.leftBarButtonItem = leftBarItem
     }
     //Update Values on UI
@@ -74,7 +74,7 @@ class TransactionDetailViewController: BaseViewController {
         self.amtLbl.text = "$" + String(self.detailModel.amount)
     }
     //Method to go back to previous screen
-    @objc func goBack(){
+    @objc func popController(){
         self.navigationController?.popViewController(animated: false)
     }
     

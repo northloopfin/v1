@@ -58,10 +58,10 @@ struct AppConstants{
     
     enum SideMenuOptions:String {
         case MYCARD = "My Card"
-        case SETTINGS = "Settings"
         case TRANSFER = "Transfer"
         case MYACCOUNT = "My Accounts"
         case GOALS = "Goals"
         case EXPENSES = "Expenses"
+        case HELP = "Help"
     }
 }

@@ -23,6 +23,10 @@
 		1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */; };
 		1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */; };
 		1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */; };
+		1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */; };
+		1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */; };
+		1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */; };
+		1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */; };
 		1D790E0821D33A6A0088107A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0721D33A6A0088107A /* Validations.swift */; };
 		1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0921D355450088107A /* ScanIDOptionsView.swift */; };
 		1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */; };
@@ -148,6 +152,10 @@
 		1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLetterSpace.swift; sourceTree = "<group>"; };
+		1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCollectionViewCell.xib; sourceTree = "<group>"; };
+		1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		1D790E0721D33A6A0088107A /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		1D790E0921D355450088107A /* ScanIDOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDOptionsView.swift; sourceTree = "<group>"; };
 		1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonWithSpacing.swift; sourceTree = "<group>"; };
@@ -379,9 +387,26 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1D6B7EDE21EDE3AE0075D58E /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				1D6B7EDF21EDE3B50075D58E /* View */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		1D6B7EDF21EDE3B50075D58E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D6B7EDE21EDE3AE0075D58E /* Help */,
 				1DF64E3821E8B437008774CE /* Expenses */,
 				1DF64E3421E8B415008774CE /* Goals */,
 				1DF64E3021E8B3F2008774CE /* MyAccount */,
@@ -459,6 +484,7 @@
 				1D913EF621EC5666009D7E52 /* CommonTable.xib */,
 				1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */,
 				1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */,
+				1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -584,6 +610,8 @@
 			isa = PBXGroup;
 			children = (
 				1DF64E3621E8B432008774CE /* GoalsViewController.swift */,
+				1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */,
+				1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,6 +945,7 @@
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
+				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
 				1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */,
@@ -1131,6 +1160,7 @@
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
+				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
@@ -1138,6 +1168,7 @@
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
+				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
 				1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */,
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
@@ -1163,6 +1194,7 @@
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
+				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,

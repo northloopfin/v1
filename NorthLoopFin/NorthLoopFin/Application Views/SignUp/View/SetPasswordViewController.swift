@@ -21,18 +21,6 @@ class SetPasswordViewController: BaseViewController {
         self.doneBtn.isEnabled=false
         self.updateTextFieldUI()
     }
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
-    }
-    //Method to go back to previous screen
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
-    }
     
     //Action called when done button clicked
     @IBAction func doneClicked(_ sender: Any) {

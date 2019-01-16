@@ -8,45 +8,77 @@
 
 import UIKit
 
-class GoalsViewController: UIViewController {
+class GoalsViewController: BaseViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var addButton: UIButton!
+   // var collectionViewLayout: CustomImageFlowLayout!
 
+    @IBAction func addButtonClicked(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //.horizontal
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        collectionView.setCollectionViewLayout(layout, animated: true)
         self.prepareView()
-
-        // Do any additional setup after loading the view.
-    }
-    func prepareView(){
-        self.setNavigationBarTitle()
-        self.setupRightNavigationBar()
-    }
-    /// Methode to set title of screen
-    func setNavigationBarTitle(){
-        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
-        self.navigationController?.navigationBar.topItem?.title = "Goals"
+        self.configureCollectionView()
+        self.collectionView.reloadData()
     }
     
-    //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
+    /// Will Prepare view look wise
+    func prepareView(){
+        self.addShadowToView()
+        self.setNavigationBarTitle(title: "Goals")
+        self.setupRightNavigationBar()
     }
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
+    
+    /// Will add shadow to bottom View
+    func addShadowToView(){
+        //set shadow to container view
+        var shadowOffst = CGSize.init(width: 0, height: 2)
+        var shadowOpacity = 0.08
+        var shadowRadius = 30
+        var shadowColor = UIColor.init(red: 0, green: 0, blue: 0)
+        self.bottomView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        shadowOffst = CGSize.init(width: 0, height: 17)
+        shadowOpacity = 0.09
+        shadowRadius = 20
+        shadowColor = UIColor.init(red: 0, green: 0, blue: 0)
+        self.addButton.layer.addShadowAndRoundedCorners(roundedCorner: 35.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension GoalsViewController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    
+    /// Will configure collection View
+    func configureCollectionView(){
+        self.collectionView.dataSource=self
+        self.collectionView.delegate=self
+        //collectionViewLayout = CustomImageFlowLayout()
+       // collectionView.collectionViewLayout = collectionViewLayout
+        
+        collectionView.register(UINib.init(nibName: "GoalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GoalCollectionViewCell")
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GoalCollectionViewCell", for: indexPath) as! GoalCollectionViewCell
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)//here your custom value for spacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let lay = collectionViewLayout as! UICollectionViewFlowLayout
+        let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
+        
+        return CGSize(width:widthPerItem, height:widthPerItem+30)
+    }
 }

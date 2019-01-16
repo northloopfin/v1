@@ -9,29 +9,37 @@
 import UIKit
 
 class CommonTable: UIView {
-    @IBOutlet weak var optionsTableView: UITableView!
+    @IBOutlet weak var optionsTableView: SelfSizedTableView!
     var dataSource:[String]=[]
-
     @IBOutlet var containerView: UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.commonInit()
     }
     
+    /// Method to initialize view
     func commonInit(){
-        
+        Bundle.main.loadNibNamed("CommonTable", owner: self, options: nil)
+        addSubview(containerView)
+        containerView.frame=self.bounds
+        containerView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+        self.configureTableView()
+        self.optionsTableView.reloadData()
     }
 }
 
 extension CommonTable:UITableViewDelegate,UITableViewDataSource{
     func configureTableView(){
-        self.optionsTableView.rowHeight = 62;
+        self.optionsTableView.rowHeight = 70;
         self.optionsTableView.delegate=self
         self.optionsTableView.dataSource=self
-        self.optionsTableView.registerTableViewCell(tableViewCell: SideMenuTableCell.self)
+        self.optionsTableView.registerTableViewCell(tableViewCell: CommonTableCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,15 +47,22 @@ extension CommonTable:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: SideMenuTableCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableCell") as! SideMenuTableCell
+        let cell: CommonTableCell = tableView.dequeueReusableCell(withIdentifier: "CommonTableCell") as! CommonTableCell
         cell.bindData(data: dataSource[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 62.0
+        return 70.0
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
+//            if indexPath == lastVisibleIndexPath {
+//                print(self.optionsTableView.frame.size.height)
+//            }
+//        }
+//    }
 }

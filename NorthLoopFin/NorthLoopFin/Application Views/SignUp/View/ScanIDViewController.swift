@@ -26,19 +26,6 @@ class ScanIDViewController: BaseViewController {
         self.optionsView.wordsArray = ["Passport","Driver License","State ID"]
     }
     
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
-    }
-    //Method to go back to previous screen
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
-    }
-    
     override func viewDidLayoutSubviews() {
         let color = Colors.Mercury226226226
         self.scanFrontView.addDashedBorder(width: self.scanFrontView.frame.size.width, height: self.scanFrontView.frame.size.height, lineWidth: 1, lineDashPattern: [6,3], strokeColor: color, fillColor: UIColor.clear)

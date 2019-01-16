@@ -8,45 +8,29 @@
 
 import UIKit
 
-class MyAccountViewController: UIViewController {
-
+class MyAccountViewController: BaseViewController {
+    @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var customView: CommonTable!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
 
-        // Do any additional setup after loading the view.
+    }
+    override func viewDidLayoutSubviews() {
+        let shadowOffst = CGSize.init(width: 0, height: -55)
+        let shadowOpacity = 0.1
+        let shadowRadius = 49
+        let shadowColor = Colors.Zorba161149133
+        self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
     
     func prepareView(){
-        self.setNavigationBarTitle()
+        
+        let dataSource:[String] = ["App Settings", "Change Address","Option3"]
+        customView.dataSource = dataSource
+        customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
+        self.setNavigationBarTitle(title: "My Account")
         self.setupRightNavigationBar()
     }
-    /// Methode to set title of screen
-    func setNavigationBarTitle(){
-        self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
-        self.navigationController?.navigationBar.topItem?.title = "My Account"
-    }
-    
-    //Methode initialises the rightbutton for navigation
-    func setupRightNavigationBar(){
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.goBack)
-        navigationItem.leftBarButtonItem = leftBarItem
-    }
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: false)
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
