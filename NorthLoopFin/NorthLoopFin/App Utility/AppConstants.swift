@@ -64,4 +64,15 @@ struct AppConstants{
         case EXPENSES = "Expenses"
         case HELP = "Help"
     }
+    
+    enum HelpOptions:String{
+        case FAQ = "FAQ"
+        case LEGALSTUFF = "Legal Stuff"
+    }
+    
+    enum FAQOptions:String {
+        case TERMSANDPOLICY = "Terms & Policy"
+        case PRIVACY = "Privacy"
+        case OTHERSTUFF = "Other Stuff"
+    }
 }

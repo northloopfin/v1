@@ -61,23 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         }
         self.window?.makeKeyAndVisible()
-//        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
-//
-//        sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
-//
-//        var initialNavigationController:UINavigationController
-//
-//        initialNavigationController = UINavigationController(rootViewController:welcomeViewController)
-//
-//        containerViewController.leftMenuViewController=sideMenuViewController
-//        containerViewController.centerViewController=initialNavigationController
-//        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
-//        containerViewController.shadow.enabled=true;
-//        containerViewController.panMode = MFSideMenuPanModeDefault;
-//        self.window?.rootViewController = containerViewController
-//        self.window?.makeKeyAndVisible()
-        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

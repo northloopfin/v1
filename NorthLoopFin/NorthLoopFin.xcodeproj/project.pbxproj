@@ -27,6 +27,11 @@
 		1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */; };
 		1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */; };
 		1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */; };
+		1D72718021EF14670084A57E /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72717F21EF14670084A57E /* FAQViewController.swift */; };
+		1D72718421EF14890084A57E /* LegalStuffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718321EF14890084A57E /* LegalStuffViewController.swift */; };
+		1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718521EF30A00084A57E /* CommonTableDelegate.swift */; };
+		1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718921F059610084A57E /* LostCardViewController.swift */; };
+		1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718D21F085520084A57E /* AddAccountViewController.swift */; };
 		1D790E0821D33A6A0088107A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0721D33A6A0088107A /* Validations.swift */; };
 		1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0921D355450088107A /* ScanIDOptionsView.swift */; };
 		1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */; };
@@ -156,6 +161,11 @@
 		1D6B7EDA21EDBA2E0075D58E /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D6B7EDB21EDBA2E0075D58E /* GoalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		1D72717F21EF14670084A57E /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		1D72718321EF14890084A57E /* LegalStuffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalStuffViewController.swift; sourceTree = "<group>"; };
+		1D72718521EF30A00084A57E /* CommonTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableDelegate.swift; sourceTree = "<group>"; };
+		1D72718921F059610084A57E /* LostCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardViewController.swift; sourceTree = "<group>"; };
+		1D72718D21F085520084A57E /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		1D790E0721D33A6A0088107A /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		1D790E0921D355450088107A /* ScanIDOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDOptionsView.swift; sourceTree = "<group>"; };
 		1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonWithSpacing.swift; sourceTree = "<group>"; };
@@ -403,9 +413,77 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1D72717D21EF14430084A57E /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				1D72717E21EF14540084A57E /* View */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		1D72717E21EF14540084A57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D72717F21EF14670084A57E /* FAQViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D72718121EF146D0084A57E /* Legal Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				1D72718221EF14780084A57E /* View */,
+			);
+			path = "Legal Stuff";
+			sourceTree = "<group>";
+		};
+		1D72718221EF14780084A57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D72718321EF14890084A57E /* LegalStuffViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D72718721F0593D0084A57E /* Lost Card */ = {
+			isa = PBXGroup;
+			children = (
+				1D72718821F059480084A57E /* View */,
+			);
+			path = "Lost Card";
+			sourceTree = "<group>";
+		};
+		1D72718821F059480084A57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D72718921F059610084A57E /* LostCardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D72718B21F084F60084A57E /* Add Account */ = {
+			isa = PBXGroup;
+			children = (
+				1D72718C21F085050084A57E /* View */,
+			);
+			path = "Add Account";
+			sourceTree = "<group>";
+		};
+		1D72718C21F085050084A57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D72718D21F085520084A57E /* AddAccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D72718B21F084F60084A57E /* Add Account */,
+				1D72718721F0593D0084A57E /* Lost Card */,
+				1D72718121EF146D0084A57E /* Legal Stuff */,
+				1D72717D21EF14430084A57E /* FAQ */,
 				1D6B7EDE21EDE3AE0075D58E /* Help */,
 				1DF64E3821E8B437008774CE /* Expenses */,
 				1DF64E3421E8B415008774CE /* Goals */,
@@ -485,6 +563,7 @@
 				1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */,
 				1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */,
 				1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */,
+				1D72718521EF30A00084A57E /* CommonTableDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1143,6 +1222,7 @@
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
+				1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
@@ -1160,6 +1240,7 @@
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
+				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
 				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
@@ -1173,6 +1254,7 @@
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
+				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
 				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
@@ -1190,6 +1272,7 @@
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
+				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
@@ -1197,6 +1280,7 @@
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
+				1D72718421EF14890084A57E /* LegalStuffViewController.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
 				1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */,

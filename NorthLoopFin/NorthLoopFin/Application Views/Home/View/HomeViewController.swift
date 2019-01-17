@@ -191,7 +191,6 @@ extension HomeViewController:SideMenuDelegate{
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func navigateToHelp(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
