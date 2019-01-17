@@ -1,5 +1,5 @@
 //
-//  AddAccountViewController.swift
+//  DirectDepositViewController.swift
 //  NorthLoopFin
 //
 //  Created by Daffolapmac-19 on 17/01/19.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class AddAccountViewController: BaseViewController {
+class DirectDepositViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNavigationBarTitle(title: "Direct Deposit")
         self.setupRightNavigationBar()
-        self.setNavigationBarTitle(title: "Add Account")
     }
 }

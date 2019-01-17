@@ -32,6 +32,8 @@
 		1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718521EF30A00084A57E /* CommonTableDelegate.swift */; };
 		1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718921F059610084A57E /* LostCardViewController.swift */; };
 		1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72718D21F085520084A57E /* AddAccountViewController.swift */; };
+		1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72719121F0A0900084A57E /* MyOffersViewController.swift */; };
+		1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D72719521F0A3FA0084A57E /* DirectDepositViewController.swift */; };
 		1D790E0821D33A6A0088107A /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0721D33A6A0088107A /* Validations.swift */; };
 		1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0921D355450088107A /* ScanIDOptionsView.swift */; };
 		1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */; };
@@ -166,6 +168,8 @@
 		1D72718521EF30A00084A57E /* CommonTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableDelegate.swift; sourceTree = "<group>"; };
 		1D72718921F059610084A57E /* LostCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardViewController.swift; sourceTree = "<group>"; };
 		1D72718D21F085520084A57E /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		1D72719121F0A0900084A57E /* MyOffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOffersViewController.swift; sourceTree = "<group>"; };
+		1D72719521F0A3FA0084A57E /* DirectDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectDepositViewController.swift; sourceTree = "<group>"; };
 		1D790E0721D33A6A0088107A /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		1D790E0921D355450088107A /* ScanIDOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDOptionsView.swift; sourceTree = "<group>"; };
 		1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonWithSpacing.swift; sourceTree = "<group>"; };
@@ -477,9 +481,43 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1D72718F21F0A0700084A57E /* My Offers */ = {
+			isa = PBXGroup;
+			children = (
+				1D72719021F0A07D0084A57E /* View */,
+			);
+			path = "My Offers";
+			sourceTree = "<group>";
+		};
+		1D72719021F0A07D0084A57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D72719121F0A0900084A57E /* MyOffersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D72719321F0A3D80084A57E /* Direct Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				1D72719421F0A3E40084A57E /* View */,
+			);
+			path = "Direct Deposit";
+			sourceTree = "<group>";
+		};
+		1D72719421F0A3E40084A57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D72719521F0A3FA0084A57E /* DirectDepositViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D72719321F0A3D80084A57E /* Direct Deposit */,
+				1D72718F21F0A0700084A57E /* My Offers */,
 				1D72718B21F084F60084A57E /* Add Account */,
 				1D72718721F0593D0084A57E /* Lost Card */,
 				1D72718121EF146D0084A57E /* Legal Stuff */,
@@ -1233,6 +1271,7 @@
 				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
 				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
 				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
+				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
@@ -1291,6 +1330,7 @@
 				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
+				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
