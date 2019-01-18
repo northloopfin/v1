@@ -15,6 +15,7 @@ class MyAccountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.customView.delegate=self
 
     }
     override func viewDidLayoutSubviews() {
@@ -32,5 +33,31 @@ class MyAccountViewController: BaseViewController {
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
         self.setupRightNavigationBar()
+    }
+}
+
+extension MyAccountViewController:CommonTableDelegate{
+    func didSelectOption(optionVal: Int) {
+        switch optionVal {
+        case 0:
+            self.moveToSettings()
+        case 1:
+            self.moveToChangeAddress()
+        case 2:
+            self.moveToOptions()
+        default:
+            break
+        }
+    }
+    func moveToSettings(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func moveToChangeAddress(){
+       
+    }
+    func moveToOptions(){
+        
     }
 }

@@ -12,7 +12,7 @@ class CommonTable: UIView {
     @IBOutlet weak var optionsTableView: SelfSizedTableView!
     var dataSource:[String]=[]
     @IBOutlet var containerView: UIView!
-    var delegate:HelpDelegate?
+    var delegate:CommonTableDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -15,6 +15,9 @@
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
 		1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */; };
 		1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */; };
+		1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */; };
+		1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553F21F1A89700557825 /* NewPinViewController.swift */; };
+		1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */; };
 		1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */; };
 		1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */; };
 		1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */; };
@@ -151,6 +154,9 @@
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth0ApiCallManager.swift; sourceTree = "<group>"; };
+		1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostInsufficientViewController.swift; sourceTree = "<group>"; };
+		1D3E553F21F1A89700557825 /* NewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPinViewController.swift; sourceTree = "<group>"; };
+		1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedViewController.swift; sourceTree = "<group>"; };
 		1D51758721C500D300BCF9E4 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		1D51758921C6700500BCF9E4 /* TransactionDetailHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHistoryCell.swift; sourceTree = "<group>"; };
 		1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryCell.xib; sourceTree = "<group>"; };
@@ -365,6 +371,54 @@
 			path = Auth0;
 			sourceTree = "<group>";
 		};
+		1D3E553921F1A6A700557825 /* Lost Insufficient */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E553A21F1A6B700557825 /* View */,
+			);
+			path = "Lost Insufficient";
+			sourceTree = "<group>";
+		};
+		1D3E553A21F1A6B700557825 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D3E553D21F1A85000557825 /* New Pin */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E553E21F1A87700557825 /* View */,
+			);
+			path = "New Pin";
+			sourceTree = "<group>";
+		};
+		1D3E553E21F1A87700557825 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E553F21F1A89700557825 /* NewPinViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D3E554121F1AD1600557825 /* Confirmed */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E554221F1ADF600557825 /* View */,
+			);
+			path = Confirmed;
+			sourceTree = "<group>";
+		};
+		1D3E554221F1ADF600557825 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D51758321C5008600BCF9E4 /* TransactionDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +570,9 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D3E554121F1AD1600557825 /* Confirmed */,
+				1D3E553D21F1A85000557825 /* New Pin */,
+				1D3E553921F1A6A700557825 /* Lost Insufficient */,
 				1D72719321F0A3D80084A57E /* Direct Deposit */,
 				1D72718F21F0A0700084A57E /* My Offers */,
 				1D72718B21F084F60084A57E /* Add Account */,
@@ -1258,6 +1315,7 @@
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
+				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
 				1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */,
@@ -1285,6 +1343,7 @@
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
+				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
@@ -1314,6 +1373,7 @@
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
+				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,

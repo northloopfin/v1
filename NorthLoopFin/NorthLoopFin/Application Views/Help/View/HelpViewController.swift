@@ -38,7 +38,7 @@ class HelpViewController: BaseViewController {
     }
 }
 
-extension HelpViewController:HelpDelegate{
+extension HelpViewController:CommonTableDelegate{
     func didSelectOption(optionVal:Int) {
         switch optionVal {
         case 0:

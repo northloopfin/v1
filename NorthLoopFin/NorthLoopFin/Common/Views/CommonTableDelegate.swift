@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol HelpDelegate {
+protocol CommonTableDelegate {
     func didSelectOption(optionVal:Int)
 }
 
