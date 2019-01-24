@@ -13,7 +13,9 @@ class ScanIDViewController: BaseViewController {
     private var idBack:UIImage = UIImage()
     
     private var isFront:Bool = false
+    @IBOutlet weak var selectYourIDLbl: LabelWithLetterSpace!
     
+    @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var scanFrontView: UIView!
     @IBOutlet weak var optionsView: UIScrollView!
     @IBOutlet weak var optionsStack: UIStackView!
@@ -25,6 +27,18 @@ class ScanIDViewController: BaseViewController {
         self.nextBtn.isEnabled=false
         self.setupRightNavigationBar()
         self.renderIDOptions()
+        self.prepareView()
+    }
+    
+    /// Prepare view by setting text color and font to view components
+    func prepareView(){
+        self.mainTitleLbl.textColor = Colors.MainTitleColor
+        self.selectYourIDLbl.textColor = Colors.Cameo213186154
+        
+        //set font
+        self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
+        self.selectYourIDLbl.font = AppFonts.btnTitleCalibri18
+        self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
     }
     
     func renderIDOptions(){

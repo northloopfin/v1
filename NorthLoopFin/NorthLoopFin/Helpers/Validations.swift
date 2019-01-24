@@ -34,5 +34,8 @@ class Validations {
         let valid = NSPredicate(format: "SELF MATCHES %@", phoneRegex).evaluate(with: phone)
         return valid
     }
-
+    
+    class func isValidName(value:String)->Bool{
+            return value.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) == nil && value != ""
+    }
 }

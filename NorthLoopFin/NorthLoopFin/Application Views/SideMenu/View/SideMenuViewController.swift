@@ -13,6 +13,13 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var optionsTableView: UITableView!
     var delegate:SideMenuDelegate!
     
+    @IBAction func crossClicked(_ sender: Any) {
+        self.delegate.closeMenu()
+    }
+    @IBAction func settingsClicked(_ sender: Any) {
+        self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.SETTINGS)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

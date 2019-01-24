@@ -28,7 +28,12 @@ class MyAccountViewController: BaseViewController {
     
     func prepareView(){
         
-        let dataSource:[String] = ["App Settings", "Change Address","Option3"]
+        var dataSource:[String] = []
+        dataSource.append(AppConstants.ProfileOptions.APPSETTINGS.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue)
+
         customView.dataSource = dataSource
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
@@ -40,10 +45,12 @@ extension MyAccountViewController:CommonTableDelegate{
     func didSelectOption(optionVal: Int) {
         switch optionVal {
         case 0:
-            self.moveToSettings()
+            self.moveToOptions()
         case 1:
-            self.moveToChangeAddress()
+            self.moveToOptions()
         case 2:
+            self.moveToOptions()
+        case 3:
             self.moveToOptions()
         default:
             break

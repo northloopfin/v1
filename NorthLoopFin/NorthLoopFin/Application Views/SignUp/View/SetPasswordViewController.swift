@@ -14,12 +14,16 @@ class SetPasswordViewController: BaseViewController {
     //@IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!    
     @IBOutlet weak var termsPrivacyLbl: LabelWithLetterSpace!
+    @IBOutlet weak var TermsAndConditionLbl: LabelWithLetterSpace!
+    @IBOutlet weak var bySigningUpLbl: LabelWithLetterSpace!
+    @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled=false
         self.updateTextFieldUI()
+        self.prepareView()
     }
     
     //Action called when done button clicked
@@ -41,6 +45,23 @@ class SetPasswordViewController: BaseViewController {
         //}//else{
           //  self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
 //}
+    }
+    
+    
+    /// Prepare view by setting up color and font of View components
+    func prepareView(){
+        self.mainTitleLbl.textColor=Colors.MainTitleColor
+        self.passwordTextField.textColor = Colors.DustyGray155155155
+        self.confirmPasswordTextField.textColor=Colors.DustyGray155155155
+        self.bySigningUpLbl.textColor=Colors.Tundora747474
+        self.termsPrivacyLbl.textColor = Colors.Cameo213186154
+        
+        self.mainTitleLbl.font=AppFonts.mainTitleCalibriBold25
+        self.passwordTextField.font=AppFonts.textBoxCalibri16
+        self.confirmPasswordTextField.font=AppFonts.textBoxCalibri16
+        self.bySigningUpLbl.font=AppFonts.calibri15
+        self.termsPrivacyLbl.font=AppFonts.calibri15
+        
     }
     
     //Change appearance of TextFields

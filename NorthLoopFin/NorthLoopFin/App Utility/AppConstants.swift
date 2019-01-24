@@ -34,8 +34,9 @@ struct AppConstants{
         case EMAIL_NOT_VALID = "Please enter a valid email address"
         case PASSWORD_NOT_VALID = "Password should be minimum 8 characters, one uppercase letter, one number or special character and maximum 20 characters"
         case ALL_FIELDS_MANDAORY = "All fields are mandatory"
-        case PASSWORD_DONOT_MATCH = "Password and Confirm Password do not match"
+        case PASSWORD_DONOT_MATCH = "Passwords do not match"
         case PHONE_NOT_VALID = "Please enter a valid Phone Number"
+        case NAME_NOT_VALID = "Name should not contain special character and space"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -58,21 +59,45 @@ struct AppConstants{
     
     enum SideMenuOptions:String {
         case MYCARD = "My Card"
-        case TRANSFER = "Transfer"
-        case MYACCOUNT = "My Accounts"
+        case TRANSFER = "Transfer & Pay"
+        case MYACCOUNT = "My Profile"
         case GOALS = "Goals"
         case EXPENSES = "Expenses"
         case HELP = "Help"
+        case SETTINGS = "Settings"
     }
     
     enum HelpOptions:String{
         case FAQ = "FAQ"
-        case LEGALSTUFF = "Legal Stuff"
+        case LEGALSTUFF = "Legal T&C"
+        case CHATWITHUS = "Chat With Us"
+        case ATMFINDER = "ATM Finder"
     }
     
     enum FAQOptions:String {
         case TERMSANDPOLICY = "Terms & Policy"
         case PRIVACY = "Privacy"
         case OTHERSTUFF = "Other Stuff"
+    }
+    
+    enum SettingsOptions:String {
+        case NOTIFICATIONSETTINGS = "Notification Settings"
+        case PRIVACYPREFERENCES = "Privacy Preferences"
+        case MARKETINGPREFERENCES = "Marketing Preferences"
+        
+    }
+    
+    enum ProfileOptions:String{
+        case APPSETTINGS = "App Settings"
+        case CHANGEADDRESS = "Change Address"
+        case CHANGEPASSWORD = "Change Password"
+        case CHANGEPHONENUMBER = "Change Phone Number"
+    }
+    
+    enum NotificationSettigsOptions:String{
+        case INDIVIDUALEXPENSES = "Individual Expenses"
+        case TRANSFERS = "Transfers"
+        case LOWBALANCEALERT = "Low Balance Alert"
+        case WEEKLYSPENDSUMMARY = "Weekly Spend Summary"
     }
 }

@@ -12,6 +12,7 @@ class MyOffersViewController: BaseViewController {
     @IBOutlet weak var containerView: CommonTable!
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var mainTitlelbl: LabelWithLetterSpace!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
@@ -34,6 +35,8 @@ class MyOffersViewController: BaseViewController {
         dataSource.append("Offer 3")
         containerView.dataSource = dataSource
         containerViewHeightConstraint.constant = CGFloat(dataSource.count*70)
+        self.mainTitlelbl.font = AppFonts.mainTitleCalibriBold25
+        self.mainTitlelbl.textColor = Colors.MainTitleColor
     }
 
 }

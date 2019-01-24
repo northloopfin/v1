@@ -1,20 +1,21 @@
 //
-//  FAQViewController.swift
+//  NotificationSettingsViewController.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 16/01/19.
+//  Created by Daffolapmac-19 on 24/01/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import UIKit
 
-class FAQViewController: BaseViewController {
+class NotificationSettingsViewController: BaseViewController {
     @IBOutlet weak var containerView: CommonTable!
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+
     }
     override func viewDidLayoutSubviews() {
         let shadowOffst = CGSize.init(width: 0, height: -55)
@@ -26,13 +27,14 @@ class FAQViewController: BaseViewController {
     /// Prepare View For display
     func prepareView(){
         var dataSource:[String] = []
-        dataSource.append(AppConstants.FAQOptions.TERMSANDPOLICY.rawValue)
-        dataSource.append(AppConstants.FAQOptions.PRIVACY.rawValue)
-        dataSource.append(AppConstants.FAQOptions.OTHERSTUFF.rawValue)
+        dataSource.append(AppConstants.NotificationSettigsOptions.INDIVIDUALEXPENSES.rawValue)
+        dataSource.append(AppConstants.NotificationSettigsOptions.TRANSFERS.rawValue)
+        dataSource.append(AppConstants.NotificationSettigsOptions.LOWBALANCEALERT.rawValue)
+        dataSource.append(AppConstants.NotificationSettigsOptions.WEEKLYSPENDSUMMARY.rawValue)
         
         containerView.dataSource = dataSource
         containerViewHeightConstraint.constant = CGFloat(dataSource.count*70)
-        self.setNavigationBarTitle(title: "FAQ")
+        self.setNavigationBarTitle(title: "Notification Settings")
         self.setupRightNavigationBar()
     }
 }

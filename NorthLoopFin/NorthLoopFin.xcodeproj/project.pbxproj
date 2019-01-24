@@ -73,6 +73,8 @@
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
+		1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */; };
+		1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6A76B21F5AA1600C38205 /* Fonts.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
 		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
@@ -212,6 +214,8 @@
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
+		1DC6A76B21F5AA1600C38205 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
@@ -570,6 +574,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1DB8C0DA21F9715F009F437A /* Notification Settings */,
 				1D3E554121F1AD1600557825 /* Confirmed */,
 				1D3E553D21F1A85000557825 /* New Pin */,
 				1D3E553921F1A6A700557825 /* Lost Insufficient */,
@@ -661,6 +666,22 @@
 				1D72718521EF30A00084A57E /* CommonTableDelegate.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1DB8C0DA21F9715F009F437A /* Notification Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1DB8C0DB21F97176009F437A /* View */,
+			);
+			path = "Notification Settings";
+			sourceTree = "<group>";
+		};
+		1DB8C0DB21F97176009F437A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1DF64E1121E5A766008774CE /* Auth0 */ = {
@@ -967,6 +988,7 @@
 				297FB9F721B65240008D60CE /* AppConstants.swift */,
 				297FB9F821B65240008D60CE /* AppUtility.swift */,
 				1DFE47FC21D5F129003EFECA /* Colors.swift */,
+				1DC6A76B21F5AA1600C38205 /* Fonts.swift */,
 			);
 			path = "App Utility";
 			sourceTree = "<group>";
@@ -1315,6 +1337,7 @@
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
+				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
@@ -1386,6 +1409,7 @@
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
+				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
 				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,

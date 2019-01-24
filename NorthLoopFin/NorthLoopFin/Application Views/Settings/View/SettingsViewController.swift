@@ -27,7 +27,10 @@ class SettingsViewController: BaseViewController {
         self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
     func prepareView(){
-        let dataSource:[String] = ["Notification Settings","New Pin","Direct Deposit","Lost Insufficient","Confirmed","My Offers","Add Account"]
+        var dataSource:[String] = []
+        dataSource.append(AppConstants.SettingsOptions.NOTIFICATIONSETTINGS.rawValue)
+        dataSource.append(AppConstants.SettingsOptions.PRIVACYPREFERENCES.rawValue)
+        dataSource.append(AppConstants.SettingsOptions.MARKETINGPREFERENCES.rawValue)
         customView.dataSource = dataSource
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "Settings")
@@ -39,11 +42,15 @@ extension SettingsViewController:CommonTableDelegate{
     func didSelectOption(optionVal: Int) {
         switch optionVal {
         case 0:
-            self.moveToNotificationSettings()
+            print("Notification")
+            //self.moveToNotificationSettings()
         case 1:
-            self.moveToNewPin()
+            //self.moveToNewPin()
+            print("Privacy Preferences")
         case 2:
-            self.moveToDirectDeposit()
+            //self.moveToDirectDeposit()
+            print("Marketing Preferences")
+
         case 3:
             self.moveToLostInsufficient()
         case 4:

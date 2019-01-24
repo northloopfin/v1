@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         //Setting up custon navigation controller
+        Utility.logAllAvailableFonts()
         AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
         AppLaunchSetup.shareInstance.initialiseThirdPartyIfAny()
         sleep(2)

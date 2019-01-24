@@ -27,12 +27,12 @@ class HomeViewController: BaseViewController {
         self.configureTable()
         self.setupRightNavigationBar()
         // enable the menu slide animation
-        //[menuContainerViewController setMenuSlideAnimationEnabled:YES];
         
         // control the exaggeration of the menu slide animation
         //[menuContainerViewController setMenuSlideAnimationFactor:3.0f];
         self.menuContainerViewController.menuSlideAnimationEnabled = true
         self.menuContainerViewController.menuSlideAnimationFactor = 3.0
+        self.menuContainerViewController.shadow.enabled=false
         self.ledgersTableView.reloadData()
         homePresenter = HomePresenter.init(delegate: self)
         self.getTransactionList()
@@ -135,6 +135,10 @@ extension HomeViewController:HomeDelegate{
 }
 
 extension HomeViewController:SideMenuDelegate{
+    func closeMenu() {
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+    }
+    
     func moveToScreen(screen: AppConstants.SideMenuOptions) {
         switch screen {
         case .MYCARD:
@@ -149,6 +153,8 @@ extension HomeViewController:SideMenuDelegate{
             self.navigateToGoals()
         case .EXPENSES:
             self.navigateToExpenses()
+        case .SETTINGS:
+            self.navigateToSettings()
         default:
             break
         }

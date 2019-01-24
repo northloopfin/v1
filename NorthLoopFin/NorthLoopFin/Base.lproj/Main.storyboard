@@ -623,7 +623,7 @@ W1s 2Bx,UK</string>
                                                             <outlet property="delegate" destination="Zrh-81-Kal" id="bND-PV-d0e"/>
                                                         </connections>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-oK-gfL">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-oK-gfL" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="203.5" width="270" height="45"/>
                                                         <color key="backgroundColor" red="0.63137254901960782" green="0.58431372549019611" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -639,6 +639,14 @@ W1s 2Bx,UK</string>
                                                                 </fragment>
                                                             </attributedString>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                                <real key="value" value="0.22"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="nextClicked:" destination="Zrh-81-Kal" eventType="touchUpInside" id="CEg-d3-AQY"/>
                                                         </connections>
@@ -743,8 +751,11 @@ W1s 2Bx,UK</string>
                         <viewLayoutGuide key="safeArea" id="2xh-3O-Ud5"/>
                     </view>
                     <connections>
+                        <outlet property="alreadyHaveaccountLbl" destination="JM2-u7-j7M" id="4cE-xy-45b"/>
                         <outlet property="firstNameTextField" destination="whs-du-iTR" id="MxC-LL-ADK"/>
                         <outlet property="lastNameTextField" destination="SI4-vm-lbj" id="Yez-gI-WgZ"/>
+                        <outlet property="loginLbl" destination="NOC-RB-1VG" id="aUw-38-iVS"/>
+                        <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>
                         <outlet property="phoneTextField" destination="BAp-4N-9Ou" id="Z4c-zC-BJu"/>
                     </connections>
@@ -781,8 +792,8 @@ W1s 2Bx,UK</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sent to (012) 123 456 789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-Uw-mz1">
-                                        <rect key="frame" x="29" y="192.5" width="187.5" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent to 123 673 9875" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-Uw-mz1">
+                                        <rect key="frame" x="29" y="192.5" width="155.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                         <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -807,19 +818,8 @@ W1s 2Bx,UK</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFm-Ms-PGm">
                                         <rect key="frame" x="47" y="122" width="226" height="69.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I didn’t receive a code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SJ-sw-ozd" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="28.5" y="20" width="169" height="22"/>
-                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
-                                                <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                        <real key="value" value="0.13"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbe-SA-efE" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="50" width="54.5" height="22"/>
+                                                <rect key="frame" x="86" y="49" width="54.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -840,13 +840,11 @@ W1s 2Bx,UK</string>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="9ZS-mk-YbX" secondAttribute="bottom" id="0AG-dR-2ru"/>
                                             <constraint firstItem="9ZS-mk-YbX" firstAttribute="leading" secondItem="lFm-Ms-PGm" secondAttribute="leading" id="7HW-m0-fg3"/>
-                                            <constraint firstItem="qbe-SA-efE" firstAttribute="top" secondItem="0SJ-sw-ozd" secondAttribute="bottom" constant="8" id="9nI-VZ-8oJ"/>
                                             <constraint firstItem="qbe-SA-efE" firstAttribute="centerX" secondItem="lFm-Ms-PGm" secondAttribute="centerX" id="QWa-qq-Iv4"/>
-                                            <constraint firstItem="0SJ-sw-ozd" firstAttribute="top" secondItem="lFm-Ms-PGm" secondAttribute="top" constant="20" id="aQK-tW-yWY"/>
+                                            <constraint firstItem="qbe-SA-efE" firstAttribute="top" secondItem="lFm-Ms-PGm" secondAttribute="top" constant="49" id="R5u-CO-0XN"/>
                                             <constraint firstItem="9ZS-mk-YbX" firstAttribute="top" secondItem="lFm-Ms-PGm" secondAttribute="top" id="mSe-BG-O3s"/>
                                             <constraint firstAttribute="trailing" secondItem="9ZS-mk-YbX" secondAttribute="trailing" id="nfR-o9-flq"/>
                                             <constraint firstAttribute="width" constant="226" id="ryk-qi-0NI"/>
-                                            <constraint firstItem="0SJ-sw-ozd" firstAttribute="centerX" secondItem="lFm-Ms-PGm" secondAttribute="centerX" id="xb2-Gh-1N0"/>
                                             <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="qbe-SA-efE" secondAttribute="bottom" constant="38" id="yM7-58-fRi"/>
                                         </constraints>
                                     </view>
@@ -982,7 +980,7 @@ W1s 2Bx,UK</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WZ-UQ-Jlc">
                                 <rect key="frame" x="0.0" y="421.5" width="320" height="146.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-yu-VrZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-yu-VrZ" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="25" y="32" width="270" height="45"/>
                                         <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -994,6 +992,9 @@ W1s 2Bx,UK</string>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                <real key="value" value="0.22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1030,10 +1031,13 @@ W1s 2Bx,UK</string>
                     </view>
                     <connections>
                         <outlet property="doneBtn" destination="Yc7-yu-VrZ" id="por-0e-ize"/>
+                        <outlet property="mainTitleLbl" destination="kLs-Vu-llU" id="V6t-ex-AsQ"/>
                         <outlet property="otpField1" destination="FsQ-IQ-Nmr" id="L0S-Pm-NZi"/>
                         <outlet property="otpField2" destination="ybd-dU-lpY" id="NJy-jc-yCR"/>
                         <outlet property="otpField3" destination="L5c-jl-rfG" id="yTi-It-tJO"/>
                         <outlet property="otpField4" destination="0Hn-s6-e2c" id="yXx-dV-T06"/>
+                        <outlet property="resendLbl" destination="qbe-SA-efE" id="GUd-cN-dyf"/>
+                        <outlet property="sentToLbl" destination="Ldd-Uw-mz1" id="bNu-u0-rU0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GU3-LU-mMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1223,11 +1227,13 @@ W1s 2Bx,UK</string>
                         <viewLayoutGuide key="safeArea" id="aTA-dg-Y0h"/>
                     </view>
                     <connections>
+                        <outlet property="mainTitleLbl" destination="ldx-yJ-P2E" id="1in-Ur-bR4"/>
                         <outlet property="nextBtn" destination="rbs-Na-LzZ" id="F8u-nr-f0D"/>
                         <outlet property="optionsStack" destination="50X-HH-94b" id="tvH-wd-QC5"/>
                         <outlet property="optionsView" destination="kT1-xo-vSO" id="GDj-ro-e4Z"/>
                         <outlet property="scanBackView" destination="eAm-rZ-EwB" id="56v-eb-I2v"/>
                         <outlet property="scanFrontView" destination="0vp-RS-fdv" id="VYs-Jx-zAh"/>
+                        <outlet property="selectYourIDLbl" destination="jmA-jl-4yA" id="qpw-TN-kGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3T-du-E80" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1425,8 +1431,12 @@ W1s 2Bx,UK</string>
                         <viewLayoutGuide key="safeArea" id="V6d-Ai-h8O"/>
                     </view>
                     <connections>
+                        <outlet property="mainTitleLbl" destination="bft-H7-Xdw" id="zuM-3A-RvT"/>
                         <outlet property="nextBtn" destination="eRw-BH-RSG" id="yNr-b4-bUf"/>
+                        <outlet property="openCamera" destination="QsB-wJ-AGv" id="KqH-DV-kDe"/>
                         <outlet property="openCameraView" destination="gfn-7h-0Pr" id="Cv4-FG-plb"/>
+                        <outlet property="step1Lbl" destination="GtL-Tk-UcO" id="Sfr-3R-wba"/>
+                        <outlet property="step2Lbl" destination="ZnJ-ur-oeP" id="7yA-5p-dd0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUE-F9-8Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1555,8 +1565,11 @@ W1s 2Bx,UK</string>
                         <viewLayoutGuide key="safeArea" id="cEH-VV-AxS"/>
                     </view>
                     <connections>
+                        <outlet property="TermsAndConditionLbl" destination="vGV-p3-fqt" id="6Fd-aN-5aA"/>
+                        <outlet property="bySigningUpLbl" destination="iPy-qr-sd2" id="IAY-wL-ksp"/>
                         <outlet property="confirmPasswordTextField" destination="ItV-Ip-Gcs" id="b6r-ZU-w0h"/>
                         <outlet property="doneBtn" destination="4lG-V0-bW0" id="i3M-nL-v1E"/>
+                        <outlet property="mainTitleLbl" destination="jMU-4A-xwK" id="J2a-2Q-SoV"/>
                         <outlet property="passwordTextField" destination="3Q6-8g-WHV" id="E07-dw-NiD"/>
                         <outlet property="termsPrivacyLbl" destination="vGV-p3-fqt" id="eZ3-Jk-72g"/>
                     </connections>
@@ -1574,14 +1587,14 @@ W1s 2Bx,UK</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registeredAddress" translatesAutoresizingMaskIntoConstraints="NO" id="e6O-xp-bHE">
-                                <rect key="frame" x="23" y="84" width="79" height="61"/>
+                                <rect key="frame" x="23" y="55" width="79" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="8H3-oA-ZVe"/>
                                     <constraint firstAttribute="width" constant="79" id="guK-Dt-4Kl"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your registered address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-c1-lef" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="175" width="243" height="31"/>
+                                <rect key="frame" x="23" y="146" width="243" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Ino-gf-W5k"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="fch-zk-BvQ"/>
@@ -1596,7 +1609,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqO-5S-qLu">
-                                <rect key="frame" x="25" y="432" width="270" height="45"/>
+                                <rect key="frame" x="25" y="494" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="J2u-84-R92"/>
@@ -1614,14 +1627,14 @@ W1s 2Bx,UK</string>
                                     <action selector="doneClicked:" destination="Y8Y-G0-LtA" eventType="touchUpInside" id="F2r-2M-j69"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
-                                <rect key="frame" x="25" y="214" width="270" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
+                                <rect key="frame" x="25" y="185" width="270" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="unit/apt/house number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-X9-ITF">
-                                <rect key="frame" x="25" y="270" width="270" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-X9-ITF">
+                                <rect key="frame" x="25" y="235" width="270" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="VMo-WT-MOW"/>
@@ -1633,8 +1646,8 @@ W1s 2Bx,UK</string>
                                     <outlet property="delegate" destination="Y8Y-G0-LtA" id="QX6-hR-Uxq"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address type here.." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-xB-SDV">
-                                <rect key="frame" x="25" y="324" width="270" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-xB-SDV">
+                                <rect key="frame" x="25" y="289" width="270" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eC5-oU-hdL"/>
@@ -1646,24 +1659,56 @@ W1s 2Bx,UK</string>
                                     <outlet property="delegate" destination="Y8Y-G0-LtA" id="Wxt-xy-ETi"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-Py-uCM">
+                                <rect key="frame" x="25" y="343" width="270" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kcN-Yk-WNP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y8Y-G0-LtA" id="Guq-s2-SB9"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xbq-CJ-GE1">
+                                <rect key="frame" x="25" y="397" width="270" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="O7q-yC-pGH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y8Y-G0-LtA" id="JM2-ZE-ijH"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xbq-CJ-GE1" firstAttribute="top" secondItem="q1e-Py-uCM" secondAttribute="bottom" constant="9" id="1bg-bv-BB0"/>
                             <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" secondItem="HqO-5S-qLu" secondAttribute="trailing" constant="25" id="1oB-ZC-Pay"/>
                             <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" secondItem="cNe-JM-fZV" secondAttribute="trailing" constant="25" id="593-Pi-DqB"/>
                             <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="njn-c1-lef" secondAttribute="trailing" symbolic="YES" id="8Ve-Jd-pTI"/>
-                            <constraint firstItem="e6O-xp-bHE" firstAttribute="top" secondItem="qOs-0O-SAp" secondAttribute="top" constant="64" id="8eI-Xl-paL"/>
+                            <constraint firstItem="e6O-xp-bHE" firstAttribute="top" secondItem="qOs-0O-SAp" secondAttribute="top" constant="35" id="8eI-Xl-paL"/>
+                            <constraint firstItem="Xbq-CJ-GE1" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="25" id="AAi-7V-RJA"/>
                             <constraint firstItem="Wwd-xB-SDV" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="25" id="E4d-9x-LkZ"/>
+                            <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" secondItem="Xbq-CJ-GE1" secondAttribute="trailing" constant="25" id="Fj7-uj-s27"/>
                             <constraint firstItem="njn-c1-lef" firstAttribute="top" secondItem="e6O-xp-bHE" secondAttribute="bottom" constant="30" id="GLP-VP-b6E"/>
+                            <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" secondItem="q1e-Py-uCM" secondAttribute="trailing" constant="25" id="HoD-jw-Vqh"/>
                             <constraint firstItem="cNe-JM-fZV" firstAttribute="top" secondItem="njn-c1-lef" secondAttribute="bottom" constant="8" id="J9y-ad-NXc"/>
                             <constraint firstItem="Wwd-xB-SDV" firstAttribute="top" secondItem="xcD-X9-ITF" secondAttribute="bottom" constant="9" id="Raf-xI-2kc"/>
-                            <constraint firstItem="xcD-X9-ITF" firstAttribute="top" secondItem="cNe-JM-fZV" secondAttribute="bottom" constant="34" id="S0e-qS-Y9J"/>
+                            <constraint firstItem="xcD-X9-ITF" firstAttribute="top" secondItem="cNe-JM-fZV" secondAttribute="bottom" constant="28" id="S0e-qS-Y9J"/>
                             <constraint firstItem="xcD-X9-ITF" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="25" id="S5C-md-REX"/>
                             <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" secondItem="xcD-X9-ITF" secondAttribute="trailing" constant="25" id="U4m-dF-N4F"/>
+                            <constraint firstItem="HqO-5S-qLu" firstAttribute="top" secondItem="Xbq-CJ-GE1" secondAttribute="bottom" constant="52" id="WPf-hI-Gnf"/>
                             <constraint firstItem="cNe-JM-fZV" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="25" id="eg2-dA-Hqf"/>
-                            <constraint firstItem="HqO-5S-qLu" firstAttribute="top" secondItem="Wwd-xB-SDV" secondAttribute="bottom" constant="63" id="i3v-7c-mMf"/>
                             <constraint firstItem="e6O-xp-bHE" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="23" id="j6S-O5-LWe"/>
+                            <constraint firstItem="q1e-Py-uCM" firstAttribute="top" secondItem="Wwd-xB-SDV" secondAttribute="bottom" constant="9" id="kcS-2P-ZgQ"/>
                             <constraint firstItem="HqO-5S-qLu" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="25" id="lE5-Sa-l9R"/>
+                            <constraint firstItem="q1e-Py-uCM" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="25" id="qRv-mm-kMo"/>
                             <constraint firstItem="njn-c1-lef" firstAttribute="leading" secondItem="qOs-0O-SAp" secondAttribute="leading" constant="23" id="qX2-bL-NyE"/>
                             <constraint firstItem="qOs-0O-SAp" firstAttribute="trailing" secondItem="Wwd-xB-SDV" secondAttribute="trailing" constant="25" id="zO7-pI-F3v"/>
                         </constraints>
@@ -1694,7 +1739,7 @@ W1s 2Bx,UK</string>
                                     <constraint firstAttribute="height" constant="107" id="NXJ-ee-ax2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’re all done !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-nn-Bsx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’re all done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-nn-Bsx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="76" y="211" width="168" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Gib-tw-qSn"/>
@@ -1758,6 +1803,11 @@ to your registered address</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kkk-48-uCl"/>
                     </view>
+                    <connections>
+                        <outlet property="doneBtn" destination="DhB-f3-Ost" id="Sch-dH-BC1"/>
+                        <outlet property="mainTitleLbl" destination="0Hh-nn-Bsx" id="HU6-FZ-j65"/>
+                        <outlet property="messageLbl" destination="Es4-5K-pZ1" id="Hbd-d5-117"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atj-qQ-0FZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1852,9 +1902,20 @@ to your registered address</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="zk7-S8-au5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="zk7-S8-au5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46F-GU-Fva">
+                                <rect key="frame" x="16" y="31" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="CKp-tl-C2a"/>
+                                    <constraint firstAttribute="height" constant="30" id="q6w-08-tqD"/>
+                                </constraints>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <action selector="settingsClicked:" destination="Az4-av-sKm" eventType="touchUpInside" id="2L7-3m-Rdc"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5g-Ed-1hl">
                                 <rect key="frame" x="274" y="31" width="30" height="30"/>
                                 <constraints>
@@ -1862,6 +1923,9 @@ to your registered address</string>
                                     <constraint firstAttribute="width" constant="30" id="bkE-bC-U26"/>
                                 </constraints>
                                 <state key="normal" image="cross"/>
+                                <connections>
+                                    <action selector="crossClicked:" destination="Az4-av-sKm" eventType="touchUpInside" id="naa-19-S9t"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-EY-urc">
                                 <rect key="frame" x="0.0" y="84" width="320" height="484"/>
@@ -1896,13 +1960,18 @@ to your registered address</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QBh-EY-urc" firstAttribute="top" secondItem="46F-GU-Fva" secondAttribute="bottom" constant="23" id="GQG-xg-N4B"/>
                             <constraint firstItem="zk7-S8-au5" firstAttribute="top" secondItem="H1c-JA-wyi" secondAttribute="top" id="LRL-Vy-2jw"/>
                             <constraint firstItem="zk7-S8-au5" firstAttribute="leading" secondItem="Bnl-pV-DHd" secondAttribute="leading" id="O0L-04-ToA"/>
+                            <constraint firstItem="46F-GU-Fva" firstAttribute="top" secondItem="Bnl-pV-DHd" secondAttribute="top" constant="11" id="OX0-af-Vh8"/>
+                            <constraint firstItem="QBh-EY-urc" firstAttribute="top" secondItem="K5g-Ed-1hl" secondAttribute="bottom" constant="23" id="TT2-j4-7TI"/>
                             <constraint firstItem="zk7-S8-au5" firstAttribute="bottom" secondItem="Bnl-pV-DHd" secondAttribute="bottom" id="ZPC-eN-XJw"/>
+                            <constraint firstItem="46F-GU-Fva" firstAttribute="leading" secondItem="Bnl-pV-DHd" secondAttribute="leading" constant="16" id="aix-OW-ost"/>
                             <constraint firstItem="QBh-EY-urc" firstAttribute="bottom" secondItem="Bnl-pV-DHd" secondAttribute="bottom" id="b5X-m7-MIu"/>
                             <constraint firstItem="QBh-EY-urc" firstAttribute="top" secondItem="K5g-Ed-1hl" secondAttribute="bottom" constant="23" id="c5X-31-Jk5"/>
                             <constraint firstItem="K5g-Ed-1hl" firstAttribute="top" secondItem="Bnl-pV-DHd" secondAttribute="top" constant="11" id="iNm-fT-mo1"/>
                             <constraint firstItem="zk7-S8-au5" firstAttribute="trailing" secondItem="Bnl-pV-DHd" secondAttribute="trailing" id="jdl-mX-3HU"/>
+                            <constraint firstItem="K5g-Ed-1hl" firstAttribute="top" secondItem="Bnl-pV-DHd" secondAttribute="top" constant="11" id="q74-GL-UJd"/>
                             <constraint firstItem="QBh-EY-urc" firstAttribute="trailing" secondItem="Bnl-pV-DHd" secondAttribute="trailing" id="uCH-re-jgz"/>
                             <constraint firstItem="QBh-EY-urc" firstAttribute="leading" secondItem="Bnl-pV-DHd" secondAttribute="leading" id="uVT-Oy-lw6"/>
                             <constraint firstItem="Bnl-pV-DHd" firstAttribute="trailing" secondItem="K5g-Ed-1hl" secondAttribute="trailing" constant="16" id="v0R-xn-oQd"/>
@@ -2232,6 +2301,52 @@ to your registered address</string>
             </objects>
             <point key="canvasLocation" x="11034" y="-55"/>
         </scene>
+        <!--Notification Settings View Controller-->
+        <scene sceneID="vh5-fL-ntr">
+            <objects>
+                <viewController storyboardIdentifier="NotificationSettingsViewController" id="qG0-zu-NhI" customClass="NotificationSettingsViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="omK-Pc-pYZ" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="KiG-8c-eNd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sP8-br-ByL" customClass="CommonTable" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="83" width="270" height="204"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="Ke8-QM-5Vi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g3b-Ei-cjd" firstAttribute="trailing" secondItem="sP8-br-ByL" secondAttribute="trailing" constant="25" id="3et-W5-aMl"/>
+                            <constraint firstItem="KiG-8c-eNd" firstAttribute="top" secondItem="omK-Pc-pYZ" secondAttribute="top" id="4tI-Hb-Fzr"/>
+                            <constraint firstItem="sP8-br-ByL" firstAttribute="leading" secondItem="g3b-Ei-cjd" secondAttribute="leading" constant="25" id="Akc-Tu-20x"/>
+                            <constraint firstItem="g3b-Ei-cjd" firstAttribute="bottom" secondItem="KiG-8c-eNd" secondAttribute="bottom" id="XwU-jC-g6h"/>
+                            <constraint firstItem="sP8-br-ByL" firstAttribute="top" secondItem="g3b-Ei-cjd" secondAttribute="top" constant="63" id="mRs-BE-4R4"/>
+                            <constraint firstItem="KiG-8c-eNd" firstAttribute="leading" secondItem="g3b-Ei-cjd" secondAttribute="leading" id="oM9-cv-QdE"/>
+                            <constraint firstItem="g3b-Ei-cjd" firstAttribute="trailing" secondItem="KiG-8c-eNd" secondAttribute="trailing" id="rCf-ms-gQr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g3b-Ei-cjd"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="sP8-br-ByL" id="AtP-fg-cKQ"/>
+                        <outlet property="containerViewHeightConstraint" destination="Ke8-QM-5Vi" id="ZVE-qA-Vdn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ey-7Q-pfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16834" y="-57"/>
+        </scene>
         <!--Legal Stuff View Controller-->
         <scene sceneID="dIQ-Iy-c3Z">
             <objects>
@@ -2299,7 +2414,7 @@ to your registered address</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Problem ! We’ll send you a new one pronto !" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgC-WD-2ek" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Problem! We’ll send you a new one pronto!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgC-WD-2ek" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="25" y="236" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ntK-DL-UyW"/>
@@ -2320,8 +2435,8 @@ to your registered address</string>
                                     <constraint firstAttribute="height" constant="74" id="vKN-gc-Svj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost your card ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-eN-CK5" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="194" width="211.5" height="40.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost your card?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-eN-CK5" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="194" width="211" height="40.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40.5" id="Xhg-Jb-SRX"/>
                                 </constraints>
@@ -2430,6 +2545,12 @@ to your registered address</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QlR-ho-U1e"/>
                     </view>
+                    <connections>
+                        <outlet property="mainTitleLbl" destination="hqT-eN-CK5" id="fzf-sf-vs8"/>
+                        <outlet property="sendToBtn1" destination="ufj-57-cmI" id="dIa-fo-YlK"/>
+                        <outlet property="sendToBtn2" destination="LTl-4D-dbH" id="Xpr-xm-wO4"/>
+                        <outlet property="subTitleLbl" destination="YgC-WD-2ek" id="yvW-EU-IVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtx-Jq-8dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2482,6 +2603,9 @@ to your registered address</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TqR-a3-YhC"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLbl" destination="SLZ-wU-F5Z" id="yrn-vV-zsz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1D7-hk-6sP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2543,6 +2667,7 @@ to your registered address</string>
                     <connections>
                         <outlet property="containerView" destination="HUT-Gq-jrI" id="3Us-IQ-wPa"/>
                         <outlet property="containerViewHeightConstraint" destination="UXC-Pl-nIo" id="KoX-DP-cWF"/>
+                        <outlet property="mainTitlelbl" destination="McX-1k-fX7" id="d1i-bK-mbJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbF-NZ-E4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2567,8 +2692,8 @@ to your registered address</string>
                                     <constraint firstAttribute="width" constant="189" id="eUT-PJ-vcK"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bg-GW-T9p" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="89" y="223" width="142.5" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bg-GW-T9p" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="99" y="208" width="142.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vBo-Oa-aCy"/>
                                 </constraints>
@@ -2598,6 +2723,9 @@ and get $200</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gaN-IM-W4W"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLbl" destination="5Bg-GW-T9p" id="tPq-5C-EuA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g72-6R-vVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2622,11 +2750,11 @@ and get $200</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biV-9g-IOx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="33" y="223" width="254" height="80"/>
+                                <rect key="frame" x="35" y="223" width="250.5" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="v7T-G7-gwO"/>
                                 </constraints>
-                                <string key="text">Uh oh ! Looks like you don’t have enough 
+                                <string key="text">Uh oh! Looks like you don’t have enough 
 funds
 in your account fot this fearure.Top 
 up and site back and relax.</string>
@@ -2654,6 +2782,9 @@ up and site back and relax.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5MU-un-fTU"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLbl" destination="biV-9g-IOx" id="ZEe-sy-SPN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67S-yQ-DOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2671,11 +2802,11 @@ up and site back and relax.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha4-qS-gbv" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="33" y="244" width="254" height="80"/>
+                                <rect key="frame" x="35" y="244" width="250.5" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="MYQ-L9-QHX"/>
                                 </constraints>
-                                <string key="text">Uh oh ! Looks like you don’t have enough 
+                                <string key="text">Uh oh! Looks like you don’t have enough 
 funds
 in your account fot this fearure.Top 
 up and site back and relax.</string>
@@ -2700,6 +2831,9 @@ up and site back and relax.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fbc-bF-bbF"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLbl" destination="Ha4-qS-gbv" id="FAd-zB-cj5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3s-u9-Oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2720,7 +2854,7 @@ up and site back and relax.</string>
                                     <constraint firstAttribute="width" constant="107" id="iQu-3E-igV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwG-HF-nbo" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwG-HF-nbo" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="76" y="211" width="168" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="DY3-L1-pyG"/>
@@ -2781,6 +2915,11 @@ up and site back and relax.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ugi-Og-dpl"/>
                     </view>
+                    <connections>
+                        <outlet property="mainTitleLbl" destination="SwG-HF-nbo" id="aPY-Xz-0CZ"/>
+                        <outlet property="okBtn" destination="M7v-0T-TiZ" id="9up-CD-JEP"/>
+                        <outlet property="subTitleLbl" destination="CbV-rK-EGn" id="iBv-vR-nvi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nT-l0-7aW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2811,5 +2950,6 @@ up and site back and relax.</string>
         <image name="scanBackId" width="91" height="52"/>
         <image name="scanFrontId" width="91" height="52"/>
         <image name="scanIdBg" width="228" height="143"/>
+        <image name="settings" width="32" height="32"/>
     </resources>
 </document>

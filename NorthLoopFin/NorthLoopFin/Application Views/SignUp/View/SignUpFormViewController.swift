@@ -10,13 +10,14 @@ import UIKit
 import Auth0
 
 class SignUpFormViewController: BaseViewController {
-
+    @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
    // @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
-    
+    @IBOutlet weak var loginLbl: LabelWithLetterSpace!
+    @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
     var auth0Mngr:Auth0ApiCallManager!
 
@@ -26,16 +27,16 @@ class SignUpFormViewController: BaseViewController {
     }
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
-                //if (Validations.isValidEmail(email: self.emailTextField.text!)){
+                if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
                     if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
 //                        self.callPhoneVerificationAPI()
 //                        moveToOTPScreen()
                         self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
                     }else{
                         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
-//                }else{
-//                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
-//            }
+                }else{
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
+            }
     }
     
     func addUserMetaData(firstName: String, lastName: String, phone:String){
@@ -63,6 +64,27 @@ class SignUpFormViewController: BaseViewController {
         self.inactivateNextBtn()
         self.setupRightNavigationBar()
         updateTextFieldUI()
+        self.prepareView()
+    }
+    
+    /// Prepare view by setting color and fonts to view components
+    func prepareView(){
+        //Set text color to view components
+        self.mainTitleLbl.textColor = Colors.MainTitleColor
+        self.firstNameTextField.textColor = Colors.DustyGray155155155
+        self.lastNameTextField.textColor = Colors.DustyGray155155155
+        self.phoneTextField.textColor = Colors.DustyGray155155155
+        self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
+        self.loginLbl.textColor = Colors.NeonCarrot25414966
+        
+        // Set Font to view components
+        self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
+        self.firstNameTextField.font = AppFonts.textBoxCalibri16
+        self.lastNameTextField.font = AppFonts.textBoxCalibri16
+        self.phoneTextField.font = AppFonts.textBoxCalibri16
+        self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
+        self.alreadyHaveaccountLbl.font = AppFonts.calibri15
+        self.loginLbl.font = AppFonts.calibriBold15
     }
     
     func updateTextFieldUI(){
@@ -154,8 +176,6 @@ extension SignUpFormViewController:RailsBankDelegate{
     func didFailedWithError(err: Error) {
         
     }
-    
-    
 }
 
 

@@ -11,4 +11,5 @@ import Foundation
 protocol SideMenuDelegate
 {
     func moveToScreen(screen: AppConstants.SideMenuOptions )
+    func closeMenu()
 }

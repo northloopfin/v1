@@ -29,6 +29,8 @@ class HelpViewController: BaseViewController {
     func prepareView(){
         var dataSource:[String] = []
         dataSource.append(AppConstants.HelpOptions.FAQ.rawValue)
+        dataSource.append(AppConstants.HelpOptions.CHATWITHUS.rawValue)
+        dataSource.append(AppConstants.HelpOptions.ATMFINDER.rawValue)
         dataSource.append(AppConstants.HelpOptions.LEGALSTUFF.rawValue)
         
         containerView.dataSource = dataSource
@@ -44,6 +46,10 @@ extension HelpViewController:CommonTableDelegate{
         case 0:
             self.moveToFAQ()
         case 1:
+            self.moveToLegalStuff()
+        case 2:
+            self.moveToLegalStuff()
+        case 3:
             self.moveToLegalStuff()
         default:
             break
