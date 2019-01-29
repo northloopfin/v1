@@ -22,7 +22,7 @@ class WelcomeViewController: BaseViewController {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.isLoginScreenOpened = true
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as!  SignUpFormViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as!  ScanIDViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     

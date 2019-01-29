@@ -71,14 +71,15 @@ class ScanIDViewController: BaseViewController {
             selectedButton.layer.borderWidth=0.0
             selectedButton.setTitleColor(UIColor.white, for: .normal)
             selectedButton.backgroundColor = Colors.Cameo213186154//UIColor.lightGray
-            selectedButton.setImage(UIImage.init(named: "tick"), for: .normal)
-            selectedButton.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: spacing)//UIEdgeInsetsMake(0, 0, 0, spacing);
-            selectedButton.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: spacing, bottom: 0, right: 0)//UIEdgeInsetsMake(0, spacing, 0, 0);
-            selectedButton.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-            selectedButton.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-            selectedButton.imageView?.transform = CGAffineTransform(scaleX: -5.0, y: 1.0)
-            selectedButton.layoutSubviews()
-            selectedButton.sizeToFit()
+//            selectedButton.setImage(UIImage.init(named: "tick"), for: .normal)
+            selectedButton.set(image: UIImage.init(named: "tick"), title: (selectedButton.titleLabel?.text)!, titlePosition: .left, additionalSpacing: 10.0, state: .normal)
+           // selectedButton.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: spacing)//UIEdgeInsetsMake(0, 0, 0, spacing);
+           // selectedButton.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: spacing, bottom: 0, right: 0)//UIEdgeInsetsMake(0, spacing, 0, 0);
+           // selectedButton.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+           // selectedButton.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            //selectedButton.imageView?.transform = CGAffineTransform(scaleX: -5.0, y: 1.0)
+            //selectedButton.layoutSubviews()
+            //selectedButton.sizeToFit()
             
         }
 

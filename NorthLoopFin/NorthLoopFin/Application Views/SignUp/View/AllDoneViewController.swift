@@ -30,7 +30,6 @@ class AllDoneViewController: BaseViewController {
     
     @IBAction func doneClicked(_ sender: Any) {
         let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
-        containerViewController.shadow.enabled = false
         var initialNavigationController:UINavigationController
 
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

@@ -5,6 +5,7 @@ import GoogleMaps
 import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
+import DropDown
 
 class AppLaunchSetup: NSObject {
     
@@ -27,6 +28,7 @@ class AppLaunchSetup: NSObject {
     func initialiseThirdPartyIfAny(){
         GMSServices.provideAPIKey(AppConstants.GoogleMapAPIKey ?? "")
         IQKeyboardManager.shared.enable = true
+        //DropDown.startListeningToKeyboard()
         Fabric.with([Crashlytics.self])
     }
 }

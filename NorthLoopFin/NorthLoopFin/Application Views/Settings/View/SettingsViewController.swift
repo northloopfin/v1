@@ -43,7 +43,7 @@ extension SettingsViewController:CommonTableDelegate{
         switch optionVal {
         case 0:
             print("Notification")
-            //self.moveToNotificationSettings()
+            self.moveToNotificationSettings()
         case 1:
             //self.moveToNewPin()
             print("Privacy Preferences")
@@ -64,7 +64,9 @@ extension SettingsViewController:CommonTableDelegate{
         }
     }
     func moveToNotificationSettings(){
-    
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NotificationSettingsViewController") as! NotificationSettingsViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func moveToNewPin(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

@@ -73,6 +73,8 @@
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
+		1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */; };
+		1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */; };
 		1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */; };
 		1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6A76B21F5AA1600C38205 /* Fonts.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
@@ -214,6 +216,8 @@
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonWithImageAndTitleExtension.swift; sourceTree = "<group>"; };
 		1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
 		1DC6A76B21F5AA1600C38205 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
@@ -574,6 +578,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1DB6479721FEBEF9004C483E /* Add Goal */,
 				1DB8C0DA21F9715F009F437A /* Notification Settings */,
 				1D3E554121F1AD1600557825 /* Confirmed */,
 				1D3E553D21F1A85000557825 /* New Pin */,
@@ -666,6 +671,22 @@
 				1D72718521EF30A00084A57E /* CommonTableDelegate.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1DB6479721FEBEF9004C483E /* Add Goal */ = {
+			isa = PBXGroup;
+			children = (
+				1DB6479821FEBF18004C483E /* View */,
+			);
+			path = "Add Goal";
+			sourceTree = "<group>";
+		};
+		1DB6479821FEBF18004C483E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1DB8C0DA21F9715F009F437A /* Notification Settings */ = {
@@ -930,6 +951,7 @@
 		297FB9CE21B531DE008D60CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */,
 				1D818A0A21C10E3E000C8F5F /* UITableViewExtension.swift */,
 				297FB9D121B5322D008D60CE /* BaseViewController.swift */,
 				297FB9D221B5322D008D60CE /* BaseViewProtocol.swift */,
@@ -1293,6 +1315,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
@@ -1306,6 +1329,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
@@ -1327,6 +1351,7 @@
 			files = (
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
+				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
 				1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */,
 				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
@@ -1402,6 +1427,7 @@
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
 				1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */,
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
+				1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */,
 				1D72718421EF14890084A57E /* LegalStuffViewController.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
