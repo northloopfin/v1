@@ -8,6 +8,7 @@
 
 import UIKit
 import Auth0
+import Crashlytics
 
 class WelcomeViewController: BaseViewController {
     var auth0Mngr:Auth0ApiCallManager!
@@ -19,11 +20,9 @@ class WelcomeViewController: BaseViewController {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.isLoginScreenOpened = true
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as!  ScanIDViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+            //Crashlytics.sharedInstance().crash()
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {

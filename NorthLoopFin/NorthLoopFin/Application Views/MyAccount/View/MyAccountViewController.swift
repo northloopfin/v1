@@ -45,13 +45,13 @@ extension MyAccountViewController:CommonTableDelegate{
     func didSelectOption(optionVal: Int) {
         switch optionVal {
         case 0:
-            self.moveToOptions()
+            self.moveToSettings()
         case 1:
-            self.moveToOptions()
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 2:
-            self.moveToOptions()
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 3:
-            self.moveToOptions()
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         default:
             break
         }
@@ -60,11 +60,5 @@ extension MyAccountViewController:CommonTableDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func moveToChangeAddress(){
-       
-    }
-    func moveToOptions(){
-        
     }
 }

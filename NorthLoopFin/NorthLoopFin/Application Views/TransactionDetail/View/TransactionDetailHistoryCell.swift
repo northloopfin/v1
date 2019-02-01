@@ -9,7 +9,9 @@
 import UIKit
 
 class TransactionDetailHistoryCell: UITableViewCell {
-
+    @IBOutlet weak var optionLbl: LabelWithLetterSpace!
+    @IBOutlet weak var valueLbl: LabelWithLetterSpace!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +21,9 @@ class TransactionDetailHistoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func bindData(value:String){
+        self.optionLbl.text=value
     }
     
 }

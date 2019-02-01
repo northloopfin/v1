@@ -27,6 +27,9 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - HockeySDK (5.1.4):
+    - HockeySDK/DefaultLib (= 5.1.4)
+  - HockeySDK/DefaultLib (5.1.4)
   - IQKeyboardManagerSwift (6.2.0)
   - MFSideMenu (0.5.5)
   - PWSwitch (1.1.2)
@@ -42,6 +45,7 @@ DEPENDENCIES:
   - Fabric
   - GoogleMaps
   - GooglePlaces
+  - HockeySDK (~> 5.1.4)
   - IQKeyboardManagerSwift
   - MFSideMenu
   - PWSwitch
@@ -57,6 +61,7 @@ SPEC REPOS:
     - Fabric
     - GoogleMaps
     - GooglePlaces
+    - HockeySDK
     - IQKeyboardManagerSwift
     - MFSideMenu
     - PWSwitch
@@ -72,6 +77,7 @@ SPEC CHECKSUMS:
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
   PWSwitch: 399db6ef5dd8417f9a1e9f82cb70602f10a6c38f
@@ -79,6 +85,6 @@ SPEC CHECKSUMS:
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ddab6a7f2f55016ad6c99d6c3db5343796ad3c77
+PODFILE CHECKSUM: a4d9406eaec8f95d8638e601a63ae78e3e34bdbb
 
 COCOAPODS: 1.5.3

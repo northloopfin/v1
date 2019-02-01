@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(2)
         
         //For Testing only
-        UserInformationUtility.sharedInstance.saveUser(islogged: false)
+        UserInformationUtility.sharedInstance.saveUser(islogged: true)
         self.initialViewController()
         return true
     }

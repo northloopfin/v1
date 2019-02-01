@@ -46,9 +46,9 @@ extension HelpViewController:CommonTableDelegate{
         case 0:
             self.moveToFAQ()
         case 1:
-            self.moveToLegalStuff()
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 2:
-            self.moveToLegalStuff()
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 3:
             self.moveToLegalStuff()
         default:

@@ -204,7 +204,7 @@
                             <view alpha="0.93999999999999995" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I07-P7-y2W" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="146.5" width="280" height="334.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starbucks Coffee Shop" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-U8-D5L" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Starbucks Coffee Shop" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-U8-D5L" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="33" y="64" width="214" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="20"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.26666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
@@ -229,7 +229,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gn-UK-4pn">
-                                        <rect key="frame" x="0.0" y="159" width="280" height="119"/>
+                                        <rect key="frame" x="0.0" y="159" width="280" height="95"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$58.8" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skz-G2-2dH" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="19" width="57" height="31"/>
@@ -244,7 +244,7 @@ W1s 2Bx,UK</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="13:09 Sunday , 20 Feb , 2018" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Ti-2b9" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="34" y="56" width="186" height="17"/>
+                                                <rect key="frame" x="34" y="56" width="186" height="20"/>
                                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -255,7 +255,7 @@ W1s 2Bx,UK</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food &amp; Dinning" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-xy-LGK" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="147" y="19" width="103" height="38"/>
+                                                <rect key="frame" x="147" y="24" width="103" height="20"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.30196078431372547" green="0.22745098039215686" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -270,21 +270,19 @@ W1s 2Bx,UK</string>
                                         <constraints>
                                             <constraint firstItem="MaF-Ti-2b9" firstAttribute="leading" secondItem="Skz-G2-2dH" secondAttribute="leading" id="3Fc-Oj-Qze"/>
                                             <constraint firstItem="Skz-G2-2dH" firstAttribute="leading" secondItem="7gn-UK-4pn" secondAttribute="leading" constant="34" id="8mU-3b-0vZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="MaF-Ti-2b9" secondAttribute="bottom" constant="46" id="Mkp-C9-EtE"/>
-                                            <constraint firstAttribute="height" constant="119" id="PBS-CX-5k0"/>
-                                            <constraint firstAttribute="bottom" secondItem="lWa-xy-LGK" secondAttribute="bottom" constant="62" id="Q63-w1-yuD"/>
+                                            <constraint firstAttribute="height" constant="95" id="PBS-CX-5k0"/>
                                             <constraint firstItem="Skz-G2-2dH" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="top" constant="19" id="aap-wP-dLd"/>
                                             <constraint firstItem="MaF-Ti-2b9" firstAttribute="top" secondItem="Skz-G2-2dH" secondAttribute="bottom" constant="6" id="q2a-iW-Z2D"/>
                                             <constraint firstItem="lWa-xy-LGK" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Skz-G2-2dH" secondAttribute="trailing" constant="156" id="qk5-jD-Qjm"/>
-                                            <constraint firstItem="lWa-xy-LGK" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="top" constant="19" id="sbb-0J-20A"/>
+                                            <constraint firstItem="lWa-xy-LGK" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="top" constant="24" id="sbb-0J-20A"/>
                                             <constraint firstAttribute="trailing" secondItem="lWa-xy-LGK" secondAttribute="trailing" constant="30" id="zZ5-62-Uwa"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzD-ia-0u3">
-                                        <rect key="frame" x="0.0" y="278" width="280" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="254" width="280" height="80.5"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-94-sM7">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="56.5"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-94-sM7">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="80.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -301,7 +299,9 @@ W1s 2Bx,UK</string>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kkJ-94-sM7" secondAttribute="trailing" id="9dK-5B-k5c"/>
                                             <constraint firstItem="kkJ-94-sM7" firstAttribute="top" secondItem="AzD-ia-0u3" secondAttribute="top" id="ibJ-YZ-TvJ"/>
+                                            <constraint firstItem="kkJ-94-sM7" firstAttribute="height" secondItem="AzD-ia-0u3" secondAttribute="height" id="oaT-89-qLs"/>
                                             <constraint firstAttribute="bottom" secondItem="kkJ-94-sM7" secondAttribute="bottom" id="pLF-lR-Nze"/>
+                                            <constraint firstAttribute="height" constant="80.5" id="wpe-Z3-F99"/>
                                             <constraint firstItem="kkJ-94-sM7" firstAttribute="leading" secondItem="AzD-ia-0u3" secondAttribute="leading" id="ydG-xH-o7h"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -389,6 +389,7 @@ W1s 2Bx,UK</string>
                         <outlet property="beneficiaryNameLbl" destination="Lrt-U8-D5L" id="9I9-FX-FUP"/>
                         <outlet property="containerView" destination="I07-P7-y2W" id="zbS-vm-w8J"/>
                         <outlet property="historyTableView" destination="kkJ-94-sM7" id="V4I-Ss-6eH"/>
+                        <outlet property="historyTableViewHeightConstraint" destination="wpe-Z3-F99" id="3VE-u7-Teg"/>
                         <outlet property="timestampLbl" destination="MaF-Ti-2b9" id="SV5-BD-DvZ"/>
                         <outlet property="transactionImg" destination="ifd-L9-QBp" id="U7i-lS-7qk"/>
                         <outlet property="transactionPurposeLbl" destination="lWa-xy-LGK" id="0zO-kx-0BL"/>
@@ -1846,15 +1847,11 @@ W1s 2Bx,UK</string>
                         <viewLayoutGuide key="safeArea" id="FTl-3d-Ndd"/>
                     </view>
                     <connections>
-                        <outlet property="amountTextfield" destination="uQq-Od-0yj" id="pmx-Eq-SIf"/>
-                        <outlet property="cityTextfield" destination="mLo-Ws-mmB" id="SY3-gQ-1rH"/>
-                        <outlet property="completedByTextfield" destination="mLo-Ws-mmB" id="3re-iu-ijm"/>
+                        <outlet property="amountTextfield" destination="uQq-Od-0yj" id="TEO-fp-QET"/>
+                        <outlet property="completedByTextfield" destination="mLo-Ws-mmB" id="g9v-Al-pzE"/>
                         <outlet property="doneBtn" destination="a9S-9G-E0x" id="REi-rj-m6F"/>
-                        <outlet property="houseNumbertextfield" destination="eqG-Ao-4hj" id="WNm-CC-vca"/>
-                        <outlet property="howMuchTextfield" destination="eqG-Ao-4hj" id="iVG-Pp-EyX"/>
-                        <outlet property="nameTextfield" destination="zW0-Nm-b9Q" id="sKI-CG-rvs"/>
-                        <outlet property="streetAddress" destination="zW0-Nm-b9Q" id="VrC-2P-OgL"/>
-                        <outlet property="textState" destination="uQq-Od-0yj" id="eX5-Yq-JgF"/>
+                        <outlet property="howMuchTextfield" destination="eqG-Ao-4hj" id="T97-40-u56"/>
+                        <outlet property="nameTextfield" destination="zW0-Nm-b9Q" id="Tf2-7v-E3l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBY-eG-RzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

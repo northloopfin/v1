@@ -45,20 +45,10 @@ extension SettingsViewController:CommonTableDelegate{
             print("Notification")
             self.moveToNotificationSettings()
         case 1:
-            //self.moveToNewPin()
-            print("Privacy Preferences")
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 2:
             //self.moveToDirectDeposit()
-            print("Marketing Preferences")
-
-        case 3:
-            self.moveToLostInsufficient()
-        case 4:
-            self.moveToConfirmed()
-        case 5:
-            self.moveToMyOffer()
-        case 6:
-            self.moveToAddAccount()
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         default:
             break
         }
@@ -68,37 +58,37 @@ extension SettingsViewController:CommonTableDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NotificationSettingsViewController") as! NotificationSettingsViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
-    func moveToNewPin(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func moveToDirectDeposit(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "DirectDepositViewController") as! DirectDepositViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func moveToLostInsufficient(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostInsufficientViewController") as! LostInsufficientViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func moveToConfirmed(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedViewController") as! ConfirmedViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func moveToMyOffer(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyOffersViewController") as! MyOffersViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func moveToAddAccount(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AddAccountViewController") as! AddAccountViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    
+//    func moveToNewPin(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
+//    func moveToDirectDeposit(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "DirectDepositViewController") as! DirectDepositViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
+//    func moveToLostInsufficient(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostInsufficientViewController") as! LostInsufficientViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
+//    func moveToConfirmed(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedViewController") as! ConfirmedViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
+//    func moveToMyOffer(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyOffersViewController") as! MyOffersViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
+//    func moveToAddAccount(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AddAccountViewController") as! AddAccountViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
+//    
     
     
 }

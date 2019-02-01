@@ -38,6 +38,7 @@ struct AppConstants{
         case PHONE_NOT_VALID = "Please enter a valid Phone Number"
         case NAME_NOT_VALID = "Name should not contain special character and space"
         case ZIP_NOT_VALID = "Please enter a valid ZIP Code"
+        case COMING_SOON = "Coming Soon"
 
     }
     

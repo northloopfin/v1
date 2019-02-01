@@ -16,7 +16,7 @@ class GoalsViewController: BaseViewController {
 
     @IBAction func addButtonClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let addGoalViewController = storyBoard.instantiateViewController(withIdentifier: "v") as! AddGoalViewController
+        let addGoalViewController = storyBoard.instantiateViewController(withIdentifier: "AddGoalViewController") as! AddGoalViewController
         self.navigationController?.pushViewController(addGoalViewController, animated: false)
     }
     override func viewDidLoad() {

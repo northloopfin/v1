@@ -16,8 +16,11 @@ class LostCardViewController: BaseViewController {
     @IBOutlet weak var sendToBtn2: UIButtonWithSpacing!
     
     @IBAction func sendBtn1Clicked(_ sender: Any) {
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
+    
     @IBAction func sendBtn2Clicked(_ sender: Any) {
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

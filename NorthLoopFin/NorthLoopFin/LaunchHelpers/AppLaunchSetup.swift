@@ -7,6 +7,8 @@ import Fabric
 import Crashlytics
 import DropDown
 
+
+
 class AppLaunchSetup: NSObject {
     
     /*
@@ -30,5 +32,12 @@ class AppLaunchSetup: NSObject {
         IQKeyboardManager.shared.enable = true
         //DropDown.startListeningToKeyboard()
         Fabric.with([Crashlytics.self])
+        Fabric.sharedSDK().debug = true
+
+        BITHockeyManager.shared().configure(withIdentifier: "6b2ccf1e4a40462cb0018114afe4f80d")
+        // Do some additional configuration if needed here
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation()
+
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 
 class TransactionDetailViewController: BaseViewController {
+    @IBOutlet weak var historyTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: GradientView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var historyTableView: UITableView!
@@ -20,14 +21,18 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var transactionImg: UIImageView!
     var detailModel:Transaction!
+    var historyOptions : [String] = [] {
+        didSet {
+            self.historyTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBarTitle()
         self.updateUIForRecievedData()
         self.configureTable()
-        self.historyTableView.reloadData()
-        // Do any additional setup after loading the view.
+        self.historyOptions.append(contentsOf: ["Number of Visits","Average Spend"])
     }
     
     override func loadView() {
@@ -93,13 +98,15 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
         self.historyTableView.dataSource=self
         self.historyTableView.registerTableViewCell(tableViewCell: TransactionDetailHistoryCell.self)
         self.historyTableView.registerTableViewHeaderFooterView(tableViewHeaderFooter: TransactionDetailHistoryTableHeader.self)
+        self.historyTableViewHeightConstraint.constant=137
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return historyOptions.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: TransactionDetailHistoryCell = tableView.dequeueReusableCell(withIdentifier: "TransactionDetailHistoryCell") as! TransactionDetailHistoryCell
+        cell.bindData(value: self.historyOptions[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
