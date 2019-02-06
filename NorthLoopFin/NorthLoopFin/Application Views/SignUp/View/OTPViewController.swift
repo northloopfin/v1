@@ -32,6 +32,8 @@ class OTPViewController: BaseViewController {
     @IBAction func doneClicked(_ sender: Any) {
         let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
         self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+        //self.moveToScanIDScreen()
+
     }
     
     override func viewDidLoad() {
@@ -165,6 +167,10 @@ extension OTPViewController:PhoneVerificationDelegate{
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
     }
     func didCheckOTP(result:PhoneVerifyCheck){
+        self.moveToScanIDScreen()
+    }
+    
+    func moveToScanIDScreen(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

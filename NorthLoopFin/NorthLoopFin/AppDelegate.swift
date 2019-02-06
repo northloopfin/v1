@@ -10,25 +10,24 @@ import UIKit
 import MFSideMenu
 
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var sideMenuViewController:SideMenuViewController!
     let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
-    var isLoginScreenOpened = true
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
         //Setting up custon navigation controller
-        Utility.logAllAvailableFonts()
+        
         AppLaunchSetup.shareInstance.startMonitoringNetworkRechability()
         AppLaunchSetup.shareInstance.initialiseThirdPartyIfAny()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AppDelegate.applicationDidTimeout(notification:)),
+                                               name: .appTimeout,
+                                               object: nil
+        )
         sleep(2)
-        
-        //For Testing only
-        UserInformationUtility.sharedInstance.saveUser(islogged: true)
         self.initialViewController()
         return true
     }
@@ -36,13 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initialViewController() ->Void
     {
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        if (UserInformationUtility.sharedInstance.getUser()){
+        if let _:User = UserInformationUtility.sharedInstance.getCurrentUser(){
             var initialNavigationController:UINavigationController
-
             sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
             let homeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as!  HomeViewController
             initialNavigationController = UINavigationController(rootViewController:homeViewController)
-            sideMenuViewController.delegate = homeViewController as? SideMenuDelegate
+            sideMenuViewController.delegate = homeViewController
             initialNavigationController.navigationBar.makeTransparent()
             containerViewController.leftMenuViewController=sideMenuViewController
             containerViewController.centerViewController=initialNavigationController
@@ -53,37 +51,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         }else{
             var initialNavigationController1:UINavigationController
-
             let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
-            
             initialNavigationController1 = UINavigationController(rootViewController:welcomeViewController)
             initialNavigationController1.navigationBar.makeTransparent()
             self.window?.rootViewController = initialNavigationController1
-
         }
         self.window?.makeKeyAndVisible()
+    }
+    @objc func applicationDidTimeout(notification: NSNotification) {
+        
+        print("application did timeout, perform actions")
+        UserInformationUtility.sharedInstance.deleteCurrentUser()
+        self.initialViewController()
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        //UserInformationUtility.sharedInstance.deleteCurrentUser()
+        print("applicationWillResignActive")
+
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        UserInformationUtility.sharedInstance.deleteCurrentUser()
+        print("applicationDidEnterBackground")
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        self.initialViewController()
+        print("applicationWillEnterForeground")
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        print("applicationDidBecomeActive")
+
+        //self.initialViewController()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        print("applicationWillTerminate")
+
+        UserInformationUtility.sharedInstance.deleteCurrentUser()
+
     }
 
 

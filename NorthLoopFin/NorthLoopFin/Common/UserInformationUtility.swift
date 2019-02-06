@@ -1,22 +1,34 @@
 import UIKit
 
 class UserInformationUtility: NSObject {
-    
-    
     static let sharedInstance = UserInformationUtility()
 
-    var isLoggedIn:Bool = false
+    var user:User = User()
     
      override init() {
         super.init()
      }
     
-    func saveUser(islogged:Bool){
-        self.isLoggedIn=islogged
-        UserDefaults.saveToUserDefault(self.isLoggedIn as AnyObject, key: AppConstants.UserDefaultKeyForUser)
+    func saveUser(model:User){
+        self.user = model
+        let userData: Data = NSKeyedArchiver.archivedData(withRootObject: self.user)
+        UserDefaults.saveToUserDefault(userData as AnyObject, key: AppConstants.UserDefaultKeyForUser)
     }
     
-    func getUser()->Bool{
-        return (UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForUser) as? Bool)!
+    func getCurrentUser() -> User?
+    {
+        if let userData: Data = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForUser) as? Data
+        {
+            if let user: User = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User{
+                return user
+            }
+        }
+        return nil
+    }
+    
+    func deleteCurrentUser()
+    {
+        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForUser)
+        self.user = User()
     }
 }

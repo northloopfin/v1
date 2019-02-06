@@ -215,8 +215,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-B5-dPj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="106.5" width="214" height="39.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-B5-dPj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="106.5" width="206.5" height="39.5"/>
                                         <string key="text">2/3 Condult St, Mayfair, London
 W1s 2Bx,UK</string>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
@@ -314,19 +314,18 @@ W1s 2Bx,UK</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="AzD-ia-0u3" secondAttribute="bottom" id="4VO-6a-JIL"/>
-                                    <constraint firstItem="iM7-B5-dPj" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" constant="33" id="4kv-1K-71h"/>
                                     <constraint firstItem="7gn-UK-4pn" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" id="9q5-2e-040"/>
                                     <constraint firstItem="AzD-ia-0u3" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="bottom" id="Ad1-Fo-K23"/>
                                     <constraint firstAttribute="trailing" secondItem="AzD-ia-0u3" secondAttribute="trailing" id="CVX-Wt-Qpe"/>
                                     <constraint firstItem="iM7-B5-dPj" firstAttribute="top" secondItem="Lrt-U8-D5L" secondAttribute="bottom" constant="18" id="EWR-b0-3kU"/>
                                     <constraint firstItem="7gn-UK-4pn" firstAttribute="top" secondItem="iM7-B5-dPj" secondAttribute="bottom" constant="13" id="HIe-K3-JOV"/>
                                     <constraint firstItem="AzD-ia-0u3" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" id="Rdx-V2-5Nw"/>
+                                    <constraint firstItem="iM7-B5-dPj" firstAttribute="centerX" secondItem="I07-P7-y2W" secondAttribute="centerX" id="T6M-ff-B1P"/>
                                     <constraint firstItem="Lrt-U8-D5L" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" constant="33" id="TMS-3z-KhO"/>
                                     <constraint firstItem="AzD-ia-0u3" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="bottom" id="ThX-n0-FOz"/>
                                     <constraint firstAttribute="bottom" secondItem="AzD-ia-0u3" secondAttribute="bottom" id="idM-KM-4zF"/>
                                     <constraint firstItem="Lrt-U8-D5L" firstAttribute="top" secondItem="I07-P7-y2W" secondAttribute="top" constant="64" id="uld-LR-9J2"/>
                                     <constraint firstAttribute="trailing" secondItem="7gn-UK-4pn" secondAttribute="trailing" id="uvd-q8-qx0"/>
-                                    <constraint firstAttribute="trailing" secondItem="iM7-B5-dPj" secondAttribute="trailing" constant="33" id="vfH-wK-1vM"/>
                                     <constraint firstAttribute="trailing" secondItem="Lrt-U8-D5L" secondAttribute="trailing" constant="33" id="wlB-Ue-4cB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -695,8 +694,8 @@ W1s 2Bx,UK</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KM-Uu-qM8">
                                 <rect key="frame" x="0.0" y="447.5" width="320" height="120.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-u7-j7M" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="80.5" y="57" width="159.5" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-u7-j7M" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="82" y="57" width="156" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1475,7 +1474,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-8g-WHV">
-                                <rect key="frame" x="25" y="202" width="270" height="50"/>
+                                <rect key="frame" x="25" y="272" width="270" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tcg-zG-H6I"/>
@@ -1487,8 +1486,21 @@ W1s 2Bx,UK</string>
                                     <outlet property="delegate" destination="Jow-ac-l5k" id="tFU-Eq-5bS"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ueh-O8-KMz">
+                                <rect key="frame" x="25" y="202" width="270" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zxs-3X-y7v"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jow-ac-l5k" id="vvh-Jc-XC7"/>
+                                </connections>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ItV-Ip-Gcs">
-                                <rect key="frame" x="25" y="272" width="270" height="50"/>
+                                <rect key="frame" x="25" y="342" width="270" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="z8t-nT-XeP"/>
@@ -1545,22 +1557,25 @@ W1s 2Bx,UK</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cEH-VV-AxS" firstAttribute="trailing" secondItem="ItV-Ip-Gcs" secondAttribute="trailing" constant="25" id="5EA-db-8kd"/>
-                            <constraint firstItem="3Q6-8g-WHV" firstAttribute="top" secondItem="jMU-4A-xwK" secondAttribute="bottom" constant="35" id="5KL-5q-wVe"/>
                             <constraint firstItem="5Fh-wM-wmI" firstAttribute="leading" secondItem="cEH-VV-AxS" secondAttribute="leading" constant="23" id="7Th-c5-owH"/>
+                            <constraint firstItem="Ueh-O8-KMz" firstAttribute="leading" secondItem="cEH-VV-AxS" secondAttribute="leading" constant="25" id="Ac3-wr-2xJ"/>
                             <constraint firstItem="cEH-VV-AxS" firstAttribute="trailing" secondItem="3Q6-8g-WHV" secondAttribute="trailing" constant="25" id="ApV-Vt-qNu"/>
                             <constraint firstItem="5Fh-wM-wmI" firstAttribute="top" secondItem="cEH-VV-AxS" secondAttribute="top" constant="35" id="FWe-YZ-jWI"/>
                             <constraint firstItem="iPy-qr-sd2" firstAttribute="top" secondItem="4lG-V0-bW0" secondAttribute="bottom" constant="5" id="Lhn-el-OXn"/>
                             <constraint firstItem="3Q6-8g-WHV" firstAttribute="leading" secondItem="cEH-VV-AxS" secondAttribute="leading" constant="25" id="M6J-AT-T9t"/>
                             <constraint firstItem="ItV-Ip-Gcs" firstAttribute="leading" secondItem="cEH-VV-AxS" secondAttribute="leading" constant="25" id="MdF-py-mkW"/>
                             <constraint firstItem="vGV-p3-fqt" firstAttribute="top" secondItem="iPy-qr-sd2" secondAttribute="bottom" constant="3" id="Ngz-Ov-aPo"/>
-                            <constraint firstItem="4lG-V0-bW0" firstAttribute="top" secondItem="ItV-Ip-Gcs" secondAttribute="bottom" constant="110" id="Vwg-FI-uM0"/>
+                            <constraint firstItem="cEH-VV-AxS" firstAttribute="trailing" secondItem="Ueh-O8-KMz" secondAttribute="trailing" constant="25" id="TkX-ma-zJY"/>
                             <constraint firstItem="jMU-4A-xwK" firstAttribute="leading" secondItem="cEH-VV-AxS" secondAttribute="leading" constant="23" id="aJm-rD-9a4"/>
                             <constraint firstItem="ItV-Ip-Gcs" firstAttribute="top" secondItem="3Q6-8g-WHV" secondAttribute="bottom" constant="20" id="j1G-bp-MmE"/>
+                            <constraint firstItem="Ueh-O8-KMz" firstAttribute="top" secondItem="jMU-4A-xwK" secondAttribute="bottom" constant="35" id="nsN-NY-neG"/>
+                            <constraint firstItem="4lG-V0-bW0" firstAttribute="top" secondItem="ItV-Ip-Gcs" secondAttribute="bottom" constant="40" id="scQ-S4-GqO"/>
                             <constraint firstItem="cEH-VV-AxS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jMU-4A-xwK" secondAttribute="trailing" symbolic="YES" id="tDc-4J-nTb"/>
                             <constraint firstItem="iPy-qr-sd2" firstAttribute="centerX" secondItem="u5Y-Wy-ila" secondAttribute="centerX" id="ubx-KN-kej"/>
                             <constraint firstItem="cEH-VV-AxS" firstAttribute="trailing" secondItem="4lG-V0-bW0" secondAttribute="trailing" constant="25" id="vW3-UX-t09"/>
                             <constraint firstItem="jMU-4A-xwK" firstAttribute="top" secondItem="5Fh-wM-wmI" secondAttribute="bottom" constant="20" id="x2Z-gJ-6BT"/>
                             <constraint firstItem="vGV-p3-fqt" firstAttribute="centerX" secondItem="u5Y-Wy-ila" secondAttribute="centerX" id="y2B-Vh-O8X"/>
+                            <constraint firstItem="3Q6-8g-WHV" firstAttribute="top" secondItem="Ueh-O8-KMz" secondAttribute="bottom" constant="20" id="yIh-mA-3hH"/>
                             <constraint firstItem="4lG-V0-bW0" firstAttribute="leading" secondItem="cEH-VV-AxS" secondAttribute="leading" constant="25" id="yOe-ct-d53"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cEH-VV-AxS"/>
@@ -1570,6 +1585,7 @@ W1s 2Bx,UK</string>
                         <outlet property="bySigningUpLbl" destination="iPy-qr-sd2" id="IAY-wL-ksp"/>
                         <outlet property="confirmPasswordTextField" destination="ItV-Ip-Gcs" id="b6r-ZU-w0h"/>
                         <outlet property="doneBtn" destination="4lG-V0-bW0" id="i3M-nL-v1E"/>
+                        <outlet property="emailTextField" destination="Ueh-O8-KMz" id="aL9-11-xFj"/>
                         <outlet property="mainTitleLbl" destination="jMU-4A-xwK" id="J2a-2Q-SoV"/>
                         <outlet property="passwordTextField" destination="3Q6-8g-WHV" id="E07-dw-NiD"/>
                         <outlet property="termsPrivacyLbl" destination="vGV-p3-fqt" id="eZ3-Jk-72g"/>
@@ -2165,13 +2181,80 @@ to your registered address</string>
                     <view key="view" contentMode="scaleToFill" id="Uto-zB-TcF" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="RDE-xt-4zK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-8m-bpV">
+                                <rect key="frame" x="25" y="370" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.63137254899999995" green="0.58431372550000005" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="krJ-3z-ItU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnClicked:" destination="vr8-ge-M63" eventType="touchUpInside" id="X0z-ai-xj8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yGL-fh-3pl">
+                                <rect key="frame" x="25" y="102" width="270" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="J1I-Jh-K4Y"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jow-ac-l5k" id="wbG-pc-8R2"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dri-rC-YDW">
+                                <rect key="frame" x="25" y="172" width="270" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="png-mk-zHK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jow-ac-l5k" id="5HR-Sh-IDa"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f3N-8m-bpV" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="1lY-Lo-LK2"/>
+                            <constraint firstItem="dri-rC-YDW" firstAttribute="top" secondItem="yGL-fh-3pl" secondAttribute="bottom" constant="20" id="4R9-JH-3Cj"/>
+                            <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="dri-rC-YDW" secondAttribute="trailing" constant="25" id="A6G-nO-whJ"/>
+                            <constraint firstItem="dri-rC-YDW" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="HkD-RZ-vhk"/>
+                            <constraint firstItem="yGL-fh-3pl" firstAttribute="top" secondItem="WCc-NK-ylX" secondAttribute="top" constant="82" id="NZj-U9-rRE"/>
+                            <constraint firstItem="f3N-8m-bpV" firstAttribute="top" secondItem="dri-rC-YDW" secondAttribute="bottom" constant="148" id="Wl9-GE-bbT"/>
+                            <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="yGL-fh-3pl" secondAttribute="trailing" constant="25" id="fOk-AX-x9A"/>
+                            <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="f3N-8m-bpV" secondAttribute="trailing" constant="25" id="ojN-XN-hcQ"/>
+                            <constraint firstItem="yGL-fh-3pl" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="z6x-iU-Knd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WCc-NK-ylX"/>
                     </view>
+                    <connections>
+                        <outlet property="amountTextfield" destination="dri-rC-YDW" id="gq4-dL-Gwh"/>
+                        <outlet property="bankAccountNumberTextfield" destination="yGL-fh-3pl" id="JFe-YP-b7q"/>
+                        <outlet property="saveBtn" destination="f3N-8m-bpV" id="id1-nE-av5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5S-gV-5I7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7650" y="-45"/>
+            <point key="canvasLocation" x="7650" y="-45.422535211267608"/>
         </scene>
         <!--My Account View Controller-->
         <scene sceneID="sro-Ih-xAl">
@@ -3061,22 +3144,22 @@ up and site back and relax.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Legal Stuff" width="157" height="152"/>
-        <image name="LostInsufficient" width="207" height="243"/>
+        <image name="Legal Stuff" width="172" height="166"/>
+        <image name="LostInsufficient" width="206" height="236"/>
         <image name="SelfieTime" width="152" height="153"/>
         <image name="SignUpForm" width="156" height="153"/>
         <image name="WelcomeImg" width="120" height="215"/>
-        <image name="addaccount" width="189" height="159"/>
+        <image name="addaccount" width="221" height="182"/>
         <image name="cross" width="14" height="12"/>
-        <image name="directdeposit" width="159" height="159"/>
+        <image name="directdeposit" width="181" height="184"/>
         <image name="done" width="107" height="107"/>
-        <image name="faq1" width="114" height="105"/>
+        <image name="faq1" width="124" height="114"/>
         <image name="group" width="202" height="181"/>
         <image name="homeBanner" width="375" height="331"/>
         <image name="logo" width="153" height="42"/>
-        <image name="lostCard" width="77" height="76"/>
+        <image name="lostCard" width="93" height="92"/>
         <image name="mobileVerifiaction" width="67" height="96"/>
-        <image name="myCardsLogo" width="204" height="170"/>
+        <image name="myCardsLogo" width="225" height="184"/>
         <image name="openCamera" width="31" height="25"/>
         <image name="oval" width="375" height="812"/>
         <image name="passowrdBg" width="79" height="61"/>

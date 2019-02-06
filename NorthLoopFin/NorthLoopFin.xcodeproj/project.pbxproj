@@ -11,6 +11,10 @@
 		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
 		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
 		1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */; };
+		1D0BF5282209991F00B56E82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D0BF5272209991E00B56E82 /* GoogleService-Info.plist */; };
+		1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BF52A2209A76900B56E82 /* FirebaseManager.swift */; };
+		1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */; };
+		1D0C2ADE22045EAB00527FAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C2ADD22045EAB00527FAB /* User.swift */; };
 		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
 		1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */; };
@@ -69,6 +73,10 @@
 		1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D913EF621EC5666009D7E52 /* CommonTable.xib */; };
 		1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */; };
 		1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */; };
+		1D915C0E220816C100223480 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C0D220816C100223480 /* Env.swift */; };
+		1D915C1222082CD400223480 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C1122082CD400223480 /* Timer.swift */; };
+		1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C132208305300223480 /* NotificationName+Extension.swift */; };
+		1D915C162208306E00223480 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C152208306E00223480 /* main.swift */; };
 		1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */; };
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
@@ -105,7 +113,6 @@
 		1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */; };
 		1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
-		297FB9A021B51A32008D60CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99F21B51A32008D60CE /* ViewController.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
 		297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A421B51A34008D60CE /* Assets.xcassets */; };
 		297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A621B51A34008D60CE /* LaunchScreen.storyboard */; };
@@ -154,6 +161,10 @@
 		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
 		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 		1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		1D0BF5272209991E00B56E82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1D0BF52A2209A76900B56E82 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePresenter.swift; sourceTree = "<group>"; };
+		1D0C2ADD22045EAB00527FAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -212,6 +223,10 @@
 		1D913EF621EC5666009D7E52 /* CommonTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTable.xib; sourceTree = "<group>"; };
 		1D913EF821EC72BC009D7E52 /* CommonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableCell.swift; sourceTree = "<group>"; };
 		1D913EF921EC72BC009D7E52 /* CommonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonTableCell.xib; sourceTree = "<group>"; };
+		1D915C0D220816C100223480 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		1D915C1122082CD400223480 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		1D915C132208305300223480 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
+		1D915C152208306E00223480 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -251,7 +266,6 @@
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		297FB99F21B51A32008D60CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		297FB9A221B51A32008D60CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		297FB9A421B51A34008D60CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		297FB9A721B51A34008D60CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -325,9 +339,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0BF5292209A74F00B56E82 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				1D0BF52A2209A76900B56E82 /* FirebaseManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		1D1E5A6D21C9C76B0036E998 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				1D0BF5292209A74F00B56E82 /* Firebase */,
 				1D3AA52D21E35FCB0075DBD0 /* Auth0 */,
 				1D1E5A7021C9C79D0036E998 /* Presenter */,
 				1D1E5A6F21C9C7960036E998 /* View */,
@@ -342,6 +365,7 @@
 				1DF64E1121E5A766008774CE /* Auth0 */,
 				1DFE480121D71B32003EFECA /* SIgnupForm */,
 				1DFE480021D71B22003EFECA /* Twilio */,
+				1D0C2ADD22045EAB00527FAB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +391,7 @@
 			children = (
 				1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */,
 				1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */,
+				1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -674,6 +699,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1D915C1022082CAE00223480 /* App Timeout */ = {
+			isa = PBXGroup;
+			children = (
+				1D915C1122082CD400223480 /* Timer.swift */,
+				1D915C132208305300223480 /* NotificationName+Extension.swift */,
+				1D915C152208306E00223480 /* main.swift */,
+			);
+			path = "App Timeout";
+			sourceTree = "<group>";
+		};
 		1DB6479721FEBEF9004C483E /* Add Goal */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,6 +917,7 @@
 		297FB99121B51A32008D60CE = {
 			isa = PBXGroup;
 			children = (
+				1D0BF5272209991E00B56E82 /* GoogleService-Info.plist */,
 				1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */,
 				297FB99C21B51A32008D60CE /* NorthLoopFin */,
 				297FB9B121B51A34008D60CE /* NorthLoopFinTests */,
@@ -905,6 +941,7 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				1D915C1022082CAE00223480 /* App Timeout */,
 				1DF64E3C21E8DF9F008774CE /* Common */,
 				1D8189F921C0E04C000C8F5F /* Fonts */,
 				1D8189EE21C0AF49000C8F5F /* Application Views */,
@@ -914,7 +951,6 @@
 				297FB9CE21B531DE008D60CE /* Helpers */,
 				297FB9CB21B52E69008D60CE /* LaunchHelpers */,
 				297FB99D21B51A32008D60CE /* AppDelegate.swift */,
-				297FB99F21B51A32008D60CE /* ViewController.swift */,
 				297FB9A121B51A32008D60CE /* Main.storyboard */,
 				297FB9A421B51A34008D60CE /* Assets.xcassets */,
 				297FB9A621B51A34008D60CE /* LaunchScreen.storyboard */,
@@ -1002,6 +1038,7 @@
 			children = (
 				297FB9F421B64EE0008D60CE /* Staging.xcconfig */,
 				297FB9F521B64EF4008D60CE /* Production.xcconfig */,
+				1D915C0D220816C100223480 /* Env.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1167,6 +1204,7 @@
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
+				1D0BF5282209991F00B56E82 /* GoogleService-Info.plist in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
 				1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */,
@@ -1338,6 +1376,8 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
@@ -1352,6 +1392,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
@@ -1386,6 +1428,7 @@
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
+				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
 				1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */,
@@ -1402,6 +1445,7 @@
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */,
+				1D915C0E220816C100223480 /* Env.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
 				1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
@@ -1411,6 +1455,7 @@
 				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
+				1D0C2ADE22045EAB00527FAB /* User.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
@@ -1419,11 +1464,11 @@
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
 				1D818A1821C239B6000C8F5F /* Transaction.swift in Sources */,
+				1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */,
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
-				297FB9A021B51A32008D60CE /* ViewController.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
@@ -1435,10 +1480,12 @@
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
+				1D915C162208306E00223480 /* main.swift in Sources */,
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
+				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
@@ -1463,6 +1510,7 @@
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
+				1D915C1222082CD400223480 /* Timer.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
@@ -1838,6 +1886,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1866,6 +1915,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.northloop.NorthLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2000,6 +2050,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DPRODUCTION\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.northloop.NorthLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

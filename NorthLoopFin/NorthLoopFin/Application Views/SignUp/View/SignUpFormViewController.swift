@@ -8,6 +8,7 @@
 
 import UIKit
 import Auth0
+import Firebase
 
 class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -31,7 +32,7 @@ class SignUpFormViewController: BaseViewController {
                     if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
 //                        self.callPhoneVerificationAPI()
 //                        moveToOTPScreen()
-                        self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
+                        //self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
                     }else{
                         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
                 }else{
@@ -39,6 +40,10 @@ class SignUpFormViewController: BaseViewController {
             }
     }
     
+    func updateUserData(_ firstName:String, _ lastName:String, _ phone:String){
+        
+    }
+    //Obsolete Now
     func addUserMetaData(firstName: String, lastName: String, phone:String){
         auth0Mngr.auth0UpdateUserMetadata(firstName: firstName, lastName: lastName, phone: phone)
     }
@@ -99,10 +104,10 @@ class SignUpFormViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
 
-        self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
@@ -156,8 +161,7 @@ extension SignUpFormViewController:Auth0Delegates{
     
     func didUpdatedProfile() {
         self.callPhoneVerificationAPI()
-        UserInformationUtility.sharedInstance.isLoggedIn = true
-        UserInformationUtility.sharedInstance.saveUser(islogged: true)
+       
     }
     
     func didLoggedOut() {
@@ -174,6 +178,18 @@ extension SignUpFormViewController:RailsBankDelegate{
     }
     
     func didFailedWithError(err: Error) {
+        
+    }
+}
+
+extension SignUpFormViewController:FirebaseDelegates{
+    func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?){
+        
+    }
+    func didNameUpdated() {
+        
+    }
+    func didPhoneUpdated() {
         
     }
 }

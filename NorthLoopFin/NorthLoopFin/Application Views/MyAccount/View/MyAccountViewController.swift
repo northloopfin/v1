@@ -33,6 +33,8 @@ class MyAccountViewController: BaseViewController {
         dataSource.append(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.LOGOUT.rawValue)
+
 
         customView.dataSource = dataSource
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
@@ -52,9 +54,22 @@ extension MyAccountViewController:CommonTableDelegate{
             self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 3:
             self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        case 4:
+            self.logoutUser()
         default:
             break
         }
+    }
+    
+    func logoutUser(){
+        UserInformationUtility.sharedInstance.deleteCurrentUser()
+        self.moveToWelcome()
+    }
+    
+    func moveToWelcome(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func moveToSettings(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

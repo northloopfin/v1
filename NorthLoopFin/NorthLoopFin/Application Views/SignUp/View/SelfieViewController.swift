@@ -58,7 +58,7 @@ class SelfieViewController: BaseViewController {
     
     @IBAction func nextClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SetPasswordViewController") as! SetPasswordViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     //Add Border to given view

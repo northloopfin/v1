@@ -29,4 +29,11 @@ class UserDefaults: NSObject {
         defaults.removeObject(forKey: key)
         defaults.synchronize()
     }
+    class func objectAlreadyExist(key: String) -> Bool {
+       let defaults : Foundation.UserDefaults =   Foundation.UserDefaults.standard
+        if (defaults.object(forKey: key) != nil) {
+            return true
+        }
+        return false
+    }
 }

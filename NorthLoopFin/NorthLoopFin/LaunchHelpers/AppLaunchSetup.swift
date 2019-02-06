@@ -6,7 +6,7 @@ import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
 import DropDown
-
+import Firebase
 
 
 class AppLaunchSetup: NSObject {
@@ -38,6 +38,7 @@ class AppLaunchSetup: NSObject {
         // Do some additional configuration if needed here
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()
-
+        //Configure Firebase
+        FirebaseApp.configure()
     }
 }

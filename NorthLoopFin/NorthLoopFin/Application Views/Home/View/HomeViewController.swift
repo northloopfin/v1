@@ -31,7 +31,7 @@ class HomeViewController: BaseViewController {
         // control the exaggeration of the menu slide animation
         //[menuContainerViewController setMenuSlideAnimationFactor:3.0f];
         self.menuContainerViewController.menuSlideAnimationEnabled = true
-        self.menuContainerViewController.menuSlideAnimationFactor = 3.0
+        self.menuContainerViewController.menuSlideAnimationFactor = 10.0
         self.menuContainerViewController.shadow.enabled=false
         self.ledgersTableView.reloadData()
         homePresenter = HomePresenter.init(delegate: self)
@@ -119,7 +119,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 70
+        return 29
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

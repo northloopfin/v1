@@ -95,6 +95,7 @@ struct AppConstants{
         case CHANGEADDRESS = "Change Address"
         case CHANGEPASSWORD = "Change Password"
         case CHANGEPHONENUMBER = "Change Phone Number"
+        case LOGOUT = "Logout"
     }
     
     enum NotificationSettigsOptions:String{

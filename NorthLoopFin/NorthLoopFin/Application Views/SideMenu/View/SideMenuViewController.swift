@@ -52,6 +52,9 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: SideMenuTableCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableCell") as! SideMenuTableCell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Colors.Cameo213186154
+        cell.selectedBackgroundView = backgroundView
         cell.bindData(data: data[indexPath.row])
         return cell
     }

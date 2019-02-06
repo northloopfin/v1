@@ -48,6 +48,9 @@ extension CommonTable:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: CommonTableCell = tableView.dequeueReusableCell(withIdentifier: "CommonTableCell") as! CommonTableCell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Colors.Cameo213186154
+        cell.selectedBackgroundView = backgroundView
         cell.bindData(data: dataSource[indexPath.row])
         return cell
     }
