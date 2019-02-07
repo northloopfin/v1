@@ -46,11 +46,11 @@ extension WelcomeViewController:Auth0Delegates{
     func didLoggedIn() {
         print("Logged In")
         
-        if UserInformationUtility.sharedInstance.getCurrentUser() == nil{
-            let user:User=User.init(loggedInStatus: true)
-            UserInformationUtility.sharedInstance.saveUser(model: user)
-            self.moveToNextScreen()
-        }
+//        if UserInformationUtility.sharedInstance.getCurrentUser() == nil{
+//            let user:User=User.init(loggedInStatus: true)
+//            UserInformationUtility.sharedInstance.saveUser(model: user)
+//            self.moveToNextScreen()
+//        }
     }
     
     func didRetreivedProfile() {

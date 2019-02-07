@@ -19,12 +19,15 @@ class SetPasswordViewController: BaseViewController {
     @IBOutlet weak var bySigningUpLbl: LabelWithLetterSpace!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
+    var firebaseManager:FirebaseManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled=false
         self.updateTextFieldUI()
         self.prepareView()
+        firebaseManager = FirebaseManager.init(delegate: self)
     }
     
     //Action called when done button clicked
@@ -81,9 +84,9 @@ class SetPasswordViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.passwordTextField.applyAttributesWithValues(placeholderText: "Password *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.confirmPasswordTextField.applyAttributesWithValues(placeholderText: "Confirm Password *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.passwordTextField.applyAttributesWithValues(placeholderText: "Password*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.confirmPasswordTextField.applyAttributesWithValues(placeholderText: "Confirm Password*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.emailTextField.applyAttributesWithValues(placeholderText: "Email*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.passwordTextField.setLeftPaddingPoints(19)
         self.confirmPasswordTextField.setLeftPaddingPoints(19)
@@ -108,7 +111,7 @@ class SetPasswordViewController: BaseViewController {
     }
     
     func createAccountWithData(_ email:String,_ password:String){
-        
+        firebaseManager?.createUserWithData(email, password)
     }
     
     func moveToCreateAccount(){
@@ -124,34 +127,26 @@ extension SetPasswordViewController:UITextFieldDelegate{
         
         if (!(self.passwordTextField.text?.isEmpty)! && !(self.confirmPasswordTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)! )
             {
-            
             self.changeApperanceOfDone()
         }
     }
 }
 
 extension SetPasswordViewController:FirebaseDelegates{
+    func didFirebaseDatabaseUpdated() {
+        
+    }
     func didFirebaseUserCreated(authResult: AuthDataResult?, error: NSError?) {
-        if error==nil{
+        guard let authResult = authResult, error == nil else {
             print(error!.localizedDescription)
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error!.localizedDescription)
             return
-        }else{
-            print(authResult!.user.email!)
-            let user:User = User.init(loggedInStatus: true,email:authResult!.user.email!)
-            UserInformationUtility.sharedInstance.saveUser(model: user)
-            self.moveToCreateAccount()
         }
+        let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
+        UserInformationUtility.sharedInstance.saveUser(model: user)
+        self.moveToCreateAccount()
     }
-    
-    
-    
-    func didNameUpdated() {
-        
+    func didNameUpdated(error:NSError?){
+
     }
-    
-    func didPhoneUpdated() {
-        
-    }
-    
-    
 }

@@ -12,6 +12,9 @@ class User: NSObject, NSCoding {
     
     var isLoggedIn: Bool!
     var userEmail: String!
+    var firstName:String!
+    var lastname:String!
+    var phone:String!
     
     override init() {
         super.init()
@@ -21,6 +24,13 @@ class User: NSObject, NSCoding {
         super.init()
         self.isLoggedIn=loggedInStatus
         self.userEmail=email
+    }
+    init(firstname:String,lastname:String,email:String,phone:String) {
+        super.init()
+        self.userEmail=email
+        self.lastname=lastname
+        self.userEmail=email
+        self.phone=phone
     }
     required init(coder aDecoder: NSCoder) {
         if let loggedInStatus = aDecoder.decodeObject(forKey: "Status") as? Bool {

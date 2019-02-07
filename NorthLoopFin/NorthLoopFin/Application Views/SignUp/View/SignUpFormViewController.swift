@@ -21,7 +21,7 @@ class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
     var auth0Mngr:Auth0ApiCallManager!
-
+    var firebaseManager:FirebaseManager!
     
     @IBAction func nextClicked(_ sender: Any) {
          validateForm()
@@ -33,6 +33,7 @@ class SignUpFormViewController: BaseViewController {
 //                        self.callPhoneVerificationAPI()
 //                        moveToOTPScreen()
                         //self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
+                        self.updateUserData(self.firstNameTextField.text!, self.lastNameTextField.text!, self.phoneTextField.text!)
                     }else{
                         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
                 }else{
@@ -41,6 +42,7 @@ class SignUpFormViewController: BaseViewController {
     }
     
     func updateUserData(_ firstName:String, _ lastName:String, _ phone:String){
+        firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
         
     }
     //Obsolete Now
@@ -65,7 +67,8 @@ class SignUpFormViewController: BaseViewController {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
         auth0Mngr = Auth0ApiCallManager.init(delegate: self)
-
+        self.firebaseManager = FirebaseManager.init(delegate: self)
+        
         self.inactivateNextBtn()
         self.setupRightNavigationBar()
         updateTextFieldUI()
@@ -183,13 +186,14 @@ extension SignUpFormViewController:RailsBankDelegate{
 }
 
 extension SignUpFormViewController:FirebaseDelegates{
+    func didFirebaseDatabaseUpdated() {
+        self.callPhoneVerificationAPI()
+    }
+    
     func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?){
         
     }
-    func didNameUpdated() {
-        
-    }
-    func didPhoneUpdated() {
+    func didNameUpdated(error:NSError?){
         
     }
 }
