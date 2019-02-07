@@ -18,7 +18,50 @@ PODS:
     - SimpleKeychain
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
+  - DropDown (2.3.2)
   - Fabric (1.9.0)
+  - Firebase/Auth (5.14.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (= 5.1.0)
+  - Firebase/Core (5.14.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.4.0)
+  - Firebase/CoreOnly (5.14.0):
+    - FirebaseCore (= 5.1.9)
+  - Firebase/Database (5.14.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.0.4)
+  - FirebaseAnalytics (5.4.0):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleAppMeasurement (= 5.4.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseAuth (5.1.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.2)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseAuthInterop (1.0.0)
+  - FirebaseCore (5.1.9):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.0.4):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.1)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (3.3.0):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.3)
+    - GoogleUtilities/UserDefaults (~> 5.3)
+  - GoogleAppMeasurement (5.4.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
@@ -26,8 +69,36 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - GoogleUtilities/AppDelegateSwizzler (5.3.6):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.3.6)
+  - GoogleUtilities/Logger (5.3.6):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.3.6):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.3.6):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.3.6)"
+  - GoogleUtilities/Reachability (5.3.6):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.3.6):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.1)
+  - HockeySDK (5.1.4):
+    - HockeySDK/DefaultLib (= 5.1.4)
+  - HockeySDK/DefaultLib (5.1.4)
   - IQKeyboardManagerSwift (6.2.0)
+  - leveldb-library (1.20)
   - MFSideMenu (0.5.5)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - PWSwitch (1.1.2)
   - ReachabilitySwift (4.3.0)
   - SimpleKeychain (0.8.1)
@@ -37,9 +108,14 @@ DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Auth0 (~> 1.5)
   - Crashlytics
+  - DropDown (= 2.3.2)
   - Fabric
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
   - GoogleMaps
   - GooglePlaces
+  - HockeySDK (~> 5.1.4)
   - IQKeyboardManagerSwift
   - MFSideMenu
   - PWSwitch
@@ -51,11 +127,25 @@ SPEC REPOS:
     - AFNetworking
     - Auth0
     - Crashlytics
+    - DropDown
     - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
     - GoogleMaps
     - GooglePlaces
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - HockeySDK
     - IQKeyboardManagerSwift
+    - leveldb-library
     - MFSideMenu
+    - nanopb
     - PWSwitch
     - ReachabilitySwift
     - SimpleKeychain
@@ -65,16 +155,30 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Auth0: 6ba27a720fe99ccf2fd4c69c051948d4036ac26d
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Firebase: 963d5685fae888a56d6d4d9cfce6b9c976958798
+  FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
+  FirebaseAuth: 4a5cc5fc2d1721e509e24699b93ebc3d94b1e195
+  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
+  FirebaseCore: 8f49b70f57ab5cbb032ef41d64992ded21606459
+  FirebaseDatabase: 0621689f77528d62b47e1c06ca737c4c19275d1a
+  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
+  GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PWSwitch: 399db6ef5dd8417f9a1e9f82cb70602f10a6c38f
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 3c06f5bbdab027c4abca7ac070d87652d54326bd
+PODFILE CHECKSUM: 5824d5785ada16916d8a73de8d22c77b7cb52d9a
 
 COCOAPODS: 1.5.3

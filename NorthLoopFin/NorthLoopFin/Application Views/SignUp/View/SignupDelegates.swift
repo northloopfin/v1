@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import Firebase
 
 protocol PhoneVerificationDelegate: BaseViewProtocol{
      func didSentOTP(result:PhoneVerifyStart)
      func didCheckOTP(result:PhoneVerifyCheck)
 }
-
+//Obsolete Now
 protocol Auth0Delegates :BaseViewProtocol{
     func didLoggedIn()
     func didRetreivedProfile()
@@ -26,3 +27,10 @@ protocol RailsBankDelegate:BaseViewProtocol {
     func didFailedWithError(err:Error)
     
 }
+
+protocol FirebaseDelegates: BaseViewProtocol{
+    func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?)
+    func didNameUpdated(error:NSError?)
+    func didFirebaseDatabaseUpdated()    
+}
+

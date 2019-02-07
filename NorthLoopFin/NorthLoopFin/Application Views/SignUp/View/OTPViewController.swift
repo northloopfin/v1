@@ -16,6 +16,9 @@ class OTPViewController: BaseViewController {
     @IBOutlet weak var otpField4: UITextField!
     @IBOutlet weak var doneBtn: UIButton!
 
+    @IBOutlet weak var resendLbl: UILabel!
+    @IBOutlet weak var sentToLbl: UILabel!
+    @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationCheckPresenter!
     var sendPresenter:PhoneVerificationStartPresenter!
 
@@ -29,6 +32,8 @@ class OTPViewController: BaseViewController {
     @IBAction func doneClicked(_ sender: Any) {
         let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
         self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+        //self.moveToScanIDScreen()
+
     }
     
     override func viewDidLoad() {
@@ -38,6 +43,29 @@ class OTPViewController: BaseViewController {
         self.doneBtn.isEnabled = false
         self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
         self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
+        self.prepareView()
+    }
+    
+    /// Set text color and font to view components
+    func prepareView(){
+        //Set text color
+        self.mainTitleLbl.textColor = Colors.MainTitleColor
+        self.sentToLbl.textColor = Colors.Cameo213186154
+        self.otpField1.textColor = Colors.DustyGray155155155
+        self.otpField2.textColor = Colors.DustyGray155155155
+        self.otpField3.textColor = Colors.DustyGray155155155
+        self.otpField4.textColor = Colors.DustyGray155155155
+        self.resendLbl.textColor=Colors.Taupe776857
+        
+        //set font here
+        self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
+        self.sentToLbl.font=AppFonts.btnTitleCalibri18
+        self.otpField1.font = AppFonts.textBoxCalibri16
+        self.otpField2.font = AppFonts.textBoxCalibri16
+        self.otpField3.font = AppFonts.textBoxCalibri16
+        self.otpField4.font = AppFonts.textBoxCalibri16
+        self.resendLbl.font = AppFonts.calibriBold18
+        self.doneBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
     }
     
     
@@ -139,6 +167,10 @@ extension OTPViewController:PhoneVerificationDelegate{
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
     }
     func didCheckOTP(result:PhoneVerifyCheck){
+        self.moveToScanIDScreen()
+    }
+    
+    func moveToScanIDScreen(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

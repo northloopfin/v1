@@ -34,5 +34,13 @@ class Validations {
         let valid = NSPredicate(format: "SELF MATCHES %@", phoneRegex).evaluate(with: phone)
         return valid
     }
-
+    
+    class func isValidName(value:String)->Bool{
+            return value.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) == nil && value != ""
+    }
+    class func isValidZip(value:String)->Bool{
+        let zipRegex = "^[0-9]{5,5}$";
+        let valid = NSPredicate(format: "SELF MATCHES %@", zipRegex).evaluate(with: value)
+        return valid
+    }
 }

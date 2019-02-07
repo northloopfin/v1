@@ -13,6 +13,13 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var optionsTableView: UITableView!
     var delegate:SideMenuDelegate!
     
+    @IBAction func crossClicked(_ sender: Any) {
+        self.delegate.closeMenu()
+    }
+    @IBAction func settingsClicked(_ sender: Any) {
+        self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.SETTINGS)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +52,9 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: SideMenuTableCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableCell") as! SideMenuTableCell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Colors.Cameo213186154
+        cell.selectedBackgroundView = backgroundView
         cell.bindData(data: data[indexPath.row])
         return cell
     }

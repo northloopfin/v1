@@ -73,4 +73,20 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            print("Zero")
+        case 1:
+            self.moveToLostCardScreen()
+        default:
+              break
+        }
+    }
+    
+    func moveToLostCardScreen() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }

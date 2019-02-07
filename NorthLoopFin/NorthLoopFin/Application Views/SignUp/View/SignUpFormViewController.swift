@@ -8,36 +8,44 @@
 
 import UIKit
 import Auth0
+import Firebase
 
 class SignUpFormViewController: BaseViewController {
-
+    @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
    // @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
-    
+    @IBOutlet weak var loginLbl: LabelWithLetterSpace!
+    @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
     var auth0Mngr:Auth0ApiCallManager!
-
+    var firebaseManager:FirebaseManager!
     
     @IBAction func nextClicked(_ sender: Any) {
          validateForm()
     }
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
-                //if (Validations.isValidEmail(email: self.emailTextField.text!)){
+                if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
                     if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
 //                        self.callPhoneVerificationAPI()
 //                        moveToOTPScreen()
-                        self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
+                        //self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
+                        self.updateUserData(self.firstNameTextField.text!, self.lastNameTextField.text!, self.phoneTextField.text!)
                     }else{
                         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
-//                }else{
-//                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
-//            }
+                }else{
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
+            }
     }
     
+    func updateUserData(_ firstName:String, _ lastName:String, _ phone:String){
+        firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
+        
+    }
+    //Obsolete Now
     func addUserMetaData(firstName: String, lastName: String, phone:String){
         auth0Mngr.auth0UpdateUserMetadata(firstName: firstName, lastName: lastName, phone: phone)
     }
@@ -59,10 +67,32 @@ class SignUpFormViewController: BaseViewController {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
         auth0Mngr = Auth0ApiCallManager.init(delegate: self)
-
+        self.firebaseManager = FirebaseManager.init(delegate: self)
+        
         self.inactivateNextBtn()
         self.setupRightNavigationBar()
         updateTextFieldUI()
+        self.prepareView()
+    }
+    
+    /// Prepare view by setting color and fonts to view components
+    func prepareView(){
+        //Set text color to view components
+        self.mainTitleLbl.textColor = Colors.MainTitleColor
+        self.firstNameTextField.textColor = Colors.DustyGray155155155
+        self.lastNameTextField.textColor = Colors.DustyGray155155155
+        self.phoneTextField.textColor = Colors.DustyGray155155155
+        self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
+        self.loginLbl.textColor = Colors.NeonCarrot25414966
+        
+        // Set Font to view components
+        self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
+        self.firstNameTextField.font = AppFonts.textBoxCalibri16
+        self.lastNameTextField.font = AppFonts.textBoxCalibri16
+        self.phoneTextField.font = AppFonts.textBoxCalibri16
+        self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
+        self.alreadyHaveaccountLbl.font = AppFonts.calibri15
+        self.loginLbl.font = AppFonts.calibriBold15
     }
     
     func updateTextFieldUI(){
@@ -77,10 +107,10 @@ class SignUpFormViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
 
-        self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
@@ -134,8 +164,7 @@ extension SignUpFormViewController:Auth0Delegates{
     
     func didUpdatedProfile() {
         self.callPhoneVerificationAPI()
-        UserInformationUtility.sharedInstance.isLoggedIn = true
-        UserInformationUtility.sharedInstance.saveUser(islogged: true)
+       
     }
     
     func didLoggedOut() {
@@ -154,8 +183,19 @@ extension SignUpFormViewController:RailsBankDelegate{
     func didFailedWithError(err: Error) {
         
     }
+}
+
+extension SignUpFormViewController:FirebaseDelegates{
+    func didFirebaseDatabaseUpdated() {
+        self.callPhoneVerificationAPI()
+    }
     
-    
+    func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?){
+        
+    }
+    func didNameUpdated(error:NSError?){
+        
+    }
 }
 
 

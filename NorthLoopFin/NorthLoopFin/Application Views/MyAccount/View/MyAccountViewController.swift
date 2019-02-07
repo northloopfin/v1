@@ -15,6 +15,7 @@ class MyAccountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.customView.delegate=self
 
     }
     override func viewDidLayoutSubviews() {
@@ -27,10 +28,52 @@ class MyAccountViewController: BaseViewController {
     
     func prepareView(){
         
-        let dataSource:[String] = ["App Settings", "Change Address","Option3"]
+        var dataSource:[String] = []
+        dataSource.append(AppConstants.ProfileOptions.APPSETTINGS.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.LOGOUT.rawValue)
+
+
         customView.dataSource = dataSource
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
         self.setupRightNavigationBar()
+    }
+}
+
+extension MyAccountViewController:CommonTableDelegate{
+    func didSelectOption(optionVal: Int) {
+        switch optionVal {
+        case 0:
+            self.moveToSettings()
+        case 1:
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        case 2:
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        case 3:
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        case 4:
+            self.logoutUser()
+        default:
+            break
+        }
+    }
+    
+    func logoutUser(){
+        UserInformationUtility.sharedInstance.deleteCurrentUser()
+        self.moveToWelcome()
+    }
+    
+    func moveToWelcome(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func moveToSettings(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
 }

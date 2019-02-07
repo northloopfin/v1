@@ -12,6 +12,7 @@ class CommonTable: UIView {
     @IBOutlet weak var optionsTableView: SelfSizedTableView!
     var dataSource:[String]=[]
     @IBOutlet var containerView: UIView!
+    var delegate:CommonTableDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,13 +42,15 @@ extension CommonTable:UITableViewDelegate,UITableViewDataSource{
         self.optionsTableView.dataSource=self
         self.optionsTableView.registerTableViewCell(tableViewCell: CommonTableCell.self)
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: CommonTableCell = tableView.dequeueReusableCell(withIdentifier: "CommonTableCell") as! CommonTableCell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Colors.Cameo213186154
+        cell.selectedBackgroundView = backgroundView
         cell.bindData(data: dataSource[indexPath.row])
         return cell
     }
@@ -57,12 +60,8 @@ extension CommonTable:UITableViewDelegate,UITableViewDataSource{
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.didSelectOption(optionVal: indexPath.row)
     }
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
-//            if indexPath == lastVisibleIndexPath {
-//                print(self.optionsTableView.frame.size.height)
-//            }
-//        }
-//    }
 }

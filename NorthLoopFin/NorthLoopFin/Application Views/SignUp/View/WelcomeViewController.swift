@@ -8,6 +8,7 @@
 
 import UIKit
 import Auth0
+import Crashlytics
 
 class WelcomeViewController: BaseViewController {
     var auth0Mngr:Auth0ApiCallManager!
@@ -15,19 +16,19 @@ class WelcomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         auth0Mngr = Auth0ApiCallManager.init(delegate: self)
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.isLoginScreenOpened = true
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyCardViewController") as! MyCardViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+            //Crashlytics.sharedInstance().crash()
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {
-        self.showSignUp()
+        //self.showSignUp()
+        self.moveToNextScreen() 
     }
     
     func showSignUp(){
@@ -36,7 +37,7 @@ class WelcomeViewController: BaseViewController {
     
     func moveToNextScreen(){
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
+                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SetPasswordViewController") as! SetPasswordViewController
                 self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
 }
@@ -44,7 +45,12 @@ class WelcomeViewController: BaseViewController {
 extension WelcomeViewController:Auth0Delegates{
     func didLoggedIn() {
         print("Logged In")
-        self.moveToNextScreen()
+        
+//        if UserInformationUtility.sharedInstance.getCurrentUser() == nil{
+//            let user:User=User.init(loggedInStatus: true)
+//            UserInformationUtility.sharedInstance.saveUser(model: user)
+//            self.moveToNextScreen()
+//        }
     }
     
     func didRetreivedProfile() {
