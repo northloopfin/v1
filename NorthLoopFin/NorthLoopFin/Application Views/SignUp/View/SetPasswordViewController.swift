@@ -149,4 +149,10 @@ extension SetPasswordViewController:FirebaseDelegates{
     func didNameUpdated(error:NSError?){
 
     }
+    func didLoggedIn(error:NSError?){
+        
+    }
+    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
+        
+    }
 }

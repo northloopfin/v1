@@ -12,6 +12,7 @@ import Firebase
 class FirebaseManager: NSObject {
     private weak var delegate          : FirebaseDelegates?
     var ref: DatabaseReference!
+    
     init(delegate firebaseDelegate:FirebaseDelegates){
         self.delegate = firebaseDelegate
     }
@@ -56,6 +57,33 @@ class FirebaseManager: NSObject {
             }else{
                 self.delegate?.didFirebaseDatabaseUpdated()
             }
+        }
+    }
+    
+    func signInWithData(_ email:String, _ password:String){
+        self.delegate?.showLoader()
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            self.delegate?.hideLoader()
+            guard let _=user,error == nil else{
+                self.delegate?.didLoggedIn(error: error! as NSError)
+                return
+            }
+            self.delegate?.didLoggedIn(error: nil)
+        }
+    }
+    
+    func retrieveUser(){
+            let userID = Auth.auth().currentUser?.uid
+            ref = Database.database().reference()
+            ref.child("Users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            //let username = value?["firstname"] as? String ?? ""
+                self.delegate?.didReadUserFromDatabase(error: nil, data: value)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+            self.delegate?.didReadUserFromDatabase(error: error as NSError, data: nil)
         }
     }
 }

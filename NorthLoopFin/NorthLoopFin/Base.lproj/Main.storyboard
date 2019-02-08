@@ -3142,11 +3142,188 @@ up and site back and relax.</string>
             </objects>
             <point key="canvasLocation" x="15572" y="-57"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="3pJ-IW-poa">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Osz-9E-BWI" customClass="LoginViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SQc-V8-KDu" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Srp-Bt-mJa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy8-Hi-yGt">
+                                <rect key="frame" x="25" y="399" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7uA-x8-xEK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginClicked:" destination="Osz-9E-BWI" eventType="touchUpInside" id="2xp-GW-oKa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-OD-yLW">
+                                <rect key="frame" x="25" y="479" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WZq-MR-K2a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="Create an Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccountClicked:" destination="Osz-9E-BWI" eventType="touchUpInside" id="lAQ-Mw-JHl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Qe-dSd">
+                                <rect key="frame" x="25" y="214" width="270" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XJq-bB-Ca1"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Osz-9E-BWI" id="fjf-sH-GtC"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLl-Nt-dZh">
+                                <rect key="frame" x="25" y="284" width="270" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zLT-Xg-slH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Osz-9E-BWI" id="whS-EA-3Oh"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-q3-GWQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="152" y="452" width="16" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="JdV-PM-fba"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="y8R-gk-xoR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignInLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LMG-Zb-GLr">
+                                <rect key="frame" x="25" y="69" width="144" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="SLH-ab-LBI"/>
+                                    <constraint firstAttribute="width" constant="144" id="XS3-sb-Dze"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="106.5" y="351" width="107" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                <state key="normal" title="Forget Password?">
+                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="forgetPasswordClicked:" destination="Osz-9E-BWI" eventType="touchUpInside" id="kw0-16-nnZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8Q-r1-RkV" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="143" width="143" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="0ST-Ln-vLP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zbj-3s-bI7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" secondItem="gy8-Hi-yGt" secondAttribute="trailing" constant="25" id="1G1-UD-TZh"/>
+                            <constraint firstItem="E8Q-r1-RkV" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="6ak-Y0-MdL"/>
+                            <constraint firstItem="gy8-Hi-yGt" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="AjN-Lr-YQI"/>
+                            <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E8Q-r1-RkV" secondAttribute="trailing" symbolic="YES" id="BWB-oO-i5P"/>
+                            <constraint firstItem="E8Q-r1-RkV" firstAttribute="top" secondItem="LMG-Zb-GLr" secondAttribute="bottom" constant="32" id="Bxf-DD-6Sm"/>
+                            <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" secondItem="PhY-OD-yLW" secondAttribute="trailing" constant="25" id="Ch5-Nf-lgH"/>
+                            <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" secondItem="fgQ-Qe-dSd" secondAttribute="trailing" constant="25" id="FQY-hx-2da"/>
+                            <constraint firstItem="PhY-OD-yLW" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="H3M-Zv-hqg"/>
+                            <constraint firstItem="Srp-Bt-mJa" firstAttribute="bottom" secondItem="EmF-Hm-mGN" secondAttribute="bottom" id="J0m-ER-Bap"/>
+                            <constraint firstItem="GLl-Nt-dZh" firstAttribute="top" secondItem="fgQ-Qe-dSd" secondAttribute="bottom" constant="20" id="JVD-9e-r1h"/>
+                            <constraint firstItem="fgQ-Qe-dSd" firstAttribute="top" secondItem="E8Q-r1-RkV" secondAttribute="bottom" constant="50" id="Lkl-Xa-wJC"/>
+                            <constraint firstItem="Srp-Bt-mJa" firstAttribute="trailing" secondItem="EmF-Hm-mGN" secondAttribute="trailing" id="M1q-Fa-xh5"/>
+                            <constraint firstItem="CAg-OH-9h8" firstAttribute="centerX" secondItem="SQc-V8-KDu" secondAttribute="centerX" id="Mmz-Hn-jMM"/>
+                            <constraint firstItem="CAg-OH-9h8" firstAttribute="top" secondItem="GLl-Nt-dZh" secondAttribute="bottom" constant="17" id="NkY-A4-1wj"/>
+                            <constraint firstItem="LMG-Zb-GLr" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="Nvl-80-fFd"/>
+                            <constraint firstItem="Srp-Bt-mJa" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" id="OaU-fX-LeE"/>
+                            <constraint firstItem="Srp-Bt-mJa" firstAttribute="top" secondItem="SQc-V8-KDu" secondAttribute="top" id="R98-WB-ihh"/>
+                            <constraint firstItem="fgQ-Qe-dSd" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="U6I-a9-XLL"/>
+                            <constraint firstItem="YHA-q3-GWQ" firstAttribute="top" secondItem="gy8-Hi-yGt" secondAttribute="bottom" constant="8" id="Xgv-dM-67o"/>
+                            <constraint firstItem="GLl-Nt-dZh" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="eiG-7p-kys"/>
+                            <constraint firstItem="PhY-OD-yLW" firstAttribute="top" secondItem="YHA-q3-GWQ" secondAttribute="bottom" constant="8" id="gnf-55-wue"/>
+                            <constraint firstItem="LMG-Zb-GLr" firstAttribute="top" secondItem="EmF-Hm-mGN" secondAttribute="top" constant="49" id="hs2-5A-l2u"/>
+                            <constraint firstItem="YHA-q3-GWQ" firstAttribute="centerX" secondItem="SQc-V8-KDu" secondAttribute="centerX" id="mAq-kD-iEg"/>
+                            <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" secondItem="GLl-Nt-dZh" secondAttribute="trailing" constant="25" id="nbd-bN-440"/>
+                            <constraint firstItem="gy8-Hi-yGt" firstAttribute="top" secondItem="CAg-OH-9h8" secondAttribute="bottom" constant="17" id="slW-6W-Np6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EmF-Hm-mGN"/>
+                    </view>
+                    <connections>
+                        <outlet property="createAccountBtn" destination="PhY-OD-yLW" id="9tw-1K-lFQ"/>
+                        <outlet property="emailTextField" destination="fgQ-Qe-dSd" id="zTa-Qz-OPL"/>
+                        <outlet property="forgetPasswordBtn" destination="CAg-OH-9h8" id="29G-OU-fnG"/>
+                        <outlet property="loginBtn" destination="gy8-Hi-yGt" id="n0D-4D-JDr"/>
+                        <outlet property="mainTitleLbl" destination="E8Q-r1-RkV" id="FYM-Oy-9S3"/>
+                        <outlet property="orLbl" destination="YHA-q3-GWQ" id="tMJ-53-ZbA"/>
+                        <outlet property="passwordTextfield" destination="GLl-Nt-dZh" id="0TR-1a-mb7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z9f-59-tQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18187.5" y="-57.04225352112676"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Legal Stuff" width="172" height="166"/>
         <image name="LostInsufficient" width="206" height="236"/>
         <image name="SelfieTime" width="152" height="153"/>
+        <image name="SignInLogo" width="167" height="46"/>
         <image name="SignUpForm" width="156" height="153"/>
         <image name="WelcomeImg" width="120" height="215"/>
         <image name="addaccount" width="221" height="182"/>

@@ -31,6 +31,8 @@ protocol RailsBankDelegate:BaseViewProtocol {
 protocol FirebaseDelegates: BaseViewProtocol{
     func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?)
     func didNameUpdated(error:NSError?)
-    func didFirebaseDatabaseUpdated()    
+    func didFirebaseDatabaseUpdated()
+    func didLoggedIn(error:NSError?)
+    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?)
 }
 

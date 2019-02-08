@@ -15,6 +15,7 @@
 		1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */; };
 		1D0C2ADE22045EAB00527FAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C2ADD22045EAB00527FAB /* User.swift */; };
 		1D11FE16220B536F00234E6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D11FE15220B536E00234E6D /* GoogleService-Info.plist */; };
+		1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11FE1A220C02F700234E6D /* LoginViewController.swift */; };
 		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
 		1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */; };
@@ -165,6 +166,7 @@
 		1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePresenter.swift; sourceTree = "<group>"; };
 		1D0C2ADD22045EAB00527FAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1D11FE15220B536E00234E6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1D11FE1A220C02F700234E6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -345,6 +347,22 @@
 				1D0BF52A2209A76900B56E82 /* FirebaseManager.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		1D11FE18220C029B00234E6D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1D11FE19220C02D500234E6D /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1D11FE19220C02D500234E6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D11FE1A220C02F700234E6D /* LoginViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1D1E5A6D21C9C76B0036E998 /* SignUp */ = {
@@ -604,6 +622,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D11FE18220C029B00234E6D /* Login */,
 				1DB6479721FEBEF9004C483E /* Add Goal */,
 				1DB8C0DA21F9715F009F437A /* Notification Settings */,
 				1D3E554121F1AD1600557825 /* Confirmed */,
@@ -1453,6 +1472,7 @@
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
 				1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
+				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
