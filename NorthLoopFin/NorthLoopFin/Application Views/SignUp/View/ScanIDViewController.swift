@@ -19,7 +19,7 @@ class ScanIDViewController: BaseViewController {
     @IBOutlet weak var scanFrontView: UIView!
     @IBOutlet weak var optionsView: UIScrollView!
     @IBOutlet weak var optionsStack: UIStackView!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var scanBackView: UIView!
     
     override func viewDidLoad() {
@@ -122,7 +122,6 @@ class ScanIDViewController: BaseViewController {
     func changeApperanceOfNextBtn(){
         if (self.idFront.size.width != 0 && self.idBack.size.width != 0 ){
             self.nextBtn.isEnabled = true
-            self.nextBtn.backgroundColor = Colors.Zorba161149133
         }
     }
 }

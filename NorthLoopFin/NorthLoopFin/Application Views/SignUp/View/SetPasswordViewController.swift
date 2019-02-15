@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class SetPasswordViewController: BaseViewController {
-    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var doneBtn: CommonButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!    
@@ -102,12 +102,10 @@ class SetPasswordViewController: BaseViewController {
     //change appearance of done button
     func changeApperanceOfDone(){
         self.doneBtn.isEnabled=true
-        self.doneBtn.backgroundColor = Colors.Zorba161149133
     }
     
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
-        self.doneBtn.backgroundColor = Colors.Alto224224224
     }
     
     func createAccountWithData(_ email:String,_ password:String){
@@ -133,6 +131,10 @@ extension SetPasswordViewController:UITextFieldDelegate{
 }
 
 extension SetPasswordViewController:FirebaseDelegates{
+    func didSendPasswordReset(error: NSError?) {
+        
+    }
+    
     func didFirebaseDatabaseUpdated() {
         
     }

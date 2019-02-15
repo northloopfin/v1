@@ -34,5 +34,6 @@ protocol FirebaseDelegates: BaseViewProtocol{
     func didFirebaseDatabaseUpdated()
     func didLoggedIn(error:NSError?)
     func didReadUserFromDatabase(error:NSError?, data:NSDictionary?)
+    func didSendPasswordReset(error:NSError?)
 }
 

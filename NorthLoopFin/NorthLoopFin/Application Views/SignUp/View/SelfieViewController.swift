@@ -10,7 +10,7 @@ import UIKit
 
 class SelfieViewController: BaseViewController {
 
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: CommonButton!
     private var selfieImage:UIImage!
     @IBOutlet weak var openCameraView: UIView!
     @IBOutlet weak var step2Lbl: LabelWithLetterSpace!
@@ -51,7 +51,6 @@ class SelfieViewController: BaseViewController {
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.selfieImage = image
             self.nextBtn.isEnabled = true
-            self.nextBtn.backgroundColor = Colors.Zorba161149133
             self.addBorderToOpenCameraView(view: self.openCameraView)
         }
     }

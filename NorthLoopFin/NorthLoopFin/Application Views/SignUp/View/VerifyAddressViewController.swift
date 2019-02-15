@@ -17,7 +17,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var textState: UITextField!
     @IBOutlet weak var zipTextfield: UITextField!
 
-    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var doneBtn: CommonButton!
     
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -105,12 +105,10 @@ class VerifyAddressViewController: BaseViewController {
     
     func activateDoneBtn(){
         self.doneBtn.isEnabled=true
-        self.doneBtn.backgroundColor = Colors.Zorba161149133
     }
     
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
-        self.doneBtn.backgroundColor = Colors.Alto224224224
     }
 }
 //MARK: UITextField Delegates

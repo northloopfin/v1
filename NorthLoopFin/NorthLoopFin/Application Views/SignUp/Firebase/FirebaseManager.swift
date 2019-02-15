@@ -51,7 +51,7 @@ class FirebaseManager: NSObject {
         
         ref = Database.database().reference()
         let userId = Auth.auth().currentUser?.uid
-        ref.child("Users").child(userId!).setValue(["firstname":firstname,"lastname":lastname,"email":Auth.auth().currentUser!.email ?? "","phone":phone]){(error:Error?, ref:DatabaseReference) in
+        ref.child("Users").child(userId!).setValue(["firstname":firstname,"lastname":lastname,"email":Auth.auth().currentUser!.email ?? "","phone":phone,"isActive":NSNumber.init(value: true)]){(error:Error?, ref:DatabaseReference) in
         if let error = error{
                 print("Data could not be saved: \(error).")
             }else{
@@ -85,5 +85,64 @@ class FirebaseManager: NSObject {
             print(error.localizedDescription)
             self.delegate?.didReadUserFromDatabase(error: error as NSError, data: nil)
         }
+    }
+    
+    func sentPasswordResetLinkToEmail(email:String){
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            guard error==nil else{
+                // send error to its delegate
+                self.delegate?.didSendPasswordReset(error: error! as NSError)
+                return
+            }
+            self.delegate?.didSendPasswordReset(error: nil)
+        }
+    }
+    
+    func updateUserDataForIsActive(number:NSNumber,email:String){
+//        ref = Database.database().reference()
+//        ref = ref.child("Users")
+//        let query = ref.queryOrdered(byChild: "email").queryEqual(toValue: email)
+//        query.observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get user value
+//            let value  = snapshot.value as? NSDictionary
+//            let uid = value!.allKeys[0] as? String
+//            let dic = value![uid!]
+//            self.ref = Database.database().reference()
+//            ref.child("Users").child(uid!).setValue(["firstname":dic!["firstname"],"lastname":uid["lastname"],"email":uid["email"],"phone":uid["phone"],"isActive":NSNumber.init(value: true)]){(error:Error?, ref:DatabaseReference) in
+//                if let error = error{
+//                    print("Data could not be saved: \(error).")
+//                }else{
+//                    self.delegate?.didFirebaseDatabaseUpdated()
+//                }
+//            }
+//
+////            self.ref.child("Users").child(uid!).updateChildValues(["firstname":"Sunita"]) { (error:Error?, ref:DatabaseReference) in
+////                if let error = error{
+////                    print("Data could not be saved: \(error).")
+////                }else{
+////                    self.delegate?.didFirebaseDatabaseUpdated()
+////                }
+////            }
+//        }) { (error) in
+//            print(error.localizedDescription)
+//            self.delegate?.didReadUserFromDatabase(error: error as NSError, data: nil)
+//        }
+    }
+    
+    func getUserFromEmailId(email:String)-> NSDictionary?{
+        var user:NSDictionary?
+        ref = Database.database().reference()
+        ref = ref.child("Users")
+        let query = ref.queryOrdered(byChild: "email").queryEqual(toValue: email)
+        query.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value  = snapshot.value as? NSDictionary
+            user = value!
+            print(user)
+        }) { (error) in
+            print(error.localizedDescription)
+            self.delegate?.didReadUserFromDatabase(error: error as NSError, data: nil)
+        }
+        return user
     }
 }

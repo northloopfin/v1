@@ -10,7 +10,7 @@ import UIKit
 
 class ConfirmedViewController: BaseViewController {
 
-    @IBOutlet weak var okBtn: UIButton!
+    @IBOutlet weak var okBtn: UIButtonWithSpacing!
     @IBOutlet weak var subTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     override func viewDidLoad() {

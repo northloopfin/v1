@@ -16,7 +16,7 @@ class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
    // @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var loginLbl: LabelWithLetterSpace!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
@@ -69,7 +69,8 @@ class SignUpFormViewController: BaseViewController {
         auth0Mngr = Auth0ApiCallManager.init(delegate: self)
         self.firebaseManager = FirebaseManager.init(delegate: self)
         
-        self.inactivateNextBtn()
+        //self.inactivateNextBtn()
+        self.nextBtn.isEnabled=false
         self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
@@ -120,19 +121,19 @@ class SignUpFormViewController: BaseViewController {
     
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
-            self.inactivateNextBtn()
+            self.nextBtn.isEnabled=false
         }
     }
     
-    func activateNextBtn(){
-        self.nextBtn.isEnabled=true
-        self.nextBtn.backgroundColor = Colors.Zorba161149133
-    }
-    
-    func inactivateNextBtn(){
-        self.nextBtn.isEnabled=false
-        self.nextBtn.backgroundColor = Colors.Alto224224224
-    }
+//    func activateNextBtn(){
+//        self.nextBtn.isEnabled=true
+//        self.nextBtn.backgroundColor = Colors.Zorba161149133
+//    }
+//    
+//    func inactivateNextBtn(){
+//        self.nextBtn.isEnabled=false
+//        self.nextBtn.backgroundColor = Colors.Alto224224224
+//    }
 }
 
 extension SignUpFormViewController:UITextFieldDelegate{
@@ -140,7 +141,7 @@ extension SignUpFormViewController:UITextFieldDelegate{
         if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)!)
         //(self.emailTextField.text?.isEmpty)!)
             {
-                self.activateNextBtn()
+                self.nextBtn.isEnabled=true
         }
     }
 }
@@ -186,6 +187,10 @@ extension SignUpFormViewController:RailsBankDelegate{
 }
 
 extension SignUpFormViewController:FirebaseDelegates{
+    func didSendPasswordReset(error: NSError?) {
+        
+    }
+    
     func didFirebaseDatabaseUpdated() {
         self.callPhoneVerificationAPI()
     }

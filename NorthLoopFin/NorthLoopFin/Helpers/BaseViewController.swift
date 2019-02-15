@@ -60,4 +60,12 @@ class BaseViewController: UIViewController, BaseViewProtocol {
         }
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showAlertWithAction(title:String, message:String, buttonArray: [String],delegate : @escaping (UIAlertAction)->Void){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        for values in buttonArray{
+            alert.addAction(UIAlertAction(title: values, style: UIAlertAction.Style.default, handler: delegate))
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
 }
