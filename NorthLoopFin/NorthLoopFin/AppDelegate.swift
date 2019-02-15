@@ -36,27 +36,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
         if let _:User = UserInformationUtility.sharedInstance.getCurrentUser(){
-            var initialNavigationController:UINavigationController
-            sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
-            let homeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as!  HomeViewController
-            initialNavigationController = UINavigationController(rootViewController:homeViewController)
-            sideMenuViewController.delegate = homeViewController
-            initialNavigationController.navigationBar.makeTransparent()
-            containerViewController.leftMenuViewController=sideMenuViewController
-            containerViewController.centerViewController=initialNavigationController
-            containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
-            containerViewController.shadow.enabled=true;
-            containerViewController.panMode = MFSideMenuPanModeDefault;
-            self.window?.rootViewController = containerViewController
-
+            self.moveUserToScreenWhereLeft()
         }else{
-            var initialNavigationController1:UINavigationController
-            let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
-            initialNavigationController1 = UINavigationController(rootViewController:welcomeViewController)
-            initialNavigationController1.navigationBar.makeTransparent()
-            self.window?.rootViewController = initialNavigationController1
+            let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+            self.moveToScreen(vc: vc)
         }
+    }
+    
+    func moveUserToScreenWhereLeft(){
+        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
+        var vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+        if let screen:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForScreen) as? String{
+            switch screen {
+                case AppConstants.Screens.USERDETAIL.rawValue:
+                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: SignUpFormViewController.self)) as!  SignUpFormViewController
+                    self.moveToScreen(vc: vc)
+                case AppConstants.Screens.OTP.rawValue:
+                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: OTPViewController.self)) as!  OTPViewController
+                    self.moveToScreen(vc: vc)
+                case AppConstants.Screens.SCANID.rawValue:
+                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: ScanIDViewController.self)) as!  ScanIDViewController
+                    self.moveToScreen(vc: vc)
+                case AppConstants.Screens.SELFIETIME.rawValue:
+                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: SelfieViewController.self)) as!  SelfieViewController
+                    self.moveToScreen(vc: vc)
+                case AppConstants.Screens.VERIFYADDRESS.rawValue:
+                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: VerifyAddressViewController.self)) as!  VerifyAddressViewController
+                    self.moveToScreen(vc: vc)
+                case AppConstants.Screens.HOME.rawValue:
+                    self.moveToHomeScreen()
+            default:
+                break
+            }
+        }else{
+            self.moveToScreen(vc: vc)
+        }
+    }
+    
+    func moveToHomeScreen(){
+        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
+        var initialNavigationController:UINavigationController
+        sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
+        let homeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as!  HomeViewController
+        initialNavigationController = UINavigationController(rootViewController:homeViewController)
+        sideMenuViewController.delegate = homeViewController
+        initialNavigationController.navigationBar.makeTransparent()
+        containerViewController.leftMenuViewController=sideMenuViewController
+        containerViewController.centerViewController=initialNavigationController
+        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+        containerViewController.shadow.enabled=true;
+        containerViewController.panMode = MFSideMenuPanModeDefault;
+        self.window?.rootViewController = containerViewController
         self.window?.makeKeyAndVisible()
+
+    }
+    
+    func moveToScreen(vc:UIViewController){
+        var initialNavigationController1:UINavigationController
+        //let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+        initialNavigationController1 = UINavigationController(rootViewController:vc)
+        initialNavigationController1.navigationBar.makeTransparent()
+        self.window?.rootViewController = initialNavigationController1
+        self.window?.makeKeyAndVisible()
+
     }
     @objc func applicationDidTimeout(notification: NSNotification) {
         

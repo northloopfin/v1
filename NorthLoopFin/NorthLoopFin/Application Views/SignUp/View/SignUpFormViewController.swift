@@ -57,7 +57,7 @@ class SignUpFormViewController: BaseViewController {
     
     //Move to OTP screen
     func moveToOTPScreen(){
-        
+        UserDefaults.saveToUserDefault(AppConstants.Screens.OTP.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

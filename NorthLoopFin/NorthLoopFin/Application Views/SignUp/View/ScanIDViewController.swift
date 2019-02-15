@@ -85,6 +85,7 @@ class ScanIDViewController: BaseViewController {
     
     @IBAction func nextClicked(_ sender: Any) {
         // move to Selfie Screen
+        UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

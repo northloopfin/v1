@@ -56,6 +56,7 @@ class SelfieViewController: BaseViewController {
     }
     
     @IBAction func nextClicked(_ sender: Any) {
+        UserDefaults.saveToUserDefault(AppConstants.Screens.VERIFYADDRESS.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

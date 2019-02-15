@@ -70,6 +70,7 @@ struct AppConstants{
         case SCANID = "ScanID"
         case SELFIETIME = "SelfieTime"
         case VERIFYADDRESS = "VerifyAddress"
+        case HOME = "Home"
     }
     
     enum SideMenuOptions:String {

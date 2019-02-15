@@ -165,6 +165,7 @@ extension OTPViewController:PhoneVerificationDelegate{
     }
     
     func moveToScanIDScreen(){
+        UserDefaults.saveToUserDefault(AppConstants.Screens.SCANID.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
