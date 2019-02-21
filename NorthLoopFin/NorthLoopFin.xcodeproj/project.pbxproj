@@ -89,6 +89,12 @@
 		1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */; };
 		1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */; };
 		1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6A76B21F5AA1600C38205 /* Fonts.swift */; };
+		1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */; };
+		1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066EB221BB8E800E1AD6D /* ImagePreviewViewController.swift */; };
+		1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066EF221BC1D000E1AD6D /* SelectIDType.swift */; };
+		1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F1221E577C00E1AD6D /* TappableImageView.swift */; };
+		1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */; };
+		1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
 		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
@@ -244,6 +250,12 @@
 		1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NorthLoopFin-Bridging-Header.h"; sourceTree = "<group>"; };
 		1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
 		1DC6A76B21F5AA1600C38205 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDNewViewController.swift; sourceTree = "<group>"; };
+		1DD066EB221BB8E800E1AD6D /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		1DD066EF221BC1D000E1AD6D /* SelectIDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIDType.swift; sourceTree = "<group>"; };
+		1DD066F1221E577C00E1AD6D /* TappableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableImageView.swift; sourceTree = "<group>"; };
+		1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAddressNewViewController.swift; sourceTree = "<group>"; };
+		1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedNewViewController.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +435,10 @@
 				1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */,
 				1D908FD121CCF837005C96BB /* AllDoneViewController.swift */,
 				1DFE480A21D745DF003EFECA /* SignupDelegates.swift */,
+				1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */,
+				1DD066EB221BB8E800E1AD6D /* ImagePreviewViewController.swift */,
+				1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */,
+				1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -962,6 +978,7 @@
 		1DFE480121D71B32003EFECA /* SIgnupForm */ = {
 			isa = PBXGroup;
 			children = (
+				1DD066EF221BC1D000E1AD6D /* SelectIDType.swift */,
 			);
 			path = SIgnupForm;
 			sourceTree = "<group>";
@@ -1058,6 +1075,7 @@
 				1D790E0921D355450088107A /* ScanIDOptionsView.swift */,
 				1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */,
 				1D790E0D21D393D10088107A /* CameraHandler.swift */,
+				1DD066F1221E577C00E1AD6D /* TappableImageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1484,6 +1502,7 @@
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
+				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
@@ -1508,6 +1527,7 @@
 				1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
+				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
@@ -1532,9 +1552,11 @@
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
+				1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */,
 				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
+				1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */,
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
@@ -1544,6 +1566,7 @@
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
+				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
@@ -1552,6 +1575,7 @@
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
+				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,

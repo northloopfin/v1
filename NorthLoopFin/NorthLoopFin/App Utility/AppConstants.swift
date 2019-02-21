@@ -43,6 +43,8 @@ struct AppConstants{
         case USER_REACHED_MAX_ATTEMPTS = "You reached maximum attempts. Please try again after 10 minutes"
         case USER_ABOUT_TO_REACH_MAX_ATTEMPTS = "You are left with one more login attempt"
         case USER_ACCOUNT_BLOCKED = "Your Account has been block. Check inbox to reset password"
+        case COMPLETE_DOCUMENT_UPLOAD = "Please complete document upload of selected ID Type"
+        case SELECT_ID_TYPE = "Please select ID type"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -116,6 +118,12 @@ struct AppConstants{
         case TRANSFERS = "Transfers"
         case LOWBALANCEALERT = "Low Balance Alert"
         case WEEKLYSPENDSUMMARY = "Weekly Spend Summary"
+    }
+    
+    enum SelectIDTYPES:String{
+        case PASSPORT="Passport"
+        case I20="I-20 (3 pages)"
+        case ENROLMENTLETTER = "Enrollment Letter"
     }
     
     enum States:String {

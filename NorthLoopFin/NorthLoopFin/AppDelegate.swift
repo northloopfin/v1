@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 break
             }
         }else{
-            self.moveToScreen(vc: vc)
+            self.moveToHomeScreen()
         }
     }
     

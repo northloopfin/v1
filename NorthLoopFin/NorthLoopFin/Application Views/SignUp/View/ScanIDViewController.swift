@@ -65,7 +65,6 @@ class ScanIDViewController: BaseViewController {
         
         
     @objc func handleButton(_ sender: AnyObject) {
-            let spacing:CGFloat = 10
             //change background color and other UI
             let selectedButton=sender as! UIButton
             selectedButton.layer.borderWidth=0.0

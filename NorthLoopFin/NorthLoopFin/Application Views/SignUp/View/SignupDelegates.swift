@@ -37,3 +37,7 @@ protocol FirebaseDelegates: BaseViewProtocol{
     func didSendPasswordReset(error:NSError?)
 }
 
+protocol ImagePreviewDelegate {
+    func imageUpdatedFor(index: Int, image:UIImage)
+}
+

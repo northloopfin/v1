@@ -13,6 +13,7 @@ class CommonButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
+     var isBtnSelected:Bool = false
     
     override var isEnabled:Bool {
         didSet {
