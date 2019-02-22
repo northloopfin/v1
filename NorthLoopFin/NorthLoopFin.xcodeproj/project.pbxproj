@@ -95,6 +95,7 @@
 		1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F1221E577C00E1AD6D /* TappableImageView.swift */; };
 		1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */; };
 		1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */; };
+		1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
 		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
@@ -256,6 +257,7 @@
 		1DD066F1221E577C00E1AD6D /* TappableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableImageView.swift; sourceTree = "<group>"; };
 		1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAddressNewViewController.swift; sourceTree = "<group>"; };
 		1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedNewViewController.swift; sourceTree = "<group>"; };
+		1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountV2ViewController.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		1D1E5A6F21C9C7960036E998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DD066F7221FDDE700E1AD6D /* V2 */,
 				1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */,
 				1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */,
 				1D0A881B21CB6E2100187439 /* OTPViewController.swift */,
@@ -806,6 +809,14 @@
 				1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1DD066F7221FDDE700E1AD6D /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */,
+			);
+			path = V2;
 			sourceTree = "<group>";
 		};
 		1DF64E1121E5A766008774CE /* Auth0 */ = {
@@ -1560,6 +1571,7 @@
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
+				1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,

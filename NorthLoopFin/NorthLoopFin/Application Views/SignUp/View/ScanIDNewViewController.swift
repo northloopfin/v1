@@ -172,9 +172,13 @@ class ScanIDNewViewController: BaseViewController {
         
     func setImages(){
         if self.selectedOption==AppConstants.SelectIDTYPES.PASSPORT || self.selectedOption==AppConstants.SelectIDTYPES.ENROLMENTLETTER{
+            self.uploadImage3HeightConstraint.constant=0
+            self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
             self.uploadedImageBack.image = self.imageArray[1]
         }else{
+            self.uploadImage3HeightConstraint.constant=60
+            self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
             self.uploadedImageBack.image = self.imageArray[1]
             self.uploadedImageExtra.image = self.imageArray[2]

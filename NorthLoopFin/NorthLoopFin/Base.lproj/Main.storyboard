@@ -3758,8 +3758,8 @@ up and site back and relax.</string>
                                     <constraint firstAttribute="height" constant="61" id="jFz-dX-V2p"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your registered address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-U6-dcU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="129" width="243" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your home address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-U6-dcU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="23" y="129" width="198.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="7aZ-W2-gPv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="K2H-HN-IhB"/>
@@ -3811,7 +3811,7 @@ up and site back and relax.</string>
                                     <outlet property="delegate" destination="Vjg-Gf-Sjo" id="anq-7I-woO"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Z9-bsR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Z9-bsR">
                                 <rect key="frame" x="25" y="264" width="270" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3824,7 +3824,7 @@ up and site back and relax.</string>
                                     <outlet property="delegate" destination="Vjg-Gf-Sjo" id="yGR-j2-BAF"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NS-5o-XiT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NS-5o-XiT">
                                 <rect key="frame" x="25" y="318" width="270" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3837,7 +3837,7 @@ up and site back and relax.</string>
                                     <outlet property="delegate" destination="Vjg-Gf-Sjo" id="2W8-75-4IK"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-nf-fDD">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-nf-fDD">
                                 <rect key="frame" x="25" y="372" width="270" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
