@@ -21,8 +21,7 @@ class WelcomeViewController: BaseViewController {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-            //Crashlytics.sharedInstance().crash()
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        self.moveToLogin()
         
     }
     
@@ -33,6 +32,12 @@ class WelcomeViewController: BaseViewController {
     
     func showSignUp(){
         auth0Mngr.auth0SignUp()
+    }
+    
+    func moveToLogin(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressNewViewController") as! VerifyAddressNewViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     func moveToNextScreen(){

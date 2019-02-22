@@ -17,7 +17,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var textState: UITextField!
     @IBOutlet weak var zipTextfield: UITextField!
 
-    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var doneBtn: CommonButton!
     
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -28,6 +28,7 @@ class VerifyAddressViewController: BaseViewController {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
+        UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -105,12 +106,10 @@ class VerifyAddressViewController: BaseViewController {
     
     func activateDoneBtn(){
         self.doneBtn.isEnabled=true
-        self.doneBtn.backgroundColor = Colors.Zorba161149133
     }
     
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
-        self.doneBtn.backgroundColor = Colors.Alto224224224
     }
 }
 //MARK: UITextField Delegates

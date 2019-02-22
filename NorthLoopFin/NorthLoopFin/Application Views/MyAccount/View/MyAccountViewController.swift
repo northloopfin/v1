@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyAccountViewController: BaseViewController {
     @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
@@ -62,8 +63,15 @@ extension MyAccountViewController:CommonTableDelegate{
     }
     
     func logoutUser(){
-        UserInformationUtility.sharedInstance.deleteCurrentUser()
-        self.moveToWelcome()
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            UserInformationUtility.sharedInstance.deleteCurrentUser()
+            self.moveToWelcome()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
     }
     
     func moveToWelcome(){

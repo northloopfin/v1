@@ -12,6 +12,7 @@ struct AppConstants{
     static let GoogleMapAPIKey = AppUtility.infoForKey("Google Map Key")
     static let TwilioAPIKey = AppUtility.infoForKey("Twilio Key")
     static let UserDefaultKeyForUser = "UserInformation"
+    static let UserDefaultKeyForScreen = "Screen"
 
 
     enum URL: String{
@@ -19,7 +20,6 @@ struct AppConstants{
         case TRANSACTION_LIST = "/v1/customer/transactions"
         case TWILIO_PHONE_VERIFICATION_START_ENDPOINT = "phones/verification/start"
         case TWILIO_PHONE_VERIFICATION_CHECK_ENDPOINT = "phones/verification/check"
-
     }
     
     enum ErrorHandlingKeys: String{
@@ -32,14 +32,19 @@ struct AppConstants{
         case PLEASE_CHECK_YOUR_INTERNET_CONNECTION = "Please check your internet connection"
         case SOME_ERROR_OCCURED = "Some error occured"
         case EMAIL_NOT_VALID = "Please enter a valid email address"
-        case PASSWORD_NOT_VALID = "Password should be minimum 8 characters, one uppercase letter, one number or special character and maximum 20 characters"
+        case PASSWORD_NOT_VALID = "Password should be minimum 8 characters, one uppercase letter, one number and one special character and maximum 20 characters"
         case ALL_FIELDS_MANDAORY = "All fields are mandatory"
         case PASSWORD_DONOT_MATCH = "Passwords do not match"
         case PHONE_NOT_VALID = "Please enter a valid Phone Number"
         case NAME_NOT_VALID = "Name should not contain special character and space"
         case ZIP_NOT_VALID = "Please enter a valid ZIP Code"
         case COMING_SOON = "Coming Soon"
-
+        case FORGET_PASSWORD_MESSAGE = "Please check your inbox for Password Reset Link"
+        case USER_REACHED_MAX_ATTEMPTS = "You reached maximum attempts. Please try again after 10 minutes"
+        case USER_ABOUT_TO_REACH_MAX_ATTEMPTS = "You are left with one more login attempt"
+        case USER_ACCOUNT_BLOCKED = "Your Account has been block. Check inbox to reset password"
+        case COMPLETE_DOCUMENT_UPLOAD = "Please complete document upload of selected ID Type"
+        case SELECT_ID_TYPE = "Please select ID type"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -58,6 +63,16 @@ struct AppConstants{
         case AUTHORIZATION = "Authorization"
         case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
         
+    }
+    
+    enum Screens:String{
+        case PASSWORD = "Password"
+        case USERDETAIL = "UserDetail"
+        case OTP = "OTP"
+        case SCANID = "ScanID"
+        case SELFIETIME = "SelfieTime"
+        case VERIFYADDRESS = "VerifyAddress"
+        case HOME = "Home"
     }
     
     enum SideMenuOptions:String {
@@ -103,6 +118,12 @@ struct AppConstants{
         case TRANSFERS = "Transfers"
         case LOWBALANCEALERT = "Low Balance Alert"
         case WEEKLYSPENDSUMMARY = "Weekly Spend Summary"
+    }
+    
+    enum SelectIDTYPES:String{
+        case PASSPORT="Passport"
+        case I20="I-20 (3 pages)"
+        case ENROLMENTLETTER = "Enrollment Letter"
     }
     
     enum States:String {

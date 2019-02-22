@@ -18,11 +18,20 @@ class PhoneVerificationCheckPresenter: ResponseCallback{
     }
     
     func sendPhoneVerificationCheckRequest(code:String){
+        var countryCode = ""
+        var phone = ""
+        if Env.isStaging(){
+            countryCode = "91"
+            phone = "9716787065"
+        }else if Env.isProduction(){
+            countryCode = "1"
+            phone = "3476739875"
+        }
         self.phoneVerificationDelegate?.showLoader()
         let requestModel = PhoneVerificationRequestModel.Builder()
             .addRequestHeader(key:AppConstants.APIRequestHeaders.TWILIO_AUTHORIZATION_KEY.rawValue, value: AppConstants.TwilioAPIKey!)
-            .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.COUNTRY_CODE.rawValue, value: "91" as AnyObject)
-            .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.PHONE_NUMBER.rawValue, value: "9716787065" as AnyObject)
+            .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.COUNTRY_CODE.rawValue, value: countryCode as AnyObject)
+            .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.PHONE_NUMBER.rawValue, value: phone as AnyObject)
             .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.VERIFICATION_CODE.rawValue, value: code as AnyObject).build()
         self.phoneVerificationLogic.performPhoneVerificationCheck(withPhoneVerification: requestModel, presenterDelagte: self)
         

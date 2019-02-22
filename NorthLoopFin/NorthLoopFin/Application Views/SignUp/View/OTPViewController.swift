@@ -14,7 +14,7 @@ class OTPViewController: BaseViewController {
     @IBOutlet weak var otpField2: UITextField!
     @IBOutlet weak var otpField3: UITextField!
     @IBOutlet weak var otpField4: UITextField!
-    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var doneBtn: CommonButton!
 
     @IBOutlet weak var resendLbl: UILabel!
     @IBOutlet weak var sentToLbl: UILabel!
@@ -135,15 +135,9 @@ class OTPViewController: BaseViewController {
     //Check for empty OTP Field
     func checkForEmptyField(){
         if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)!){
-            self.activateNext()
+            self.doneBtn.isEnabled=true
+            
         }
-    }
-    
-    // Will activate net button so that user can move to next screen
-    func activateNext(){
-        self.doneBtn.backgroundColor = Colors.Zorba161149133
-        self.doneBtn.isEnabled=true
-        
     }
     
     func addShadow(view:UITextField){
@@ -171,6 +165,7 @@ extension OTPViewController:PhoneVerificationDelegate{
     }
     
     func moveToScanIDScreen(){
+        UserDefaults.saveToUserDefault(AppConstants.Screens.SCANID.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

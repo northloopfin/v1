@@ -19,7 +19,7 @@ class ScanIDViewController: BaseViewController {
     @IBOutlet weak var scanFrontView: UIView!
     @IBOutlet weak var optionsView: UIScrollView!
     @IBOutlet weak var optionsStack: UIStackView!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var scanBackView: UIView!
     
     override func viewDidLoad() {
@@ -65,7 +65,6 @@ class ScanIDViewController: BaseViewController {
         
         
     @objc func handleButton(_ sender: AnyObject) {
-            let spacing:CGFloat = 10
             //change background color and other UI
             let selectedButton=sender as! UIButton
             selectedButton.layer.borderWidth=0.0
@@ -85,6 +84,7 @@ class ScanIDViewController: BaseViewController {
     
     @IBAction func nextClicked(_ sender: Any) {
         // move to Selfie Screen
+        UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -122,7 +122,6 @@ class ScanIDViewController: BaseViewController {
     func changeApperanceOfNextBtn(){
         if (self.idFront.size.width != 0 && self.idBack.size.width != 0 ){
             self.nextBtn.isEnabled = true
-            self.nextBtn.backgroundColor = Colors.Zorba161149133
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class SetPasswordViewController: BaseViewController {
-    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var doneBtn: CommonButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!    
@@ -102,12 +102,10 @@ class SetPasswordViewController: BaseViewController {
     //change appearance of done button
     func changeApperanceOfDone(){
         self.doneBtn.isEnabled=true
-        self.doneBtn.backgroundColor = Colors.Zorba161149133
     }
     
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
-        self.doneBtn.backgroundColor = Colors.Alto224224224
     }
     
     func createAccountWithData(_ email:String,_ password:String){
@@ -115,6 +113,8 @@ class SetPasswordViewController: BaseViewController {
     }
     
     func moveToCreateAccount(){
+        // set screen here
+        UserDefaults.saveToUserDefault(AppConstants.Screens.USERDETAIL.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -133,6 +133,10 @@ extension SetPasswordViewController:UITextFieldDelegate{
 }
 
 extension SetPasswordViewController:FirebaseDelegates{
+    func didSendPasswordReset(error: NSError?) {
+        
+    }
+    
     func didFirebaseDatabaseUpdated() {
         
     }
@@ -148,5 +152,11 @@ extension SetPasswordViewController:FirebaseDelegates{
     }
     func didNameUpdated(error:NSError?){
 
+    }
+    func didLoggedIn(error:NSError?){
+        
+    }
+    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
+        
     }
 }

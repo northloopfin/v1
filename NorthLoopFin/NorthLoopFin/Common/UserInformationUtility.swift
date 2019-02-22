@@ -4,6 +4,8 @@ class UserInformationUtility: NSObject {
     static let sharedInstance = UserInformationUtility()
 
     var user:User = User()
+    var userattemptsIn10Min:Int = 0
+    var userattepmtsIn30Min:Int = 0
     
      override init() {
         super.init()
