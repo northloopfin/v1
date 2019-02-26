@@ -36,11 +36,22 @@ class HomeViewController: BaseViewController {
         self.ledgersTableView.reloadData()
         homePresenter = HomePresenter.init(delegate: self)
         self.getTransactionList()
+        self.loadHardcodedData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.makeTransparent()
+    }
+    
+    func loadHardcodedData(){
+        let dummy1:Dummy = Dummy.init(name: "Dominos", code: "$24.49", image: UIImage.init(named: "Dummy1")!)
+        let dummy2:Dummy = Dummy.init(name: "Starbucks", code: "$4.98", image: UIImage.init(named: "Dummy2")!)
+        let dummy3:Dummy = Dummy.init(name: "NetFlix", code: "$15.99", image: UIImage.init(named: "Dummy3")!)
+        let dummy4:Dummy = Dummy.init(name: "H&M", code: "$38.98", image: UIImage.init(named: "Dummy4")!)
+        let arr = [dummy1,dummy2,dummy3,dummy4]
+        let data = TransactionListModel.init(sectionTitle: "September 8th,2018", rowData: arr)
+        self.transactionDataSource.append(data)
     }
     
     //Methode initialises the rightbutton for navigation
@@ -69,10 +80,10 @@ class HomeViewController: BaseViewController {
     
     /// This method is used to get list of Tranactions from api
     func getTransactionList(){
-        homePresenter.sendTransactionListRequest()
+        //homePresenter.sendTransactionListRequest()
     }
     ///Move to detail screen
-    func moveToDetailScreen(detailModel:Transaction){
+    func moveToDetailScreen(detailModel:Dummy){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
        transactionDetailController.detailModel = detailModel

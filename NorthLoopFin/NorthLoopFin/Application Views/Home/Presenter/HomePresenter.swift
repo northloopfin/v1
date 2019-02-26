@@ -49,10 +49,10 @@ class HomePresenter: ResponseCallback{
         let dic:Dictionary = Dictionary(grouping: data, by: {$0.transactionDate})
         let dicKeys = Array(dic.keys)
         for key in dicKeys {
-            let transactionArr:[Transaction] = dic[key]!
-            let section = transactionArr[0].createdAt
-            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: section, rowData: transactionArr)
-            dataArr.append(transationListModel)
+//            let transactionArr:[Transaction] = dic[key]!
+//            let section = transactionArr[0].createdAt
+//            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: section, rowData: transactionArr)
+//            dataArr.append(transationListModel)
         }
         return dataArr
     }

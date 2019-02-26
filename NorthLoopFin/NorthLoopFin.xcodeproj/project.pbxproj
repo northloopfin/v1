@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */; };
 		1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881B21CB6E2100187439 /* OTPViewController.swift */; };
 		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
 		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
@@ -19,6 +20,9 @@
 		1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11FE1E220D742A00234E6D /* ForgetPasswordViewController.swift */; };
 		1D11FE21221126B700234E6D /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11FE20221126B700234E6D /* CommonButton.swift */; };
 		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
+		1D3538382223E54F00716A94 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3538372223E54E00716A94 /* country.json */; };
+		1D35383B2223E58E00716A94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35383A2223E58E00716A94 /* Country.swift */; };
+		1D35383D2223FF5800716A94 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35383C2223FF5800716A94 /* Dummy.swift */; };
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
 		1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */; };
 		1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */; };
@@ -168,6 +172,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStudentViewController.swift; sourceTree = "<group>"; };
 		1D0A881B21CB6E2100187439 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
 		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +185,9 @@
 		1D11FE1E220D742A00234E6D /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		1D11FE20221126B700234E6D /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1D3538372223E54E00716A94 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
+		1D35383A2223E58E00716A94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		1D35383C2223FF5800716A94 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1D3AA52E21E35FDC0075DBD0 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		1D3AA53021E36AE80075DBD0 /* Auth0ApiCallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth0ApiCallManager.swift; sourceTree = "<group>"; };
@@ -454,6 +462,14 @@
 				1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D3538392223E56600716A94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D35383A2223E58E00716A94 /* Country.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1D3AA52D21E35FCB0075DBD0 /* Auth0 */ = {
@@ -740,6 +756,7 @@
 				1D818A1921C23DBD000C8F5F /* Address.swift */,
 				1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */,
 				1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */,
+				1D35383C2223FF5800716A94 /* Dummy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -815,6 +832,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */,
+				1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -965,6 +983,7 @@
 		1DF64E3C21E8DF9F008774CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1D3538392223E56600716A94 /* Model */,
 				1D913EF321EC5584009D7E52 /* Views */,
 				1DF64E3F21E8E01A008774CE /* UserInformationUtility.swift */,
 				1DF64E3D21E8E00B008774CE /* UserDefaults.swift */,
@@ -1021,6 +1040,7 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				1D3538372223E54E00716A94 /* country.json */,
 				1D915C1022082CAE00223480 /* App Timeout */,
 				1DF64E3C21E8DF9F008774CE /* Common */,
 				1D8189F921C0E04C000C8F5F /* Fonts */,
@@ -1298,6 +1318,7 @@
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
 				1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */,
 				1D11FE16220B536F00234E6D /* GoogleService-Info.plist in Resources */,
+				1D3538382223E54F00716A94 /* country.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1455,6 +1476,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -1474,6 +1496,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -1551,6 +1574,7 @@
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
+				1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
@@ -1577,6 +1601,7 @@
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
+				1D35383B2223E58E00716A94 /* Country.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
@@ -1604,6 +1629,7 @@
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
+				1D35383D2223FF5800716A94 /* Dummy.swift in Sources */,
 				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,

@@ -23,9 +23,14 @@ class HomeTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func bindData(data: Transaction){
-        self.beneficiaryName.text = data.transactionPrintout.beneficiaryname
-        self.transactionAmt.text = "$" + String(data.amount)
+//    func bindData(data: Transaction){
+//        self.beneficiaryName.text = data.transactionPrintout.beneficiaryname
+//        self.transactionAmt.text = "$" + String(data.amount)
+//    }
+    func bindData(data: Dummy){
+        self.beneficiaryName.text = data.name
+        self.transactionAmt.text =  String(data.amount)
+        self.beneficiaryImg.image = data.image
     }
     
 }

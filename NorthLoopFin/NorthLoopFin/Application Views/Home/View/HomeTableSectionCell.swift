@@ -19,7 +19,7 @@ class HomeTableSectionCell: UITableViewHeaderFooterView {
     }
     */
     func bindData(data:TransactionListModel){
-        self.dateTxt.text = AppUtility.getDateFromUTCFormatUsingNumberOrdinal(dateStr: data.sectionTitle)
+        self.dateTxt.text = data.sectionTitle//AppUtility.getDateFromUTCFormatUsingNumberOrdinal(dateStr: data.sectionTitle)
         
     }
 }

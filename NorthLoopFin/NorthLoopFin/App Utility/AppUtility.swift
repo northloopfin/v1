@@ -87,4 +87,31 @@ class AppUtility {
         statesArr.append(contentsOf: [AppConstants.States.Alabama.rawValue,AppConstants.States.Alaska.rawValue,AppConstants.States.Arizona.rawValue,AppConstants.States.Arkansas.rawValue,AppConstants.States.California.rawValue,AppConstants.States.Colorado.rawValue,AppConstants.States.Connecticut.rawValue,AppConstants.States.Delaware.rawValue,AppConstants.States.Georgia.rawValue,AppConstants.States.Hawaii.rawValue,AppConstants.States.Idaho.rawValue,AppConstants.States.Illinois.rawValue,AppConstants.States.Indiana.rawValue,AppConstants.States.Iowa.rawValue,AppConstants.States.Kansas.rawValue,AppConstants.States.Kentucky.rawValue,AppConstants.States.Louisiana.rawValue,AppConstants.States.Maine.rawValue,AppConstants.States.Maryland.rawValue,AppConstants.States.Massachusetts.rawValue,AppConstants.States.Michigan.rawValue,AppConstants.States.Minnesota.rawValue,AppConstants.States.Mississippi.rawValue,AppConstants.States.Missouri.rawValue,AppConstants.States.Montana.rawValue,AppConstants.States.Nebraska.rawValue,AppConstants.States.Nevada.rawValue,AppConstants.States.NewHampshire.rawValue,AppConstants.States.NewJersey.rawValue,AppConstants.States.NewMexico.rawValue,AppConstants.States.NewYork.rawValue,AppConstants.States.NorthCarolina.rawValue,AppConstants.States.NorthDakota.rawValue,AppConstants.States.Ohio.rawValue,AppConstants.States.Oklahoma.rawValue,AppConstants.States.Pennsylvania.rawValue,AppConstants.States.NewMexico.rawValue,AppConstants.States.RhodeIsland.rawValue,AppConstants.States.SouthCarolina.rawValue,AppConstants.States.SouthDakota.rawValue,AppConstants.States.WestVirginia.rawValue,AppConstants.States.Texas.rawValue,AppConstants.States.Utah.rawValue,AppConstants.States.Vermont.rawValue,AppConstants.States.Virginia.rawValue,AppConstants.States.Washington.rawValue,AppConstants.States.Wisconsin.rawValue,AppConstants.States.Wyoming.rawValue,AppConstants.States.AmericanSamoa.rawValue,AppConstants.States.DistrictofColumbia.rawValue,AppConstants.States.FederatedStatesofMicronesia.rawValue,AppConstants.States.Guam.rawValue,AppConstants.States.MarshallIslands.rawValue,AppConstants.States.NorthernMarianaIslands.rawValue,AppConstants.States.AmericanSamoa.rawValue,AppConstants.States.Palau.rawValue,AppConstants.States.PuertoRico.rawValue,AppConstants.States.VirginIslands.rawValue])
         return statesArr
     }
+    
+    class func getCountryList()->[Country]{
+        var countryList:[Country]=[]
+        if let path = Bundle.main.path(forResource: "country", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let countries = jsonResult["countries"] as? [NSDictionary] {
+                    for country: NSDictionary in countries {
+                        let country : Country = Country.init(name: country["name"] as! String, code: country["code"] as! String)
+                        countryList.append(country)
+                    }
+                }
+            } catch {
+                // handle error
+            }
+        }
+        return countryList
+    }
+    class func getCountriesOnly()->[String]{
+        var arr:[String]=[]
+        let countriesArr = self.getCountryList()
+        for country in countriesArr{
+            arr.append(country.name)
+        }
+        return arr
+    }
 }

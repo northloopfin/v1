@@ -6,9 +6,7 @@ target 'NorthLoopFin' do
   use_frameworks!
  
   pod 'AFNetworking', '~> 3.0'
-
   pod 'SVProgressHUD'
-
   pod 'ReachabilitySwift'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
@@ -24,6 +22,7 @@ target 'NorthLoopFin' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Repeat'
+  pod 'Amplitude-iOS', '~> 4.5'
 
   # Pods for NorthLoopFin
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import DropDown
+import IQKeyboardManagerSwift
 
 class VerifyAddressNewViewController: BaseViewController {
     
@@ -14,16 +16,59 @@ class VerifyAddressNewViewController: BaseViewController {
     @IBOutlet weak var zipCode: UITextField!
     @IBOutlet weak var country: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
-    
+    @IBOutlet weak var code: UITextField!
+
     @IBOutlet weak var doneBtn: CommonButton!
 
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
+    let dropDown = DropDown()
+    let countryWithCode = AppUtility.getCountryList()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Verify Address")
+        self.prepareView()
+        self.changeTextFieldAppearance()
+    }
+    @IBAction func doneClicked(_ sender: Any) {
+        UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedNewViewController") as! ConfirmedNewViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func prepareView(){
+        dropDown.anchorView = self.country
+        dropDown.dataSource = AppUtility.getCountriesOnly()
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.country.text=item
+            self.code.text=self.countryWithCode[index].code
+            self.dropDown.hide()
+        }
+        
+        self.mainTitleLbl.textColor = Colors.MainTitleColor
+        self.mainTitleLbl.font=AppFonts.mainTitleCalibriBold25
+        
+        self.subTitleLbl.textColor=Colors.Cameo213186154
+        self.subTitleLbl.font=AppFonts.btnTitleCalibri18
+        
+        self.streetAddress.textColor=Colors.DustyGray155155155
+        self.streetAddress.font=AppFonts.textBoxCalibri16
+        self.zipCode.textColor=Colors.DustyGray155155155
+        self.zipCode.font=AppFonts.textBoxCalibri16
+        self.country.textColor=Colors.DustyGray155155155
+        self.country.font=AppFonts.textBoxCalibri16
+        self.phoneNumber.textColor=Colors.DustyGray155155155
+        self.phoneNumber.font=AppFonts.textBoxCalibri16
+        self.code.textColor=Colors.DustyGray155155155
+        self.code.font=AppFonts.textBoxCalibri16
+        
+        self.doneBtn.titleLabel?.font=AppFonts.btnTitleCalibri18
     }
     
     //Change TextField Appearance
@@ -35,20 +80,22 @@ class VerifyAddressNewViewController: BaseViewController {
         let textfieldCorber = 5.0
         
         self.streetAddress.applyAttributesWithValues(placeholderText: "Street Address*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.zipCode.applyAttributesWithValues(placeholderText: "Apt/House/Unit No.*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.country.applyAttributesWithValues(placeholderText: "City*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.phoneNumber.applyAttributesWithValues(placeholderText: "State*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        
+        self.zipCode.applyAttributesWithValues(placeholderText: "Zip*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.country.applyAttributesWithValues(placeholderText: "Country*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.phoneNumber.applyAttributesWithValues(placeholderText: "Phone Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.code.applyAttributesWithValues(placeholderText: "Code*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.streetAddress.setLeftPaddingPoints(19)
         self.zipCode.setLeftPaddingPoints(19)
         self.country.setLeftPaddingPoints(19)
         self.phoneNumber.setLeftPaddingPoints(19)
-        
+        self.code.setLeftPaddingPoints(19)
+
         self.streetAddress.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.zipCode.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.country.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.phoneNumber.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.code.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -65,6 +112,28 @@ class VerifyAddressNewViewController: BaseViewController {
         self.doneBtn.isEnabled=false
     }
 }
+
+extension VerifyAddressNewViewController:UITextFieldDelegate{
 func textFieldDidEndEditing(_ textField: UITextField) {
+    if (!(self.streetAddress.text?.isEmpty)! && !(self.zipCode.text?.isEmpty)!) && !(self.country.text?.isEmpty)! && !(self.phoneNumber.text?.isEmpty)! && !(self.code.text?.isEmpty)!{
+        if (Validations.isValidZip(value: self.zipCode.text!)){
+            self.activateDoneBtn()
+        }else{
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+            }
+        }
+    }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.country
+        {
+            IQKeyboardManager.shared.resignFirstResponder()
+            self.dropDown.show()
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
 }

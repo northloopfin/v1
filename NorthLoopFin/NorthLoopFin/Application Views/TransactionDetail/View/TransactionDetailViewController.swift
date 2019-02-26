@@ -20,7 +20,9 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var amtLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var transactionImg: UIImageView!
-    var detailModel:Transaction!
+    //var detailModel:Transaction!
+    var detailModel:Dummy!
+
     var historyOptions : [String] = [] {
         didSet {
             self.historyTableView.reloadData()
@@ -75,8 +77,10 @@ class TransactionDetailViewController: BaseViewController {
         shadowRadius = 16
         shadowColor = UIColor.init(red: 0, green: 107, blue: 79)
         self.transactionImg.layer.addShadowAndRoundedCorners(roundedCorner: 31, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-        self.beneficiaryNameLbl.text = self.detailModel.transactionPrintout.beneficiaryname
-        self.amtLbl.text = "$" + String(self.detailModel.amount)
+       // self.beneficiaryNameLbl.text = self.detailModel.transactionPrintout.beneficiaryname
+        self.beneficiaryNameLbl.text = self.detailModel.name
+        self.amtLbl.text =  String(self.detailModel.amount)
+        self.transactionImg.image = self.detailModel.image
     }
     //Method to go back to previous screen
     @objc func popController(){

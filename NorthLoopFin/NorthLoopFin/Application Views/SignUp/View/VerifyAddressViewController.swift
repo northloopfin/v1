@@ -23,6 +23,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
     let dropDown = DropDown()
+    let countryWithCode = AppUtility.getCountryList()
     
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()

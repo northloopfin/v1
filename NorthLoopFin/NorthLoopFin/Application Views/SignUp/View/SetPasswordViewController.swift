@@ -116,7 +116,7 @@ class SetPasswordViewController: BaseViewController {
         // set screen here
         UserDefaults.saveToUserDefault(AppConstants.Screens.USERDETAIL.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
 }

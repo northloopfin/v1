@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Amplitude-iOS (4.5.0)
   - Auth0 (1.14.0):
     - SimpleKeychain
   - Crashlytics (3.12.0):
@@ -107,6 +108,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Amplitude-iOS (~> 4.5)
   - Auth0 (~> 1.5)
   - Crashlytics
   - DropDown (= 2.3.2)
@@ -127,6 +129,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Amplitude-iOS
     - Auth0
     - Crashlytics
     - DropDown
@@ -156,6 +159,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Amplitude-iOS: 1de49103125f9b816ca11df924652e5a303e2c33
   Auth0: 6ba27a720fe99ccf2fd4c69c051948d4036ac26d
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
@@ -183,6 +187,6 @@ SPEC CHECKSUMS:
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 2fd72fc54542d4ca31cd9ccbdead81e11698dfbb
+PODFILE CHECKSUM: add00960404b424f239e831f6174f0138d549178
 
 COCOAPODS: 1.5.3
