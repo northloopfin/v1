@@ -148,6 +148,7 @@ extension SetPasswordViewController:FirebaseDelegates{
         }
         let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
         UserInformationUtility.sharedInstance.saveUser(model: user)
+        UserDefaults.saveToUserDefault(authResult.user.email! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
         self.moveToCreateAccount()
     }
     func didNameUpdated(error:NSError?){

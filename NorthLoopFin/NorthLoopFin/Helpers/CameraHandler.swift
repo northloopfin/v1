@@ -49,9 +49,9 @@ class CameraHandler: NSObject{
             self.camera()
         }))
         
-        //actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            //self.photoLibrary()
-        //}))
+        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            self.photoLibrary()
+        }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         

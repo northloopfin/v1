@@ -17,12 +17,17 @@ class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
    // @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
-    @IBOutlet weak var loginLbl: LabelWithLetterSpace!
+    @IBOutlet weak var loginBtn: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
     var auth0Mngr:Auth0ApiCallManager!
     var firebaseManager:FirebaseManager!
     
+    @IBAction func loginClicked(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
     @IBAction func nextClicked(_ sender: Any) {
          validateForm()
     }
@@ -58,6 +63,7 @@ class SignUpFormViewController: BaseViewController {
     //Move to OTP screen
     func moveToOTPScreen(){
         UserDefaults.saveToUserDefault(AppConstants.Screens.OTP.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -84,7 +90,7 @@ class SignUpFormViewController: BaseViewController {
         self.lastNameTextField.textColor = Colors.DustyGray155155155
         self.phoneTextField.textColor = Colors.DustyGray155155155
         self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        self.loginLbl.textColor = Colors.NeonCarrot25414966
+        self.loginBtn.titleLabel?.textColor = Colors.NeonCarrot25414966
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
@@ -93,7 +99,7 @@ class SignUpFormViewController: BaseViewController {
         self.phoneTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
         self.alreadyHaveaccountLbl.font = AppFonts.calibri15
-        self.loginLbl.font = AppFonts.calibriBold15
+        self.loginBtn.titleLabel!.font = AppFonts.calibriBold15
     }
     
     func updateTextFieldUI(){

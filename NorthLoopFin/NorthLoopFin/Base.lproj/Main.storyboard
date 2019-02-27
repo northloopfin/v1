@@ -705,28 +705,23 @@ W1s 2Bx,UK</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOC-RB-1VG" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="111.5" y="78" width="97" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="91X-ch-9x1"/>
-                                            <constraint firstAttribute="height" constant="20" id="hNg-CT-RC8"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-mr-Sg1" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="141.5" y="76" width="37" height="31"/>
                                         <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" red="0.99607843137254903" green="0.58431372549019611" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.99607843139999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginClicked:" destination="Zrh-81-Kal" eventType="touchUpInside" id="Ebq-bb-ZGw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="JM2-u7-j7M" firstAttribute="centerX" secondItem="5KM-Uu-qM8" secondAttribute="centerX" id="56G-uq-LXm"/>
-                                    <constraint firstItem="JM2-u7-j7M" firstAttribute="centerX" secondItem="NOC-RB-1VG" secondAttribute="centerX" id="5Lg-4k-zlG"/>
                                     <constraint firstItem="JM2-u7-j7M" firstAttribute="top" secondItem="5KM-Uu-qM8" secondAttribute="top" constant="57" id="8Ej-id-gPz"/>
-                                    <constraint firstItem="NOC-RB-1VG" firstAttribute="top" secondItem="JM2-u7-j7M" secondAttribute="bottom" constant="3" id="JyZ-fh-D3U"/>
+                                    <constraint firstItem="BIw-mr-Sg1" firstAttribute="top" secondItem="JM2-u7-j7M" secondAttribute="bottom" constant="1" id="SZ2-a7-hph"/>
+                                    <constraint firstItem="BIw-mr-Sg1" firstAttribute="centerX" secondItem="5KM-Uu-qM8" secondAttribute="centerX" id="lpL-cc-yaX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -754,7 +749,7 @@ W1s 2Bx,UK</string>
                         <outlet property="alreadyHaveaccountLbl" destination="JM2-u7-j7M" id="4cE-xy-45b"/>
                         <outlet property="firstNameTextField" destination="whs-du-iTR" id="MxC-LL-ADK"/>
                         <outlet property="lastNameTextField" destination="SI4-vm-lbj" id="Yez-gI-WgZ"/>
-                        <outlet property="loginLbl" destination="NOC-RB-1VG" id="aUw-38-iVS"/>
+                        <outlet property="loginBtn" destination="BIw-mr-Sg1" id="6dy-o9-vmd"/>
                         <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>
                         <outlet property="phoneTextField" destination="BAp-4N-9Ou" id="Z4c-zC-BJu"/>
@@ -1744,7 +1739,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="Jow-ac-l5k" id="vvh-Jc-XC7"/>
                                 </connections>
@@ -3470,7 +3465,7 @@ up and site back and relax.</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="Osz-9E-BWI" id="fjf-sH-GtC"/>
                                 </connections>
@@ -3609,7 +3604,7 @@ up and site back and relax.</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="lLm-xF-ncz" id="ADq-1w-deO"/>
                                 </connections>

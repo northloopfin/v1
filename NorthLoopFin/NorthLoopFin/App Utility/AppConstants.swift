@@ -13,6 +13,8 @@ struct AppConstants{
     static let TwilioAPIKey = AppUtility.infoForKey("Twilio Key")
     static let UserDefaultKeyForUser = "UserInformation"
     static let UserDefaultKeyForScreen = "Screen"
+    static let UserDefaultKeyForEmail = "Email"
+
 
 
     enum URL: String{
@@ -29,7 +31,7 @@ struct AppConstants{
     
     enum ErrorMessages: String{
         case REQUEST_TIME_OUT = "Request Time Out"
-        case PLEASE_CHECK_YOUR_INTERNET_CONNECTION = "Please check your internet connection"
+        case PLEASE_CHECK_YOUR_INTERNET_CONNECTION = "Can't connect to the internet! Please check your connection and try again"
         case SOME_ERROR_OCCURED = "Some error occured"
         case EMAIL_NOT_VALID = "Please enter a valid email address"
         case PASSWORD_NOT_VALID = "Password should be minimum 8 characters, one uppercase letter, one number and one special character and maximum 20 characters"
