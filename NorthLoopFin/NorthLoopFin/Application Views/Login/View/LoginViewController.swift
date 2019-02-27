@@ -47,9 +47,10 @@ class LoginViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Login")
         self.prepareView()
         manager=FirebaseManager.init(delegate: self)
-        //manager.getUserFromEmailId(email: "sunita.ipec8@gmail.com")
-        //manager.updateUserDataForIsActive(number: NSNumber.init(value: false), email: "nnorthlooptest@gmail.com")
-
+        self.logEventForLogin()
+        if let email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail){
+            self.emailTextField.text = email as? String
+        }
         if AccountLockTimer.sharedInstance.timer != nil{
             if (AccountLockTimer.sharedInstance.timer?.state.isRunning)!{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
@@ -133,6 +134,11 @@ class LoginViewController: BaseViewController {
         let vc = storyBoard.instantiateViewController(withIdentifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    func logEventForLogin(){
+        let eventProperties:[String:String] = ["EventCategory":"Login","Description":"when the user lands on the login screen/page"]
+        let eventName:String = "View Login Screen"
+        logEventsHelper.logEventWithName(name: eventName, andProperties: eventProperties)
+    }
 }
 //MARK: UITextFiled Delegates
 extension LoginViewController:UITextFieldDelegate{
@@ -213,6 +219,7 @@ extension LoginViewController:FirebaseDelegates{
             let email:String = data?["email"] as? String ?? ""
             let user:User = User.init(firstname: firstname, lastname: lastname, email: email, phone: phone)
             UserInformationUtility.sharedInstance.saveUser(model: user)
+            UserDefaults.saveToUserDefault(email as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
             self.moveToHome()
         
     }

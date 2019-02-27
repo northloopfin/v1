@@ -7,6 +7,7 @@ import Fabric
 import Crashlytics
 import DropDown
 import Firebase
+import Amplitude_iOS
 
 
 class AppLaunchSetup: NSObject {
@@ -40,5 +41,7 @@ class AppLaunchSetup: NSObject {
         BITHockeyManager.shared().authenticator.authenticateInstallation()
         //Configure Firebase
         FirebaseApp.configure()
+        Amplitude.instance()?.initializeApiKey("e60c4b5547bbd53ae65dab02520fd3ab")
+        
     }
 }

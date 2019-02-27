@@ -15,6 +15,10 @@ class ScanIDNewViewController: BaseViewController {
     @IBOutlet weak var selectYourIDLbl: LabelWithLetterSpace!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
+    @IBOutlet weak var uploadImageFrontLbl: LabelWithLetterSpace!
+    @IBOutlet weak var uploadImageBackLbl: LabelWithLetterSpace!
+    @IBOutlet weak var uploadImageExtraLbl: LabelWithLetterSpace!
+
     @IBOutlet weak var optionsStack: UIStackView!
     @IBOutlet weak var optionsView: UIScrollView!
 
@@ -33,6 +37,7 @@ class ScanIDNewViewController: BaseViewController {
     var model:SelectIDType!
     
     var modelArray:[SelectIDType]=[]
+    var optionBtnsArray:[CommonButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +46,7 @@ class ScanIDNewViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
         self.addTapGesture()
-        self.nextBtn.isEnabled=true
+        self.nextBtn.isEnabled=false
         
     }
     override func viewDidLayoutSubviews() {
@@ -115,7 +120,7 @@ class ScanIDNewViewController: BaseViewController {
             btn.isBtnSelected=false
             btn.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20)
             btn.addTarget(self, action: #selector(self.handleButton(_:)), for: .touchUpInside)
-            
+            self.optionBtnsArray.append(btn)
             optionsStack.addArrangedSubview(btn)
         }
     }
@@ -129,10 +134,14 @@ class ScanIDNewViewController: BaseViewController {
             self.setImages()
         }else{
             selectedButton.isBtnSelected = true
+            //get button from array and update its selection state
+            let btn:CommonButton = self.optionBtnsArray[selectedButton.tag]
+            btn.isBtnSelected=true
+            self.optionBtnsArray.insert(btn, at: selectedButton.tag)
             self.handleSelectedOption(selectedButton)
         }
     }
-    
+    ///Methode will handle the selected option and decide whether allow selection of next option or throw error and make some UI changes
     func handleSelectedOption(_ sender:CommonButton){
         if let optionSelected = self.selectedOption{
             
@@ -150,17 +159,14 @@ class ScanIDNewViewController: BaseViewController {
                 }
             }
         }
-        if let option = self.selectedOption{
-            self.model  = SelectIDType.init(type: option, images: self.imageArray)
-            self.modelArray.append(self.model)
-        }
-        print("Select next option3")
         self.resetImages()
         self.imageArray = []
         self.selectedOption = self.optionsArr[sender.tag]
         if self.selectedOption == AppConstants.SelectIDTYPES.I20{
             uploadImage3HeightConstraint.constant=60
+            self.setLabelsForI20()
         }else{
+            self.resetLabels()
             uploadImage3HeightConstraint.constant=0
         }
         self.view.layoutIfNeeded()
@@ -169,6 +175,17 @@ class ScanIDNewViewController: BaseViewController {
         sender.setTitleColor(UIColor.white, for: .normal)
         sender.backgroundColor = Colors.Cameo213186154
         sender.set(image: UIImage.init(named: "tick"), title: (sender.titleLabel?.text)!, titlePosition: .left, additionalSpacing: 10.0, state: .normal)
+    }
+    /// Methode will reset Label text to original
+    func resetLabels(){
+        self.uploadImageFrontLbl.text = "Scan Front of ID"
+        self.uploadImageBackLbl.text = "Scan Back of ID"
+    }
+    /// Methode will set lable text according to i-20 option
+    func setLabelsForI20(){
+        self.uploadImageFrontLbl.text = "Page 1"
+        self.uploadImageBackLbl.text = "Page 2"
+        self.uploadImageExtraLbl.text = "Page 3"
     }
         
     func setImages(){
@@ -196,10 +213,30 @@ class ScanIDNewViewController: BaseViewController {
     }
     @IBAction func nextClicked(_ sender: Any) {
         // move to Selfie Screen
+       self.showErrForSelectedOptions()
         UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func showErrForSelectedOptions(){
+        if let optionSelected = self.selectedOption{
+            
+            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.ENROLMENTLETTER{
+                if self.imageArray.count < 2 {
+                    print("show error for passport")
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                    return
+                }
+            }else{
+                if self.imageArray.count < 3{
+                    print("show error for I-20")
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                    return
+                }
+            }
+        }
     }
     
     @IBAction func takeImageClicked(_ sender: Any) {
@@ -231,6 +268,30 @@ class ScanIDNewViewController: BaseViewController {
                 default:
                     break
                 }
+                self.checkForCompletedStateOfScanId()
+            }
+        }
+    /// This function will check whether images of all scan ID has been uploaded or not. If so, then enable next button
+        func checkForCompletedStateOfScanId(){
+            if let optionSelected = self.selectedOption{
+                
+                if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.ENROLMENTLETTER{
+                    if self.imageArray.count == 2 {
+                        self.model  = SelectIDType.init(type: optionSelected, images: self.imageArray)
+                        self.modelArray.append(self.model)
+                    }
+                }else{
+                    if self.imageArray.count == 3{
+                        self.model  = SelectIDType.init(type: optionSelected, images: self.imageArray)
+                        self.modelArray.append(self.model)
+                    }
+                }
+            }
+            if self.modelArray.count == self.optionsArr.count{
+                self.nextBtn.isEnabled=true
+            }else{
+                self.nextBtn.isEnabled=false
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
             }
         }
     }

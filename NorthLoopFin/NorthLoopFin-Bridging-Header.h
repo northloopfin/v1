@@ -12,4 +12,3 @@
 
 #endif /* NorthLoopFin_Bridging_Header_h */
 #import <HockeySDK/HockeySDK.h>
-

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Amplitude_iOS
 
 class SetPasswordViewController: BaseViewController {
     @IBOutlet weak var doneBtn: CommonButton!
@@ -115,9 +116,18 @@ class SetPasswordViewController: BaseViewController {
     func moveToCreateAccount(){
         // set screen here
         UserDefaults.saveToUserDefault(AppConstants.Screens.USERDETAIL.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+        // track event here for Create account
+        self.logEvent()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func logEvent(){
+        // Log Event for Create Account
+        let eventProperties:[String:String] = ["EventCategory":"Onboarding","Description":"when user successfully creates an account"]
+        let eventName:String = "Create account"
+        logEventsHelper.logEventWithName(name: eventName, andProperties: eventProperties)
     }
 }
 
@@ -148,6 +158,7 @@ extension SetPasswordViewController:FirebaseDelegates{
         }
         let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
         UserInformationUtility.sharedInstance.saveUser(model: user)
+        UserDefaults.saveToUserDefault(authResult.user.email! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
         self.moveToCreateAccount()
     }
     func didNameUpdated(error:NSError?){

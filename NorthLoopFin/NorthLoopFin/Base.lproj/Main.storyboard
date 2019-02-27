@@ -1480,6 +1480,9 @@ W1s 2Bx,UK</string>
                         <outlet property="selectYourIDLbl" destination="c8A-3Y-RvI" id="FKd-cN-bcm"/>
                         <outlet property="uploadImage3" destination="KH5-E1-Z8N" id="fUm-3U-WKN"/>
                         <outlet property="uploadImage3HeightConstraint" destination="vqA-YZ-lyd" id="2eh-af-Yn5"/>
+                        <outlet property="uploadImageBackLbl" destination="vQY-UN-drV" id="bd4-RW-K6X"/>
+                        <outlet property="uploadImageExtraLbl" destination="xwn-zx-zzU" id="CWy-FB-M3c"/>
+                        <outlet property="uploadImageFrontLbl" destination="MJi-dC-hog" id="ChA-Xm-I5h"/>
                         <outlet property="uploadedImageBack" destination="uwR-7b-iPB" id="JHx-DH-Zca"/>
                         <outlet property="uploadedImageExtra" destination="8on-z3-gnZ" id="T54-sg-s1x"/>
                         <outlet property="uploadedImageFront" destination="6d8-ev-rK7" id="ZNQ-8B-UM4"/>
@@ -1746,7 +1749,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="Jow-ac-l5k" id="vvh-Jc-XC7"/>
                                 </connections>
@@ -4031,7 +4034,7 @@ up and site back and relax.</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="SaN-5F-KIp" id="zFa-tP-Hqj"/>
                                 </connections>

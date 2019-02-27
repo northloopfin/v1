@@ -75,6 +75,7 @@
 		1D818A1A21C23DBD000C8F5F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1921C23DBD000C8F5F /* Address.swift */; };
 		1D818A1C21C24207000C8F5F /* TransactionPrintout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */; };
 		1D818A1E21C3BAE9000C8F5F /* TransactionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */; };
+		1D81CE4322253DF300B61037 /* LogEventsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81CE4222253DF300B61037 /* LogEventsHelper.swift */; };
 		1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */; };
 		1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908FD121CCF837005C96BB /* AllDoneViewController.swift */; };
 		1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D913EF421EC55C6009D7E52 /* CommonTable.swift */; };
@@ -240,6 +241,7 @@
 		1D818A1921C23DBD000C8F5F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		1D818A1B21C24207000C8F5F /* TransactionPrintout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPrintout.swift; sourceTree = "<group>"; };
 		1D818A1D21C3BAE9000C8F5F /* TransactionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModel.swift; sourceTree = "<group>"; };
+		1D81CE4222253DF300B61037 /* LogEventsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEventsHelper.swift; sourceTree = "<group>"; };
 		1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAddressViewController.swift; sourceTree = "<group>"; };
 		1D908FD121CCF837005C96BB /* AllDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneViewController.swift; sourceTree = "<group>"; };
 		1D913EF421EC55C6009D7E52 /* CommonTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTable.swift; sourceTree = "<group>"; };
@@ -988,6 +990,7 @@
 				1DF64E3F21E8E01A008774CE /* UserInformationUtility.swift */,
 				1DF64E3D21E8E00B008774CE /* UserDefaults.swift */,
 				1D6AA0872212CCB700DD04F4 /* AccountLockTimer.swift */,
+				1D81CE4222253DF300B61037 /* LogEventsHelper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1532,6 +1535,7 @@
 				1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */,
 				1D818A1121C22762000C8F5F /* HomeLedgerRequestModel.swift in Sources */,
 				1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */,
+				1D81CE4322253DF300B61037 /* LogEventsHelper.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
