@@ -1117,9 +1117,9 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-pn-kP6">
-                                        <rect key="frame" x="8" y="0.0" width="262" height="69"/>
+                                        <rect key="frame" x="88" y="0.0" width="182" height="69"/>
                                         <connections>
-                                            <action selector="scanFrontClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="dJh-Wf-QZR"/>
+                                            <action selector="takeImageClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="DD6-uP-hvu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1129,10 +1129,10 @@ W1s 2Bx,UK</string>
                                     <constraint firstItem="2pS-Lf-OpI" firstAttribute="leading" secondItem="bkw-V7-90t" secondAttribute="trailing" constant="44" id="FNT-mK-19x"/>
                                     <constraint firstAttribute="height" constant="69" id="QI9-L4-6fF"/>
                                     <constraint firstItem="bkw-V7-90t" firstAttribute="leading" secondItem="0vp-RS-fdv" secondAttribute="leading" constant="21" id="RTK-aO-66V"/>
+                                    <constraint firstItem="x81-pn-kP6" firstAttribute="leading" secondItem="bkw-V7-90t" secondAttribute="trailing" constant="8" id="TV4-p2-th1"/>
                                     <constraint firstItem="x81-pn-kP6" firstAttribute="top" secondItem="0vp-RS-fdv" secondAttribute="top" id="VNO-U0-E9c"/>
                                     <constraint firstItem="2pS-Lf-OpI" firstAttribute="centerY" secondItem="0vp-RS-fdv" secondAttribute="centerY" id="r4K-oQ-6La"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="2pS-Lf-OpI" secondAttribute="trailing" constant="104.5" id="sng-RN-p5U"/>
-                                    <constraint firstItem="x81-pn-kP6" firstAttribute="leading" secondItem="0vp-RS-fdv" secondAttribute="leading" constant="8" id="u1P-9r-8pp"/>
                                     <constraint firstItem="bkw-V7-90t" firstAttribute="centerY" secondItem="0vp-RS-fdv" secondAttribute="centerY" id="vrZ-YV-xq6"/>
                                     <constraint firstAttribute="trailing" secondItem="x81-pn-kP6" secondAttribute="trailing" id="y9t-1K-J9B"/>
                                 </constraints>
@@ -1140,13 +1140,13 @@ W1s 2Bx,UK</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
                                 <rect key="frame" x="25" y="351" width="270" height="69"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="69"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
+                                        <rect key="frame" x="96" y="0.0" width="174" height="69"/>
                                         <connections>
-                                            <action selector="scanBackClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="uLY-ls-sWh"/>
+                                            <action selector="takeImageClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="Dpe-0r-wIn"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanBackId" translatesAutoresizingMaskIntoConstraints="NO" id="JSN-yV-gG5">
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanBackId" translatesAutoresizingMaskIntoConstraints="NO" id="JSN-yV-gG5">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="59" id="LT2-wm-eK8"/>
@@ -1171,8 +1171,8 @@ W1s 2Bx,UK</string>
                                     <constraint firstAttribute="trailing" secondItem="VDD-rp-sZl" secondAttribute="trailing" id="CJB-WU-FVf"/>
                                     <constraint firstAttribute="height" constant="69" id="EVN-ol-9Gq"/>
                                     <constraint firstAttribute="bottom" secondItem="VDD-rp-sZl" secondAttribute="bottom" id="ILa-Qe-ZBB"/>
+                                    <constraint firstItem="VDD-rp-sZl" firstAttribute="leading" secondItem="JSN-yV-gG5" secondAttribute="trailing" constant="16" id="It9-nW-bap"/>
                                     <constraint firstItem="kab-2i-Q5o" firstAttribute="leading" secondItem="JSN-yV-gG5" secondAttribute="trailing" constant="44" id="K8G-WB-Xe5"/>
-                                    <constraint firstItem="VDD-rp-sZl" firstAttribute="leading" secondItem="eAm-rZ-EwB" secondAttribute="leading" id="KtH-P2-gVQ"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kab-2i-Q5o" secondAttribute="trailing" constant="108.5" id="Lu9-6v-Bc7"/>
                                     <constraint firstItem="kab-2i-Q5o" firstAttribute="centerY" secondItem="eAm-rZ-EwB" secondAttribute="centerY" id="Noh-3B-2ej"/>
                                     <constraint firstItem="JSN-yV-gG5" firstAttribute="leading" secondItem="eAm-rZ-EwB" secondAttribute="leading" constant="21" id="fib-pF-bEM"/>
@@ -1192,7 +1192,7 @@ W1s 2Bx,UK</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="nextClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="YWJ-iS-e7S"/>
+                                    <action selector="nextClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="gjW-LC-fe1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1222,13 +1222,17 @@ W1s 2Bx,UK</string>
                         <viewLayoutGuide key="safeArea" id="aTA-dg-Y0h"/>
                     </view>
                     <connections>
-                        <outlet property="mainTitleLbl" destination="ldx-yJ-P2E" id="1in-Ur-bR4"/>
-                        <outlet property="nextBtn" destination="rbs-Na-LzZ" id="F8u-nr-f0D"/>
+                        <outlet property="mainTitleLbl" destination="ldx-yJ-P2E" id="Vht-qt-fzw"/>
+                        <outlet property="nextBtn" destination="rbs-Na-LzZ" id="Muv-n4-jVK"/>
                         <outlet property="optionsStack" destination="50X-HH-94b" id="tvH-wd-QC5"/>
                         <outlet property="optionsView" destination="kT1-xo-vSO" id="GDj-ro-e4Z"/>
-                        <outlet property="scanBackView" destination="eAm-rZ-EwB" id="56v-eb-I2v"/>
-                        <outlet property="scanFrontView" destination="0vp-RS-fdv" id="VYs-Jx-zAh"/>
-                        <outlet property="selectYourIDLbl" destination="jmA-jl-4yA" id="qpw-TN-kGK"/>
+                        <outlet property="scanBackView" destination="eAm-rZ-EwB" id="YPA-N5-af3"/>
+                        <outlet property="scanFrontView" destination="0vp-RS-fdv" id="Wpk-Zu-pcS"/>
+                        <outlet property="selectYourIDLbl" destination="jmA-jl-4yA" id="5p8-d0-mgB"/>
+                        <outlet property="uploadImageBackLbl" destination="kab-2i-Q5o" id="Tjt-Fc-ouw"/>
+                        <outlet property="uploadImageFrontLbl" destination="2pS-Lf-OpI" id="gWd-rv-R4O"/>
+                        <outlet property="uploadedImageBack" destination="JSN-yV-gG5" id="i3C-vC-9ii"/>
+                        <outlet property="uploadedImageFront" destination="bkw-V7-90t" id="Pmd-hC-bLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3T-du-E80" userLabel="First Responder" sceneMemberID="firstResponder"/>

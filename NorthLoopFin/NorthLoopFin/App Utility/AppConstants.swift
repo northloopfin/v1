@@ -126,6 +126,8 @@ struct AppConstants{
         case PASSPORT="Passport"
         case I20="I-20 (3 pages)"
         case ENROLMENTLETTER = "Enrollment Letter"
+        case DRIVINGLICENSE = "Driving License"
+        case STATEID = "State ID"
     }
     
     enum States:String {
