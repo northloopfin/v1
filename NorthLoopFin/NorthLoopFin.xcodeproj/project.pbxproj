@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D00B6202227B13F004B301A /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D00B61F2227B13F004B301A /* RealmHelper.swift */; };
+		1D00B6222227B1D5004B301A /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D00B6212227B1D5004B301A /* BasicInfo.swift */; };
+		1D00B6242227B6E2004B301A /* ScanIDImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D00B6232227B6E2004B301A /* ScanIDImages.swift */; };
+		1D00B6282227FA5C004B301A /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D00B6272227FA5C004B301A /* StorageHelper.swift */; };
 		1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881B21CB6E2100187439 /* OTPViewController.swift */; };
 		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
 		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
@@ -85,6 +89,7 @@
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
+		1DA398662229BA4300245C0D /* SelfieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA398652229BA4300245C0D /* SelfieImage.swift */; };
 		1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */; };
 		1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */; };
 		1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */; };
@@ -168,6 +173,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D00B61F2227B13F004B301A /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		1D00B6212227B1D5004B301A /* BasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
+		1D00B6232227B6E2004B301A /* ScanIDImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDImages.swift; sourceTree = "<group>"; };
+		1D00B6272227FA5C004B301A /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		1D0A881B21CB6E2100187439 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
 		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +255,7 @@
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DA398652229BA4300245C0D /* SelfieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieImage.swift; sourceTree = "<group>"; };
 		1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonWithImageAndTitleExtension.swift; sourceTree = "<group>"; };
 		1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NorthLoopFin-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -361,6 +371,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D00B61E2227B110004B301A /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1D00B61F2227B13F004B301A /* RealmHelper.swift */,
+				1D00B6212227B1D5004B301A /* BasicInfo.swift */,
+				1D00B6232227B6E2004B301A /* ScanIDImages.swift */,
+				1D00B6272227FA5C004B301A /* StorageHelper.swift */,
+				1DA398652229BA4300245C0D /* SelfieImage.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		1D0BF5292209A74F00B56E82 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -1021,6 +1043,7 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				1D00B61E2227B110004B301A /* Realm */,
 				1D915C1022082CAE00223480 /* App Timeout */,
 				1DF64E3C21E8DF9F008774CE /* Common */,
 				1D8189F921C0E04C000C8F5F /* Fonts */,
@@ -1463,6 +1486,8 @@
 				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
@@ -1482,6 +1507,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
@@ -1513,9 +1540,11 @@
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
+				1D00B6202227B13F004B301A /* RealmHelper.swift in Sources */,
 				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
+				1DA398662229BA4300245C0D /* SelfieImage.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
@@ -1536,6 +1565,7 @@
 				1D915C0E220816C100223480 /* Env.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
 				1D3AA52F21E35FDC0075DBD0 /* SessionManager.swift in Sources */,
+				1D00B6242227B6E2004B301A /* ScanIDImages.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
@@ -1545,8 +1575,10 @@
 				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
+				1D00B6282227FA5C004B301A /* StorageHelper.swift in Sources */,
 				1D0C2ADE22045EAB00527FAB /* User.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
+				1D00B6222227B1D5004B301A /* BasicInfo.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,

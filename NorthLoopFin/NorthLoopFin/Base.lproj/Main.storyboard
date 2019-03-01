@@ -1098,7 +1098,7 @@ W1s 2Bx,UK</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
                                 <rect key="frame" x="25" y="265" width="270" height="69"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="0NZ-va-rSn"/>
@@ -1146,7 +1146,7 @@ W1s 2Bx,UK</string>
                                             <action selector="takeImageClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="Dpe-0r-wIn"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanBackId" translatesAutoresizingMaskIntoConstraints="NO" id="JSN-yV-gG5">
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanBackId" translatesAutoresizingMaskIntoConstraints="NO" id="JSN-yV-gG5">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="59" id="LT2-wm-eK8"/>

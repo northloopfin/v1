@@ -31,9 +31,22 @@ class OTPViewController: BaseViewController {
     }
     @IBAction func doneClicked(_ sender: Any) {
         let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
+        
         self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
-        //self.moveToScanIDScreen()
 
+    }
+    
+    func updateRealmDB(){
+        let info:BasicInfo = BasicInfo()
+        info.otp1 = self.otpField1.text!
+        info.otp2 = self.otpField2.text!
+        info.otp3 = self.otpField3.text!
+        info.otp4 = self.otpField4.text!
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+        }
     }
     
     override func viewDidLoad() {
@@ -44,6 +57,23 @@ class OTPViewController: BaseViewController {
         self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
         self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.prepareView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //self.fetchDatafromRealmIfAny()
+    }
+    
+    ///Fetch data from DB if any and show on UI
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.otpField1.text = info.otp1
+            self.otpField2.text = info.otp2
+            self.otpField3.text = info.otp3
+            self.otpField4.text = info.otp4
+        }
     }
     
     /// Set text color and font to view components
@@ -136,6 +166,7 @@ class OTPViewController: BaseViewController {
     func checkForEmptyField(){
         if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)!){
             self.doneBtn.isEnabled=true
+            self.updateRealmDB()
             
         }
     }
@@ -161,11 +192,13 @@ extension OTPViewController:PhoneVerificationDelegate{
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
     }
     func didCheckOTP(result:PhoneVerifyCheck){
+        
         self.moveToScanIDScreen()
     }
     
     func moveToScanIDScreen(){
         UserDefaults.saveToUserDefault(AppConstants.Screens.SCANID.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)

@@ -214,7 +214,15 @@ extension LoginViewController:FirebaseDelegates{
             let user:User = User.init(firstname: firstname, lastname: lastname, email: email, phone: phone)
             UserInformationUtility.sharedInstance.saveUser(model: user)
             UserDefaults.saveToUserDefault(email as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+            //save to Realm DB
+            self.persistDataInRealm()
             self.moveToHome()
-        
+    }
+    
+    func persistDataInRealm(){
+        let info:BasicInfo = BasicInfo()
+        info.email = self.emailTextField.text!
+        info.password = self.passwordTextfield.text!
+        RealmHelper.addBasicInfo(info: info)
     }
 }
