@@ -30,9 +30,24 @@ class VerifyAddressViewController: BaseViewController {
     }
     @IBAction func doneClicked(_ sender: Any) {
         UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+        self.persistDataRealm()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func persistDataRealm(){
+        let info:BasicInfo = BasicInfo()
+        info.streetAddress = self.streetAddress.text!
+        info.houseNumber = self.houseNumbertextfield.text!
+        info.city = self.cityTextfield.text!
+        info.state = self.textState.text!
+        info.zip = self.zipTextfield.text!
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+        }
     }
     
     override func viewDidLoad() {
@@ -41,6 +56,25 @@ class VerifyAddressViewController: BaseViewController {
         self.doneBtn.isEnabled=false
         self.changeTextFieldAppearance()
         self.prepareView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Fetch from Realm if any
+        self.fetchDatafromRealmIfAny()
+    }
+    
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.streetAddress.text = info.streetAddress
+            self.houseNumbertextfield.text = info.houseNumber
+            self.cityTextfield.text = info.city
+            self.textState.text = info.state
+            self.zipTextfield.text = info.zip
+        }
     }
     
     /// Prepare View by setting up font and color of UI components

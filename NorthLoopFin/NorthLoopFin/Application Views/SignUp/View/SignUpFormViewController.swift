@@ -76,6 +76,23 @@ class SignUpFormViewController: BaseViewController {
         self.prepareView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Fetch from Realm if any
+        self.fetchDatafromRealmIfAny()
+    }
+    
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.firstNameTextField.text = info.firstname
+            self.lastNameTextField.text = info.lastname
+            self.phoneTextField.text = info.phone
+        }
+    }
+    
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
         //Set text color to view components
@@ -192,6 +209,16 @@ extension SignUpFormViewController:FirebaseDelegates{
     }
     
     func didFirebaseDatabaseUpdated() {
+        //save this screen data to Realm DB
+        let info:BasicInfo = BasicInfo()
+        info.firstname = self.firstNameTextField.text!
+        info.lastname = self.lastNameTextField.text!
+        info.phone = self.phoneTextField.text!
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+        }
         self.callPhoneVerificationAPI()
     }
     
