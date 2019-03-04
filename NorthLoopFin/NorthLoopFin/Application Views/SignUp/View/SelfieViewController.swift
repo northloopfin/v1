@@ -25,21 +25,6 @@ class SelfieViewController: BaseViewController {
         self.prepareView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.fetchDatafromRealmIfAny()
-    }
-    
-    func fetchDatafromRealmIfAny(){
-        let result = RealmHelper.retrieveSelfieImages()
-        print(result)
-        if result.count > 0{
-            let selfie:SelfieImage = result.first!
-            let image1 = StorageHelper.getImageFromPath(path: selfie.imagePath)
-            self.selfieImage = image1
-        }
-    }
-    
     override func viewDidLayoutSubviews() {
         let color = Colors.Mercury226226226
         self.openCameraView.addDashedBorder(width: self.openCameraView.frame.size.width, height: self.openCameraView.frame.size.height, lineWidth: 1, lineDashPattern: [6,3], strokeColor: color, fillColor: UIColor.clear)
@@ -67,13 +52,11 @@ class SelfieViewController: BaseViewController {
             self.selfieImage = image
             self.nextBtn.isEnabled = true
             self.addBorderToOpenCameraView(view: self.openCameraView)
-            self.saveImageInDB(image: image)
         }
     }
     
     @IBAction func nextClicked(_ sender: Any) {
         UserDefaults.saveToUserDefault(AppConstants.Screens.VERIFYADDRESS.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
-        
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressNewViewController") as! VerifyAddressNewViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -84,16 +67,5 @@ class SelfieViewController: BaseViewController {
         let color = Colors.Mercury226226226
         let width = 1.0
         view.addBorderWithColorWidth(color: color, width: CGFloat(width))
-    }
-    
-    func saveImageInDB(image:UIImage){
-        let imgData:Data = image.jpegData(compressionQuality: 0.5)!//UIImageJPEGRepresentation(image, 0.5)!
-        let fileName:String = "Selfie.jpg"
-        StorageHelper.saveImageDocumentDirectory(fileName: fileName, data: imgData)
-        let selfieObj:SelfieImage = SelfieImage()
-        selfieObj.email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
-        selfieObj.imagePath = StorageHelper.getImagePath(imgName: fileName)
-        selfieObj.type = "Selfie"
-        RealmHelper.addSelfieInfo(info: selfieObj)
     }
 }

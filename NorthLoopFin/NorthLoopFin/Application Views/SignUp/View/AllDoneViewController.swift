@@ -31,8 +31,6 @@ class AllDoneViewController: BaseViewController {
     @IBAction func doneClicked(_ sender: Any) {
         
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForScreen)
-        //remove data from Realm as signup is done successful
-        RealmHelper.deleteAllFromDatabase()
         let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
         var initialNavigationController:UINavigationController
 
