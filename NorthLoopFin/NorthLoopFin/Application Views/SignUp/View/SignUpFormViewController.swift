@@ -124,16 +124,6 @@ class SignUpFormViewController: BaseViewController {
             self.nextBtn.isEnabled=false
         }
     }
-    
-//    func activateNextBtn(){
-//        self.nextBtn.isEnabled=true
-//        self.nextBtn.backgroundColor = Colors.Zorba161149133
-//    }
-//    
-//    func inactivateNextBtn(){
-//        self.nextBtn.isEnabled=false
-//        self.nextBtn.backgroundColor = Colors.Alto224224224
-//    }
 }
 
 extension SignUpFormViewController:UITextFieldDelegate{

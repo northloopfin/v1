@@ -79,25 +79,7 @@ class ScanIDNewViewController: BaseViewController {
             self.selectedOption = self.optionsArr[0]
             self.getImageFromDBForSelctedOption()
             self.setImages()
-//            for n in 0...(images.count-1){
-//                let image = StorageHelper.getImageFromPath(path: images[n].imagePath)
-//                if images[n].type == AppConstants.SelectIDTYPES.PASSPORT.rawValue{
-//                    passportImages.append(image!)
-//                }else if images[n].type == AppConstants.SelectIDTYPES.DRIVINGLICENSE.rawValue{
-//                    licenseImages.append(image!)
-//                }else{
-//                    stateIDImages.append(image!)
-//                }
-//            }
-//            let passportModel = SelectIDType.init(type: AppConstants.SelectIDTYPES.PASSPORT, images: passportImages)
-//            let drivingModel = SelectIDType.init(type: AppConstants.SelectIDTYPES.DRIVINGLICENSE, images: licenseImages)
-//            let stateIDModel = SelectIDType.init(type: AppConstants.SelectIDTYPES.STATEID, images: stateIDImages)
-//            self.modelArray.append(passportModel)
-//            self.modelArray.append(drivingModel)
-//            self.modelArray.append(stateIDModel)
-//            self.selectedOption = self.optionsArr[0]
-//            self.getImageFromDBForSelctedOption()
-//            self.setImages()
+
         }
     }
     ///Methode will set image array read from db
@@ -266,11 +248,13 @@ class ScanIDNewViewController: BaseViewController {
     func setImages(){
         if self.selectedOption==AppConstants.SelectIDTYPES.PASSPORT || self.selectedOption==AppConstants.SelectIDTYPES.ENROLMENTLETTER{
             self.uploadImage3HeightConstraint.constant=0
+            self.resetLabels()
             self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
             self.uploadedImageBack.image = self.imageArray[1]
         }else{
             self.uploadImage3HeightConstraint.constant=60
+            self.setLabelsForI20()
             self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
             self.uploadedImageBack.image = self.imageArray[1]
@@ -317,22 +301,6 @@ class ScanIDNewViewController: BaseViewController {
                 modelToSaveInDB.imagePath=StorageHelper.getImagePath(imgName: filename)
                 RealmHelper.addScanIDInfo(info: modelToSaveInDB)
             }
-//            let imageData1:Data = self.modelArray[n].images[0].jpegData(compressionQuality: 0.5)!
-//            let imageData2:Data = self.modelArray[n].images[1].jpegData(compressionQuality: 0.5)!
-//            let fileName1 = self.modelArray[n].type.rawValue+"0.jpg"
-//            let fileName2 = self.modelArray[n].type.rawValue+"1.jpg"
-//            StorageHelper.saveImageDocumentDirectory(fileName: fileName1, data: imageData1)
-//            StorageHelper.saveImageDocumentDirectory(fileName: fileName2, data: imageData2)
-//            let scanIDObj1 = ScanIDImages()
-//            scanIDObj1.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String//"Sunita"
-//            scanIDObj1.type = self.modelArray[n].type.rawValue
-//            scanIDObj1.imagePath = StorageHelper.getImagePath(imgName: fileName1)
-//            RealmHelper.addScanIDInfo(info: scanIDObj1)
-//            let scanIDObj2 = ScanIDImages()
-//            scanIDObj2.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String//"Sunita"
-//            scanIDObj2.type = self.modelArray[n].type.rawValue
-//            scanIDObj2.imagePath = StorageHelper.getImagePath(imgName: fileName2)
-//            RealmHelper.addScanIDInfo(info: scanIDObj2)
         }
     }
     
