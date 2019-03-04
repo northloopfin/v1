@@ -102,6 +102,11 @@ PODS:
   - nanopb/encode (0.3.901)
   - PWSwitch (1.1.2)
   - ReachabilitySwift (4.3.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
   - Repeat (0.5.7)
   - SimpleKeychain (0.8.1)
   - SVProgressHUD (2.2.5)
@@ -123,6 +128,7 @@ DEPENDENCIES:
   - MFSideMenu
   - PWSwitch
   - ReachabilitySwift
+  - RealmSwift
   - Repeat
   - SVProgressHUD
 
@@ -153,6 +159,8 @@ SPEC REPOS:
     - nanopb
     - PWSwitch
     - ReachabilitySwift
+    - Realm
+    - RealmSwift
     - Repeat
     - SimpleKeychain
     - SVProgressHUD
@@ -183,10 +191,12 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PWSwitch: 399db6ef5dd8417f9a1e9f82cb70602f10a6c38f
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: add00960404b424f239e831f6174f0138d549178
+PODFILE CHECKSUM: bb23eb88e35e617721fb5686b0e51aca6c127b4d
 
 COCOAPODS: 1.5.3

@@ -31,6 +31,23 @@ class SetPasswordViewController: BaseViewController {
         firebaseManager = FirebaseManager.init(delegate: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //get data from Realm if any and show on UI
+        self.fetchDatafromRealmIfAny()
+    }
+    
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.emailTextField.text = info.email
+            self.passwordTextField.text = info.password
+            self.confirmPasswordTextField.text = info.confirmPassword
+        }
+    }
+    
     //Action called when done button clicked
     @IBAction func doneClicked(_ sender: Any) {
         if(Validations.isValidEmail(email: self.emailTextField.text ?? "")){
@@ -159,6 +176,12 @@ extension SetPasswordViewController:FirebaseDelegates{
         let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
         UserInformationUtility.sharedInstance.saveUser(model: user)
         UserDefaults.saveToUserDefault(authResult.user.email! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+        // adding basic info to realm DB
+        let info:BasicInfo = BasicInfo()
+        info.email = authResult.user.email!
+        info.password = self.passwordTextField.text!
+        info.confirmPassword = self.confirmPasswordTextField.text!
+        RealmHelper.addBasicInfo(info: info)
         self.moveToCreateAccount()
     }
     func didNameUpdated(error:NSError?){

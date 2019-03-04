@@ -18,12 +18,17 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     // @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
-    @IBOutlet weak var loginLbl: LabelWithLetterSpace!
+    @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
     var auth0Mngr:Auth0ApiCallManager!
     var firebaseManager:FirebaseManager!
     
+    @IBAction func loginClicked(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
     @IBAction func nextClicked(_ sender: Any) {
         validateForm()
     }
@@ -87,6 +92,23 @@ class CreateAccountV2ViewController: BaseViewController {
         self.prepareView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Fetch from Realm if any
+        self.fetchDatafromRealmIfAny()
+    }
+    
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.firstNameTextField.text = info.firstname
+            self.lastNameTextField.text = info.lastname
+            self.phoneTextField.text = info.phone
+        }
+    }
+    
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
         //Set text color to view components
@@ -95,7 +117,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.lastNameTextField.textColor = Colors.DustyGray155155155
         self.phoneTextField.textColor = Colors.DustyGray155155155
         self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        self.loginLbl.textColor = Colors.NeonCarrot25414966
+        self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
@@ -104,7 +126,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.phoneTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
         self.alreadyHaveaccountLbl.font = AppFonts.calibri15
-        self.loginLbl.font = AppFonts.calibriBold15
+        self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
     }
     
     func updateTextFieldUI(){
@@ -203,6 +225,16 @@ extension CreateAccountV2ViewController:FirebaseDelegates{
     }
     
     func didFirebaseDatabaseUpdated() {
+        //save this screen data to Realm DB
+        let info:BasicInfo = BasicInfo()
+        info.firstname = self.firstNameTextField.text!
+        info.lastname = self.lastNameTextField.text!
+        info.phone = self.phoneTextField.text!
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+        }
         self.callPhoneVerificationAPI()
     }
     

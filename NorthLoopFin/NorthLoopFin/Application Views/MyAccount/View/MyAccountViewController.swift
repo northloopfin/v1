@@ -67,6 +67,7 @@ extension MyAccountViewController:CommonTableDelegate{
         do {
             try firebaseAuth.signOut()
             UserInformationUtility.sharedInstance.deleteCurrentUser()
+            RealmHelper.deleteAllFromDatabase()
             self.moveToWelcome()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

@@ -4261,31 +4261,31 @@ up and site back and relax.</string>
                                             <action selector="internationalStudentClicked:" destination="Wls-ab-5ce" eventType="touchUpInside" id="xCj-Kc-Pma"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxF-79-KQQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="111.5" y="78" width="97" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Cz3-xD-u3f"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="pEM-VX-fdW"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9O-E0-LmO" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="141.5" y="77" width="37" height="31"/>
                                         <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" red="0.99607843139999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.99607843139999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                <real key="value" value="0.22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
+                                        <connections>
+                                            <action selector="loginClicked:" destination="Wls-ab-5ce" eventType="touchUpInside" id="HZ6-SV-Nyl"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZdX-1N-t1X" firstAttribute="top" secondItem="7Bw-XA-Vbh" secondAttribute="bottom" constant="17.5" id="0hI-RT-0on"/>
+                                    <constraint firstItem="g9O-E0-LmO" firstAttribute="top" secondItem="ZdX-1N-t1X" secondAttribute="bottom" constant="2" id="1RR-vQ-Z2F"/>
+                                    <constraint firstItem="g9O-E0-LmO" firstAttribute="centerX" secondItem="sM9-8k-1p0" secondAttribute="centerX" id="E2K-Lr-1p3"/>
                                     <constraint firstItem="ZdX-1N-t1X" firstAttribute="centerX" secondItem="sM9-8k-1p0" secondAttribute="centerX" id="Q2c-ic-xkQ"/>
                                     <constraint firstItem="ZdX-1N-t1X" firstAttribute="top" secondItem="sM9-8k-1p0" secondAttribute="top" constant="57" id="SHt-k7-bj4"/>
                                     <constraint firstItem="7Bw-XA-Vbh" firstAttribute="centerX" secondItem="sM9-8k-1p0" secondAttribute="centerX" id="aJd-SB-ufl"/>
-                                    <constraint firstItem="CxF-79-KQQ" firstAttribute="top" secondItem="ZdX-1N-t1X" secondAttribute="bottom" constant="3" id="cNX-mK-pxu"/>
                                     <constraint firstItem="7Bw-XA-Vbh" firstAttribute="top" secondItem="sM9-8k-1p0" secondAttribute="top" constant="9.5" id="gT0-gX-XJY"/>
-                                    <constraint firstItem="ZdX-1N-t1X" firstAttribute="centerX" secondItem="CxF-79-KQQ" secondAttribute="centerX" id="jfW-zY-VlL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4313,7 +4313,7 @@ up and site back and relax.</string>
                         <outlet property="alreadyHaveaccountLbl" destination="ZdX-1N-t1X" id="2aT-gS-73P"/>
                         <outlet property="firstNameTextField" destination="nS2-Ph-gxp" id="hVT-72-27E"/>
                         <outlet property="lastNameTextField" destination="NgN-NP-1Lt" id="JeG-10-cV6"/>
-                        <outlet property="loginLbl" destination="CxF-79-KQQ" id="D8J-L6-8IT"/>
+                        <outlet property="loginLbl" destination="g9O-E0-LmO" id="IOi-WT-nFR"/>
                         <outlet property="mainTitleLbl" destination="zAQ-Ru-W1p" id="yg9-Tg-Skb"/>
                         <outlet property="nextBtn" destination="m2a-JJ-x8U" id="ttK-HI-IgT"/>
                         <outlet property="phoneTextField" destination="MGM-kq-g0Y" id="gbc-Z4-QX7"/>

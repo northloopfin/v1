@@ -35,6 +35,36 @@ class OTPViewController: BaseViewController {
         //self.moveToScanIDScreen()
 
     }
+    func updateRealmDB(){
+        let info:BasicInfo = BasicInfo()
+        info.otp1 = self.otpField1.text!
+        info.otp2 = self.otpField2.text!
+        info.otp3 = self.otpField3.text!
+        info.otp4 = self.otpField4.text!
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //self.fetchDatafromRealmIfAny()
+    }
+    
+    ///Fetch data from DB if any and show on UI
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.otpField1.text = info.otp1
+            self.otpField2.text = info.otp2
+            self.otpField3.text = info.otp3
+            self.otpField4.text = info.otp4
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +166,7 @@ class OTPViewController: BaseViewController {
     func checkForEmptyField(){
         if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)!){
             self.doneBtn.isEnabled=true
+            self.updateRealmDB()
             
         }
     }

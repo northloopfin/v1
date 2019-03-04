@@ -34,11 +34,46 @@ class VerifyAddressNewViewController: BaseViewController {
         self.prepareView()
         self.changeTextFieldAppearance()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Fetch from Realm if any
+        self.fetchDatafromRealmIfAny()
+    }
+    
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            let info = result.first!
+            self.streetAddress.text = info.streetAddress
+            self.zipCode.text = info.zip
+            self.country.text = info.country
+            self.phoneNumber.text = info.phoneSecondary
+            self.code.text = info.countryCode
+        }
+    }
     @IBAction func doneClicked(_ sender: Any) {
         UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+        self.persistDataRealm()
+
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedNewViewController") as! ConfirmedNewViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func persistDataRealm(){
+        let info:BasicInfo = BasicInfo()
+        info.streetAddress = self.streetAddress.text!
+        info.zip = self.zipCode.text!
+        info.country = self.country.text!
+        info.countryCode = self.code.text!
+        info.phoneSecondary = self.phoneNumber.text!
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+        }
     }
     
     func prepareView(){

@@ -31,6 +31,7 @@ class ConfirmedNewViewController: BaseViewController {
     @IBAction func doneClicked(_ sender: Any) {
         
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForScreen)
+        RealmHelper.deleteAllFromDatabase()
         let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
         var initialNavigationController:UINavigationController
         

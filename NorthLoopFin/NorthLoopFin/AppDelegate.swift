@@ -115,6 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("application did timeout, perform actions")
         UserInformationUtility.sharedInstance.deleteCurrentUser()
+        RealmHelper.deleteAllFromDatabase()
         self.initialViewController()
         
     }
@@ -132,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         UserInformationUtility.sharedInstance.deleteCurrentUser()
+        RealmHelper.deleteAllFromDatabase()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -148,6 +150,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         self.logEventForAppClose()
         UserInformationUtility.sharedInstance.deleteCurrentUser()
+        RealmHelper.deleteAllFromDatabase()
     }
 }
 
