@@ -25,6 +25,7 @@ class SelfieViewController: BaseViewController {
         self.setupRightNavigationBar()
         self.nextBtn.isEnabled=false
         self.prepareView()
+        self.addTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {

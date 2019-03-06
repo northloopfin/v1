@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Auth0
 import Firebase
 
 class SignUpFormViewController: BaseViewController {
@@ -20,7 +19,6 @@ class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var loginLbl: LabelWithLetterSpace!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
-    var auth0Mngr:Auth0ApiCallManager!
     var firebaseManager:FirebaseManager!
     
     @IBAction func nextClicked(_ sender: Any) {
@@ -45,10 +43,7 @@ class SignUpFormViewController: BaseViewController {
         firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
         
     }
-    //Obsolete Now
-    func addUserMetaData(firstName: String, lastName: String, phone:String){
-        auth0Mngr.auth0UpdateUserMetadata(firstName: firstName, lastName: lastName, phone: phone)
-    }
+    
     
     //Call Phone Verification Service
     func callPhoneVerificationAPI(){
@@ -66,7 +61,6 @@ class SignUpFormViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        auth0Mngr = Auth0ApiCallManager.init(delegate: self)
         self.firebaseManager = FirebaseManager.init(delegate: self)
         
         //self.inactivateNextBtn()
@@ -142,28 +136,6 @@ extension SignUpFormViewController:PhoneVerificationDelegate{
     func didSentOTP(result:PhoneVerifyStart){
         //self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
         self.moveToOTPScreen()
-    }
-}
-extension SignUpFormViewController:Auth0Delegates{
-    func didLoggedIn() {
-        
-    }
-    
-    func didRetreivedProfile() {
-        
-    }
-    
-    func didUpdatedProfile() {
-        self.callPhoneVerificationAPI()
-       
-    }
-    
-    func didLoggedOut() {
-        
-    }
-    
-    func didFailed(err: Error) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: err.localizedDescription)
     }
 }
 

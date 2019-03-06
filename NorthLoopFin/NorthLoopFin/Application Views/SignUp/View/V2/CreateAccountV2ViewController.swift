@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Auth0
 import Firebase
 
 class CreateAccountV2ViewController: BaseViewController {
@@ -21,7 +20,6 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
-    var auth0Mngr:Auth0ApiCallManager!
     var firebaseManager:FirebaseManager!
     
     @IBAction func loginClicked(_ sender: Any) {
@@ -55,10 +53,6 @@ class CreateAccountV2ViewController: BaseViewController {
         firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
         
     }
-    //Obsolete Now
-    func addUserMetaData(firstName: String, lastName: String, phone:String){
-        auth0Mngr.auth0UpdateUserMetadata(firstName: firstName, lastName: lastName, phone: phone)
-    }
     
     //Call Phone Verification Service
     func callPhoneVerificationAPI(){
@@ -82,7 +76,6 @@ class CreateAccountV2ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        auth0Mngr = Auth0ApiCallManager.init(delegate: self)
         self.firebaseManager = FirebaseManager.init(delegate: self)
         
         //self.inactivateNextBtn()
@@ -106,6 +99,9 @@ class CreateAccountV2ViewController: BaseViewController {
             self.firstNameTextField.text = info.firstname
             self.lastNameTextField.text = info.lastname
             self.phoneTextField.text = info.phone
+            if info.otp1 != "" {
+                self.phoneTextField.isUserInteractionEnabled=false
+            }
         }
     }
     
@@ -187,37 +183,7 @@ extension CreateAccountV2ViewController:PhoneVerificationDelegate{
         self.moveToOTPScreen()
     }
 }
-extension CreateAccountV2ViewController:Auth0Delegates{
-    func didLoggedIn() {
-        
-    }
-    
-    func didRetreivedProfile() {
-        
-    }
-    
-    func didUpdatedProfile() {
-        self.callPhoneVerificationAPI()
-        
-    }
-    
-    func didLoggedOut() {
-        
-    }
-    
-    func didFailed(err: Error) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: err.localizedDescription)
-    }
-}
-extension CreateAccountV2ViewController:RailsBankDelegate{
-    func didUserCreated() {
-        
-    }
-    
-    func didFailedWithError(err: Error) {
-        
-    }
-}
+
 
 extension CreateAccountV2ViewController:FirebaseDelegates{
     func didSendPasswordReset(error: NSError?) {

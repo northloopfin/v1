@@ -71,6 +71,18 @@ class RealmHelper{
             if newInfo.phone != ""{
                 infoToBeUpdated.phone = newInfo.phone
             }
+            if newInfo.otp1 != ""{
+                infoToBeUpdated.otp1 = newInfo.otp1
+            }
+            if newInfo.otp2 != ""{
+                infoToBeUpdated.otp2 = newInfo.otp2
+            }
+            if newInfo.otp3 != ""{
+                infoToBeUpdated.otp3 = newInfo.otp3
+            }
+            if newInfo.otp4 != ""{
+                infoToBeUpdated.otp4 = newInfo.otp4
+            }
             if newInfo.streetAddress != ""{
                 infoToBeUpdated.streetAddress = newInfo.streetAddress
             }

@@ -50,7 +50,7 @@ class OTPViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.fetchDatafromRealmIfAny()
+        self.fetchDatafromRealmIfAny()
     }
     
     ///Fetch data from DB if any and show on UI
@@ -74,6 +74,7 @@ class OTPViewController: BaseViewController {
         self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
         self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.prepareView()
+
     }
     
     /// Set text color and font to view components
@@ -166,7 +167,7 @@ class OTPViewController: BaseViewController {
     func checkForEmptyField(){
         if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)!){
             self.doneBtn.isEnabled=true
-            self.updateRealmDB()
+            
             
         }
     }
@@ -192,6 +193,7 @@ extension OTPViewController:PhoneVerificationDelegate{
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
     }
     func didCheckOTP(result:PhoneVerifyCheck){
+        self.updateRealmDB()
         self.moveToScanIDScreen()
     }
     
