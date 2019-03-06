@@ -156,18 +156,9 @@ extension VerifyAddressViewController:UITextFieldDelegate{
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
             }
-        }//else if(textField==self.cityTextfield){
-//            self.view.endEditing(true)
-//            print("EndEditing")
-//            textField.resignFirstResponder()
-//        }
+        }
     }
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        if (textField==self.textState){
-//            print("BeginEditing")
-//            self.dropDown.show()
-//        }
-//    }
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == textState
         {

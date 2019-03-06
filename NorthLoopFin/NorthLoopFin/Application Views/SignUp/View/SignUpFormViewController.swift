@@ -177,37 +177,6 @@ extension SignUpFormViewController:PhoneVerificationDelegate{
         self.moveToOTPScreen()
     }
 }
-extension SignUpFormViewController:Auth0Delegates{
-    func didLoggedIn() {
-        
-    }
-    
-    func didRetreivedProfile() {
-        
-    }
-    
-    func didUpdatedProfile() {
-        self.callPhoneVerificationAPI()
-       
-    }
-    
-    func didLoggedOut() {
-        
-    }
-    
-    func didFailed(err: Error) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: err.localizedDescription)
-    }
-}
-extension SignUpFormViewController:RailsBankDelegate{
-    func didUserCreated() {
-        
-    }
-    
-    func didFailedWithError(err: Error) {
-        
-    }
-}
 
 extension SignUpFormViewController:FirebaseDelegates{
     func didSendPasswordReset(error: NSError?) {
