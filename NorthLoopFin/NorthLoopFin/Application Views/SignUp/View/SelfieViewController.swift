@@ -17,6 +17,8 @@ class SelfieViewController: BaseViewController {
     @IBOutlet weak var step1Lbl: LabelWithLetterSpace!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var openCamera: LabelWithLetterSpace!
+    @IBOutlet weak var selfieImageView: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,7 @@ class SelfieViewController: BaseViewController {
             self.selfieImage = image
             self.nextBtn.isEnabled = true
             self.addBorderToOpenCameraView(view: self.openCameraView)
+            self.selfieImageView.image=image
             self.saveImageInDB(image: image)
         }
     }
@@ -86,6 +89,7 @@ class SelfieViewController: BaseViewController {
     }
     
     func saveImageInDB(image:UIImage){
+        RealmHelper.deleteAllSelfie()
         let imgData:Data = image.jpegData(compressionQuality: 0.5)!//UIImageJPEGRepresentation(image, 0.5)!
         let fileName:String = "Selfie.jpg"
         StorageHelper.saveImageDocumentDirectory(fileName: fileName, data: imgData)
@@ -94,5 +98,31 @@ class SelfieViewController: BaseViewController {
         selfieObj.imagePath = StorageHelper.getImagePath(imgName: fileName)
         selfieObj.type = "Selfie"
         RealmHelper.addSelfieInfo(info: selfieObj)
+    }
+    
+    /// Methode add Tap gesture to imageview
+    func addTapGesture(){
+        self.selfieImageView.callback = {
+            // Some actions etc.
+            self.tapped(self.selfieImageView)
+        }
+    }
+    
+    func  tapped(_ sender:UIImageView){
+        //print("you tap image number : \(sender.view.tag)")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ImagePreviewViewController") as! ImagePreviewViewController
+        vc.delegate=self
+        vc.index=sender.tag
+        vc.image = self.selfieImage
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
+extension SelfieViewController:ImagePreviewDelegate{
+    func imageUpdatedFor(index: Int, image:UIImage){
+        self.selfieImage=image
+        self.selfieImageView.image=image
+        self.saveImageInDB(image: image)
     }
 }
