@@ -40,7 +40,7 @@ class Validations {
             return value.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) == nil && value != ""
     }
     class func isValidZip(value:String)->Bool{
-        let zipRegex = "^[0-9]{5,5}$";
+        let zipRegex = "^[a-zA-Z0-9]{5,8}$";
         let valid = NSPredicate(format: "SELF MATCHES %@", zipRegex).evaluate(with: value)
         return valid
     }

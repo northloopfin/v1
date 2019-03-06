@@ -94,13 +94,9 @@
 		1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */; };
 		1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */; };
 		1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6A76B21F5AA1600C38205 /* Fonts.swift */; };
-		1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */; };
 		1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066EB221BB8E800E1AD6D /* ImagePreviewViewController.swift */; };
 		1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066EF221BC1D000E1AD6D /* SelectIDType.swift */; };
 		1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F1221E577C00E1AD6D /* TappableImageView.swift */; };
-		1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */; };
-		1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */; };
-		1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
 		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
@@ -261,13 +257,9 @@
 		1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NorthLoopFin-Bridging-Header.h"; sourceTree = "<group>"; };
 		1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
 		1DC6A76B21F5AA1600C38205 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDNewViewController.swift; sourceTree = "<group>"; };
 		1DD066EB221BB8E800E1AD6D /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		1DD066EF221BC1D000E1AD6D /* SelectIDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIDType.swift; sourceTree = "<group>"; };
 		1DD066F1221E577C00E1AD6D /* TappableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableImageView.swift; sourceTree = "<group>"; };
-		1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAddressNewViewController.swift; sourceTree = "<group>"; };
-		1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedNewViewController.swift; sourceTree = "<group>"; };
-		1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountV2ViewController.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
@@ -450,7 +442,6 @@
 		1D1E5A6F21C9C7960036E998 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1DD066F7221FDDE700E1AD6D /* V2 */,
 				1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */,
 				1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */,
 				1D0A881B21CB6E2100187439 /* OTPViewController.swift */,
@@ -460,10 +451,7 @@
 				1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */,
 				1D908FD121CCF837005C96BB /* AllDoneViewController.swift */,
 				1DFE480A21D745DF003EFECA /* SignupDelegates.swift */,
-				1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */,
 				1DD066EB221BB8E800E1AD6D /* ImagePreviewViewController.swift */,
-				1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */,
-				1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -831,14 +819,6 @@
 				1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1DD066F7221FDDE700E1AD6D /* V2 */ = {
-			isa = PBXGroup;
-			children = (
-				1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */,
-			);
-			path = V2;
 			sourceTree = "<group>";
 		};
 		1DF64E1121E5A766008774CE /* Auth0 */ = {
@@ -1541,7 +1521,6 @@
 				1D3AA53121E36AE80075DBD0 /* Auth0ApiCallManager.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1D00B6202227B13F004B301A /* RealmHelper.swift in Sources */,
-				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
 				1DA398662229BA4300245C0D /* SelfieImage.swift in Sources */,
@@ -1568,7 +1547,6 @@
 				1D00B6242227B6E2004B301A /* ScanIDImages.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
-				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				1D818A1521C22A67000C8F5F /* TransactionListApiRequest.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
@@ -1603,14 +1581,12 @@
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* HomePresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
-				1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
-				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
