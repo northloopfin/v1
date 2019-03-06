@@ -1505,7 +1505,7 @@ W1s 2Bx,UK</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelfieTime" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-Cr-KKW">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelfieTime" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-Cr-KKW">
                                 <rect key="frame" x="84" y="110.5" width="152" height="119.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="151" id="irE-QT-GEX"/>
@@ -1684,6 +1684,7 @@ W1s 2Bx,UK</string>
                         <outlet property="nextBtn" destination="eRw-BH-RSG" id="yNr-b4-bUf"/>
                         <outlet property="openCamera" destination="QsB-wJ-AGv" id="KqH-DV-kDe"/>
                         <outlet property="openCameraView" destination="gfn-7h-0Pr" id="Cv4-FG-plb"/>
+                        <outlet property="selfieImageView" destination="RUg-Cr-KKW" id="Uxp-u6-bGh"/>
                         <outlet property="step1Lbl" destination="GtL-Tk-UcO" id="Sfr-3R-wba"/>
                         <outlet property="step2Lbl" destination="ZnJ-ur-oeP" id="7yA-5p-dd0"/>
                     </connections>

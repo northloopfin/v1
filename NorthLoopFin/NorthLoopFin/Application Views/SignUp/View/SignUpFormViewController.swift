@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Auth0
 import Firebase
 
 class SignUpFormViewController: BaseViewController {
@@ -20,7 +19,6 @@ class SignUpFormViewController: BaseViewController {
     @IBOutlet weak var loginBtn: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     var presenter:PhoneVerificationStartPresenter!
-    var auth0Mngr:Auth0ApiCallManager!
     var firebaseManager:FirebaseManager!
     
     @IBAction func loginClicked(_ sender: Any) {
@@ -50,10 +48,6 @@ class SignUpFormViewController: BaseViewController {
         firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
         
     }
-    //Obsolete Now
-    func addUserMetaData(firstName: String, lastName: String, phone:String){
-        auth0Mngr.auth0UpdateUserMetadata(firstName: firstName, lastName: lastName, phone: phone)
-    }
     
     //Call Phone Verification Service
     func callPhoneVerificationAPI(){
@@ -72,7 +66,6 @@ class SignUpFormViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        auth0Mngr = Auth0ApiCallManager.init(delegate: self)
         self.firebaseManager = FirebaseManager.init(delegate: self)
         
         //self.inactivateNextBtn()
@@ -96,6 +89,9 @@ class SignUpFormViewController: BaseViewController {
             self.firstNameTextField.text = info.firstname
             self.lastNameTextField.text = info.lastname
             self.phoneTextField.text = info.phone
+            if info.otp1 != ""{
+                self.phoneTextField.isUserInteractionEnabled=false
+            }
         }
     }
     

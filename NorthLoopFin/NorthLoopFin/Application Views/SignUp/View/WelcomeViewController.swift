@@ -7,16 +7,12 @@
 //
 
 import UIKit
-import Auth0
 import Crashlytics
 
 class WelcomeViewController: BaseViewController {
-    var auth0Mngr:Auth0ApiCallManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        auth0Mngr = Auth0ApiCallManager.init(delegate: self)
-        
         // Do any additional setup after loading the view.
     }
     
@@ -26,12 +22,7 @@ class WelcomeViewController: BaseViewController {
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {
-        //self.showSignUp()
-        self.moveToNextScreen() 
-    }
-    
-    func showSignUp(){
-        auth0Mngr.auth0SignUp()
+        self.moveToNextScreen()
     }
     
     func moveToLogin(){
@@ -47,25 +38,3 @@ class WelcomeViewController: BaseViewController {
     }
 }
 
-extension WelcomeViewController:Auth0Delegates{
-    func didLoggedIn() {
-        print("Logged In")
-        
-    }
-    
-    func didRetreivedProfile() {
-        
-    }
-    
-    func didUpdatedProfile() {
-        
-    }
-    
-    func didLoggedOut() {
-        
-    }
-    
-    func didFailed(err: Error) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: err.localizedDescription)
-    }
-}
