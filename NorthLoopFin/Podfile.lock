@@ -15,8 +15,6 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Amplitude-iOS (4.5.0)
-  - Auth0 (1.14.0):
-    - SimpleKeychain
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
   - DropDown (2.3.2)
@@ -108,13 +106,11 @@ PODS:
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
   - Repeat (0.5.7)
-  - SimpleKeychain (0.8.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Amplitude-iOS (~> 4.5)
-  - Auth0 (~> 1.5)
   - Crashlytics
   - DropDown (= 2.3.2)
   - Fabric
@@ -136,7 +132,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Amplitude-iOS
-    - Auth0
     - Crashlytics
     - DropDown
     - Fabric
@@ -162,13 +157,11 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Repeat
-    - SimpleKeychain
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Amplitude-iOS: 1de49103125f9b816ca11df924652e5a303e2c33
-  Auth0: 6ba27a720fe99ccf2fd4c69c051948d4036ac26d
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
@@ -194,9 +187,8 @@ SPEC CHECKSUMS:
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
-  SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: bb23eb88e35e617721fb5686b0e51aca6c127b4d
+PODFILE CHECKSUM: 303d8bbc07aefe02bbeb517cbcdc578e7fd22cdd
 
 COCOAPODS: 1.5.3

@@ -166,15 +166,6 @@ extension SignUpFormViewController:Auth0Delegates{
         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: err.localizedDescription)
     }
 }
-extension SignUpFormViewController:RailsBankDelegate{
-    func didUserCreated() {
-        
-    }
-    
-    func didFailedWithError(err: Error) {
-        
-    }
-}
 
 extension SignUpFormViewController:FirebaseDelegates{
     func didSendPasswordReset(error: NSError?) {
@@ -197,7 +188,6 @@ extension SignUpFormViewController:FirebaseDelegates{
     func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
         
     }
-
 }
 
 
