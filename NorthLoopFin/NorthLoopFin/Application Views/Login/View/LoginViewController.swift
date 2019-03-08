@@ -125,7 +125,7 @@ class LoginViewController: BaseViewController {
     
     func moveToCreateAccount(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SetPasswordViewController") as! SetPasswordViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func moveToForgetScreen(){
@@ -185,7 +185,6 @@ extension LoginViewController:FirebaseDelegates{
         }else if UserInformationUtility.sharedInstance.userattepmtsIn30Min == 6 {
             //show account blocked alert
             print("Account is blocked")
-           // manager.updateUserDataForIsActive(number: NSNumber.init(value: false), email: self.emailTextField.text!)
             //update Firebase database and block user//send email to reset password
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_ACCOUNT_BLOCKED.rawValue)
             manager.sentPasswordResetLinkToEmail(email: self.emailTextField.text!)

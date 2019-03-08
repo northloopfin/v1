@@ -1505,7 +1505,7 @@ W1s 2Bx,UK</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelfieTime" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-Cr-KKW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelfieTime" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-Cr-KKW">
                                 <rect key="frame" x="84" y="110.5" width="152" height="119.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="151" id="irE-QT-GEX"/>
@@ -3597,9 +3597,8 @@ up and site back and relax.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-DY-J8e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-DY-J8e">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ZT-iq-rpA">
                                 <rect key="frame" x="25" y="102" width="270" height="50"/>
@@ -3639,11 +3638,15 @@ up and site back and relax.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="bottom" secondItem="gcI-tM-EFO" secondAttribute="bottom" id="8Zi-Oi-AjV"/>
                             <constraint firstItem="gcI-tM-EFO" firstAttribute="trailing" secondItem="1ka-4o-rgf" secondAttribute="trailing" constant="25" id="Alo-U3-U5k"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="top" secondItem="HKi-4Y-ycC" secondAttribute="top" id="EdG-hL-ZlN"/>
                             <constraint firstItem="6ZT-iq-rpA" firstAttribute="top" secondItem="gcI-tM-EFO" secondAttribute="top" constant="82" id="Itb-B3-TKY"/>
                             <constraint firstItem="gcI-tM-EFO" firstAttribute="trailing" secondItem="6ZT-iq-rpA" secondAttribute="trailing" constant="25" id="M4A-A0-pp7"/>
                             <constraint firstItem="6ZT-iq-rpA" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" constant="25" id="Mgi-k5-Elx"/>
                             <constraint firstItem="1ka-4o-rgf" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" constant="25" id="UOO-Nm-k0g"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" id="b6g-0Z-Dhz"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="trailing" secondItem="gcI-tM-EFO" secondAttribute="trailing" id="h1f-8N-7Xm"/>
                             <constraint firstItem="1ka-4o-rgf" firstAttribute="top" secondItem="6ZT-iq-rpA" secondAttribute="bottom" constant="90" id="lzQ-0c-mvL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gcI-tM-EFO"/>
@@ -3665,9 +3668,8 @@ up and site back and relax.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-nb-n1W">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-nb-n1W">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZc-R5-lLy" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="16" y="503" width="135" height="45"/>
@@ -3724,11 +3726,15 @@ up and site back and relax.</string>
                             <constraint firstItem="RRc-kN-BV3" firstAttribute="leading" secondItem="Owo-2C-ewF" secondAttribute="leading" id="1Gz-z8-rga"/>
                             <constraint firstItem="Owo-2C-ewF" firstAttribute="bottom" secondItem="UZc-R5-lLy" secondAttribute="bottom" constant="20" id="4AX-p9-et2"/>
                             <constraint firstItem="Owo-2C-ewF" firstAttribute="bottom" secondItem="BKY-Ot-4Ds" secondAttribute="bottom" constant="20" id="9XH-iA-s9E"/>
+                            <constraint firstItem="Eje-nb-n1W" firstAttribute="leading" secondItem="8iu-uu-PkO" secondAttribute="leading" id="DSA-mx-K1c"/>
                             <constraint firstItem="RRc-kN-BV3" firstAttribute="trailing" secondItem="Owo-2C-ewF" secondAttribute="trailing" id="LEm-eb-nJ2"/>
                             <constraint firstItem="RRc-kN-BV3" firstAttribute="top" secondItem="Owo-2C-ewF" secondAttribute="top" constant="52" id="VU4-aS-01b"/>
                             <constraint firstItem="Owo-2C-ewF" firstAttribute="trailing" secondItem="BKY-Ot-4Ds" secondAttribute="trailing" constant="16" id="WqL-PR-7g5"/>
                             <constraint firstItem="UZc-R5-lLy" firstAttribute="top" secondItem="RRc-kN-BV3" secondAttribute="bottom" constant="20" id="Xss-L3-rRy"/>
+                            <constraint firstItem="Eje-nb-n1W" firstAttribute="bottom" secondItem="Owo-2C-ewF" secondAttribute="bottom" id="gCe-y8-nTZ"/>
+                            <constraint firstItem="Eje-nb-n1W" firstAttribute="top" secondItem="8iu-uu-PkO" secondAttribute="top" id="heH-Zb-p4e"/>
                             <constraint firstItem="BKY-Ot-4Ds" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UZc-R5-lLy" secondAttribute="trailing" constant="8" symbolic="YES" id="oSt-b2-eQd"/>
+                            <constraint firstItem="Eje-nb-n1W" firstAttribute="trailing" secondItem="Owo-2C-ewF" secondAttribute="trailing" id="oYz-2h-Pwn"/>
                             <constraint firstItem="UZc-R5-lLy" firstAttribute="leading" secondItem="Owo-2C-ewF" secondAttribute="leading" constant="16" id="uai-bP-Pbl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Owo-2C-ewF"/>

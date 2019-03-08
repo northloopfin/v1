@@ -27,7 +27,7 @@ class WelcomeViewController: BaseViewController {
     
     func moveToLogin(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDViewController") as! ScanIDViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     

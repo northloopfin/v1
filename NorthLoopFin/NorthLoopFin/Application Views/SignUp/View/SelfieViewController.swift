@@ -23,7 +23,7 @@ class SelfieViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
-        self.setNavigationBarTitle(title: "Image Preview")
+        self.setNavigationBarTitle(title: "Selfie")
         self.nextBtn.isEnabled=false
         self.addTapGesture()
         self.prepareView()
@@ -71,6 +71,7 @@ class SelfieViewController: BaseViewController {
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.selfieImage = image
             self.selfieImageView.image=self.selfieImage
+            self.selfieImageView.tappable=true
             self.nextBtn.isEnabled = true
             self.addBorderToOpenCameraView(view: self.openCameraView)
             self.saveImageInDB(image: image)
@@ -93,6 +94,7 @@ class SelfieViewController: BaseViewController {
     }
     
     func saveImageInDB(image:UIImage){
+        RealmHelper.deleteAllSelfie()
         let imgData:Data = image.jpegData(compressionQuality: 0.5)!//UIImageJPEGRepresentation(image, 0.5)!
         let fileName:String = "Selfie.jpg"
         StorageHelper.saveImageDocumentDirectory(fileName: fileName, data: imgData)
@@ -124,6 +126,7 @@ class SelfieViewController: BaseViewController {
 
 extension SelfieViewController:ImagePreviewDelegate{
     func imageUpdatedFor(index: Int, image: UIImage) {
+        self.saveImageInDB(image: image)
         self.selfieImage=image
         self.selfieImageView.image = image
     }
