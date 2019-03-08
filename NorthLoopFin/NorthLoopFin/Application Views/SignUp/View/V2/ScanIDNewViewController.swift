@@ -50,14 +50,13 @@ class ScanIDNewViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
         self.addTapGesture()
-        self.nextBtn.isEnabled=false
     }
     
     func checkDBForImages(){
         let imagesFromDb = RealmHelper.retrieveImages()
         var passportImages:[UIImage]=[]
-        //var licenseImages:[UIImage]=[]
-        //var stateIDImages:[UIImage]=[]
+        self.nextBtn.isEnabled=false
+
         if imagesFromDb.count>0{
             self.isGetDataFromDB=true
             self.nextBtn.isEnabled=true

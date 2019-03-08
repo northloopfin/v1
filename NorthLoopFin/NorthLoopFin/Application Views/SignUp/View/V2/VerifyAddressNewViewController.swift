@@ -45,6 +45,7 @@ class VerifyAddressNewViewController: BaseViewController {
         let result = RealmHelper.retrieveBasicInfo()
         print(result)
         if result.count > 0{
+            self.doneBtn.isEnabled=true
             let info = result.first!
             self.streetAddress.text = info.streetAddress
             self.zipCode.text = info.zip

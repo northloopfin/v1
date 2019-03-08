@@ -31,7 +31,16 @@ class OTPViewController: BaseViewController {
     }
     @IBAction func doneClicked(_ sender: Any) {
         let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
-        self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+
+        let result = RealmHelper.retrieveBasicInfo()
+        let info:BasicInfo = result.first!
+        if info.otp1 != ""{
+            self.moveToScanIDScreen()
+
+        }else{
+            self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+        }
+        
         //self.moveToScanIDScreen()
 
     }
@@ -63,6 +72,7 @@ class OTPViewController: BaseViewController {
             self.otpField2.text = info.otp2
             self.otpField3.text = info.otp3
             self.otpField4.text = info.otp4
+            self.doneBtn.isEnabled=true
         }
     }
     

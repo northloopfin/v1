@@ -53,7 +53,11 @@ class SetPasswordViewController: BaseViewController {
         if(Validations.isValidEmail(email: self.emailTextField.text ?? "")){
             if (Validations.isValidPassword(password: self.passwordTextField.text ?? "")){
                 if(Validations.matchTwoStrings(string1: self.passwordTextField.text!, string2: self.confirmPasswordTextField.text!)){
-                    self.createAccountWithData(self.emailTextField.text!, self.passwordTextField.text!)
+                    if RealmHelper.retrieveBasicInfo().count<=0{
+                        self.createAccountWithData(self.emailTextField.text!, self.passwordTextField.text!)
+                    }else{
+                        self.moveToCreateAccount()
+                    }
                 }else{
                     //error for unmatched passwords
                     self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_DONOT_MATCH.rawValue)
@@ -176,13 +180,18 @@ extension SetPasswordViewController:FirebaseDelegates{
         let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
         UserInformationUtility.sharedInstance.saveUser(model: user)
         UserDefaults.saveToUserDefault(authResult.user.email! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+        self.persistData()
+        self.moveToCreateAccount()
+    }
+    
+    func persistData(){
+        RealmHelper.deleteAllBasicInfo()
         // adding basic info to realm DB
         let info:BasicInfo = BasicInfo()
-        info.email = authResult.user.email!
+        info.email = self.emailTextField.text!
         info.password = self.passwordTextField.text!
         info.confirmPassword = self.confirmPasswordTextField.text!
         RealmHelper.addBasicInfo(info: info)
-        self.moveToCreateAccount()
     }
     func didNameUpdated(error:NSError?){
 

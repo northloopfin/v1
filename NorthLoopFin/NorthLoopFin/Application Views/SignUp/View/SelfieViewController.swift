@@ -40,6 +40,8 @@ class SelfieViewController: BaseViewController {
             let selfie:SelfieImage = result.first!
             let image1 = StorageHelper.getImageFromPath(path: selfie.imagePath)
             self.selfieImage = image1
+            self.selfieImageView.image=image1
+            self.nextBtn.isEnabled=true
         }
     }
     
@@ -69,6 +71,7 @@ class SelfieViewController: BaseViewController {
         CameraHandler.shared.imagePickedBlock = { (image) in
             self.selfieImage = image
             self.nextBtn.isEnabled = true
+            self.selfieImageView.tappable=true
             self.addBorderToOpenCameraView(view: self.openCameraView)
             self.selfieImageView.image=image
             self.saveImageInDB(image: image)
