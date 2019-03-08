@@ -138,4 +138,10 @@ class RealmHelper{
             realm.delete(realm.objects(SelfieImage.self))
         }
     }
+    static func deleteAllBAsicInfo(){
+        let realm = try! Realm()
+        try! realm.write() {
+            realm.delete(realm.objects(BasicInfo.self))
+        }
+    }
 }

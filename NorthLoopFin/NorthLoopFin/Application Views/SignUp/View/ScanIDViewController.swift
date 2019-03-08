@@ -48,7 +48,6 @@ class ScanIDViewController: BaseViewController {
         self.checkDBForImages()
         self.renderIDOptions()
         self.addTapGesture()
-        self.nextBtn.isEnabled=false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +58,8 @@ class ScanIDViewController: BaseViewController {
     
         let imagesFromDb = RealmHelper.retrieveImages()
         var passportImages:[UIImage]=[]
+        self.nextBtn.isEnabled=false
+
         if imagesFromDb.count>0{
             self.isGetDataFromDB=true
             self.nextBtn.isEnabled=true

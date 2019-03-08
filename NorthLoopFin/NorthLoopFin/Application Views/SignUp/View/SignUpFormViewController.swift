@@ -85,6 +85,7 @@ class SignUpFormViewController: BaseViewController {
         let result = RealmHelper.retrieveBasicInfo()
         print(result)
         if result.count > 0{
+            self.nextBtn.isEnabled=true
             let info = result.first!
             self.firstNameTextField.text = info.firstname
             self.lastNameTextField.text = info.lastname
@@ -186,12 +187,28 @@ extension SignUpFormViewController:FirebaseDelegates{
         info.lastname = self.lastNameTextField.text!
         info.phone = self.phoneTextField.text!
         let result = RealmHelper.retrieveBasicInfo()
+        info.email = result.first!.email
+        info.password = result.first!.password
+        info.confirmPassword = result.first!.confirmPassword
+        info.otp1 = result.first!.otp1
+        info.otp2 = result.first!.otp2
+        info.otp3 = result.first!.otp3
+        info.otp4 = result.first!.otp4
+        info.streetAddress = result.first!.streetAddress
+        info.houseNumber = result.first!.houseNumber
+        info.zip = result.first!.zip
+        info.city = result.first!.city
+        info.state = result.first!.state
         print(result)
         if result.count > 0{
             RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
         }
-        self.callPhoneVerificationAPI()
-    }
+        if info.otp1 != ""{
+            self.moveToOTPScreen()
+        }else{
+            self.callPhoneVerificationAPI()
+            
+        }    }
     
     func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?){
         

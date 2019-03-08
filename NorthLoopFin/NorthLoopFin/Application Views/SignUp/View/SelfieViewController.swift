@@ -38,6 +38,7 @@ class SelfieViewController: BaseViewController {
         let result = RealmHelper.retrieveSelfieImages()
         print(result)
         if result.count > 0{
+            self.nextBtn.isEnabled=true
             let selfie:SelfieImage = result.first!
             let image1 = StorageHelper.getImageFromPath(path: selfie.imagePath)
             self.selfieImage = image1
