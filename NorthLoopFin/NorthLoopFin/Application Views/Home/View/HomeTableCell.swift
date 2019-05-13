@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeTableCell: UITableViewCell {
 
@@ -23,10 +24,12 @@ class HomeTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-//    func bindData(data: Transaction){
-//        self.beneficiaryName.text = data.transactionPrintout.beneficiaryname
-//        self.transactionAmt.text = "$" + String(data.amount)
-//    }
+    func bindData(data: TransactionHistory){
+        self.beneficiaryName.text = data.to.merchantName
+        self.transactionAmt.text = "$" + String(data.amount.amount)
+        let url = URL(string: data.to.merchantLogo)
+        self.beneficiaryImg.kf.setImage(with: url)
+    }
 //    func bindData(data: Dummy){
 //        self.beneficiaryName.text = data.name
 //        self.transactionAmt.text =  String(data.amount)

@@ -27,14 +27,6 @@ class TransactionListPresenter: ResponseCallback{
     self.homeTransactionListBusinessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
     }
     
-    func getAccountInfo(){
-        self.homeDelegate?.showLoader()
-        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()!
-        let requestModel = AccountInfoRequestModel.Builder()
-                            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).build()
-        
-    }
-    
     //MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         let response = responseObject as! [TransactionHistory]

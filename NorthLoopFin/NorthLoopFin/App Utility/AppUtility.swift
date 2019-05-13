@@ -70,11 +70,11 @@ class AppUtility {
     class func dateFromMilliseconds(seconds: Double)-> String{
         
         //Convert to Date
-        let date = Date.init(timeIntervalSince1970: seconds)//NSDate(timeIntervalSince1970: seconds)
+        let date = Date.init(timeIntervalSince1970: seconds/1000)//NSDate(timeIntervalSince1970: seconds)
         
         //Date formatting
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd, MMM yyyy" //HH:mm:a"
+        dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         let dateString = dateFormatter.string(from: date)
         print("formatted date is =  \(dateString)")
