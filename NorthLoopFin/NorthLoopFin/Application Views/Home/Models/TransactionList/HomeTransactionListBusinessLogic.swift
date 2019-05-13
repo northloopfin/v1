@@ -21,10 +21,11 @@ class HomeTransactionListBusinessLogic {
      - parameter success:   Returning Success Response of API
      - parameter failure:   NSError Response Contaons ErrorInfo
      */
-    func performTransactionList(withCapsuleListRequestModel homeTransactionModel: HomeLedgerRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performTransactionList(withCapsuleListRequestModel homeTransactionModel: TransactionListRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
         TransactionListApiRequest().makeAPIRequest(withReqFormData: homeTransactionModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
+    
 }

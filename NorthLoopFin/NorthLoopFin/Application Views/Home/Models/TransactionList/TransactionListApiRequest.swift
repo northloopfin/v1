@@ -21,13 +21,12 @@ class TransactionListApiRequest:ApiRequestProtocol {
      - parameter errorResolver: ErrorResolver contains all error handling with posiible error codes
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
-    func makeAPIRequest(withReqFormData reqFromData: HomeLedgerRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
+    func makeAPIRequest(withReqFormData reqFromData: TransactionListRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
         
         self.apiRequestUrl = reqFromData.getEndPoint()
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        
-        ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: Transaction.self)
+        ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: TransactionHistory.self)
     }
     
     /**

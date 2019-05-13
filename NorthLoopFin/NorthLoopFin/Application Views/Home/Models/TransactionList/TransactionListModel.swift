@@ -10,16 +10,16 @@ import Foundation
 
 struct TransactionListModel {
     var sectionTitle: String
-    //var rowData:[Transaction]
-    var rowData:[Dummy]
+    var rowData:[TransactionHistory]
+    //var rowData:[Dummy]
     
-//    init(sectionTitle:String,rowData:[Transaction]) {
-//        self.sectionTitle=sectionTitle
-//        self.rowData=rowData
-//    }
-    init(sectionTitle:String,rowData:[Dummy]) {
+    init(sectionTitle:String,rowData:[TransactionHistory]) {
         self.sectionTitle=sectionTitle
         self.rowData=rowData
     }
+//    init(sectionTitle:String,rowData:[Dummy]) {
+//        self.sectionTitle=sectionTitle
+//        self.rowData=rowData
+//    }
 
 }

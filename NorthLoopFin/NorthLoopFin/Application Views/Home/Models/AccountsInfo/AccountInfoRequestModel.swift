@@ -1,13 +1,14 @@
 //
-//  HomeLedgerRequestModel.swift
+//  AccountInfoRequestModel.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 13/12/18.
-//  Copyright © 2018 NorthLoop. All rights reserved.
+//  Created by Daffolapmac-19 on 13/05/19.
+//  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
-class HomeLedgerRequestModel {
+
+class AccountInfoRequestModel {
     //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
@@ -62,8 +63,8 @@ class HomeLedgerRequestModel {
          
          -returns : HomeLedgerRequestModel
          */
-        func build()->HomeLedgerRequestModel{
-            return HomeLedgerRequestModel(builderObject: self)
+        func build()->AccountInfoRequestModel{
+            return AccountInfoRequestModel(builderObject: self)
         }
     }
     
@@ -73,6 +74,6 @@ class HomeLedgerRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return AppConstants.Base_Url!  +  AppConstants.URL.TRANSACTION_LIST.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.ACCOUNTINFO.rawValue
     }
 }
