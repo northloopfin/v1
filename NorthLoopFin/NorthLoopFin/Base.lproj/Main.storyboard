@@ -56,9 +56,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Philip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="100" width="200.5" height="29.5"/>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Philip" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="100" width="167" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="20"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.26666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -181,6 +181,8 @@
                         </view>
                     </navigationItem>
                     <connections>
+                        <outlet property="AccBalanceLbl" destination="UKV-6N-ViP" id="y5d-vb-B6k"/>
+                        <outlet property="GreetingLbl" destination="PLq-sg-P5N" id="k1U-HL-nUx"/>
                         <outlet property="contentView" destination="2rD-gl-dmJ" id="U29-q4-sK7"/>
                         <outlet property="ledgersTableView" destination="Gs8-ou-rL1" id="oMj-sv-EwB"/>
                     </connections>
@@ -583,13 +585,13 @@ W1s 2Bx,UK</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPh-14-aZV">
                                 <rect key="frame" x="0.0" y="179" width="320" height="268.5"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CA7-Mc-wZf">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA7-Mc-wZf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="268.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-On-lFi">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-On-lFi">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="268.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whs-du-iTR">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whs-du-iTR">
                                                         <rect key="frame" x="25" y="22" width="270" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -602,7 +604,7 @@ W1s 2Bx,UK</string>
                                                             <outlet property="delegate" destination="Zrh-81-Kal" id="SBO-QH-zMg"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SI4-vm-lbj">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SI4-vm-lbj">
                                                         <rect key="frame" x="25" y="83" width="270" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -612,17 +614,7 @@ W1s 2Bx,UK</string>
                                                             <outlet property="delegate" destination="Zrh-81-Kal" id="VhR-81-WmX"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAp-4N-9Ou">
-                                                        <rect key="frame" x="25" y="144" width="270" height="50"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="Zrh-81-Kal" id="bND-PV-d0e"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-oK-gfL" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-oK-gfL" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="203.5" width="270" height="45"/>
                                                         <color key="backgroundColor" red="0.63137254901960782" green="0.58431372549019611" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -653,21 +645,16 @@ W1s 2Bx,UK</string>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="41W-T7-zLc"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="top" secondItem="7S4-On-lFi" secondAttribute="top" constant="22" id="96i-YV-57b"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" id="EAw-XA-bZ7"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="top" secondItem="whs-du-iTR" secondAttribute="bottom" constant="11" id="EPz-tR-Hn8"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="leading" secondItem="7S4-On-lFi" secondAttribute="leading" constant="25" id="ETg-KF-q0W"/>
                                                     <constraint firstAttribute="bottom" secondItem="bsU-oK-gfL" secondAttribute="bottom" constant="20" id="IIE-bV-Woc"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="leading" secondItem="whs-du-iTR" secondAttribute="leading" id="RM5-tK-Tdj"/>
-                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="top" secondItem="BAp-4N-9Ou" secondAttribute="bottom" constant="9.5" id="dF6-vr-hLg"/>
-                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="BAp-4N-9Ou" secondAttribute="trailing" id="gUa-nD-PJQ"/>
-                                                    <constraint firstItem="BAp-4N-9Ou" firstAttribute="top" secondItem="SI4-vm-lbj" secondAttribute="bottom" constant="11" id="iVs-oN-UEW"/>
                                                     <constraint firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" constant="25" id="jbj-yx-8hl"/>
-                                                    <constraint firstItem="BAp-4N-9Ou" firstAttribute="height" secondItem="SI4-vm-lbj" secondAttribute="height" id="lsO-RO-4Yl"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="height" secondItem="whs-du-iTR" secondAttribute="height" id="mvK-Px-Hk2"/>
-                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="leading" secondItem="BAp-4N-9Ou" secondAttribute="leading" id="nu6-sQ-GLG"/>
-                                                    <constraint firstItem="BAp-4N-9Ou" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="t7N-hs-3Dp"/>
-                                                    <constraint firstItem="BAp-4N-9Ou" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="ucf-d9-iGB"/>
+                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="qYx-Hr-h3p"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -752,11 +739,10 @@ W1s 2Bx,UK</string>
                     <connections>
                         <outlet property="alreadyHaveaccountLbl" destination="JM2-u7-j7M" id="4cE-xy-45b"/>
                         <outlet property="firstNameTextField" destination="whs-du-iTR" id="MxC-LL-ADK"/>
-                        <outlet property="lastNameTextField" destination="SI4-vm-lbj" id="Yez-gI-WgZ"/>
+                        <outlet property="lastNameTextField" destination="SI4-vm-lbj" id="3jW-M9-2j0"/>
                         <outlet property="loginLbl" destination="NOC-RB-1VG" id="aUw-38-iVS"/>
                         <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>
-                        <outlet property="phoneTextField" destination="BAp-4N-9Ou" id="Z4c-zC-BJu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WQ-Mg-hyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4350,6 +4336,6 @@ up and site back and relax.</string>
         <image name="scanBackId" width="91" height="52"/>
         <image name="scanFrontId" width="91" height="52"/>
         <image name="scanIdBg" width="228" height="143"/>
-        <image name="settings" width="32" height="32"/>
+        <image name="settings" width="48" height="48"/>
     </resources>
 </document>

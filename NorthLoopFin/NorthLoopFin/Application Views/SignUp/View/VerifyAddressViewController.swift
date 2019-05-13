@@ -16,6 +16,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var cityTextfield: UITextField!
     @IBOutlet weak var textState: UITextField!
     @IBOutlet weak var zipTextfield: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
 
     @IBOutlet weak var doneBtn: CommonButton!
     

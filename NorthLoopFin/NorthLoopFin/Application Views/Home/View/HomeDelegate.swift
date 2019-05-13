@@ -9,4 +9,6 @@
 import Foundation
 protocol HomeDelegate:BaseViewProtocol {
     func didFetchedTransactionList(data: [TransactionListModel])
+    func didFetchedError(error:ErrorModel)
+    func didFetchedAccountInfo(data:Account)
 }

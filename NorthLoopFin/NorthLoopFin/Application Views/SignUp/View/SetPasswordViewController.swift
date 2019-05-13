@@ -28,7 +28,7 @@ class SetPasswordViewController: BaseViewController {
         self.doneBtn.isEnabled=false
         self.updateTextFieldUI()
         self.prepareView()
-        firebaseManager = FirebaseManager.init(delegate: self)
+        firebaseManager = FirebaseManager.init(delegate: self as! FirebaseDelegates)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -163,43 +163,43 @@ extension SetPasswordViewController:UITextFieldDelegate{
     }
 }
 
-extension SetPasswordViewController:FirebaseDelegates{
-    func didSendPasswordReset(error: NSError?) {
-        
-    }
-    
-    func didFirebaseDatabaseUpdated() {
-        
-    }
-    func didFirebaseUserCreated(authResult: AuthDataResult?, error: NSError?) {
-        guard let authResult = authResult, error == nil else {
-            print(error!.localizedDescription)
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error!.localizedDescription)
-            return
-        }
-        let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
-        UserInformationUtility.sharedInstance.saveUser(model: user)
-        UserDefaults.saveToUserDefault(authResult.user.email! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
-        self.persistData()
-        self.moveToCreateAccount()
-    }
-    
-    func persistData(){
-        RealmHelper.deleteAllBasicInfo()
-        // adding basic info to realm DB
-        let info:BasicInfo = BasicInfo()
-        info.email = self.emailTextField.text!
-        info.password = self.passwordTextField.text!
-        info.confirmPassword = self.confirmPasswordTextField.text!
-        RealmHelper.addBasicInfo(info: info)
-    }
-    func didNameUpdated(error:NSError?){
-
-    }
-    func didLoggedIn(error:NSError?){
-        
-    }
-    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
-        
-    }
-}
+//extension SetPasswordViewController:FirebaseDelegates{
+//    func didSendPasswordReset(error: NSError?) {
+//
+//    }
+//
+//    func didFirebaseDatabaseUpdated() {
+//
+//    }
+//    func didFirebaseUserCreated(authResult: AuthDataResult?, error: NSError?) {
+//        guard let authResult = authResult, error == nil else {
+//            print(error!.localizedDescription)
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error!.localizedDescription)
+//            return
+//        }
+//        let user:User = User.init(loggedInStatus: true,email:authResult.user.email!)
+//        UserInformationUtility.sharedInstance.saveUser(model: user)
+//        UserDefaults.saveToUserDefault(authResult.user.email! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+//        self.persistData()
+//        self.moveToCreateAccount()
+//    }
+//
+//    func persistData(){
+//        RealmHelper.deleteAllBasicInfo()
+//        // adding basic info to realm DB
+//        let info:BasicInfo = BasicInfo()
+//        info.email = self.emailTextField.text!
+//        info.password = self.passwordTextField.text!
+//        info.confirmPassword = self.confirmPasswordTextField.text!
+//        RealmHelper.addBasicInfo(info: info)
+//    }
+//    func didNameUpdated(error:NSError?){
+//
+//    }
+//    func didLoggedIn(error:NSError?){
+//
+//    }
+//    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
+//
+//    }
+//}

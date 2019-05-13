@@ -11,8 +11,13 @@ import MFSideMenu
 
 class HomeViewController: BaseViewController {
     @IBOutlet weak var ledgersTableView: UITableView!
-    var homePresenter: HomePresenter!
+    @IBOutlet weak var GreetingLbl: LabelWithLetterSpace!
+    @IBOutlet weak var AccBalanceLbl: LabelWithLetterSpace!
+    
+    var transactionListPresenter: TransactionListPresenter!
+    var accountInfoPresenter : AccountInfoPresenter!
     @IBOutlet weak var contentView: GradientView!
+    
     var transactionDataSource: [TransactionListModel] = [] {
         didSet {
             self.ledgersTableView.reloadData()
@@ -34,24 +39,15 @@ class HomeViewController: BaseViewController {
         self.menuContainerViewController.menuSlideAnimationFactor = 10.0
         self.menuContainerViewController.shadow.enabled=false
         self.ledgersTableView.reloadData()
-        homePresenter = HomePresenter.init(delegate: self)
-        self.getTransactionList()
-        self.loadHardcodedData()
+        transactionListPresenter = TransactionListPresenter.init(delegate: self)
+        accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
+        self.getAccountInfo()
+        //self.loadHardcodedData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.makeTransparent()
-    }
-    
-    func loadHardcodedData(){
-        let dummy1:Dummy = Dummy.init(name: "Dominos", code: "$24.49", image: UIImage.init(named: "Dummy1")!)
-        let dummy2:Dummy = Dummy.init(name: "Starbucks", code: "$4.98", image: UIImage.init(named: "Dummy2")!)
-        let dummy3:Dummy = Dummy.init(name: "NetFlix", code: "$15.99", image: UIImage.init(named: "Dummy3")!)
-        let dummy4:Dummy = Dummy.init(name: "H&M", code: "$38.98", image: UIImage.init(named: "Dummy4")!)
-        let arr = [dummy1,dummy2,dummy3,dummy4]
-        let data = TransactionListModel.init(sectionTitle: "September 8th,2018", rowData: arr)
-        self.transactionDataSource.append(data)
     }
     
     //Methode initialises the rightbutton for navigation
@@ -80,15 +76,21 @@ class HomeViewController: BaseViewController {
     
     /// This method is used to get list of Tranactions from api
     func getTransactionList(){
-        //homePresenter.sendTransactionListRequest()
+        transactionListPresenter.sendTransactionListRequest()
     }
+    
+    /// This Methode will get account info that will show current account balance
+    func getAccountInfo(){
+        accountInfoPresenter.getAccountInfo()
+    }
+    
     ///Move to detail screen
-    func moveToDetailScreen(detailModel:Dummy){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
-       transactionDetailController.detailModel = detailModel
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
+//    func moveToDetailScreen(detailModel:Dummy){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
+//       transactionDetailController.detailModel = detailModel
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//    }
 }
 
 
@@ -110,7 +112,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         let cell: HomeTableCell = tableView.dequeueReusableCell(withIdentifier: "HomeTableCell") as! HomeTableCell
         let rowData = transactionDataSource[indexPath.section].rowData[indexPath.row]
         cell.selectionStyle = .none
-        cell.bindData(data: rowData)
+       // cell.bindData(data: rowData)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -134,7 +136,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.moveToDetailScreen(detailModel: transactionDataSource[indexPath.section].rowData[indexPath.row])
+        //self.moveToDetailScreen(detailModel: transactionDataSource[indexPath.section].rowData[indexPath.row])
     }
 }
 
@@ -142,6 +144,15 @@ extension HomeViewController:HomeDelegate{
     //MARK: HomeDelegate
     func didFetchedTransactionList(data: [TransactionListModel]) {
         self.transactionDataSource = data
+    }
+    func didFetchedError(error:ErrorModel){
+        
+    }
+    func didFetchedAccountInfo(data:Account){
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        self.GreetingLbl.text = "Good Morning "+(currentUser?.username)!
+        self.AccBalanceLbl.text = "$"+String(data.info.balance.amount)
+        self.getTransactionList()
     }
 }
 
@@ -160,7 +171,7 @@ extension HomeViewController:SideMenuDelegate{
             self.navigateToTransfer()
         case .MYACCOUNT:
             self.navigateToMyAccount()
-        case .GOALS:
+        case .UPGRADE:
             self.navigateToGoals()
         case .EXPENSES:
             self.navigateToExpenses()

@@ -10,42 +10,43 @@ import Foundation
 
 class User: NSObject, NSCoding {
     
-    var isLoggedIn: Bool!
     var userEmail: String!
-    var firstName:String!
-    var lastname:String!
-    var phone:String!
+    var accessToken:String!
+    var username: String!
     
     override init() {
         super.init()
     }
     
-    init(loggedInStatus:Bool,email:String) {
+    init(username:String,email:String,accesstoken:String){
         super.init()
-        self.isLoggedIn=loggedInStatus
-        self.userEmail=email
+        self.username = username
+        self.userEmail = email
+        self.accessToken = accesstoken
     }
-    init(firstname:String,lastname:String,email:String,phone:String) {
-        super.init()
-        self.userEmail=email
-        self.lastname=lastname
-        self.userEmail=email
-        self.phone=phone
-    }
+    
+   
     required init(coder aDecoder: NSCoder) {
-        if let loggedInStatus = aDecoder.decodeObject(forKey: "Status") as? Bool {
-            self.isLoggedIn = loggedInStatus
-        }
         if let email = aDecoder.decodeObject(forKey: "Email") as? String {
             self.userEmail = email
         }
+        if let username = aDecoder.decodeObject(forKey: "Username") as? String {
+            self.username = username
+        }
+        if let token = aDecoder.decodeObject(forKey: "AccessToken") as? String {
+            self.accessToken = token
+        }
     }
     func encode(with aCoder: NSCoder) {
-        if let loggedInStatusEncoded = self.isLoggedIn {
-            aCoder.encode(loggedInStatusEncoded, forKey: "Status")
-        }
+        
         if let emailEncoded = self.userEmail {
             aCoder.encode(emailEncoded, forKey: "Email")
+        }
+        if let usernameEncoded = self.username {
+            aCoder.encode(usernameEncoded, forKey: "Username")
+        }
+        if let accessTokenEncoded = self.accessToken {
+            aCoder.encode(accessTokenEncoded, forKey: "AccessToken")
         }
     }
 }

@@ -63,6 +63,24 @@ class AppUtility {
         return dateInString
     }
     
+    
+    /// Date from miliseconds
+    ///
+    /// - Parameter seconds: miliseconds
+    class func dateFromMilliseconds(seconds: Double)-> String{
+        
+        //Convert to Date
+        let date = Date.init(timeIntervalSince1970: seconds)//NSDate(timeIntervalSince1970: seconds)
+        
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd, MMM yyyy" //HH:mm:a"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let dateString = dateFormatter.string(from: date)
+        print("formatted date is =  \(dateString)")
+        return dateString
+    }
+    
     class func checkIfDateFallsAfterYear2014(dateStr: String)->Bool{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

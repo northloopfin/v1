@@ -20,7 +20,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loginBtn: CommonButton!
     @IBOutlet weak var createAccountBtn: UIButton!
     
-    var manager:FirebaseManager!
+    //var manager:FirebaseManager!
+    var loginPresenter:LoginPresenter!
     
     @IBAction func forgetPasswordClicked(_ sender: Any) {
         self.moveToForgetScreen()
@@ -34,7 +35,8 @@ class LoginViewController: BaseViewController {
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
         }else{
             if (Validations.isValidEmail(email: self.emailTextField.text!)){
-                manager.signInWithData(self.emailTextField.text!, self.passwordTextfield.text!)
+                //manager.signInWithData(self.emailTextField.text!, self.passwordTextfield.text!)
+                self.loginPresenter.sendLoginRequest(username: self.emailTextField.text ?? "", password: self.passwordTextfield.text ?? "")
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
             }
@@ -46,7 +48,8 @@ class LoginViewController: BaseViewController {
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Login")
         self.prepareView()
-        manager=FirebaseManager.init(delegate: self)
+       // manager=FirebaseManager.init(delegate: self)
+        self.loginPresenter = LoginPresenter.init(delegate: self)
         self.logEventForLogin()
         if let email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail){
             self.emailTextField.text = email as? String
@@ -152,75 +155,87 @@ extension LoginViewController:UITextFieldDelegate{
     }
 }
 
-extension LoginViewController:FirebaseDelegates{
-    func didSendPasswordReset(error: NSError?) {
-        
+extension LoginViewController:LoginDelegate{
+    func didLoggedIn(data: LoginData) {
+        //successfully logged in user..move to home page
+        self.moveToHome()
     }
     
-    func didFirebaseUserCreated(authResult: AuthDataResult?, error: NSError?) {
-        
-    }
     
-    func didNameUpdated(error: NSError?) {
-        
-    }
-    
-    func didFirebaseDatabaseUpdated() {
-        
-    }
-    
-    func didLoggedIn(error: NSError?) {
-        guard error == nil else{
-            //self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error?.localizedDescription ?? "")
-            self.showAlertWithAction(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error?.localizedDescription ?? "", buttonArray: ["OK"]) { (_) in
-                UserInformationUtility.sharedInstance.userattemptsIn10Min = UserInformationUtility.sharedInstance.userattemptsIn10Min+1
-                UserInformationUtility.sharedInstance.userattepmtsIn30Min = UserInformationUtility.sharedInstance.userattepmtsIn30Min+1
-                self.showMaxAttemptAlert()
-
-            }
-            return
-        }
-        UserInformationUtility.sharedInstance.userattemptsIn10Min = 0
-        UserInformationUtility.sharedInstance.userattepmtsIn30Min = 0
-        manager.retrieveUser()
-    }
-    
-    func showMaxAttemptAlert(){
-        if UserInformationUtility.sharedInstance.userattepmtsIn30Min == 1{
-            AccountLockTimer.sharedInstance.startTimer30()
-        }else if UserInformationUtility.sharedInstance.userattepmtsIn30Min == 6 {
-            //show account blocked alert
-            print("Account is blocked")
-           // manager.updateUserDataForIsActive(number: NSNumber.init(value: false), email: self.emailTextField.text!)
-            //update Firebase database and block user//send email to reset password
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_ACCOUNT_BLOCKED.rawValue)
-            manager.sentPasswordResetLinkToEmail(email: self.emailTextField.text!)
-            
-        }else if UserInformationUtility.sharedInstance.userattepmtsIn30Min <= 6{
-            if UserInformationUtility.sharedInstance.userattemptsIn10Min == 2{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_ABOUT_TO_REACH_MAX_ATTEMPTS.rawValue)
-            }else if UserInformationUtility.sharedInstance.userattemptsIn10Min >= 3{
-                //Also update user data for blocked user account in Firebase database
-                AccountLockTimer.sharedInstance.startTimer()
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
-            }
-        }
-    }
-    
-    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
-        guard error==nil else {
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error?.localizedDescription ?? "")
-            return
-        }
-        
-            let firstname:String = data?["firstname"] as? String ?? ""
-            let lastname:String = data?["lastname"] as? String ?? ""
-            let phone:String = data?["phone"] as? String ?? ""
-            let email:String = data?["email"] as? String ?? ""
-            let user:User = User.init(firstname: firstname, lastname: lastname, email: email, phone: phone)
-            UserInformationUtility.sharedInstance.saveUser(model: user)
-            UserDefaults.saveToUserDefault(email as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
-            self.moveToHome()
-        
+    func didLoginFailed(error: ErrorModel) {
+        self.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: error.getErrorMessage())
     }
 }
+
+//extension LoginViewController:FirebaseDelegates{
+//    func didSendPasswordReset(error: NSError?) {
+//
+//    }
+//
+//    func didFirebaseUserCreated(authResult: AuthDataResult?, error: NSError?) {
+//
+//    }
+//
+//    func didNameUpdated(error: NSError?) {
+//
+//    }
+//
+//    func didFirebaseDatabaseUpdated() {
+//
+//    }
+//
+//    func didLoggedIn(error: NSError?) {
+//        guard error == nil else{
+//            //self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error?.localizedDescription ?? "")
+//            self.showAlertWithAction(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error?.localizedDescription ?? "", buttonArray: ["OK"]) { (_) in
+//                UserInformationUtility.sharedInstance.userattemptsIn10Min = UserInformationUtility.sharedInstance.userattemptsIn10Min+1
+//                UserInformationUtility.sharedInstance.userattepmtsIn30Min = UserInformationUtility.sharedInstance.userattepmtsIn30Min+1
+//                self.showMaxAttemptAlert()
+//
+//            }
+//            return
+//        }
+//        UserInformationUtility.sharedInstance.userattemptsIn10Min = 0
+//        UserInformationUtility.sharedInstance.userattepmtsIn30Min = 0
+//        manager.retrieveUser()
+//    }
+//
+//    func showMaxAttemptAlert(){
+//        if UserInformationUtility.sharedInstance.userattepmtsIn30Min == 1{
+//            AccountLockTimer.sharedInstance.startTimer30()
+//        }else if UserInformationUtility.sharedInstance.userattepmtsIn30Min == 6 {
+//            //show account blocked alert
+//            print("Account is blocked")
+//           // manager.updateUserDataForIsActive(number: NSNumber.init(value: false), email: self.emailTextField.text!)
+//            //update Firebase database and block user//send email to reset password
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_ACCOUNT_BLOCKED.rawValue)
+//            //manager.sentPasswordResetLinkToEmail(email: self.emailTextField.text!)
+//
+//        }else if UserInformationUtility.sharedInstance.userattepmtsIn30Min <= 6{
+//            if UserInformationUtility.sharedInstance.userattemptsIn10Min == 2{
+//                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_ABOUT_TO_REACH_MAX_ATTEMPTS.rawValue)
+//            }else if UserInformationUtility.sharedInstance.userattemptsIn10Min >= 3{
+//                //Also update user data for blocked user account in Firebase database
+//                AccountLockTimer.sharedInstance.startTimer()
+//                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
+//            }
+//        }
+//    }
+//
+//    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
+//        guard error==nil else {
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: error?.localizedDescription ?? "")
+//            return
+//        }
+//
+//            let firstname:String = data?["firstname"] as? String ?? ""
+//            let lastname:String = data?["lastname"] as? String ?? ""
+//            let phone:String = data?["phone"] as? String ?? ""
+//            let email:String = data?["email"] as? String ?? ""
+//            let user:User = User.init(firstname: firstname, lastname: lastname, email: email, phone: phone)
+//            UserInformationUtility.sharedInstance.saveUser(model: user)
+//            UserDefaults.saveToUserDefault(email as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+//            self.moveToHome()
+//
+//    }
+//}

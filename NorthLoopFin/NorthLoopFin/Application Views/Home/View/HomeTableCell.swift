@@ -27,10 +27,10 @@ class HomeTableCell: UITableViewCell {
 //        self.beneficiaryName.text = data.transactionPrintout.beneficiaryname
 //        self.transactionAmt.text = "$" + String(data.amount)
 //    }
-    func bindData(data: Dummy){
-        self.beneficiaryName.text = data.name
-        self.transactionAmt.text =  String(data.amount)
-        self.beneficiaryImg.image = data.image
-    }
+//    func bindData(data: Dummy){
+//        self.beneficiaryName.text = data.name
+//        self.transactionAmt.text =  String(data.amount)
+//        self.beneficiaryImg.image = data.image
+//    }
     
 }
