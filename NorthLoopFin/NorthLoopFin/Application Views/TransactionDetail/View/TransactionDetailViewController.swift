@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 
+// Pending No of Vsits, Average Spent
 class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var historyTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: GradientView!
@@ -20,8 +21,10 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var amtLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var transactionImg: UIImageView!
-    //var detailModel:Transaction!
+    var detailModel:TransactionHistory!
    // var detailModel:Dummy!
+    var presenter: TransactionDetailPresenter!
+
 
     var historyOptions : [String] = [] {
         didSet {
@@ -35,11 +38,14 @@ class TransactionDetailViewController: BaseViewController {
         self.updateUIForRecievedData()
         self.configureTable()
         self.historyOptions.append(contentsOf: ["Number of Visits","Average Spend"])
+        self.presenter = TransactionDetailPresenter.init(delegate: self)
+        self.getTransactionDetail()
     }
     
     override func loadView() {
         super.loadView()
-        self.loadGoogleMap()
+        
+        self.loadGoogleMap(lat: -33.86, long: 151.20)
         
     }
     //Create gradient for navigation bar
@@ -87,10 +93,15 @@ class TransactionDetailViewController: BaseViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
-    func loadGoogleMap(){
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 2.0)
+    func loadGoogleMap(lat:Double,long:Double){
+        
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 2.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.mapView = mapView
+    }
+    
+    func getTransactionDetail(){
+        presenter.sendTransactionDetailRequest(transactionId:1)
     }
 }
 //MARK:- UITableView Delegate and DataSource
@@ -128,5 +139,17 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 49
+    }
+}
+
+extension TransactionDetailViewController:TransactionDetailDelegate{
+    
+    func didFetchedTransactionDetail(data:TransactionDetail){
+        self.beneficiaryNameLbl.text = data.data.to.meta.merchantName
+        self.addressLbl.text = data.data.to.meta.address
+        self.amtLbl.text = String(data.data.amount.amount)
+        //self.transactionPurposeLbl.text =
+        let url = URL(string: data.data.to.meta.merchantLogo)
+        self.transactionImg.kf.setImage(with:url)
     }
 }

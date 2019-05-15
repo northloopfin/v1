@@ -26,7 +26,7 @@ class LoginPresenter: ResponseCallback{
             .addRequestQueryParams(key: "username", value: name as AnyObject)
             .addRequestQueryParams(key: "password", value: password as AnyObject)
             .build()
-        
+        requestModel.apiUrl=requestModel.getEndPoint()
         self.loginBusinessLogic.performLogin(withLoginRequestModel: requestModel, presenterDelegate: self)
     }
     
@@ -43,6 +43,7 @@ class LoginPresenter: ResponseCallback{
         // show error to user
         print(error.getErrorMessage())
         self.loginDelegate?.didLoginFailed(error: error)
+        self.loginDelegate?.hideLoader()
     }
     
     

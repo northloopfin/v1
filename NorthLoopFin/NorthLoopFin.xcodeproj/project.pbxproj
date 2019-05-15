@@ -25,6 +25,19 @@
 		1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4D222D18AA00D06914 /* BasicInfo.swift */; };
 		1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4E222D18AA00D06914 /* RealmHelper.swift */; };
 		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
+		1D259D90228AE0940053D0AB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D8F228AE0940053D0AB /* Card.swift */; };
+		1D259D92228AE0C10053D0AB /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D91228AE0C10053D0AB /* CardData.swift */; };
+		1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D93228AE0D50053D0AB /* CardPreferences.swift */; };
+		1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D95228BDD930053D0AB /* TransactionDetail.swift */; };
+		1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D97228BDEAB0053D0AB /* TransactionDetailData.swift */; };
+		1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D99228BDF1F0053D0AB /* TransactionDetailAmount.swift */; };
+		1D259D9C228BDF360053D0AB /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D9B228BDF360053D0AB /* Client.swift */; };
+		1D259D9E228BDF550053D0AB /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D9D228BDF550053D0AB /* Extra.swift */; };
+		1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D9F228BDF7E0053D0AB /* CreatedOn.swift */; };
+		1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA1228BDF9D0053D0AB /* Other.swift */; };
+		1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */; };
+		1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */; };
+		1D259DA8228BE39B0053D0AB /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA7228BE39B0053D0AB /* ID.swift */; };
 		1D3538382223E54F00716A94 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3538372223E54E00716A94 /* country.json */; };
 		1D35383B2223E58E00716A94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35383A2223E58E00716A94 /* Country.swift */; };
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
@@ -95,6 +108,11 @@
 		1D8440862289552600A77BBF /* AccountInfoApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8440852289552600A77BBF /* AccountInfoApiRequest.swift */; };
 		1D8440882289556A00A77BBF /* AccountInfoBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8440872289556A00A77BBF /* AccountInfoBusinessLogic.swift */; };
 		1D84408A2289574900A77BBF /* AccountInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8440892289574900A77BBF /* AccountInfoPresenter.swift */; };
+		1D84408C228A9CED00A77BBF /* TransactionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84408B228A9CED00A77BBF /* TransactionDetailPresenter.swift */; };
+		1D84408E228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84408D228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift */; };
+		1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84408F228A9DB600A77BBF /* TransactionDetailAPIRequest.swift */; };
+		1D844092228A9E0400A77BBF /* TransactionDetailRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D844091228A9E0400A77BBF /* TransactionDetailRequestModel.swift */; };
+		1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D844093228A9E9700A77BBF /* TransactionDetailDelegate.swift */; };
 		1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */; };
 		1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908FD121CCF837005C96BB /* AllDoneViewController.swift */; };
 		1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D913EF421EC55C6009D7E52 /* CommonTable.swift */; };
@@ -109,6 +127,11 @@
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
 		1D9EFE0921C9259D004C1C77 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0821C9259C004C1C77 /* CoreData.framework */; };
+		1D9F45FA228AC0E3009D76FC /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */; };
+		1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F45FB228AC10F009D76FC /* CardBusinessLogic.swift */; };
+		1D9F45FE228AC13E009D76FC /* CardAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F45FD228AC13E009D76FC /* CardAPIRequest.swift */; };
+		1D9F4600228AC156009D76FC /* CardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F45FF228AC156009D76FC /* CardRequestModel.swift */; };
+		1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F4601228AC2A1009D76FC /* CardDelegates.swift */; };
 		1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */; };
 		1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */; };
 		1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8C0DC21F97198009F437A /* NotificationSettingsViewController.swift */; };
@@ -210,6 +233,19 @@
 		1D165F4D222D18AA00D06914 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		1D165F4E222D18AA00D06914 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		1D259D8F228AE0940053D0AB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1D259D91228AE0C10053D0AB /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		1D259D93228AE0D50053D0AB /* CardPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPreferences.swift; sourceTree = "<group>"; };
+		1D259D95228BDD930053D0AB /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
+		1D259D97228BDEAB0053D0AB /* TransactionDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailData.swift; sourceTree = "<group>"; };
+		1D259D99228BDF1F0053D0AB /* TransactionDetailAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailAmount.swift; sourceTree = "<group>"; };
+		1D259D9B228BDF360053D0AB /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		1D259D9D228BDF550053D0AB /* Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extra.swift; sourceTree = "<group>"; };
+		1D259D9F228BDF7E0053D0AB /* CreatedOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedOn.swift; sourceTree = "<group>"; };
+		1D259DA1228BDF9D0053D0AB /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+		1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRecipient.swift; sourceTree = "<group>"; };
+		1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientMeta.swift; sourceTree = "<group>"; };
+		1D259DA7228BE39B0053D0AB /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		1D3538372223E54E00716A94 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		1D35383A2223E58E00716A94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -280,6 +316,11 @@
 		1D8440852289552600A77BBF /* AccountInfoApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoApiRequest.swift; sourceTree = "<group>"; };
 		1D8440872289556A00A77BBF /* AccountInfoBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoBusinessLogic.swift; sourceTree = "<group>"; };
 		1D8440892289574900A77BBF /* AccountInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoPresenter.swift; sourceTree = "<group>"; };
+		1D84408B228A9CED00A77BBF /* TransactionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailPresenter.swift; sourceTree = "<group>"; };
+		1D84408D228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetialBusinessLogic.swift; sourceTree = "<group>"; };
+		1D84408F228A9DB600A77BBF /* TransactionDetailAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailAPIRequest.swift; sourceTree = "<group>"; };
+		1D844091228A9E0400A77BBF /* TransactionDetailRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRequestModel.swift; sourceTree = "<group>"; };
+		1D844093228A9E9700A77BBF /* TransactionDetailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailDelegate.swift; sourceTree = "<group>"; };
 		1D908FCF21CCF5B3005C96BB /* VerifyAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAddressViewController.swift; sourceTree = "<group>"; };
 		1D908FD121CCF837005C96BB /* AllDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneViewController.swift; sourceTree = "<group>"; };
 		1D913EF421EC55C6009D7E52 /* CommonTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTable.swift; sourceTree = "<group>"; };
@@ -294,6 +335,11 @@
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D9EFE0821C9259C004C1C77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
+		1D9F45FB228AC10F009D76FC /* CardBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBusinessLogic.swift; sourceTree = "<group>"; };
+		1D9F45FD228AC13E009D76FC /* CardAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIRequest.swift; sourceTree = "<group>"; };
+		1D9F45FF228AC156009D76FC /* CardRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRequestModel.swift; sourceTree = "<group>"; };
+		1D9F4601228AC2A1009D76FC /* CardDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDelegates.swift; sourceTree = "<group>"; };
 		1DB6479921FEBF2D004C483E /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonWithImageAndTitleExtension.swift; sourceTree = "<group>"; };
 		1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NorthLoopFin-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -604,6 +650,19 @@
 		1D51758421C5009500BCF9E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D84408D228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift */,
+				1D84408F228A9DB600A77BBF /* TransactionDetailAPIRequest.swift */,
+				1D844091228A9E0400A77BBF /* TransactionDetailRequestModel.swift */,
+				1D259D95228BDD930053D0AB /* TransactionDetail.swift */,
+				1D259D97228BDEAB0053D0AB /* TransactionDetailData.swift */,
+				1D259D99228BDF1F0053D0AB /* TransactionDetailAmount.swift */,
+				1D259D9B228BDF360053D0AB /* Client.swift */,
+				1D259D9D228BDF550053D0AB /* Extra.swift */,
+				1D259D9F228BDF7E0053D0AB /* CreatedOn.swift */,
+				1D259DA1228BDF9D0053D0AB /* Other.swift */,
+				1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */,
+				1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */,
+				1D259DA7228BE39B0053D0AB /* ID.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -616,6 +675,7 @@
 				1D51758A21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib */,
 				1D51758D21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift */,
 				1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */,
+				1D844093228A9E9700A77BBF /* TransactionDetailDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -623,6 +683,7 @@
 		1D51758621C500A200BCF9E4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1D84408B228A9CED00A77BBF /* TransactionDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -939,6 +1000,12 @@
 			isa = PBXGroup;
 			children = (
 				1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */,
+				1D9F45FB228AC10F009D76FC /* CardBusinessLogic.swift */,
+				1D9F45FD228AC13E009D76FC /* CardAPIRequest.swift */,
+				1D9F45FF228AC156009D76FC /* CardRequestModel.swift */,
+				1D259D8F228AE0940053D0AB /* Card.swift */,
+				1D259D91228AE0C10053D0AB /* CardData.swift */,
+				1D259D93228AE0D50053D0AB /* CardPreferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -949,6 +1016,7 @@
 				1DF64E1321E5D546008774CE /* MyCardViewController.swift */,
 				1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */,
 				1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */,
+				1D9F4601228AC2A1009D76FC /* CardDelegates.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -956,6 +1024,7 @@
 		1DF64E1721E5FDC1008774CE /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1609,8 +1678,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */,
 				1D844056228806B600A77BBF /* Login.swift in Sources */,
 				1D8440722289541A00A77BBF /* Account.swift in Sources */,
+				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
@@ -1618,7 +1689,9 @@
 				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				1D84407F2289545A00A77BBF /* TransactionListRequestModel.swift in Sources */,
+				1D844092228A9E0400A77BBF /* TransactionDetailRequestModel.swift in Sources */,
 				1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */,
+				1D9F4600228AC156009D76FC /* CardRequestModel.swift in Sources */,
 				1D8440882289556A00A77BBF /* AccountInfoBusinessLogic.swift in Sources */,
 				1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */,
 				1D81CE4322253DF300B61037 /* LogEventsHelper.swift in Sources */,
@@ -1641,17 +1714,21 @@
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
+				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
 				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
+				1D9F45FA228AC0E3009D76FC /* CardsPresenter.swift in Sources */,
 				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
 				1D8440802289545A00A77BBF /* Amount.swift in Sources */,
 				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
+				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
 				1D915C0E220816C100223480 /* Env.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
 				1D165F50222D18AA00D06914 /* SelfieImage.swift in Sources */,
 				1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
+				1D259DA8228BE39B0053D0AB /* ID.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
@@ -1665,6 +1742,7 @@
 				1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
+				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1D84407E2289545A00A77BBF /* TransactionListApiRequest.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
@@ -1678,16 +1756,19 @@
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				1D4AD7762284462D007A9C2F /* Endpoints.swift in Sources */,
+				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				1D84405A22883EDB00A77BBF /* LoginData.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
+				1D259D90228AE0940053D0AB /* Card.swift in Sources */,
 				1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */,
 				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
 				1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */,
+				1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */,
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* TransactionListPresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
@@ -1695,16 +1776,22 @@
 				1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
+				1D259D9E228BDF550053D0AB /* Extra.swift in Sources */,
+				1D84408E228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift in Sources */,
 				1D84408A2289574900A77BBF /* AccountInfoPresenter.swift in Sources */,
+				1D9F45FE228AC13E009D76FC /* CardAPIRequest.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
+				1D84408C228A9CED00A77BBF /* TransactionDetailPresenter.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D35383B2223E58E00716A94 /* Country.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
+				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
+				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
 				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,
@@ -1717,8 +1804,10 @@
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
+				1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
+				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
 				1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */,
@@ -1727,9 +1816,11 @@
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
+				1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */,
 				1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */,
 				1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */,
 				1D11FE21221126B700234E6D /* CommonButton.swift in Sources */,
+				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
@@ -1740,6 +1831,7 @@
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
 				1D915C1222082CD400223480 /* Timer.swift in Sources */,
+				1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,

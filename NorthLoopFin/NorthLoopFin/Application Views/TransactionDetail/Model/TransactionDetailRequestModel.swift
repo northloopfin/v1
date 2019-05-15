@@ -1,21 +1,22 @@
 //
-//  LoginRequestModel.swift
+//  TransactionDetailRequestModel.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 09/05/19.
+//  Created by Daffolapmac-19 on 14/05/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-
-class LoginRequestModel {
+class TransactionDetailRequestModel {
+    //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
     var requestBody: [String:AnyObject]!
     var requestHeader: [String:AnyObject]!
     var requestQueryParams: [String:AnyObject]!
     var apiUrl:String!
+    
     init(builderObject builder:Builder){
         //Instantiating service Request model Properties with Builder Object property
         self.requestBody = builder.requestBody
@@ -61,10 +62,10 @@ class LoginRequestModel {
          This method is used to set properties in upper class of CapsuleListRequestModel
          and provide CapsuleListForm1ViewViewRequestModel object.
          
-         -returns : HomeLedgerRequestModel
+         -returns : CardRequestModel
          */
-        func build()->LoginRequestModel{
-            return LoginRequestModel(builderObject: self)
+        func build()->TransactionDetailRequestModel{
+            return TransactionDetailRequestModel(builderObject: self)
         }
     }
     
@@ -74,6 +75,6 @@ class LoginRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.LOGIN.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TRANSACTIONHISTORY.rawValue
     }
 }

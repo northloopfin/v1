@@ -12,9 +12,11 @@ struct Endpoints{
     static let Base_Url = AppUtility.infoForKey("Backend Url")
 
     enum APIEndpoints:String {
-        case LOGIN = "login"
-        case TRANSACTIONHISTORY = "transactions"
-        case ACCOUNTINFO = "account-info?"
+        case LOGIN = "auth/login"
+        case TRANSACTIONHISTORY = "banking/transactions"
+        case ACCOUNTINFO = "banking/account-info?"
+        //case TRANSACTIONDETAIL = "banking/transactions"
+        case CARDSTATUS = "banking/card-status" 
     }
     
     enum APIRequestHeaders: String{
