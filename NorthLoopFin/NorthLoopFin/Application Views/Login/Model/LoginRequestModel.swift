@@ -15,7 +15,7 @@ class LoginRequestModel {
     var requestBody: [String:AnyObject]!
     var requestHeader: [String:AnyObject]!
     var requestQueryParams: [String:AnyObject]!
-    
+    var apiUrl:String!
     init(builderObject builder:Builder){
         //Instantiating service Request model Properties with Builder Object property
         self.requestBody = builder.requestBody

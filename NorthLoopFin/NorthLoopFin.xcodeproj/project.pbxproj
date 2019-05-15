@@ -30,12 +30,12 @@
 		1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D93228AE0D50053D0AB /* CardPreferences.swift */; };
 		1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D95228BDD930053D0AB /* TransactionDetail.swift */; };
 		1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D97228BDEAB0053D0AB /* TransactionDetailData.swift */; };
-		1D259D9A228BDF1F0053D0AB /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D99228BDF1F0053D0AB /* Amount.swift */; };
+		1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D99228BDF1F0053D0AB /* TransactionDetailAmount.swift */; };
 		1D259D9C228BDF360053D0AB /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D9B228BDF360053D0AB /* Client.swift */; };
 		1D259D9E228BDF550053D0AB /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D9D228BDF550053D0AB /* Extra.swift */; };
 		1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D9F228BDF7E0053D0AB /* CreatedOn.swift */; };
 		1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA1228BDF9D0053D0AB /* Other.swift */; };
-		1D259DA4228BE1630053D0AB /* Recipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA3228BE1630053D0AB /* Recipient.swift */; };
+		1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */; };
 		1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */; };
 		1D259DA8228BE39B0053D0AB /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA7228BE39B0053D0AB /* ID.swift */; };
 		1D3538382223E54F00716A94 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3538372223E54E00716A94 /* country.json */; };
@@ -238,12 +238,12 @@
 		1D259D93228AE0D50053D0AB /* CardPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPreferences.swift; sourceTree = "<group>"; };
 		1D259D95228BDD930053D0AB /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 		1D259D97228BDEAB0053D0AB /* TransactionDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailData.swift; sourceTree = "<group>"; };
-		1D259D99228BDF1F0053D0AB /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
+		1D259D99228BDF1F0053D0AB /* TransactionDetailAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailAmount.swift; sourceTree = "<group>"; };
 		1D259D9B228BDF360053D0AB /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		1D259D9D228BDF550053D0AB /* Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extra.swift; sourceTree = "<group>"; };
 		1D259D9F228BDF7E0053D0AB /* CreatedOn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedOn.swift; sourceTree = "<group>"; };
 		1D259DA1228BDF9D0053D0AB /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
-		1D259DA3228BE1630053D0AB /* Recipient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipient.swift; sourceTree = "<group>"; };
+		1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRecipient.swift; sourceTree = "<group>"; };
 		1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientMeta.swift; sourceTree = "<group>"; };
 		1D259DA7228BE39B0053D0AB /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		1D3538372223E54E00716A94 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
@@ -655,12 +655,12 @@
 				1D844091228A9E0400A77BBF /* TransactionDetailRequestModel.swift */,
 				1D259D95228BDD930053D0AB /* TransactionDetail.swift */,
 				1D259D97228BDEAB0053D0AB /* TransactionDetailData.swift */,
-				1D259D99228BDF1F0053D0AB /* Amount.swift */,
+				1D259D99228BDF1F0053D0AB /* TransactionDetailAmount.swift */,
 				1D259D9B228BDF360053D0AB /* Client.swift */,
 				1D259D9D228BDF550053D0AB /* Extra.swift */,
 				1D259D9F228BDF7E0053D0AB /* CreatedOn.swift */,
 				1D259DA1228BDF9D0053D0AB /* Other.swift */,
-				1D259DA3228BE1630053D0AB /* Recipient.swift */,
+				1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */,
 				1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */,
 				1D259DA7228BE39B0053D0AB /* ID.swift */,
 			);
@@ -1681,7 +1681,7 @@
 				1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */,
 				1D844056228806B600A77BBF /* Login.swift in Sources */,
 				1D8440722289541A00A77BBF /* Account.swift in Sources */,
-				1D259D9A228BDF1F0053D0AB /* Amount.swift in Sources */,
+				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
@@ -1791,7 +1791,7 @@
 				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
 				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
-				1D259DA4228BE1630053D0AB /* Recipient.swift in Sources */,
+				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
 				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,

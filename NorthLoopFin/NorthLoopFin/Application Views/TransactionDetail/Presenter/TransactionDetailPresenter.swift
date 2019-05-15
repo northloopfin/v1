@@ -14,31 +14,29 @@ class TransactionDetailPresenter: ResponseCallback{
     private lazy var businessLogic         : TransactionDetialBusinessLogic = TransactionDetialBusinessLogic()
     //MARK:- Constructor
     
-    init(delegate responseDelegate:HomeDelegate){
+    init(delegate responseDelegate:TransactionDetailDelegate){
         self.delegate = responseDelegate
     }
     //MARK:- Methods to make decision and call  Api.
     
     func sendTransactionDetailRequest(transactionId:Int){
-        self.delegate.showLoader()
-        let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()
-        let rquestModel = TransactionDetailRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).addRequestQueryParams(key:"", value : transactionId)
-        self.businessLogic.perfornTransactionDetail
-//        self.homeDelegate?.showLoader()
-//        let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
-//        let requestModel = TransactionDetailRequestModel.Builder()
-//            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
-//                , value: currentUser.accessToken).
-//        .addquesy.build()
-////        self.businessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
-//        self.businessLogic.sendTransactionDetailRequest(withRequestModel requestModel: requestModel, presenterDelegate:ResponseCallback)
+        self.delegate?.showLoader()
+        let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
+        let rquestModel = TransactionDetailRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).addRequestQueryParams(key:"id", value : transactionId as AnyObject).build()
+        rquestModel.apiUrl = rquestModel.getEndPoint()+"/"+String(transactionId)
+        self.businessLogic.performTransactionDetail( withRequestModel: rquestModel, presenterDelegate:self)
+
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        
+        self.delegate?.hideLoader()
+        let response = responseObject as! TransactionDetail
+        self.delegate?.didFetchedTransactionDetail(data: response)
     }
     
     func servicesManagerError(error: ErrorModel) {
-        
+        self.delegate?.hideLoader()
+        self.delegate?.showErrorAlert(error.getErrorTitle()
+            , alertMessage: error.getErrorMessage())
     }
 }

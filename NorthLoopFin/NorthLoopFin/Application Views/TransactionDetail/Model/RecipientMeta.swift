@@ -22,7 +22,7 @@ struct RecipientMeta: Codable {
     enum CodingKeys: String, CodingKey {
         case address
         case foreignTransaction = "foreign_transaction"
-        case interchangeObject = "interchange_object"
+        //case interchangeObject = "interchange_object"
         case merchantCategory = "merchant_category"
         case merchantLogo = "merchant_logo"
         case merchantName = "merchant_name"

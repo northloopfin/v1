@@ -38,6 +38,8 @@ struct Extra: Codable {
         encryptedNote = try values.decodeIfPresent(String.self, forKey: .encryptedNote) ?? ""
         ip = try values.decodeIfPresent(String.self, forKey: .ip) ?? ""
         latlon = try values.decodeIfPresent(String.self, forKey: .latlon) ?? ""
+        note = try values.decodeIfPresent(String.self, forKey: .note) ?? ""
+
         other = try values.decodeIfPresent(Other.self, forKey: .other)!
         processOn = try values.decodeIfPresent(CreatedOn.self, forKey: .processOn)!
 

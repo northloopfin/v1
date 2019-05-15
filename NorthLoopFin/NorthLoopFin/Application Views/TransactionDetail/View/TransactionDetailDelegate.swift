@@ -8,7 +8,6 @@
 
 import Foundation
 
-//class TransactionDetailDelegate: BaseViewProtocol {
-//    
-//    
-//}
+protocol TransactionDetailDelegate: BaseViewProtocol {
+    func didFetchedTransactionDetail(data:TransactionDetail)
+}

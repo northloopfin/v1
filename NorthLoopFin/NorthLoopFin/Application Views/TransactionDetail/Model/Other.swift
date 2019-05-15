@@ -23,10 +23,10 @@ struct Other: Codable {
         case asyncRan = "async_ran"
         //case attachments
         case createEmailSent = "create_email_sent"
-        case disputeForm = "dispute_form"
+       // case disputeForm = "dispute_form"
         case disputed
         case doNext = "do_next"
-        case process
+        //case process
         //case provisionalCreditTransactionID = "provisional_credit_transaction_id"
         //case settlementBatchID = "settlement_batch_id"
         case showQueue = "show_queue"

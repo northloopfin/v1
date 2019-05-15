@@ -19,7 +19,7 @@ struct TransactionDetail : Codable{
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        data = try values.decodeIfPresent(String.self, forKey: .data) ?? ""
+        message = try values.decodeIfPresent(String.self, forKey: .message) ?? ""
         data = try values.decodeIfPresent(TransactionDetailData.self, forKey: .data)!
         
     }

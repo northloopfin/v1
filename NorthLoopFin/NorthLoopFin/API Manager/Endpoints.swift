@@ -15,7 +15,7 @@ struct Endpoints{
         case LOGIN = "auth/login"
         case TRANSACTIONHISTORY = "banking/transactions"
         case ACCOUNTINFO = "banking/account-info?"
-        case TRANSACTIONDETAIL = ""
+        //case TRANSACTIONDETAIL = "banking/transactions"
         case CARDSTATUS = "banking/card-status" 
     }
     

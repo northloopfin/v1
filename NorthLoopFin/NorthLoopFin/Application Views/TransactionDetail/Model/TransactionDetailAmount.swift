@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Amount: Codable {
+struct TransactionDetailAmount: Codable {
     let amount: Double
     let currency: String
     
@@ -19,8 +19,8 @@ struct Amount: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        amount = try values.decodeIfPresent(String.self, forKey: .amount) ?? ""
-        name = try values.decodeIfPresent(String.self, forKey: .name) ?? ""
+        amount = try values.decodeIfPresent(Double.self, forKey: .amount) ?? 0.0
+        currency = try values.decodeIfPresent(String.self, forKey: .currency) ?? ""
         
     }
     

@@ -24,6 +24,8 @@ class AccountInfoPresenter: ResponseCallback{
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = AccountInfoRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).build()
+        requestModel.apiUrl = requestModel.getEndPoint()
+
         self.businessLogic.performAccountInfo(withRequestModel: requestModel, presenterDelegate: self)
     }
     

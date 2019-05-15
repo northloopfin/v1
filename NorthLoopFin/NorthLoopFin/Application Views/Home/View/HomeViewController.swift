@@ -84,13 +84,13 @@ class HomeViewController: BaseViewController {
         accountInfoPresenter.getAccountInfo()
     }
     
-    ///Move to detail screen
-//    func moveToDetailScreen(detailModel:Dummy){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
-//       transactionDetailController.detailModel = detailModel
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
+    //Move to detail screen
+    func moveToDetailScreen(detailModel:TransactionHistory){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
+       transactionDetailController.detailModel = detailModel
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }
 
 
@@ -136,7 +136,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.moveToDetailScreen(detailModel: transactionDataSource[indexPath.section].rowData[indexPath.row])
+        self.moveToDetailScreen(detailModel: transactionDataSource[indexPath.section].rowData[indexPath.row])
     }
 }
 

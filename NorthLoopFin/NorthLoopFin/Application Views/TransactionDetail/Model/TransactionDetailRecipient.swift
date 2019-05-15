@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Recipient: Codable {
+struct TransactionDetailRecipient: Codable {
     let id: ID
-    let meta: Meta
+    let meta: RecipientMeta
     let nickname: String
     let type: String
     //let user: User

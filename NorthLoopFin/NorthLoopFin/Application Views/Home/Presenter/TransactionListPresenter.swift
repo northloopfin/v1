@@ -24,6 +24,7 @@ class TransactionListPresenter: ResponseCallback{
         let requestModel = TransactionListRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken).build()
+        requestModel.apiUrl = requestModel.getEndPoint()
     self.homeTransactionListBusinessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
     }
     

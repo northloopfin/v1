@@ -25,11 +25,12 @@ class TransactionDetailAPIRequest:ApiRequestProtocol {
     
     func makeAPIRequest(withReqFormData reqFromData: TransactionDetailRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
         
-        self.apiRequestUrl = reqFromData.getEndPoint()
+        self.apiRequestUrl = reqFromData.apiUrl//reqFromData.getEndPoint()
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
         
         ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: TransactionDetail.self)
+        //ServiceManager.sharedInstance.requestGETWithParameter(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: TransactionDetail.self)
     }
     
     /**

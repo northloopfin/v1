@@ -15,6 +15,7 @@ class TransactionDetailRequestModel {
     var requestBody: [String:AnyObject]!
     var requestHeader: [String:AnyObject]!
     var requestQueryParams: [String:AnyObject]!
+    var apiUrl:String!
     
     init(builderObject builder:Builder){
         //Instantiating service Request model Properties with Builder Object property
@@ -74,6 +75,6 @@ class TransactionDetailRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TRANSACTIONDETAIL.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TRANSACTIONHISTORY.rawValue
     }
 }
