@@ -43,6 +43,7 @@ class LoginPresenter: ResponseCallback{
         // show error to user
         print(error.getErrorMessage())
         self.loginDelegate?.didLoginFailed(error: error)
+        self.loginDelegate?.hideLoader()
     }
     
     
