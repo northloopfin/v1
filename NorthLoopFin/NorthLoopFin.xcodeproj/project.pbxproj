@@ -145,6 +145,10 @@
 		1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
+		1DF31A72228D62C0001ACE61 /* SignUpProvideScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A71228D62C0001ACE61 /* SignUpProvideScreen.swift */; };
+		1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A73228D6396001ACE61 /* SignUpStepFirst.swift */; };
+		1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A75228D86B4001ACE61 /* SignupStepConfirm.swift */; };
+		1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */; };
 		1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1321E5D546008774CE /* MyCardViewController.swift */; };
 		1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */; };
 		1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */; };
@@ -354,6 +358,10 @@
 		1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountV2ViewController.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		1DF31A71228D62C0001ACE61 /* SignUpProvideScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProvideScreen.swift; sourceTree = "<group>"; };
+		1DF31A73228D6396001ACE61 /* SignUpStepFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepFirst.swift; sourceTree = "<group>"; };
+		1DF31A75228D86B4001ACE61 /* SignupStepConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStepConfirm.swift; sourceTree = "<group>"; };
+		1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCountryException.swift; sourceTree = "<group>"; };
 		1DF64E1321E5D546008774CE /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		1DF64E1821E5FDE9008774CE /* MyCardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableCell.swift; sourceTree = "<group>"; };
 		1DF64E1921E5FDE9008774CE /* MyCardTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCardTableCell.xib; sourceTree = "<group>"; };
@@ -982,6 +990,10 @@
 				1DD066E9221AAE0D00E1AD6D /* ScanIDNewViewController.swift */,
 				1DD066F3221E9CD000E1AD6D /* VerifyAddressNewViewController.swift */,
 				1DD066F5221EA77900E1AD6D /* ConfirmedNewViewController.swift */,
+				1DF31A71228D62C0001ACE61 /* SignUpProvideScreen.swift */,
+				1DF31A73228D6396001ACE61 /* SignUpStepFirst.swift */,
+				1DF31A75228D86B4001ACE61 /* SignupStepConfirm.swift */,
+				1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -1697,6 +1709,7 @@
 				1D81CE4322253DF300B61037 /* LogEventsHelper.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
+				1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
@@ -1796,6 +1809,7 @@
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
 				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
+				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
@@ -1809,6 +1823,7 @@
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
 				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
+				1DF31A72228D62C0001ACE61 /* SignUpProvideScreen.swift in Sources */,
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
 				1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */,
 				1D84407D2289545A00A77BBF /* RecentStatus.swift in Sources */,
@@ -1822,6 +1837,7 @@
 				1D11FE21221126B700234E6D /* CommonButton.swift in Sources */,
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
+				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,

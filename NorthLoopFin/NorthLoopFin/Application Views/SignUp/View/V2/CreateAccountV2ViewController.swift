@@ -8,17 +8,23 @@
 
 import UIKit
 import Firebase
+import DropDown
 
 class CreateAccountV2ViewController: BaseViewController {
 
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
-    //@IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    // @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var SSNTextField: UITextField!
+    @IBOutlet weak var CitizenShipTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
+    
+    let dropDown = DropDown()
+    let countryWithCode = AppUtility.getCountryList()
+    
     var presenter:PhoneVerificationStartPresenter!
     var firebaseManager:FirebaseManager!
     
@@ -37,13 +43,13 @@ class CreateAccountV2ViewController: BaseViewController {
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
         if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
-            //if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
-                //                        self.callPhoneVerificationAPI()
-                //                        moveToOTPScreen()
-                //self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
+            if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
+                                        self.callPhoneVerificationAPI()
+                                        moveToOTPScreen()
+//                self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
                 self.updateUserData(self.firstNameTextField.text!, self.lastNameTextField.text!, "")
-            //}else{
-               // self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                //}
+            }else{
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
         }
         else{
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
@@ -109,11 +115,22 @@ class CreateAccountV2ViewController: BaseViewController {
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
+        
+        dropDown.anchorView = self.CitizenShipTextField
+        dropDown.dataSource = AppUtility.getCountriesOnly()
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.CitizenShipTextField.text=item
+            self.dropDown.hide()
+        }
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.firstNameTextField.textColor = Colors.DustyGray155155155
         self.lastNameTextField.textColor = Colors.DustyGray155155155
-        //self.phoneTextField.textColor = Colors.DustyGray155155155
+        self.phoneTextField.textColor = Colors.DustyGray155155155
+        self.SSNTextField.textColor = Colors.DustyGray155155155
+        self.CitizenShipTextField.textColor = Colors.DustyGray155155155
+
         self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
         self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
         
@@ -121,7 +138,9 @@ class CreateAccountV2ViewController: BaseViewController {
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
         self.firstNameTextField.font = AppFonts.textBoxCalibri16
         self.lastNameTextField.font = AppFonts.textBoxCalibri16
-        //self.phoneTextField.font = AppFonts.textBoxCalibri16
+        self.phoneTextField.font = AppFonts.textBoxCalibri16
+        self.SSNTextField.font = AppFonts.textBoxCalibri16
+        self.CitizenShipTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
         self.alreadyHaveaccountLbl.font = AppFonts.calibri15
         self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
@@ -130,8 +149,9 @@ class CreateAccountV2ViewController: BaseViewController {
     func updateTextFieldUI(){
         self.firstNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.lastNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        // self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        //self.phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.SSNTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.CitizenShipTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
         let placeholderColor=Colors.DustyGray155155155
         let placeholderFont = UIFont.init(name: "Calibri", size: 16)
@@ -141,13 +161,15 @@ class CreateAccountV2ViewController: BaseViewController {
         
         self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        //self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        //self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.SSNTextField.applyAttributesWithValues(placeholderText: "SSN (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
-        //self.phoneTextField.setLeftPaddingPoints(19)
-        //self.emailTextField.setLeftPaddingPoints(19)
+        self.phoneTextField.setLeftPaddingPoints(19)
+        self.SSNTextField.setLeftPaddingPoints(19)
+        self.CitizenShipTextField.setLeftPaddingPoints(19)
+
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -169,9 +191,7 @@ class CreateAccountV2ViewController: BaseViewController {
 
 extension CreateAccountV2ViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)!// && !(self.phoneTextField.text?.isEmpty)!
-            )
-            //(self.emailTextField.text?.isEmpty)!)
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)! && !(self.SSNTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
         }

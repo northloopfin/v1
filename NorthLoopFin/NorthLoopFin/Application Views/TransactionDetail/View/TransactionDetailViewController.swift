@@ -147,7 +147,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
     func didFetchedTransactionDetail(data:TransactionDetail){
         self.beneficiaryNameLbl.text = data.data.to.meta.merchantName
         self.addressLbl.text = data.data.to.meta.address
-        self.amtLbl.text = String(data.data.amount.amount)
+        self.amtLbl.text = "$"+String(data.data.amount.amount)
         //self.transactionPurposeLbl.text =
         let url = URL(string: data.data.to.meta.merchantLogo)
         self.transactionImg.kf.setImage(with:url)

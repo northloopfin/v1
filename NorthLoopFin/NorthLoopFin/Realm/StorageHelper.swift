@@ -14,7 +14,6 @@ class StorageHelper{
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(fileName)
         //let image = UIImage(named: "apple.jpg")
-        print(paths)
         //let imageData = UIImageJPEGRepresentation(image!, 0.5)
         fileManager.createFile(atPath: paths as String, contents: data, attributes: nil)
     }
