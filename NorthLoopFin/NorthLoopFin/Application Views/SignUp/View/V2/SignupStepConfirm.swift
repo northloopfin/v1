@@ -16,11 +16,34 @@ class SignupStepConfirm: BaseViewController {
     @IBOutlet weak var universityTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
     
+    var signupFlowData:SignupFlowData!=nil
     @IBAction func nextClicked(_ sender: Any) {
+        
+        //update SignupFlowdata
+        self.updateSignupFlowData()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressNewViewController") as! VerifyAddressNewViewController
+        vc.signupFlowData=self.signupFlowData
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func updateSignupFlowData(){
+        if let _ = self.signupFlowData{
+            self.signupFlowData.documents.email = self.signupFlowData.email
+            self.signupFlowData.documents.phoneNumber = self.signupFlowData.phoneNumbers[0]
+            let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
+            self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
+            self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
+            self.signupFlowData.documents.year = Int(DOBArr[2]) ?? 0
+        }
+        
     }
     
     // Life Cycle of Controller
     override func viewDidLoad() {
+        self.prepareView()
+        self.updateTextFieldUI()
+         self.setupRightNavigationBar()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,7 +79,7 @@ class SignupStepConfirm: BaseViewController {
         let textfieldCorber = 5.0
         
         self.passportTextField.applyAttributesWithValues(placeholderText: "Passport Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth(dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.universityTextField.applyAttributesWithValues(placeholderText: "University*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         

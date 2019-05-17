@@ -23,6 +23,7 @@ class VerifyAddressNewViewController: BaseViewController {
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
+    var signupFlowData:SignupFlowData!=nil
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
 
@@ -58,9 +59,24 @@ class VerifyAddressNewViewController: BaseViewController {
         UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         self.persistDataRealm()
 
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedNewViewController") as! ConfirmedNewViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedNewViewController") as! ConfirmedNewViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        
+        //let's create json string here from signupflow data
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(self.signupFlowData)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print(jsonString!)
+            //all fine with jsonData here
+        } catch {
+            //handle error
+            print(error)
+        }
+        
+        
+
     }
     
     func persistDataRealm(){

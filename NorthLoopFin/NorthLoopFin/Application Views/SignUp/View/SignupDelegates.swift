@@ -27,3 +27,8 @@ protocol ImagePreviewDelegate {
     func imageUpdatedFor(index: Int, image:UIImage)
 }
 
+protocol SignupAuthDelegate:BaseViewProtocol {
+    func didSignrdUPAuth(data:SignupAuth)
+    
+}
+

@@ -19,7 +19,7 @@ class SelfieViewController: BaseViewController {
     @IBOutlet weak var openCamera: LabelWithLetterSpace!
     @IBOutlet weak var selfieImageView: UIImageView!
 
-    
+    var signupFlowData:SignupFlowData!=nil
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
@@ -79,10 +79,25 @@ class SelfieViewController: BaseViewController {
     }
     
     @IBAction func nextClicked(_ sender: Any) {
+        // save data to SignupFlow Data
+        self.addImageToSingupFlowData()
         UserDefaults.saveToUserDefault(AppConstants.Screens.VERIFYADDRESS.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressNewViewController") as! VerifyAddressNewViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SignupStepConfirm") as! SignupStepConfirm
+        vc.signupFlowData=self.signupFlowData
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func addImageToSingupFlowData(){
+        let base64Image = self.selfieImage.toBase64()
+        let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+        let docObject:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "Selfie")
+        var physicalDocArr = self.signupFlowData.documents.physicalDocs
+        physicalDocArr.append(docObject)
+        print(physicalDocArr)
+        if let _ = self.signupFlowData{
+            self.signupFlowData.documents.physicalDocs = physicalDocArr
+        }
     }
     //Add Border to given view
     func addBorderToOpenCameraView(view:UIView){

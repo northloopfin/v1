@@ -25,6 +25,8 @@ class CreateAccountV2ViewController: BaseViewController {
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
     
+    var signupFlowData:SignupFlowData! = nil
+    //Will remove this once Sign up completes
     var presenter:PhoneVerificationStartPresenter!
     var firebaseManager:FirebaseManager!
     
@@ -44,10 +46,21 @@ class CreateAccountV2ViewController: BaseViewController {
     func validateForm(){
         if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
             if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
-                                        self.callPhoneVerificationAPI()
-                                        moveToOTPScreen()
-//                self.addUserMetaData(firstName: self.firstNameTextField.text!, lastName: self.lastNameTextField.text!, phone: self.phoneTextField.text!)
-                self.updateUserData(self.firstNameTextField.text!, self.lastNameTextField.text!, "")
+
+                // set Signup Form Data and move to next screen
+                let legalName = self.firstNameTextField.text!+self.lastNameTextField.text!
+                let phoneNumber = self.phoneTextField.text!
+                if var data = self.signupFlowData{
+                    data.legalNames=[legalName]
+                    data.phoneNumbers=[phoneNumber]
+                    if (!((self.SSNTextField.text?.isEmpty)!)){
+                        let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
+                        let documents:SignupFlowDocument=self.signupFlowData.documents
+                        documents.virtualDocs=[ssnData]
+                        data.documents=documents
+                        self.moveToSignupStepThree(withData: self.signupFlowData)
+                }
+                }
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
         }
@@ -65,13 +78,19 @@ class CreateAccountV2ViewController: BaseViewController {
     func callPhoneVerificationAPI(){
         presenter.sendPhoneVerificationRequest()
     }
+    func moveToSignupStepThree(withData:SignupFlowData){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
+        vc.signupData=withData
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
     
     //Move to OTP screen
     func moveToOTPScreen(){
         UserDefaults.saveToUserDefault(AppConstants.Screens.OTP.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     func moveToIntenationalStudent(){
@@ -191,7 +210,7 @@ class CreateAccountV2ViewController: BaseViewController {
 
 extension CreateAccountV2ViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)! && !(self.SSNTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)!)
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
         }

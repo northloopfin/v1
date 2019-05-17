@@ -41,6 +41,7 @@ class ScanIDNewViewController: BaseViewController {
     
     //var to define the state wether data coming from Realm DB
     var isGetDataFromDB:Bool = false
+    var signupData:SignupFlowData!=nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -271,12 +272,14 @@ class ScanIDNewViewController: BaseViewController {
     }
     @IBAction func nextClicked(_ sender: Any) {
         // move to Selfie Screen
-       self.showErrForSelectedOptions()
+        self.showErrForSelectedOptions()
         self.saveImageInDB()
+        self.formSignupFlowData()
         UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
+        vc.signupFlowData=self.signupData
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func saveImageInDB(){
@@ -319,6 +322,28 @@ class ScanIDNewViewController: BaseViewController {
                     return
                 }
             }
+        }
+    }
+    
+    // This methode is converting image to base 64 string and update SignupFlowData model by adding them to model
+    func formSignupFlowData(){
+        var arrayOfScannedDocuments:[SignupFlowAlDoc]=[]
+        for n in 0...(self.modelArray.count-1){
+            let scanIDModel = self.modelArray[n]
+            //let imagesArr = scanIDModel.images
+            //Prepare data for document
+            for m in 0...(scanIDModel.images.count-1){
+                let image = scanIDModel.images[m]
+                let base64Image=image.toBase64();  
+                let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+                print(String(format:"data:image/png;base64,%@",base64Image ?? ""))
+                let doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: scanIDModel.type.rawValue)
+                arrayOfScannedDocuments.append(doc)
+            }
+        }
+        //save data to SignupFlowData
+        if let _ = self.signupData{
+            self.signupData.documents.physicalDocs = arrayOfScannedDocuments
         }
     }
     

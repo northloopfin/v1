@@ -4137,7 +4137,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="nix-Vo-fRp"/>
+                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="sgb-W4-WrP"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kem-EV-kGu">
@@ -4147,7 +4147,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="ilH-70-axh"/>
+                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="0vw-cu-d6c"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBN-nx-yuY">
@@ -4157,7 +4157,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="BaP-6U-2b7"/>
+                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="yPz-gW-bqh"/>
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2a-JJ-x8U" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
@@ -4316,13 +4316,15 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                         <viewLayoutGuide key="safeArea" id="kvc-Kd-g3E"/>
                     </view>
                     <connections>
+                        <outlet property="CitizenShipTextField" destination="iBN-nx-yuY" id="APU-UB-QQl"/>
+                        <outlet property="SSNTextField" destination="MGM-kq-g0Y" id="ad6-V2-E8a"/>
                         <outlet property="alreadyHaveaccountLbl" destination="ZdX-1N-t1X" id="2aT-gS-73P"/>
                         <outlet property="firstNameTextField" destination="nS2-Ph-gxp" id="hVT-72-27E"/>
                         <outlet property="lastNameTextField" destination="NgN-NP-1Lt" id="JeG-10-cV6"/>
                         <outlet property="loginLbl" destination="g9O-E0-LmO" id="IOi-WT-nFR"/>
                         <outlet property="mainTitleLbl" destination="zAQ-Ru-W1p" id="yg9-Tg-Skb"/>
                         <outlet property="nextBtn" destination="m2a-JJ-x8U" id="ttK-HI-IgT"/>
-                        <outlet property="phoneTextField" destination="MGM-kq-g0Y" id="gbc-Z4-QX7"/>
+                        <outlet property="phoneTextField" destination="kem-EV-kGu" id="RLS-Ah-5ct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgM-1r-Irr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4411,7 +4413,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="qnq-tZ-bhZ" id="91O-0e-fPm"/>
                                                         </connections>
@@ -4421,7 +4423,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="qnq-tZ-bhZ" id="oaO-7e-IBE"/>
                                                         </connections>
