@@ -16,7 +16,8 @@ struct Endpoints{
         case TRANSACTIONHISTORY = "banking/transactions"
         case ACCOUNTINFO = "banking/account-info?"
         //case TRANSACTIONDETAIL = "banking/transactions"
-        case CARDSTATUS = "banking/card-status" 
+        case CARDSTATUS = "banking/card-status"
+        case SIGNUPAUTH = ""
     }
     
     enum APIRequestHeaders: String{

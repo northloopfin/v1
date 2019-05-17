@@ -44,6 +44,11 @@
 		1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */; };
 		1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553F21F1A89700557825 /* NewPinViewController.swift */; };
 		1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */; };
+		1D478CA2228E865E00503136 /* SignUpAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CA1228E865E00503136 /* SignUpAuth.swift */; };
+		1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CA4228E900500503136 /* SignupAuthRquestModel.swift */; };
+		1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CA6228E901A00503136 /* SignupAuthBusinessModel.swift */; };
+		1D478CA9228E902C00503136 /* SignupAuthAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CA8228E902B00503136 /* SignupAuthAPIRequest.swift */; };
+		1D478CAB228E905000503136 /* SignupAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CAA228E905000503136 /* SignupAuthPresenter.swift */; };
 		1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AD76F22843B70007A9C2F /* LoginPresenter.swift */; };
 		1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AD771228440A2007A9C2F /* LoginDelegate.swift */; };
 		1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4AD773228441AA007A9C2F /* LoginRequestModel.swift */; };
@@ -256,6 +261,11 @@
 		1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostInsufficientViewController.swift; sourceTree = "<group>"; };
 		1D3E553F21F1A89700557825 /* NewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPinViewController.swift; sourceTree = "<group>"; };
 		1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedViewController.swift; sourceTree = "<group>"; };
+		1D478CA1228E865E00503136 /* SignUpAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuth.swift; sourceTree = "<group>"; };
+		1D478CA4228E900500503136 /* SignupAuthRquestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthRquestModel.swift; sourceTree = "<group>"; };
+		1D478CA6228E901A00503136 /* SignupAuthBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthBusinessModel.swift; sourceTree = "<group>"; };
+		1D478CA8228E902B00503136 /* SignupAuthAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthAPIRequest.swift; sourceTree = "<group>"; };
+		1D478CAA228E905000503136 /* SignupAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthPresenter.swift; sourceTree = "<group>"; };
 		1D4AD76F22843B70007A9C2F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		1D4AD771228440A2007A9C2F /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		1D4AD773228441AA007A9C2F /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
@@ -533,6 +543,7 @@
 		1D1E5A6E21C9C78D0036E998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D478CA3228E8FBF00503136 /* SignupAuth */,
 				1DFE480121D71B32003EFECA /* SIgnupForm */,
 				1DFE480021D71B22003EFECA /* Twilio */,
 				1D0C2ADD22045EAB00527FAB /* User.swift */,
@@ -622,6 +633,17 @@
 				1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1D478CA3228E8FBF00503136 /* SignupAuth */ = {
+			isa = PBXGroup;
+			children = (
+				1D478CA1228E865E00503136 /* SignUpAuth.swift */,
+				1D478CA4228E900500503136 /* SignupAuthRquestModel.swift */,
+				1D478CA6228E901A00503136 /* SignupAuthBusinessModel.swift */,
+				1D478CA8228E902B00503136 /* SignupAuthAPIRequest.swift */,
+			);
+			path = SignupAuth;
 			sourceTree = "<group>";
 		};
 		1D4AD76D22843B3A007A9C2F /* Model */ = {
@@ -1037,6 +1059,7 @@
 			isa = PBXGroup;
 			children = (
 				1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */,
+				1D478CAA228E905000503136 /* SignupAuthPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1698,6 +1721,7 @@
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
 				1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */,
+				1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */,
 				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				1D84407F2289545A00A77BBF /* TransactionListRequestModel.swift in Sources */,
@@ -1733,6 +1757,7 @@
 				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
 				1D8440802289545A00A77BBF /* Amount.swift in Sources */,
 				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
+				1D478CAB228E905000503136 /* SignupAuthPresenter.swift in Sources */,
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
@@ -1742,6 +1767,7 @@
 				1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D259DA8228BE39B0053D0AB /* ID.swift in Sources */,
+				1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
@@ -1782,6 +1808,7 @@
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
 				1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */,
 				1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */,
+				1D478CA9228E902C00503136 /* SignupAuthAPIRequest.swift in Sources */,
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
 				1D818A0F21C17F35000C8F5F /* TransactionListPresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
@@ -1793,6 +1820,7 @@
 				1D84408E228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift in Sources */,
 				1D84408A2289574900A77BBF /* AccountInfoPresenter.swift in Sources */,
 				1D9F45FE228AC13E009D76FC /* CardAPIRequest.swift in Sources */,
+				1D478CA2228E865E00503136 /* SignUpAuth.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
