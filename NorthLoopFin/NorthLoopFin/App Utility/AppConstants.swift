@@ -14,6 +14,7 @@ struct AppConstants{
     static let UserDefaultKeyForUser = "UserInformation"
     static let UserDefaultKeyForScreen = "Screen"
     static let UserDefaultKeyForEmail = "Email"
+    static let UserDefaultKeyForAccessToken = "AccessToken"
 
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"

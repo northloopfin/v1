@@ -13,11 +13,13 @@ struct SignupAuthData: Codable {
     let emailVerified: Bool
     let email: String
     let statusCode: Int
+    let accessToken: String
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case emailVerified = "email_verified"
         case email, statusCode
+        case accessToken="access_token"
     }
     
     init(from decoder: Decoder) throws {
@@ -26,5 +28,6 @@ struct SignupAuthData: Codable {
         emailVerified = try values.decodeIfPresent(Bool.self, forKey: .emailVerified) ?? false
         email = try values.decodeIfPresent(String.self, forKey: .email) ?? ""
         statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode) ?? 0
+        accessToken = try values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
     }
 }

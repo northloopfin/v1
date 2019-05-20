@@ -31,7 +31,7 @@ class SignupSynapseBusinessLogic {
      - parameter failure:   NSError Response Contaons ErrorInfo
      */
     
-    func performSignUpAuth(withRequestModel requestModel: SignupSynapseRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performSignUpSynapse(withRequestModel requestModel: SignupSynapseRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()

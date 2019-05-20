@@ -32,3 +32,7 @@ protocol SignupAuthDelegate:BaseViewProtocol {
     
 }
 
+protocol SignupSynapseDelegate:BaseViewProtocol {
+    func didSignedUpSynapse()    
+}
+

@@ -44,7 +44,7 @@
 		1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */; };
 		1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553F21F1A89700557825 /* NewPinViewController.swift */; };
 		1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */; };
-		1D44CCFF228EF0B7007382F2 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D44CCFE228EF0B7007382F2 /* UIDeviceExtension.swift */; };
+		1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D44CCFE228EF0B7007382F2 /* UIDeviceHelper.swift */; };
 		1D44CD01228F0387007382F2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D44CD00228F0387007382F2 /* UIImageExtension.swift */; };
 		1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CA1228E865E00503136 /* SignupAuth.swift */; };
 		1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D478CA4228E900500503136 /* SignupAuthRquestModel.swift */; };
@@ -161,6 +161,8 @@
 		1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */; };
 		1DE34AB221CA2D5A007F9320 /* SignUpFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */; };
 		1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */; };
+		1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEEEF1D2292C123002909E1 /* SignupFlowAddress.swift */; };
+		1DEEEF202292F150002909E1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEEEF1F2292F14F002909E1 /* StringExtension.swift */; };
 		1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A73228D6396001ACE61 /* SignUpStepFirst.swift */; };
 		1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A75228D86B4001ACE61 /* SignupStepConfirm.swift */; };
 		1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */; };
@@ -271,7 +273,7 @@
 		1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostInsufficientViewController.swift; sourceTree = "<group>"; };
 		1D3E553F21F1A89700557825 /* NewPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPinViewController.swift; sourceTree = "<group>"; };
 		1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedViewController.swift; sourceTree = "<group>"; };
-		1D44CCFE228EF0B7007382F2 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		1D44CCFE228EF0B7007382F2 /* UIDeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceHelper.swift; sourceTree = "<group>"; };
 		1D44CD00228F0387007382F2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		1D478CA1228E865E00503136 /* SignupAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuth.swift; sourceTree = "<group>"; };
 		1D478CA4228E900500503136 /* SignupAuthRquestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAuthRquestModel.swift; sourceTree = "<group>"; };
@@ -389,6 +391,8 @@
 		1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountV2ViewController.swift; sourceTree = "<group>"; };
 		1DE34AB121CA2D5A007F9320 /* SignUpFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormViewController.swift; sourceTree = "<group>"; };
 		1DE34AB321CA5A77007F9320 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		1DEEEF1D2292C123002909E1 /* SignupFlowAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFlowAddress.swift; sourceTree = "<group>"; };
+		1DEEEF1F2292F14F002909E1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1DF31A73228D6396001ACE61 /* SignUpStepFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepFirst.swift; sourceTree = "<group>"; };
 		1DF31A75228D86B4001ACE61 /* SignupStepConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStepConfirm.swift; sourceTree = "<group>"; };
 		1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCountryException.swift; sourceTree = "<group>"; };
@@ -1045,6 +1049,7 @@
 				1DCDF265228ED0ED00ABDCB1 /* SignupFlowData.swift */,
 				1DCDF267228ED19C00ABDCB1 /* SignupFlowDocument.swift */,
 				1DCDF269228ED1F600ABDCB1 /* SignupFlowAlDoc.swift */,
+				1DEEEF1D2292C123002909E1 /* SignupFlowAddress.swift */,
 			);
 			path = "Signup Flow";
 			sourceTree = "<group>";
@@ -1338,8 +1343,9 @@
 				1D790E0B21D366C60088107A /* UIButtonWithSpacing.swift */,
 				1D790E0D21D393D10088107A /* CameraHandler.swift */,
 				1DD066F1221E577C00E1AD6D /* TappableImageView.swift */,
-				1D44CCFE228EF0B7007382F2 /* UIDeviceExtension.swift */,
+				1D44CCFE228EF0B7007382F2 /* UIDeviceHelper.swift */,
 				1D44CD00228F0387007382F2 /* UIImageExtension.swift */,
+				1DEEEF1F2292F14F002909E1 /* StringExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1786,16 +1792,18 @@
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
+				1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D8440862289552600A77BBF /* AccountInfoApiRequest.swift in Sources */,
 				1D913CE2228F624E0075B16D /* SignupSynapseBusinessLogic.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
+				1DEEEF202292F150002909E1 /* StringExtension.swift in Sources */,
 				1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D55EE80228592C60003BEDB /* LoginBusinessLogic.swift in Sources */,
 				1D55EE82228593CE0003BEDB /* LoginApiRequest.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
-				1D44CCFF228EF0B7007382F2 /* UIDeviceExtension.swift in Sources */,
+				1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,

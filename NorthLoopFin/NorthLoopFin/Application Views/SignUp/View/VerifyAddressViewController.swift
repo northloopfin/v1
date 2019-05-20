@@ -22,18 +22,44 @@ class VerifyAddressViewController: BaseViewController {
     
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
-    
+    var signupFlowData:SignupFlowData!=nil
+    var presenter: SignupSynapsePresenter!
+
+
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
     
+    func updateSignupFlowData(){
+        if let _ = self.signupFlowData{
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text!, houseNo: self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!)
+
+            if let _  = self.signupFlowData{
+                self.signupFlowData.address = addess
+            }
+        }
+    }
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
+        //self.updateSignupFlowData()
+        
         UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(self.signupFlowData)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            //print(jsonString!)
+            let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+            //all fine with jsonData here
+            self.presenter.startSignUpSynapse(requestDic: dic)
+        } catch {
+            //handle error
+            print(error)
+        }
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     override func viewDidLoad() {
@@ -42,6 +68,7 @@ class VerifyAddressViewController: BaseViewController {
         self.doneBtn.isEnabled=false
         self.changeTextFieldAppearance()
         self.prepareView()
+        self.presenter = SignupSynapsePresenter.init(delegate: self)
     }
     
     /// Prepare View by setting up font and color of UI components
@@ -148,4 +175,12 @@ extension VerifyAddressViewController:UITextFieldDelegate{
             return true
         }
     }
+}
+
+extension VerifyAddressViewController:SignupSynapseDelegate{
+    func didSignedUpSynapse() {
+        
+    }
+    
+    
 }

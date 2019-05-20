@@ -19,8 +19,8 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var SSNTextField: UITextField!
     @IBOutlet weak var CitizenShipTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
-    @IBOutlet weak var loginLbl: UIButtonWithSpacing!
-    @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
+   // @IBOutlet weak var loginLbl: UIButtonWithSpacing!
+    //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -80,8 +80,8 @@ class CreateAccountV2ViewController: BaseViewController {
     }
     func moveToSignupStepThree(withData:SignupFlowData){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
-        vc.signupData=withData
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
+        vc.signupFlowData=withData
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
@@ -150,8 +150,8 @@ class CreateAccountV2ViewController: BaseViewController {
         self.SSNTextField.textColor = Colors.DustyGray155155155
         self.CitizenShipTextField.textColor = Colors.DustyGray155155155
 
-        self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
+        //self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
+        //self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
@@ -161,8 +161,8 @@ class CreateAccountV2ViewController: BaseViewController {
         self.SSNTextField.font = AppFonts.textBoxCalibri16
         self.CitizenShipTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
-        self.alreadyHaveaccountLbl.font = AppFonts.calibri15
-        self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
+       // self.alreadyHaveaccountLbl.font = AppFonts.calibri15
+        //self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
     }
     
     func updateTextFieldUI(){
@@ -182,6 +182,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.SSNTextField.applyAttributesWithValues(placeholderText: "SSN (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.CitizenShipTextField.applyAttributesWithValues(placeholderText: "Citizenship", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
@@ -213,6 +214,19 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
         if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
+        }
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.CitizenShipTextField
+        {
+            //IQKeyboardManager.shared.resignFirstResponder()
+            self.dropDown.show()
+            return false
+        }
+        else
+        {
+            return true
         }
     }
 }

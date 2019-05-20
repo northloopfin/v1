@@ -46,7 +46,7 @@ class ScanIDNewViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
-        self.checkDBForImages()
+        //self.checkDBForImages()
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
@@ -274,7 +274,7 @@ class ScanIDNewViewController: BaseViewController {
         // move to Selfie Screen
         self.showErrForSelectedOptions()
         self.saveImageInDB()
-        self.formSignupFlowData()
+        //self.formSignupFlowData()
         UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
@@ -334,9 +334,10 @@ class ScanIDNewViewController: BaseViewController {
             //Prepare data for document
             for m in 0...(scanIDModel.images.count-1){
                 let image = scanIDModel.images[m]
-                let base64Image=image.toBase64();  
-                let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
-                print(String(format:"data:image/png;base64,%@",base64Image ?? ""))
+                let base64Image=image.toBase64();
+                let fullBase64String = "data:image/png;base64,abc"//String(format:"data:image/png;base64,%@",base64Image ?? "")
+                //let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+                //print(String(format:"data:image/png;base64,%@",base64Image ?? ""))
                 let doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: scanIDModel.type.rawValue)
                 arrayOfScannedDocuments.append(doc)
             }

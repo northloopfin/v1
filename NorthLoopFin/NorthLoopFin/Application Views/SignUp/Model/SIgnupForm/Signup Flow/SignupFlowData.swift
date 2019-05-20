@@ -9,7 +9,8 @@
 import Foundation
 
 class SignupFlowData: Codable {
-    var userID, userIP, email: String
+    var userID, userIP, email,university,passport: String
+    var address: SignupFlowAddress
     var phoneNumbers, legalNames: [String]
     var password: String
     var documents: SignupFlowDocument
@@ -19,7 +20,7 @@ class SignupFlowData: Codable {
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case userIP = "user_ip"
-        case email
+        case email,university,passport,address
         case phoneNumbers = "phone_numbers"
         case legalNames = "legal_names"
         case password, documents
@@ -27,10 +28,13 @@ class SignupFlowData: Codable {
         case cipTag = "cip_tag"
     }
     
-    init(userID: String, userIP: String, email: String, phoneNumbers: [String], legalNames: [String], password: String, documents: SignupFlowDocument, suppID: String, cipTag: Int) {
+    init(userID: String, userIP: String, email: String,university: String,passport: String,address:SignupFlowAddress, phoneNumbers: [String], legalNames: [String], password: String, documents: SignupFlowDocument, suppID: String, cipTag: Int) {
         self.userID = userID
         self.userIP = userIP
         self.email = email
+        self.university=university
+        self.passport=passport
+        self.address=address
         self.phoneNumbers = phoneNumbers
         self.legalNames = legalNames
         self.password = password

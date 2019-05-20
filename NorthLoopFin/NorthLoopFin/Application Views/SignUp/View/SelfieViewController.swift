@@ -74,7 +74,7 @@ class SelfieViewController: BaseViewController {
             self.selfieImageView.tappable=true
             self.addBorderToOpenCameraView(view: self.openCameraView)
             self.selfieImageView.image=image
-            self.saveImageInDB(image: image)
+            //self.saveImageInDB(image: image)
         }
     }
     
@@ -90,7 +90,8 @@ class SelfieViewController: BaseViewController {
     
     func addImageToSingupFlowData(){
         let base64Image = self.selfieImage.toBase64()
-        let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+        //let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+        let fullBase64String = "data:image/png;base64,abc"
         let docObject:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "Selfie")
         var physicalDocArr = self.signupFlowData.documents.physicalDocs
         physicalDocArr.append(docObject)
@@ -142,6 +143,6 @@ extension SelfieViewController:ImagePreviewDelegate{
     func imageUpdatedFor(index: Int, image:UIImage){
         self.selfieImage=image
         self.selfieImageView.image=image
-        self.saveImageInDB(image: image)
+        //self.saveImageInDB(image: image)
     }
 }

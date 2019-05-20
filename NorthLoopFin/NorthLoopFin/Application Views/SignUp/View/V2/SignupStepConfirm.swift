@@ -22,13 +22,15 @@ class SignupStepConfirm: BaseViewController {
         //update SignupFlowdata
         self.updateSignupFlowData()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressNewViewController") as! VerifyAddressNewViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
         vc.signupFlowData=self.signupFlowData
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
+            self.signupFlowData.passport=self.passportTextField.text!
+            self.signupFlowData.university=self.universityTextField.text!
             self.signupFlowData.documents.email = self.signupFlowData.email
             self.signupFlowData.documents.phoneNumber = self.signupFlowData.phoneNumbers[0]
             let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
@@ -41,6 +43,7 @@ class SignupStepConfirm: BaseViewController {
     
     // Life Cycle of Controller
     override func viewDidLoad() {
+        self.nextBtn.isEnabled=false
         self.prepareView()
         self.updateTextFieldUI()
          self.setupRightNavigationBar()
