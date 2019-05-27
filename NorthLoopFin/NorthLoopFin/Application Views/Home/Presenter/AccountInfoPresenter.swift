@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FGRoute
 
 
 class AccountInfoPresenter: ResponseCallback{
@@ -23,7 +24,10 @@ class AccountInfoPresenter: ResponseCallback{
         self.homeDelegate?.showLoader()
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = AccountInfoRequestModel.Builder()
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).build()
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .build()
         requestModel.apiUrl = requestModel.getEndPoint()
 
         self.businessLogic.performAccountInfo(withRequestModel: requestModel, presenterDelegate: self)

@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import IQKeyboardManagerSwift
+import MFSideMenu
 
 class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var streetAddress: UITextField!
@@ -178,9 +179,32 @@ extension VerifyAddressViewController:UITextFieldDelegate{
 }
 
 extension VerifyAddressViewController:SignupSynapseDelegate{
-    func didSignedUpSynapse() {
+    func didSignedUpSynapse(data:SignupSynapse){
+        // Save data in user default
+        let user:User = User.init(username: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, email: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, accesstoken: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String)
+        user.authKey = data.data.oauthKey
+        UserInformationUtility.sharedInstance.saveUser(model: user)
         
+        // Delete email and accesstoken stored in UserDefault
+        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForEmail)
+        self.moveToHomePage()
     }
     
-    
+    func moveToHomePage(){
+        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
+        var initialNavigationController:UINavigationController
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
+        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        initialNavigationController = UINavigationController(rootViewController:homeViewController)
+        sideMenu.delegate = homeViewController
+        containerViewController.leftMenuViewController=sideMenu
+        containerViewController.centerViewController=initialNavigationController
+        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+        containerViewController.shadow.enabled=true;
+        containerViewController.panMode = MFSideMenuPanModeDefault
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.window?.rootViewController = containerViewController
+    }
 }

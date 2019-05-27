@@ -28,6 +28,9 @@ struct Endpoints{
         case ACCEPT = "Accept"
         case AUTHORIZATION = "Authorization"
         case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
+        case AUTHKEY = "auth"
+        case IP = "ip"
+
         
     }
 }

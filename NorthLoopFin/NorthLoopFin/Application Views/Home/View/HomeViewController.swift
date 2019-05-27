@@ -151,7 +151,7 @@ extension HomeViewController:HomeDelegate{
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         self.GreetingLbl.text = "Good Morning "+(currentUser?.username)!
-        self.AccBalanceLbl.text = "$"+String(data.info.balance.amount)
+        self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         self.getTransactionList()
     }
 }

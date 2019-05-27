@@ -49,7 +49,6 @@ class SignUpStepFirst: BaseViewController {
     }
     // Life Cycle of Controller
     override func viewDidLoad() {
-        print(UIDeviceHelper.getIP())
 
         self.prepareView()
         self.nextBtn.isEnabled=false
@@ -129,10 +128,11 @@ extension SignUpStepFirst:SignupAuthDelegate{
         let completeToken = "Bearer "+data.data.accessToken
         //We are storing this accestoken here teporarily, Will store access token 
         UserDefaults.saveToUserDefault(completeToken as AnyObject, key: AppConstants.UserDefaultKeyForAccessToken)
-        let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
-        let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "", email: "", phoneNumber: "", ip: "127.0.0.1", name: "", entityType: "", day: 0, month: 0, year: 0, desiredScope: "", docsKey: "", virtualDocs: [emptyAlDoc], physicalDocs: [emptyAlDoc])
+        UserDefaults.saveToUserDefault(self.emailTextField.text! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+       // let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
+        let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
         let address:SignupFlowAddress = SignupFlowAddress.init(street: "", houseNo: "", city: "", state: "", zip: "")
-        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "", cipTag: 0)
+        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 1)
        
         // move to next step of Sign Up
         self.moveToSignupStepSecond(data: signupFlowData)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FGRoute
 
 class SignupSynapsePresenter:ResponseCallback{
     
@@ -24,6 +25,7 @@ class SignupSynapsePresenter:ResponseCallback{
         let token:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String
         let requestModel = SignupSynapseRequestModel.Builder().addRequestHeader(key: AppConstants.APIRequestHeaders.CONTENT_TYPE.rawValue, value: AppConstants.APIRequestHeaders.APPLICATION_JSON.rawValue)
             .addRequestHeader(key: AppConstants.APIRequestHeaders.AUTHORIZATION.rawValue, value: token )
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
             .build()
         requestModel.requestQueryParams = requestDic
         requestModel.apiUrl = requestModel.getEndPoint()
@@ -33,10 +35,10 @@ class SignupSynapsePresenter:ResponseCallback{
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         print(responseObject)
-        //let response = responseObject as! SignupAuth
+        let response = responseObject as! SignupSynapse
         self.delegate?.hideLoader()
         //self.delegate?.didFetchCardStatus(data: response)
-        //self.delegate?.didSignrdUPAuth(data: response)
+        self.delegate?.didSignedUpSynapse(data: response)
     }
     
     func servicesManagerError(error: ErrorModel) {

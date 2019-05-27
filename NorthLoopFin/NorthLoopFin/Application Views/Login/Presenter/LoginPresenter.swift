@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FGRoute
 
 class LoginPresenter: ResponseCallback{
     
@@ -25,8 +26,11 @@ class LoginPresenter: ResponseCallback{
         let requestModel = LoginRequestModel.Builder()
             .addRequestQueryParams(key: "username", value: name as AnyObject)
             .addRequestQueryParams(key: "password", value: password as AnyObject)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
             .build()
+        print(requestModel.requestHeader)
         requestModel.apiUrl=requestModel.getEndPoint()
+        print(requestModel.apiUrl)
         self.loginBusinessLogic.performLogin(withLoginRequestModel: requestModel, presenterDelegate: self)
     }
     
@@ -50,6 +54,7 @@ class LoginPresenter: ResponseCallback{
     /// Will Save logged in user to local storage of app
     func saveLoggedInUser(data:LoginData){
         let user:User = User.init(username: data.basicInformation.username, email: data.basicInformation.email, accesstoken: data.accessToken)
+        user.authKey=data.oAuthKey
         UserInformationUtility.sharedInstance.saveUser(model: user)
     }
 }

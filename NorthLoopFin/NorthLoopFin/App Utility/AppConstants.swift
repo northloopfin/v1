@@ -15,6 +15,7 @@ struct AppConstants{
     static let UserDefaultKeyForScreen = "Screen"
     static let UserDefaultKeyForEmail = "Email"
     static let UserDefaultKeyForAccessToken = "AccessToken"
+    static let CountryExceptionURL = "https://northloop.zendesk.com/hc/en-us/articles/360027983032"
 
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"
@@ -125,6 +126,7 @@ struct AppConstants{
         case PASSPORT="Passport"
         case I20="I-20 (3 pages)"
         case ENROLMENTLETTER = "Enrollment Letter"
+        case USIDTYPE = "US ID Type"
     }
     
     enum States:String {

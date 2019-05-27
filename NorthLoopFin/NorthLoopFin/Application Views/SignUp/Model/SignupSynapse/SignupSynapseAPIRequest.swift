@@ -30,7 +30,7 @@ class SignupSynapseAPIRequest:ApiRequestProtocol {
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
         
         //ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: SignupAuth.self)
-        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: SignupAuth.self)
+        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: SignupSynapse.self)
     }
     
     /**

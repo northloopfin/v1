@@ -24,6 +24,10 @@
 		1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4C222D18AA00D06914 /* ScanIDImages.swift */; };
 		1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4D222D18AA00D06914 /* BasicInfo.swift */; };
 		1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4E222D18AA00D06914 /* RealmHelper.swift */; };
+		1D19D31622953957008D367E /* SignupSynapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31522953957008D367E /* SignupSynapse.swift */; };
+		1D19D31822953986008D367E /* SignupSynapseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31722953986008D367E /* SignupSynapseData.swift */; };
+		1D19D31E2295882E008D367E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31D2295882E008D367E /* Account.swift */; };
+		1D19D3202295883F008D367E /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31F2295883F008D367E /* AccountData.swift */; };
 		1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */; };
 		1D259D90228AE0940053D0AB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D8F228AE0940053D0AB /* Card.swift */; };
 		1D259D92228AE0C10053D0AB /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259D91228AE0C10053D0AB /* CardData.swift */; };
@@ -102,7 +106,6 @@
 		1D8440582288074900A77BBF /* BasicInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8440572288074900A77BBF /* BasicInformation.swift */; };
 		1D84405A22883EDB00A77BBF /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84405922883EDB00A77BBF /* LoginData.swift */; };
 		1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84406D2289541A00A77BBF /* AccountBalance.swift */; };
-		1D8440722289541A00A77BBF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84406E2289541A00A77BBF /* Account.swift */; };
 		1D8440732289541A00A77BBF /* AccountInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84406F2289541A00A77BBF /* AccountInfoRequestModel.swift */; };
 		1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8440702289541A00A77BBF /* AccountInfo.swift */; };
 		1D84407D2289545A00A77BBF /* RecentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8440752289545900A77BBF /* RecentStatus.swift */; };
@@ -253,6 +256,10 @@
 		1D165F4C222D18AA00D06914 /* ScanIDImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanIDImages.swift; sourceTree = "<group>"; };
 		1D165F4D222D18AA00D06914 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		1D165F4E222D18AA00D06914 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		1D19D31522953957008D367E /* SignupSynapse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSynapse.swift; sourceTree = "<group>"; };
+		1D19D31722953986008D367E /* SignupSynapseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSynapseData.swift; sourceTree = "<group>"; };
+		1D19D31D2295882E008D367E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		1D19D31F2295883F008D367E /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
 		1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1D259D8F228AE0940053D0AB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		1D259D91228AE0C10053D0AB /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
@@ -331,7 +338,6 @@
 		1D8440572288074900A77BBF /* BasicInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInformation.swift; sourceTree = "<group>"; };
 		1D84405922883EDB00A77BBF /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1D84406D2289541A00A77BBF /* AccountBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBalance.swift; sourceTree = "<group>"; };
-		1D84406E2289541A00A77BBF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		1D84406F2289541A00A77BBF /* AccountInfoRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoRequestModel.swift; sourceTree = "<group>"; };
 		1D8440702289541A00A77BBF /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		1D8440752289545900A77BBF /* RecentStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentStatus.swift; path = "NorthLoopFin/Application Views/Home/Models/TransactionList/RecentStatus.swift"; sourceTree = SOURCE_ROOT; };
@@ -951,12 +957,13 @@
 		1D84406B228953B500A77BBF /* AccountsInfo */ = {
 			isa = PBXGroup;
 			children = (
-				1D84406E2289541A00A77BBF /* Account.swift */,
 				1D84406D2289541A00A77BBF /* AccountBalance.swift */,
 				1D8440702289541A00A77BBF /* AccountInfo.swift */,
 				1D84406F2289541A00A77BBF /* AccountInfoRequestModel.swift */,
 				1D8440852289552600A77BBF /* AccountInfoApiRequest.swift */,
 				1D8440872289556A00A77BBF /* AccountInfoBusinessLogic.swift */,
+				1D19D31D2295882E008D367E /* Account.swift */,
+				1D19D31F2295883F008D367E /* AccountData.swift */,
 			);
 			path = AccountsInfo;
 			sourceTree = "<group>";
@@ -983,6 +990,8 @@
 				1D913CDF228F621F0075B16D /* SignupSynapseAPIRequest.swift */,
 				1D913CE1228F624E0075B16D /* SignupSynapseBusinessLogic.swift */,
 				1D913CE5228F62E40075B16D /* SignupSynapseResponseModel.swift */,
+				1D19D31522953957008D367E /* SignupSynapse.swift */,
+				1D19D31722953986008D367E /* SignupSynapseData.swift */,
 			);
 			path = SignupSynapse;
 			sourceTree = "<group>";
@@ -1670,6 +1679,7 @@
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
+				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskSDKStrings.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -1678,6 +1688,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZendeskSDKStrings.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1718,6 +1729,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FGRoute/FGRoute.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -1729,6 +1741,9 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskCoreSDK.framework",
+				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskProviderSDK.framework",
+				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1739,6 +1754,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FGRoute.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -1750,6 +1766,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskProviderSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1767,7 +1786,6 @@
 			files = (
 				1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */,
 				1D844056228806B600A77BBF /* Login.swift in Sources */,
-				1D8440722289541A00A77BBF /* Account.swift in Sources */,
 				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
@@ -1793,6 +1811,7 @@
 				1D3E554021F1A89700557825 /* NewPinViewController.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */,
+				1D19D31E2295882E008D367E /* Account.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D8440862289552600A77BBF /* AccountInfoApiRequest.swift in Sources */,
 				1D913CE2228F624E0075B16D /* SignupSynapseBusinessLogic.swift in Sources */,
@@ -1820,6 +1839,7 @@
 				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
 				1D915C0E220816C100223480 /* Env.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
+				1D19D31622953957008D367E /* SignupSynapse.swift in Sources */,
 				1D165F50222D18AA00D06914 /* SelfieImage.swift in Sources */,
 				1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */,
 				1D44CD01228F0387007382F2 /* UIImageExtension.swift in Sources */,
@@ -1858,7 +1878,9 @@
 				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
+				1D19D3202295883F008D367E /* AccountData.swift in Sources */,
 				1D84405A22883EDB00A77BBF /* LoginData.swift in Sources */,
+				1D19D31822953986008D367E /* SignupSynapseData.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
 				1D259D90228AE0940053D0AB /* Card.swift in Sources */,

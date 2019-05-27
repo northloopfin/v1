@@ -39,33 +39,48 @@ class CreateAccountV2ViewController: BaseViewController {
         validateForm()
     }
     
-    @IBAction func internationalStudentClicked(_ sender: Any) {
-        self.moveToIntenationalStudent()
+    @IBAction func countryExceptionClicked(_ sender: Any) {
+        self.openCountryExceptionLink()
     }
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
         if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
-            if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
-
-                // set Signup Form Data and move to next screen
-                let legalName = self.firstNameTextField.text!+self.lastNameTextField.text!
-                let phoneNumber = self.phoneTextField.text!
-                if var data = self.signupFlowData{
-                    data.legalNames=[legalName]
-                    data.phoneNumbers=[phoneNumber]
-                    if (!((self.SSNTextField.text?.isEmpty)!)){
-                        let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
-                        let documents:SignupFlowDocument=self.signupFlowData.documents
-                        documents.virtualDocs=[ssnData]
-                        data.documents=documents
-                        self.moveToSignupStepThree(withData: self.signupFlowData)
+            if (self.phoneTextField.text!.isEmpty){
+                self.updateSignUpFormData()
+            }else {
+                if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
+                    self.updateSignUpFormData()
+                }else{
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)
                 }
-                }
-            }else{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)                }
+            }
         }
         else{
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
+        }
+    }
+    
+//    Methode will update signp form data model
+    func updateSignUpFormData(){
+        let legalName = self.firstNameTextField.text!+" "+self.lastNameTextField.text!
+        var phoneNumber = self.phoneTextField.text!
+        if (self.phoneTextField.text?.isEmpty)!{
+            phoneNumber="5555555555"
+        }else{
+            phoneNumber = self.phoneTextField.text!
+        }
+        
+        if let data = self.signupFlowData{
+            data.legalNames=[legalName]
+            data.phoneNumbers=[phoneNumber]
+            if (!((self.SSNTextField.text?.isEmpty)!)){
+                let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
+                let documents:SignupFlowDocument=self.signupFlowData.documents
+                documents.virtualDocs=[ssnData]
+                data.documents=documents
+                
+            }
+            self.moveToSignupStepThree(withData: self.signupFlowData)
         }
     }
     
@@ -80,8 +95,8 @@ class CreateAccountV2ViewController: BaseViewController {
     }
     func moveToSignupStepThree(withData:SignupFlowData){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
-        vc.signupFlowData=withData
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
+        vc.signupData=withData
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
@@ -103,7 +118,8 @@ class CreateAccountV2ViewController: BaseViewController {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.firebaseManager = FirebaseManager.init(delegate: self)
-        
+        self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
+        self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //self.inactivateNextBtn()
         self.nextBtn.isEnabled=false
         self.setupRightNavigationBar()
@@ -141,6 +157,8 @@ class CreateAccountV2ViewController: BaseViewController {
             print("Selected item: \(item) at index: \(index)")
             self.CitizenShipTextField.text=item
             self.dropDown.hide()
+            self.checkForMandatoryFields()
+
         }
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
@@ -198,6 +216,17 @@ class CreateAccountV2ViewController: BaseViewController {
         }
     }
     
+    func openCountryExceptionLink(){
+        let urlString:String = AppConstants.CountryExceptionURL
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
     //    func activateNextBtn(){
     //        self.nextBtn.isEnabled=true
     //        self.nextBtn.backgroundColor = Colors.Zorba161149133
@@ -211,6 +240,11 @@ class CreateAccountV2ViewController: BaseViewController {
 
 extension CreateAccountV2ViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
+        self.checkForMandatoryFields()
+    }
+    
+    // Methode will check for mandatory fields and perform accordingly
+    func checkForMandatoryFields(){
         if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
@@ -221,6 +255,7 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
         if textField == self.CitizenShipTextField
         {
             //IQKeyboardManager.shared.resignFirstResponder()
+            
             self.dropDown.show()
             return false
         }

@@ -1,5 +1,5 @@
 //
-//  Account.swift
+//  AccountData.swift
 //  NorthLoopFin
 //
 //  Created by Daffolapmac-19 on 22/05/19.
@@ -7,18 +7,18 @@
 //
 
 import Foundation
-struct Account: Codable {
-    
-    let data: AccountData
+struct AccountData: Codable {
+    let info: AccountInfo
+    let isActive: Bool
     
     enum CodingKeys: String, CodingKey {
-        case data
+        case info
+        case isActive = "is_active"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        data = try values.decodeIfPresent(AccountData.self, forKey: .data)!
-        
+        info = try values.decodeIfPresent(AccountInfo.self, forKey: .info)!
+        isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive) ?? false
     }
-    
 }

@@ -19,6 +19,7 @@ PODS:
     - Fabric (~> 1.9.0)
   - DropDown (2.3.2)
   - Fabric (1.9.0)
+  - FGRoute (1.0.4)
   - Firebase/Auth (5.14.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.1.0)
@@ -108,6 +109,15 @@ PODS:
     - Realm (= 3.13.1)
   - Repeat (0.5.7)
   - SVProgressHUD (2.2.5)
+  - ZendeskSDK (2.3.0):
+    - ZendeskSDK/Providers (= 2.3.0)
+    - ZendeskSDK/UI (= 2.3.0)
+  - ZendeskSDK/Core (2.3.0)
+  - ZendeskSDK/Providers (2.3.0):
+    - ZendeskSDK/Core
+  - ZendeskSDK/UI (2.3.0):
+    - ZendeskSDK/Core
+    - ZendeskSDK/Providers
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -115,6 +125,7 @@ DEPENDENCIES:
   - Crashlytics
   - DropDown (= 2.3.2)
   - Fabric
+  - FGRoute
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -129,6 +140,7 @@ DEPENDENCIES:
   - RealmSwift
   - Repeat
   - SVProgressHUD
+  - ZendeskSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -137,6 +149,7 @@ SPEC REPOS:
     - Crashlytics
     - DropDown
     - Fabric
+    - FGRoute
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -161,6 +174,7 @@ SPEC REPOS:
     - RealmSwift
     - Repeat
     - SVProgressHUD
+    - ZendeskSDK
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -168,6 +182,7 @@ SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  FGRoute: 5a1da5e6702e672b07409904b0db50159c5711be
   Firebase: 963d5685fae888a56d6d4d9cfce6b9c976958798
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 4a5cc5fc2d1721e509e24699b93ebc3d94b1e195
@@ -192,7 +207,8 @@ SPEC CHECKSUMS:
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
 
-PODFILE CHECKSUM: 46485c8ed341f3c8fc44f1332ec86f0c9e1b4985
+PODFILE CHECKSUM: 8a6ef2dd9cab7b795ed9f0eded4fb46df4855ab8
 
 COCOAPODS: 1.5.3

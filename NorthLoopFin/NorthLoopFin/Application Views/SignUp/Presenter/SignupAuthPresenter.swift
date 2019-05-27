@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FGRoute
 
 class SignupAuthPresenter:ResponseCallback{
     
@@ -23,7 +24,7 @@ class SignupAuthPresenter:ResponseCallback{
 
         
         let requestModel = SignupAuthRquestModel.Builder()
-            //.addRequestHeader(key: Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: Endpoints.APIRequestHeaders.URLENCODED.rawValue)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
             .addRequestQueryParams(key: "username", value: email as AnyObject)
             .addRequestQueryParams(key: "password", value: password as AnyObject).build()
         requestModel.apiUrl = requestModel.getEndPoint()
