@@ -12,15 +12,15 @@ import Firebase
 class ForgetPasswordViewController: BaseViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var sendLinkBtn: CommonButton!
+    var resetPresenter:ResetPasswordPresenter!
 
-    var firebaseManager:FirebaseManager!
     
     @IBAction func sendLinkBtnClicked(_ sender: Any) {
-        firebaseManager.sentPasswordResetLinkToEmail(email: self.emailTextfield.text!)
+      self.resetPresenter.sendResetPasswordRequesy(username: self.emailTextfield.text!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.firebaseManager = FirebaseManager.init(delegate: self)
+        self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
         self.prepareView()
     }
     func prepareView(){
@@ -74,36 +74,9 @@ extension ForgetPasswordViewController:UITextFieldDelegate{
     }
 }
 
-extension ForgetPasswordViewController:FirebaseDelegates{
-    func didFirebaseUserCreated(authResult: AuthDataResult?, error: NSError?) {
-        
-    }
-    
-    func didNameUpdated(error: NSError?) {
-        
-    }
-    
-    func didFirebaseDatabaseUpdated() {
-        
-    }
-    
-    func didLoggedIn(error: NSError?) {
-        
-    }
-    
-    func didReadUserFromDatabase(error: NSError?, data: NSDictionary?) {
-        
-    }
-    
-    func didSendPasswordReset(error: NSError?) {
-        //handle error here if any
-        guard error == nil else{
-            // show alert with error
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: (error?.localizedDescription)!)
-            return
-        }
-        self.showAlertWithAction(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.FORGET_PASSWORD_MESSAGE.rawValue, buttonArray: ["OK"]) { (_) in
-            self.navigationController?.popViewController(animated: false)
-        }
+extension ForgetPasswordViewController: ResetPasswordDelegate{
+    func didSentResetPasswordRequest(){
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.RESET_EMAIL_SENT.rawValue)
     }
 }
+

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D055D1F229BCA610078CD33 /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D1E229BCA610078CD33 /* ResetPasswordPresenter.swift */; };
+		1D055D22229BCA860078CD33 /* ResetPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D21229BCA860078CD33 /* ResetPasswordRequestModel.swift */; };
+		1D055D24229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D23229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift */; };
+		1D055D26229BCAC00078CD33 /* ResetPasswordAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D25229BCAC00078CD33 /* ResetPasswordAPIRequest.swift */; };
+		1D055D28229BCF950078CD33 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D27229BCF950078CD33 /* ResetPassword.swift */; };
 		1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */; };
 		1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881B21CB6E2100187439 /* OTPViewController.swift */; };
 		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
@@ -239,6 +244,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D055D1E229BCA610078CD33 /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		1D055D21229BCA860078CD33 /* ResetPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestModel.swift; sourceTree = "<group>"; };
+		1D055D23229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordBusinessLogic.swift; sourceTree = "<group>"; };
+		1D055D25229BCAC00078CD33 /* ResetPasswordAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAPIRequest.swift; sourceTree = "<group>"; };
+		1D055D27229BCF950078CD33 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStudentViewController.swift; sourceTree = "<group>"; };
 		1D0A881B21CB6E2100187439 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
@@ -503,6 +513,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D055D20229BCA6A0078CD33 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				1D055D21229BCA860078CD33 /* ResetPasswordRequestModel.swift */,
+				1D055D23229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift */,
+				1D055D25229BCAC00078CD33 /* ResetPasswordAPIRequest.swift */,
+				1D055D27229BCF950078CD33 /* ResetPassword.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
 		1D0BF5292209A74F00B56E82 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +704,7 @@
 		1D4AD76D22843B3A007A9C2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D055D20229BCA6A0078CD33 /* ResetPassword */,
 				1D4AD773228441AA007A9C2F /* LoginRequestModel.swift */,
 				1D55EE7F228592C60003BEDB /* LoginBusinessLogic.swift */,
 				1D55EE81228593CE0003BEDB /* LoginApiRequest.swift */,
@@ -697,6 +719,7 @@
 			isa = PBXGroup;
 			children = (
 				1D4AD76F22843B70007A9C2F /* LoginPresenter.swift */,
+				1D055D1E229BCA610078CD33 /* ResetPasswordPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1729,7 +1752,6 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/FGRoute/FGRoute.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -1754,7 +1776,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FGRoute.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -1917,13 +1938,16 @@
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
+				1D055D1F229BCA610078CD33 /* ResetPasswordPresenter.swift in Sources */,
 				1D0BF52B2209A76900B56E82 /* FirebaseManager.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				1D913CDE228F61F10075B16D /* SignupSynapseRequestModel.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				1D478CAF228E981700503136 /* SignupAuthPresenter.swift in Sources */,
+				1D055D28229BCF950078CD33 /* ResetPassword.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
+				1D055D26229BCAC00078CD33 /* ResetPasswordAPIRequest.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D8440822289545A00A77BBF /* Recipient.swift in Sources */,
 				1D8440732289541A00A77BBF /* AccountInfoRequestModel.swift in Sources */,
@@ -1955,6 +1979,7 @@
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
+				1D055D24229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift in Sources */,
 				1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */,
 				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
@@ -1964,6 +1989,7 @@
 				1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
+				1D055D22229BCA860078CD33 /* ResetPasswordRequestModel.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 				1D8440832289545A00A77BBF /* TransactionHistory.swift in Sources */,

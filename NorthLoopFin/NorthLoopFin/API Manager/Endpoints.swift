@@ -19,6 +19,8 @@ struct Endpoints{
         case CARDSTATUS = "banking/card-status"
         case SIGNUPAUTH = "auth/sign-up"
         case SIGNUPSYNAPSE = "banking/synapse-user"
+        case RESETPASSWORD = "auth/reset-password"
+
     }
     
     enum APIRequestHeaders: String{

@@ -47,6 +47,7 @@ struct AppConstants{
         case USER_ACCOUNT_BLOCKED = "Your Account has been block. Check inbox to reset password"
         case COMPLETE_DOCUMENT_UPLOAD = "Please complete document upload of selected ID Type"
         case SELECT_ID_TYPE = "Please select ID type"
+        case RESET_EMAIL_SENT = "We've just sent you an email to reset your password"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
