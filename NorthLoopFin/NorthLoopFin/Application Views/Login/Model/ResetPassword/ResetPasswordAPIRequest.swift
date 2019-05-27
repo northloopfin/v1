@@ -1,14 +1,14 @@
 //
-//  CardAPIRequest.swift
+//  ResetPasswordAPIRequest.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 14/05/19.
+//  Created by Daffolapmac-19 on 27/05/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class CardAPIRequest:ApiRequestProtocol {
+class ResetPasswordAPIRequest:ApiRequestProtocol {
     
     //MARK:- local properties
     var apiRequestUrl:String!
@@ -22,14 +22,12 @@ class CardAPIRequest:ApiRequestProtocol {
      - parameter errorResolver: ErrorResolver contains all error handling with posiible error codes
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
-    
-    func makeAPIRequest(withReqFormData reqFromData: CardRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
+    func makeAPIRequest(withReqFormData reqFromData: ResetPasswordRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
         
-        self.apiRequestUrl = reqFromData.apiUrl
+        self.apiRequestUrl = reqFromData.getEndPoint()
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        
-        ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: Card.self)
+    ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: ResetPassword.self)
     }
     
     /**

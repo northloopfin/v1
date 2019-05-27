@@ -17,7 +17,8 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
-    
+    var presenter: SignupAuthPresenter!
+
     @IBAction func nextClicked(_ sender: Any) {
         validateForm()
     }
@@ -33,7 +34,12 @@ class SignUpStepFirst: BaseViewController {
         if (Validations.isValidEmail(email: self.emailTextField.text!)){
             if (Validations.isValidPassword(password: self.paswwordTextField.text!)){
                 // Move to next Step
-                
+                if(Validations.matchTwoStrings(string1: self.paswwordTextField.text!, string2: self.confirmPassTextField.text!)){
+                    // do something
+                    self.presenter.startSignUpAuth(email: self.emailTextField.text!, password: self.paswwordTextField.text!)
+                }else{
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_DONOT_MATCH.rawValue)
+                }
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_NOT_VALID.rawValue)
             }
@@ -43,6 +49,12 @@ class SignUpStepFirst: BaseViewController {
     }
     // Life Cycle of Controller
     override func viewDidLoad() {
+
+        self.prepareView()
+        self.nextBtn.isEnabled=false
+        self.setupRightNavigationBar()
+        self.updateTextFieldUI()
+        self.presenter = SignupAuthPresenter.init(delegate:self)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,9 +92,9 @@ class SignUpStepFirst: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.paswwordTextField.applyAttributesWithValues(placeholderText: "First Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.confirmPassTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.emailTextField.applyAttributesWithValues(placeholderText: "Email *", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.paswwordTextField.applyAttributesWithValues(placeholderText: "Password*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.confirmPassTextField.applyAttributesWithValues(placeholderText: "Confirm Password*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.emailTextField.applyAttributesWithValues(placeholderText: "Email*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.paswwordTextField.setLeftPaddingPoints(19)
@@ -106,5 +118,31 @@ extension SignUpStepFirst:UITextFieldDelegate{
         {
             self.nextBtn.isEnabled=true
         }
+    }
+}
+
+extension SignUpStepFirst:SignupAuthDelegate{
+     func didSignrdUPAuth(data:SignupAuth){
+        
+        //print(UIDevice.current.ipAddress())
+        let completeToken = "Bearer "+data.data.accessToken
+        //We are storing this accestoken here teporarily, Will store access token 
+        UserDefaults.saveToUserDefault(completeToken as AnyObject, key: AppConstants.UserDefaultKeyForAccessToken)
+        UserDefaults.saveToUserDefault(self.emailTextField.text! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+       // let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
+        let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
+        let address:SignupFlowAddress = SignupFlowAddress.init(street: "", houseNo: "", city: "", state: "", zip: "")
+        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 1)
+       
+        // move to next step of Sign Up
+        self.moveToSignupStepSecond(data: signupFlowData)
+        
+    }
+    
+    func moveToSignupStepSecond(data:SignupFlowData) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
+        vc.signupFlowData=data
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

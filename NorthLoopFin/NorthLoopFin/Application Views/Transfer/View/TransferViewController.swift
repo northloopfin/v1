@@ -11,6 +11,8 @@ import UIKit
 class TransferViewController: BaseViewController {
     @IBOutlet weak var bankAccountNumberTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
+    @IBOutlet weak var rountingNumberTextField: UITextField!
+
     @IBOutlet weak var saveBtn: UIButton!
     
     override func viewDidLoad() {
@@ -24,8 +26,10 @@ class TransferViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Transfer")
         self.setupRightNavigationBar()
         self.bankAccountNumberTextfield.textColor = Colors.DustyGray155155155
+        self.rountingNumberTextField.textColor = Colors.DustyGray155155155
         self.amountTextfield.textColor=Colors.DustyGray155155155
         self.bankAccountNumberTextfield.font=AppFonts.textBoxCalibri16
+        self.rountingNumberTextField.font=AppFonts.textBoxCalibri16
         self.amountTextfield.font=AppFonts.textBoxCalibri16
         self.saveBtn.titleLabel!.font=AppFonts.calibri15
         self.configureTextFields()
@@ -41,10 +45,13 @@ class TransferViewController: BaseViewController {
         let textfieldCorber = 5.0
         
         self.bankAccountNumberTextfield.applyAttributesWithValues(placeholderText: "Bank Account No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-            self.amountTextfield.applyAttributesWithValues(placeholderText: "Amount*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.amountTextfield.applyAttributesWithValues(placeholderText: "Amount*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.rountingNumberTextField.applyAttributesWithValues(placeholderText: "Rounting Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.bankAccountNumberTextfield.setLeftPaddingPoints(19)
         self.amountTextfield.setLeftPaddingPoints(19)
+        self.rountingNumberTextField.setLeftPaddingPoints(19)
+
     }
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
@@ -66,8 +73,7 @@ class TransferViewController: BaseViewController {
 extension TransferViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if (!(self.bankAccountNumberTextfield.text?.isEmpty)! && !(self.amountTextfield.text?.isEmpty)!)// && !(self.emailTextField.text?.isEmpty)! )
-        {
+        if (!(self.bankAccountNumberTextfield.text?.isEmpty)! && !(self.amountTextfield.text?.isEmpty)!) && !((self.rountingNumberTextField.text?.isEmpty)!){
             
             self.changeApperanceOfDone()
         }

@@ -13,6 +13,8 @@ class User: NSObject, NSCoding {
     var userEmail: String!
     var accessToken:String!
     var username: String!
+    var authKey:String!
+    var userID:String!
     
     override init() {
         super.init()
@@ -36,6 +38,12 @@ class User: NSObject, NSCoding {
         if let token = aDecoder.decodeObject(forKey: "AccessToken") as? String {
             self.accessToken = token
         }
+        if let token = aDecoder.decodeObject(forKey: "AuthKey") as? String {
+            self.authKey = token
+        }
+        if let userId = aDecoder.decodeObject(forKey: "UserId") as? String {
+            self.userID = userId
+        }
     }
     func encode(with aCoder: NSCoder) {
         
@@ -47,6 +55,12 @@ class User: NSObject, NSCoding {
         }
         if let accessTokenEncoded = self.accessToken {
             aCoder.encode(accessTokenEncoded, forKey: "AccessToken")
+        }
+        if let authKeyEncoded = self.authKey {
+            aCoder.encode(authKeyEncoded, forKey: "AuthKey")
+        }
+        if let userIDEncoded = self.userID {
+            aCoder.encode(userIDEncoded, forKey: "UserId")
         }
     }
 }

@@ -13,7 +13,6 @@ class WelcomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -35,7 +34,7 @@ class WelcomeViewController: BaseViewController {
     
     func moveToNextScreen(){
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SetPasswordViewController") as! SetPasswordViewController
+                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
                 self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
 }

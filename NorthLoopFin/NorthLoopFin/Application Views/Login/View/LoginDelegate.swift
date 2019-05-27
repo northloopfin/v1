@@ -12,3 +12,7 @@ protocol LoginDelegate:BaseViewProtocol {
     func didLoggedIn(data: LoginData)
     func didLoginFailed(error:ErrorModel)
 }
+protocol ResetPasswordDelegate:BaseViewProtocol {
+    func didSentResetPasswordRequest()
+
+}

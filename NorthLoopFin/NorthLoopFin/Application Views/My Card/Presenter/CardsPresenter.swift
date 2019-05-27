@@ -23,7 +23,9 @@ class CardsPresenter:ResponseCallback{
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = CardRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
-                , value: currentUser.accessToken).build()
+                , value: currentUser.accessToken)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .build()
         requestModel.apiUrl = requestModel.getEndPoint()
         self.logic.performFetchCardStatus(withRequestModel: requestModel, presenterDelegate: self)
         

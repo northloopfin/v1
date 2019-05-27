@@ -23,13 +23,14 @@ class SignupAuthAPIRequest:ApiRequestProtocol {
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
     
-    func makeAPIRequest(withReqFormData reqFromData: CardRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
+    func makeAPIRequest(withReqFormData reqFromData: SignupAuthRquestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
         
-        self.apiRequestUrl = reqFromData.getEndPoint()
+        self.apiRequestUrl = reqFromData.apiUrl
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
         
-        ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: Card.self)
+        //ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: SignupAuth.self)
+        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: SignupAuth.self)
     }
     
     /**

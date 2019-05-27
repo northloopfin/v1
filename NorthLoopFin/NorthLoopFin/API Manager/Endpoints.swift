@@ -17,15 +17,22 @@ struct Endpoints{
         case ACCOUNTINFO = "banking/account-info?"
         //case TRANSACTIONDETAIL = "banking/transactions"
         case CARDSTATUS = "banking/card-status"
-        case SIGNUPAUTH = ""
+        case SIGNUPAUTH = "auth/sign-up"
+        case SIGNUPSYNAPSE = "banking/synapse-user"
+        case RESETPASSWORD = "auth/reset-password"
+
     }
     
     enum APIRequestHeaders: String{
         case CONTENT_TYPE = "Content-Type"
         case APPLICATION_JSON = "application/json"
+        case URLENCODED = "application/x-www-form-urlencoded" 
         case ACCEPT = "Accept"
         case AUTHORIZATION = "Authorization"
         case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
+        case AUTHKEY = "auth"
+        case IP = "ip"
+
         
     }
 }

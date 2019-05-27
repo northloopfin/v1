@@ -1,4 +1,13 @@
 //
+//  SignupSynapseBusinessLogic.swift
+//  NorthLoopFin
+//
+//  Created by Daffolapmac-19 on 18/05/19.
+//  Copyright © 2019 NorthLoop. All rights reserved.
+//
+
+import Foundation
+//
 //  SignupAuthBusinessModel.swift
 //  NorthLoopFin
 //
@@ -8,10 +17,10 @@
 
 import Foundation
 
-class SignupAuthBusinessModel {
+class SignupSynapseBusinessLogic {
     
     deinit {
-        print("SignupAuthBusinessModel deinit")
+        print("SignupSynapseBusinessLogic deinit")
     }
     
     /**
@@ -22,11 +31,11 @@ class SignupAuthBusinessModel {
      - parameter failure:   NSError Response Contaons ErrorInfo
      */
     
-    func performSignUpAuth(withRequestModel requestModel: SignupAuthRquestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performSignUpSynapse(withRequestModel requestModel: SignupSynapseRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
-        SignupAuthAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        SignupSynapseAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FGRoute
 
 class TransactionListPresenter: ResponseCallback{
     private weak var homeDelegate          : HomeDelegate?
@@ -23,7 +24,10 @@ class TransactionListPresenter: ResponseCallback{
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = TransactionListRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
-                , value: currentUser.accessToken).build()
+                , value: currentUser.accessToken)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .build()
         requestModel.apiUrl = requestModel.getEndPoint()
     self.homeTransactionListBusinessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
     }

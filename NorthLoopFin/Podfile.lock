@@ -108,6 +108,15 @@ PODS:
     - Realm (= 3.13.1)
   - Repeat (0.5.7)
   - SVProgressHUD (2.2.5)
+  - ZendeskSDK (2.3.0):
+    - ZendeskSDK/Providers (= 2.3.0)
+    - ZendeskSDK/UI (= 2.3.0)
+  - ZendeskSDK/Core (2.3.0)
+  - ZendeskSDK/Providers (2.3.0):
+    - ZendeskSDK/Core
+  - ZendeskSDK/UI (2.3.0):
+    - ZendeskSDK/Core
+    - ZendeskSDK/Providers
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -129,6 +138,7 @@ DEPENDENCIES:
   - RealmSwift
   - Repeat
   - SVProgressHUD
+  - ZendeskSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -161,6 +171,7 @@ SPEC REPOS:
     - RealmSwift
     - Repeat
     - SVProgressHUD
+    - ZendeskSDK
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -192,7 +203,8 @@ SPEC CHECKSUMS:
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
 
-PODFILE CHECKSUM: 46485c8ed341f3c8fc44f1332ec86f0c9e1b4985
+PODFILE CHECKSUM: cb7ef4588e53601d8ae1bd0c005a9c42b7aed4a9
 
 COCOAPODS: 1.5.3

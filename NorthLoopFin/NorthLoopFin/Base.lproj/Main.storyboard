@@ -217,8 +217,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-B5-dPj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-B5-dPj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="37" y="106.5" width="206.5" height="39.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39.5" id="gYw-iJ-jER"/>
+                                        </constraints>
                                         <string key="text">2/3 Condult St, Mayfair, London
 W1s 2Bx,UK</string>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
@@ -319,12 +322,13 @@ W1s 2Bx,UK</string>
                                     <constraint firstItem="7gn-UK-4pn" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" id="9q5-2e-040"/>
                                     <constraint firstItem="AzD-ia-0u3" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="bottom" id="Ad1-Fo-K23"/>
                                     <constraint firstAttribute="trailing" secondItem="AzD-ia-0u3" secondAttribute="trailing" id="CVX-Wt-Qpe"/>
+                                    <constraint firstAttribute="trailing" secondItem="iM7-B5-dPj" secondAttribute="trailing" constant="36.5" id="EAF-Is-v9E"/>
                                     <constraint firstItem="iM7-B5-dPj" firstAttribute="top" secondItem="Lrt-U8-D5L" secondAttribute="bottom" constant="18" id="EWR-b0-3kU"/>
                                     <constraint firstItem="7gn-UK-4pn" firstAttribute="top" secondItem="iM7-B5-dPj" secondAttribute="bottom" constant="13" id="HIe-K3-JOV"/>
                                     <constraint firstItem="AzD-ia-0u3" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" id="Rdx-V2-5Nw"/>
-                                    <constraint firstItem="iM7-B5-dPj" firstAttribute="centerX" secondItem="I07-P7-y2W" secondAttribute="centerX" id="T6M-ff-B1P"/>
                                     <constraint firstItem="Lrt-U8-D5L" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" constant="33" id="TMS-3z-KhO"/>
                                     <constraint firstItem="AzD-ia-0u3" firstAttribute="top" secondItem="7gn-UK-4pn" secondAttribute="bottom" id="ThX-n0-FOz"/>
+                                    <constraint firstItem="iM7-B5-dPj" firstAttribute="leading" secondItem="I07-P7-y2W" secondAttribute="leading" constant="37" id="ZhI-Fn-NaZ"/>
                                     <constraint firstAttribute="bottom" secondItem="AzD-ia-0u3" secondAttribute="bottom" id="idM-KM-4zF"/>
                                     <constraint firstItem="Lrt-U8-D5L" firstAttribute="top" secondItem="I07-P7-y2W" secondAttribute="top" constant="64" id="uld-LR-9J2"/>
                                     <constraint firstAttribute="trailing" secondItem="7gn-UK-4pn" secondAttribute="trailing" id="uvd-q8-qx0"/>
@@ -595,9 +599,8 @@ W1s 2Bx,UK</string>
                                                             <action selector="nextClicked:" destination="Zrh-81-Kal" eventType="touchUpInside" id="CEg-d3-AQY"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-e3-gaL">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-e3-gaL">
                                                         <rect key="frame" x="25" y="145" width="270" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
@@ -615,10 +618,15 @@ W1s 2Bx,UK</string>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="top" secondItem="whs-du-iTR" secondAttribute="bottom" constant="11" id="EPz-tR-Hn8"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="leading" secondItem="7S4-On-lFi" secondAttribute="leading" constant="25" id="ETg-KF-q0W"/>
                                                     <constraint firstAttribute="bottom" secondItem="bsU-oK-gfL" secondAttribute="bottom" constant="20" id="IIE-bV-Woc"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="KOP-Ew-9dk"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="height" secondItem="SI4-vm-lbj" secondAttribute="height" id="QAN-Dz-5qI"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="leading" secondItem="whs-du-iTR" secondAttribute="leading" id="RM5-tK-Tdj"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="top" secondItem="SI4-vm-lbj" secondAttribute="bottom" constant="12" id="Z1k-zK-tdD"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="ZPN-2H-Wgo"/>
                                                     <constraint firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" constant="25" id="jbj-yx-8hl"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="height" secondItem="whs-du-iTR" secondAttribute="height" id="mvK-Px-Hk2"/>
                                                     <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="qYx-Hr-h3p"/>
+                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="top" secondItem="bvv-e3-gaL" secondAttribute="bottom" constant="8.5" id="rq2-lb-Y9F"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -643,41 +651,7 @@ W1s 2Bx,UK</string>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KM-Uu-qM8">
                                 <rect key="frame" x="0.0" y="447.5" width="320" height="120.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-u7-j7M" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="57" width="156" height="18"/>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOC-RB-1VG" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="111.5" y="78" width="97" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="91X-ch-9x1"/>
-                                            <constraint firstAttribute="height" constant="20" id="hNg-CT-RC8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" red="0.99607843137254903" green="0.58431372549019611" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="JM2-u7-j7M" firstAttribute="centerX" secondItem="5KM-Uu-qM8" secondAttribute="centerX" id="56G-uq-LXm"/>
-                                    <constraint firstItem="JM2-u7-j7M" firstAttribute="centerX" secondItem="NOC-RB-1VG" secondAttribute="centerX" id="5Lg-4k-zlG"/>
-                                    <constraint firstItem="JM2-u7-j7M" firstAttribute="top" secondItem="5KM-Uu-qM8" secondAttribute="top" constant="57" id="8Ej-id-gPz"/>
-                                    <constraint firstItem="NOC-RB-1VG" firstAttribute="top" secondItem="JM2-u7-j7M" secondAttribute="bottom" constant="3" id="JyZ-fh-D3U"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRD-xk-iQb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
@@ -749,8 +723,6 @@ W1s 2Bx,UK</string>
                     </view>
                     <connections>
                         <outlet property="DOBTextField" destination="SI4-vm-lbj" id="d0O-nV-keu"/>
-                        <outlet property="alreadyHaveaccountLbl" destination="JM2-u7-j7M" id="4cE-xy-45b"/>
-                        <outlet property="loginLbl" destination="NOC-RB-1VG" id="aUw-38-iVS"/>
                         <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>
                         <outlet property="passportTextField" destination="whs-du-iTR" id="cN5-Mh-G6D"/>
@@ -1904,7 +1876,7 @@ W1s 2Bx,UK</string>
                                     <action selector="doneClicked:" destination="Y8Y-G0-LtA" eventType="touchUpInside" id="F2r-2M-j69"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your US Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
                                 <rect key="frame" x="25" y="168" width="270" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2478,6 +2450,19 @@ to your registered address</string>
                                     <outlet property="delegate" destination="Jow-ac-l5k" id="5HR-Sh-IDa"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yWa-2H-OAe">
+                                <rect key="frame" x="25" y="242" width="270" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aSc-z0-zVa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jow-ac-l5k" id="s1v-aw-Uss"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2486,9 +2471,12 @@ to your registered address</string>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="dri-rC-YDW" secondAttribute="trailing" constant="25" id="A6G-nO-whJ"/>
                             <constraint firstItem="dri-rC-YDW" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="HkD-RZ-vhk"/>
                             <constraint firstItem="yGL-fh-3pl" firstAttribute="top" secondItem="WCc-NK-ylX" secondAttribute="top" constant="82" id="NZj-U9-rRE"/>
-                            <constraint firstItem="f3N-8m-bpV" firstAttribute="top" secondItem="dri-rC-YDW" secondAttribute="bottom" constant="148" id="Wl9-GE-bbT"/>
+                            <constraint firstItem="f3N-8m-bpV" firstAttribute="top" secondItem="yWa-2H-OAe" secondAttribute="bottom" constant="78" id="Q0G-MM-HeZ"/>
+                            <constraint firstItem="yWa-2H-OAe" firstAttribute="trailing" secondItem="dri-rC-YDW" secondAttribute="trailing" id="SvW-ow-OF9"/>
+                            <constraint firstItem="yWa-2H-OAe" firstAttribute="top" secondItem="dri-rC-YDW" secondAttribute="bottom" constant="20" id="WQF-ir-wVD"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="yGL-fh-3pl" secondAttribute="trailing" constant="25" id="fOk-AX-x9A"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="f3N-8m-bpV" secondAttribute="trailing" constant="25" id="ojN-XN-hcQ"/>
+                            <constraint firstItem="yWa-2H-OAe" firstAttribute="leading" secondItem="dri-rC-YDW" secondAttribute="leading" id="uOB-Sp-ciF"/>
                             <constraint firstItem="yGL-fh-3pl" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="z6x-iU-Knd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WCc-NK-ylX"/>
@@ -4099,13 +4087,13 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydb-wh-hd5">
-                                <rect key="frame" x="0.0" y="179" width="320" height="268.5"/>
+                                <rect key="frame" x="0.0" y="179" width="320" height="332"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-kD-EMv">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="268.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urw-EL-7g5">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="268.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS2-Ph-gxp">
                                                         <rect key="frame" x="25" y="22" width="270" height="50"/>
@@ -4137,7 +4125,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="nix-Vo-fRp"/>
+                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="sgb-W4-WrP"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kem-EV-kGu">
@@ -4147,7 +4135,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="ilH-70-axh"/>
+                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="0vw-cu-d6c"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBN-nx-yuY">
@@ -4157,7 +4145,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="BaP-6U-2b7"/>
+                                                            <outlet property="delegate" destination="Wls-ab-5ce" id="yPz-gW-bqh"/>
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2a-JJ-x8U" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
@@ -4236,21 +4224,10 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM9-8k-1p0">
-                                <rect key="frame" x="0.0" y="447.5" width="320" height="120.5"/>
+                                <rect key="frame" x="0.0" y="511" width="320" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-1N-t1X" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="57" width="156" height="18"/>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-XA-Vbh" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="9.5" width="146" height="30"/>
+                                        <rect key="frame" x="87" y="7" width="146" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="owH-e3-MmN"/>
                                         </constraints>
@@ -4264,40 +4241,20 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="internationalStudentClicked:" destination="Wls-ab-5ce" eventType="touchUpInside" id="xCj-Kc-Pma"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9O-E0-LmO" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="141.5" y="77" width="37" height="31"/>
-                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
-                                        <state key="normal" title="Log In">
-                                            <color key="titleColor" red="0.99607843139999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                <real key="value" value="0.22"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="loginClicked:" destination="Wls-ab-5ce" eventType="touchUpInside" id="HZ6-SV-Nyl"/>
+                                            <action selector="countryExceptionClicked:" destination="Wls-ab-5ce" eventType="touchUpInside" id="oL9-Lm-fgp"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ZdX-1N-t1X" firstAttribute="top" secondItem="7Bw-XA-Vbh" secondAttribute="bottom" constant="17.5" id="0hI-RT-0on"/>
-                                    <constraint firstItem="g9O-E0-LmO" firstAttribute="top" secondItem="ZdX-1N-t1X" secondAttribute="bottom" constant="2" id="1RR-vQ-Z2F"/>
-                                    <constraint firstItem="g9O-E0-LmO" firstAttribute="centerX" secondItem="sM9-8k-1p0" secondAttribute="centerX" id="E2K-Lr-1p3"/>
-                                    <constraint firstItem="ZdX-1N-t1X" firstAttribute="centerX" secondItem="sM9-8k-1p0" secondAttribute="centerX" id="Q2c-ic-xkQ"/>
-                                    <constraint firstItem="ZdX-1N-t1X" firstAttribute="top" secondItem="sM9-8k-1p0" secondAttribute="top" constant="57" id="SHt-k7-bj4"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Bw-XA-Vbh" secondAttribute="bottom" constant="20" id="4op-0N-Bi4"/>
                                     <constraint firstItem="7Bw-XA-Vbh" firstAttribute="centerX" secondItem="sM9-8k-1p0" secondAttribute="centerX" id="aJd-SB-ufl"/>
-                                    <constraint firstItem="7Bw-XA-Vbh" firstAttribute="top" secondItem="sM9-8k-1p0" secondAttribute="top" constant="9.5" id="gT0-gX-XJY"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sM9-8k-1p0" firstAttribute="height" secondItem="IPh-nC-Qwx" secondAttribute="height" multiplier="0.212" id="0IJ-ZI-cq1"/>
+                            <constraint firstItem="sM9-8k-1p0" firstAttribute="height" secondItem="IPh-nC-Qwx" secondAttribute="height" multiplier="0.1" id="0IJ-ZI-cq1"/>
                             <constraint firstItem="xac-s9-jOc" firstAttribute="height" secondItem="IPh-nC-Qwx" secondAttribute="height" multiplier="0.315" id="77v-rT-OZD"/>
                             <constraint firstItem="sM9-8k-1p0" firstAttribute="trailing" secondItem="kvc-Kd-g3E" secondAttribute="trailing" id="CTn-pY-wZG"/>
                             <constraint firstAttribute="bottom" secondItem="sM9-8k-1p0" secondAttribute="bottom" id="F6l-Py-mtI"/>
@@ -4306,7 +4263,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                             <constraint firstItem="sM9-8k-1p0" firstAttribute="top" secondItem="ydb-wh-hd5" secondAttribute="bottom" id="Llu-0i-fV8"/>
                             <constraint firstItem="xac-s9-jOc" firstAttribute="top" secondItem="IPh-nC-Qwx" secondAttribute="top" id="NAi-Pw-ope"/>
                             <constraint firstItem="sM9-8k-1p0" firstAttribute="leading" secondItem="kvc-Kd-g3E" secondAttribute="leading" id="ZPt-fB-zYs"/>
-                            <constraint firstItem="ydb-wh-hd5" firstAttribute="height" secondItem="IPh-nC-Qwx" secondAttribute="height" multiplier="0.473" id="eZw-Zh-YNz"/>
+                            <constraint firstItem="ydb-wh-hd5" firstAttribute="height" secondItem="IPh-nC-Qwx" secondAttribute="height" multiplier="0.585" id="eZw-Zh-YNz"/>
                             <constraint firstItem="xac-s9-jOc" firstAttribute="leading" secondItem="kvc-Kd-g3E" secondAttribute="leading" id="ndL-UB-Dwr"/>
                             <constraint firstItem="sM9-8k-1p0" firstAttribute="top" secondItem="ydb-wh-hd5" secondAttribute="bottom" id="t0l-a4-Efw"/>
                             <constraint firstItem="ydb-wh-hd5" firstAttribute="trailing" secondItem="kvc-Kd-g3E" secondAttribute="trailing" id="uh9-5U-2vV"/>
@@ -4316,13 +4273,13 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                         <viewLayoutGuide key="safeArea" id="kvc-Kd-g3E"/>
                     </view>
                     <connections>
-                        <outlet property="alreadyHaveaccountLbl" destination="ZdX-1N-t1X" id="2aT-gS-73P"/>
+                        <outlet property="CitizenShipTextField" destination="iBN-nx-yuY" id="APU-UB-QQl"/>
+                        <outlet property="SSNTextField" destination="MGM-kq-g0Y" id="ad6-V2-E8a"/>
                         <outlet property="firstNameTextField" destination="nS2-Ph-gxp" id="hVT-72-27E"/>
                         <outlet property="lastNameTextField" destination="NgN-NP-1Lt" id="JeG-10-cV6"/>
-                        <outlet property="loginLbl" destination="g9O-E0-LmO" id="IOi-WT-nFR"/>
                         <outlet property="mainTitleLbl" destination="zAQ-Ru-W1p" id="yg9-Tg-Skb"/>
                         <outlet property="nextBtn" destination="m2a-JJ-x8U" id="ttK-HI-IgT"/>
-                        <outlet property="phoneTextField" destination="MGM-kq-g0Y" id="gbc-Z4-QX7"/>
+                        <outlet property="phoneTextField" destination="kem-EV-kGu" id="RLS-Ah-5ct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgM-1r-Irr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4401,7 +4358,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         </constraints>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="qnq-tZ-bhZ" id="ho5-vJ-BkE"/>
                                                         </connections>
@@ -4411,7 +4368,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="qnq-tZ-bhZ" id="91O-0e-fPm"/>
                                                         </connections>
@@ -4421,7 +4378,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="qnq-tZ-bhZ" id="oaO-7e-IBE"/>
                                                         </connections>
@@ -4457,7 +4414,6 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Bdl-ba-Xaz" secondAttribute="bottom" constant="20" id="DgZ-jA-VRE"/>
                                                     <constraint firstItem="tfH-5h-iFQ" firstAttribute="leading" secondItem="rOP-Is-d8O" secondAttribute="leading" id="I1o-kg-EEv"/>
                                                     <constraint firstItem="rOP-Is-d8O" firstAttribute="leading" secondItem="t5k-uE-kmZ" secondAttribute="leading" constant="25" id="JRo-dk-Gmx"/>
                                                     <constraint firstItem="rVk-ic-4mz" firstAttribute="top" secondItem="tfH-5h-iFQ" secondAttribute="bottom" constant="11" id="Vee-QX-nMi"/>
@@ -4509,12 +4465,12 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRE-yZ-cCN" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="70" y="9.5" width="180" height="30"/>
+                                        <rect key="frame" x="145" y="9.5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Q0M-fG-XEs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                        <state key="normal" title="Not an international student?">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.99607843139999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -4522,9 +4478,6 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                                                 <real key="value" value="0.22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="internationalStudentClicked:" destination="qnq-tZ-bhZ" eventType="touchUpInside" id="hh6-XP-v9r"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-kD-vAq" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="141.5" y="77" width="37" height="31"/>

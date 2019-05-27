@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import IQKeyboardManagerSwift
+import MFSideMenu
 
 class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var streetAddress: UITextField!
@@ -22,18 +23,44 @@ class VerifyAddressViewController: BaseViewController {
     
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
-    
+    var signupFlowData:SignupFlowData!=nil
+    var presenter: SignupSynapsePresenter!
+
+
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
     
+    func updateSignupFlowData(){
+        if let _ = self.signupFlowData{
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text!, houseNo: self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!)
+
+            if let _  = self.signupFlowData{
+                self.signupFlowData.address = addess
+            }
+        }
+    }
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
+        //self.updateSignupFlowData()
+        
         UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(self.signupFlowData)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            //print(jsonString!)
+            let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+            //all fine with jsonData here
+            self.presenter.startSignUpSynapse(requestDic: dic)
+        } catch {
+            //handle error
+            print(error)
+        }
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     override func viewDidLoad() {
@@ -42,6 +69,7 @@ class VerifyAddressViewController: BaseViewController {
         self.doneBtn.isEnabled=false
         self.changeTextFieldAppearance()
         self.prepareView()
+        self.presenter = SignupSynapsePresenter.init(delegate: self)
     }
     
     /// Prepare View by setting up font and color of UI components
@@ -147,5 +175,36 @@ extension VerifyAddressViewController:UITextFieldDelegate{
         {
             return true
         }
+    }
+}
+
+extension VerifyAddressViewController:SignupSynapseDelegate{
+    func didSignedUpSynapse(data:SignupSynapse){
+        // Save data in user default
+        let user:User = User.init(username: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, email: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, accesstoken: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String)
+        user.authKey = data.data.oauthKey
+        UserInformationUtility.sharedInstance.saveUser(model: user)
+        
+        // Delete email and accesstoken stored in UserDefault
+        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForEmail)
+        self.moveToHomePage()
+    }
+    
+    func moveToHomePage(){
+        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
+        var initialNavigationController:UINavigationController
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
+        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        initialNavigationController = UINavigationController(rootViewController:homeViewController)
+        sideMenu.delegate = homeViewController
+        containerViewController.leftMenuViewController=sideMenu
+        containerViewController.centerViewController=initialNavigationController
+        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+        containerViewController.shadow.enabled=true;
+        containerViewController.panMode = MFSideMenuPanModeDefault
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.window?.rootViewController = containerViewController
     }
 }
