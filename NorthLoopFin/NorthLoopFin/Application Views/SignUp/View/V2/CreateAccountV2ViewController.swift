@@ -117,7 +117,7 @@ class CreateAccountV2ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        self.firebaseManager = FirebaseManager.init(delegate: self)
+        
         self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
         self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //self.inactivateNextBtn()
@@ -276,53 +276,3 @@ extension CreateAccountV2ViewController:PhoneVerificationDelegate{
 }
 
 
-extension CreateAccountV2ViewController:FirebaseDelegates{
-    func didSendPasswordReset(error: NSError?) {
-        
-    }
-    
-    func didFirebaseDatabaseUpdated() {
-        //save this screen data to Realm DB
-        let info:BasicInfo = BasicInfo()
-        info.firstname = self.firstNameTextField.text!
-        info.lastname = self.lastNameTextField.text!
-        //info.phone = self.phoneTextField.text!
-        let result = RealmHelper.retrieveBasicInfo()
-        info.email = result.first!.email
-        info.password = result.first!.password
-        info.confirmPassword = result.first!.confirmPassword
-        info.otp1 = result.first!.otp1
-        info.otp2 = result.first!.otp2
-        info.otp3 = result.first!.otp3
-        info.otp4 = result.first!.otp4
-        info.streetAddress = result.first!.streetAddress
-        info.country = result.first!.country
-        info.zip = result.first!.zip
-        info.countryCode = result.first!.countryCode
-        info.phoneSecondary = result.first!.phoneSecondary
-        print(result)
-        if result.count > 0{
-            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
-        }
-        if info.otp1 != ""{
-            self.moveToOTPScreen()
-        }else{
-            self.callPhoneVerificationAPI()
-
-        }
-
-    }
-    
-    func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?){
-        
-    }
-    func didNameUpdated(error:NSError?){
-        
-    }
-    func didLoggedIn(error:NSError?){
-        
-    }
-    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
-        
-    }
-}

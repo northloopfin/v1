@@ -20,6 +20,8 @@ struct Endpoints{
         case SIGNUPAUTH = "auth/sign-up"
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"
+        case LINKACH = "banking/link-ach"
+
 
     }
     
@@ -32,6 +34,7 @@ struct Endpoints{
         case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
         case AUTHKEY = "auth"
         case IP = "ip"
+        case USERID = "user_id"
 
         
     }

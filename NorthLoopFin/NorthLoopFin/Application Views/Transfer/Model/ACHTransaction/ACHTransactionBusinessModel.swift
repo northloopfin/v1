@@ -1,17 +1,17 @@
 //
-//  ResetPasswordBusinessLogic.swift
+//  ACHTransactionBusinessModel.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 27/05/19.
+//  Created by Daffolapmac-19 on 28/05/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class ResetPasswordBusinessLogic {
+class ACHTransactionBusinessModel {
     
     deinit {
-        print("Reset deinit")
+        print("ACHTransactionBusinessModel deinit")
     }
     
     
@@ -21,10 +21,10 @@ class ResetPasswordBusinessLogic {
     ///   - loginModel: LoginRequestModel
     ///   - presenterDelegate: ResponseCallBack delegate
     
-    func performResetPassword(withRequestModel model: ResetPasswordRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performACHTransaction(withRequestModel model: ACHTransactionRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
-        ResetPasswordAPIRequest().makeAPIRequest(withReqFormData: model, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        ACHTransactionAPIRequest().makeAPIRequest(withReqFormData: model, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
 }

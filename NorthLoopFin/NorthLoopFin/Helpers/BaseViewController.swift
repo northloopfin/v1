@@ -2,12 +2,12 @@
 
 import UIKit
 import SVProgressHUD
+import GiFHUD_Swift
 
 class BaseViewController: UIViewController, BaseViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -36,10 +36,15 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     
     
     func showLoader() {
+//        GIFHUD.shared.setGif(named: "northloop.gif")
+//        GIFHUD.shared.show()
         SVProgressHUD.show()
     }
 
     func hideLoader() {
+//        GIFHUD.shared.dismiss {
+//            print("dismissed")
+//        }
         SVProgressHUD.dismiss()
     }
     

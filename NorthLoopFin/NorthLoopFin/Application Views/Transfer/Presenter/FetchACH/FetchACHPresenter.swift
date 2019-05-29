@@ -1,5 +1,5 @@
 //
-//  ResetPasswordPresenter.swift
+//  FetchACHPresenter.swift
 //  NorthLoopFin
 //
 //  Created by Daffolapmac-19 on 27/05/19.
@@ -8,35 +8,37 @@
 
 import Foundation
 
-class ResetPasswordPresenter: ResponseCallback{
+class FetchACHPresenter: ResponseCallback{
     
-    private weak var delegate          : ResetPasswordDelegate?
-    private lazy var businessLogic         : ResetPasswordBusinessLogic = ResetPasswordBusinessLogic()
+    private weak var delegate          : FetchACHDelegates?
+    private lazy var businessLogic         : FetchACHBusinessLogic = FetchACHBusinessLogic()
     
     //    Constructor
-    init(delegate responseDelegate:ResetPasswordDelegate){
+    init(delegate responseDelegate:FetchACHDelegates){
         self.delegate = responseDelegate
     }
     
     //    Send Login Request to Business Login
-    func sendResetPasswordRequesy(username name:String){
+    func sendFetchACRequest(){
         self.delegate?.showLoader()
-        
-        let requestModel = ResetPasswordRequestModel.Builder()
-            .addRequestQueryParams(key: "username", value: name as AnyObject)
+        let currentUser:User=UserInformationUtility.sharedInstance.getCurrentUser()!
+        let requestModel = FetchACHRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.USERID.rawValue, value: currentUser.userID)
             .build()
         print(requestModel.requestHeader)
         requestModel.apiUrl=requestModel.getEndPoint()
-        self.businessLogic.performResetPassword(withRequestModel: requestModel, presenterDelegate: self)
+        self.businessLogic.performFetchACH(withRequestModel: requestModel, presenterDelegate: self)
     }
     
     //    MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.delegate?.hideLoader()
         //save this user to local memory of app
-        let response = responseObject as! ResetPassword
-        self.delegate?.didSentResetPasswordRequest()
+        let response = responseObject as! FetchACH
+        self.delegate?.didSentFetchACH(data: response.data)
     }
     
     func servicesManagerError(error: ErrorModel) {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import FGRoute
 
 class TransactionListPresenter: ResponseCallback{
     private weak var homeDelegate          : HomeDelegate?

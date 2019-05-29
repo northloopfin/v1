@@ -197,7 +197,7 @@ extension HomeViewController:SideMenuDelegate{
     func navigateToTransfer(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransferViewController") as! TransferViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MakeTransferViewController") as! MakeTransferViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func navigateToMyAccount(){

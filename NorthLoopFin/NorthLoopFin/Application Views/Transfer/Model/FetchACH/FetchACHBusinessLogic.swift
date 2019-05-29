@@ -1,5 +1,5 @@
 //
-//  ResetPasswordBusinessLogic.swift
+//  FetchACHBusinessLogic.swift
 //  NorthLoopFin
 //
 //  Created by Daffolapmac-19 on 27/05/19.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ResetPasswordBusinessLogic {
+class FetchACHBusinessLogic {
     
     deinit {
-        print("Reset deinit")
+        print("LinkACHBusinessLogic deinit")
     }
     
     
@@ -21,10 +21,10 @@ class ResetPasswordBusinessLogic {
     ///   - loginModel: LoginRequestModel
     ///   - presenterDelegate: ResponseCallBack delegate
     
-    func performResetPassword(withRequestModel model: ResetPasswordRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performFetchACH(withRequestModel model: FetchACHRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
-        ResetPasswordAPIRequest().makeAPIRequest(withReqFormData: model, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        FetchACHAPIRequest().makeAPIRequest(withReqFormData: model, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
 }
