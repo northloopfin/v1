@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import MFSideMenu
+import ZendeskSDK
+import ZendeskCoreSDK
 
 class LoginViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -21,6 +23,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var createAccountBtn: UIButton!
     
     var loginPresenter:LoginPresenter!
+    var zendeskPresenter:ZendeskPresenter!
+
 
     
     @IBAction func forgetPasswordClicked(_ sender: Any) {
@@ -50,6 +54,8 @@ class LoginViewController: BaseViewController {
         self.prepareView()
        // manager=FirebaseManager.init(delegate: self)
         self.loginPresenter = LoginPresenter.init(delegate: self)
+        self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
+
         self.logEventForLogin()
         if let email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail){
             self.emailTextField.text = email as? String
@@ -158,7 +164,8 @@ extension LoginViewController:UITextFieldDelegate{
 extension LoginViewController:LoginDelegate{
     func didLoggedIn(data: LoginData) {
         //successfully logged in user..move to home page
-        self.moveToHome()
+        //call Zendesk API to get identity token
+        self.zendeskPresenter.sendZendeskTokenRequest()
     }
     
     
@@ -166,6 +173,11 @@ extension LoginViewController:LoginDelegate{
         self.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: error.getErrorMessage())
     }
     
-    
+}
+extension LoginViewController:ZendeskDelegates{
+    func didSentZendeskToken(data: ZendeskData) {
+        AppUtility.configureZendesk(data: data)
+        self.moveToHome()
+    }
 }
 

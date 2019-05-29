@@ -55,8 +55,10 @@
 		1D180D6E229E4CBE00FC3390 /* ZendeskRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D6D229E4CBE00FC3390 /* ZendeskRequestModel.swift */; };
 		1D180D70229E4D4300FC3390 /* ZendeskAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D6F229E4D4300FC3390 /* ZendeskAPIRequest.swift */; };
 		1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D71229E4D5500FC3390 /* ZendeskBusiness.swift */; };
-		1D180D74229E4DF700FC3390 /* Zendesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D73229E4DF700FC3390 /* Zendesk.swift */; };
+		1D180D74229E4DF700FC3390 /* ZendeskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D73229E4DF700FC3390 /* ZendeskResponse.swift */; };
 		1D180D76229E4E6600FC3390 /* ZendeskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D75229E4E6600FC3390 /* ZendeskData.swift */; };
+		1D180D79229E53C500FC3390 /* ZendeskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D78229E53C500FC3390 /* ZendeskPresenter.swift */; };
+		1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D7A229E540500FC3390 /* ZendeskDelegates.swift */; };
 		1D19D31622953957008D367E /* SignupSynapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31522953957008D367E /* SignupSynapse.swift */; };
 		1D19D31822953986008D367E /* SignupSynapseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31722953986008D367E /* SignupSynapseData.swift */; };
 		1D19D31E2295882E008D367E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19D31D2295882E008D367E /* Account.swift */; };
@@ -320,8 +322,10 @@
 		1D180D6D229E4CBE00FC3390 /* ZendeskRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskRequestModel.swift; sourceTree = "<group>"; };
 		1D180D6F229E4D4300FC3390 /* ZendeskAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskAPIRequest.swift; sourceTree = "<group>"; };
 		1D180D71229E4D5500FC3390 /* ZendeskBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskBusiness.swift; sourceTree = "<group>"; };
-		1D180D73229E4DF700FC3390 /* Zendesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zendesk.swift; sourceTree = "<group>"; };
+		1D180D73229E4DF700FC3390 /* ZendeskResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskResponse.swift; sourceTree = "<group>"; };
 		1D180D75229E4E6600FC3390 /* ZendeskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskData.swift; sourceTree = "<group>"; };
+		1D180D78229E53C500FC3390 /* ZendeskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskPresenter.swift; sourceTree = "<group>"; };
+		1D180D7A229E540500FC3390 /* ZendeskDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskDelegates.swift; sourceTree = "<group>"; };
 		1D19D31522953957008D367E /* SignupSynapse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSynapse.swift; sourceTree = "<group>"; };
 		1D19D31722953986008D367E /* SignupSynapseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSynapseData.swift; sourceTree = "<group>"; };
 		1D19D31D2295882E008D367E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -719,6 +723,7 @@
 		1D180D6B229E421D00FC3390 /* Zendesk */ = {
 			isa = PBXGroup;
 			children = (
+				1D180D77229E539D00FC3390 /* Presenter */,
 				1D180D6C229E423900FC3390 /* Model */,
 			);
 			path = Zendesk;
@@ -730,10 +735,19 @@
 				1D180D6D229E4CBE00FC3390 /* ZendeskRequestModel.swift */,
 				1D180D6F229E4D4300FC3390 /* ZendeskAPIRequest.swift */,
 				1D180D71229E4D5500FC3390 /* ZendeskBusiness.swift */,
-				1D180D73229E4DF700FC3390 /* Zendesk.swift */,
+				1D180D73229E4DF700FC3390 /* ZendeskResponse.swift */,
 				1D180D75229E4E6600FC3390 /* ZendeskData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1D180D77229E539D00FC3390 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1D180D78229E53C500FC3390 /* ZendeskPresenter.swift */,
+				1D180D7A229E540500FC3390 /* ZendeskDelegates.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1D1E5A6D21C9C76B0036E998 /* SignUp */ = {
@@ -2058,6 +2072,7 @@
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
+				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
@@ -2069,7 +2084,7 @@
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D913CE4228F62880075B16D /* SignupSynapsePresenter.swift in Sources */,
-				1D180D74229E4DF700FC3390 /* Zendesk.swift in Sources */,
+				1D180D74229E4DF700FC3390 /* ZendeskResponse.swift in Sources */,
 				1D8440812289545A00A77BBF /* HomeTransactionListBusinessLogic.swift in Sources */,
 				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
 				1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */,
@@ -2185,6 +2200,7 @@
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				1D055D22229BCA860078CD33 /* ResetPasswordRequestModel.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
+				1D180D79229E53C500FC3390 /* ZendeskPresenter.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 				1D8440832289545A00A77BBF /* TransactionHistory.swift in Sources */,
 			);

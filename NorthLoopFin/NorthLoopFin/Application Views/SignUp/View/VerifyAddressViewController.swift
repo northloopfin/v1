@@ -25,6 +25,8 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     var signupFlowData:SignupFlowData!=nil
     var presenter: SignupSynapsePresenter!
+    var zendeskPresenter: ZendeskPresenter!
+
 
 
     let dropDown = DropDown()
@@ -70,6 +72,7 @@ class VerifyAddressViewController: BaseViewController {
         self.changeTextFieldAppearance()
         self.prepareView()
         self.presenter = SignupSynapsePresenter.init(delegate: self)
+        self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
     }
     
     /// Prepare View by setting up font and color of UI components
@@ -187,7 +190,8 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
         
         // Delete email and accesstoken stored in UserDefault
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForEmail)
-        self.moveToHomePage()
+        //call Zendesk API for Identity token
+        self.zendeskPresenter.sendZendeskTokenRequest()
     }
     
     func moveToHomePage(){
@@ -206,5 +210,12 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
         containerViewController.panMode = MFSideMenuPanModeDefault
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.window?.rootViewController = containerViewController
+    }
+}
+
+extension VerifyAddressViewController:ZendeskDelegates{
+    func didSentZendeskToken(data: ZendeskData) {
+        AppUtility.configureZendesk(data: data)
+        self.moveToHomePage()
     }
 }

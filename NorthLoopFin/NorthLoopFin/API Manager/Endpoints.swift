@@ -21,6 +21,7 @@ struct Endpoints{
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"
         case LINKACH = "banking/link-ach"
+        case ZENDESK = "auth/helpdesk-token"
 
 
     }

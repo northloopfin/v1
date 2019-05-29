@@ -45,11 +45,6 @@ class AppLaunchSetup: NSObject {
         FirebaseApp.configure()
         Amplitude.instance()?.initializeApiKey("e60c4b5547bbd53ae65dab02520fd3ab")
         
-        // Initialize Zendesk
-        Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",
-                           clientId: "mobile_sdk_client_76a94439fa38a9e41ecb",
-                           zendeskUrl: "https://northloop.zendesk.com")
-        Support.initialize(withZendesk: Zendesk.instance)
         
     }
 }

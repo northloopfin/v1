@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Zendesk: Codable {
+struct ZendeskResponse: Codable {
     let message: String
     let data: ZendeskData
     
