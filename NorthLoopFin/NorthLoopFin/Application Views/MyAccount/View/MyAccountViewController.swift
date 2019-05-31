@@ -7,24 +7,34 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class MyAccountViewController: BaseViewController {
     @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var customView: CommonTable!
-    
+    @IBOutlet weak var nameLbl: LabelWithLetterSpace!
+    @IBOutlet weak var accountNumberLbl: LabelWithLetterSpace!
+    @IBOutlet weak var rountingNumberLbl: LabelWithLetterSpace!
+    @IBOutlet weak var swiftNumberLbl: LabelWithLetterSpace!
+    var presenter:AccountPresenter!
+    var resetPresenter:ResetPasswordPresenter!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         self.customView.delegate=self
-
+        self.presenter = AccountPresenter.init(delegate: self)
+        self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
+        self.presenter.sendFetchTransferDetailRequest()
     }
     override func viewDidLayoutSubviews() {
         let shadowOffst = CGSize.init(width: 0, height: -55)
         let shadowOpacity = 0.1
         let shadowRadius = 49
         let shadowColor = Colors.Zorba161149133
-        self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+    self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        
     }
     
     func prepareView(){
@@ -41,6 +51,17 @@ class MyAccountViewController: BaseViewController {
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
         self.setupRightNavigationBar()
+        self.nameLbl.textColor = Colors.Taupe776857
+        self.accountNumberLbl.textColor = Colors.Taupe776857
+        self.rountingNumberLbl.textColor = Colors.Taupe776857
+        self.swiftNumberLbl.textColor = Colors.Taupe776857
+        
+        
+        //set font
+        self.nameLbl.font = AppFonts.textBoxCalibri16
+        self.accountNumberLbl.font = AppFonts.textBoxCalibri16
+        self.rountingNumberLbl.font = AppFonts.textBoxCalibri16
+        self.swiftNumberLbl.font = AppFonts.textBoxCalibri16
     }
 }
 
@@ -52,7 +73,8 @@ extension MyAccountViewController:CommonTableDelegate{
         case 1:
             self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 2:
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+            // send reset password API request
+            self.sendResetPasswordAPIRequest()
         case 3:
             self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
         case 4:
@@ -61,18 +83,17 @@ extension MyAccountViewController:CommonTableDelegate{
             break
         }
     }
+    //Send Reset Password API request with email as parameter
+    func sendResetPasswordAPIRequest(){
+        if let user:User = UserInformationUtility.sharedInstance.getCurrentUser(){
+            self.resetPresenter.sendResetPasswordRequesy(username: user.userEmail)
+        }
+    }
     
     func logoutUser(){
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
+       
             UserInformationUtility.sharedInstance.deleteCurrentUser()
-            RealmHelper.deleteAllFromDatabase()
             self.moveToWelcome()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
     }
     
     func moveToWelcome(){
@@ -84,5 +105,21 @@ extension MyAccountViewController:CommonTableDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+}
+
+extension MyAccountViewController:UserTransferDetailDelegate{
+    func didFetchUserTransactionDetail(data: UserTransferDetailData) {
+        let domesticAccountDetails = data.transferDetails.domestic
+        let internationalAccountDetails = data.transferDetails.international
+        self.nameLbl.text = "Name: "+domesticAccountDetails.bankName
+        self.accountNumberLbl.text = "Account No: "+domesticAccountDetails.accountNumber
+        self.rountingNumberLbl.text = "Routing No: "+domesticAccountDetails.routing
+        self.swiftNumberLbl.text = "Swift No: "+internationalAccountDetails.swift
+    }
+}
+extension MyAccountViewController: ResetPasswordDelegate{
+    func didSentResetPasswordRequest(){
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.RESET_EMAIL_SENT.rawValue)
     }
 }

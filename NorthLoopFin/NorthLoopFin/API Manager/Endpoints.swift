@@ -15,13 +15,14 @@ struct Endpoints{
         case LOGIN = "auth/login"
         case TRANSACTIONHISTORY = "banking/transactions"
         case ACCOUNTINFO = "banking/account-info?"
-        //case TRANSACTIONDETAIL = "banking/transactions"
-        case CARDSTATUS = "banking/card-status"
+        case CARDSTATUS = "banking/card"
         case SIGNUPAUTH = "auth/sign-up"
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"
         case LINKACH = "banking/link-ach"
         case ZENDESK = "auth/helpdesk-token"
+        case ATMFINDER = "banking/atm?"
+        case USERTRANSFERDETAIL = "banking/transfer-details"
 
 
     }

@@ -11,13 +11,11 @@ import Foundation
 struct CardPreferences: Codable {
     let allowForeignTransactions: Bool
     let dailyATMWithdrawalLimit, dailyTransactionLimit: Int
-    let spendingLimit: Bool
     
     enum CodingKeys: String, CodingKey {
         case allowForeignTransactions = "allow_foreign_transactions"
         case dailyATMWithdrawalLimit = "daily_atm_withdrawal_limit"
         case dailyTransactionLimit = "daily_transaction_limit"
-        case spendingLimit = "spending_limit"
     }
     
     init(from decoder: Decoder) throws {
@@ -25,6 +23,6 @@ struct CardPreferences: Codable {
         allowForeignTransactions = try values.decodeIfPresent(Bool.self, forKey: .allowForeignTransactions) ?? false
         dailyATMWithdrawalLimit = try values.decodeIfPresent(Int.self, forKey: .dailyATMWithdrawalLimit) ?? 0
         dailyTransactionLimit = try values.decodeIfPresent(Int.self, forKey: .dailyTransactionLimit) ?? 0
-        spendingLimit = try values.decodeIfPresent(Bool.self, forKey: .spendingLimit) ?? false
+        
     }
 }

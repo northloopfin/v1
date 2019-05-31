@@ -104,8 +104,11 @@ extension MyCardViewController:CardDelegates{
     func didFetchCardStatus(data:Card) {
         if (data.data.status == "ACTIVE"){
         self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: true)
+            self.optionsTableView.isUserInteractionEnabled=true
         }else{
+            
             self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
+            self.optionsTableView.isUserInteractionEnabled = false
         }
         self.optionsTableView.reloadData()
     }

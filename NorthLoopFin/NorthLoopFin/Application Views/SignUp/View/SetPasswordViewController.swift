@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import Amplitude_iOS
 
 class SetPasswordViewController: BaseViewController {
@@ -20,7 +19,6 @@ class SetPasswordViewController: BaseViewController {
     @IBOutlet weak var bySigningUpLbl: LabelWithLetterSpace!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     
-    var firebaseManager:FirebaseManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +26,15 @@ class SetPasswordViewController: BaseViewController {
         self.doneBtn.isEnabled=false
         self.updateTextFieldUI()
         self.prepareView()
-        firebaseManager = FirebaseManager.init(delegate: self as! FirebaseDelegates)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //get data from Realm if any and show on UI
-        self.fetchDatafromRealmIfAny()
     }
     
-    func fetchDatafromRealmIfAny(){
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
-            let info = result.first!
-            self.emailTextField.text = info.email
-            self.passwordTextField.text = info.password
-            self.confirmPasswordTextField.text = info.confirmPassword
-        }
-    }
+    
+    
     
     //Action called when done button clicked
     @IBAction func doneClicked(_ sender: Any) {
@@ -131,7 +119,6 @@ class SetPasswordViewController: BaseViewController {
     }
     
     func createAccountWithData(_ email:String,_ password:String){
-        firebaseManager?.createUserWithData(email, password)
     }
     
     func moveToCreateAccount(){

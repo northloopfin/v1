@@ -11,6 +11,7 @@ import PWSwitch
 
 class MyCardTableCell: UITableViewCell {
     @IBAction func switchClicked(_ sender: Any) {
+        print("wow")
 //        let lock = sender as! UISwitch
 //        if (lock.isOn){
 //            lock.thumbTintColor = Colors.Taupe776857
@@ -18,6 +19,7 @@ class MyCardTableCell: UITableViewCell {
     }
     @IBOutlet weak var lock: PWSwitch!
     @IBOutlet weak var optionLbl: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

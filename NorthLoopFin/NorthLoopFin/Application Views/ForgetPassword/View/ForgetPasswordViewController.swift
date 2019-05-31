@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class ForgetPasswordViewController: BaseViewController {
     @IBOutlet weak var emailTextfield: UITextField!

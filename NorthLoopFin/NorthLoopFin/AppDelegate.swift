@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let screen:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForScreen) as? String{
             switch screen {
                 case AppConstants.Screens.USERDETAIL.rawValue:
-                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: SignUpFormViewController.self)) as!  SignUpFormViewController
+                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: CreateAccountV2ViewController.self)) as!  CreateAccountV2ViewController
                     self.moveToScreen(vc: vc)
                 case AppConstants.Screens.OTP.rawValue:
                     vc = storyBoard.instantiateViewController(withIdentifier: String(describing: OTPViewController.self)) as!  OTPViewController

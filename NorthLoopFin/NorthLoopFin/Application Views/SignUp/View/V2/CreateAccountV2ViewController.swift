@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import DropDown
 
 class CreateAccountV2ViewController: BaseViewController {
@@ -28,7 +27,6 @@ class CreateAccountV2ViewController: BaseViewController {
     var signupFlowData:SignupFlowData! = nil
     //Will remove this once Sign up completes
     var presenter:PhoneVerificationStartPresenter!
-    var firebaseManager:FirebaseManager!
     
     @IBAction func loginClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -85,7 +83,7 @@ class CreateAccountV2ViewController: BaseViewController {
     }
     
     func updateUserData(_ firstName:String, _ lastName:String, _ phone:String){
-        firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
+        
         
     }
     
