@@ -34,13 +34,13 @@
 		1D055D57229C6FB80078CD33 /* ACHTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D56229C6FB80078CD33 /* ACHTransactionData.swift */; };
 		1D055D5A229C722D0078CD33 /* ACHTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D59229C722D0078CD33 /* ACHTransactionPresenter.swift */; };
 		1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */; };
+		1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */; };
 		1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881B21CB6E2100187439 /* OTPViewController.swift */; };
 		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
 		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
 		1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */; };
 		1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */; };
 		1D0C2ADE22045EAB00527FAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0C2ADD22045EAB00527FAB /* User.swift */; };
-		1D11FE16220B536F00234E6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D11FE15220B536E00234E6D /* GoogleService-Info.plist */; };
 		1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11FE1A220C02F700234E6D /* LoginViewController.swift */; };
 		1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11FE1E220D742A00234E6D /* ForgetPasswordViewController.swift */; };
 		1D11FE21221126B700234E6D /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D11FE20221126B700234E6D /* CommonButton.swift */; };
@@ -335,13 +335,13 @@
 		1D055D56229C6FB80078CD33 /* ACHTransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHTransactionData.swift; sourceTree = "<group>"; };
 		1D055D59229C722D0078CD33 /* ACHTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHTransactionPresenter.swift; sourceTree = "<group>"; };
 		1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStudentViewController.swift; sourceTree = "<group>"; };
+		1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D0A881B21CB6E2100187439 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
 		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 		1D0A882121CCC2FA00187439 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePresenter.swift; sourceTree = "<group>"; };
 		1D0C2ADD22045EAB00527FAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1D11FE15220B536E00234E6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D11FE1A220C02F700234E6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1D11FE1E220D742A00234E6D /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		1D11FE20221126B700234E6D /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
@@ -1617,7 +1617,7 @@
 			isa = PBXGroup;
 			children = (
 				1D180D69229D349700FC3390 /* northloop.gif */,
-				1D11FE15220B536E00234E6D /* GoogleService-Info.plist */,
+				1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */,
 				1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */,
 				297FB99C21B51A32008D60CE /* NorthLoopFin */,
 				297FB9B121B51A34008D60CE /* NorthLoopFinTests */,
@@ -1909,6 +1909,7 @@
 			files = (
 				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
+				1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
@@ -1928,7 +1929,6 @@
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
 				1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */,
-				1D11FE16220B536F00234E6D /* GoogleService-Info.plist in Resources */,
 				1D3538382223E54F00716A94 /* country.json in Resources */,
 				1D180DA2229EA01500FC3390 /* ATMFirstTableViewCell.xib in Resources */,
 			);

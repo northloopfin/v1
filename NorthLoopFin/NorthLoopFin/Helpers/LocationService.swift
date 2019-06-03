@@ -76,7 +76,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     // Private function
     fileprivate func updateLocation(_ currentLocation: CLLocation){
-
+        self.currentLocation = currentLocation
         guard let delegate = self.delegate else {
             return
         }

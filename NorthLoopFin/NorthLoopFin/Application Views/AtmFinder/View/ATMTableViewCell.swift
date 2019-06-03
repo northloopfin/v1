@@ -23,6 +23,7 @@ class ATMTableViewCell: UITableViewCell {
         self.atmAddress.tappable=true
         self.atmAddress.callback = {
             // open Google Map from gere
+            
         }
         
     }
@@ -50,44 +51,4 @@ class ATMTableViewCell: UITableViewCell {
             self.wheelchairImage.isHidden=false
         }
     }
-    
-//    func openGoogleDirectionMap(_ destinationLat: String, _ destinationLng: String) {
-//        
-//        let LocationManager = CLLocationManager()
-//        
-//        if let myLat = LocationManager.location?.coordinate.latitude, let myLng = LocationManager.location?.coordinate.longitude {
-//            
-//            if let tempURL = URL(string: "comgooglemaps://?saddr=&daddr=\(destinationLat),\(destinationLng)&directionsmode=driving") {
-//                
-//                UIApplication.shared.open(tempURL, options: [:], completionHandler: { (isSuccess) in
-//                    
-//                    if !isSuccess {
-//                        
-//                        if UIApplication.shared.canOpenURL(URL(string: "https://www.google.co.th/maps/dir///")!) {
-//                            
-//                            UIApplication.shared.open(URL(string: "https://www.google.co.th/maps/dir/\(myLat),\(myLng)/\(destinationLat),\(destinationLng)/")!, options: [:], completionHandler: nil)
-//                            
-//                        } else {
-//                            
-//                            print("Can't open URL.")
-//                            
-//                        }
-//                        
-//                    }
-//                    
-//                })
-//                
-//            } else {
-//                
-//                print("Can't open GoogleMap Application.")
-//                
-//            }
-//            
-//        } else {
-//            
-//            print("Prease allow permission.")
-//            
-//        }
-//    }
-
 }

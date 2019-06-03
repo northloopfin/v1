@@ -187,6 +187,36 @@ class ServiceManager: NSObject  {
         }
     }
     
+    func requestPATCHWithURL<T:Codable>(_ urlString:String , andRequestDictionary requestDictionary:[String : AnyObject],requestHeader:[String:AnyObject] , responseCallBack:ApiResponseReceiver , returningClass:T.Type) ->Void{
+        
+        self.delegate = responseCallBack
+        
+        // Checking the rechability of Network
+        if ReachabilityManager.shared.isNetworkAvailable {
+            
+            // Instantiate session manager Object
+            let manager:AFHTTPSessionManager = self.sessionManager()
+            
+            //Iterating request header dictionary and adding into API Manager
+            for (key, value) in requestHeader {
+                manager.requestSerializer.setValue(value as? String, forHTTPHeaderField: key)
+            }
+            
+            var error:NSError?
+            
+            // Creating Immutable POST NSURL Request
+            let request:URLRequest = manager.requestSerializer.request(withMethod: "PATCH", urlString: urlString , parameters: requestDictionary, error: &error) as URLRequest
+            
+            // Calling Api with NSURLRequest and session Manager and fetching Response from server
+            self.dataTaskWithRequestAndSessionManager(request, sessionManager: manager , returningClass:returningClass)
+        }else{
+            
+            // Generating common network error
+            self.delegate?.onError(getNetworkError() , errorObject: nil)
+        }
+    }
+    
+    
     /**
      Method is used for Put Request Api Call with parameter
      

@@ -24,7 +24,9 @@ class ATMFinderViewController: BaseViewController {
     }
     @IBAction func sendLinkBtnClicked(_ sender: Any) {
         // call API to find ATM based on current location
-        self.getATMsWithZip()
+        //self.getATMsWithZip()
+        LocationService.sharedInstance.delegate = self
+        LocationService.sharedInstance.startUpdatingLocation()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,6 +142,48 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
             height = 44.0
         }
         return CGFloat(height)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedAtm = self.dataSource[indexPath.row+1]
+        self.openGoogleDirectionMap(String(selectedAtm.atmLocation.coordinates.latitude), String(selectedAtm.atmLocation.coordinates.longitude))
+    }
+    func openGoogleDirectionMap(_ destinationLat: String, _ destinationLng: String) {
+        
+        //let LocationManager = CLLocationManager()
+        
+        if let myLat = LocationService.sharedInstance.currentLocation?.coordinate.latitude, let myLng = LocationService.sharedInstance.currentLocation?.coordinate.longitude {
+            
+            if let tempURL = URL(string: "comgooglemaps://?saddr=&daddr=\(destinationLat),\(destinationLng)&directionsmode=driving") {
+                
+                UIApplication.shared.open(tempURL, options: [:], completionHandler: { (isSuccess) in
+                    
+                    if !isSuccess {
+                        
+                        if UIApplication.shared.canOpenURL(URL(string: "https://www.google.co.th/maps/dir///")!) {
+                            
+                            UIApplication.shared.open(URL(string: "https://www.google.co.th/maps/dir/\(myLat),\(myLng)/\(destinationLat),\(destinationLng)/")!, options: [:], completionHandler: nil)
+                            
+                        } else {
+                            
+                            print("Can't open URL.")
+                            
+                        }
+                        
+                    }
+                    
+                })
+                
+            } else {
+                
+                print("Can't open GoogleMap Application.")
+                
+            }
+            
+        } else {
+            
+            print("Prease allow permission.")
+            
+        }
     }
 }
 extension ATMFinderViewController: ATMFinderDelegates{

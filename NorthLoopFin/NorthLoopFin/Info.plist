@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>6</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -65,9 +65,9 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to click ID and Selfie</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application use your location to find ATMs near by you</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This application use your location to find ATMs near by you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This application use your location to find ATMs near by you</string>
 	<key>Twilio Key</key>
 	<string>$(TWILIO_API_KEY)</string>
