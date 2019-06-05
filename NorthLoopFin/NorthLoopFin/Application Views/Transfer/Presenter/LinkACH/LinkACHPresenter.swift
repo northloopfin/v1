@@ -24,6 +24,7 @@ class LinkACHPresenter: ResponseCallback{
         let currentUser:User=UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = LinkACHRquestModel.Builder()
             .addRequestQueryParams(key: "nickname", value: name as AnyObject).addRequestQueryParams(key: "account_num", value: accountNo as AnyObject).addRequestQueryParams(key: "routing_num", value: rountingNo as AnyObject)
+            .addRequestQueryParams(key: "email_id", value: currentUser.userEmail as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)

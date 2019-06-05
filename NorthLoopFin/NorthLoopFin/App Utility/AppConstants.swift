@@ -48,6 +48,8 @@ struct AppConstants{
         case COMPLETE_DOCUMENT_UPLOAD = "Please complete document upload of selected ID Type"
         case SELECT_ID_TYPE = "Please select ID type"
         case RESET_EMAIL_SENT = "We've just sent you an email to reset your password"
+        case CONFIRM_MESSAGE_TO_LOCK_CARD = "Are you sure you want to lock this card?"
+        case CONFIRM_MESSAGE_SPEND_ABROAD = "Are you sure you want to change Spend Abroad status of this card?"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {

@@ -13,8 +13,12 @@ class MyCardViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var optionsTableView: UITableView!
     var presenter: CardsPresenter!
+    var updatePresenter: UpdateCardPresenter!
+
 
     var data:[MyCardOtionsModel]=[]
+    var isLockCard:Bool = false
+    var isSpendAbroad:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,7 @@ class MyCardViewController: BaseViewController {
         self.configureTableView()
         self.optionsTableView.reloadData()
         self.presenter = CardsPresenter.init(delegate: self)
+        self.updatePresenter = UpdateCardPresenter.init(delegate: self)
         self.getCardStatus()
     }
     
@@ -72,7 +77,8 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: MyCardTableCell = tableView.dequeueReusableCell(withIdentifier: "MyCardTableCell") as! MyCardTableCell
-        cell.bindData(data: data[indexPath.row])
+        cell.lock.tag = indexPath.row
+        cell.bindData(data: data[indexPath.row], delegate: self)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -103,13 +109,50 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
 extension MyCardViewController:CardDelegates{
     func didFetchCardStatus(data:Card) {
         if (data.data.status == "ACTIVE"){
-        self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: true)
+            self.isLockCard = false
+        self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
             self.optionsTableView.isUserInteractionEnabled=true
         }else{
-            
-            self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
+            self.isLockCard = true
+            self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: true)
             self.optionsTableView.isUserInteractionEnabled = false
         }
         self.optionsTableView.reloadData()
+    }
+}
+
+extension MyCardViewController:UpdateCardDelegates{
+    func didUpdateCardStatus(data: Card) {
+        //Nothing to do here. May be in futur ewe can use this function to update UI
+    }
+}
+
+extension MyCardViewController:MyCardTableCellDelegate{
+    func switchClicked(isOn: Bool, tag: Int) {
+        switch tag {
+        case 0:
+            //lock you card
+            self.isLockCard=isOn
+            self.showAlertWithAction(title: "Confirm!", message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_LOCK_CARD.rawValue, buttonArray: ["Yes"]) { (action) in
+                //create request and send to presenter
+            }
+        case 3:
+            // spend abroad
+            self.isSpendAbroad=isOn
+            self.showAlertWithAction(title: "Confirm!", message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_SPEND_ABROAD.rawValue, buttonArray: ["Yes"]) { (action) in
+                //create request and send to presenter
+            }
+        default:
+            break
+        }
+    }
+    
+    func createRequestForUpdateCardStatus(){
+        let prefernce = UpdateCardPreferenceBody.init(allowForeignTransactions: self.isSpendAbroad, dailyATMWithdrawalLimit: 0, dailyTransactionLimit: 0)
+        var card = UpdateCardRequestBody.init(status: "ACTIVE", pre: prefernce)
+        if self.isLockCard{
+            card = UpdateCardRequestBody.init(status: "INACTIVE", pre: prefernce)
+        }
+        self.updatePresenter.updateCardStatus(requestBody: card)
     }
 }

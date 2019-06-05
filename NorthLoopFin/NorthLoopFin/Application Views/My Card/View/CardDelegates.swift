@@ -11,3 +11,7 @@ import Foundation
 protocol CardDelegates: BaseViewProtocol {
     func didFetchCardStatus(data:Card)
 }
+
+protocol UpdateCardDelegates :BaseViewProtocol{
+    func didUpdateCardStatus(data:Card)
+}

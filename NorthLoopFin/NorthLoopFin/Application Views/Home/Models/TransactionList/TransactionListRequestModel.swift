@@ -73,6 +73,6 @@ class TransactionListRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TRANSACTIONHISTORY.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TRANSACTIONLIST.rawValue
     }
 }

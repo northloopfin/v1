@@ -25,7 +25,10 @@ class TransactionListPresenter: ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.USERID.rawValue, value: currentUser.userID)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .addRequestQueryParams(key: "page", value: 1 as AnyObject)
+            .addRequestQueryParams(key: "per_page", value: 10 as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
     self.homeTransactionListBusinessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
@@ -33,8 +36,8 @@ class TransactionListPresenter: ResponseCallback{
     
     //MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        let response = responseObject as! [TransactionHistory]
-        let requiredData = self.createRequiredData(data: response)
+        let response = responseObject as! TransactionHistory
+        let requiredData = self.createRequiredData(data: response.data.trans)
         self.homeDelegate?.didFetchedTransactionList(data: requiredData)
         self.homeDelegate?.hideLoader()
     }
@@ -45,14 +48,19 @@ class TransactionListPresenter: ResponseCallback{
     }
     
     //MARK: Create data to show on UI
-    func createRequiredData(data:[TransactionHistory]) -> [TransactionListModel] {
+    func createRequiredData(data:[IndividualTransaction]) -> [TransactionListModel] {
         var dataArr:[TransactionListModel] = []
-        let dic:Dictionary = Dictionary(grouping: data, by: {$0.createdAt})
-        let dicKeys = Array(dic.keys)
-        for key in dicKeys {
-            let transactionArr:[TransactionHistory] = dic[key]!
-            let section = transactionArr[0].createdAt
-            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: section, rowData: transactionArr)
+        let dic  = Dictionary.init(grouping: data) { (element) -> Date in
+            element.date
+        }
+        // sort keys here
+        let sortedKeys = dic.keys.sorted()
+        sortedKeys.forEach { (key) in
+            //print(key)
+            let values = dic[key]
+            //print(values)
+            let date = AppUtility.dateFromMilliseconds(seconds: Double(values![0].extra.createdOn))
+            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: date, rowData: values ?? [])
             dataArr.append(transationListModel)
         }
         return dataArr

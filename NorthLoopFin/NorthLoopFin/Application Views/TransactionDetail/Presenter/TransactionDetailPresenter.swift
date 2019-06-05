@@ -19,14 +19,14 @@ class TransactionDetailPresenter: ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendTransactionDetailRequest(transactionId:Int){
+    func sendTransactionDetailRequest(transactionId:String){
         self.delegate?.showLoader()
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let rquestModel = TransactionDetailRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).addRequestQueryParams(key:"id", value : transactionId as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
             .build()
-        rquestModel.apiUrl = rquestModel.getEndPoint()+"/"+String(transactionId)
+        rquestModel.apiUrl = rquestModel.getEndPoint()+"/"+transactionId
         self.businessLogic.performTransactionDetail( withRequestModel: rquestModel, presenterDelegate:self)
 
     }

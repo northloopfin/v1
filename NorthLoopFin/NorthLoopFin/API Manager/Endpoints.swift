@@ -14,8 +14,10 @@ struct Endpoints{
     enum APIEndpoints:String {
         case LOGIN = "auth/login"
         case TRANSACTIONHISTORY = "banking/transactions"
+        case TRANSACTIONLIST = "banking/transactions?"
         case ACCOUNTINFO = "banking/account-info?"
         case CARDSTATUS = "banking/card"
+        case CARDUPDATE = "banking/card?"
         case SIGNUPAUTH = "auth/sign-up"
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"

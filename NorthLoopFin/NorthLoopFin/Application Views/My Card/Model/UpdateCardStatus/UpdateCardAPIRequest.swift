@@ -1,14 +1,23 @@
 //
-//  DisputeTransactionAPIRequest.swift
+//  UpdateCardAPIRequest.swift
 //  NorthLoopFin
 //
-//  Created by Daffolapmac-19 on 31/05/19.
+//  Created by Daffolapmac-19 on 04/06/19.
+//  Copyright © 2019 NorthLoop. All rights reserved.
+//
+
+import Foundation
+//
+//  CardAPIRequest.swift
+//  NorthLoopFin
+//
+//  Created by Daffolapmac-19 on 14/05/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class DisputeTransactionAPIRequest:ApiRequestProtocol {
+class UpdateCardAPIRequest:ApiRequestProtocol {
     
     //MARK:- local properties
     var apiRequestUrl:String!
@@ -22,13 +31,15 @@ class DisputeTransactionAPIRequest:ApiRequestProtocol {
      - parameter errorResolver: ErrorResolver contains all error handling with posiible error codes
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
-    func makeAPIRequest(withReqFormData reqFromData: DisputeTransactionRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
+    
+    func makeAPIRequest(withReqFormData reqFromData: UpdateCardRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
         
-        self.apiRequestUrl = reqFromData.getEndPoint()
+        self.apiRequestUrl = reqFromData.apiUrl
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        //ServiceManager.sharedInstance.requestGETWithParameter(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: ATMFinder.self )
-        ServiceManager.sharedInstance.requestPATCHWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: DisputeTransactionResponse.self)
+        
+    //ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: Card.self)
+        ServiceManager.sharedInstance.requestPATCHWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: Card.self)
     }
     
     /**

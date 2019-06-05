@@ -10,33 +10,40 @@ import UIKit
 
 class DisputeTransactionViewController: BaseViewController {
 
-    @IBOutlet weak var dateTextField: UITextField!
+    //@IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var issueTextField: UITextField!
     @IBOutlet weak var reportBtn: UIButton!
-    
+    var presenter:DisputeTransactionPresenter!
+    var transaction:IndividualTransaction?
+
     @IBAction func reportBtnClicked(_ sender: Any) {
+        if let _ = self.transaction{
+            self.presenter.sendDisputeIssue(transactionId: self.transaction?.id ?? "", reason: self.issueTextField.text ?? "")
+
+        }
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reportBtn.isEnabled=false
+        self.presenter = DisputeTransactionPresenter.init(delegate: self)
         // Do any additional setup after loading the view.
     }
     
     func prepareView(){
         self.setNavigationBarTitle(title: "Dispute Transaction")
         self.setupRightNavigationBar()
-        self.dateTextField.textColor = Colors.DustyGray155155155
+        //self.dateTextField.textColor = Colors.DustyGray155155155
         
         self.issueTextField.textColor=Colors.DustyGray155155155
-        self.dateTextField.font=AppFonts.textBoxCalibri16
+        //self.dateTextField.font=AppFonts.textBoxCalibri16
         
         self.issueTextField.font=AppFonts.textBoxCalibri16
         self.reportBtn.titleLabel!.font=AppFonts.calibri15
         self.configureTextFields()
     }
     func configureTextFields(){
-        self.dateTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+       // self.dateTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.issueTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
         let placeholderColor=Colors.DustyGray155155155
@@ -45,10 +52,10 @@ class DisputeTransactionViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.dateTextField.applyAttributesWithValues(placeholderText: "Amount*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+       // self.dateTextField.applyAttributesWithValues(placeholderText: "Amount*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.issueTextField.applyAttributesWithValues(placeholderText: "Nickname*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
-        self.dateTextField.setLeftPaddingPoints(19)
+        //self.dateTextField.setLeftPaddingPoints(19)
         self.issueTextField.setLeftPaddingPoints(19)
         
         
@@ -73,16 +80,19 @@ extension DisputeTransactionViewController:UITextFieldDelegate{
     }
     
     func checkForMandatoryFields(){
-        if (!(self.dateTextField.text?.isEmpty)! && !(self.issueTextField.text?.isEmpty)!)
-            //&& !((self.rountingNumberTextField.text?.isEmpty)!)
-        {
+        if (!(self.issueTextField.text?.isEmpty)!){
             self.reportBtn.isEnabled=true
         }
+//        if (!(self.dateTextField.text?.isEmpty)! && !(self.issueTextField.text?.isEmpty)!)
+//            //&& !((self.rountingNumberTextField.text?.isEmpty)!)
+//        {
+//            self.reportBtn.isEnabled=true
+//        }
     }
 }
 
 extension DisputeTransactionViewController:DisputeTransactionDelegates{
     func didSentDisputeTransactionRequest() {
-        
+        self.moveToConfirmationScreen()
     }
 }

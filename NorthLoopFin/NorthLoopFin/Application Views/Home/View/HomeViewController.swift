@@ -24,6 +24,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    
     //MARK: viewDidLoad
     
     override func viewDidLoad() {
@@ -85,7 +86,7 @@ class HomeViewController: BaseViewController {
     }
     
     //Move to detail screen
-    func moveToDetailScreen(detailModel:TransactionHistory){
+    func moveToDetailScreen(detailModel:IndividualTransaction){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
        transactionDetailController.detailModel = detailModel
@@ -112,12 +113,12 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         let cell: HomeTableCell = tableView.dequeueReusableCell(withIdentifier: "HomeTableCell") as! HomeTableCell
         let rowData = transactionDataSource[indexPath.section].rowData[indexPath.row]
         cell.selectionStyle = .none
-        cell.bindData(data: rowData)
+        cell.bindData(data: rowData,delegate: self)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 70.0
+        return 75.0
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.transactionDataSource.count
@@ -136,14 +137,15 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.moveToDetailScreen(detailModel: transactionDataSource[indexPath.section].rowData[indexPath.row])
+        self.moveToDetailScreen(detailModel: self.transactionDataSource[indexPath.section].rowData[indexPath.row])
     }
 }
 
 extension HomeViewController:HomeDelegate{
     //MARK: HomeDelegate
     func didFetchedTransactionList(data: [TransactionListModel]) {
-        self.transactionDataSource = data
+        self.transactionDataSource.append(contentsOf: data)
+        self.ledgersTableView.reloadData()
     }
     func didFetchedError(error:ErrorModel){
         
@@ -225,4 +227,16 @@ extension HomeViewController:SideMenuDelegate{
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
+}
+extension HomeViewController:HomeTableCellDelegate{
+    func disputeTransactionClicked(data: IndividualTransaction) {
+        self.moveToDisputeTransactionScreen(data: data)
+    }
+    
+    func moveToDisputeTransactionScreen(data:IndividualTransaction){
+        //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }

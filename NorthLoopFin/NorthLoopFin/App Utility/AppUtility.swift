@@ -80,8 +80,17 @@ class AppUtility {
         dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         let dateString = dateFormatter.string(from: date)
-        print("formatted date is =  \(dateString)")
+        //print("formatted date is =  \(dateString)")
         return dateString
+    }
+    
+    class func getDateFromString(dateString:String)->Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let date = dateFormatter.date(from: dateString)
+        //print("formatted date is =  \(dateString)")
+        return date!
     }
     
     class func checkIfDateFallsAfterYear2014(dateStr: String)->Bool{

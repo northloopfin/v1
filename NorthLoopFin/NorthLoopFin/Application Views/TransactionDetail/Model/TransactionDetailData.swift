@@ -13,19 +13,19 @@ struct TransactionDetailData: Codable {
     let v: Int
     let amount: TransactionDetailAmount
     let client: Client
-    let extra: Extra
+    let extra: TransactionListExtra
     //let fees: [Fee]
     //let from: From
     //let recentStatus: RecentStatus
     //let timeline: [RecentStatus]
-    let to: TransactionDetailRecipient
-    let statusCode: Int
+    let to: TransactionListFrom
+    //let statusCode: Int
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case v = "_v"
         case amount, client, extra
-        case to, statusCode
+        case to
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -33,9 +33,8 @@ struct TransactionDetailData: Codable {
         v = try values.decodeIfPresent(Int.self, forKey: .v) ?? 0
         amount = try values.decodeIfPresent(TransactionDetailAmount.self, forKey: .amount)!
         client = try values.decodeIfPresent(Client.self, forKey: .client)!
-        extra = try values.decodeIfPresent(Extra.self, forKey: .extra)!
-        to = try values.decodeIfPresent(TransactionDetailRecipient.self, forKey: .to)!
-        statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode) ?? 0
+        extra = try values.decodeIfPresent(TransactionListExtra.self, forKey: .extra)!
+        to = try values.decodeIfPresent(TransactionListFrom.self, forKey: .to)!
     }
     
 }

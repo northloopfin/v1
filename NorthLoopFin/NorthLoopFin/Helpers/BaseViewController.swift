@@ -38,6 +38,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     func showLoader() {
 //        GIFHUD.shared.setGif(named: "northloop.gif")
 //        GIFHUD.shared.show()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         SVProgressHUD.show()
     }
 
@@ -45,6 +46,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
 //        GIFHUD.shared.dismiss {
 //            print("dismissed")
 //        }
+        if UIApplication.shared.isIgnoringInteractionEvents { UIApplication.shared.endIgnoringInteractionEvents() }
         SVProgressHUD.dismiss()
     }
     

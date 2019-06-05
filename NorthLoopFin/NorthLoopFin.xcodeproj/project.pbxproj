@@ -128,6 +128,14 @@
 		1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */; };
 		1D55EE80228592C60003BEDB /* LoginBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D55EE7F228592C60003BEDB /* LoginBusinessLogic.swift */; };
 		1D55EE82228593CE0003BEDB /* LoginApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D55EE81228593CE0003BEDB /* LoginApiRequest.swift */; };
+		1D5AB2DA22A63C1200DB3B70 /* DisputeTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2D922A63C1200DB3B70 /* DisputeTransactionResponse.swift */; };
+		1D5AB2DC22A6764D00DB3B70 /* UpdateCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2DB22A6764D00DB3B70 /* UpdateCardPresenter.swift */; };
+		1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2DE22A6767400DB3B70 /* UpdateCardRequestModel.swift */; };
+		1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2E022A676B100DB3B70 /* UpdateCardAPIRequest.swift */; };
+		1D5AB2E422A676D100DB3B70 /* UpdateCardBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2E322A676D100DB3B70 /* UpdateCardBusinessLogic.swift */; };
+		1D5AB2E622A67D1500DB3B70 /* UpdateCardRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2E522A67D1500DB3B70 /* UpdateCardRequestBody.swift */; };
+		1D5AB2E822A67DF700DB3B70 /* UpdateCardPreferenceBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2E722A67DF700DB3B70 /* UpdateCardPreferenceBody.swift */; };
+		1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2EA22A790BA00DB3B70 /* SetPinRequestModel.swift */; };
 		1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */; };
 		1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */; };
 		1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */; };
@@ -201,6 +209,12 @@
 		1D915C1222082CD400223480 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C1122082CD400223480 /* Timer.swift */; };
 		1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C132208305300223480 /* NotificationName+Extension.swift */; };
 		1D915C162208306E00223480 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D915C152208306E00223480 /* main.swift */; };
+		1D9AF08522A5068500A9055F /* TransactionHistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF08422A5068500A9055F /* TransactionHistoryData.swift */; };
+		1D9AF08722A5077300A9055F /* IndividualTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF08622A5077300A9055F /* IndividualTransaction.swift */; };
+		1D9AF08922A509C800A9055F /* TransactionListExtra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF08822A509C800A9055F /* TransactionListExtra.swift */; };
+		1D9AF08B22A5308900A9055F /* TransactionListFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF08A22A5308900A9055F /* TransactionListFrom.swift */; };
+		1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF08C22A5309900A9055F /* TransactionListUser.swift */; };
+		1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF08E22A5429F00A9055F /* TransactionListLocation.swift */; };
 		1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */; };
 		1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */; };
 		1D9EFE0721C92593004C1C77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9EFE0621C92592004C1C77 /* CoreLocation.framework */; };
@@ -429,6 +443,14 @@
 		1D51758F21C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailHistoryTableHeader.xib; sourceTree = "<group>"; };
 		1D55EE7F228592C60003BEDB /* LoginBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBusinessLogic.swift; sourceTree = "<group>"; };
 		1D55EE81228593CE0003BEDB /* LoginApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiRequest.swift; sourceTree = "<group>"; };
+		1D5AB2D922A63C1200DB3B70 /* DisputeTransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisputeTransactionResponse.swift; sourceTree = "<group>"; };
+		1D5AB2DB22A6764D00DB3B70 /* UpdateCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardPresenter.swift; sourceTree = "<group>"; };
+		1D5AB2DE22A6767400DB3B70 /* UpdateCardRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardRequestModel.swift; sourceTree = "<group>"; };
+		1D5AB2E022A676B100DB3B70 /* UpdateCardAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardAPIRequest.swift; sourceTree = "<group>"; };
+		1D5AB2E322A676D100DB3B70 /* UpdateCardBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardBusinessLogic.swift; sourceTree = "<group>"; };
+		1D5AB2E522A67D1500DB3B70 /* UpdateCardRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardRequestBody.swift; sourceTree = "<group>"; };
+		1D5AB2E722A67DF700DB3B70 /* UpdateCardPreferenceBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardPreferenceBody.swift; sourceTree = "<group>"; };
+		1D5AB2EA22A790BA00DB3B70 /* SetPinRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinRequestModel.swift; sourceTree = "<group>"; };
 		1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLetterSpace.swift; sourceTree = "<group>"; };
@@ -502,6 +524,12 @@
 		1D915C1122082CD400223480 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		1D915C132208305300223480 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		1D915C152208306E00223480 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1D9AF08422A5068500A9055F /* TransactionHistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryData.swift; sourceTree = "<group>"; };
+		1D9AF08622A5077300A9055F /* IndividualTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTransaction.swift; sourceTree = "<group>"; };
+		1D9AF08822A509C800A9055F /* TransactionListExtra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListExtra.swift; sourceTree = "<group>"; };
+		1D9AF08A22A5308900A9055F /* TransactionListFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListFrom.swift; sourceTree = "<group>"; };
+		1D9AF08C22A5309900A9055F /* TransactionListUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListUser.swift; sourceTree = "<group>"; };
+		1D9AF08E22A5429F00A9055F /* TransactionListLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListLocation.swift; sourceTree = "<group>"; };
 		1D9EFE0221C8DCD7004C1C77 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 		1D9EFE0421C8DCEC004C1C77 /* UINavigationBarExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtenion.swift; sourceTree = "<group>"; };
 		1D9EFE0621C92592004C1C77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -1057,6 +1085,26 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1D5AB2DD22A6765500DB3B70 /* UpdateCardStatus */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB2DE22A6767400DB3B70 /* UpdateCardRequestModel.swift */,
+				1D5AB2E022A676B100DB3B70 /* UpdateCardAPIRequest.swift */,
+				1D5AB2E322A676D100DB3B70 /* UpdateCardBusinessLogic.swift */,
+				1D5AB2E522A67D1500DB3B70 /* UpdateCardRequestBody.swift */,
+				1D5AB2E722A67DF700DB3B70 /* UpdateCardPreferenceBody.swift */,
+			);
+			path = UpdateCardStatus;
+			sourceTree = "<group>";
+		};
+		1D5AB2E922A7909000DB3B70 /* SetPin */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB2EA22A790BA00DB3B70 /* SetPinRequestModel.swift */,
+			);
+			path = SetPin;
+			sourceTree = "<group>";
+		};
 		1D6AA0892213EE3B00DD04F4 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1285,6 +1333,12 @@
 				1D8440762289545900A77BBF /* TransactionListApiRequest.swift */,
 				1D84407C2289545A00A77BBF /* TransactionListModel.swift */,
 				1D8440772289545900A77BBF /* TransactionListRequestModel.swift */,
+				1D9AF08422A5068500A9055F /* TransactionHistoryData.swift */,
+				1D9AF08622A5077300A9055F /* IndividualTransaction.swift */,
+				1D9AF08822A509C800A9055F /* TransactionListExtra.swift */,
+				1D9AF08A22A5308900A9055F /* TransactionListFrom.swift */,
+				1D9AF08C22A5309900A9055F /* TransactionListUser.swift */,
+				1D9AF08E22A5429F00A9055F /* TransactionListLocation.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -1400,6 +1454,7 @@
 				1DE6D94822A0D32F00014572 /* DisputeTransactionRequestModel.swift */,
 				1DE6D94A22A0D34700014572 /* DisputeTransactionAPIRequest.swift */,
 				1DE6D94C22A0D35700014572 /* DisputeTransactionBusinessModel.swift */,
+				1D5AB2D922A63C1200DB3B70 /* DisputeTransactionResponse.swift */,
 			);
 			name = Model;
 			path = "../New Group/Model";
@@ -1436,6 +1491,8 @@
 		1DF64E1521E5FDB3008774CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D5AB2E922A7909000DB3B70 /* SetPin */,
+				1D5AB2DD22A6765500DB3B70 /* UpdateCardStatus */,
 				1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */,
 				1D9F45FB228AC10F009D76FC /* CardBusinessLogic.swift */,
 				1D9F45FD228AC13E009D76FC /* CardAPIRequest.swift */,
@@ -1464,6 +1521,7 @@
 			isa = PBXGroup;
 			children = (
 				1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */,
+				1D5AB2DB22A6764D00DB3B70 /* UpdateCardPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2180,8 +2238,10 @@
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
 				1D055D4F229C6E260078CD33 /* ACHTransactionRequestModel.swift in Sources */,
 				1D180D6E229E4CBE00FC3390 /* ZendeskRequestModel.swift in Sources */,
+				1D5AB2E422A676D100DB3B70 /* UpdateCardBusinessLogic.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */,
+				1D9AF08722A5077300A9055F /* IndividualTransaction.swift in Sources */,
 				1D19D31E2295882E008D367E /* Account.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D8440862289552600A77BBF /* AccountInfoApiRequest.swift in Sources */,
@@ -2204,6 +2264,8 @@
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
 				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
+				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
+				1D5AB2DC22A6764D00DB3B70 /* UpdateCardPresenter.swift in Sources */,
 				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
 				1D180D96229E77C700FC3390 /* ATMCoordinates.swift in Sources */,
 				1D9F45FA228AC0E3009D76FC /* CardsPresenter.swift in Sources */,
@@ -2227,15 +2289,18 @@
 				1D259DA8228BE39B0053D0AB /* ID.swift in Sources */,
 				1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
+				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				1DE6D94D22A0D35700014572 /* DisputeTransactionBusinessModel.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
 				1D180D76229E4E6600FC3390 /* ZendeskData.swift in Sources */,
+				1D5AB2E622A67D1500DB3B70 /* UpdateCardRequestBody.swift in Sources */,
 				1D180DB2229FC47200FC3390 /* UserTransferDetail.swift in Sources */,
 				1D180D8E229E764C00FC3390 /* ATMFinderBusinessModel.swift in Sources */,
 				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
+				1D5AB2DA22A63C1200DB3B70 /* DisputeTransactionResponse.swift in Sources */,
 				1D165F4F222D18AA00D06914 /* StorageHelper.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
 				1D055D3C229C009B0078CD33 /* LinkACHData.swift in Sources */,
@@ -2255,6 +2320,7 @@
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
 				1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
+				1D5AB2E822A67DF700DB3B70 /* UpdateCardPreferenceBody.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D913CE4228F62880075B16D /* SignupSynapsePresenter.swift in Sources */,
 				1D180D74229E4DF700FC3390 /* ZendeskResponse.swift in Sources */,
@@ -2306,6 +2372,7 @@
 				1D84408A2289574900A77BBF /* AccountInfoPresenter.swift in Sources */,
 				1D9F45FE228AC13E009D76FC /* CardAPIRequest.swift in Sources */,
 				1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */,
+				1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
@@ -2319,6 +2386,7 @@
 				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
 				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
+				1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */,
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
@@ -2336,16 +2404,20 @@
 				1DE6D94922A0D32F00014572 /* DisputeTransactionRequestModel.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D8440822289545A00A77BBF /* Recipient.swift in Sources */,
+				1D9AF08B22A5308900A9055F /* TransactionListFrom.swift in Sources */,
 				1D8440732289541A00A77BBF /* AccountInfoRequestModel.swift in Sources */,
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
+				1D9AF08522A5068500A9055F /* TransactionHistoryData.swift in Sources */,
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
 				1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
+				1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */,
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
 				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
+				1D9AF08922A509C800A9055F /* TransactionListExtra.swift in Sources */,
 				1D913CE0228F621F0075B16D /* SignupSynapseAPIRequest.swift in Sources */,
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
 				1D180DBC229FC98B00FC3390 /* MyAccountDelegates.swift in Sources */,

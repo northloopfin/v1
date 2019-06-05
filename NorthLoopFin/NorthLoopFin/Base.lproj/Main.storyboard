@@ -3681,7 +3681,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="106.5" y="351" width="107" height="31"/>
+                                <rect key="frame" x="98.5" y="351" width="123" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
@@ -4295,14 +4295,17 @@ We’ve sent an email confirming.</string>
             </objects>
             <point key="canvasLocation" x="21396" y="765"/>
         </scene>
-        <!--International Student View Controller-->
+        <!--Dispute Transaction View Controller-->
         <scene sceneID="Y7M-Vh-Oi7">
             <objects>
-                <viewController storyboardIdentifier="InternationalStudentViewController" id="SaN-5F-KIp" customClass="InternationalStudentViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DisputeTransactionViewController" id="SaN-5F-KIp" customClass="DisputeTransactionViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0X-9r-ao6" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-Ll-KA8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oed-09-IJz" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="25" y="402" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -4310,7 +4313,7 @@ We’ve sent an email confirming.</string>
                                     <constraint firstAttribute="height" constant="45" id="uzr-z6-aOo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
-                                <state key="normal" title="SUBMIT">
+                                <state key="normal" title="REPORT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -4321,20 +4324,10 @@ We’ve sent an email confirming.</string>
                                         <real key="value" value="0.22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1z2-Xo-qWW">
-                                <rect key="frame" x="25" y="113" width="270" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="V2H-SU-BNh"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="SaN-5F-KIp" id="IYI-jW-I46"/>
+                                    <action selector="reportBtnClicked:" destination="SaN-5F-KIp" eventType="touchUpInside" id="X0M-Jl-8XW"/>
                                 </connections>
-                            </textField>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtB-Ms-YaN">
                                 <rect key="frame" x="25" y="167" width="270" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4345,33 +4338,33 @@ We’ve sent an email confirming.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
-                                    <outlet property="delegate" destination="SaN-5F-KIp" id="zFa-tP-Hqj"/>
+                                    <outlet property="delegate" destination="SaN-5F-KIp" id="PeI-Pt-WFd"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1z2-Xo-qWW" firstAttribute="top" secondItem="w7K-8I-0cT" secondAttribute="top" constant="93" id="JB8-xS-xwu"/>
+                            <constraint firstItem="ZtB-Ms-YaN" firstAttribute="top" secondItem="w7K-8I-0cT" secondAttribute="top" constant="147" id="2HQ-zP-AmL"/>
+                            <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="KmK-Ll-KA8" secondAttribute="trailing" id="Cj3-vP-OQL"/>
                             <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="Oed-09-IJz" secondAttribute="trailing" constant="25" id="JU5-hn-lbF"/>
                             <constraint firstItem="Oed-09-IJz" firstAttribute="top" secondItem="ZtB-Ms-YaN" secondAttribute="bottom" constant="190" id="Kdz-tm-x2R"/>
                             <constraint firstItem="ZtB-Ms-YaN" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" constant="25" id="Pea-0P-s9J"/>
                             <constraint firstItem="Oed-09-IJz" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" constant="25" id="R2l-mW-3A5"/>
-                            <constraint firstItem="1z2-Xo-qWW" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" constant="25" id="TUA-5d-LBg"/>
-                            <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="1z2-Xo-qWW" secondAttribute="trailing" constant="25" id="aZw-zY-KcC"/>
-                            <constraint firstItem="ZtB-Ms-YaN" firstAttribute="top" secondItem="1z2-Xo-qWW" secondAttribute="bottom" constant="9" id="ob5-iM-rGP"/>
+                            <constraint firstItem="KmK-Ll-KA8" firstAttribute="top" secondItem="X0X-9r-ao6" secondAttribute="top" id="UWD-h1-h7B"/>
+                            <constraint firstItem="KmK-Ll-KA8" firstAttribute="bottom" secondItem="w7K-8I-0cT" secondAttribute="bottom" id="UnT-8y-eEH"/>
+                            <constraint firstItem="KmK-Ll-KA8" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" id="YRG-pR-Xl2"/>
                             <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="ZtB-Ms-YaN" secondAttribute="trailing" constant="25" id="yKQ-Mg-AMs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w7K-8I-0cT"/>
                     </view>
                     <connections>
-                        <outlet property="doneBtn" destination="Oed-09-IJz" id="egp-NH-Xp2"/>
-                        <outlet property="emailTextField" destination="ZtB-Ms-YaN" id="Lc6-Dt-lA5"/>
-                        <outlet property="waitlistTextField" destination="1z2-Xo-qWW" id="yFP-P6-Tiy"/>
+                        <outlet property="issueTextField" destination="ZtB-Ms-YaN" id="tgr-nf-xwC"/>
+                        <outlet property="reportBtn" destination="Oed-09-IJz" id="Xrb-ru-x2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsK-3M-HYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22673" y="-55"/>
+            <point key="canvasLocation" x="22672.5" y="-55.985915492957744"/>
         </scene>
         <!--Create AccountV2 View Controller-->
         <scene sceneID="FLu-si-ZuT">
