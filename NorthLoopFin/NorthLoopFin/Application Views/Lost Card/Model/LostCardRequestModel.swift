@@ -1,5 +1,5 @@
 //
-//  SetPinRequestModel.swift
+//  LostCardRequestModel.swift
 //  NorthLoopFin
 //
 //  Created by Daffolapmac-19 on 05/06/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SetPinRequestModel {
+class LostCardRequestModel {
     //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
@@ -64,8 +64,8 @@ class SetPinRequestModel {
          
          -returns : CardRequestModel
          */
-        func build()->SetPinRequestModel{
-            return SetPinRequestModel(builderObject: self)
+        func build()->LostCardRequestModel{
+            return LostCardRequestModel(builderObject: self)
         }
     }
     
@@ -75,6 +75,6 @@ class SetPinRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.CARDPIN.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.CARDSTATUS.rawValue
     }
 }

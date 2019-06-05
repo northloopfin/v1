@@ -136,6 +136,27 @@
 		1D5AB2E622A67D1500DB3B70 /* UpdateCardRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2E522A67D1500DB3B70 /* UpdateCardRequestBody.swift */; };
 		1D5AB2E822A67DF700DB3B70 /* UpdateCardPreferenceBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2E722A67DF700DB3B70 /* UpdateCardPreferenceBody.swift */; };
 		1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2EA22A790BA00DB3B70 /* SetPinRequestModel.swift */; };
+		1D5AB2ED22A791B300DB3B70 /* SetPinAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2EC22A791B300DB3B70 /* SetPinAPIRequest.swift */; };
+		1D5AB2EF22A791C600DB3B70 /* SetPinBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2EE22A791C600DB3B70 /* SetPinBusinessLogic.swift */; };
+		1D5AB2F122A794E100DB3B70 /* SetPinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2F022A794E100DB3B70 /* SetPinResponse.swift */; };
+		1D5AB2F322A7965E00DB3B70 /* SetPinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2F222A7965E00DB3B70 /* SetPinPresenter.swift */; };
+		1D5AB2F722A798E500DB3B70 /* LostCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2F622A798E500DB3B70 /* LostCardPresenter.swift */; };
+		1D5AB2F922A798F900DB3B70 /* LostCardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2F822A798F900DB3B70 /* LostCardRequestModel.swift */; };
+		1D5AB2FB22A7996C00DB3B70 /* LostCardAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2FA22A7996C00DB3B70 /* LostCardAPIRequest.swift */; };
+		1D5AB2FD22A7997B00DB3B70 /* LostCardBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2FC22A7997B00DB3B70 /* LostCardBusinessLogic.swift */; };
+		1D5AB2FF22A7999100DB3B70 /* LostCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB2FE22A7999100DB3B70 /* LostCardResponse.swift */; };
+		1D5AB30522A7B5AD00DB3B70 /* Select2FAModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB30422A7B5AD00DB3B70 /* Select2FAModeViewController.swift */; };
+		1D5AB30722A7B5ED00DB3B70 /* TwoFAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB30622A7B5ED00DB3B70 /* TwoFAPresenter.swift */; };
+		1D5AB30922A7B62400DB3B70 /* TwoFAVerifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB30822A7B62400DB3B70 /* TwoFAVerifyPresenter.swift */; };
+		1D5AB30B22A7B63900DB3B70 /* TwoFARequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB30A22A7B63900DB3B70 /* TwoFARequestModel.swift */; };
+		1D5AB30D22A7C23600DB3B70 /* TwoFAAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB30C22A7C23600DB3B70 /* TwoFAAPIRequest.swift */; };
+		1D5AB30F22A7C25300DB3B70 /* TwoFABusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB30E22A7C25300DB3B70 /* TwoFABusinessLogic.swift */; };
+		1D5AB31122A7C26700DB3B70 /* TwoFAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB31022A7C26700DB3B70 /* TwoFAResponse.swift */; };
+		1D5AB31322A7C7C300DB3B70 /* TwoFADelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB31222A7C7C300DB3B70 /* TwoFADelegates.swift */; };
+		1D5AB31722A7CF0D00DB3B70 /* TwoFAVerifyRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB31622A7CF0D00DB3B70 /* TwoFAVerifyRequestModel.swift */; };
+		1D5AB31922A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB31822A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift */; };
+		1D5AB31B22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB31A22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift */; };
+		1D5AB31D22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5AB31C22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift */; };
 		1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */; };
 		1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */; };
 		1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */; };
@@ -451,6 +472,27 @@
 		1D5AB2E522A67D1500DB3B70 /* UpdateCardRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardRequestBody.swift; sourceTree = "<group>"; };
 		1D5AB2E722A67DF700DB3B70 /* UpdateCardPreferenceBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardPreferenceBody.swift; sourceTree = "<group>"; };
 		1D5AB2EA22A790BA00DB3B70 /* SetPinRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinRequestModel.swift; sourceTree = "<group>"; };
+		1D5AB2EC22A791B300DB3B70 /* SetPinAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinAPIRequest.swift; sourceTree = "<group>"; };
+		1D5AB2EE22A791C600DB3B70 /* SetPinBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinBusinessLogic.swift; sourceTree = "<group>"; };
+		1D5AB2F022A794E100DB3B70 /* SetPinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinResponse.swift; sourceTree = "<group>"; };
+		1D5AB2F222A7965E00DB3B70 /* SetPinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinPresenter.swift; sourceTree = "<group>"; };
+		1D5AB2F622A798E500DB3B70 /* LostCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardPresenter.swift; sourceTree = "<group>"; };
+		1D5AB2F822A798F900DB3B70 /* LostCardRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardRequestModel.swift; sourceTree = "<group>"; };
+		1D5AB2FA22A7996C00DB3B70 /* LostCardAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardAPIRequest.swift; sourceTree = "<group>"; };
+		1D5AB2FC22A7997B00DB3B70 /* LostCardBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardBusinessLogic.swift; sourceTree = "<group>"; };
+		1D5AB2FE22A7999100DB3B70 /* LostCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardResponse.swift; sourceTree = "<group>"; };
+		1D5AB30422A7B5AD00DB3B70 /* Select2FAModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select2FAModeViewController.swift; sourceTree = "<group>"; };
+		1D5AB30622A7B5ED00DB3B70 /* TwoFAPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAPresenter.swift; sourceTree = "<group>"; };
+		1D5AB30822A7B62400DB3B70 /* TwoFAVerifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAVerifyPresenter.swift; sourceTree = "<group>"; };
+		1D5AB30A22A7B63900DB3B70 /* TwoFARequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFARequestModel.swift; sourceTree = "<group>"; };
+		1D5AB30C22A7C23600DB3B70 /* TwoFAAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAAPIRequest.swift; sourceTree = "<group>"; };
+		1D5AB30E22A7C25300DB3B70 /* TwoFABusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFABusinessLogic.swift; sourceTree = "<group>"; };
+		1D5AB31022A7C26700DB3B70 /* TwoFAResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAResponse.swift; sourceTree = "<group>"; };
+		1D5AB31222A7C7C300DB3B70 /* TwoFADelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFADelegates.swift; sourceTree = "<group>"; };
+		1D5AB31622A7CF0D00DB3B70 /* TwoFAVerifyRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAVerifyRequestModel.swift; sourceTree = "<group>"; };
+		1D5AB31822A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAVerifyAPIRequest.swift; sourceTree = "<group>"; };
+		1D5AB31A22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAVerifyBusinessModel.swift; sourceTree = "<group>"; };
+		1D5AB31C22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAVerifyResponse.swift; sourceTree = "<group>"; };
 		1D67DB0021C7757500AA7F29 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		1D67DB0221C7A89C00AA7F29 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1D67DB0421C7B56F00AA7F29 /* LabelWithLetterSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLetterSpace.swift; sourceTree = "<group>"; };
@@ -1101,8 +1143,89 @@
 			isa = PBXGroup;
 			children = (
 				1D5AB2EA22A790BA00DB3B70 /* SetPinRequestModel.swift */,
+				1D5AB2EC22A791B300DB3B70 /* SetPinAPIRequest.swift */,
+				1D5AB2EE22A791C600DB3B70 /* SetPinBusinessLogic.swift */,
+				1D5AB2F022A794E100DB3B70 /* SetPinResponse.swift */,
 			);
 			path = SetPin;
+			sourceTree = "<group>";
+		};
+		1D5AB2F422A797DB00DB3B70 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB2F622A798E500DB3B70 /* LostCardPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D5AB2F522A797E400DB3B70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB2F822A798F900DB3B70 /* LostCardRequestModel.swift */,
+				1D5AB2FA22A7996C00DB3B70 /* LostCardAPIRequest.swift */,
+				1D5AB2FC22A7997B00DB3B70 /* LostCardBusinessLogic.swift */,
+				1D5AB2FE22A7999100DB3B70 /* LostCardResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D5AB30022A7B51700DB3B70 /* 2fa */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB30322A7B53000DB3B70 /* View */,
+				1D5AB30222A7B52A00DB3B70 /* Model */,
+				1D5AB30122A7B52200DB3B70 /* Presenter */,
+			);
+			path = 2fa;
+			sourceTree = "<group>";
+		};
+		1D5AB30122A7B52200DB3B70 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB30622A7B5ED00DB3B70 /* TwoFAPresenter.swift */,
+				1D5AB30822A7B62400DB3B70 /* TwoFAVerifyPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D5AB30222A7B52A00DB3B70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB31522A7CEF100DB3B70 /* TwoFAVerify */,
+				1D5AB31422A7CED800DB3B70 /* TwoFA */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D5AB30322A7B53000DB3B70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB30422A7B5AD00DB3B70 /* Select2FAModeViewController.swift */,
+				1D5AB31222A7C7C300DB3B70 /* TwoFADelegates.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D5AB31422A7CED800DB3B70 /* TwoFA */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB30A22A7B63900DB3B70 /* TwoFARequestModel.swift */,
+				1D5AB30C22A7C23600DB3B70 /* TwoFAAPIRequest.swift */,
+				1D5AB30E22A7C25300DB3B70 /* TwoFABusinessLogic.swift */,
+				1D5AB31022A7C26700DB3B70 /* TwoFAResponse.swift */,
+			);
+			path = TwoFA;
+			sourceTree = "<group>";
+		};
+		1D5AB31522A7CEF100DB3B70 /* TwoFAVerify */ = {
+			isa = PBXGroup;
+			children = (
+				1D5AB31622A7CF0D00DB3B70 /* TwoFAVerifyRequestModel.swift */,
+				1D5AB31822A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift */,
+				1D5AB31A22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift */,
+				1D5AB31C22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift */,
+			);
+			path = TwoFAVerify;
 			sourceTree = "<group>";
 		};
 		1D6AA0892213EE3B00DD04F4 /* Timer */ = {
@@ -1163,6 +1286,8 @@
 		1D72718721F0593D0084A57E /* Lost Card */ = {
 			isa = PBXGroup;
 			children = (
+				1D5AB2F522A797E400DB3B70 /* Model */,
+				1D5AB2F422A797DB00DB3B70 /* Presenter */,
 				1D72718821F059480084A57E /* View */,
 			);
 			path = "Lost Card";
@@ -1227,6 +1352,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D5AB30022A7B51700DB3B70 /* 2fa */,
 				1DE6D94022A0D1DC00014572 /* Dispute Transaction */,
 				1D180D7D229E758A00FC3390 /* AtmFinder */,
 				1D11FE1C220D73D200234E6D /* ForgetPassword */,
@@ -1522,6 +1648,7 @@
 			children = (
 				1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */,
 				1D5AB2DB22A6764D00DB3B70 /* UpdateCardPresenter.swift */,
+				1D5AB2F222A7965E00DB3B70 /* SetPinPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2223,6 +2350,7 @@
 				1D055D44229C029A0078CD33 /* FetchACHBusinessLogic.swift in Sources */,
 				1D055D5A229C722D0078CD33 /* ACHTransactionPresenter.swift in Sources */,
 				1D180DB8229FC54E00FC3390 /* DometicTransferDetails.swift in Sources */,
+				1D5AB30D22A7C23600DB3B70 /* TwoFAAPIRequest.swift in Sources */,
 				1D844092228A9E0400A77BBF /* TransactionDetailRequestModel.swift in Sources */,
 				1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */,
 				1D9F4600228AC156009D76FC /* CardRequestModel.swift in Sources */,
@@ -2233,6 +2361,7 @@
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */,
+				1D5AB2F722A798E500DB3B70 /* LostCardPresenter.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
@@ -2252,16 +2381,20 @@
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D180D94229E77B600FC3390 /* ATMAddress.swift in Sources */,
 				1D55EE80228592C60003BEDB /* LoginBusinessLogic.swift in Sources */,
+				1D5AB30722A7B5ED00DB3B70 /* TwoFAPresenter.swift in Sources */,
 				1D180D98229E7DCA00FC3390 /* ATMDelegates.swift in Sources */,
 				1D055D42229C02860078CD33 /* FetchACHAPIRequest.swift in Sources */,
+				1D5AB30922A7B62400DB3B70 /* TwoFAVerifyPresenter.swift in Sources */,
 				1D55EE82228593CE0003BEDB /* LoginApiRequest.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
+				1D5AB31B22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift in Sources */,
 				1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
 				1D055D3A229C00790078CD33 /* LinkACH.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
+				1D5AB2FF22A7999100DB3B70 /* LostCardResponse.swift in Sources */,
 				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
@@ -2297,6 +2430,7 @@
 				1D180D76229E4E6600FC3390 /* ZendeskData.swift in Sources */,
 				1D5AB2E622A67D1500DB3B70 /* UpdateCardRequestBody.swift in Sources */,
 				1D180DB2229FC47200FC3390 /* UserTransferDetail.swift in Sources */,
+				1D5AB2FD22A7997B00DB3B70 /* LostCardBusinessLogic.swift in Sources */,
 				1D180D8E229E764C00FC3390 /* ATMFinderBusinessModel.swift in Sources */,
 				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
@@ -2308,19 +2442,23 @@
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
+				1D5AB2FB22A7996C00DB3B70 /* LostCardAPIRequest.swift in Sources */,
 				1D180DAA229FC42000FC3390 /* AccountPresenter.swift in Sources */,
 				1D180DA4229FAA6F00FC3390 /* NewPinViewController.swift in Sources */,
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
+				1D5AB30F22A7C25300DB3B70 /* TwoFABusinessLogic.swift in Sources */,
 				1DCDF26A228ED1F600ABDCB1 /* SignupFlowAlDoc.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1D84407E2289545A00A77BBF /* TransactionListApiRequest.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
 				1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
+				1D5AB31922A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift in Sources */,
 				1D5AB2E822A67DF700DB3B70 /* UpdateCardPreferenceBody.swift in Sources */,
+				1D5AB31322A7C7C300DB3B70 /* TwoFADelegates.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D913CE4228F62880075B16D /* SignupSynapsePresenter.swift in Sources */,
 				1D180D74229E4DF700FC3390 /* ZendeskResponse.swift in Sources */,
@@ -2336,6 +2474,8 @@
 				1D055D2E229BD6E30078CD33 /* LinkACHPresenter.swift in Sources */,
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
+				1D5AB30B22A7B63900DB3B70 /* TwoFARequestModel.swift in Sources */,
+				1D5AB31D22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift in Sources */,
 				1D4AD7762284462D007A9C2F /* Endpoints.swift in Sources */,
 				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
@@ -2364,6 +2504,7 @@
 				1D8440842289545A00A77BBF /* TransactionListModel.swift in Sources */,
 				1D180D84229E75EB00FC3390 /* ATMFinderViewController.swift in Sources */,
 				1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */,
+				1D5AB2EF22A791C600DB3B70 /* SetPinBusinessLogic.swift in Sources */,
 				1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
@@ -2376,8 +2517,10 @@
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
+				1D5AB30522A7B5AD00DB3B70 /* Select2FAModeViewController.swift in Sources */,
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D84408C228A9CED00A77BBF /* TransactionDetailPresenter.swift in Sources */,
+				1D5AB31722A7CF0D00DB3B70 /* TwoFAVerifyRequestModel.swift in Sources */,
 				1D055D32229BD7090078CD33 /* LinkACHAPIRequest.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D35383B2223E58E00716A94 /* Country.swift in Sources */,
@@ -2386,9 +2529,11 @@
 				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
 				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
+				1D5AB2ED22A791B300DB3B70 /* SetPinAPIRequest.swift in Sources */,
 				1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */,
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
+				1D5AB2F322A7965E00DB3B70 /* SetPinPresenter.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
 				1D055D1F229BCA610078CD33 /* ResetPasswordPresenter.swift in Sources */,
 				1D055D34229BD71F0078CD33 /* LinkACHBusinessLogic.swift in Sources */,
@@ -2407,6 +2552,7 @@
 				1D9AF08B22A5308900A9055F /* TransactionListFrom.swift in Sources */,
 				1D8440732289541A00A77BBF /* AccountInfoRequestModel.swift in Sources */,
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
+				1D5AB31122A7C26700DB3B70 /* TwoFAResponse.swift in Sources */,
 				1D9AF08522A5068500A9055F /* TransactionHistoryData.swift in Sources */,
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
@@ -2434,6 +2580,7 @@
 				1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */,
 				1DCDF268228ED19C00ABDCB1 /* SignupFlowDocument.swift in Sources */,
 				1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */,
+				1D5AB2F122A794E100DB3B70 /* SetPinResponse.swift in Sources */,
 				1D180D90229E769500FC3390 /* ATM.swift in Sources */,
 				1D11FE21221126B700234E6D /* CommonButton.swift in Sources */,
 				1DE6D94B22A0D34700014572 /* DisputeTransactionAPIRequest.swift in Sources */,
@@ -2455,6 +2602,7 @@
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
 				1D915C1222082CD400223480 /* Timer.swift in Sources */,
+				1D5AB2F922A798F900DB3B70 /* LostCardRequestModel.swift in Sources */,
 				1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				1D055D4C229C38DE0078CD33 /* TransferConfirmationViewController.swift in Sources */,

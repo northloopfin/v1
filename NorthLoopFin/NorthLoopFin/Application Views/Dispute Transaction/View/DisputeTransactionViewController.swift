@@ -83,11 +83,6 @@ extension DisputeTransactionViewController:UITextFieldDelegate{
         if (!(self.issueTextField.text?.isEmpty)!){
             self.reportBtn.isEnabled=true
         }
-//        if (!(self.dateTextField.text?.isEmpty)! && !(self.issueTextField.text?.isEmpty)!)
-//            //&& !((self.rountingNumberTextField.text?.isEmpty)!)
-//        {
-//            self.reportBtn.isEnabled=true
-//        }
     }
 }
 

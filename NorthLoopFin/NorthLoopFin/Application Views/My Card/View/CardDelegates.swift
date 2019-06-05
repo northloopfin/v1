@@ -15,3 +15,7 @@ protocol CardDelegates: BaseViewProtocol {
 protocol UpdateCardDelegates :BaseViewProtocol{
     func didUpdateCardStatus(data:Card)
 }
+protocol SetPinDelegates :BaseViewProtocol{
+    func didSetPinSuccessful()
+}
+

@@ -18,6 +18,7 @@ struct Endpoints{
         case ACCOUNTINFO = "banking/account-info?"
         case CARDSTATUS = "banking/card"
         case CARDUPDATE = "banking/card?"
+        case CARDPIN = "banking/card/pin?"
         case SIGNUPAUTH = "auth/sign-up"
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"
@@ -25,7 +26,8 @@ struct Endpoints{
         case ZENDESK = "auth/helpdesk-token"
         case ATMFINDER = "banking/atm?"
         case USERTRANSFERDETAIL = "banking/transfer-details"
-
+        case TWOFA = "banking/2fa/false"
+        case TWOFAVERIFY = "banking/2fa/true?"
 
     }
     

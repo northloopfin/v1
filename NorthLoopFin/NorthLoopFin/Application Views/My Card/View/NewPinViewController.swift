@@ -14,9 +14,9 @@ class NewPinViewController: BaseViewController {
     @IBOutlet weak var newPin: UITextField!
     @IBOutlet weak var confirmPin: UITextField!
     @IBOutlet weak var changeBtn: UIButton!
+    var presenter: SetPinPresenter!
 
     @IBAction func changeBtnClicked(_ sender: Any) {
-        self.moveToSucessScreen()
     }
     
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class NewPinViewController: BaseViewController {
         self.changeBtn.isEnabled=false
         self.prepareView()
         self.configureTextFields()
+        self.presenter = SetPinPresenter.init(delegate: self)
     }
     
     func prepareView(){
@@ -76,5 +77,10 @@ extension NewPinViewController:UITextFieldDelegate{
         if (!(self.currentPin.text?.isEmpty)! && !(self.newPin.text?.isEmpty)!) && !((self.confirmPin.text?.isEmpty)!){
             self.changeBtn.isEnabled=true
         }
+    }
+}
+extension NewPinViewController:SetPinDelegates{
+    func didSetPinSuccessful() {
+        
     }
 }
