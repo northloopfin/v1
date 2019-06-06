@@ -57,9 +57,6 @@ class DisputeTransactionViewController: BaseViewController {
         
         //self.dateTextField.setLeftPaddingPoints(19)
         self.issueTextField.setLeftPaddingPoints(19)
-        
-        
-        
     }
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){

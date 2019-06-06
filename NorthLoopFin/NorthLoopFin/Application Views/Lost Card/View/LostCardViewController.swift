@@ -46,6 +46,13 @@ class LostCardViewController: BaseViewController {
 
 extension LostCardViewController:LostCardDelegates{
     func didSentLostCardRequest() {
-        
+        self.moveToConfrimationScreen()
+    }
+    
+    func moveToConfrimationScreen(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LostCardConfirmationViewController") as! LostCardConfirmationViewController
+        vc.message = "Your card is on its way! We have sent an email confirming."
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

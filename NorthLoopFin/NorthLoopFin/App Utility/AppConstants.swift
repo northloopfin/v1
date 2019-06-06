@@ -78,6 +78,8 @@ struct AppConstants{
         case SELFIETIME = "SelfieTime"
         case VERIFYADDRESS = "VerifyAddress"
         case HOME = "Home"
+        case SETPIN = "Set Pin"
+        case CHANGEPHONE = "ChangePhone"
     }
     
     enum SideMenuOptions:String {

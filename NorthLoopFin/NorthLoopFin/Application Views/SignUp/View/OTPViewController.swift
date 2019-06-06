@@ -29,6 +29,8 @@ class OTPViewController: BaseViewController {
     var isPhoneSelectedForOTP:Bool = false
     var isEmailSelectedForOTP:Bool = false
     
+    var screenWhichInitiatedOTP:AppConstants.Screens?
+    
     @IBAction func resendOTPClicked(_ sender: Any) {
         self.callPhoneVerificationAPI()
     }
@@ -43,7 +45,7 @@ class OTPViewController: BaseViewController {
         if isPhoneSelectedForOTP{
             self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
         }
-        if isEmailSelectedForOTP{
+        if (isEmailSelectedForOTP || self.screenWhichInitiatedOTP == AppConstants.Screens.CHANGEPHONE){
             self.presenter.verifyTwoFARequest(sendToAPI: false, otp: OTPString)
         }
         
@@ -217,7 +219,19 @@ extension OTPViewController:UITextFieldDelegate{
 }
 extension OTPViewController:TwoFAVerifyDelegates{
     func didVerifiedOTP() {
+        
      self.moveToSetPinScreen()
+    }
+    
+    func moveToRelevantScreen(){
+        switch self.screenWhichInitiatedOTP! {
+        case AppConstants.Screens.SETPIN :
+            self.moveToSetPinScreen()
+        case AppConstants.Screens.CHANGEPHONE :
+            self.moveToChangePhoneScreen()
+        default:
+            break
+        }
     }
     
     func moveToSetPinScreen(){
@@ -225,20 +239,10 @@ extension OTPViewController:TwoFAVerifyDelegates{
         let vc = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
     self.navigationController?.pushViewController(vc, animated: false)
     }
+    
+    func moveToChangePhoneScreen(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePhoneViewController") as! ChangePhoneViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }
-//extension OTPViewController:PhoneVerificationDelegate{
-//    func didSentOTP(result: PhoneVerifyStart) {
-//        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
-//    }
-//    func didCheckOTP(result:PhoneVerifyCheck){
-//        self.updateRealmDB()
-//        self.moveToScanIDScreen()
-//    }
-//
-//    func moveToScanIDScreen(){
-//        UserDefaults.saveToUserDefault(AppConstants.Screens.SCANID.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//}

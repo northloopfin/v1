@@ -16,6 +16,7 @@ class Select2FAModeViewController: BaseViewController {
     @IBOutlet weak var proceedBtn: UIButton!
     let dropDown = DropDown()
 
+    var screenWhichInitiated : AppConstants.Screens?
     //Drop Down data source
     let dropDownDataSource:[String]=["Email","Phone Number"]
     //Presenter to call api
@@ -81,6 +82,7 @@ class Select2FAModeViewController: BaseViewController {
     func moveToVerifyOTPScreen(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        vc.screenWhichInitiatedOTP = self.screenWhichInitiated
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }

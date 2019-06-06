@@ -18,6 +18,7 @@ class MyAccountViewController: BaseViewController {
     @IBOutlet weak var swiftNumberLbl: LabelWithLetterSpace!
     var presenter:AccountPresenter!
     var resetPresenter:ResetPasswordPresenter!
+    var twoFApresenter:TwoFAPresenter!
 
 
     override func viewDidLoad() {
@@ -27,6 +28,8 @@ class MyAccountViewController: BaseViewController {
         self.presenter = AccountPresenter.init(delegate: self)
         self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
         self.presenter.sendFetchTransferDetailRequest()
+        self.twoFApresenter = TwoFAPresenter.init(delegate: self)
+
     }
     override func viewDidLayoutSubviews() {
         let shadowOffst = CGSize.init(width: 0, height: -55)
@@ -76,7 +79,7 @@ extension MyAccountViewController:CommonTableDelegate{
             // send reset password API request
             self.sendResetPasswordAPIRequest()
         case 3:
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+            self.twoFApresenter.sendTwoFARequest(sendToAPI: false)
         case 4:
             self.logoutUser()
         default:
@@ -121,5 +124,18 @@ extension MyAccountViewController:UserTransferDetailDelegate{
 extension MyAccountViewController: ResetPasswordDelegate{
     func didSentResetPasswordRequest(){
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.RESET_EMAIL_SENT.rawValue)
+    }
+}
+extension MyAccountViewController:TwoFADelegates{
+    func didGetOTP() {
+        //move to OTP screen
+        self.moveToOTP()
+    }
+    
+    func moveToOTP(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        vc.screenWhichInitiatedOTP = AppConstants.Screens.CHANGEPHONE
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

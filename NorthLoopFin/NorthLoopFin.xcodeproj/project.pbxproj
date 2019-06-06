@@ -105,6 +105,19 @@
 		1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */; };
 		1D259DA8228BE39B0053D0AB /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA7228BE39B0053D0AB /* ID.swift */; };
 		1D29C83322A8F0AD0092E3EB /* LostCardDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */; };
+		1D29C83B22A8F6530092E3EB /* ChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C83A22A8F6530092E3EB /* ChangePhoneViewController.swift */; };
+		1D29C83D22A90FE00092E3EB /* LostCardConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C83C22A90FE00092E3EB /* LostCardConfirmationViewController.swift */; };
+		1D29C83F22A916A00092E3EB /* ChangePhonePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C83E22A916A00092E3EB /* ChangePhonePresenter.swift */; };
+		1D29C84122A916B00092E3EB /* ChangeAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84022A916B00092E3EB /* ChangeAddressPresenter.swift */; };
+		1D29C84522A916E00092E3EB /* ChangeAddressRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84422A916E00092E3EB /* ChangeAddressRequestModel.swift */; };
+		1D29C84722A916F40092E3EB /* ChangeAddressAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84622A916F40092E3EB /* ChangeAddressAPIRequest.swift */; };
+		1D29C84922A917050092E3EB /* ChangeAddressBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84822A917050092E3EB /* ChangeAddressBusinessModel.swift */; };
+		1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84A22A917210092E3EB /* ChangeAddressResponse.swift */; };
+		1D29C84D22A917320092E3EB /* ChangePhoneRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84C22A917320092E3EB /* ChangePhoneRequestModel.swift */; };
+		1D29C84F22A917440092E3EB /* ChangePhoneAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C84E22A917440092E3EB /* ChangePhoneAPIRequest.swift */; };
+		1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C85022A917540092E3EB /* ChangePhoneBusinessModel.swift */; };
+		1D29C85322A917650092E3EB /* ChangePhoneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C85222A917650092E3EB /* ChangePhoneResponse.swift */; };
+		1D29C85522A9297B0092E3EB /* ChangePhoneDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C85422A9297B0092E3EB /* ChangePhoneDelegates.swift */; };
 		1D3538382223E54F00716A94 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3538372223E54E00716A94 /* country.json */; };
 		1D35383B2223E58E00716A94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35383A2223E58E00716A94 /* Country.swift */; };
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
@@ -442,6 +455,19 @@
 		1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientMeta.swift; sourceTree = "<group>"; };
 		1D259DA7228BE39B0053D0AB /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardDelegates.swift; sourceTree = "<group>"; };
+		1D29C83A22A8F6530092E3EB /* ChangePhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewController.swift; sourceTree = "<group>"; };
+		1D29C83C22A90FE00092E3EB /* LostCardConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardConfirmationViewController.swift; sourceTree = "<group>"; };
+		1D29C83E22A916A00092E3EB /* ChangePhonePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhonePresenter.swift; sourceTree = "<group>"; };
+		1D29C84022A916B00092E3EB /* ChangeAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressPresenter.swift; sourceTree = "<group>"; };
+		1D29C84422A916E00092E3EB /* ChangeAddressRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressRequestModel.swift; sourceTree = "<group>"; };
+		1D29C84622A916F40092E3EB /* ChangeAddressAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressAPIRequest.swift; sourceTree = "<group>"; };
+		1D29C84822A917050092E3EB /* ChangeAddressBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressBusinessModel.swift; sourceTree = "<group>"; };
+		1D29C84A22A917210092E3EB /* ChangeAddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAddressResponse.swift; sourceTree = "<group>"; };
+		1D29C84C22A917320092E3EB /* ChangePhoneRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneRequestModel.swift; sourceTree = "<group>"; };
+		1D29C84E22A917440092E3EB /* ChangePhoneAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneAPIRequest.swift; sourceTree = "<group>"; };
+		1D29C85022A917540092E3EB /* ChangePhoneBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneBusinessModel.swift; sourceTree = "<group>"; };
+		1D29C85222A917650092E3EB /* ChangePhoneResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneResponse.swift; sourceTree = "<group>"; };
+		1D29C85422A9297B0092E3EB /* ChangePhoneDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneDelegates.swift; sourceTree = "<group>"; };
 		1D3538372223E54E00716A94 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		1D35383A2223E58E00716A94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -1016,6 +1042,8 @@
 		1D29C83522A8F5890092E3EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D29C83A22A8F6530092E3EB /* ChangePhoneViewController.swift */,
+				1D29C85422A9297B0092E3EB /* ChangePhoneDelegates.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1023,6 +1051,8 @@
 		1D29C83622A8F5900092E3EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D29C84322A916C90092E3EB /* ChangeAddress */,
+				1D29C84222A916C20092E3EB /* ChangePhone */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1030,8 +1060,32 @@
 		1D29C83722A8F5960092E3EB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1D29C83E22A916A00092E3EB /* ChangePhonePresenter.swift */,
+				1D29C84022A916B00092E3EB /* ChangeAddressPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1D29C84222A916C20092E3EB /* ChangePhone */ = {
+			isa = PBXGroup;
+			children = (
+				1D29C84C22A917320092E3EB /* ChangePhoneRequestModel.swift */,
+				1D29C84E22A917440092E3EB /* ChangePhoneAPIRequest.swift */,
+				1D29C85022A917540092E3EB /* ChangePhoneBusinessModel.swift */,
+				1D29C85222A917650092E3EB /* ChangePhoneResponse.swift */,
+			);
+			path = ChangePhone;
+			sourceTree = "<group>";
+		};
+		1D29C84322A916C90092E3EB /* ChangeAddress */ = {
+			isa = PBXGroup;
+			children = (
+				1D29C84422A916E00092E3EB /* ChangeAddressRequestModel.swift */,
+				1D29C84622A916F40092E3EB /* ChangeAddressAPIRequest.swift */,
+				1D29C84822A917050092E3EB /* ChangeAddressBusinessModel.swift */,
+				1D29C84A22A917210092E3EB /* ChangeAddressResponse.swift */,
+			);
+			path = ChangeAddress;
 			sourceTree = "<group>";
 		};
 		1D3538392223E56600716A94 /* Model */ = {
@@ -1331,6 +1385,7 @@
 			children = (
 				1D72718921F059610084A57E /* LostCardViewController.swift */,
 				1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */,
+				1D29C83C22A90FE00092E3EB /* LostCardConfirmationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2375,6 +2430,7 @@
 				1D180D8C229E763C00FC3390 /* ATMFinderAPIRequest.swift in Sources */,
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
 				1D180DA1229EA01500FC3390 /* ATMFirstTableViewCell.swift in Sources */,
+				1D29C84722A916F40092E3EB /* ChangeAddressAPIRequest.swift in Sources */,
 				1D055D46229C02DE0078CD33 /* FetchACH.swift in Sources */,
 				1D180DAE229FC44800FC3390 /* AccountAPIRequest.swift in Sources */,
 				1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */,
@@ -2414,6 +2470,7 @@
 				1DEEEF202292F150002909E1 /* StringExtension.swift in Sources */,
 				1D72718A21F059610084A57E /* LostCardViewController.swift in Sources */,
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
+				1D29C84D22A917320092E3EB /* ChangePhoneRequestModel.swift in Sources */,
 				1D180D94229E77B600FC3390 /* ATMAddress.swift in Sources */,
 				1D55EE80228592C60003BEDB /* LoginBusinessLogic.swift in Sources */,
 				1D5AB30722A7B5ED00DB3B70 /* TwoFAPresenter.swift in Sources */,
@@ -2444,6 +2501,7 @@
 				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
 				1D180D9D229E9FF600FC3390 /* ATMTableViewCell.swift in Sources */,
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
+				1D29C84922A917050092E3EB /* ChangeAddressBusinessModel.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
 				1D915C0E220816C100223480 /* Env.swift in Sources */,
@@ -2504,6 +2562,7 @@
 				1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */,
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				1D055D30229BD6F50078CD33 /* LinkACHRquestModel.swift in Sources */,
+				1D29C83D22A90FE00092E3EB /* LostCardConfirmationViewController.swift in Sources */,
 				1D055D48229C031C0078CD33 /* ACHNode.swift in Sources */,
 				1D180D8A229E762B00FC3390 /* ATMFinderRequestModel.swift in Sources */,
 				1D180DA6229FAE6100FC3390 /* SucessViewController.swift in Sources */,
@@ -2551,6 +2610,7 @@
 				1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */,
 				1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
+				1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
 				1D5AB30522A7B5AD00DB3B70 /* Select2FAModeViewController.swift in Sources */,
@@ -2578,6 +2638,7 @@
 				1D913CDE228F61F10075B16D /* SignupSynapseRequestModel.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
+				1D29C83B22A8F6530092E3EB /* ChangePhoneViewController.swift in Sources */,
 				1D478CAF228E981700503136 /* SignupAuthPresenter.swift in Sources */,
 				1D055D28229BCF950078CD33 /* ResetPassword.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
@@ -2596,6 +2657,7 @@
 				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
 				1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
+				1D29C85522A9297B0092E3EB /* ChangePhoneDelegates.swift in Sources */,
 				1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */,
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
 				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
@@ -2617,13 +2679,17 @@
 				1DCDF268228ED19C00ABDCB1 /* SignupFlowDocument.swift in Sources */,
 				1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */,
 				1D5AB2F122A794E100DB3B70 /* SetPinResponse.swift in Sources */,
+				1D29C84522A916E00092E3EB /* ChangeAddressRequestModel.swift in Sources */,
 				1D180D90229E769500FC3390 /* ATM.swift in Sources */,
 				1D11FE21221126B700234E6D /* CommonButton.swift in Sources */,
 				1DE6D94B22A0D34700014572 /* DisputeTransactionAPIRequest.swift in Sources */,
+				1D29C84122A916B00092E3EB /* ChangeAddressPresenter.swift in Sources */,
+				1D29C84F22A917440092E3EB /* ChangePhoneAPIRequest.swift in Sources */,
 				1D180D68229CF5AB00FC3390 /* TransferSuceessViewController.swift in Sources */,
 				1D180D92229E76B300FC3390 /* ATMLocation.swift in Sources */,
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
+				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
 				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,
 				1D055D55229C6FA00078CD33 /* ACHTransaction.swift in Sources */,
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
@@ -2632,6 +2698,7 @@
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
 				1D180D88229E761400FC3390 /* ATMFinderData.swift in Sources */,
 				1D055D24229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift in Sources */,
+				1D29C83F22A916A00092E3EB /* ChangePhonePresenter.swift in Sources */,
 				1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */,
 				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
@@ -2644,6 +2711,7 @@
 				1D055D4C229C38DE0078CD33 /* TransferConfirmationViewController.swift in Sources */,
 				1DE6D94722A0D30500014572 /* DisputeTransactionPresenter.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
+				1D29C85322A917650092E3EB /* ChangePhoneResponse.swift in Sources */,
 				1D055D22229BCA860078CD33 /* ResetPasswordRequestModel.swift in Sources */,
 				1D180DB0229FC45F00FC3390 /* AccountBusinessModel.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
