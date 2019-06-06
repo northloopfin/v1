@@ -30,7 +30,6 @@ PODS:
   - HockeySDK (5.1.4):
     - HockeySDK/DefaultLib (= 5.1.4)
   - HockeySDK/DefaultLib (5.1.4)
-  - INTULocationManager (4.3.2)
   - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (5.5.0)
   - MFSideMenu (0.5.5)
@@ -43,6 +42,9 @@ PODS:
     - Realm (= 3.15.0)
   - Repeat (0.5.7)
   - SVProgressHUD (2.2.5)
+  - SwiftyRSA (1.5.0):
+    - SwiftyRSA/ObjC (= 1.5.0)
+  - SwiftyRSA/ObjC (1.5.0)
   - ZDCChat (1.4.0):
     - ZDCChat/API (= 1.4.0)
     - ZDCChat/Localization (= 1.4.0)
@@ -71,7 +73,6 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - HockeySDK (~> 5.1.4)
-  - INTULocationManager
   - IQKeyboardManagerSwift
   - Kingfisher (~> 5.0)
   - MFSideMenu
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - RealmSwift
   - Repeat
   - SVProgressHUD
+  - SwiftyRSA
   - ZDCChat
   - ZendeskSDK (= 2.3.0)
 
@@ -94,7 +96,6 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - HockeySDK
-    - INTULocationManager
     - IQKeyboardManagerSwift
     - Kingfisher
     - MFSideMenu
@@ -104,6 +105,7 @@ SPEC REPOS:
     - RealmSwift
     - Repeat
     - SVProgressHUD
+    - SwiftyRSA
     - ZDCChat
     - ZendeskSDK
 
@@ -117,7 +119,6 @@ SPEC CHECKSUMS:
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
-  INTULocationManager: e5dc524611b0cd582f473bc56cc8c389adb2f338
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
@@ -127,9 +128,10 @@ SPEC CHECKSUMS:
   RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
   Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
   ZDCChat: 1def9764647bb81cf71aebd9df38aa4024c52d12
   ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
 
-PODFILE CHECKSUM: 1f8ef33f822906609d63c0950bf1ff23c31c5517
+PODFILE CHECKSUM: 3cd781647450fbd695cd4e90ce48ee21e11cd5c1
 
 COCOAPODS: 1.5.3

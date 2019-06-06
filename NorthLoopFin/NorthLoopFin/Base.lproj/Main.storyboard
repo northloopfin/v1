@@ -3089,7 +3089,7 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="sendBtn1Clicked:" destination="mjk-nN-hAn" eventType="touchUpInside" id="c2H-he-FGa"/>
+                                    <action selector="normalDeliveryClicked:" destination="mjk-nN-hAn" eventType="touchUpInside" id="Eho-yC-ALw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTl-4D-dbH" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
@@ -3111,7 +3111,7 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="sendBtn2Clicked:" destination="mjk-nN-hAn" eventType="touchUpInside" id="hnX-C4-C7A"/>
+                                    <action selector="expediteClicked:" destination="mjk-nN-hAn" eventType="touchUpInside" id="Eky-ea-hN9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard (4-5 business day $10)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-vC-JiS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
@@ -3170,7 +3170,7 @@ to your registered address</string>
                     </view>
                     <connections>
                         <outlet property="mainTitleLbl" destination="hqT-eN-CK5" id="fzf-sf-vs8"/>
-                        <outlet property="sendToBtn1" destination="ufj-57-cmI" id="dIa-fo-YlK"/>
+                        <outlet property="sendToBtn1" destination="ufj-57-cmI" id="5MG-dW-nTE"/>
                         <outlet property="sendToBtn2" destination="LTl-4D-dbH" id="Xpr-xm-wO4"/>
                         <outlet property="subTitleLbl" destination="YgC-WD-2ek" id="yvW-EU-IVg"/>
                     </connections>
@@ -3681,7 +3681,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="98.5" y="351" width="123" height="31"/>
+                                <rect key="frame" x="106.5" y="351" width="107" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
@@ -4365,6 +4365,77 @@ We’ve sent an email confirming.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsK-3M-HYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22672.5" y="-55.985915492957744"/>
+        </scene>
+        <!--Select2FA Mode View Controller-->
+        <scene sceneID="v12-oE-JE1">
+            <objects>
+                <viewController storyboardIdentifier="Select2FAModeViewController" id="qvj-PU-WQS" customClass="Select2FAModeViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j6y-hh-7K5" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="yeH-J3-h5f">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nt0-fi-LJa" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="402" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Drs-2k-Xhy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="PROCEED">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="proceedBtnClicked:" destination="qvj-PU-WQS" eventType="touchUpInside" id="hzH-eK-To8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCl-vv-uHM">
+                                <rect key="frame" x="25" y="167" width="270" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="J5k-Ab-Tof"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qvj-PU-WQS" id="eJO-D4-OQ1"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yeH-J3-h5f" firstAttribute="bottom" secondItem="Y8v-H4-N4x" secondAttribute="bottom" id="AAE-DI-q0j"/>
+                            <constraint firstItem="TCl-vv-uHM" firstAttribute="leading" secondItem="Y8v-H4-N4x" secondAttribute="leading" constant="25" id="ERN-Zq-W4x"/>
+                            <constraint firstItem="nt0-fi-LJa" firstAttribute="leading" secondItem="Y8v-H4-N4x" secondAttribute="leading" constant="25" id="OUW-2B-Gev"/>
+                            <constraint firstItem="Y8v-H4-N4x" firstAttribute="trailing" secondItem="TCl-vv-uHM" secondAttribute="trailing" constant="25" id="SI0-l6-tiF"/>
+                            <constraint firstItem="nt0-fi-LJa" firstAttribute="top" secondItem="TCl-vv-uHM" secondAttribute="bottom" constant="190" id="YDH-2w-FF9"/>
+                            <constraint firstItem="Y8v-H4-N4x" firstAttribute="trailing" secondItem="nt0-fi-LJa" secondAttribute="trailing" constant="25" id="ctf-gn-Tms"/>
+                            <constraint firstItem="yeH-J3-h5f" firstAttribute="leading" secondItem="Y8v-H4-N4x" secondAttribute="leading" id="dit-ap-fyg"/>
+                            <constraint firstItem="TCl-vv-uHM" firstAttribute="top" secondItem="Y8v-H4-N4x" secondAttribute="top" constant="147" id="kgg-LE-bCG"/>
+                            <constraint firstItem="yeH-J3-h5f" firstAttribute="top" secondItem="j6y-hh-7K5" secondAttribute="top" id="sIj-qB-Tf0"/>
+                            <constraint firstItem="Y8v-H4-N4x" firstAttribute="trailing" secondItem="yeH-J3-h5f" secondAttribute="trailing" id="z1d-cc-EVL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y8v-H4-N4x"/>
+                    </view>
+                    <connections>
+                        <outlet property="proceedBtn" destination="nt0-fi-LJa" id="0kI-cp-mRp"/>
+                        <outlet property="twoFAModeTextField" destination="TCl-vv-uHM" id="cyM-q5-zFl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfX-LE-psM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23329" y="-56"/>
         </scene>
         <!--Create AccountV2 View Controller-->
         <scene sceneID="FLu-si-ZuT">

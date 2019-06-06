@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyRSA
 
 class NewPinViewController: BaseViewController {
 
@@ -17,6 +18,9 @@ class NewPinViewController: BaseViewController {
     var presenter: SetPinPresenter!
 
     @IBAction func changeBtnClicked(_ sender: Any) {
+        let enyptedPin = self.encryptPin()
+        print(enyptedPin)
+        self.presenter.setPinRequest(pin: encryptPin())
     }
     
     override func viewDidLoad() {
@@ -69,6 +73,33 @@ class NewPinViewController: BaseViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SucessViewController") as! SucessViewController
         self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func encryptPin()->String{
+        let publicKeyString:String = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzxVLeRTf77kmG/42SdjjtRfaI/7GN4UoUBfxzN80gCyrjK+tHYJR7DKefC47fNyA2dGU7x3tu1wQRKOkjschbC3ZWF1mCqccUiHRPiGhH9VBsxLbAUCFAKOPZcBDCT7IhUdd6S23e99ewkb0c6pRk28u+kz+7ZB7d6Z/S+Em316zs0HqEnEaoUNFXtdTyW3EPuaqo0+p9daICRC44VbrTlzc+Y1A/CsiOcCCl4ske8scu/fWg0K3nybfn7IdO2smkzRwwGOc4uexBMnAkAyl0eQrqXZO4vis6ktmLFV4NpYsd0U2vvmuXFoA9XBcJHdbAww/TGwHq5RJ3505QSEK8QIDAQAB"
+        
+//        do {
+//            let jsonData = try jsonEncoder.encode(self.signupFlowData)
+//            let jsonString = String(data: jsonData, encoding: .utf8)
+//            print(jsonString!)
+//            //all fine with jsonData here
+//        } catch {
+//            //handle error
+//            print(error)
+//        }
+        var base64String = ""
+
+        do {
+            let publicKey = try PublicKey(pemNamed: publicKeyString)
+            let clearPin = self.newPin.text!
+            let clear = try ClearMessage(string: clearPin, using: .utf8)
+            let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
+            //let data = encrypted.data
+            base64String = encrypted.base64String
+        }catch{
+                print(error)
+        }
+        return base64String
     }
 }
 extension NewPinViewController:UITextFieldDelegate{

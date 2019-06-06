@@ -15,15 +15,18 @@ class LostCardViewController: BaseViewController {
     @IBOutlet weak var sendToBtn1: UIButtonWithSpacing!
     @IBOutlet weak var sendToBtn2: UIButtonWithSpacing!
     
-    @IBAction func sendBtn1Clicked(_ sender: Any) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+    var presenter:LostCardPresenter!
+
+    @IBAction func expediteClicked(_ sender: Any) {
+        self.presenter.sendLostCardRequest(sendToAPI: true)
     }
     
-    @IBAction func sendBtn2Clicked(_ sender: Any) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+    @IBAction func normalDeliveryClicked(_ sender: Any) {
+        self.presenter.sendLostCardRequest(sendToAPI: false)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = LostCardPresenter.init(delegate: self)
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Lost Card")
         self.prepareView()
@@ -38,5 +41,11 @@ class LostCardViewController: BaseViewController {
         self.sendToBtn2.titleLabel?.font=AppFonts.btnTitleCalibri18
         self.mainTitleLbl.font=AppFonts.mainTitleCalibriBold25
         self.subTitleLbl.font=AppFonts.calibri15
+    }
+}
+
+extension LostCardViewController:LostCardDelegates{
+    func didSentLostCardRequest() {
+        
     }
 }

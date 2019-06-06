@@ -104,6 +104,7 @@
 		1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */; };
 		1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */; };
 		1D259DA8228BE39B0053D0AB /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D259DA7228BE39B0053D0AB /* ID.swift */; };
+		1D29C83322A8F0AD0092E3EB /* LostCardDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */; };
 		1D3538382223E54F00716A94 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3538372223E54E00716A94 /* country.json */; };
 		1D35383B2223E58E00716A94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35383A2223E58E00716A94 /* Country.swift */; };
 		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
@@ -440,6 +441,7 @@
 		1D259DA3228BE1630053D0AB /* TransactionDetailRecipient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailRecipient.swift; sourceTree = "<group>"; };
 		1D259DA5228BE18F0053D0AB /* RecipientMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientMeta.swift; sourceTree = "<group>"; };
 		1D259DA7228BE39B0053D0AB /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
+		1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardDelegates.swift; sourceTree = "<group>"; };
 		1D3538372223E54E00716A94 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		1D35383A2223E58E00716A94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
@@ -1001,6 +1003,37 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1D29C83422A8F5790092E3EB /* Change Phone Number */ = {
+			isa = PBXGroup;
+			children = (
+				1D29C83722A8F5960092E3EB /* Presenter */,
+				1D29C83622A8F5900092E3EB /* Model */,
+				1D29C83522A8F5890092E3EB /* View */,
+			);
+			path = "Change Phone Number";
+			sourceTree = "<group>";
+		};
+		1D29C83522A8F5890092E3EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D29C83622A8F5900092E3EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D29C83722A8F5960092E3EB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		1D3538392223E56600716A94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1297,6 +1330,7 @@
 			isa = PBXGroup;
 			children = (
 				1D72718921F059610084A57E /* LostCardViewController.swift */,
+				1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1352,6 +1386,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D29C83422A8F5790092E3EB /* Change Phone Number */,
 				1D5AB30022A7B51700DB3B70 /* 2fa */,
 				1DE6D94022A0D1DC00014572 /* Dispute Transaction */,
 				1D180D7D229E758A00FC3390 /* AtmFinder */,
@@ -2282,7 +2317,6 @@
 				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GiFHUD-Swift/GiFHUD_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
@@ -2292,6 +2326,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
 				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskCoreSDK.framework",
 				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskProviderSDK.framework",
 				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/4.2.1/ZendeskSDK.framework",
@@ -2304,7 +2339,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GiFHUD_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
@@ -2314,6 +2348,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskProviderSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskSDK.framework",
@@ -2437,6 +2472,7 @@
 				1D5AB2DA22A63C1200DB3B70 /* DisputeTransactionResponse.swift in Sources */,
 				1D165F4F222D18AA00D06914 /* StorageHelper.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
+				1D29C83322A8F0AD0092E3EB /* LostCardDelegates.swift in Sources */,
 				1D055D3C229C009B0078CD33 /* LinkACHData.swift in Sources */,
 				1D0C2ADE22045EAB00527FAB /* User.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,

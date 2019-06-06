@@ -18,7 +18,7 @@ class SetPinPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func setPinRequest(requestBody:SetPinRequestModel){
+    func setPinRequest(pin:String){
         
         // convert requestbody to json string and assign to request model request param
         
@@ -28,7 +28,7 @@ class SetPinPresenter:ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
-            .addRequestQueryParams(key: "card_pin", value: "" as AnyObject)
+            .addRequestQueryParams(key: "card_pin", value: pin as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
         

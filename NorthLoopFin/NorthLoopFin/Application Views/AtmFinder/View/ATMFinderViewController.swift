@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import INTULocationManager
+import CoreLocation
 
 class ATMFinderViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
