@@ -55,6 +55,7 @@ class LoginPresenter: ResponseCallback{
         let user:User = User.init(username: data.basicInformation.username, email: data.basicInformation.email, accesstoken: data.accessToken)
         user.authKey=data.oAuthKey
         user.userID=data.userID
+        user.name=data.basicInformation.name
         UserInformationUtility.sharedInstance.saveUser(model: user)
     }
 }

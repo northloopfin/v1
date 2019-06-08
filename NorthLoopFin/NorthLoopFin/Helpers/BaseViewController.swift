@@ -27,6 +27,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     
     func setNavigationBarTitle(title:String){
         self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
+        self.navigationItem.title = title
         self.navigationController?.navigationBar.topItem?.title = title
     }
     

@@ -56,8 +56,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Philip" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="100" width="167" height="24.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Guest" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="100" width="169" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="20"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.26666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -81,8 +81,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8,356.34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-6N-ViP" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="179.5" y="10" width="65.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-6N-ViP" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="228.5" y="10" width="16.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1320,11 +1320,10 @@ W1s 2Bx,UK</string>
                                         <rect key="frame" x="21" y="12" width="60" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="RPZ-fw-VDo"/>
-                                            <constraint firstAttribute="height" constant="45" id="gfd-WA-9af"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQY-UN-drV" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="25.5" width="92.5" height="18.5"/>
+                                        <rect key="frame" x="125" y="25.5" width="92.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1340,10 +1339,13 @@ W1s 2Bx,UK</string>
                                     <constraint firstItem="uwR-7b-iPB" firstAttribute="centerY" secondItem="6PX-9n-Y8b" secondAttribute="centerY" id="1UA-qm-U4p"/>
                                     <constraint firstAttribute="trailing" secondItem="iFs-V2-k3t" secondAttribute="trailing" id="1Uh-qW-yCW"/>
                                     <constraint firstAttribute="bottom" secondItem="iFs-V2-k3t" secondAttribute="bottom" id="FnO-zQ-B9q"/>
+                                    <constraint firstItem="iFs-V2-k3t" firstAttribute="height" secondItem="6PX-9n-Y8b" secondAttribute="height" id="FuF-W4-Xow"/>
                                     <constraint firstItem="vQY-UN-drV" firstAttribute="centerY" secondItem="6PX-9n-Y8b" secondAttribute="centerY" id="GNJ-IV-xwm"/>
                                     <constraint firstAttribute="height" constant="69" id="Gci-Q9-ybF"/>
                                     <constraint firstItem="iFs-V2-k3t" firstAttribute="leading" secondItem="uwR-7b-iPB" secondAttribute="trailing" constant="15" id="LGU-gQ-nrQ"/>
                                     <constraint firstItem="iFs-V2-k3t" firstAttribute="top" secondItem="6PX-9n-Y8b" secondAttribute="top" id="P3t-Q3-m3X"/>
+                                    <constraint firstItem="uwR-7b-iPB" firstAttribute="height" secondItem="6PX-9n-Y8b" secondAttribute="height" multiplier="0.652" id="Prc-cH-8Qs"/>
+                                    <constraint firstItem="vQY-UN-drV" firstAttribute="height" secondItem="6PX-9n-Y8b" secondAttribute="height" multiplier="0.268" id="R7f-Ld-hXt"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vQY-UN-drV" secondAttribute="trailing" constant="108.5" id="YRR-x6-TCl"/>
                                     <constraint firstItem="uwR-7b-iPB" firstAttribute="leading" secondItem="6PX-9n-Y8b" secondAttribute="leading" constant="21" id="jDl-tD-tmL"/>
                                     <constraint firstItem="vQY-UN-drV" firstAttribute="leading" secondItem="uwR-7b-iPB" secondAttribute="trailing" constant="44" id="mTQ-A2-ctT"/>
@@ -1448,6 +1450,7 @@ W1s 2Bx,UK</string>
                         <outlet property="scanBackView" destination="6PX-9n-Y8b" id="ene-yd-VfO"/>
                         <outlet property="scanFrontView" destination="d0h-xW-A7B" id="hRR-vU-Ihs"/>
                         <outlet property="selectYourIDLbl" destination="c8A-3Y-RvI" id="FKd-cN-bcm"/>
+                        <outlet property="uploadImage2HeightConstraint" destination="Gci-Q9-ybF" id="QUo-OY-KLP"/>
                         <outlet property="uploadImage3" destination="KH5-E1-Z8N" id="fUm-3U-WKN"/>
                         <outlet property="uploadImage3HeightConstraint" destination="vqA-YZ-lyd" id="2eh-af-Yn5"/>
                         <outlet property="uploadImageBackLbl" destination="vQY-UN-drV" id="bd4-RW-K6X"/>
@@ -3037,7 +3040,7 @@ to your registered address</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Problem! We’ll send you a new one pronto!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgC-WD-2ek" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't worry! We'll send you a new one immediately!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgC-WD-2ek" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="25" y="236" width="270" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ntK-DL-UyW"/>
@@ -3093,7 +3096,7 @@ to your registered address</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTl-4D-dbH" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="400" width="270" height="45"/>
+                                <rect key="frame" x="25" y="410" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="qKU-Po-BKB"/>
@@ -3114,10 +3117,10 @@ to your registered address</string>
                                     <action selector="expediteClicked:" destination="mjk-nN-hAn" eventType="touchUpInside" id="Eky-ea-hN9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard (4-5 business day $10)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-vC-JiS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="348" width="270" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard (8-10 business days) (1 free replacement per year)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-vC-JiS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="348" width="270" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="RM1-Hi-Ags"/>
+                                    <constraint firstAttribute="height" constant="32" id="RM1-Hi-Ags"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="13"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3128,8 +3131,8 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rush (1 business day $40)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti9-O3-QCt" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="449" width="270" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rush (Overnight Shipping) ($20)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti9-O3-QCt" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="459" width="270" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="ANl-Lk-hEq"/>
                                 </constraints>
@@ -3142,12 +3145,25 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X54-Nz-Uu6">
+                                <rect key="frame" x="34" y="525" width="252" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iPo-sf-QKk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                <state key="normal" title="Need cash today? Chat with us!">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chatWithUsClicked:" destination="mjk-nN-hAn" eventType="touchUpInside" id="nTV-B2-nhq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ti9-O3-QCt" firstAttribute="leading" secondItem="QlR-ho-U1e" secondAttribute="leading" constant="25" id="30j-Ip-E68"/>
                             <constraint firstItem="QlR-ho-U1e" firstAttribute="trailing" secondItem="YgC-WD-2ek" secondAttribute="trailing" constant="25" id="6DY-VO-byk"/>
-                            <constraint firstItem="LTl-4D-dbH" firstAttribute="top" secondItem="v5b-vC-JiS" secondAttribute="bottom" constant="36" id="7Ow-XH-Pyk"/>
+                            <constraint firstItem="LTl-4D-dbH" firstAttribute="top" secondItem="v5b-vC-JiS" secondAttribute="bottom" constant="30" id="7Ow-XH-Pyk"/>
                             <constraint firstItem="hqT-eN-CK5" firstAttribute="top" secondItem="em6-rz-lSf" secondAttribute="bottom" constant="42" id="IKf-5w-TEf"/>
                             <constraint firstItem="ti9-O3-QCt" firstAttribute="top" secondItem="LTl-4D-dbH" secondAttribute="bottom" constant="4" id="IU0-Xp-sGk"/>
                             <constraint firstItem="QlR-ho-U1e" firstAttribute="trailing" secondItem="ufj-57-cmI" secondAttribute="trailing" constant="25" id="LS2-y8-Jsd"/>
@@ -3159,12 +3175,15 @@ to your registered address</string>
                             <constraint firstItem="ufj-57-cmI" firstAttribute="leading" secondItem="QlR-ho-U1e" secondAttribute="leading" constant="25" id="aV6-wJ-vli"/>
                             <constraint firstItem="QlR-ho-U1e" firstAttribute="trailing" secondItem="LTl-4D-dbH" secondAttribute="trailing" constant="25" id="hFE-0a-7Mz"/>
                             <constraint firstItem="v5b-vC-JiS" firstAttribute="top" secondItem="ufj-57-cmI" secondAttribute="bottom" constant="2" id="liD-Dh-cLU"/>
+                            <constraint firstItem="QlR-ho-U1e" firstAttribute="bottom" secondItem="X54-Nz-Uu6" secondAttribute="bottom" constant="13" id="lzB-nr-wkm"/>
                             <constraint firstItem="hqT-eN-CK5" firstAttribute="leading" secondItem="QlR-ho-U1e" secondAttribute="leading" constant="25" id="p5y-Tc-4eJ"/>
                             <constraint firstItem="LTl-4D-dbH" firstAttribute="leading" secondItem="QlR-ho-U1e" secondAttribute="leading" constant="25" id="qeg-g6-72x"/>
                             <constraint firstItem="em6-rz-lSf" firstAttribute="top" secondItem="QlR-ho-U1e" secondAttribute="top" constant="58" id="qqz-pj-Nr4"/>
                             <constraint firstItem="QlR-ho-U1e" firstAttribute="trailing" secondItem="ti9-O3-QCt" secondAttribute="trailing" constant="25" id="tWP-Pu-jZ3"/>
+                            <constraint firstItem="QlR-ho-U1e" firstAttribute="trailing" secondItem="X54-Nz-Uu6" secondAttribute="trailing" constant="34" id="vFf-sK-4BE"/>
                             <constraint firstItem="ufj-57-cmI" firstAttribute="top" secondItem="YgC-WD-2ek" secondAttribute="bottom" constant="25" id="vY6-Dm-KUe"/>
                             <constraint firstItem="QlR-ho-U1e" firstAttribute="trailing" secondItem="v5b-vC-JiS" secondAttribute="trailing" constant="25" id="xDB-lt-xc7"/>
+                            <constraint firstItem="X54-Nz-Uu6" firstAttribute="leading" secondItem="QlR-ho-U1e" secondAttribute="leading" constant="34" id="yoj-mp-mq1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QlR-ho-U1e"/>
                     </view>
@@ -3629,7 +3648,7 @@ up and site back and relax.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createAccountClicked:" destination="Osz-9E-BWI" eventType="touchUpInside" id="lAQ-Mw-JHl"/>
+                                    <action selector="createAccountClicked:" destination="Osz-9E-BWI" eventType="touchUpInside" id="VSE-4v-XJd"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Qe-dSd">
@@ -3681,13 +3700,13 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="106.5" y="351" width="107" height="31"/>
+                                <rect key="frame" x="106" y="351" width="108" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                <state key="normal" title="Forget Password?">
+                                <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -3746,7 +3765,7 @@ up and site back and relax.</string>
                         <viewLayoutGuide key="safeArea" id="EmF-Hm-mGN"/>
                     </view>
                     <connections>
-                        <outlet property="createAccountBtn" destination="PhY-OD-yLW" id="9tw-1K-lFQ"/>
+                        <outlet property="createAccountBtn" destination="PhY-OD-yLW" id="yug-YX-26u"/>
                         <outlet property="emailTextField" destination="fgQ-Qe-dSd" id="zTa-Qz-OPL"/>
                         <outlet property="forgetPasswordBtn" destination="CAg-OH-9h8" id="29G-OU-fnG"/>
                         <outlet property="loginBtn" destination="gy8-Hi-yGt" id="n0D-4D-JDr"/>
@@ -3767,12 +3786,11 @@ up and site back and relax.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-DY-J8e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-DY-J8e">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ZT-iq-rpA">
-                                <rect key="frame" x="25" y="102" width="270" height="50"/>
+                                <rect key="frame" x="25" y="151" width="270" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Gs8-Aw-4GM"/>
@@ -3785,7 +3803,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ka-4o-rgf" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="242" width="270" height="45"/>
+                                <rect key="frame" x="25" y="291" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.63137254899999995" green="0.58431372550000005" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="xYi-pM-AQa"/>
@@ -3806,26 +3824,40 @@ up and site back and relax.</string>
                                     <action selector="sendLinkBtnClicked:" destination="lLm-xF-ncz" eventType="touchUpInside" id="Zxr-cW-59g"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email and we'll email you a new password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-rB-OBx">
+                                <rect key="frame" x="25" y="69" width="270" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5DT-rB-OBx" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" constant="25" id="1Em-Ox-CX5"/>
                             <constraint firstItem="gcI-tM-EFO" firstAttribute="trailing" secondItem="1ka-4o-rgf" secondAttribute="trailing" constant="25" id="Alo-U3-U5k"/>
-                            <constraint firstItem="6ZT-iq-rpA" firstAttribute="top" secondItem="gcI-tM-EFO" secondAttribute="top" constant="82" id="Itb-B3-TKY"/>
+                            <constraint firstItem="6ZT-iq-rpA" firstAttribute="top" secondItem="5DT-rB-OBx" secondAttribute="bottom" constant="41" id="Fgh-pG-4KD"/>
+                            <constraint firstItem="gcI-tM-EFO" firstAttribute="trailing" secondItem="5DT-rB-OBx" secondAttribute="trailing" constant="25" id="GbE-Rl-y13"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="top" secondItem="HKi-4Y-ycC" secondAttribute="top" id="Jr6-hs-TrK"/>
                             <constraint firstItem="gcI-tM-EFO" firstAttribute="trailing" secondItem="6ZT-iq-rpA" secondAttribute="trailing" constant="25" id="M4A-A0-pp7"/>
                             <constraint firstItem="6ZT-iq-rpA" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" constant="25" id="Mgi-k5-Elx"/>
                             <constraint firstItem="1ka-4o-rgf" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" constant="25" id="UOO-Nm-k0g"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="bottom" secondItem="gcI-tM-EFO" secondAttribute="bottom" id="VQl-ZV-QpQ"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="leading" secondItem="gcI-tM-EFO" secondAttribute="leading" id="WKh-SB-O2p"/>
+                            <constraint firstItem="Otc-DY-J8e" firstAttribute="trailing" secondItem="gcI-tM-EFO" secondAttribute="trailing" id="dcq-ap-Huv"/>
+                            <constraint firstItem="5DT-rB-OBx" firstAttribute="top" secondItem="gcI-tM-EFO" secondAttribute="top" constant="49" id="iz0-7N-gOF"/>
                             <constraint firstItem="1ka-4o-rgf" firstAttribute="top" secondItem="6ZT-iq-rpA" secondAttribute="bottom" constant="90" id="lzQ-0c-mvL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gcI-tM-EFO"/>
                     </view>
                     <connections>
                         <outlet property="emailTextfield" destination="6ZT-iq-rpA" id="p2k-Nf-z8K"/>
+                        <outlet property="messageLbl" destination="5DT-rB-OBx" id="cv1-16-dNh"/>
                         <outlet property="sendLinkBtn" destination="1ka-4o-rgf" id="gsT-Bo-Ge1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjn-gR-whm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18834" y="-57"/>
+            <point key="canvasLocation" x="18832.5" y="-57.04225352112676"/>
         </scene>
         <!--Image Preview View Controller-->
         <scene sceneID="Esr-cf-hxF">

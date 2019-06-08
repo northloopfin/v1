@@ -80,6 +80,8 @@ struct AppConstants{
         case HOME = "Home"
         case SETPIN = "Set Pin"
         case CHANGEPHONE = "ChangePhone"
+        case CHANGEADDRESS = "ChangeAddress"
+
     }
     
     enum SideMenuOptions:String {
@@ -132,6 +134,8 @@ struct AppConstants{
         case I20="I-20 (3 pages)"
         case ENROLMENTLETTER = "Enrollment Letter"
         case USIDTYPE = "US ID Type"
+        case F1VISA = "F-1 Visa"
+        case ADDRESSPROOF = "Address Proof"
     }
     
     enum States:String {

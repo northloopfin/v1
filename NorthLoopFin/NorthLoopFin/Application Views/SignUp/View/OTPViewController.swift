@@ -245,4 +245,9 @@ extension OTPViewController:TwoFAVerifyDelegates{
         let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePhoneViewController") as! ChangePhoneViewController
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    func moveToChangeAddress(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePhoneViewController") as! ChangePhoneViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }

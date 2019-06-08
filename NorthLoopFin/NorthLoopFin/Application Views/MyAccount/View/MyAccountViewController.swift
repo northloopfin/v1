@@ -138,4 +138,10 @@ extension MyAccountViewController:TwoFADelegates{
         vc.screenWhichInitiatedOTP = AppConstants.Screens.CHANGEPHONE
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    func moveTo2FA(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "Select2FAModeViewController") as! Select2FAModeViewController
+        vc.screenWhichInitiated = AppConstants.Screens.CHANGEADDRESS
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }

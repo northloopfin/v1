@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZDCChat
 
 class LostCardViewController: BaseViewController {
     
@@ -15,6 +16,13 @@ class LostCardViewController: BaseViewController {
     @IBOutlet weak var sendToBtn1: UIButtonWithSpacing!
     @IBOutlet weak var sendToBtn2: UIButtonWithSpacing!
     
+    @IBAction func chatWithUsClicked(_ sender: Any) {
+        // Pushes the chat widget onto the navigation controller
+        ZDCChat.start(in: navigationController, withConfig: nil)
+        
+        // Hides the back button because we are in a tab controller
+        ZDCChat.instance().chatViewController.navigationItem.hidesBackButton = false
+    }
     var presenter:LostCardPresenter!
 
     @IBAction func expediteClicked(_ sender: Any) {

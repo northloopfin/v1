@@ -46,10 +46,15 @@ class LoginViewController: BaseViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarTitle(title: "")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
-        self.setNavigationBarTitle(title: "Login")
+        self.setNavigationBarTitle(title: "")
         self.prepareView()
        // manager=FirebaseManager.init(delegate: self)
         self.loginPresenter = LoginPresenter.init(delegate: self)
