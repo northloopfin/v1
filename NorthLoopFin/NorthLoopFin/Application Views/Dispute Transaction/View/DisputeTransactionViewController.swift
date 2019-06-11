@@ -15,18 +15,18 @@ class DisputeTransactionViewController: BaseViewController {
     @IBOutlet weak var reportBtn: UIButton!
     var presenter:DisputeTransactionPresenter!
     var transaction:IndividualTransaction?
-
-    @IBAction func reportBtnClicked(_ sender: Any) {
+    @IBAction func reportClicked(_ sender: Any) {
         if let _ = self.transaction{
             self.presenter.sendDisputeIssue(transactionId: self.transaction?.id ?? "", reason: self.issueTextField.text ?? "")
-
+            
         }
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reportBtn.isEnabled=false
         self.presenter = DisputeTransactionPresenter.init(delegate: self)
+        self.prepareView()
         // Do any additional setup after loading the view.
     }
     
@@ -53,7 +53,7 @@ class DisputeTransactionViewController: BaseViewController {
         let textfieldCorber = 5.0
         
        // self.dateTextField.applyAttributesWithValues(placeholderText: "Amount*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.issueTextField.applyAttributesWithValues(placeholderText: "Nickname*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.issueTextField.applyAttributesWithValues(placeholderText: "Type in issue here*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         //self.dateTextField.setLeftPaddingPoints(19)
         self.issueTextField.setLeftPaddingPoints(19)

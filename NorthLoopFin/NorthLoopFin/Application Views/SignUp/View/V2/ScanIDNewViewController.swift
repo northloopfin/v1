@@ -49,7 +49,7 @@ class ScanIDNewViewController: BaseViewController {
         super.viewDidLoad()
         self.checkForSSN()
         self.prepareView()
-        //self.checkDBForImages()
+        self.checkDBForImages()
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
@@ -200,10 +200,12 @@ class ScanIDNewViewController: BaseViewController {
         //change background color and other UI
         let selectedButton=sender as! CommonButton
         if selectedButton.isBtnSelected{
-            let model = self.modelArray[selectedButton.tag]
-            self.imageArray = model.images
-            self.selectedOption = model.type
-            self.setImages()
+            if self.modelArray.count<=selectedButton.tag{
+                let model = self.modelArray[selectedButton.tag]
+                self.imageArray = model.images
+                self.selectedOption = model.type
+                self.setImages()
+            }
         }else{
             selectedButton.isBtnSelected = true
             //get button from array and update its selection state

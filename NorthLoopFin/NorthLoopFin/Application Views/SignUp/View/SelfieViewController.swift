@@ -74,7 +74,7 @@ class SelfieViewController: BaseViewController {
             self.selfieImageView.tappable=true
             self.addBorderToOpenCameraView(view: self.openCameraView)
             self.selfieImageView.image=image
-            //self.saveImageInDB(image: image)
+            self.saveImageInDB(image: image)
         }
     }
     
@@ -144,6 +144,6 @@ extension SelfieViewController:ImagePreviewDelegate{
     func imageUpdatedFor(index: Int, image:UIImage){
         self.selfieImage=image
         self.selfieImageView.image=image
-        //self.saveImageInDB(image: image)
+        self.saveImageInDB(image: image)
     }
 }

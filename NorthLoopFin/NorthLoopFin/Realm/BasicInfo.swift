@@ -12,21 +12,20 @@ import RealmSwift
 
 class BasicInfo: Object {
     @objc dynamic var email = ""
-    @objc dynamic var password = ""
-    @objc dynamic var confirmPassword = ""
     @objc dynamic var firstname = ""
     @objc dynamic var lastname = ""
+    @objc dynamic var ssn = ""
+    @objc dynamic var citizenShip = ""
     @objc dynamic var phone = ""
+    
+    @objc dynamic var passportNumber = ""
+    @objc dynamic var DOB = ""
+    @objc dynamic var university = ""
+
     @objc dynamic var streetAddress = ""
-    @objc dynamic var country = ""
-    @objc dynamic var phoneSecondary = ""
-    @objc dynamic var countryCode = ""
+    @objc dynamic var houseNumber = ""
+    @objc dynamic var state = ""
     @objc dynamic var city = ""
     @objc dynamic var zip = ""
-    @objc dynamic var otp1 = ""
-    @objc dynamic var otp2 = ""
-    @objc dynamic var otp3 = ""
-    @objc dynamic var otp4 = ""
-
 
 }

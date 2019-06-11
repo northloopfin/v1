@@ -330,6 +330,7 @@
 		297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB9F821B65240008D60CE /* AppUtility.swift */; };
 		2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F421B64EE0008D60CE /* Staging.xcconfig */; };
 		2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F521B64EF4008D60CE /* Production.xcconfig */; };
+		4B08FFB922AF705100ABAFF3 /* UpdateAddressRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */; };
 		4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */; };
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
 		4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */; };
@@ -692,6 +693,8 @@
 		3E77A97A965E68B582769403 /* Pods-NorthLoopFinTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.production.xcconfig"; sourceTree = "<group>"; };
 		3F7D083137E81A93B7BC6FB3 /* Pods-NorthLoopFinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		44B1E2C4395260AA2C23AFF5 /* Pods-NorthLoopFin.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.staging.xcconfig"; sourceTree = "<group>"; };
+		4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressRequestBody.swift; sourceTree = "<group>"; };
+		4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NorthLoopFin.entitlements; sourceTree = "<group>"; };
 		4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionRequestModel.swift; sourceTree = "<group>"; };
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
 		4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionBusinessModel.swift; sourceTree = "<group>"; };
@@ -1084,6 +1087,7 @@
 				1D29C84622A916F40092E3EB /* ChangeAddressAPIRequest.swift */,
 				1D29C84822A917050092E3EB /* ChangeAddressBusinessModel.swift */,
 				1D29C84A22A917210092E3EB /* ChangeAddressResponse.swift */,
+				4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */,
 			);
 			path = ChangeAddress;
 			sourceTree = "<group>";
@@ -1463,7 +1467,6 @@
 				1DF64E3021E8B3F2008774CE /* MyAccount */,
 				1DF64E2C21E8B3C0008774CE /* Transfer */,
 				1DF64E2821E8B37E008774CE /* Settings */,
-				1DF64E1E21E617F0008774CE /* SideMenu */,
 				1DF64E1221E5D51A008774CE /* My Card */,
 				1D1E5A6D21C9C76B0036E998 /* SignUp */,
 				1D51758321C5008600BCF9E4 /* TransactionDetail */,
@@ -1753,6 +1756,7 @@
 		1DF64E2821E8B37E008774CE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				1DF64E1E21E617F0008774CE /* SideMenu */,
 				1DF64E2921E8B38B008774CE /* View */,
 			);
 			path = Settings;
@@ -1904,6 +1908,7 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */,
 				1D180D6B229E421D00FC3390 /* Zendesk */,
 				1D165F49222D189B00D06914 /* Realm */,
 				1D3538372223E54E00716A94 /* country.json */,
@@ -2145,6 +2150,14 @@
 				TargetAttributes = {
 					297FB99921B51A32008D60CE = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					297FB9AD21B51A34008D60CE = {
 						CreatedOnToolsVersion = 10.1;
@@ -2462,6 +2475,7 @@
 				4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
 				1D259DA8228BE39B0053D0AB /* ID.swift in Sources */,
+				4B08FFB922AF705100ABAFF3 /* UpdateAddressRequestBody.swift in Sources */,
 				1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
@@ -2842,9 +2856,10 @@
 			baseConfigurationReference = E9F864D4E9967EEA4C8CB382 /* Pods-NorthLoopFin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3QD6LL9PP;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -2872,9 +2887,10 @@
 			baseConfigurationReference = C7CD86218D875917CB75B3D8 /* Pods-NorthLoopFin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3QD6LL9PP;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3048,10 +3064,11 @@
 			baseConfigurationReference = 44B1E2C4395260AA2C23AFF5 /* Pods-NorthLoopFin.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = J3QD6LL9PP;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3184,9 +3201,10 @@
 			baseConfigurationReference = AFEBC3A71689B1C6213DC81C /* Pods-NorthLoopFin.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3QD6LL9PP;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",

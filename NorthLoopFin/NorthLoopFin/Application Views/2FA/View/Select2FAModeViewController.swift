@@ -21,6 +21,10 @@ class Select2FAModeViewController: BaseViewController {
     let dropDownDataSource:[String]=["Email","Phone Number"]
     //Presenter to call api
     var presenter:TwoFAPresenter!
+    
+    //var used to keep track of user selection
+    var isEmailSelected:Bool=false
+    var isPhoneSelected:Bool=false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,13 @@ class Select2FAModeViewController: BaseViewController {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.twoFAModeTextField.text=item
+            if item=="Email"{
+                self.isPhoneSelected=false
+                self.isEmailSelected=true
+            }else{
+                self.isEmailSelected=false
+                self.isPhoneSelected=true
+            }
             self.dropDown.hide()
             self.checkForMandatoryFields()
         }
@@ -69,7 +80,7 @@ class Select2FAModeViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.twoFAModeTextField.applyAttributesWithValues(placeholderText: "Nickname*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.twoFAModeTextField.applyAttributesWithValues(placeholderText: "Select where to send OTP*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.twoFAModeTextField.setLeftPaddingPoints(19)
     }
@@ -83,6 +94,8 @@ class Select2FAModeViewController: BaseViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
         vc.screenWhichInitiatedOTP = self.screenWhichInitiated
+        vc.isEmailSelectedForOTP=self.isEmailSelected
+        vc.isPhoneSelectedForOTP=self.isPhoneSelected
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }

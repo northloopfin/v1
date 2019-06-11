@@ -238,7 +238,8 @@ extension HomeViewController:HomeTableCellDelegate{
     func moveToDisputeTransactionScreen(data:IndividualTransaction){
         //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
+        vc.transaction = data
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

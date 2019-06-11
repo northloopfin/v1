@@ -582,7 +582,7 @@ W1s 2Bx,UK</string>
                                                                 <fragment content="NEXT">
                                                                     <attributes>
                                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <font key="NSFont" size="18" name="Calibri"/>
+                                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
@@ -745,10 +745,10 @@ W1s 2Bx,UK</string>
                                 <rect key="frame" x="0.0" y="0.5" width="320" height="229.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobileVerifiaction" translatesAutoresizingMaskIntoConstraints="NO" id="5B0-xc-CxS">
-                                        <rect key="frame" x="29" y="24.5" width="67" height="97"/>
+                                        <rect key="frame" x="29" y="25.5" width="67" height="97"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the code we've sent to your number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kLs-Vu-llU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="130" width="274" height="50"/>
+                                        <rect key="frame" x="23" y="131" width="274" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pxh-vC-DR6"/>
                                         </constraints>
@@ -762,7 +762,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent to 123 673 9875" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-Uw-mz1">
-                                        <rect key="frame" x="29" y="192.5" width="155.5" height="22"/>
+                                        <rect key="frame" x="29" y="193.5" width="173.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                         <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -788,7 +788,7 @@ W1s 2Bx,UK</string>
                                         <rect key="frame" x="47" y="122" width="226" height="69.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbe-SA-efE" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="49" width="54.5" height="22"/>
+                                                <rect key="frame" x="82.5" y="49" width="61.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2493,7 +2493,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5S-gV-5I7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7650" y="-45"/>
+            <point key="canvasLocation" x="7628" y="-45"/>
         </scene>
         <!--New Pin View Controller-->
         <scene sceneID="8qZ-V1-BUB">
@@ -2514,7 +2514,7 @@ to your registered address</string>
                                     <constraint firstAttribute="height" constant="45" id="WFC-9x-owU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
-                                <state key="normal" title="CHANGE">
+                                <state key="normal" title="SET">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -2555,29 +2555,13 @@ to your registered address</string>
                                     <outlet property="delegate" destination="sff-i2-O9w" id="aeI-Ol-fuu"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udt-SE-HuL">
-                                <rect key="frame" x="25" y="242" width="270" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="zY2-B7-x3V"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="password"/>
-                                <connections>
-                                    <outlet property="delegate" destination="sff-i2-O9w" id="CYD-Vx-i1X"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y1a-dd-Qsu" firstAttribute="top" secondItem="ulN-dL-jkL" secondAttribute="top" constant="82" id="0pW-Lx-kAX"/>
-                            <constraint firstItem="Rqx-Y3-oRl" firstAttribute="top" secondItem="Udt-SE-HuL" secondAttribute="bottom" constant="78" id="5BA-zm-9Rb"/>
-                            <constraint firstItem="Udt-SE-HuL" firstAttribute="leading" secondItem="GBd-9D-nEq" secondAttribute="leading" id="5gf-j0-oMU"/>
                             <constraint firstItem="Y1a-dd-Qsu" firstAttribute="leading" secondItem="ulN-dL-jkL" secondAttribute="leading" constant="25" id="79h-TA-pWC"/>
-                            <constraint firstItem="Udt-SE-HuL" firstAttribute="trailing" secondItem="GBd-9D-nEq" secondAttribute="trailing" id="JbR-G5-bfY"/>
+                            <constraint firstItem="Rqx-Y3-oRl" firstAttribute="top" secondItem="GBd-9D-nEq" secondAttribute="bottom" constant="148" id="AF8-M7-sqE"/>
                             <constraint firstItem="ulN-dL-jkL" firstAttribute="trailing" secondItem="GBd-9D-nEq" secondAttribute="trailing" constant="25" id="N72-7E-m9j"/>
-                            <constraint firstItem="Udt-SE-HuL" firstAttribute="top" secondItem="GBd-9D-nEq" secondAttribute="bottom" constant="20" id="Vqj-Kg-D8O"/>
                             <constraint firstItem="Rqx-Y3-oRl" firstAttribute="leading" secondItem="ulN-dL-jkL" secondAttribute="leading" constant="25" id="WZ8-4T-24K"/>
                             <constraint firstItem="GBd-9D-nEq" firstAttribute="top" secondItem="Y1a-dd-Qsu" secondAttribute="bottom" constant="20" id="Xsf-Ma-ZHR"/>
                             <constraint firstItem="ulN-dL-jkL" firstAttribute="trailing" secondItem="Y1a-dd-Qsu" secondAttribute="trailing" constant="25" id="eok-3i-5JE"/>
@@ -2588,9 +2572,8 @@ to your registered address</string>
                     </view>
                     <connections>
                         <outlet property="changeBtn" destination="Rqx-Y3-oRl" id="ISM-KE-XV5"/>
-                        <outlet property="confirmPin" destination="Udt-SE-HuL" id="oaQ-QR-ddj"/>
-                        <outlet property="currentPin" destination="Y1a-dd-Qsu" id="fHm-ok-5nq"/>
-                        <outlet property="newPin" destination="GBd-9D-nEq" id="7Ty-s0-bnE"/>
+                        <outlet property="confirmPin" destination="GBd-9D-nEq" id="wvk-KI-lYX"/>
+                        <outlet property="newPin" destination="Y1a-dd-Qsu" id="3iJ-Hp-6z1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UU-bK-2q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4330,6 +4313,7 @@ We’ve sent an email confirming.</string>
         <!--Dispute Transaction View Controller-->
         <scene sceneID="Y7M-Vh-Oi7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsK-3M-HYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DisputeTransactionViewController" id="SaN-5F-KIp" customClass="DisputeTransactionViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0X-9r-ao6" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -4338,11 +4322,11 @@ We’ve sent an email confirming.</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-Ll-KA8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oed-09-IJz" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="402" width="270" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ7-tE-lhW" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="410" width="270" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="uzr-z6-aOo"/>
+                                    <constraint firstAttribute="height" constant="45" id="kN3-Lj-bTt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <state key="normal" title="REPORT">
@@ -4357,7 +4341,7 @@ We’ve sent an email confirming.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="reportBtnClicked:" destination="SaN-5F-KIp" eventType="touchUpInside" id="X0M-Jl-8XW"/>
+                                    <action selector="reportClicked:" destination="SaN-5F-KIp" eventType="touchUpInside" id="Gfa-IE-rpQ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtB-Ms-YaN">
@@ -4378,25 +4362,24 @@ We’ve sent an email confirming.</string>
                         <constraints>
                             <constraint firstItem="ZtB-Ms-YaN" firstAttribute="top" secondItem="w7K-8I-0cT" secondAttribute="top" constant="147" id="2HQ-zP-AmL"/>
                             <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="KmK-Ll-KA8" secondAttribute="trailing" id="Cj3-vP-OQL"/>
-                            <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="Oed-09-IJz" secondAttribute="trailing" constant="25" id="JU5-hn-lbF"/>
-                            <constraint firstItem="Oed-09-IJz" firstAttribute="top" secondItem="ZtB-Ms-YaN" secondAttribute="bottom" constant="190" id="Kdz-tm-x2R"/>
                             <constraint firstItem="ZtB-Ms-YaN" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" constant="25" id="Pea-0P-s9J"/>
-                            <constraint firstItem="Oed-09-IJz" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" constant="25" id="R2l-mW-3A5"/>
+                            <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="zZ7-tE-lhW" secondAttribute="trailing" constant="25" id="RQ9-1S-phl"/>
                             <constraint firstItem="KmK-Ll-KA8" firstAttribute="top" secondItem="X0X-9r-ao6" secondAttribute="top" id="UWD-h1-h7B"/>
                             <constraint firstItem="KmK-Ll-KA8" firstAttribute="bottom" secondItem="w7K-8I-0cT" secondAttribute="bottom" id="UnT-8y-eEH"/>
+                            <constraint firstItem="zZ7-tE-lhW" firstAttribute="top" secondItem="ZtB-Ms-YaN" secondAttribute="bottom" constant="198" id="Wkw-yd-5ib"/>
                             <constraint firstItem="KmK-Ll-KA8" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" id="YRG-pR-Xl2"/>
+                            <constraint firstItem="zZ7-tE-lhW" firstAttribute="leading" secondItem="w7K-8I-0cT" secondAttribute="leading" constant="25" id="Z87-Av-gdB"/>
                             <constraint firstItem="w7K-8I-0cT" firstAttribute="trailing" secondItem="ZtB-Ms-YaN" secondAttribute="trailing" constant="25" id="yKQ-Mg-AMs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w7K-8I-0cT"/>
                     </view>
                     <connections>
                         <outlet property="issueTextField" destination="ZtB-Ms-YaN" id="tgr-nf-xwC"/>
-                        <outlet property="reportBtn" destination="Oed-09-IJz" id="Xrb-ru-x2t"/>
+                        <outlet property="reportBtn" destination="zZ7-tE-lhW" id="tA8-WN-zTU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zsK-3M-HYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22672.5" y="-55.985915492957744"/>
+            <point key="canvasLocation" x="22136" y="-57"/>
         </scene>
         <!--Select2FA Mode View Controller-->
         <scene sceneID="v12-oE-JE1">
@@ -4467,7 +4450,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfX-LE-psM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23329" y="-56"/>
+            <point key="canvasLocation" x="22871" y="-57"/>
         </scene>
         <!--Create AccountV2 View Controller-->
         <scene sceneID="FLu-si-ZuT">
@@ -4597,7 +4580,7 @@ We’ve sent an email confirming.</string>
                                                                 <fragment content="NEXT">
                                                                     <attributes>
                                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <font key="NSFont" size="18" name="Calibri"/>
+                                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
@@ -4832,7 +4815,7 @@ We’ve sent an email confirming.</string>
                                                                 <fragment content="NEXT">
                                                                     <attributes>
                                                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <font key="NSFont" size="18" name="Calibri"/>
+                                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>

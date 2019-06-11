@@ -16,9 +16,11 @@ class SignupStepConfirm: BaseViewController {
     @IBOutlet weak var universityTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
     
+    let datePicker = UIDatePicker()
     var signupFlowData:SignupFlowData!=nil
     @IBAction func nextClicked(_ sender: Any) {
         
+        self.saveDataToRealm()
         //update SignupFlowdata
         self.updateSignupFlowData()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -50,9 +52,13 @@ class SignupStepConfirm: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.retrieveDataFromDB()
     }
     
     func prepareView(){
+        
+        self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
+        self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.passportTextField.textColor = Colors.DustyGray155155155
@@ -97,7 +103,64 @@ class SignupStepConfirm: BaseViewController {
             self.nextBtn.isEnabled=false
         }
     }
+    
+    // DB Operations
+    
+    func saveDataToRealm(){
+        let info:BasicInfo = BasicInfo()
+        info.passportNumber=self.passportTextField.text ?? ""
+        info.DOB=self.DOBTextField.text ?? ""
+        info.university=self.universityTextField.text ?? ""
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateBasicInfo(infoToBeUpdated: result.first!, newInfo: info)
+        }
+    }
+    
+    func retrieveDataFromDB(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            self.nextBtn.isEnabled=true
+            let info = result.first!
+            self.passportTextField.text = info.passportNumber
+            self.DOBTextField.text = info.DOB
+            self.universityTextField.text = info.university
+        }
+    }
+    
+    //Methode to show date picker
+    func showDatePicker(){
+        //Format Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        self.DOBTextField.inputAccessoryView = toolbar
+        self.DOBTextField.inputView = datePicker
+    }
+    
+    @objc func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        self.DOBTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
 }
+
 
 extension SignupStepConfirm:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -106,6 +169,14 @@ extension SignupStepConfirm:UITextFieldDelegate{
             //(self.emailTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
+        }
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.DOBTextField{
+            
+            self.showDatePicker()
         }
     }
 }

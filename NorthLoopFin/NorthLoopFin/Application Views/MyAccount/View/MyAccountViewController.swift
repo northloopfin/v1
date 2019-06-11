@@ -74,7 +74,7 @@ extension MyAccountViewController:CommonTableDelegate{
         case 0:
             self.moveToSettings()
         case 1:
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+            self.moveTo2FA()
         case 2:
             // send reset password API request
             self.sendResetPasswordAPIRequest()

@@ -19,18 +19,18 @@ class ChangeAddressPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendChangePhoneRequest(newPhoneNumber:String){
+    func sendChangeAddressRequest(requestDic:[String:AnyObject]){
         
         // convert requestbody to json string and assign to request model request param
-        
         self.delegate?.showLoader()
+    
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = ChangeAddressRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
-            .addRequestQueryParams(key: "phone_number", value: newPhoneNumber as AnyObject)
             .build()
+        requestModel.requestQueryParams = requestDic
         self.logic.performChangeAddress(withRequestModel: requestModel, presenterDelegate: self)
     }
     

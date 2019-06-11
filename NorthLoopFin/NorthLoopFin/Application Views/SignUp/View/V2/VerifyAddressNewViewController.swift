@@ -42,6 +42,7 @@ class VerifyAddressNewViewController: BaseViewController {
         self.fetchDatafromRealmIfAny()
     }
     
+    //Fetch Data from DB
     func fetchDatafromRealmIfAny(){
         let result = RealmHelper.retrieveBasicInfo()
         print(result)
@@ -50,11 +51,22 @@ class VerifyAddressNewViewController: BaseViewController {
             let info = result.first!
             self.streetAddress.text = info.streetAddress
             self.zipCode.text = info.zip
-            self.country.text = info.country
-            self.phoneNumber.text = info.phoneSecondary
-            self.code.text = info.countryCode
+            
         }
     }
+    //Save Data to DB
+    func persistDataRealm(){
+        let info:BasicInfo = BasicInfo()
+        info.streetAddress = self.streetAddress.text!
+        info.zip = self.zipCode.text!
+        
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateBasicInfo(infoToBeUpdated: result.first!, newInfo: info)
+        }
+    }
+    
     @IBAction func doneClicked(_ sender: Any) {
         UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         self.persistDataRealm()
@@ -79,19 +91,7 @@ class VerifyAddressNewViewController: BaseViewController {
 
     }
     
-    func persistDataRealm(){
-        let info:BasicInfo = BasicInfo()
-        info.streetAddress = self.streetAddress.text!
-        info.zip = self.zipCode.text!
-        info.country = self.country.text!
-        info.countryCode = self.code.text!
-        info.phoneSecondary = self.phoneNumber.text!
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
-            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
-        }
-    }
+    
     
     func prepareView(){
         dropDown.anchorView = self.country

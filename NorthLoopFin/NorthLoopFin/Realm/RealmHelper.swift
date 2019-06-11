@@ -50,55 +50,68 @@ class RealmHelper{
         }
     }
     
-    static func updateNote(infoToBeUpdated: BasicInfo, newInfo: BasicInfo) {
+    static func updateBasicInfo(infoToBeUpdated: BasicInfo, newInfo: BasicInfo) {
         let realm = try! Realm()
         try! realm.write() {
             if newInfo.email != ""{
+                print("Email updated")
                 infoToBeUpdated.email = newInfo.email
             }
-            if newInfo.password != ""{
-                infoToBeUpdated.password = newInfo.password
-            }
-            if newInfo.confirmPassword != ""{
-                infoToBeUpdated.confirmPassword = newInfo.confirmPassword
-            }
+            
             if newInfo.firstname != ""{
+                print("firstname updated")
+
                 infoToBeUpdated.firstname = newInfo.firstname
             }
             if newInfo.lastname != ""{
+                print("lastname updated")
+
                 infoToBeUpdated.lastname = newInfo.lastname
             }
             if newInfo.phone != ""{
+                print("phone updated")
+
                 infoToBeUpdated.phone = newInfo.phone
             }
-            if newInfo.otp1 != ""{
-                infoToBeUpdated.otp1 = newInfo.otp1
+            if newInfo.ssn != ""{
+                print("ssn updated")
+
+                infoToBeUpdated.ssn = newInfo.ssn
             }
-            if newInfo.otp2 != ""{
-                infoToBeUpdated.otp2 = newInfo.otp2
+            if newInfo.citizenShip != ""{
+                print("citizenShip updated")
+
+                infoToBeUpdated.citizenShip = newInfo.citizenShip
             }
-            if newInfo.otp3 != ""{
-                infoToBeUpdated.otp3 = newInfo.otp3
+            if newInfo.phone != ""{
+                print("phone updated")
+
+                infoToBeUpdated.phone = newInfo.phone
             }
-            if newInfo.otp4 != ""{
-                infoToBeUpdated.otp4 = newInfo.otp4
-            }
+            
             if newInfo.streetAddress != ""{
+                print("streetAddress updated")
+
                 infoToBeUpdated.streetAddress = newInfo.streetAddress
             }
-            if newInfo.country != ""{
-                infoToBeUpdated.country = newInfo.country
+            if newInfo.houseNumber != ""{
+                print("houseNumber updated")
+
+                infoToBeUpdated.houseNumber = newInfo.houseNumber
             }
             if newInfo.city != ""{
+                print("city updated")
+
                 infoToBeUpdated.city = newInfo.city
             }
-            if newInfo.phoneSecondary != ""{
-                infoToBeUpdated.phoneSecondary = newInfo.phoneSecondary
-            }
-            if newInfo.countryCode != ""{
-                infoToBeUpdated.countryCode = newInfo.countryCode
+            if newInfo.state != ""{
+                print("state updated")
+
+                infoToBeUpdated.state = newInfo.state
             }
             if newInfo.zip != ""{
+                print("zip updated")
+
                 infoToBeUpdated.zip = newInfo.zip
             }
         }

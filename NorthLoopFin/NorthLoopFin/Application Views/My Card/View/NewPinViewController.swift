@@ -11,16 +11,20 @@ import SwiftyRSA
 
 class NewPinViewController: BaseViewController {
 
-    @IBOutlet weak var currentPin: UITextField!
+    //@IBOutlet weak var currentPin: UITextField!
     @IBOutlet weak var newPin: UITextField!
     @IBOutlet weak var confirmPin: UITextField!
     @IBOutlet weak var changeBtn: UIButton!
     var presenter: SetPinPresenter!
 
     @IBAction func changeBtnClicked(_ sender: Any) {
-        let enyptedPin = self.encryptPin()
-        print(enyptedPin)
-        self.presenter.setPinRequest(pin: encryptPin())
+        if (Validations.matchTwoStrings(string1: self.newPin.text!, string2: self.confirmPin.text!)){
+            let enyptedPin = self.encryptPin()
+            print(enyptedPin)
+            self.presenter.setPinRequest(pin: encryptPin())
+        }else{
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PASSWORD_DONOT_MATCH.rawValue)
+        }
     }
     
     override func viewDidLoad() {
@@ -34,17 +38,14 @@ class NewPinViewController: BaseViewController {
     func prepareView(){
         self.setNavigationBarTitle(title: "Set Pin")
         self.setupRightNavigationBar()
-        self.currentPin.textColor = Colors.DustyGray155155155
         self.newPin.textColor = Colors.DustyGray155155155
         self.confirmPin.textColor=Colors.DustyGray155155155
-        self.currentPin.font=AppFonts.textBoxCalibri16
         self.newPin.font=AppFonts.textBoxCalibri16
         self.confirmPin.font=AppFonts.textBoxCalibri16
         self.changeBtn.titleLabel!.font=AppFonts.calibri15
         self.configureTextFields()
     }
     func configureTextFields(){
-        self.currentPin.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.newPin.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.confirmPin.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
@@ -54,11 +55,9 @@ class NewPinViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.currentPin.applyAttributesWithValues(placeholderText: "Current Pin*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.newPin.applyAttributesWithValues(placeholderText: "New Pin*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.confirmPin.applyAttributesWithValues(placeholderText: "Confirm Pin*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
-        self.currentPin.setLeftPaddingPoints(19)
         self.newPin.setLeftPaddingPoints(19)
         self.confirmPin.setLeftPaddingPoints(19)
         
@@ -105,13 +104,14 @@ class NewPinViewController: BaseViewController {
 extension NewPinViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        if (!(self.currentPin.text?.isEmpty)! && !(self.newPin.text?.isEmpty)!) && !((self.confirmPin.text?.isEmpty)!){
+        if (!(self.confirmPin.text?.isEmpty)! && !(self.newPin.text?.isEmpty)!) //&& !((self.confirmPin.text?.isEmpty)!)
+        {
             self.changeBtn.isEnabled=true
         }
     }
 }
 extension NewPinViewController:SetPinDelegates{
     func didSetPinSuccessful() {
-        
+        AppUtility.moveToHomeScreen()
     }
 }

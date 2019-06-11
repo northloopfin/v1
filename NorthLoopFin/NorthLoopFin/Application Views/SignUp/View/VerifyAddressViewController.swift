@@ -27,7 +27,10 @@ class VerifyAddressViewController: BaseViewController {
     var presenter: SignupSynapsePresenter!
     var zendeskPresenter: ZendeskPresenter!
 
+    //var to keep track of which screen has initiated the process
+    var screenThatInitiatedThisFlow:AppConstants.Screens?
 
+    var changeAddressPresnter:ChangeAddressPresenter!
 
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -47,22 +50,47 @@ class VerifyAddressViewController: BaseViewController {
     @IBAction func doneClicked(_ sender: Any) {
         //self.updateSignupFlowData()
         
-        UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(self.signupFlowData)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            //print(jsonString!)
-            let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
-            //all fine with jsonData here
-            self.presenter.startSignUpSynapse(requestDic: dic)
-        } catch {
-            //handle error
-            print(error)
+        if let _ = self.screenThatInitiatedThisFlow{
+            if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
+                //call api to update address here
+                let requestBody = self.createUpdateAddressRequestBody()
+                let jsonEncoder = JSONEncoder()
+                do {
+                    let jsonData = try jsonEncoder.encode(requestBody)
+                    let jsonString = String(data: jsonData, encoding: .utf8)
+                    //print(jsonString!)
+                    let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+                    //all fine with jsonData here
+                    self.changeAddressPresnter.sendChangeAddressRequest(requestDic: dic)
+                } catch {
+                    //handle errors
+                    print(error)
+                }
+            }
+        }else{
+            self.persistDataRealm()
+
+            UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+            let jsonEncoder = JSONEncoder()
+            do {
+                let jsonData = try jsonEncoder.encode(self.signupFlowData)
+                let jsonString = String(data: jsonData, encoding: .utf8)
+                //print(jsonString!)
+                let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+                //all fine with jsonData here
+                self.presenter.startSignUpSynapse(requestDic: dic)
+            } catch {
+                //handle errors
+                print(error)
+            }
         }
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AllDoneViewController") as! AllDoneViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func createUpdateAddressRequestBody()->UpdateAddressRequestBody{
+        let updatedAddress:UpdatedAddress = UpdatedAddress.init(houseNo: self.houseNumbertextfield.text ?? "", state: self.textState.text ?? "", street: self.streetAddress.text ?? "", city: self.cityTextfield.text ?? "", zip: self.zipTextfield.text ?? "", country: "US")
+        let updateAddressRequestBody = UpdateAddressRequestBody.init(address: updatedAddress)
+        return updateAddressRequestBody
+        
     }
     
     override func viewDidLoad() {
@@ -73,6 +101,42 @@ class VerifyAddressViewController: BaseViewController {
         self.prepareView()
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
+        self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Fetch from Realm if any
+        self.fetchDatafromRealmIfAny()
+    }
+    
+    func fetchDatafromRealmIfAny(){
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            self.doneBtn.isEnabled=true
+            let info = result.first!
+            self.streetAddress.text = info.streetAddress
+            self.houseNumbertextfield.text = info.houseNumber
+            self.cityTextfield.text = info.city
+            self.textState.text = info.state
+        }
+    }
+    
+    //Save Data to DB
+    func persistDataRealm(){
+        let info:BasicInfo = BasicInfo()
+        info.streetAddress = self.streetAddress.text!
+        info.zip = self.zipTextfield.text ?? ""
+        info.houseNumber=self.houseNumbertextfield.text ?? ""
+        info.city=self.cityTextfield.text ?? ""
+        info.state=self.textState.text ?? ""
+        
+        let result = RealmHelper.retrieveBasicInfo()
+        print(result)
+        if result.count > 0{
+            RealmHelper.updateBasicInfo(infoToBeUpdated: result.first!, newInfo: info)
+        }
     }
     
     /// Prepare View by setting up font and color of UI components
@@ -155,18 +219,9 @@ extension VerifyAddressViewController:UITextFieldDelegate{
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
             }
-        }//else if(textField==self.cityTextfield){
-//            self.view.endEditing(true)
-//            print("EndEditing")
-//            textField.resignFirstResponder()
-//        }
+        }
     }
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        if (textField==self.textState){
-//            print("BeginEditing")
-//            self.dropDown.show()
-//        }
-//    }
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == textState
         {
@@ -187,36 +242,24 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
         let user:User = User.init(username: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, email: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, accesstoken: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String)
         user.authKey = data.data.oauthKey
         UserInformationUtility.sharedInstance.saveUser(model: user)
-        
+        //remove data from local DB
+        RealmHelper.deleteAllBasicInfo()
         // Delete email and accesstoken stored in UserDefault
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForEmail)
         //call Zendesk API for Identity token
         self.zendeskPresenter.sendZendeskTokenRequest()
     }
-    
-//    func moveToHomePage(){
-//        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
-//        var initialNavigationController:UINavigationController
-//
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
-//        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        initialNavigationController = UINavigationController(rootViewController:homeViewController)
-//        sideMenu.delegate = homeViewController
-//        containerViewController.leftMenuViewController=sideMenu
-//        containerViewController.centerViewController=initialNavigationController
-//        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
-//        containerViewController.shadow.enabled=true;
-//        containerViewController.panMode = MFSideMenuPanModeDefault
-//        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-//        appdelegate.window?.rootViewController = containerViewController
-//    }
 }
 
 extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
-        //self.moveToHomePage()
+        AppUtility.moveToHomeScreen()
+    }
+}
+
+extension VerifyAddressViewController:ChangeAddressDelegate{
+    func didAddressChanged() {
         AppUtility.moveToHomeScreen()
     }
 }

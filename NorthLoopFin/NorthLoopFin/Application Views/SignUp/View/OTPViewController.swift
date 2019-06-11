@@ -229,6 +229,8 @@ extension OTPViewController:TwoFAVerifyDelegates{
             self.moveToSetPinScreen()
         case AppConstants.Screens.CHANGEPHONE :
             self.moveToChangePhoneScreen()
+        case AppConstants.Screens.CHANGEADDRESS :
+            self.moveToChangeAddress()
         default:
             break
         }
@@ -247,7 +249,7 @@ extension OTPViewController:TwoFAVerifyDelegates{
     }
     func moveToChangeAddress(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePhoneViewController") as! ChangePhoneViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }
