@@ -2,12 +2,12 @@
 
 import UIKit
 import SVProgressHUD
+import GiFHUD_Swift
 
 class BaseViewController: UIViewController, BaseViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +27,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     
     func setNavigationBarTitle(title:String){
         self.navigationController?.navigationBar.setTitleFont(UIFont(name: "Calibri-Bold", size: 15)!,color: Colors.Taupe776857)
+        self.navigationItem.title = title
         self.navigationController?.navigationBar.topItem?.title = title
     }
     
@@ -36,10 +37,17 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     
     
     func showLoader() {
+//        GIFHUD.shared.setGif(named: "northloop.gif")
+//        GIFHUD.shared.show()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         SVProgressHUD.show()
     }
 
     func hideLoader() {
+//        GIFHUD.shared.dismiss {
+//            print("dismissed")
+//        }
+        if UIApplication.shared.isIgnoringInteractionEvents { UIApplication.shared.endIgnoringInteractionEvents() }
         SVProgressHUD.dismiss()
     }
     

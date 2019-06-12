@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>6</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -51,6 +51,11 @@
 	</dict>
 	<key>Google Map Key</key>
 	<string>$(GOOGLE_MAP_API_KEY)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+		<string>comgooglemaps-x-callbacks</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -60,6 +65,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to click ID and Selfie</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This application use your location to find ATMs near by you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This application use your location to find ATMs near by you</string>
 	<key>Twilio Key</key>
 	<string>$(TWILIO_API_KEY)</string>
 	<key>UIAppFonts</key>
@@ -68,6 +77,10 @@
 		<string>Calibri Italic.ttf</string>
 		<string>Calibri Bold.ttf</string>
 		<string>Calibri Bold Italic.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

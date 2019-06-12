@@ -22,13 +22,13 @@ class ResetPasswordPresenter: ResponseCallback{
     func sendResetPasswordRequesy(username name:String){
         self.delegate?.showLoader()
         
-        let requestModel = LoginRequestModel.Builder()
+        let requestModel = ResetPasswordRequestModel.Builder()
             .addRequestQueryParams(key: "username", value: name as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
             .build()
         print(requestModel.requestHeader)
         requestModel.apiUrl=requestModel.getEndPoint()
-        self.businessLogic.performResetPassword(withLoginRequestModel: requestModel, presenterDelegate: self)
+        self.businessLogic.performResetPassword(withRequestModel: requestModel, presenterDelegate: self)
     }
     
     //    MARK: Response Delegates

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZDCChat
 
 class HelpViewController: BaseViewController {
     @IBOutlet weak var containerView: CommonTable!
@@ -46,9 +47,9 @@ extension HelpViewController:CommonTableDelegate{
         case 0:
             self.moveToFAQ()
         case 1:
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+            self.openZendeskChat()
         case 2:
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+            self.moveToATMFinder()
         case 3:
             self.moveToLegalStuff()
         default:
@@ -65,5 +66,18 @@ extension HelpViewController:CommonTableDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LegalStuffViewController") as! LegalStuffViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func moveToATMFinder(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ATMFinderViewController") as! ATMFinderViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func openZendeskChat(){
+        // Pushes the chat widget onto the navigation controller
+        ZDCChat.start(in: navigationController, withConfig: nil)
+        
+        // Hides the back button because we are in a tab controller
+    ZDCChat.instance().chatViewController.navigationItem.hidesBackButton = false
     }
 }

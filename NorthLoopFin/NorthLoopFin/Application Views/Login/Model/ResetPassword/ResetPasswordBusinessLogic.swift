@@ -21,7 +21,7 @@ class ResetPasswordBusinessLogic {
     ///   - loginModel: LoginRequestModel
     ///   - presenterDelegate: ResponseCallBack delegate
     
-    func performResetPassword(withLoginRequestModel model: ResetPasswordRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performResetPassword(withRequestModel model: ResetPasswordRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()

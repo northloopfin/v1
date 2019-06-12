@@ -33,9 +33,9 @@ class WelcomeViewController: BaseViewController {
     }
     
     func moveToNextScreen(){
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
-                self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
 }
 

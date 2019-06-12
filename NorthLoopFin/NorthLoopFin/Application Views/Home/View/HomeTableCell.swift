@@ -9,11 +9,22 @@
 import UIKit
 import Kingfisher
 
+protocol HomeTableCellDelegate: class  {
+    func disputeTransactionClicked(data:IndividualTransaction)
+}
 class HomeTableCell: UITableViewCell {
 
     @IBOutlet weak var beneficiaryName: UILabel!
     @IBOutlet weak var transactionAmt: UILabel!
     @IBOutlet weak var beneficiaryImg: UIImageView!
+    var individualTransaction:IndividualTransaction?
+    private weak var delegate: HomeTableCellDelegate?
+    
+    @IBAction func disputeBtnClicked(_ sender: Any) {
+        if let _ = self.individualTransaction{
+            self.delegate?.disputeTransactionClicked(data: self.individualTransaction!)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,16 +35,12 @@ class HomeTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func bindData(data: TransactionHistory){
-        self.beneficiaryName.text = data.to.merchantName
+    func bindData(data: IndividualTransaction,delegate:HomeTableCellDelegate){
+        self.delegate = delegate
+        self.individualTransaction=data
+        self.beneficiaryName.text = data.to.nickname
         self.transactionAmt.text = "$" + String(data.amount.amount)
-        let url = URL(string: data.to.merchantLogo)
-        self.beneficiaryImg.kf.setImage(with: url)
+//        let url = URL(string: data.to.merchantLogo)
+//        self.beneficiaryImg.kf.setImage(with: url)
     }
-//    func bindData(data: Dummy){
-//        self.beneficiaryName.text = data.name
-//        self.transactionAmt.text =  String(data.amount)
-//        self.beneficiaryImg.image = data.image
-//    }
-    
 }

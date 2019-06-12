@@ -15,6 +15,7 @@ class User: NSObject, NSCoding {
     var username: String!
     var authKey:String!
     var userID:String!
+    var name:String!
     
     override init() {
         super.init()

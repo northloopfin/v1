@@ -10,10 +10,10 @@ import Foundation
 
 struct TransactionListModel {
     var sectionTitle: String
-    var rowData:[TransactionHistory]
+    var rowData:[IndividualTransaction]
     //var rowData:[Dummy]
     
-    init(sectionTitle:String,rowData:[TransactionHistory]) {
+    init(sectionTitle:String,rowData:[IndividualTransaction]) {
         self.sectionTitle=sectionTitle
         self.rowData=rowData
     }

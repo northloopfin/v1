@@ -19,70 +19,89 @@ class OTPViewController: BaseViewController {
     @IBOutlet weak var resendLbl: UILabel!
     @IBOutlet weak var sentToLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
-    var presenter:PhoneVerificationCheckPresenter!
-    var sendPresenter:PhoneVerificationStartPresenter!
+    
+    //Obselete now..remove once things get fix from backend
+    //var presenter:PhoneVerificationCheckPresenter!
+    //var sendPresenter:PhoneVerificationStartPresenter!
 
+    var presenter:TwoFAVerifyPresenter!
+    //These are used to know the mode of OTP verification
+    var isPhoneSelectedForOTP:Bool = false
+    var isEmailSelectedForOTP:Bool = false
+    
+    var screenWhichInitiatedOTP:AppConstants.Screens?
+    
     @IBAction func resendOTPClicked(_ sender: Any) {
         self.callPhoneVerificationAPI()
     }
     //Call Phone Verification Service Start
     func callPhoneVerificationAPI(){
-        sendPresenter.sendPhoneVerificationRequest()
+        //sendPresenter.sendPhoneVerificationRequest()
     }
     @IBAction func doneClicked(_ sender: Any) {
         let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
-
-        let result = RealmHelper.retrieveBasicInfo()
-        let info:BasicInfo = result.first!
-        if info.otp1 != ""{
-            self.moveToScanIDScreen()
-
-        }else{
-            self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+        
+        //call verify api here
+        if isPhoneSelectedForOTP{
+            self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
         }
+        if (isEmailSelectedForOTP || self.screenWhichInitiatedOTP == AppConstants.Screens.CHANGEPHONE){
+            self.presenter.verifyTwoFARequest(sendToAPI: false, otp: OTPString)
+        }
+        
+
+//        let result = RealmHelper.retrieveBasicInfo()
+//        let info:BasicInfo = result.first!
+//        if info.otp1 != ""{
+//            self.moveToScanIDScreen()
+//
+//        }else{
+//            self.presenter.sendPhoneVerificationCheckRequest(code: OTPString)
+//        }
         
         //self.moveToScanIDScreen()
 
     }
-    func updateRealmDB(){
-        let info:BasicInfo = BasicInfo()
-        info.otp1 = self.otpField1.text!
-        info.otp2 = self.otpField2.text!
-        info.otp3 = self.otpField3.text!
-        info.otp4 = self.otpField4.text!
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
-            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
-        }
-    }
+//    func updateRealmDB(){
+//        let info:BasicInfo = BasicInfo()
+//        info.otp1 = self.otpField1.text!
+//        info.otp2 = self.otpField2.text!
+//        info.otp3 = self.otpField3.text!
+//        info.otp4 = self.otpField4.text!
+//        let result = RealmHelper.retrieveBasicInfo()
+//        print(result)
+//        if result.count > 0{
+//            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
+//        }
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.fetchDatafromRealmIfAny()
+        //self.fetchDatafromRealmIfAny()
     }
     
     ///Fetch data from DB if any and show on UI
-    func fetchDatafromRealmIfAny(){
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
-            let info = result.first!
-            self.otpField1.text = info.otp1
-            self.otpField2.text = info.otp2
-            self.otpField3.text = info.otp3
-            self.otpField4.text = info.otp4
-            self.doneBtn.isEnabled=true
-        }
-    }
+//    func fetchDatafromRealmIfAny(){
+//        let result = RealmHelper.retrieveBasicInfo()
+//        print(result)
+//        if result.count > 0{
+//            let info = result.first!
+//            self.otpField1.text = info.otp1
+//            self.otpField2.text = info.otp2
+//            self.otpField3.text = info.otp3
+//            self.otpField4.text = info.otp4
+//            self.doneBtn.isEnabled=true
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateTextFieldUI()
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled = false
-        self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
-        self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
+        self.presenter = TwoFAVerifyPresenter.init(delegate: self)
+//        self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
+//        self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.prepareView()
 
     }
@@ -198,19 +217,39 @@ class OTPViewController: BaseViewController {
 extension OTPViewController:UITextFieldDelegate{
     
 }
-extension OTPViewController:PhoneVerificationDelegate{
-    func didSentOTP(result: PhoneVerifyStart) {
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: result.message)
-    }
-    func didCheckOTP(result:PhoneVerifyCheck){
-        self.updateRealmDB()
-        self.moveToScanIDScreen()
+extension OTPViewController:TwoFAVerifyDelegates{
+    func didVerifiedOTP() {
+        
+     self.moveToSetPinScreen()
     }
     
-    func moveToScanIDScreen(){
-        UserDefaults.saveToUserDefault(AppConstants.Screens.SCANID.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
+    func moveToRelevantScreen(){
+        switch self.screenWhichInitiatedOTP! {
+        case AppConstants.Screens.SETPIN :
+            self.moveToSetPinScreen()
+        case AppConstants.Screens.CHANGEPHONE :
+            self.moveToChangePhoneScreen()
+        case AppConstants.Screens.CHANGEADDRESS :
+            self.moveToChangeAddress()
+        default:
+            break
+        }
+    }
+    
+    func moveToSetPinScreen(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
+    self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func moveToChangePhoneScreen(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePhoneViewController") as! ChangePhoneViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    func moveToChangeAddress(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

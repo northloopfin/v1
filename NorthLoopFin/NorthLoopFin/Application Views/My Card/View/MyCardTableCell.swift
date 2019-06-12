@@ -9,8 +9,18 @@
 import UIKit
 import PWSwitch
 
+protocol MyCardTableCellDelegate:class {
+    func switchClicked(isOn:Bool,tag:Int)
+}
+
 class MyCardTableCell: UITableViewCell {
+    
+    private weak var delegate: MyCardTableCellDelegate?
+
     @IBAction func switchClicked(_ sender: Any) {
+        print("wow")
+        let lock = sender as! PWSwitch
+        self.delegate?.switchClicked(isOn: lock.isSelected, tag: lock.tag)
 //        let lock = sender as! UISwitch
 //        if (lock.isOn){
 //            lock.thumbTintColor = Colors.Taupe776857
@@ -18,6 +28,7 @@ class MyCardTableCell: UITableViewCell {
     }
     @IBOutlet weak var lock: PWSwitch!
     @IBOutlet weak var optionLbl: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +40,7 @@ class MyCardTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func bindData(data:MyCardOtionsModel){
+    func bindData(data:MyCardOtionsModel,delegate:MyCardTableCellDelegate){
         optionLbl.text = data.option
         if(data.haveSwitch){
             let shadowOffst = CGSize.init(width: 0, height: -55)

@@ -21,7 +21,7 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var amtLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var transactionImg: UIImageView!
-    var detailModel:TransactionHistory!
+    var detailModel:IndividualTransaction!
    // var detailModel:Dummy!
     var presenter: TransactionDetailPresenter!
 
@@ -101,7 +101,7 @@ class TransactionDetailViewController: BaseViewController {
     }
     
     func getTransactionDetail(){
-        presenter.sendTransactionDetailRequest(transactionId:1)
+        presenter.sendTransactionDetailRequest(transactionId:self.detailModel?.id ?? "")
     }
 }
 //MARK:- UITableView Delegate and DataSource
@@ -145,11 +145,11 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
 extension TransactionDetailViewController:TransactionDetailDelegate{
     
     func didFetchedTransactionDetail(data:TransactionDetail){
-        self.beneficiaryNameLbl.text = data.data.to.meta.merchantName
-        self.addressLbl.text = data.data.to.meta.address
+        self.beneficiaryNameLbl.text = data.data.to.nickname
+        //self.addressLbl.text = data.data.to.meta.address
         self.amtLbl.text = "$"+String(data.data.amount.amount)
         //self.transactionPurposeLbl.text =
-        let url = URL(string: data.data.to.meta.merchantLogo)
-        self.transactionImg.kf.setImage(with:url)
+        //let url = URL(string: data.data.to.meta.merchantLogo)
+        //self.transactionImg.kf.setImage(with:url)
     }
 }

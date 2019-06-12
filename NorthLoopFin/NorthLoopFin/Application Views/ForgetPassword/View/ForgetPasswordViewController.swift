@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class ForgetPasswordViewController: BaseViewController {
+    @IBOutlet weak var messageLbl: UILabel!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var sendLinkBtn: CommonButton!
     var resetPresenter:ResetPasswordPresenter!
@@ -25,9 +26,12 @@ class ForgetPasswordViewController: BaseViewController {
     }
     func prepareView(){
         self.sendLinkBtn.isEnabled=false
-        self.setNavigationBarTitle(title: "Forget Password")
+        self.setNavigationBarTitle(title: "Forgot Password")
         self.setupRightNavigationBar()
+        self.messageLbl.textColor = Colors.MainTitleColor
         self.emailTextfield.textColor = Colors.DustyGray155155155
+       
+       self.messageLbl.font=AppFonts.calibriBold16
         self.emailTextfield.font=AppFonts.textBoxCalibri16
         self.sendLinkBtn.titleLabel!.font=AppFonts.calibri15
         self.configureTextFields()

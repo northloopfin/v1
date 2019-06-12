@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import DropDown
 
 class CreateAccountV2ViewController: BaseViewController {
@@ -28,7 +27,6 @@ class CreateAccountV2ViewController: BaseViewController {
     var signupFlowData:SignupFlowData! = nil
     //Will remove this once Sign up completes
     var presenter:PhoneVerificationStartPresenter!
-    var firebaseManager:FirebaseManager!
     
     @IBAction func loginClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -62,6 +60,7 @@ class CreateAccountV2ViewController: BaseViewController {
     
 //    Methode will update signp form data model
     func updateSignUpFormData(){
+        self.saveDataToRealm()
         let legalName = self.firstNameTextField.text!+" "+self.lastNameTextField.text!
         var phoneNumber = self.phoneTextField.text!
         if (self.phoneTextField.text?.isEmpty)!{
@@ -82,11 +81,6 @@ class CreateAccountV2ViewController: BaseViewController {
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
         }
-    }
-    
-    func updateUserData(_ firstName:String, _ lastName:String, _ phone:String){
-        firebaseManager.updateUserWithData(firstName: firstName, lastName: lastName, phone: phone)
-        
     }
     
     //Call Phone Verification Service
@@ -117,12 +111,12 @@ class CreateAccountV2ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        self.firebaseManager = FirebaseManager.init(delegate: self)
+        
         self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
         self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //self.inactivateNextBtn()
         self.nextBtn.isEnabled=false
-        self.setupRightNavigationBar()
+        //self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
     }
@@ -141,10 +135,9 @@ class CreateAccountV2ViewController: BaseViewController {
             let info = result.first!
             self.firstNameTextField.text = info.firstname
             self.lastNameTextField.text = info.lastname
-            //self.phoneTextField.text = info.phone
-            if info.otp1 != "" {
-                //self.phoneTextField.isUserInteractionEnabled=false
-            }
+            self.SSNTextField.text = info.ssn
+            self.phoneTextField.text = info.phone
+            self.CitizenShipTextField.text = info.citizenShip
         }
     }
     
@@ -227,15 +220,17 @@ class CreateAccountV2ViewController: BaseViewController {
         }
     }
     
-    //    func activateNextBtn(){
-    //        self.nextBtn.isEnabled=true
-    //        self.nextBtn.backgroundColor = Colors.Zorba161149133
-    //    }
-    //
-    //    func inactivateNextBtn(){
-    //        self.nextBtn.isEnabled=false
-    //        self.nextBtn.backgroundColor = Colors.Alto224224224
-    //    }
+   //will save this screen data to DB
+    func saveDataToRealm(){
+        let basicInfo:BasicInfo=BasicInfo()
+        basicInfo.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
+        basicInfo.firstname=self.firstNameTextField.text ?? ""
+        basicInfo.lastname=self.lastNameTextField.text ?? ""
+        basicInfo.ssn=self.SSNTextField.text ?? ""
+        basicInfo.phone=self.phoneTextField.text ?? ""
+        basicInfo.citizenShip=self.CitizenShipTextField.text ?? ""
+        RealmHelper.addBasicInfo(info: basicInfo)
+    }
 }
 
 extension CreateAccountV2ViewController:UITextFieldDelegate{
@@ -276,53 +271,3 @@ extension CreateAccountV2ViewController:PhoneVerificationDelegate{
 }
 
 
-extension CreateAccountV2ViewController:FirebaseDelegates{
-    func didSendPasswordReset(error: NSError?) {
-        
-    }
-    
-    func didFirebaseDatabaseUpdated() {
-        //save this screen data to Realm DB
-        let info:BasicInfo = BasicInfo()
-        info.firstname = self.firstNameTextField.text!
-        info.lastname = self.lastNameTextField.text!
-        //info.phone = self.phoneTextField.text!
-        let result = RealmHelper.retrieveBasicInfo()
-        info.email = result.first!.email
-        info.password = result.first!.password
-        info.confirmPassword = result.first!.confirmPassword
-        info.otp1 = result.first!.otp1
-        info.otp2 = result.first!.otp2
-        info.otp3 = result.first!.otp3
-        info.otp4 = result.first!.otp4
-        info.streetAddress = result.first!.streetAddress
-        info.country = result.first!.country
-        info.zip = result.first!.zip
-        info.countryCode = result.first!.countryCode
-        info.phoneSecondary = result.first!.phoneSecondary
-        print(result)
-        if result.count > 0{
-            RealmHelper.updateNote(infoToBeUpdated: result.first!, newInfo: info)
-        }
-        if info.otp1 != ""{
-            self.moveToOTPScreen()
-        }else{
-            self.callPhoneVerificationAPI()
-
-        }
-
-    }
-    
-    func didFirebaseUserCreated(authResult:AuthDataResult?,error:NSError?){
-        
-    }
-    func didNameUpdated(error:NSError?){
-        
-    }
-    func didLoggedIn(error:NSError?){
-        
-    }
-    func didReadUserFromDatabase(error:NSError?, data:NSDictionary?){
-        
-    }
-}

@@ -14,12 +14,20 @@ struct Endpoints{
     enum APIEndpoints:String {
         case LOGIN = "auth/login"
         case TRANSACTIONHISTORY = "banking/transactions"
+        case TRANSACTIONLIST = "banking/transactions?"
         case ACCOUNTINFO = "banking/account-info?"
-        //case TRANSACTIONDETAIL = "banking/transactions"
-        case CARDSTATUS = "banking/card-status"
+        case CARDSTATUS = "banking/card"
+        case CARDUPDATE = "banking/card?"
+        case CARDPIN = "banking/card/pin?"
         case SIGNUPAUTH = "auth/sign-up"
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"
+        case LINKACH = "banking/link-ach"
+        case ZENDESK = "auth/helpdesk-token"
+        case ATMFINDER = "banking/atm?"
+        case USERTRANSFERDETAIL = "banking/transfer-details"
+        case TWOFA = "banking/2fa/false"
+        case TWOFAVERIFY = "banking/2fa/true?"
 
     }
     
@@ -32,6 +40,7 @@ struct Endpoints{
         case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
         case AUTHKEY = "auth"
         case IP = "ip"
+        case USERID = "user_id"
 
         
     }

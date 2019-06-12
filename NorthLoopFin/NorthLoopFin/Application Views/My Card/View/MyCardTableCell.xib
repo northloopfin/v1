@@ -80,6 +80,9 @@
                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="switchClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1qN-3g-mIP"/>
+                        </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtO-cz-Pej">
                         <rect key="frame" x="2" y="68.5" width="316" height="1"/>

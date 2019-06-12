@@ -26,6 +26,7 @@ class FAQViewController: BaseViewController {
     /// Prepare View For display
     func prepareView(){
         var dataSource:[String] = []
+    
         dataSource.append(AppConstants.FAQOptions.TERMSANDPOLICY.rawValue)
         dataSource.append(AppConstants.FAQOptions.PRIVACY.rawValue)
         dataSource.append(AppConstants.FAQOptions.OTHERSTUFF.rawValue)

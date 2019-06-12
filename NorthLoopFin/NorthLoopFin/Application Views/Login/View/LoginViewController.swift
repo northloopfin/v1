@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import Firebase
-import MFSideMenu
+//import MFSideMenu
+//import ZendeskSDK
+//import ZendeskCoreSDK
 
 class LoginViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -21,6 +22,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var createAccountBtn: UIButton!
     
     var loginPresenter:LoginPresenter!
+    var zendeskPresenter:ZendeskPresenter!
+
 
     
     @IBAction func forgetPasswordClicked(_ sender: Any) {
@@ -43,13 +46,20 @@ class LoginViewController: BaseViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarTitle(title: "")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
-        self.setNavigationBarTitle(title: "Login")
+        self.setNavigationBarTitle(title: "")
         self.prepareView()
        // manager=FirebaseManager.init(delegate: self)
         self.loginPresenter = LoginPresenter.init(delegate: self)
+        self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
+
         self.logEventForLogin()
         if let email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail){
             self.emailTextField.text = email as? String
@@ -109,27 +119,27 @@ class LoginViewController: BaseViewController {
         self.loginBtn.isEnabled=false
     }
     
-    func moveToHome(){
-        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
-        var initialNavigationController:UINavigationController
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
-        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        initialNavigationController = UINavigationController(rootViewController:homeViewController)
-        sideMenu.delegate = homeViewController
-        containerViewController.leftMenuViewController=sideMenu
-        containerViewController.centerViewController=initialNavigationController
-        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
-        containerViewController.shadow.enabled=true;
-        containerViewController.panMode = MFSideMenuPanModeDefault
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.window?.rootViewController = containerViewController
-    }
+//    func moveToHome(){
+//        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
+//        var initialNavigationController:UINavigationController
+//        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
+//        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//        initialNavigationController = UINavigationController(rootViewController:homeViewController)
+//        sideMenu.delegate = homeViewController
+//        containerViewController.leftMenuViewController=sideMenu
+//        containerViewController.centerViewController=initialNavigationController
+//        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+//        containerViewController.shadow.enabled=true;
+//        containerViewController.panMode = MFSideMenuPanModeDefault
+//        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+//        appdelegate.window?.rootViewController = containerViewController
+//    }
     
     func moveToCreateAccount(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SignUpFormViewController") as! SignUpFormViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func moveToForgetScreen(){
@@ -158,7 +168,8 @@ extension LoginViewController:UITextFieldDelegate{
 extension LoginViewController:LoginDelegate{
     func didLoggedIn(data: LoginData) {
         //successfully logged in user..move to home page
-        self.moveToHome()
+        //call Zendesk API to get identity token
+        self.zendeskPresenter.sendZendeskTokenRequest()
     }
     
     
@@ -166,6 +177,12 @@ extension LoginViewController:LoginDelegate{
         self.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: error.getErrorMessage())
     }
     
-    
+}
+extension LoginViewController:ZendeskDelegates{
+    func didSentZendeskToken(data: ZendeskData) {
+        AppUtility.configureZendesk(data: data)
+        //self.moveToHome()
+        AppUtility.moveToHomeScreen()
+    }
 }
 

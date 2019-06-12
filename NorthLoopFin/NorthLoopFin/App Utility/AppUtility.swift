@@ -1,6 +1,9 @@
 
 
 import Foundation
+import ZendeskSDK
+import ZendeskCoreSDK
+import MFSideMenu
 
 class AppUtility {
     // Method used to get key from infolist
@@ -77,8 +80,17 @@ class AppUtility {
         dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         let dateString = dateFormatter.string(from: date)
-        print("formatted date is =  \(dateString)")
+        //print("formatted date is =  \(dateString)")
         return dateString
+    }
+    
+    class func getDateFromString(dateString:String)->Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let date = dateFormatter.date(from: dateString)
+        //print("formatted date is =  \(dateString)")
+        return date!
     }
     
     class func checkIfDateFallsAfterYear2014(dateStr: String)->Bool{
@@ -131,5 +143,33 @@ class AppUtility {
             arr.append(country.name)
         }
         return arr
+    }
+    
+    class func configureZendesk(data:ZendeskData){
+        
+        Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",
+                           clientId: "mobile_sdk_client_76a94439fa38a9e41ecb",
+                           zendeskUrl: "https://northloop.zendesk.com")
+        let identity = Identity.createJwt(token: data.accessToken)
+        Zendesk.instance?.setIdentity(identity)
+        Support.initialize(withZendesk: Zendesk.instance)
+    }
+    
+    class func moveToHomeScreen() {
+        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
+        var initialNavigationController:UINavigationController
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
+        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        initialNavigationController = UINavigationController(rootViewController:homeViewController)
+        sideMenu.delegate = homeViewController
+        containerViewController.leftMenuViewController=sideMenu
+        containerViewController.centerViewController=initialNavigationController
+        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
+        containerViewController.shadow.enabled=true;
+        containerViewController.panMode = MFSideMenuPanModeDefault
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.window?.rootViewController = containerViewController
     }
 }

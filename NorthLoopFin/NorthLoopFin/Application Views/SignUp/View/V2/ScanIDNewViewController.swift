@@ -10,6 +10,8 @@ import UIKit
 
 class ScanIDNewViewController: BaseViewController {
     @IBOutlet weak var uploadImage3HeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var uploadImage2HeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var imageConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var selectYourIDLbl: LabelWithLetterSpace!
@@ -33,7 +35,7 @@ class ScanIDNewViewController: BaseViewController {
 
     var imageArray:[UIImage]=[]
     var selectedOption:AppConstants.SelectIDTYPES!
-    var optionsArr:[AppConstants.SelectIDTYPES]=[AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.ENROLMENTLETTER]
+    var optionsArr:[AppConstants.SelectIDTYPES]=[AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.F1VISA,AppConstants.SelectIDTYPES.ADDRESSPROOF]
     var model:SelectIDType!
     
     var modelArray:[SelectIDType]=[]
@@ -47,7 +49,7 @@ class ScanIDNewViewController: BaseViewController {
         super.viewDidLoad()
         self.checkForSSN()
         self.prepareView()
-        //self.checkDBForImages()
+        self.checkDBForImages()
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
@@ -58,9 +60,9 @@ class ScanIDNewViewController: BaseViewController {
         if let _ = self.signupData{
             if (self.signupData.documents.virtualDocs.count == 1){
                 // it must be ssn doc..then change options
-                self.optionsArr = [AppConstants.SelectIDTYPES.USIDTYPE,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.ENROLMENTLETTER]
+                self.optionsArr = [AppConstants.SelectIDTYPES.USIDTYPE,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.F1VISA,AppConstants.SelectIDTYPES.ADDRESSPROOF]
             }else{
-                self.optionsArr = [AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.ENROLMENTLETTER]
+                self.optionsArr = [AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.F1VISA,AppConstants.SelectIDTYPES.ADDRESSPROOF]
             }
         }
     }
@@ -116,6 +118,7 @@ class ScanIDNewViewController: BaseViewController {
   
     func prepareView(){
         uploadImage3HeightConstraint.constant=0
+        uploadImage2HeightConstraint.constant=0
 
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.selectYourIDLbl.textColor = Colors.Cameo213186154
@@ -197,10 +200,12 @@ class ScanIDNewViewController: BaseViewController {
         //change background color and other UI
         let selectedButton=sender as! CommonButton
         if selectedButton.isBtnSelected{
-            let model = self.modelArray[selectedButton.tag]
-            self.imageArray = model.images
-            self.selectedOption = model.type
-            self.setImages()
+            if self.modelArray.count<=selectedButton.tag{
+                let model = self.modelArray[selectedButton.tag]
+                self.imageArray = model.images
+                self.selectedOption = model.type
+                self.setImages()
+            }
         }else{
             selectedButton.isBtnSelected = true
             //get button from array and update its selection state
@@ -214,8 +219,9 @@ class ScanIDNewViewController: BaseViewController {
     func handleSelectedOption(_ sender:CommonButton){
         if let optionSelected = self.selectedOption{
             
-            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.ENROLMENTLETTER || optionSelected == AppConstants.SelectIDTYPES.USIDTYPE{
-                if self.imageArray.count < 2 {
+            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA || optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
+                optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF{
+                if self.imageArray.count < 1 {
                     print("show error for passport")
                     self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
                     return
@@ -233,10 +239,12 @@ class ScanIDNewViewController: BaseViewController {
         self.selectedOption = self.optionsArr[sender.tag]
         if self.selectedOption == AppConstants.SelectIDTYPES.I20{
             uploadImage3HeightConstraint.constant=60
+            uploadImage2HeightConstraint.constant=60
             self.setLabelsForI20()
         }else{
             self.resetLabels()
             uploadImage3HeightConstraint.constant=0
+            uploadImage2HeightConstraint.constant=0
         }
         self.view.layoutIfNeeded()
         sender.isBtnSelected=true
@@ -258,14 +266,17 @@ class ScanIDNewViewController: BaseViewController {
     }
         
     func setImages(){
-        if self.selectedOption==AppConstants.SelectIDTYPES.PASSPORT || self.selectedOption==AppConstants.SelectIDTYPES.ENROLMENTLETTER || self.selectedOption==AppConstants.SelectIDTYPES.USIDTYPE{
+        if self.selectedOption==AppConstants.SelectIDTYPES.PASSPORT || self.selectedOption==AppConstants.SelectIDTYPES.F1VISA || self.selectedOption==AppConstants.SelectIDTYPES.USIDTYPE ||
+            self.selectedOption==AppConstants.SelectIDTYPES.ADDRESSPROOF{
             self.uploadImage3HeightConstraint.constant=0
+            self.uploadImage2HeightConstraint.constant=0
             self.resetLabels()
             self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
-            self.uploadedImageBack.image = self.imageArray[1]
+            //self.uploadedImageBack.image = self.imageArray[1]
         }else{
             self.uploadImage3HeightConstraint.constant=60
+            self.uploadImage2HeightConstraint.constant=60
             self.setLabelsForI20()
             self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
@@ -321,8 +332,9 @@ class ScanIDNewViewController: BaseViewController {
     func showErrForSelectedOptions(){
         if let optionSelected = self.selectedOption{
             
-            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.ENROLMENTLETTER ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE{
-                if self.imageArray.count < 2 {
+            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
+                optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF{
+                if self.imageArray.count < 1 {
                     print("show error for passport")
                     self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
                     return
@@ -402,8 +414,9 @@ class ScanIDNewViewController: BaseViewController {
         func checkForCompletedStateOfScanId(){
             if let optionSelected = self.selectedOption{
                 
-                if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.ENROLMENTLETTER ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE{
-                    if self.imageArray.count == 2 {
+                if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
+                    optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF{
+                    if self.imageArray.count == 1 {
                         self.model  = SelectIDType.init(type: optionSelected, images: self.imageArray)
                         self.modelArray.append(self.model)
                     }

@@ -26,7 +26,8 @@ class TransactionListApiRequest:ApiRequestProtocol {
         self.apiRequestUrl = reqFromData.getEndPoint()
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: TransactionHistory.self)
+        //ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: TransactionHistory.self)
+        ServiceManager.sharedInstance.requestGETWithParameter(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: TransactionHistory.self)
     }
     
     /**
