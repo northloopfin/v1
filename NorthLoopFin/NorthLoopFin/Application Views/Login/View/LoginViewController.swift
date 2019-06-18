@@ -169,6 +169,9 @@ extension LoginViewController:LoginDelegate{
     func didLoggedIn(data: LoginData) {
         //successfully logged in user..move to home page
         //call Zendesk API to get identity token
+        UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+        //remove device token from local storage
+        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForDeviceToken)
         self.zendeskPresenter.sendZendeskTokenRequest()
     }
     

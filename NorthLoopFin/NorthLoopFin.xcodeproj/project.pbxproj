@@ -335,6 +335,9 @@
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
 		4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */; };
 		4B94418F22ACC236005AD3BD /* DisputeTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */; };
+		4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4C35322B0C42D00743580 /* DateExtension.swift */; };
+		4BFDF87422B217FB0066860D /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */; };
+		4BFDF87622B236BB0066860D /* TransactionListTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF87522B236BB0066860D /* TransactionListTo.swift */; };
 		61B88BE40F88EDFCFD2B93BD /* Pods_NorthLoopFinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */; };
 		E6A1ACCA12D73B5988A6E8ED /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */; };
 		EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */; };
@@ -699,6 +702,9 @@
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
 		4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionBusinessModel.swift; sourceTree = "<group>"; };
 		4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionResponse.swift; sourceTree = "<group>"; };
+		4BF4C35322B0C42D00743580 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		4BFDF87522B236BB0066860D /* TransactionListTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTo.swift; sourceTree = "<group>"; };
 		4FE18586CD8D3F50E9C70CA2 /* Pods-NorthLoopFinTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.staging.xcconfig"; sourceTree = "<group>"; };
 		74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -838,7 +844,6 @@
 			children = (
 				1D4AD76E22843B43007A9C2F /* Presenter */,
 				1D4AD76D22843B3A007A9C2F /* Model */,
-				1D6AA0892213EE3B00DD04F4 /* Timer */,
 				1D11FE19220C02D500234E6D /* View */,
 			);
 			path = Login;
@@ -1319,13 +1324,6 @@
 			path = TwoFAVerify;
 			sourceTree = "<group>";
 		};
-		1D6AA0892213EE3B00DD04F4 /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Timer;
-			sourceTree = "<group>";
-		};
 		1D6B7EDE21EDE3AE0075D58E /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -1558,6 +1556,7 @@
 				1D9AF08A22A5308900A9055F /* TransactionListFrom.swift */,
 				1D9AF08C22A5309900A9055F /* TransactionListUser.swift */,
 				1D9AF08E22A5429F00A9055F /* TransactionListLocation.swift */,
+				4BFDF87522B236BB0066860D /* TransactionListTo.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -1807,6 +1806,7 @@
 			children = (
 				1DF64E3221E8B40B008774CE /* MyAccountViewController.swift */,
 				1D180DBB229FC98B00FC3390 /* MyAccountDelegates.swift */,
+				4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1983,6 +1983,7 @@
 				1D44CD00228F0387007382F2 /* UIImageExtension.swift */,
 				1DEEEF1F2292F14F002909E1 /* StringExtension.swift */,
 				1DE6D93E22A0CF5C00014572 /* TappableUILabel.swift */,
+				4BF4C35322B0C42D00743580 /* DateExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2422,6 +2423,7 @@
 				1D5AB2E422A676D100DB3B70 /* UpdateCardBusinessLogic.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */,
+				4BFDF87422B217FB0066860D /* AccountDetailViewController.swift in Sources */,
 				1D9AF08722A5077300A9055F /* IndividualTransaction.swift in Sources */,
 				1D19D31E2295882E008D367E /* Account.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
@@ -2441,6 +2443,7 @@
 				1D55EE82228593CE0003BEDB /* LoginApiRequest.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
 				1D5AB31B22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift in Sources */,
+				4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */,
 				1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
@@ -2461,6 +2464,7 @@
 				1D8440802289545A00A77BBF /* Amount.swift in Sources */,
 				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
 				1D180D9D229E9FF600FC3390 /* ATMTableViewCell.swift in Sources */,
+				4BFDF87622B236BB0066860D /* TransactionListTo.swift in Sources */,
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D29C84922A917050092E3EB /* ChangeAddressBusinessModel.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 class SelectIDType{
-    let type: AppConstants.SelectIDTYPES
+    var type: AppConstants.SelectIDTYPES
     var images: [UIImage] = []
     
     init(type:AppConstants.SelectIDTYPES, images:[UIImage]) {

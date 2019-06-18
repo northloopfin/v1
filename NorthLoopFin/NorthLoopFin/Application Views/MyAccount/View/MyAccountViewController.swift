@@ -7,27 +7,24 @@
 //
 
 import UIKit
-//import Firebase
+import AlertHelperKit
 
 class MyAccountViewController: BaseViewController {
     @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var customView: CommonTable!
-    @IBOutlet weak var nameLbl: LabelWithLetterSpace!
-    @IBOutlet weak var accountNumberLbl: LabelWithLetterSpace!
-    @IBOutlet weak var rountingNumberLbl: LabelWithLetterSpace!
-    @IBOutlet weak var swiftNumberLbl: LabelWithLetterSpace!
-    var presenter:AccountPresenter!
+    
     var resetPresenter:ResetPasswordPresenter!
     var twoFApresenter:TwoFAPresenter!
 
-
+    // var to track which option is clicked
+    var isChangePhoneClicked:Bool=false
+    var isChangeAddressClicked:Bool=false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         self.customView.delegate=self
-        self.presenter = AccountPresenter.init(delegate: self)
         self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
-        self.presenter.sendFetchTransferDetailRequest()
         self.twoFApresenter = TwoFAPresenter.init(delegate: self)
 
     }
@@ -43,7 +40,7 @@ class MyAccountViewController: BaseViewController {
     func prepareView(){
         
         var dataSource:[String] = []
-        dataSource.append(AppConstants.ProfileOptions.APPSETTINGS.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.ACCOUNTDETAIL.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue)
@@ -54,17 +51,7 @@ class MyAccountViewController: BaseViewController {
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
         self.setupRightNavigationBar()
-        self.nameLbl.textColor = Colors.Taupe776857
-        self.accountNumberLbl.textColor = Colors.Taupe776857
-        self.rountingNumberLbl.textColor = Colors.Taupe776857
-        self.swiftNumberLbl.textColor = Colors.Taupe776857
         
-        
-        //set font
-        self.nameLbl.font = AppFonts.textBoxCalibri16
-        self.accountNumberLbl.font = AppFonts.textBoxCalibri16
-        self.rountingNumberLbl.font = AppFonts.textBoxCalibri16
-        self.swiftNumberLbl.font = AppFonts.textBoxCalibri16
     }
 }
 
@@ -72,20 +59,63 @@ extension MyAccountViewController:CommonTableDelegate{
     func didSelectOption(optionVal: Int) {
         switch optionVal {
         case 0:
-            self.moveToSettings()
+            self.moveToAccountDetail()
         case 1:
-            self.moveTo2FA()
+            //change address
+            self.isChangeAddressClicked=true
+            self.isChangePhoneClicked=false
+            self.showConfirmPopUp()
         case 2:
             // send reset password API request
             self.sendResetPasswordAPIRequest()
         case 3:
-            self.twoFApresenter.sendTwoFARequest(sendToAPI: false)
+            //change Phone Number
+            self.isChangePhoneClicked=true
+            self.isChangeAddressClicked=false
+            self.showConfirmPopUp()
         case 4:
             self.logoutUser()
         default:
             break
         }
     }
+    
+    //Show popup before changing Phone
+    func showConfirmPopUp(){
+        
+        var params = Parameters(
+            title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
+            message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_CHANGE_ADDRESS.rawValue,
+            cancelButton: "Cancel",
+            otherButtons: ["Confirmed"]
+        )
+        if self.isChangePhoneClicked{
+            params = Parameters(
+                title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
+                message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_CHANGE_PHONE.rawValue,
+                cancelButton: "Cancel",
+                otherButtons: ["Confirmed"]
+            )
+        }
+        
+        AlertHelperKit().showAlertWithHandler(self, parameters: params) { buttonIndex in
+            switch buttonIndex {
+            case 0:
+                print("Cancel: \(buttonIndex)")
+            default:
+                self.performActionAccordingToSelectedOptionToChange()
+            }
+        }
+    }
+    
+    func performActionAccordingToSelectedOptionToChange(){
+        if self.isChangePhoneClicked{
+            self.moveToOTP()
+        }else if self.isChangeAddressClicked{
+            self.moveTo2FA()
+        }
+    }
+    
     //Send Reset Password API request with email as parameter
     func sendResetPasswordAPIRequest(){
         if let user:User = UserInformationUtility.sharedInstance.getCurrentUser(){
@@ -104,23 +134,14 @@ extension MyAccountViewController:CommonTableDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
-    func moveToSettings(){
+    func moveToAccountDetail(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AccountDetailViewController") as! AccountDetailViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
 }
 
-extension MyAccountViewController:UserTransferDetailDelegate{
-    func didFetchUserTransactionDetail(data: UserTransferDetailData) {
-        let domesticAccountDetails = data.transferDetails.domestic
-        let internationalAccountDetails = data.transferDetails.international
-        self.nameLbl.text = "Name: "+domesticAccountDetails.bankName
-        self.accountNumberLbl.text = "Account No: "+domesticAccountDetails.accountNumber
-        self.rountingNumberLbl.text = "Routing No: "+domesticAccountDetails.routing
-        self.swiftNumberLbl.text = "Swift No: "+internationalAccountDetails.swift
-    }
-}
+
 extension MyAccountViewController: ResetPasswordDelegate{
     func didSentResetPasswordRequest(){
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.RESET_EMAIL_SENT.rawValue)

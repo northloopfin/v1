@@ -120,6 +120,7 @@ class VerifyAddressViewController: BaseViewController {
             self.houseNumbertextfield.text = info.houseNumber
             self.cityTextfield.text = info.city
             self.textState.text = info.state
+            self.zipTextfield.text = info.zip
         }
     }
     
@@ -241,11 +242,17 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
         // Save data in user default
         let user:User = User.init(username: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, email: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, accesstoken: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String)
         user.authKey = data.data.oauthKey
+        user.userID = data.data.userID
+        user.name = data.data.name
         UserInformationUtility.sharedInstance.saveUser(model: user)
         //remove data from local DB
         RealmHelper.deleteAllBasicInfo()
+        RealmHelper.deleteAllScanID()
+        RealmHelper.deleteAllSelfie()
         // Delete email and accesstoken stored in UserDefault
-        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForEmail)
+        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken)
+        //remove device token from local storage
+        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForDeviceToken)
         //call Zendesk API for Identity token
         self.zendeskPresenter.sendZendeskTokenRequest()
     }

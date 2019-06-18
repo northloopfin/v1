@@ -21,11 +21,12 @@ class LoginPresenter: ResponseCallback{
 //    Send Login Request to Business Login
     func sendLoginRequest(username name:String, password:String){
           self.loginDelegate?.showLoader()
-        
+        print(UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForDeviceToken) ?? "")
         let requestModel = LoginRequestModel.Builder()
             .addRequestQueryParams(key: "username", value: name as AnyObject)
             .addRequestQueryParams(key: "password", value: password as AnyObject)
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .addRequestQueryParams(key: "device_token", value: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForDeviceToken) ?? "" as AnyObject)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
             .build()
         print(requestModel.requestHeader)
         requestModel.apiUrl=requestModel.getEndPoint()

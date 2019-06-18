@@ -27,7 +27,7 @@ struct Endpoints{
         case ATMFINDER = "banking/atm?"
         case USERTRANSFERDETAIL = "banking/transfer-details"
         case TWOFA = "banking/2fa/false"
-        case TWOFAVERIFY = "banking/2fa/true?"
+        case TWOFAVERIFY = "banking/2fa/"
 
     }
     

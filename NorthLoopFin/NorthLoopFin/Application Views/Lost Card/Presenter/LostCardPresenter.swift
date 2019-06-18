@@ -28,6 +28,7 @@ class LostCardPresenter:ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: "ip", value: "127.0.0.1")
             .addRequestQueryParams(key: "expedite", value: sendToAPI as AnyObject)
             .build()
         

@@ -19,7 +19,7 @@ struct IndividualTransaction: Codable {
     let recentStatus: RecentStatus
     let date : Date
 //    let timeline: [RecentStatus]
-    let to: TransactionListFrom
+    let to: TransactionListTo
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -37,7 +37,7 @@ struct IndividualTransaction: Codable {
         extra = try values.decodeIfPresent(TransactionListExtra.self, forKey: .extra)!
         from = try values.decodeIfPresent(TransactionListFrom.self, forKey: .from)!
         recentStatus = try values.decodeIfPresent(RecentStatus.self, forKey: .recentStatus)!
-        to = try values.decodeIfPresent(TransactionListFrom.self, forKey: .to)!
+        to = try values.decodeIfPresent(TransactionListTo.self, forKey: .to)!
 
         let dateString = AppUtility.dateFromMilliseconds(seconds: Double(extra.createdOn))
         date = AppUtility.getDateFromString(dateString: dateString)

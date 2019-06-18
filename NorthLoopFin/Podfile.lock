@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AlertHelperKit (1.8.0)
   - Amplitude-iOS (4.6.0)
   - Crashlytics (3.13.1):
     - Fabric (~> 1.10.1)
@@ -85,10 +86,12 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
+  - Haptica (3.0.0)
   - HockeySDK (5.1.4):
     - HockeySDK/DefaultLib (= 5.1.4)
   - HockeySDK/DefaultLib (5.1.4)
   - IQKeyboardManagerSwift (6.3.0)
+  - Karte (4.0.0)
   - Kingfisher (5.5.0)
   - MFSideMenu (0.5.5)
   - nanopb (0.3.901):
@@ -129,6 +132,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - AlertHelperKit (from `https://github.com/keygx/AlertHelperKit`)
   - Amplitude-iOS (~> 4.5)
   - Crashlytics
   - DropDown (= 2.3.2)
@@ -138,8 +142,10 @@ DEPENDENCIES:
   - GiFHUD-Swift
   - GoogleMaps
   - GooglePlaces
+  - Haptica
   - HockeySDK (~> 5.1.4)
   - IQKeyboardManagerSwift
+  - Karte
   - Kingfisher (~> 5.0)
   - MFSideMenu
   - PWSwitch
@@ -169,8 +175,10 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - Haptica
     - HockeySDK
     - IQKeyboardManagerSwift
+    - Karte
     - Kingfisher
     - MFSideMenu
     - nanopb
@@ -185,8 +193,18 @@ SPEC REPOS:
     - ZDCChat
     - ZendeskSDK
 
+EXTERNAL SOURCES:
+  AlertHelperKit:
+    :git: https://github.com/keygx/AlertHelperKit
+
+CHECKOUT OPTIONS:
+  AlertHelperKit:
+    :commit: f90ca44d5994c36088a39a38a7958d41853f02ef
+    :git: https://github.com/keygx/AlertHelperKit
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AlertHelperKit: 9e5cd05c02fa3bec2c2dff972b43ef204bc3a46b
   Amplitude-iOS: ac1715ae68104b7a51723209ad574f60ab22ae5f
   Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
@@ -202,8 +220,10 @@ SPEC CHECKSUMS:
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
+  Haptica: ee4abaf262f456fe3854b493f506debe421ddf2c
   HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Karte: 76c8d383417e6d31ced2bbd2ae441e0c1b84b748
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
@@ -218,6 +238,6 @@ SPEC CHECKSUMS:
   ZDCChat: 1def9764647bb81cf71aebd9df38aa4024c52d12
   ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
 
-PODFILE CHECKSUM: 313d4ac054271708f83b9e4a1ecb6f569e7d927f
+PODFILE CHECKSUM: 5780ae950eadb5912fbab56a6be97ac4cfecb956
 
 COCOAPODS: 1.7.1

@@ -58,14 +58,16 @@ extension HelpViewController:CommonTableDelegate{
     }
     
     func moveToFAQ(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
     func moveToLegalStuff(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LegalStuffViewController") as! LegalStuffViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LegalStuffViewController") as! LegalStuffViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
     
     func moveToATMFinder(){
@@ -75,9 +77,20 @@ extension HelpViewController:CommonTableDelegate{
     }
     func openZendeskChat(){
         // Pushes the chat widget onto the navigation controller
-        ZDCChat.start(in: navigationController, withConfig: nil)
+
+        ZDCChat.start(in: self.navigationController) { (config) in
+            config?.preChatDataRequirements.name = ZDCPreChatDataRequirement.optionalEditable
+            config!.preChatDataRequirements.email = ZDCPreChatDataRequirement.optionalEditable
+            config?.preChatDataRequirements.phone = ZDCPreChatDataRequirement.optionalEditable
+            config?.preChatDataRequirements.department = ZDCPreChatDataRequirement.optionalEditable
+            config?.preChatDataRequirements.message = ZDCPreChatDataRequirement.optionalEditable
+        }
         
-        // Hides the back button because we are in a tab controller
-    ZDCChat.instance().chatViewController.navigationItem.hidesBackButton = false
+        ZDCChatUI.appearance().backChatButtonImage = "Back"
+        ZDCChatUI.appearance().chatBackgroundImage="oval"
+
+    }
+    @objc func popController(){
+        self.navigationController?.popViewController(animated: false)
     }
 }

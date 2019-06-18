@@ -10,7 +10,11 @@ import UIKit
 import DropDown
 
 class MakeTransferViewController: BaseViewController {
-
+    @IBOutlet weak var nicknameHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var payBtnTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var payBtnHeightConstarint: NSLayoutConstraint!
+    @IBOutlet weak var amoutHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
@@ -35,9 +39,24 @@ class MakeTransferViewController: BaseViewController {
         self.inactivateDoneBtn()
         self.configureTextFields()
         self.presenter = FetchACHPresenter.init(delegate: self)
-        self.presenter.sendFetchACRequest()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.sendFetchACRequest()
+
+    }
+    
+    // Initially showing UI for no account added. Once get response from API, will change UI
+    func initialiseUIWithEmptyData(){
+        self.nicknameHeightConstraint.constant=0
+        self.amoutHeightConstraint.constant=0
+        self.payBtnHeightConstarint.constant=0
+        self.payBtnTopConstraint.constant=0
+    }
+    
     func prepareView(){
+        self.initialiseUIWithEmptyData()
         self.nicknameTextField.inputView = UIView.init(frame: CGRect.zero)
         self.nicknameTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         dropDown.anchorView = self.nicknameTextField
@@ -139,12 +158,17 @@ extension MakeTransferViewController:UITextFieldDelegate{
 }
 extension MakeTransferViewController:FetchACHDelegates{
     func didSentFetchACH(data: [ACHNode]) {
+        if data.count > 0{
         self.achNodeArray=data
         for n in 0...(data.count-1) {
             let nickname = data[n].nickname
             self.achArray.append(nickname)
+            }
+            self.nicknameHeightConstraint.constant=50
+            self.amoutHeightConstraint.constant=50
+            self.payBtnHeightConstarint.constant=45
+            self.payBtnTopConstraint.constant=148
         }
-        print(self.achArray)
         self.dropDown.dataSource = self.achArray
     }
 }

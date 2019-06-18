@@ -22,7 +22,7 @@ class LostCardConfirmationViewController: BaseViewController {
     func prepareView(){
         self.messageLbl.textColor=Colors.MainTitleColor
         
-        self.messageLbl.font=AppFonts.calibri15
+        self.messageLbl.font=AppFonts.btnTitleCalibri18
         self.okBtn.titleLabel?.font=AppFonts.btnTitleCalibri18
     }
     

@@ -11,10 +11,17 @@ import UIKit
 class ChangePhoneViewController: BaseViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var changeBtn: UIButton!
+    @IBOutlet weak var messageLbl: UILabel!
+
     var presenter:ChangePhonePresenter!
 
     @IBAction func changeBtnClicked(_ sender: Any) {
-        self.presenter.sendChangePhoneRequest(newPhoneNumber: self.phoneTextField.text!)
+        if Validations.isValidPhone(phone: self.phoneTextField.text ?? ""){
+            self.presenter.sendChangePhoneRequest(newPhoneNumber: self.phoneTextField.text!)
+
+        }else{
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +30,14 @@ class ChangePhoneViewController: BaseViewController {
     }
     
     func prepareView(){
-        self.setNavigationBarTitle(title: "Change Phone")
+        self.changeBtn.isEnabled=false
+        self.setNavigationBarTitle(title: "Change Phone Number")
         self.setupRightNavigationBar()
         
         self.phoneTextField.textColor=Colors.DustyGray155155155
-        
+        self.messageLbl.textColor = Colors.MainTitleColor
+        self.messageLbl.font=AppFonts.calibriBold16
+
         self.phoneTextField.font=AppFonts.textBoxCalibri16
         self.changeBtn.titleLabel!.font=AppFonts.calibri15
         self.configureTextFields()
@@ -42,7 +52,7 @@ class ChangePhoneViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.phoneTextField.applyAttributesWithValues(placeholderText: "New Phone Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.phoneTextField.setLeftPaddingPoints(19)
     }
@@ -52,12 +62,6 @@ class ChangePhoneViewController: BaseViewController {
         }
     }
     
-    func moveTo2FAScreen(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "Select2FAModeViewController") as! Select2FAModeViewController
-        vc.screenWhichInitiated = AppConstants.Screens.CHANGEPHONE
-        self.navigationController?.pushViewController(vc, animated: false)
-    }
 }
 extension ChangePhoneViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -77,12 +81,12 @@ extension ChangePhoneViewController:ChangePhoneDelegate{
         self.moveToConfirmationScreen()
     }
     
-    func moveToConfirmationScreen(){
+    
         func moveToConfirmationScreen(){
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionConfirmationViewController") as! LostCardConfirmationViewController
+            let vc = storyBoard.instantiateViewController(withIdentifier: "LostCardConfirmationViewController") as! LostCardConfirmationViewController
             vc.message = "Your new number is set! We have sent an email confirming."
             self.navigationController?.pushViewController(vc, animated: false)
         }
-    }
+    
 }

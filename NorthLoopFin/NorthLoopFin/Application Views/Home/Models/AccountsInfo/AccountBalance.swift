@@ -9,7 +9,7 @@
 import Foundation
 
 struct AccountBalance: Codable {
-    let amount: Int
+    let amount: Double
     let currency: String
     
     enum CodingKeys: String, CodingKey {
@@ -19,7 +19,7 @@ struct AccountBalance: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        amount = try values.decodeIfPresent(Int.self, forKey: .amount) ?? 0
+        amount = try values.decodeIfPresent(Double.self, forKey: .amount) ?? 0.0
         currency = try values.decodeIfPresent(String.self, forKey: .currency) ?? ""
     }
 }

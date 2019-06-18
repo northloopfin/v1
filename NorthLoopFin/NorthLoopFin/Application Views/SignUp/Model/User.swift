@@ -45,6 +45,9 @@ class User: NSObject, NSCoding {
         if let userId = aDecoder.decodeObject(forKey: "UserId") as? String {
             self.userID = userId
         }
+        if let name = aDecoder.decodeObject(forKey: "Name") as? String {
+            self.name = name
+        }
     }
     func encode(with aCoder: NSCoder) {
         
@@ -62,6 +65,9 @@ class User: NSObject, NSCoding {
         }
         if let userIDEncoded = self.userID {
             aCoder.encode(userIDEncoded, forKey: "UserId")
+        }
+        if let nameEncoded = self.name {
+            aCoder.encode(nameEncoded, forKey: "Name")
         }
     }
 }

@@ -43,7 +43,7 @@ class AppLaunchSetup: NSObject {
         Amplitude.instance()?.initializeApiKey("e60c4b5547bbd53ae65dab02520fd3ab")
         //Configure Zendesk Chat
         ZDCChat.initialize(withAccountKey: "lQGQv5IQfRok3EAC8hQglkuCOgB6xs3N")
-        
+//        [[ZDCChatUI appearance] setBackChatButton"Image:@"SampleBackground"];
         
     }
 }
