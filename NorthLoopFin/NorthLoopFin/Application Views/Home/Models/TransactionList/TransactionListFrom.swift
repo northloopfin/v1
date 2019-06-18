@@ -11,6 +11,7 @@ import Foundation
 struct TransactionListFrom: Codable {
     let id, nickname, type: String
     let user: TransactionListUser
+    //let meta: Recipient
     enum CodingKeys: String, CodingKey {
         case id
         case nickname
@@ -23,5 +24,6 @@ struct TransactionListFrom: Codable {
         nickname = try values.decodeIfPresent(String.self, forKey: .nickname) ?? ""
         type = try values.decodeIfPresent(String.self, forKey: .type) ?? ""
         user = try values.decodeIfPresent(TransactionListUser.self, forKey: .user)!
+       // meta = try values.decodeIfPresent(Recipient.self, forKey: .meta)!
     }
 }

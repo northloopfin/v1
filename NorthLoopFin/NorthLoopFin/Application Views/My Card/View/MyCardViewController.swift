@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlertHelperKit
 
 class MyCardViewController: BaseViewController {
 
@@ -112,12 +113,15 @@ extension MyCardViewController:CardDelegates{
     func didFetchCardStatus(data:Card) {
         if (data.data.status == "ACTIVE"){
             self.isLockCard = false
-        self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
-            self.optionsTableView.isUserInteractionEnabled=true
+            self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
+            //check for spend abroad preference
+            if data.data.preferences.allowForeignTransactions{
+                //if spend abroad is true, then reload table accordingly
+                self.data[3] = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: true)
+            }
         }else{
             self.isLockCard = true
             self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: true)
-            self.optionsTableView.isUserInteractionEnabled = false
         }
         self.optionsTableView.reloadData()
     }
@@ -131,30 +135,64 @@ extension MyCardViewController:UpdateCardDelegates{
 
 extension MyCardViewController:MyCardTableCellDelegate{
     func switchClicked(isOn: Bool, tag: Int) {
+        if self.isLockCard{
+            self.showAlertForInactiveCadrs()
+            return
+        }
         switch tag {
         case 0:
             //lock you card
             self.isLockCard=isOn
-            self.showAlertWithAction(title: "Confirm!", message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_LOCK_CARD.rawValue, buttonArray: ["Yes"]) { (action) in
-                //create request and send to presenter
-            }
+            self.showConfirmationAlert()
+            
         case 3:
             // spend abroad
             self.isSpendAbroad=isOn
-            self.showAlertWithAction(title: "Confirm!", message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_SPEND_ABROAD.rawValue, buttonArray: ["Yes"]) { (action) in
-                //create request and send to presenter
-            }
+            self.showConfirmationAlert()
+        
         default:
             break
         }
     }
     
+    func showConfirmationAlert(){
+        var params = Parameters(
+            title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
+            message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_LOCK_CARD.rawValue,
+            cancelButton: "Cancel",
+            otherButtons: ["Confirmed"]
+        )
+        if self.isSpendAbroad{
+            params = Parameters(
+                title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
+                message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_SPEND_ABROAD.rawValue,
+                cancelButton: "Cancel",
+                otherButtons: ["Confirmed"]
+            )
+        }
+        
+        AlertHelperKit().showAlertWithHandler(self, parameters: params) { buttonIndex in
+            switch buttonIndex {
+            case 0:
+                print("Cancel: \(buttonIndex)")
+            default:
+                self.createRequestForUpdateCardStatus()
+            }
+        }
+    }
+    
+    
     func createRequestForUpdateCardStatus(){
-        let prefernce = UpdateCardPreferenceBody.init(allowForeignTransactions: self.isSpendAbroad, dailyATMWithdrawalLimit: 0, dailyTransactionLimit: 0)
-        var card = UpdateCardRequestBody.init(status: "ACTIVE", pre: prefernce)
+        let preference = UpdateCardPreferenceBody.init(allowForeignTransactions: self.isSpendAbroad, dailyATMWithdrawalLimit: 0, dailyTransactionLimit: 0)
+        var card = UpdateCardRequestBody.init(status: "ACTIVE", pre: preference)
         if self.isLockCard{
-            card = UpdateCardRequestBody.init(status: "INACTIVE", pre: prefernce)
+            card = UpdateCardRequestBody.init(status: "INACTIVE", pre: preference)
         }
         self.updatePresenter.updateCardStatus(requestBody: card)
+    }
+    
+    // Show alert for inactive card
+    func showAlertForInactiveCadrs(){
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.CARD_NOT_ACTIVE_YET.rawValue)
     }
 }

@@ -20,15 +20,26 @@ class SignupStepConfirm: BaseViewController {
     var signupFlowData:SignupFlowData!=nil
     @IBAction func nextClicked(_ sender: Any) {
         
-        self.saveDataToRealm()
-        //update SignupFlowdata
-        self.updateSignupFlowData()
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
-        vc.signupFlowData=self.signupFlowData
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.validateForm()
     }
+    //validation form here
     
+    func validateForm(){
+        
+        if Validations.isValidDob(dateString: self.DOBTextField.text ?? ""){
+            self.saveDataToRealm()
+            //update SignupFlowdata
+            self.updateSignupFlowData()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
+            vc.signupFlowData=self.signupFlowData
+            self.navigationController?.pushViewController(vc, animated: false)
+        }else{
+            //show error for age
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.DOB_NOT_VALID.rawValue)
+        }
+    }
+    //adding values to model class
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
             self.signupFlowData.passport=self.passportTextField.text!
@@ -122,11 +133,12 @@ class SignupStepConfirm: BaseViewController {
         let result = RealmHelper.retrieveBasicInfo()
         print(result)
         if result.count > 0{
-            self.nextBtn.isEnabled=true
+            //self.nextBtn.isEnabled=true
             let info = result.first!
             self.passportTextField.text = info.passportNumber
             self.DOBTextField.text = info.DOB
             self.universityTextField.text = info.university
+            self.checkForMandatoryFields()
         }
     }
     
@@ -164,14 +176,17 @@ class SignupStepConfirm: BaseViewController {
 
 extension SignupStepConfirm:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
+        self.checkForMandatoryFields()
+    }
+    
+    //check for mandatory fields
+    func checkForMandatoryFields(){
         if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)!
             )
-            //(self.emailTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
         }
     }
-    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.DOBTextField{

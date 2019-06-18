@@ -8,6 +8,7 @@
 
 import UIKit
 import MFSideMenu
+import AlertHelperKit
 
 class HomeViewController: BaseViewController {
     @IBOutlet weak var ledgersTableView: UITableView!
@@ -43,7 +44,6 @@ class HomeViewController: BaseViewController {
         transactionListPresenter = TransactionListPresenter.init(delegate: self)
         accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
         self.getAccountInfo()
-        //self.loadHardcodedData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,6 +63,53 @@ class HomeViewController: BaseViewController {
     //Method to go back to previous screen
     @objc func openMenu(){
         self.menuContainerViewController.setMenuState(MFSideMenuStateLeftMenuOpen, completion: {})
+    }
+    
+    //Check for first time land on Home. If it's first time then show pop up
+    func checkForFirstTimeLandOnHome(){
+        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForFirstTimeLandOnHome){
+            //key exist , now check its value
+            let isFirstTimeLandOnHome:Bool = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForFirstTimeLandOnHome) as! Bool
+            if !isFirstTimeLandOnHome{
+                //if its true , then user must have landed on home and set this key to true
+                //but if its false then, user landed first time on home and need to set this key to true
+                // set this key to true
+                UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForFirstTimeLandOnHome)
+                //show popup here
+                self.showPopUpForFirstTimeLandOnHome()
+            }
+        }else{
+            //key not found .. so set this key to true then
+            UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForFirstTimeLandOnHome)
+            //show popup here
+            self.showPopUpForFirstTimeLandOnHome()
+        }
+    }
+    
+    //Show pop up to user , when landed first time on home
+    func showPopUpForFirstTimeLandOnHome(){
+        let params = Parameters(
+            title: "",
+            message: AppConstants.ErrorMessages.FIRST_TIME_LAND_HOME_MESSAGE.rawValue,
+            cancelButton: "Cancel",
+            otherButtons: ["Done"],
+            inputFields: [InputField(placeholder: "Enter Email", secure: false)]
+        )
+        let alert = AlertHelperKit()
+        alert.showAlertWithHandler(self, parameters: params) { buttonIndex in
+            switch buttonIndex {
+            case 0:
+                print("Cancel: \(buttonIndex)")
+            default:
+                
+                if let textFields = alert.textFields {
+                    // username
+                    let name: UITextField = textFields[0] as! UITextField
+                    print(name)
+                    // not decided yet ...what to do with this
+                }
+            }
+        }
     }
     
 
@@ -146,6 +193,8 @@ extension HomeViewController:HomeDelegate{
     func didFetchedTransactionList(data: [TransactionListModel]) {
         self.transactionDataSource.append(contentsOf: data)
         self.ledgersTableView.reloadData()
+        self.checkForFirstTimeLandOnHome()
+
     }
     func didFetchedError(error:ErrorModel){
         
@@ -153,7 +202,7 @@ extension HomeViewController:HomeDelegate{
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         if let _ = currentUser?.name{
-            self.GreetingLbl.text = "Good Morning "+(currentUser?.name)!
+            self.GreetingLbl.text = "Good Morning, "+(currentUser?.name)!
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         self.getTransactionList()
@@ -176,7 +225,8 @@ extension HomeViewController:SideMenuDelegate{
         case .MYACCOUNT:
             self.navigateToMyAccount()
         case .UPGRADE:
-            self.navigateToGoals()
+            self.navigateToUpgrade()
+            
         case .EXPENSES:
             self.navigateToExpenses()
         case .SETTINGS:
@@ -210,10 +260,10 @@ extension HomeViewController:SideMenuDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
-    func navigateToGoals(){
+    func navigateToUpgrade(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "GoalsViewController") as! GoalsViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "UpgradePremiumViewController") as! UpgradePremiumViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func navigateToExpenses(){

@@ -219,8 +219,7 @@ extension OTPViewController:UITextFieldDelegate{
 }
 extension OTPViewController:TwoFAVerifyDelegates{
     func didVerifiedOTP() {
-        
-     self.moveToSetPinScreen()
+        self.moveToRelevantScreen()
     }
     
     func moveToRelevantScreen(){
@@ -250,6 +249,7 @@ extension OTPViewController:TwoFAVerifyDelegates{
     func moveToChangeAddress(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
+        vc.screenThatInitiatedThisFlow = self.screenWhichInitiatedOTP
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }

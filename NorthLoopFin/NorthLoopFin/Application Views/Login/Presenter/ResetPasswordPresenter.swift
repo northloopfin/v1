@@ -24,7 +24,7 @@ class ResetPasswordPresenter: ResponseCallback{
         
         let requestModel = ResetPasswordRequestModel.Builder()
             .addRequestQueryParams(key: "username", value: name as AnyObject)
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
             .build()
         print(requestModel.requestHeader)
         requestModel.apiUrl=requestModel.getEndPoint()

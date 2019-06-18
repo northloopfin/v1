@@ -21,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        UINavigationBar.appearance().isTranslucent = false
+        
+        // if crash happen prior delete local database
+        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
+            RealmHelper.deleteAllFromDatabase()
+            UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForCrash)
+        }
         // Override point for customization after application launch.
         self.registerForPushNotifications()
 
@@ -47,8 +54,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(2)
         self.initialViewController()
         self.logEventForAppOpen()
+        
+        // Line to catch exceptions
+        //NSSetUncaughtExceptionHandler(uncaughtExceptionHandler);exce
+        NSSetUncaughtExceptionHandler { (exception) in
+            print(exception)
+            UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForCrash)
+        }
         return true
     }
+    
+
     func logEventForAppOpen(){
         let eventProperties:[String:String] = ["EventCategory":"Admin","Description":"triggers when the user opens the app"]
         let eventName:String = "App Open"
@@ -243,6 +259,7 @@ extension AppDelegate:MessagingDelegate{
         
         let dataDict:[String: String] = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        UserDefaults.saveToUserDefault(fcmToken as AnyObject, key: AppConstants.UserDefaultKeyForDeviceToken)
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
     }

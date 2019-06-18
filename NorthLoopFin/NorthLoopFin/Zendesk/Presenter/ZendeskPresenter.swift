@@ -23,7 +23,7 @@ class ZendeskPresenter: ResponseCallback{
         self.delegate?.showLoader()
         let currentUser:User=UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = ZendeskRequestModel.Builder()
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .build()
         print(requestModel.requestHeader)

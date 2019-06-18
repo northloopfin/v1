@@ -39,9 +39,33 @@ class Validations {
     class func isValidName(value:String)->Bool{
             return value.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) == nil && value != ""
     }
+    
     class func isValidZip(value:String)->Bool{
         let zipRegex = "^[a-zA-Z0-9]{5,8}$";
         let valid = NSPredicate(format: "SELF MATCHES %@", zipRegex).evaluate(with: value)
+        return valid
+    }
+    //this function will check for age whether its eqaul to or more than 18 years
+    class func isValidDob(dateString:String)->Bool{
+        let ageComponents = dateString.components(separatedBy: "/") //["28", "06", "1989"]
+        
+        let dateDOB = Calendar.current.date(from: DateComponents(year:
+            Int(ageComponents[2]), month: Int(ageComponents[1]), day:
+            Int(ageComponents[0])))!
+        //Jun 28, 1986, 12:00 AM
+        
+        let calculatedAge = dateDOB.age
+        print(calculatedAge)
+        if calculatedAge < 18{
+            return false
+        }
+        return true
+    }
+    
+    class func isValidRoutingNumber(routingNumber: String) -> Bool {
+        
+        let phoneRegex = "^[0-9]{9,9}$";
+        let valid = NSPredicate(format: "SELF MATCHES %@", phoneRegex).evaluate(with: routingNumber)
         return valid
     }
 }

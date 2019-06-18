@@ -222,8 +222,9 @@ class CreateAccountV2ViewController: BaseViewController {
     
    //will save this screen data to DB
     func saveDataToRealm(){
+        RealmHelper.deleteAllBasicInfo()
         let basicInfo:BasicInfo=BasicInfo()
-        basicInfo.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
+    basicInfo.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
         basicInfo.firstname=self.firstNameTextField.text ?? ""
         basicInfo.lastname=self.lastNameTextField.text ?? ""
         basicInfo.ssn=self.SSNTextField.text ?? ""

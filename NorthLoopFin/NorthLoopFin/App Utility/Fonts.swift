@@ -1,11 +1,7 @@
 import Foundation
 import UIKit
 
-//// Usage Examples
-//let system12            = Font(.system, size: .standard(.h5)).instance
-//let robotoThin20        = Font(.installed(.RobotoThin), size: .standard(.h1)).instance
-//let robotoBlack14       = Font(.installed(.RobotoBlack), size: .standard(.h4)).instance
-//let helveticaLight13    = Font(.custom("Helvetica-Light"), size: .custom(13.0)).instance
+
 
 struct AppFonts{
     static let mainTitleCalibriBold25 = Font(.installed(.CalibriBold), size: .standard(.h25)).instance

@@ -13,7 +13,7 @@ class SelfieViewController: BaseViewController {
     @IBOutlet weak var nextBtn: CommonButton!
     private var selfieImage:UIImage!
     @IBOutlet weak var openCameraView: UIView!
-    @IBOutlet weak var step2Lbl: LabelWithLetterSpace!
+    //@IBOutlet weak var step2Lbl: LabelWithLetterSpace!
     @IBOutlet weak var step1Lbl: LabelWithLetterSpace!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var openCamera: LabelWithLetterSpace!
@@ -55,12 +55,12 @@ class SelfieViewController: BaseViewController {
         // Set Text Color
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.step1Lbl.textColor = Colors.DustyGray155155155
-        self.step2Lbl.textColor = Colors.DustyGray155155155
+        //self.step2Lbl.textColor = Colors.DustyGray155155155
         self.openCamera.textColor = Colors.Taupe776857
         
         // Set font
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
-        self.step2Lbl.font = AppFonts.btnTitleCalibri18
+       // self.step2Lbl.font = AppFonts.btnTitleCalibri18
         self.step1Lbl.font = AppFonts.btnTitleCalibri18
         self.openCamera.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18

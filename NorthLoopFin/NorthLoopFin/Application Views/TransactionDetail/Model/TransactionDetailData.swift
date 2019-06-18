@@ -9,7 +9,7 @@
 import Foundation
 
 struct TransactionDetailData: Codable {
-    let id: ID
+    let id: String
     let v: Int
     let amount: TransactionDetailAmount
     let client: Client
@@ -18,7 +18,7 @@ struct TransactionDetailData: Codable {
     //let from: From
     //let recentStatus: RecentStatus
     //let timeline: [RecentStatus]
-    let to: TransactionListFrom
+    let to: TransactionListTo
     //let statusCode: Int
     
     enum CodingKeys: String, CodingKey {
@@ -29,12 +29,12 @@ struct TransactionDetailData: Codable {
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(ID.self, forKey: .id)!
+        id = try values.decodeIfPresent(String.self, forKey: .id) ?? ""
         v = try values.decodeIfPresent(Int.self, forKey: .v) ?? 0
         amount = try values.decodeIfPresent(TransactionDetailAmount.self, forKey: .amount)!
         client = try values.decodeIfPresent(Client.self, forKey: .client)!
         extra = try values.decodeIfPresent(TransactionListExtra.self, forKey: .extra)!
-        to = try values.decodeIfPresent(TransactionListFrom.self, forKey: .to)!
+        to = try values.decodeIfPresent(TransactionListTo.self, forKey: .to)!
     }
     
 }

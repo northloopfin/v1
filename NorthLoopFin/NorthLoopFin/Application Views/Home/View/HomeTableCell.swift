@@ -38,9 +38,16 @@ class HomeTableCell: UITableViewCell {
     func bindData(data: IndividualTransaction,delegate:HomeTableCellDelegate){
         self.delegate = delegate
         self.individualTransaction=data
-        self.beneficiaryName.text = data.to.nickname
+        if data.to.type == "EXTERNAL-US"{
+            if let _  = data.to.meta{
+                self.beneficiaryName.text = data.to.meta?.merchantName
+                let url = URL(string: (data.to.meta?.merchantLogo)!)
+                self.beneficiaryImg.kf.setImage(with: url)
+            }
+        }else if data.to.type == "ACH-US"{
+            self.beneficiaryName.text = data.to.user.legalNames[0]
+        }        
         self.transactionAmt.text = "$" + String(data.amount.amount)
-//        let url = URL(string: data.to.merchantLogo)
-//        self.beneficiaryImg.kf.setImage(with: url)
+        
     }
 }

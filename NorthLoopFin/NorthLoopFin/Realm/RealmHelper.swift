@@ -83,12 +83,21 @@ class RealmHelper{
 
                 infoToBeUpdated.citizenShip = newInfo.citizenShip
             }
-            if newInfo.phone != ""{
-                print("phone updated")
+            if newInfo.passportNumber != ""{
+                print("passportNumber updated")
 
-                infoToBeUpdated.phone = newInfo.phone
+                infoToBeUpdated.passportNumber = newInfo.passportNumber
             }
-            
+            if newInfo.DOB != ""{
+                print("DOB updated")
+                
+                infoToBeUpdated.DOB = newInfo.DOB
+            }
+            if newInfo.university != ""{
+                print("university updated")
+                
+                infoToBeUpdated.university = newInfo.university
+            }
             if newInfo.streetAddress != ""{
                 print("streetAddress updated")
 

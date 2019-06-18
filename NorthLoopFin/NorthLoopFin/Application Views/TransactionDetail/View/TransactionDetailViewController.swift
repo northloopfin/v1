@@ -83,7 +83,7 @@ class TransactionDetailViewController: BaseViewController {
         shadowRadius = 16
         shadowColor = UIColor.init(red: 0, green: 107, blue: 79)
         self.transactionImg.layer.addShadowAndRoundedCorners(roundedCorner: 31, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-       // self.beneficiaryNameLbl.text = self.detailModel.transactionPrintout.beneficiaryname
+        //self.beneficiaryNameLbl.text = self.detailModel
 //        self.beneficiaryNameLbl.text = self.detailModel.name
 //        self.amtLbl.text =  String(self.detailModel.amount)
 //        self.transactionImg.image = self.detailModel.image
@@ -145,7 +145,16 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
 extension TransactionDetailViewController:TransactionDetailDelegate{
     
     func didFetchedTransactionDetail(data:TransactionDetail){
-        self.beneficiaryNameLbl.text = data.data.to.nickname
+        if data.data.to.type == "EXTERNAL-US"{
+            if let _ = data.data.to.meta{
+                self.beneficiaryNameLbl.text = data.data.to.meta!.merchantName
+                let url = URL(string: data.data.to.meta!.merchantLogo)
+                self.transactionImg.kf.setImage(with:url)
+            }
+        }else if data.data.to.type == "ACH-US"{
+             self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
+        }
+        
         //self.addressLbl.text = data.data.to.meta.address
         self.amtLbl.text = "$"+String(data.data.amount.amount)
         //self.transactionPurposeLbl.text =

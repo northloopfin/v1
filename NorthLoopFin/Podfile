@@ -27,6 +27,9 @@ target 'NorthLoopFin' do
   pod 'SwiftyRSA'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Karte'
+  pod 'Haptica'
+  pod 'AlertHelperKit', :git => 'https://github.com/keygx/AlertHelperKit'
 
   # Pods for NorthLoopFin
 

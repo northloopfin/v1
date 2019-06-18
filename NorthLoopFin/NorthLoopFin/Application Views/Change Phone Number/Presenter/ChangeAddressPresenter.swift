@@ -29,8 +29,10 @@ class ChangeAddressPresenter:ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: "ip", value: "127.0.0.1")
             .build()
         requestModel.requestQueryParams = requestDic
+        requestModel.apiUrl = requestModel.getEndPoint()
         self.logic.performChangeAddress(withRequestModel: requestModel, presenterDelegate: self)
     }
     

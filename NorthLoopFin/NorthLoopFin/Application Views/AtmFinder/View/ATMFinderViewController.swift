@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Karte
 
 class ATMFinderViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -25,6 +26,7 @@ class ATMFinderViewController: BaseViewController {
     @IBAction func sendLinkBtnClicked(_ sender: Any) {
         // call API to find ATM based on current location
         //self.getATMsWithZip()
+        self.zipTextField.text=""
         LocationService.sharedInstance.delegate = self
         LocationService.sharedInstance.startUpdatingLocation()
     }
@@ -77,7 +79,7 @@ class ATMFinderViewController: BaseViewController {
         let textFieldBorderWidth = 1.0
         let textfieldCorber = 5.0
         
-        self.zipTextField.applyAttributesWithValues(placeholderText: "ZIP Code*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.zipTextField.applyAttributesWithValues(placeholderText: "Enter ZIP Code*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.zipTextField.setLeftPaddingPoints(19)
     }
@@ -145,7 +147,11 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedAtm = self.dataSource[indexPath.row+1]
-        self.openGoogleDirectionMap(String(selectedAtm.atmLocation.coordinates.latitude), String(selectedAtm.atmLocation.coordinates.longitude))
+        let coordinate = CLLocationCoordinate2D(latitude: selectedAtm.atmLocation.coordinates.latitude, longitude: selectedAtm.atmLocation.coordinates.longitude)
+
+        Karte.presentPicker(destination: coordinate, presentOn: self)
+
+        //self.openGoogleDirectionMap(String(selectedAtm.atmLocation.coordinates.latitude), String(selectedAtm.atmLocation.coordinates.longitude))
     }
     func openGoogleDirectionMap(_ destinationLat: String, _ destinationLng: String) {
         

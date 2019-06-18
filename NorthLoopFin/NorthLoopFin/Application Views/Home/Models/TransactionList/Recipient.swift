@@ -21,7 +21,7 @@ struct Recipient: Codable {
     let secondaryCategory: String
     let surcharge: String
     let type: String
-    let nickname: String
+    //let nickname: String
 
     
     enum CodingKeys: String, CodingKey {
@@ -37,7 +37,7 @@ struct Recipient: Codable {
         case secondaryCategory = "secondary_category"
         case surcharge
         case type
-        case nickname
+        //case nickname
     }
     
     init(from decoder: Decoder) throws {
@@ -54,6 +54,6 @@ struct Recipient: Codable {
         secondaryCategory = try values.decodeIfPresent(String.self, forKey: .secondaryCategory) ?? ""
         surcharge = try values.decodeIfPresent(String.self, forKey: .surcharge) ?? ""
         type = try values.decodeIfPresent(String.self, forKey: .type) ?? ""
-        nickname = try values.decodeIfPresent(String.self, forKey: .nickname) ?? ""
+        //nickname = try values.decodeIfPresent(String.self, forKey: .nickname) ?? ""
     }
 }

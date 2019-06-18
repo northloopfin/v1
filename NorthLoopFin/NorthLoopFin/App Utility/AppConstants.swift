@@ -15,6 +15,11 @@ struct AppConstants{
     static let UserDefaultKeyForScreen = "Screen"
     static let UserDefaultKeyForEmail = "Email"
     static let UserDefaultKeyForAccessToken = "AccessToken"
+    static let UserDefaultKeyForCrash = "Crash"
+    static let UserDefaultKeyForDeviceToken = "DeviceToken"
+    static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
+
+
     static let CountryExceptionURL = "https://northloop.zendesk.com/hc/en-us/articles/360027983032"
 
     enum URL: String{
@@ -26,7 +31,8 @@ struct AppConstants{
     
     enum ErrorHandlingKeys: String{
         case ERROR_TITLE = "Uh oh!"
-        case SUCESS_TITLE = "Sucess"
+        case SUCESS_TITLE = "Success"
+        case CONFIRM_TITLE = "Confirm"
     }
     
     enum ErrorMessages: String{
@@ -50,6 +56,12 @@ struct AppConstants{
         case RESET_EMAIL_SENT = "We've just sent you an email to reset your password"
         case CONFIRM_MESSAGE_TO_LOCK_CARD = "Are you sure you want to lock this card?"
         case CONFIRM_MESSAGE_SPEND_ABROAD = "Are you sure you want to change Spend Abroad status of this card?"
+        case DOB_NOT_VALID = "Person could not be younger than 18 years"
+        case ROUTING_NUMBER_NOT_VALID = "Please enter a valid Routing Number"
+        case CARD_NOT_ACTIVE_YET = "Card Isn't Activated Yet"
+        case CONFIRM_MESSAGE_TO_CHANGE_PHONE = "Are you sure, you want to change Phone?"
+        case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure, you want to change Address"
+        case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -120,6 +132,7 @@ struct AppConstants{
         case CHANGEPASSWORD = "Change Password"
         case CHANGEPHONENUMBER = "Change Phone Number"
         case LOGOUT = "Logout"
+        case ACCOUNTDETAIL = "Account Details"
     }
     
     enum NotificationSettigsOptions:String{

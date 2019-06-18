@@ -3,6 +3,7 @@
 import UIKit
 import SVProgressHUD
 import GiFHUD_Swift
+import AlertHelperKit
 
 class BaseViewController: UIViewController, BaseViewProtocol {
 
@@ -52,7 +53,8 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     }
     
     func showErrorAlert(_ alertTitle: String, alertMessage: String) {
-        self.showAlert(title: alertTitle, message: alertMessage)
+        AlertHelperKit().showAlert(self, title: alertTitle, message: alertMessage, button: "OK")
+        //self.showAlert(title: alertTitle, message: alertMessage)
     }
     
     func showAlert(title: String, message: String){
@@ -69,11 +71,23 @@ class BaseViewController: UIViewController, BaseViewProtocol {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWithAction(title:String, message:String, buttonArray: [String],delegate : @escaping (UIAlertAction)->Void){
-        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        for values in buttonArray{
-            alert.addAction(UIAlertAction(title: values, style: UIAlertAction.Style.default, handler: delegate))
-        }
-        self.present(alert, animated: true, completion: nil)
+//    func showAlertWithAction(title:String, message:String, buttonArray: [String],destructiveButton:String,delegate : @escaping (UIAlertAction)->()){
+//        
+//        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+//        for values in buttonArray{
+//            alert.addAction(UIAlertAction(title: values, style: UIAlertAction.Style.default, handler: delegate))
+//        }
+//        if destructiveButton != ""{
+//            // Cancel button
+//            let cancel = UIAlertAction(title: destructiveButton, style: .destructive, handler: { (action) -> Void in
+//                
+//            })
+//            alert.addAction(cancel)
+//        }
+//        self.present(alert, animated: true, completion: nil)
+//    }
+    
+    func showAlertWithTextInputAndAction(title:String,message:String, buttonArray:[String],destructiveButton:String,textFieldPlaceholder:String,delegate : @escaping (UIAlertAction)->Void){
+        
     }
 }

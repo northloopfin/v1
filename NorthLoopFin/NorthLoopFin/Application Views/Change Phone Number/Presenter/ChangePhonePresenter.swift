@@ -28,8 +28,10 @@ class ChangePhonePresenter:ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestHeader(key: "ip", value: "127.0.0.1")
             .addRequestQueryParams(key: "phone_number", value: newPhoneNumber as AnyObject)
             .build()
+        requestModel.apiUrl=requestModel.getEndPoint()
         self.logic.performChangePhone(withRequestModel: requestModel, presenterDelegate: self)
     }
     

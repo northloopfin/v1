@@ -22,8 +22,21 @@ class TransferViewController: BaseViewController {
         self.presenter = LinkACHPresenter.init(delegate: self)
     }
     @IBAction func saveBtnClicked(_ sender: Any) {
-        self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
+        // Validate Form
+        self.validateForm()
     }
+    
+    //Validate form here
+    func validateForm(){
+        if Validations.isValidRoutingNumber(routingNumber: self.rountingNumberTextField.text!){
+            // Yes Valid
+            self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
+        }else{
+            // show error here
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue)
+        }
+    }
+    //Prepare view to display
     func prepareView(){
         self.setNavigationBarTitle(title: "Transfer")
         self.setupRightNavigationBar()
@@ -84,6 +97,6 @@ extension TransferViewController:UITextFieldDelegate{
 
 extension TransferViewController:LinkACHDelegates{
     func didSentLinkACH() {
-        
+        self.navigationController?.popViewController(animated: false)
     }
 }
