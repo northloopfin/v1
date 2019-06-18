@@ -5356,7 +5356,107 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q87-ic-mDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8321.25" y="640.14084507042253"/>
+            <point key="canvasLocation" x="8348" y="639"/>
+        </scene>
+        <!--Upgrade Premium View Controller-->
+        <scene sceneID="DiO-KY-HAL">
+            <objects>
+                <viewController storyboardIdentifier="UpgradePremiumViewController" id="0gQ-ee-Hee" customClass="UpgradePremiumViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1lk-2g-KLd" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="T3U-Od-2Ja">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1J-tE-He1" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="462.5" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.63137254899999995" green="0.58431372550000005" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="cy2-fr-sCM"/>
+                                    <constraint firstAttribute="height" constant="45" id="mhh-QI-QEC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="pCM-MF-DAD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="PAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextClicked:" destination="0gQ-ee-Hee" eventType="touchUpInside" id="rJf-nZ-G7e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the nearest ATM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBp-gs-abW" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="46" y="76" width="228" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.26000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UpgradeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uww-i3-8aS">
+                                <rect key="frame" x="92" y="143" width="136" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="F9u-li-9u0"/>
+                                    <constraint firstAttribute="width" constant="136" id="Zbf-Pc-r1g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benefit 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqM-7L-TMt" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="126.5" y="296" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWY-Jh-e6G" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="332" width="270" height="101.5"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nqM-7L-TMt" firstAttribute="centerX" secondItem="1lk-2g-KLd" secondAttribute="centerX" id="3sZ-di-g8v"/>
+                            <constraint firstItem="oSv-MU-G1e" firstAttribute="trailing" secondItem="P1J-tE-He1" secondAttribute="trailing" constant="25" id="5EM-l5-FuL"/>
+                            <constraint firstItem="T3U-Od-2Ja" firstAttribute="top" secondItem="1lk-2g-KLd" secondAttribute="top" id="E3E-Ai-53b"/>
+                            <constraint firstItem="mBp-gs-abW" firstAttribute="top" secondItem="oSv-MU-G1e" secondAttribute="top" constant="56" id="ElV-UL-9Hg"/>
+                            <constraint firstItem="T3U-Od-2Ja" firstAttribute="leading" secondItem="oSv-MU-G1e" secondAttribute="leading" id="LCL-sq-sdf"/>
+                            <constraint firstItem="T3U-Od-2Ja" firstAttribute="trailing" secondItem="oSv-MU-G1e" secondAttribute="trailing" id="Leh-AU-RNt"/>
+                            <constraint firstItem="P1J-tE-He1" firstAttribute="top" secondItem="LWY-Jh-e6G" secondAttribute="bottom" constant="29" id="O68-2K-nMA"/>
+                            <constraint firstItem="mBp-gs-abW" firstAttribute="leading" secondItem="oSv-MU-G1e" secondAttribute="leading" constant="46" id="Tqm-Ei-alQ"/>
+                            <constraint firstItem="P1J-tE-He1" firstAttribute="leading" secondItem="oSv-MU-G1e" secondAttribute="leading" constant="25" id="aUN-Wy-XV3"/>
+                            <constraint firstItem="oSv-MU-G1e" firstAttribute="trailing" secondItem="LWY-Jh-e6G" secondAttribute="trailing" constant="25" id="gaY-Lg-kUk"/>
+                            <constraint firstItem="uww-i3-8aS" firstAttribute="centerX" secondItem="1lk-2g-KLd" secondAttribute="centerX" id="h7w-H2-F1e"/>
+                            <constraint firstItem="LWY-Jh-e6G" firstAttribute="leading" secondItem="oSv-MU-G1e" secondAttribute="leading" constant="25" id="hm4-uL-6bj"/>
+                            <constraint firstItem="nqM-7L-TMt" firstAttribute="top" secondItem="uww-i3-8aS" secondAttribute="bottom" constant="16" id="luU-TG-iWO"/>
+                            <constraint firstItem="oSv-MU-G1e" firstAttribute="trailing" secondItem="mBp-gs-abW" secondAttribute="trailing" constant="46" id="m7I-h4-u8U"/>
+                            <constraint firstItem="LWY-Jh-e6G" firstAttribute="top" secondItem="nqM-7L-TMt" secondAttribute="bottom" constant="15" id="xbG-tS-xzd"/>
+                            <constraint firstItem="T3U-Od-2Ja" firstAttribute="bottom" secondItem="oSv-MU-G1e" secondAttribute="bottom" id="xlt-Uh-IHW"/>
+                            <constraint firstItem="uww-i3-8aS" firstAttribute="top" secondItem="mBp-gs-abW" secondAttribute="bottom" constant="37" id="z3u-Fq-OgV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oSv-MU-G1e"/>
+                    </view>
+                    <connections>
+                        <outlet property="benefitsLbl" destination="nqM-7L-TMt" id="6Ht-lv-pIY"/>
+                        <outlet property="mainTitleLbl" destination="mBp-gs-abW" id="BxR-G6-yC5"/>
+                        <outlet property="messageLbl" destination="LWY-Jh-e6G" id="z9S-Gn-AAK"/>
+                        <outlet property="nextBtn" destination="P1J-tE-He1" id="Etb-Ca-2l9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kan-nS-U2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9052.5" y="638.02816901408448"/>
         </scene>
     </scenes>
     <resources>
@@ -5365,6 +5465,7 @@ We’ve sent an email confirming.</string>
         <image name="SelfieTime" width="152" height="153"/>
         <image name="SignInLogo" width="167" height="46"/>
         <image name="SignUpForm" width="156" height="153"/>
+        <image name="UpgradeIcon" width="177" height="189.5"/>
         <image name="WelcomeImg" width="120" height="215"/>
         <image name="addaccount" width="221" height="182"/>
         <image name="cross" width="14" height="12"/>

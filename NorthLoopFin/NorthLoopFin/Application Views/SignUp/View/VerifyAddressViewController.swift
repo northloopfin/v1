@@ -251,8 +251,6 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
         RealmHelper.deleteAllSelfie()
         // Delete email and accesstoken stored in UserDefault
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken)
-        //remove device token from local storage
-        UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForDeviceToken)
         //call Zendesk API for Identity token
         self.zendeskPresenter.sendZendeskTokenRequest()
     }

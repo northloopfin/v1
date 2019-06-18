@@ -33,7 +33,6 @@ class HomeViewController: BaseViewController {
         self.updateUIWithData()
         self.configureTable()
         self.setupRightNavigationBar()
-        self.checkForFirstTimeLandOnHome()
         // enable the menu slide animation
         
         // control the exaggeration of the menu slide animation
@@ -79,6 +78,11 @@ class HomeViewController: BaseViewController {
                 //show popup here
                 self.showPopUpForFirstTimeLandOnHome()
             }
+        }else{
+            //key not found .. so set this key to true then
+            UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForFirstTimeLandOnHome)
+            //show popup here
+            self.showPopUpForFirstTimeLandOnHome()
         }
     }
     
@@ -189,6 +193,8 @@ extension HomeViewController:HomeDelegate{
     func didFetchedTransactionList(data: [TransactionListModel]) {
         self.transactionDataSource.append(contentsOf: data)
         self.ledgersTableView.reloadData()
+        self.checkForFirstTimeLandOnHome()
+
     }
     func didFetchedError(error:ErrorModel){
         
@@ -219,8 +225,8 @@ extension HomeViewController:SideMenuDelegate{
         case .MYACCOUNT:
             self.navigateToMyAccount()
         case .UPGRADE:
-            //self.navigateToGoals()
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+            self.navigateToUpgrade()
+            
         case .EXPENSES:
             self.navigateToExpenses()
         case .SETTINGS:
@@ -254,10 +260,10 @@ extension HomeViewController:SideMenuDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
-    func navigateToGoals(){
+    func navigateToUpgrade(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "GoalsViewController") as! GoalsViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "UpgradePremiumViewController") as! UpgradePremiumViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func navigateToExpenses(){

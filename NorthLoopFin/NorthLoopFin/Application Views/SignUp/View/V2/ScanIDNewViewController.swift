@@ -223,19 +223,18 @@ class ScanIDNewViewController: BaseViewController {
         let selectedButton=sender as! CommonButton
         self.selectedButtonTag = selectedButton.tag
         if selectedButton.isBtnSelected{
-            print(self.modelArray.count)
-            print(selectedButton.tag)
+           // print(self.modelArray.count)
+            print("selectedTag \(selectedButton.tag)")
                 let model = self.modelArray[selectedButton.tag]
                 self.imageArray = model.images
                 self.selectedOption = model.type
                 self.setImages()
         }else{
-            print(selectedButton.tag)
+            print("selectedTag \(selectedButton.tag)")
             //get button from array and update its selection state
             let btn:CommonButton = self.optionBtnsArray[selectedButton.tag]
             btn.isBtnSelected=true
             //self.optionBtnsArray.insert(btn, at: selectedButton.tag)
-            print(self.optionBtnsArray.count)
             self.handleSelectedOption(selectedButton)
         }
     }
@@ -441,26 +440,29 @@ class ScanIDNewViewController: BaseViewController {
                 if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
                     optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF{
                     if self.imageArray.count == 1 {
-                        print(selectedButtonTag)
                         let model = self.modelArray[selectedButtonTag]
                         model.images = self.imageArray
                         model.type = optionSelected
-                        print(self.modelArray.count)
+                        if selectedButtonTag != self.optionBtnsArray.count-1{
+                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                            nextBtnToEnable.sendActions(for: .touchUpInside)}
                     }
                 }else{
                     if self.imageArray.count == 3{
                         let model = self.modelArray[selectedButtonTag]
                         model.images = self.imageArray
                         model.type = optionSelected
-                        print(self.modelArray.count)
+                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                        nextBtnToEnable.sendActions(for: .touchUpInside)
                     }
                 }
             }
             // enable next button in the array
-            if self.selectedButtonTag != self.modelArray.count-1{
-                let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                nextBtnToEnable.sendActions(for: .touchUpInside)
-            }
+//            if selectedButtonTag != self.optionBtnsArray.count-1{
+//                let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+//                nextBtnToEnable.sendActions(for: .touchUpInside)
+//            }
+            
             if self.modelArray.count == self.optionsArr.count{
                 self.nextBtn.isEnabled=true
             }else{

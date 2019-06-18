@@ -28,6 +28,7 @@ struct Endpoints{
         case USERTRANSFERDETAIL = "banking/transfer-details"
         case TWOFA = "banking/2fa/false"
         case TWOFAVERIFY = "banking/2fa/"
+        case UPGRADEPREMIUM = "banking/transactions/upgrade"
 
     }
     
