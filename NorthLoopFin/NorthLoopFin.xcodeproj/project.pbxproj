@@ -345,6 +345,11 @@
 		4BFDF88A22B8D6790066860D /* UpgradeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88922B8D6790066860D /* UpgradeAPIRequest.swift */; };
 		4BFDF88C22B8D68E0066860D /* UpgradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88B22B8D68E0066860D /* UpgradeResponse.swift */; };
 		4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88D22B8D6A10066860D /* UpgradeDelegates.swift */; };
+		4BFDF89022B9E8160066860D /* UniversityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88F22B9E8160066860D /* UniversityPresenter.swift */; };
+		4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF89222B9E8430066860D /* FetchUniversityRequestModel.swift */; };
+		4BFDF89522B9E8590066860D /* FetchUniversityBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF89422B9E8590066860D /* FetchUniversityBusinessModel.swift */; };
+		4BFDF89722B9E8760066860D /* FetchUniversityAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF89622B9E8760066860D /* FetchUniversityAPIRequest.swift */; };
+		4BFDF89922B9E8920066860D /* FetchUniversityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF89822B9E8920066860D /* FetchUniversityResponse.swift */; };
 		61B88BE40F88EDFCFD2B93BD /* Pods_NorthLoopFinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */; };
 		E6A1ACCA12D73B5988A6E8ED /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */; };
 		EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */; };
@@ -719,6 +724,11 @@
 		4BFDF88922B8D6790066860D /* UpgradeAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeAPIRequest.swift; sourceTree = "<group>"; };
 		4BFDF88B22B8D68E0066860D /* UpgradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeResponse.swift; sourceTree = "<group>"; };
 		4BFDF88D22B8D6A10066860D /* UpgradeDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeDelegates.swift; sourceTree = "<group>"; };
+		4BFDF88F22B9E8160066860D /* UniversityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityPresenter.swift; sourceTree = "<group>"; };
+		4BFDF89222B9E8430066860D /* FetchUniversityRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUniversityRequestModel.swift; sourceTree = "<group>"; };
+		4BFDF89422B9E8590066860D /* FetchUniversityBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUniversityBusinessModel.swift; sourceTree = "<group>"; };
+		4BFDF89622B9E8760066860D /* FetchUniversityAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUniversityAPIRequest.swift; sourceTree = "<group>"; };
+		4BFDF89822B9E8920066860D /* FetchUniversityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUniversityResponse.swift; sourceTree = "<group>"; };
 		4FE18586CD8D3F50E9C70CA2 /* Pods-NorthLoopFinTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.staging.xcconfig"; sourceTree = "<group>"; };
 		74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1013,6 +1023,7 @@
 		1D1E5A6E21C9C78D0036E998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4BFDF89122B9E8290066860D /* FetchUniversity */,
 				1D913CDC228F61870075B16D /* SignupSynapse */,
 				1D478CA3228E8FBF00503136 /* SignupAuth */,
 				1DFE480121D71B32003EFECA /* SIgnupForm */,
@@ -1047,6 +1058,7 @@
 				1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */,
 				1D478CAE228E981700503136 /* SignupAuthPresenter.swift */,
 				1D913CE3228F62880075B16D /* SignupSynapsePresenter.swift */,
+				4BFDF88F22B9E8160066860D /* UniversityPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2097,6 +2109,17 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		4BFDF89122B9E8290066860D /* FetchUniversity */ = {
+			isa = PBXGroup;
+			children = (
+				4BFDF89222B9E8430066860D /* FetchUniversityRequestModel.swift */,
+				4BFDF89422B9E8590066860D /* FetchUniversityBusinessModel.swift */,
+				4BFDF89622B9E8760066860D /* FetchUniversityAPIRequest.swift */,
+				4BFDF89822B9E8920066860D /* FetchUniversityResponse.swift */,
+			);
+			path = FetchUniversity;
+			sourceTree = "<group>";
+		};
 		9523A88CDB8DFF968C534DCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2489,6 +2512,7 @@
 				297FB9E121B55484008D60CE /* ResponseWrapper.swift in Sources */,
 				1D29C84D22A917320092E3EB /* ChangePhoneRequestModel.swift in Sources */,
 				1D180D94229E77B600FC3390 /* ATMAddress.swift in Sources */,
+				4BFDF89722B9E8760066860D /* FetchUniversityAPIRequest.swift in Sources */,
 				4BFDF88A22B8D6790066860D /* UpgradeAPIRequest.swift in Sources */,
 				1D55EE80228592C60003BEDB /* LoginBusinessLogic.swift in Sources */,
 				1D5AB30722A7B5ED00DB3B70 /* TwoFAPresenter.swift in Sources */,
@@ -2562,6 +2586,7 @@
 				1D180DA4229FAA6F00FC3390 /* NewPinViewController.swift in Sources */,
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
+				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
 				1D5AB30F22A7C25300DB3B70 /* TwoFABusinessLogic.swift in Sources */,
@@ -2601,6 +2626,7 @@
 				4BFDF88422B8D62F0066860D /* UpgradePresenter.swift in Sources */,
 				1D19D3202295883F008D367E /* AccountData.swift in Sources */,
 				1D84405A22883EDB00A77BBF /* LoginData.swift in Sources */,
+				4BFDF89522B9E8590066860D /* FetchUniversityBusinessModel.swift in Sources */,
 				1D19D31822953986008D367E /* SignupSynapseData.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1DE6D94522A0D24000014572 /* DisputeTransactionViewController.swift in Sources */,
@@ -2632,6 +2658,7 @@
 				1D9F45FE228AC13E009D76FC /* CardAPIRequest.swift in Sources */,
 				1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */,
 				1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */,
+				4BFDF89022B9E8160066860D /* UniversityPresenter.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
@@ -2649,6 +2676,7 @@
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
 				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
 				1D5AB2ED22A791B300DB3B70 /* SetPinAPIRequest.swift in Sources */,
+				4BFDF89922B9E8920066860D /* FetchUniversityResponse.swift in Sources */,
 				1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */,
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
