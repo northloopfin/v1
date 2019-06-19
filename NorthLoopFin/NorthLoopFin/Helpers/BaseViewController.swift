@@ -38,21 +38,25 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     
     
     func showLoader() {
-//        GIFHUD.shared.setGif(named: "northloop.gif")
-//        GIFHUD.shared.show()
+        
         UIApplication.shared.beginIgnoringInteractionEvents()
-        SVProgressHUD.show()
+        GIFHUD.shared.setGif(named: "northloop.gif")
+        GIFHUD.shared.show()
+        //SVProgressHUD.show()
     }
 
     func hideLoader() {
+        
+        if UIApplication.shared.isIgnoringInteractionEvents { UIApplication.shared.endIgnoringInteractionEvents() }
+        //SVProgressHUD.dismiss()
+       GIFHUD.shared.dismiss()
 //        GIFHUD.shared.dismiss {
 //            print("dismissed")
 //        }
-        if UIApplication.shared.isIgnoringInteractionEvents { UIApplication.shared.endIgnoringInteractionEvents() }
-        SVProgressHUD.dismiss()
     }
     
     func showErrorAlert(_ alertTitle: String, alertMessage: String) {
+        GIFHUD.shared.dismiss()
         AlertHelperKit().showAlert(self, title: alertTitle, message: alertMessage, button: "OK")
         //self.showAlert(title: alertTitle, message: alertMessage)
     }
