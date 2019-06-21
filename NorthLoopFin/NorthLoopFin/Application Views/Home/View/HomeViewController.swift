@@ -161,6 +161,13 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         let rowData = transactionDataSource[indexPath.section].rowData[indexPath.row]
         cell.selectionStyle = .none
         cell.bindData(data: rowData,delegate: self)
+        print("indexPath : ",indexPath.row)
+        if indexPath.row == AppConstants.pageLimit - 1{
+            if transactionListPresenter.hasMoreTransaction{
+                transactionListPresenter.currentPage += 1
+                self.getTransactionList()
+            }
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -174,6 +181,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
         
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HomeTableSectionCell") as! HomeTableSectionCell
+        print("header name :",transactionDataSource[section].sectionTitle)
         headerView.bindData(data: transactionDataSource[section])
         return headerView
     }

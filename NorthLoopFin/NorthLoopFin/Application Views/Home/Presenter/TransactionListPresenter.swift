@@ -11,6 +11,8 @@ import Foundation
 class TransactionListPresenter: ResponseCallback{
     private weak var homeDelegate          : HomeDelegate?
     private lazy var homeTransactionListBusinessLogic         : HomeTransactionListBusinessLogic = HomeTransactionListBusinessLogic()
+    var currentPage = 1
+    var hasMoreTransaction = true
     //MARK:- Constructor
     
     init(delegate responseDelegate:HomeDelegate){
@@ -20,6 +22,9 @@ class TransactionListPresenter: ResponseCallback{
     
     func sendTransactionListRequest(){
         self.homeDelegate?.showLoader()
+        print("---------------------------Pagination-------------------------------------")
+        print("page : ", currentPage)
+        print("pageLimit : ", AppConstants.pageLimit)
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = TransactionListRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
@@ -27,8 +32,8 @@ class TransactionListPresenter: ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.USERID.rawValue, value: currentUser.userID)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
-            .addRequestQueryParams(key: "page", value: 1 as AnyObject)
-            .addRequestQueryParams(key: "per_page", value: 20 as AnyObject)
+            .addRequestQueryParams(key: "page", value: currentPage as AnyObject)
+            .addRequestQueryParams(key: "per_page", value: AppConstants.pageLimit as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
     self.homeTransactionListBusinessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
@@ -37,6 +42,10 @@ class TransactionListPresenter: ResponseCallback{
     //MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         let response = responseObject as! TransactionHistory
+        print("count : ",response.data.trans.count)
+        if response.data.trans.count < AppConstants.pageLimit{
+            hasMoreTransaction = false
+        }
         let requiredData = self.createRequiredData(data: response.data.trans)
         self.homeDelegate?.didFetchedTransactionList(data: requiredData)
         self.homeDelegate?.hideLoader()
@@ -58,7 +67,7 @@ class TransactionListPresenter: ResponseCallback{
         sortedKeys.forEach { (key) in
             //print(key)
             let values = dic[key]
-            //print(values)
+            print(values)
             let date = AppUtility.dateFromMilliseconds(seconds: Double(values![0].extra.createdOn))
             let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: date, rowData: values ?? [])
             dataArr.append(transationListModel)

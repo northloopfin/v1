@@ -18,6 +18,7 @@ struct AppConstants{
     static let UserDefaultKeyForCrash = "Crash"
     static let UserDefaultKeyForDeviceToken = "DeviceToken"
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
+    static let pageLimit = 20
 
 
     static let CountryExceptionURL = "https://northloop.zendesk.com/hc/en-us/articles/360027983032"
