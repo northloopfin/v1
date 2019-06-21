@@ -79,7 +79,9 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cell: MyCardTableCell = tableView.dequeueReusableCell(withIdentifier: "MyCardTableCell") as! MyCardTableCell
         cell.lock.tag = indexPath.row
+        cell.delegate=self
         cell.bindData(data: data[indexPath.row], delegate: self)
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -118,12 +120,13 @@ extension MyCardViewController:CardDelegates{
             if data.data.preferences.allowForeignTransactions{
                 //if spend abroad is true, then reload table accordingly
                 self.data[3] = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: true)
+                self.optionsTableView.reloadData()
             }
         }else{
             self.isLockCard = true
-            self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: true)
+            //self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: f)
         }
-        self.optionsTableView.reloadData()
+        
     }
 }
 
@@ -136,6 +139,9 @@ extension MyCardViewController:UpdateCardDelegates{
 extension MyCardViewController:MyCardTableCellDelegate{
     func switchClicked(isOn: Bool, tag: Int) {
         if self.isLockCard{
+            self.data = []
+            self.prepareViewData()
+            self.optionsTableView.reloadData()
             self.showAlertForInactiveCadrs()
             return
         }

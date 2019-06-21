@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import DropDown
+
 
 class SignupStepConfirm: BaseViewController {
     
@@ -18,6 +20,10 @@ class SignupStepConfirm: BaseViewController {
     
     let datePicker = UIDatePicker()
     var signupFlowData:SignupFlowData!=nil
+    var presenter: UniversityPresenter!
+    let dropDown = DropDown()
+    var universities:[String]=[]
+    
     @IBAction func nextClicked(_ sender: Any) {
         
         self.validateForm()
@@ -59,7 +65,10 @@ class SignupStepConfirm: BaseViewController {
         self.nextBtn.isEnabled=false
         self.prepareView()
         self.updateTextFieldUI()
-         self.setupRightNavigationBar()
+        self.setupRightNavigationBar()
+        self.presenter = UniversityPresenter.init(delegate: self)
+        self.presenter.sendFEtchUniversityListRequest()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -67,7 +76,17 @@ class SignupStepConfirm: BaseViewController {
     }
     
     func prepareView(){
-        
+        self.universityTextField.inputView = UIView.init(frame: CGRect.zero)
+        self.universityTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        dropDown.anchorView = self.universityTextField
+        dropDown.dataSource = self.universities
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.universityTextField.text=item
+            self.dropDown.hide()
+            self.checkForMandatoryFields()
+            
+        }
         self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
         self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
@@ -193,5 +212,25 @@ extension SignupStepConfirm:UITextFieldDelegate{
             
             self.showDatePicker()
         }
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.universityTextField
+        {
+            //IQKeyboardManager.shared.resignFirstResponder()
+            
+            self.dropDown.show()
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
+}
+
+extension SignupStepConfirm: FetchUniversityDelegates{
+    func didFetchedUniversityList(data:[String]) {
+        self.universities=data
+        self.dropDown.dataSource = self.universities
     }
 }

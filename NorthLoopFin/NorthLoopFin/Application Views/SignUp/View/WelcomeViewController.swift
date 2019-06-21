@@ -11,9 +11,13 @@ import Crashlytics
 
 class WelcomeViewController: BaseViewController {
 
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var createAccountBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loginBtn.showsTouchWhenHighlighted=true
+        createAccountBtn.showsTouchWhenHighlighted=true
     }
     
     @IBAction func loginClicked(_ sender: Any) {

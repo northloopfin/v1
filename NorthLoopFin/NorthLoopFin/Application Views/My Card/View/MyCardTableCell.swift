@@ -15,11 +15,12 @@ protocol MyCardTableCellDelegate:class {
 
 class MyCardTableCell: UITableViewCell {
     
-    private weak var delegate: MyCardTableCellDelegate?
+     weak var delegate: MyCardTableCellDelegate?
 
     @IBAction func switchClicked(_ sender: Any) {
         print("wow")
         let lock = sender as! PWSwitch
+        //lock.isSelected = !lock.isSelected
         self.delegate?.switchClicked(isOn: lock.isSelected, tag: lock.tag)
 //        let lock = sender as! UISwitch
 //        if (lock.isOn){

@@ -27,4 +27,10 @@ protocol SignupAuthDelegate:BaseViewProtocol {
 protocol SignupSynapseDelegate:BaseViewProtocol {
     func didSignedUpSynapse(data:SignupSynapse)    
 }
+protocol FetchUniversityDelegates:BaseViewProtocol{
+    func didFetchedUniversityList(data:[String])
+}
+protocol ShareAccountDetailDelegates:BaseViewProtocol{
+    func didSharedAccounTDetails()
+}
 

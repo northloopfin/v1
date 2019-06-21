@@ -22,8 +22,8 @@ class SignupSynapsePresenter:ResponseCallback{
         self.delegate?.showLoader()
         
         let token:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String
-        let requestModel = SignupSynapseRequestModel.Builder().addRequestHeader(key: AppConstants.APIRequestHeaders.CONTENT_TYPE.rawValue, value: AppConstants.APIRequestHeaders.APPLICATION_JSON.rawValue)
-            .addRequestHeader(key: AppConstants.APIRequestHeaders.AUTHORIZATION.rawValue, value: token )
+        let requestModel = SignupSynapseRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: Endpoints.APIRequestHeaders.APPLICATION_JSON.rawValue)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: token )
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
             .build()
         requestModel.requestQueryParams = requestDic

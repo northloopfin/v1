@@ -32,6 +32,10 @@ class TransactionDetailViewController: BaseViewController {
         }
     }
     
+    @IBAction func disputeTransactionClicked(_ sender: Any) {
+        self.moveToDisputeTransactionScreen(data: self.detailModel)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBarTitle()
@@ -102,6 +106,14 @@ class TransactionDetailViewController: BaseViewController {
     
     func getTransactionDetail(){
         presenter.sendTransactionDetailRequest(transactionId:self.detailModel?.id ?? "")
+    }
+    
+    func moveToDisputeTransactionScreen(data:IndividualTransaction){
+                //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
+                vc.transaction = data
+                self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 //MARK:- UITableView Delegate and DataSource

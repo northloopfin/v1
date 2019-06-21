@@ -1,14 +1,15 @@
 //
-//  UpgradeAPIRequest.swift
+//  ShareAccountDetailsAPIRequest.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 18/06/19.
+//  Created by daffolapmac-48 on 20/06/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class UpgradeAPIRequest:ApiRequestProtocol {
+
+class ShareAccountDetailsAPIRequest:ApiRequestProtocol {
     
     //MARK:- local properties
     var apiRequestUrl:String!
@@ -23,13 +24,12 @@ class UpgradeAPIRequest:ApiRequestProtocol {
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
     
-    func makeAPIRequest(withReqFormData reqFromData: UpgradeRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
+    func makeAPIRequest(withReqFormData reqFromData: ShareAccountDetailsRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
         
         self.apiRequestUrl = reqFromData.apiUrl
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        //ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass:UpgradeResponse.self)
-        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: UpgradeResponse.self)
+        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: ShareAccountDetailResponse.self)
     }
     
     /**
