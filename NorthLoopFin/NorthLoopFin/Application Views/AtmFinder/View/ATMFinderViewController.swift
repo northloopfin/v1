@@ -68,6 +68,9 @@ class ATMFinderViewController: BaseViewController {
         self.zipTextField.font = AppFonts.textBoxCalibri16
         self.searchBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
         self.inputZipLabel.font = AppFonts.calibriBold15
+        
+        //Visual effect of btn tap
+        self.searchBtn.showsTouchWhenHighlighted=true
     }
     
     func updateTextFieldUI(){
@@ -153,44 +156,45 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
 
         //self.openGoogleDirectionMap(String(selectedAtm.atmLocation.coordinates.latitude), String(selectedAtm.atmLocation.coordinates.longitude))
     }
-    func openGoogleDirectionMap(_ destinationLat: String, _ destinationLng: String) {
-        
-        //let LocationManager = CLLocationManager()
-        
-        if let myLat = LocationService.sharedInstance.currentLocation?.coordinate.latitude, let myLng = LocationService.sharedInstance.currentLocation?.coordinate.longitude {
-            
-            if let tempURL = URL(string: "comgooglemaps://?saddr=&daddr=\(destinationLat),\(destinationLng)&directionsmode=driving") {
-                
-                UIApplication.shared.open(tempURL, options: [:], completionHandler: { (isSuccess) in
-                    
-                    if !isSuccess {
-                        
-                        if UIApplication.shared.canOpenURL(URL(string: "https://www.google.co.th/maps/dir///")!) {
-                            
-                            UIApplication.shared.open(URL(string: "https://www.google.co.th/maps/dir/\(myLat),\(myLng)/\(destinationLat),\(destinationLng)/")!, options: [:], completionHandler: nil)
-                            
-                        } else {
-                            
-                            print("Can't open URL.")
-                            
-                        }
-                        
-                    }
-                    
-                })
-                
-            } else {
-                
-                print("Can't open GoogleMap Application.")
-                
-            }
-            
-        } else {
-            
-            print("Prease allow permission.")
-            
-        }
-    }
+    // will remove this comment once client confirm 
+//    func openGoogleDirectionMap(_ destinationLat: String, _ destinationLng: String) {
+//
+//        //let LocationManager = CLLocationManager()
+//
+//        if let myLat = LocationService.sharedInstance.currentLocation?.coordinate.latitude, let myLng = LocationService.sharedInstance.currentLocation?.coordinate.longitude {
+//
+//            if let tempURL = URL(string: "comgooglemaps://?saddr=&daddr=\(destinationLat),\(destinationLng)&directionsmode=driving") {
+//
+//                UIApplication.shared.open(tempURL, options: [:], completionHandler: { (isSuccess) in
+//
+//                    if !isSuccess {
+//
+//                        if UIApplication.shared.canOpenURL(URL(string: "https://www.google.co.th/maps/dir///")!) {
+//
+//                            UIApplication.shared.open(URL(string: "https://www.google.co.th/maps/dir/\(myLat),\(myLng)/\(destinationLat),\(destinationLng)/")!, options: [:], completionHandler: nil)
+//
+//                        } else {
+//
+//                            print("Can't open URL.")
+//
+//                        }
+//
+//                    }
+//
+//                })
+//
+//            } else {
+//
+//                print("Can't open GoogleMap Application.")
+//
+//            }
+//
+//        } else {
+//
+//            print("Prease allow permission.")
+//
+//        }
+//    }
 }
 extension ATMFinderViewController: ATMFinderDelegates{
     func didFetchATM(data:ATMFinderData)

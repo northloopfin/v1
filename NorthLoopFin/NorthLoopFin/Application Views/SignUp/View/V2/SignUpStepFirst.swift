@@ -17,6 +17,8 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
+    @IBOutlet weak var agreementLbl: LabelWithLetterSpace!
+
     var presenter: SignupAuthPresenter!
 
     @IBAction func nextClicked(_ sender: Any) {
@@ -62,6 +64,10 @@ class SignUpStepFirst: BaseViewController {
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
+        self.agreementLbl.addGestureRecognizer(tap)
+        self.agreementLbl.isUserInteractionEnabled = true
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.paswwordTextField.textColor = Colors.DustyGray155155155
@@ -78,6 +84,37 @@ class SignUpStepFirst: BaseViewController {
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
         self.alreadyHaveaccountLbl.font = AppFonts.calibri15
         self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
+    }
+    
+    @objc func tapLabel(tap: UITapGestureRecognizer) {
+        
+        if let rangeForDeposit = self.agreementLbl.text?.range(of: "Deposit")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForDeposit) {
+                            // Substring tapped
+                //open deposit agreement
+                self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.DEPOSIT)
+            }
+        }
+        
+        if let rangeForAccount = self.agreementLbl.text?.range(of: "Account")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForAccount) {
+                            // Substring tapped
+                self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.ACCOUNT)
+            }
+        }
+        if let rangeForCard = self.agreementLbl.text?.range(of: "Card")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForCard) {
+                            // Substring tapped
+                self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.CARD)
+            }
+        }
+    }
+    
+    func navigateToAgreement(agreementType:AppConstants.AGREEMENTTYPE){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "AgreementViewController") as! AgreementViewController
+        vc.agreementType = agreementType
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func updateTextFieldUI(){
@@ -141,7 +178,7 @@ extension SignUpStepFirst:SignupAuthDelegate{
     
     func moveToSignupStepSecond(data:SignupFlowData) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SignupStepConfirm") as! SignupStepConfirm
         vc.signupFlowData=data
         self.navigationController?.pushViewController(vc, animated: false)
     }

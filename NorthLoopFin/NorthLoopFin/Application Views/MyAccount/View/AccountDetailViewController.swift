@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlertHelperKit
 
 class AccountDetailViewController: BaseViewController {
 
@@ -14,17 +15,40 @@ class AccountDetailViewController: BaseViewController {
     @IBOutlet weak var accountNumberLbl: LabelWithLetterSpace!
     @IBOutlet weak var rountingNumberLbl: LabelWithLetterSpace!
     @IBOutlet weak var swiftNumberLbl: LabelWithLetterSpace!
-    
+    @IBOutlet weak var shareBtn: CommonButton!
     var presenter:AccountPresenter!
+    var shareAccountDetailsPresenter : ShareAccountDetailsPresenter!
 
-
+    @IBAction func shareClicked(_ sender: Any) {
+        let params = Parameters(
+            title: "",
+            message: AppConstants.ErrorMessages.FIRST_TIME_LAND_HOME_MESSAGE.rawValue,
+            cancelButton: "Cancel",
+            otherButtons: ["Done"],
+            inputFields: [InputField(placeholder: "Enter Email", secure: false)]
+        )
+        let alert = AlertHelperKit()
+        alert.showAlertWithHandler(self, parameters: params) { buttonIndex in
+            switch buttonIndex {
+            case 0:
+                print("Cancel: \(buttonIndex)")
+            default:
+                
+                if let textFields = alert.textFields {
+                    // username
+                    let emailEntered: UITextField = textFields[0] as! UITextField
+                    self.shareAccountDetailsPresenter.sendShareAccountDetailsRequest(email: emailEntered.text!)
+                    // not decided yet ...what to do with this
+                }
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         self.presenter = AccountPresenter.init(delegate: self)
         self.presenter.sendFetchTransferDetailRequest()
-
-
+        self.shareAccountDetailsPresenter = ShareAccountDetailsPresenter.init(delegate: self)
     }
     func prepareView(){
         self.setNavigationBarTitle(title: "Account Details")
@@ -53,4 +77,9 @@ extension AccountDetailViewController:UserTransferDetailDelegate{
         self.swiftNumberLbl.text = "Swift No: "+internationalAccountDetails.swift
     }
     
+}
+extension AccountDetailViewController:ShareAccountDetailDelegates{
+    func didSharedAccounTDetails() {
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY.rawValue)
+    }
 }

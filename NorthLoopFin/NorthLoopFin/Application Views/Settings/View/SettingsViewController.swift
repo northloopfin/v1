@@ -7,88 +7,111 @@
 //
 
 import UIKit
+import AlertHelperKit
 
 class SettingsViewController: BaseViewController {
     @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var customView: CommonTable!
+    @IBOutlet weak var saveBtn: CommonButton!
+
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var optionsTableView: UITableView!
+    
+    var data:[MyCardOtionsModel]=[]
+    var saveSettingsPresenter : AppSettingsPresenter!
+
+    
+    @IBAction func saveClicked(_ sender: Any) {
+        self.saveSettingsPresenter.sendSaveAppSettingsRequest()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
-        customView.delegate=self
-        // Do any additional setup after loading the view.
+        self.optionsTableView.reloadData()
+        self.saveSettingsPresenter = AppSettingsPresenter.init(delegate: self)
+
     }
     
     override func viewDidLayoutSubviews() {
+//        let shadowOffst = CGSize.init(width: 0, height: -55)
+//        let shadowOpacity = 0.1
+//        let shadowRadius = 49
+//        let shadowColor = Colors.Zorba161149133
+//        self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+    }
+    func prepareView(){
+        let option1 = MyCardOtionsModel.init(AppConstants.SettingsOptions.LOWBALANCEALERT.rawValue, isSwitch: true,isSelected: true)
+        let option2 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true, isSelected: true)
+        let option3 = MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true, isSelected: true)
+        let option4 = MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: true, isSelected: true)
+        data.append(option1)
+        data.append(option2)
+        data.append(option3)
+        data.append(option4)
+        customViewHeightConstraint.constant = CGFloat(data.count*70)
+        
         let shadowOffst = CGSize.init(width: 0, height: -55)
         let shadowOpacity = 0.1
         let shadowRadius = 49
         let shadowColor = Colors.Zorba161149133
-        self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-    }
-    func prepareView(){
-        var dataSource:[String] = []
-        dataSource.append(AppConstants.SettingsOptions.NOTIFICATIONSETTINGS.rawValue)
-        dataSource.append(AppConstants.SettingsOptions.PRIVACYPREFERENCES.rawValue)
-        dataSource.append(AppConstants.SettingsOptions.MARKETINGPREFERENCES.rawValue)
-        customView.dataSource = dataSource
-        customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
+        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         self.setNavigationBarTitle(title: "Settings")
         self.setupRightNavigationBar()
+        self.configureTableView()
     }
 }
 
-extension SettingsViewController:CommonTableDelegate{
-    func didSelectOption(optionVal: Int) {
-        switch optionVal {
-        case 0:
-            print("Notification")
-            self.moveToNotificationSettings()
-        case 1:
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
-        case 2:
-            //self.moveToDirectDeposit()
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
+    func configureTableView(){
+        self.optionsTableView.rowHeight = 70;
+        self.optionsTableView.delegate=self
+        self.optionsTableView.dataSource=self
+        self.optionsTableView.registerTableViewCell(tableViewCell: MyCardTableCell.self)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell: MyCardTableCell = tableView.dequeueReusableCell(withIdentifier: "MyCardTableCell") as! MyCardTableCell
+        cell.lock.tag = indexPath.row
+        cell.bindData(data: data[indexPath.row], delegate: self)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 70.0
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+}
+
+extension SettingsViewController:MyCardTableCellDelegate{
+    func switchClicked(isOn: Bool, tag: Int) {
+        
+        switch tag {
+        case 0: break
+            //lock you card
+        case 1: break
+            
+        case 2: break
+            
+        case 3: break
+            // spend abroad
+            
+            
         default:
             break
         }
     }
-    func moveToNotificationSettings(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NotificationSettingsViewController") as! NotificationSettingsViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-//    func moveToNewPin(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//    func moveToDirectDeposit(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "DirectDepositViewController") as! DirectDepositViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//    func moveToLostInsufficient(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostInsufficientViewController") as! LostInsufficientViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//    func moveToConfirmed(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ConfirmedViewController") as! ConfirmedViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//    func moveToMyOffer(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyOffersViewController") as! MyOffersViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//    func moveToAddAccount(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AddAccountViewController") as! AddAccountViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//    }
-//    
-    
-    
 }
+
+extension SettingsViewController:SettingsDelegates{
+    func didSaveAppSettings() {
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY.rawValue)
+    }
+}
+
+

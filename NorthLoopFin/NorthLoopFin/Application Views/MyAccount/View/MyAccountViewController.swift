@@ -44,6 +44,7 @@ class MyAccountViewController: BaseViewController {
         dataSource.append(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue)
         dataSource.append(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue)
+        dataSource.append(AppConstants.ProfileOptions.APPSETTINGS.rawValue)
         dataSource.append(AppConstants.ProfileOptions.LOGOUT.rawValue)
 
 
@@ -74,6 +75,9 @@ extension MyAccountViewController:CommonTableDelegate{
             self.isChangeAddressClicked=false
             self.showConfirmPopUp()
         case 4:
+            //go to settings page
+            self.moveToSettings()
+        case 5:
             self.logoutUser()
         default:
             break
@@ -138,6 +142,11 @@ extension MyAccountViewController:CommonTableDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AccountDetailViewController") as! AccountDetailViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func moveToSettings(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 

@@ -9,15 +9,15 @@
 import Foundation
 
 struct FetchUniversityResponse:Codable {
-    let message: String
+    let universitiesList: [String]
     
     enum CodingKeys: String, CodingKey {
-        case message
+        case universitiesList
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        message = try values.decodeIfPresent(String.self, forKey: .message) ?? ""
+        universitiesList = try values.decodeIfPresent(Array<String>.self, forKey: .universitiesList) ?? []
         
     }
 }

@@ -29,7 +29,7 @@ class PhoneVerificationStartPresenter: ResponseCallback{
         }
         self.phoneVerificationDelegate?.showLoader()
         let requestModel = PhoneVerificationRequestModel.Builder()
-            .addRequestHeader(key:AppConstants.APIRequestHeaders.TWILIO_AUTHORIZATION_KEY.rawValue, value: AppConstants.TwilioAPIKey!)
+            .addRequestHeader(key:Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: AppConstants.TwilioAPIKey!)
             .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.VIA.rawValue
                 , value: "sms" as AnyObject)
             .addRequestQueryParams(key: AppConstants.TwilioPhoneVerificationRequestParamKeys.COUNTRY_CODE.rawValue, value: countryCode as AnyObject)

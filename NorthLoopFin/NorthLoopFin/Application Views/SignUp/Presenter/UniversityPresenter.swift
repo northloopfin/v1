@@ -18,19 +18,15 @@ class UniversityPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendFEtchUniversityListRequest(sendToAPI:Bool){
+    func sendFEtchUniversityListRequest(){
         
         // convert requestbody to json string and assign to request model request param
         
         self.delegate?.showLoader()
-        let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
+        //let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = FetchUniversityRequestModel.Builder()
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
-                , value: currentUser.accessToken)
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: "ip", value: "127.0.0.1")
-            .addRequestQueryParams(key: "isUpgrade", value: sendToAPI as AnyObject)
-            .addRequestQueryParams(key: "ip", value: UIDeviceHelper.getIPAddress() as AnyObject)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
         
@@ -38,9 +34,9 @@ class UniversityPresenter:ResponseCallback{
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        // let response = responseObject as! SetPinResponse
+        let response = responseObject as! FetchUniversityResponse
         self.delegate?.hideLoader()
-        self.delegate?.didFetchedUniversityList()
+        self.delegate?.didFetchedUniversityList(data: response.universitiesList)
     }
     
     func servicesManagerError(error: ErrorModel) {

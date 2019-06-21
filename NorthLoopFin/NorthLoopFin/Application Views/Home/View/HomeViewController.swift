@@ -17,6 +17,8 @@ class HomeViewController: BaseViewController {
     
     var transactionListPresenter: TransactionListPresenter!
     var accountInfoPresenter : AccountInfoPresenter!
+    var shareAccountDetailsPresenter : ShareAccountDetailsPresenter!
+
     @IBOutlet weak var contentView: GradientView!
     
     var transactionDataSource: [TransactionListModel] = [] {
@@ -43,6 +45,7 @@ class HomeViewController: BaseViewController {
         self.ledgersTableView.reloadData()
         transactionListPresenter = TransactionListPresenter.init(delegate: self)
         accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
+        shareAccountDetailsPresenter = ShareAccountDetailsPresenter.init(delegate: self)
         self.getAccountInfo()
     }
     
@@ -104,8 +107,8 @@ class HomeViewController: BaseViewController {
                 
                 if let textFields = alert.textFields {
                     // username
-                    let name: UITextField = textFields[0] as! UITextField
-                    print(name)
+                    let emailEntered: UITextField = textFields[0] as! UITextField
+                    self.shareAccountDetailsPresenter.sendShareAccountDetailsRequest(email: emailEntered.text!)
                     // not decided yet ...what to do with this
                 }
             }
@@ -292,4 +295,10 @@ extension HomeViewController:HomeTableCellDelegate{
         vc.transaction = data
         self.navigationController?.pushViewController(vc, animated: false)
     }
+}
+extension HomeViewController:ShareAccountDetailDelegates{
+    func didSharedAccounTDetails() {
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY.rawValue)
+    }
+    
 }

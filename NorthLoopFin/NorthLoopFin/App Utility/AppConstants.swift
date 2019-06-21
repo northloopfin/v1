@@ -62,6 +62,7 @@ struct AppConstants{
         case CONFIRM_MESSAGE_TO_CHANGE_PHONE = "Are you sure, you want to change Phone?"
         case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure, you want to change Address"
         case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
+        case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -73,14 +74,14 @@ struct AppConstants{
         case VERIFICATION_CODE = "verification_code"
     }
     
-    enum APIRequestHeaders: String{
-        case CONTENT_TYPE = "Content-Type"
-        case APPLICATION_JSON = "application/json"
-        case ACCEPT = "Accept"
-        case AUTHORIZATION = "Authorization"
-        case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
-        
-    }
+//    enum APIRequestHeaders: String{
+//        case CONTENT_TYPE = "Content-Type"
+//        case APPLICATION_JSON = "application/json"
+//        case ACCEPT = "Accept"
+//        case AUTHORIZATION = "Authorization"
+//        case TWILIO_AUTHORIZATION_KEY =  "X-Authy-API-Key"
+//        
+//    }
     
     enum Screens:String{
         case PASSWORD = "Password"
@@ -121,8 +122,11 @@ struct AppConstants{
     
     enum SettingsOptions:String {
         case NOTIFICATIONSETTINGS = "Notification Settings"
-        case PRIVACYPREFERENCES = "Privacy Preferences"
-        case MARKETINGPREFERENCES = "Marketing Preferences"
+        case LOWBALANCEALERT = "Low Balance Alert ($100)"
+        case TRANSACTIONALERT = "Transaction Alert"
+        case DEALSOFFERS = "Deals & Offers"
+        case CHECKFORUPDATE = "Check for Update"
+        
         
     }
     
@@ -149,6 +153,11 @@ struct AppConstants{
         case USIDTYPE = "US ID Type"
         case F1VISA = "F-1 Visa"
         case ADDRESSPROOF = "Address Proof"
+    }
+    enum AGREEMENTTYPE:String{
+        case ACCOUNT = "Account"
+        case DEPOSIT = "Deposit"
+        case CARD = "Card"
     }
     
     enum States:String {
@@ -209,6 +218,7 @@ struct AppConstants{
         case PuertoRico = "PR"
         case VirginIslands = "VI"
     }
+    
 }
 
 

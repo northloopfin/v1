@@ -2209,7 +2209,33 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vm-wK-vvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5604.375" y="-43.309859154929576"/>
+            <point key="canvasLocation" x="5604" y="-42"/>
+        </scene>
+        <!--Agreement View Controller-->
+        <scene sceneID="EuD-ZR-7qh">
+            <objects>
+                <viewController storyboardIdentifier="AgreementViewController" id="fcn-kF-1co" customClass="AgreementViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bEi-tS-dax" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="ere-ww-xCj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ere-ww-xCj" firstAttribute="top" secondItem="bEi-tS-dax" secondAttribute="top" id="ROX-5M-SbB"/>
+                            <constraint firstItem="ere-ww-xCj" firstAttribute="leading" secondItem="4hR-UL-a6J" secondAttribute="leading" id="Rnm-Qw-C3G"/>
+                            <constraint firstItem="ere-ww-xCj" firstAttribute="trailing" secondItem="4hR-UL-a6J" secondAttribute="trailing" id="Zk8-zF-gQa"/>
+                            <constraint firstItem="ere-ww-xCj" firstAttribute="bottom" secondItem="4hR-UL-a6J" secondAttribute="bottom" id="dsp-Me-Vme"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4hR-UL-a6J"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64T-2c-Cuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4950" y="630.63380281690138"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="DzK-i2-BHn">
@@ -2311,30 +2337,57 @@ to your registered address</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et2-eF-pDQ" customClass="CommonTable" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="80" width="270" height="140"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-M9-Wtg" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="104" width="270" height="280"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2MS-cr-vFd">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="280"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gaf-sK-vrB" id="xfw-yN-b5V"/>
+                                            <outlet property="delegate" destination="gaf-sK-vrB" id="XvJ-MH-8qZ"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="PCi-gd-5JX"/>
+                                    <constraint firstItem="2MS-cr-vFd" firstAttribute="top" secondItem="bVX-M9-Wtg" secondAttribute="top" id="2yZ-66-cMw"/>
+                                    <constraint firstAttribute="bottom" secondItem="2MS-cr-vFd" secondAttribute="bottom" id="5lT-UK-Z0G"/>
+                                    <constraint firstAttribute="height" constant="280" id="PPe-co-nQn"/>
+                                    <constraint firstItem="2MS-cr-vFd" firstAttribute="leading" secondItem="bVX-M9-Wtg" secondAttribute="leading" id="R4E-4J-8k8"/>
+                                    <constraint firstAttribute="trailing" secondItem="2MS-cr-vFd" secondAttribute="trailing" id="ati-Xx-Nei"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="et2-eF-pDQ" firstAttribute="top" secondItem="INS-95-WH8" secondAttribute="top" constant="60" id="9Lw-0h-7ah"/>
-                            <constraint firstItem="INS-95-WH8" firstAttribute="trailing" secondItem="et2-eF-pDQ" secondAttribute="trailing" constant="25" id="TOw-q1-wwK"/>
-                            <constraint firstItem="et2-eF-pDQ" firstAttribute="leading" secondItem="INS-95-WH8" secondAttribute="leading" constant="25" id="xJ4-Co-4aq"/>
+                            <constraint firstItem="bVX-M9-Wtg" firstAttribute="leading" secondItem="INS-95-WH8" secondAttribute="leading" constant="25" id="DgX-SF-FDj"/>
+                            <constraint firstItem="INS-95-WH8" firstAttribute="trailing" secondItem="bVX-M9-Wtg" secondAttribute="trailing" constant="25" id="Fju-KX-0aP"/>
+                            <constraint firstItem="bVX-M9-Wtg" firstAttribute="top" secondItem="INS-95-WH8" secondAttribute="top" constant="84" id="R7v-fl-lFf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="INS-95-WH8"/>
                     </view>
                     <connections>
-                        <outlet property="customView" destination="et2-eF-pDQ" id="aYY-x4-sSz"/>
-                        <outlet property="customViewHeightConstraint" destination="PCi-gd-5JX" id="h7n-jE-sys"/>
+                        <outlet property="containerView" destination="bVX-M9-Wtg" id="PXj-JH-D2f"/>
+                        <outlet property="customViewHeightConstraint" destination="PPe-co-nQn" id="341-cS-oeH"/>
+                        <outlet property="optionsTableView" destination="2MS-cr-vFd" id="Hm2-sz-Z12"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmx-kE-pio" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2660,15 +2713,40 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bde-Gh-Zwz" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="373" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.63137254899999995" green="0.58431372550000005" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ru1-69-x0e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="SHARE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareClicked:" destination="45M-0U-g6v" eventType="touchUpInside" id="28u-sY-rpe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dW4-MX-zg8" firstAttribute="trailing" secondItem="bde-Gh-Zwz" secondAttribute="trailing" constant="25" id="3By-iK-2vS"/>
                             <constraint firstItem="dW4-MX-zg8" firstAttribute="trailing" secondItem="Hip-mX-108" secondAttribute="trailing" constant="25" id="Bwx-B9-c6t"/>
                             <constraint firstItem="rRb-y5-pkN" firstAttribute="leading" secondItem="dW4-MX-zg8" secondAttribute="leading" id="G8Y-cv-Urm"/>
                             <constraint firstItem="Hip-mX-108" firstAttribute="leading" secondItem="dW4-MX-zg8" secondAttribute="leading" constant="25" id="HV5-zh-fFl"/>
                             <constraint firstItem="rRb-y5-pkN" firstAttribute="top" secondItem="dW4-MX-zg8" secondAttribute="top" id="QCb-63-aaK"/>
                             <constraint firstItem="dW4-MX-zg8" firstAttribute="bottom" secondItem="rRb-y5-pkN" secondAttribute="bottom" id="R0d-lC-tkQ"/>
                             <constraint firstItem="dW4-MX-zg8" firstAttribute="trailing" secondItem="rRb-y5-pkN" secondAttribute="trailing" id="YQ8-ee-mfB"/>
+                            <constraint firstItem="bde-Gh-Zwz" firstAttribute="top" secondItem="Hip-mX-108" secondAttribute="bottom" constant="116" id="iLg-Cm-a4e"/>
+                            <constraint firstItem="bde-Gh-Zwz" firstAttribute="leading" secondItem="dW4-MX-zg8" secondAttribute="leading" constant="25" id="pYH-6Q-aJY"/>
                             <constraint firstItem="Hip-mX-108" firstAttribute="top" secondItem="dW4-MX-zg8" secondAttribute="top" constant="60" id="y1o-tB-sV5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dW4-MX-zg8"/>
@@ -2677,12 +2755,13 @@ to your registered address</string>
                         <outlet property="accountNumberLbl" destination="7R0-di-tgy" id="law-fN-QsA"/>
                         <outlet property="nameLbl" destination="cLX-uo-3zq" id="XEE-wb-xMX"/>
                         <outlet property="rountingNumberLbl" destination="RQY-5d-8vg" id="4XU-eh-n1d"/>
+                        <outlet property="shareBtn" destination="bde-Gh-Zwz" id="Ze2-la-flj"/>
                         <outlet property="swiftNumberLbl" destination="eqm-6j-eWM" id="7Nv-ku-gVT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lh-2R-coP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8348" y="-748"/>
+            <point key="canvasLocation" x="-853" y="-851"/>
         </scene>
         <!--Goals View Controller-->
         <scene sceneID="sKw-Pq-0Fb">
@@ -4303,7 +4382,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWm-eL-4fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8416.875" y="1325.7042253521126"/>
+            <point key="canvasLocation" x="8348" y="1318"/>
         </scene>
         <!--Transfer Suceess View Controller-->
         <scene sceneID="njp-7K-2OZ">
@@ -5052,18 +5131,42 @@ We’ve sent an email confirming.</string>
                                     <constraint firstItem="rRE-yZ-cCN" firstAttribute="centerX" secondItem="Dpv-Zf-3DG" secondAttribute="centerX" id="23C-nL-TM7"/>
                                     <constraint firstItem="wvh-6D-Rqe" firstAttribute="centerX" secondItem="Dpv-Zf-3DG" secondAttribute="centerX" id="2bx-ue-V0B"/>
                                     <constraint firstItem="rRE-yZ-cCN" firstAttribute="top" secondItem="Dpv-Zf-3DG" secondAttribute="top" constant="9.5" id="3L8-OG-0iU"/>
-                                    <constraint firstItem="wvh-6D-Rqe" firstAttribute="top" secondItem="Dpv-Zf-3DG" secondAttribute="top" constant="57" id="42x-th-0G3"/>
                                     <constraint firstItem="HSR-kD-vAq" firstAttribute="centerX" secondItem="Dpv-Zf-3DG" secondAttribute="centerX" id="ABf-Rg-2kU"/>
-                                    <constraint firstItem="wvh-6D-Rqe" firstAttribute="top" secondItem="rRE-yZ-cCN" secondAttribute="bottom" constant="17.5" id="cvA-hE-Fdd"/>
                                     <constraint firstItem="HSR-kD-vAq" firstAttribute="top" secondItem="wvh-6D-Rqe" secondAttribute="bottom" constant="2" id="iVi-hd-8q8"/>
+                                    <constraint firstItem="wvh-6D-Rqe" firstAttribute="top" secondItem="rRE-yZ-cCN" secondAttribute="bottom" constant="17.5" id="xFA-xI-smC"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up you agree to the " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rp9-Nw-5z3" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="66.5" y="457" width="187" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account, Deposit &amp; Card Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2z-qh-xom" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="50" y="478.5" width="220.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l2z-qh-xom" firstAttribute="top" secondItem="rp9-Nw-5z3" secondAttribute="bottom" constant="3" id="0LA-Iy-hBl"/>
                             <constraint firstItem="dCy-xN-3FM" firstAttribute="leading" secondItem="SeL-3V-VWg" secondAttribute="leading" id="0RM-3y-nRp"/>
                             <constraint firstAttribute="bottom" secondItem="Dpv-Zf-3DG" secondAttribute="bottom" id="0vB-Mx-Kf7"/>
                             <constraint firstItem="dCy-xN-3FM" firstAttribute="trailing" secondItem="SeL-3V-VWg" secondAttribute="trailing" id="6in-qR-ird"/>
+                            <constraint firstItem="l2z-qh-xom" firstAttribute="centerX" secondItem="NGs-EO-6NQ" secondAttribute="centerX" id="EPz-4D-9Uc"/>
+                            <constraint firstItem="rp9-Nw-5z3" firstAttribute="top" secondItem="dCy-xN-3FM" secondAttribute="bottom" constant="9.5" id="Ep5-P2-mNz"/>
                             <constraint firstItem="Dpv-Zf-3DG" firstAttribute="top" secondItem="dCy-xN-3FM" secondAttribute="bottom" id="GuM-RJ-cLD"/>
                             <constraint firstItem="Dpv-Zf-3DG" firstAttribute="top" secondItem="dCy-xN-3FM" secondAttribute="bottom" id="J6K-lB-1B6"/>
                             <constraint firstItem="dCy-xN-3FM" firstAttribute="height" secondItem="NGs-EO-6NQ" secondAttribute="height" multiplier="0.473" id="RkP-Pg-gWr"/>
@@ -5074,12 +5177,15 @@ We’ve sent an email confirming.</string>
                             <constraint firstItem="u2i-Uw-bfU" firstAttribute="leading" secondItem="SeL-3V-VWg" secondAttribute="leading" id="g07-6f-lf0"/>
                             <constraint firstItem="Dpv-Zf-3DG" firstAttribute="trailing" secondItem="SeL-3V-VWg" secondAttribute="trailing" id="jTa-zQ-IyN"/>
                             <constraint firstItem="dCy-xN-3FM" firstAttribute="top" secondItem="u2i-Uw-bfU" secondAttribute="bottom" id="m4H-HT-f6B"/>
+                            <constraint firstItem="l2z-qh-xom" firstAttribute="top" secondItem="rp9-Nw-5z3" secondAttribute="bottom" constant="3" id="nA7-VG-i1j"/>
                             <constraint firstItem="dCy-xN-3FM" firstAttribute="top" secondItem="u2i-Uw-bfU" secondAttribute="bottom" id="oNd-AJ-hU9"/>
+                            <constraint firstItem="rp9-Nw-5z3" firstAttribute="centerX" secondItem="NGs-EO-6NQ" secondAttribute="centerX" id="stj-y4-pbx"/>
                             <constraint firstItem="Dpv-Zf-3DG" firstAttribute="leading" secondItem="SeL-3V-VWg" secondAttribute="leading" id="udR-Pc-hsh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SeL-3V-VWg"/>
                     </view>
                     <connections>
+                        <outlet property="agreementLbl" destination="l2z-qh-xom" id="8pu-ox-BaV"/>
                         <outlet property="alreadyHaveaccountLbl" destination="wvh-6D-Rqe" id="Jy9-K2-9L4"/>
                         <outlet property="confirmPassTextField" destination="rVk-ic-4mz" id="4PW-9g-9JS"/>
                         <outlet property="emailTextField" destination="rOP-Is-d8O" id="Nsg-dy-lGx"/>

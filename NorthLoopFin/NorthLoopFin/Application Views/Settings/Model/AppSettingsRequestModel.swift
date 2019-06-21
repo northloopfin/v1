@@ -1,14 +1,14 @@
 //
-//  FetchUniversityRequestModel.swift
+//  AppSettingsRequestModel.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 19/06/19.
+//  Created by daffolapmac-48 on 20/06/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class FetchUniversityRequestModel {
+class AppSettingsRequestModel {
     //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
@@ -64,8 +64,8 @@ class FetchUniversityRequestModel {
          
          -returns : CardRequestModel
          */
-        func build()->FetchUniversityRequestModel{
-            return FetchUniversityRequestModel(builderObject: self)
+        func build()->AppSettingsRequestModel{
+            return AppSettingsRequestModel(builderObject: self)
         }
     }
     
