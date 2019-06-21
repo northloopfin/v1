@@ -284,17 +284,18 @@ extension HomeViewController:SideMenuDelegate{
     
 }
 extension HomeViewController:HomeTableCellDelegate{
+    //Delete once client confirm
     func disputeTransactionClicked(data: IndividualTransaction) {
-        self.moveToDisputeTransactionScreen(data: data)
+        //self.moveToDisputeTransactionScreen(data: data)
     }
     
-    func moveToDisputeTransactionScreen(data:IndividualTransaction){
-        //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
-        vc.transaction = data
-        self.navigationController?.pushViewController(vc, animated: false)
-    }
+//    func moveToDisputeTransactionScreen(data:IndividualTransaction){
+//        //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
+//        vc.transaction = data
+//        self.navigationController?.pushViewController(vc, animated: false)
+//    }
 }
 extension HomeViewController:ShareAccountDetailDelegates{
     func didSharedAccounTDetails() {

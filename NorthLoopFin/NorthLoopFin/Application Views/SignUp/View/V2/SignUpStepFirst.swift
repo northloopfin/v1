@@ -178,7 +178,7 @@ extension SignUpStepFirst:SignupAuthDelegate{
     
     func moveToSignupStepSecond(data:SignupFlowData) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SignupStepConfirm") as! SignupStepConfirm
+        let vc = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
         vc.signupFlowData=data
         self.navigationController?.pushViewController(vc, animated: false)
     }

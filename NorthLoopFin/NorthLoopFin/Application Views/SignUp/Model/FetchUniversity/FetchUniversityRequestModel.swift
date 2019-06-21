@@ -75,6 +75,6 @@ class FetchUniversityRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.SAHREACCOUNTDETAILS.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.UNIVERSITYLIST.rawValue
     }
 }

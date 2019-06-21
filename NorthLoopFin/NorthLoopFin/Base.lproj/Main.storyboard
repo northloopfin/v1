@@ -370,9 +370,31 @@ W1s 2Bx,UK</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Im-zp-ndt">
+                                <rect key="frame" x="18" y="493" width="284" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0eQ-MB-iPf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="252" id="6cG-6m-m3E"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="sUb-ob-zP5"/>
+                                </constraints>
+                                <state key="normal" title="Dispute Transaction">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="disputeTransactionClicked:" destination="qRL-2o-V64" eventType="touchUpInside" id="qum-Lm-f25"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2Im-zp-ndt" firstAttribute="top" secondItem="I07-P7-y2W" secondAttribute="bottom" constant="12" id="AnI-bW-peb"/>
+                            <constraint firstItem="2Im-zp-ndt" firstAttribute="leading" secondItem="lpW-xo-GXq" secondAttribute="leading" constant="18" id="DzS-Cc-QUS"/>
                             <constraint firstItem="ifd-L9-QBp" firstAttribute="centerX" secondItem="I07-P7-y2W" secondAttribute="centerX" id="JAr-pf-xSl"/>
                             <constraint firstItem="ifd-L9-QBp" firstAttribute="top" secondItem="I07-P7-y2W" secondAttribute="top" constant="-30" id="QBC-pP-cXe"/>
                             <constraint firstItem="lpW-xo-GXq" firstAttribute="trailing" secondItem="I07-P7-y2W" secondAttribute="trailing" constant="20" id="TyD-Lw-AcN"/>
@@ -380,6 +402,7 @@ W1s 2Bx,UK</string>
                             <constraint firstItem="Vjb-85-sng" firstAttribute="trailing" secondItem="lpW-xo-GXq" secondAttribute="trailing" id="bNO-az-ZEE"/>
                             <constraint firstItem="Vjb-85-sng" firstAttribute="top" secondItem="G5t-fD-2dh" secondAttribute="top" id="bhM-tR-jiS"/>
                             <constraint firstItem="Vjb-85-sng" firstAttribute="leading" secondItem="lpW-xo-GXq" secondAttribute="leading" id="jgr-Gr-2qH"/>
+                            <constraint firstItem="lpW-xo-GXq" firstAttribute="trailing" secondItem="2Im-zp-ndt" secondAttribute="trailing" constant="18" id="nne-kR-IUx"/>
                             <constraint firstItem="lpW-xo-GXq" firstAttribute="bottom" secondItem="I07-P7-y2W" secondAttribute="bottom" constant="87" id="sgL-V4-amy"/>
                             <constraint firstItem="I07-P7-y2W" firstAttribute="leading" secondItem="lpW-xo-GXq" secondAttribute="leading" constant="20" id="tVE-iz-Qme"/>
                             <constraint firstItem="I07-P7-y2W" firstAttribute="height" secondItem="G5t-fD-2dh" secondAttribute="height" multiplier="0.589" id="y0x-zf-PXS"/>
@@ -401,7 +424,7 @@ W1s 2Bx,UK</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jL6-MU-c7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-516" y="-35"/>
+            <point key="canvasLocation" x="-517.5" y="-35.91549295774648"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="49q-vb-SfD">
@@ -436,7 +459,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account in minutes and start banking with North Loop, your global bank account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="384" translatesAutoresizingMaskIntoConstraints="NO" id="Pky-vU-pyS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="355" width="290" height="37"/>
+                                        <rect key="frame" x="15" y="357" width="290" height="35"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.51372549019607838" green="0.50980392156862742" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -526,6 +549,10 @@ W1s 2Bx,UK</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c5y-5s-pYK"/>
                     </view>
+                    <connections>
+                        <outlet property="createAccountBtn" destination="L74-rA-EBl" id="3R5-Su-dWk"/>
+                        <outlet property="loginBtn" destination="LL6-YR-lqB" id="9a4-qb-bzv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kp4-5a-iWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2375,12 +2402,38 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-s8-4g8" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="442" width="270" height="45"/>
+                                <color key="backgroundColor" red="0.63137254899999995" green="0.58431372550000005" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="5dp-dP-4X3"/>
+                                    <constraint firstAttribute="height" constant="45" id="out-D5-dv9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveClicked:" destination="gaf-sK-vrB" eventType="touchUpInside" id="mw2-gA-LxS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qf4-s8-4g8" firstAttribute="top" secondItem="bVX-M9-Wtg" secondAttribute="bottom" constant="58" id="2GO-yV-yne"/>
                             <constraint firstItem="bVX-M9-Wtg" firstAttribute="leading" secondItem="INS-95-WH8" secondAttribute="leading" constant="25" id="DgX-SF-FDj"/>
                             <constraint firstItem="INS-95-WH8" firstAttribute="trailing" secondItem="bVX-M9-Wtg" secondAttribute="trailing" constant="25" id="Fju-KX-0aP"/>
                             <constraint firstItem="bVX-M9-Wtg" firstAttribute="top" secondItem="INS-95-WH8" secondAttribute="top" constant="84" id="R7v-fl-lFf"/>
+                            <constraint firstItem="INS-95-WH8" firstAttribute="trailing" secondItem="Qf4-s8-4g8" secondAttribute="trailing" constant="25" id="Wck-wP-49S"/>
+                            <constraint firstItem="Qf4-s8-4g8" firstAttribute="leading" secondItem="INS-95-WH8" secondAttribute="leading" constant="25" id="o9w-tg-VK9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="INS-95-WH8"/>
                     </view>
@@ -4858,7 +4911,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="511" width="320" height="57"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-XA-Vbh" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="7" width="146" height="30"/>
+                                        <rect key="frame" x="79.5" y="7" width="161" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="owH-e3-MmN"/>
                                         </constraints>
@@ -5484,7 +5537,7 @@ We’ve sent an email confirming.</string>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="pCM-MF-DAD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
-                                <state key="normal" title="PAY">
+                                <state key="normal" title="UPGRADE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
