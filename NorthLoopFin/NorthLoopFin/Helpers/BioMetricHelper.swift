@@ -102,13 +102,13 @@ public struct BioMetricHelper
                             Success(false  , error.localizedDescription)
                             break
                         case LAError.userCancel:
-                            Success(false  , error.localizedDescription)
+                            //Success(false  , error.localizedDescription)
                             break
                         case LAError.userFallback:
                             Success(false  , error.localizedDescription)
                             break
                         case LAError.systemCancel:
-                            Success(false  , error.localizedDescription)
+                            //Success(false  , error.localizedDescription)
                             break
                         case LAError.passcodeNotSet:
                             Success(false  , error.localizedDescription)
@@ -123,7 +123,7 @@ public struct BioMetricHelper
                             Success(false  , error.localizedDescription)
                             break
                         case LAError.appCancel:
-                            Success(false  , error.localizedDescription)
+                            //Success(false  , error.localizedDescription)
                             break
                         case LAError.invalidContext:
                             Success(false  , error.localizedDescription)
@@ -139,13 +139,13 @@ public struct BioMetricHelper
                             Success(false  , error.localizedDescription)
                             break
                         case LAError.userCancel:
-                            Success(false  , error.localizedDescription)
+                            //Success(false  , error.localizedDescription)
                             break
                         case LAError.userFallback:
                             Success(false  , error.localizedDescription)
                             break
                         case LAError.systemCancel:
-                            Success(false  , error.localizedDescription)
+                            //Success(false  , error.localizedDescription)
                             break
                         case LAError.passcodeNotSet:
                             Success(false  , error.localizedDescription)
@@ -160,7 +160,7 @@ public struct BioMetricHelper
                             Success(false  , error.localizedDescription)
                             break
                         case LAError.appCancel:
-                            Success(false  , error.localizedDescription)
+                            //Success(false  , error.localizedDescription)
                             break
                         case LAError.invalidContext:
                             Success(false  , error.localizedDescription)

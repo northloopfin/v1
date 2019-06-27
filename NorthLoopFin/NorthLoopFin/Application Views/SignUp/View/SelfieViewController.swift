@@ -38,7 +38,7 @@ class SelfieViewController: BaseViewController {
         print(result)
         if result.count > 0{
             let selfie:SelfieImage = result.first!
-            let image1 = StorageHelper.getImageFromPath(path: selfie.imagePath)
+            let image1 = StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: selfie.imagePath))
             self.selfieImage = image1
             self.selfieImageView.image=image1
             self.nextBtn.isEnabled=true
@@ -116,7 +116,7 @@ class SelfieViewController: BaseViewController {
         StorageHelper.saveImageDocumentDirectory(fileName: fileName, data: imgData)
         let selfieObj:SelfieImage = SelfieImage()
         selfieObj.email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
-        selfieObj.imagePath = StorageHelper.getImagePath(imgName: fileName)
+        selfieObj.imagePath = fileName//StorageHelper.getImagePath(imgName: fileName)
         selfieObj.type = "Selfie"
         RealmHelper.addSelfieInfo(info: selfieObj)
     }

@@ -17,7 +17,7 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var optionsTableView: UITableView!
     
     var data:[MyCardOtionsModel]=[]
-    var saveSettingsPresenter : AppSettingsPresenter!
+    var saveSettingsPresenter : GetAppSettingsPresenter!
 
     
     @IBAction func saveClicked(_ sender: Any) {
@@ -28,7 +28,7 @@ class SettingsViewController: BaseViewController {
         super.viewDidLoad()
         self.prepareView()
         self.optionsTableView.reloadData()
-        self.saveSettingsPresenter = AppSettingsPresenter.init(delegate: self)
+        self.saveSettingsPresenter = GetAppSettingsPresenter.init(delegate: self)
 
     }
     

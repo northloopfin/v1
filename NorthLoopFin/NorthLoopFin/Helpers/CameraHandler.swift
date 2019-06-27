@@ -68,7 +68,11 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            self.imagePickedBlock?(image)
+            //reduce image size here
+            let compressedImageData = image.jpegData(compressionQuality: 0.8)
+            //convert this compressed data to image
+            let compressedImage = UIImage.init(data: compressedImageData!)
+            self.imagePickedBlock?(compressedImage!)
         }else{
             print("Something went wrong")
         }

@@ -26,6 +26,10 @@ class WelcomeViewController: BaseViewController {
     }
     
     @IBAction func createAccountClicked(_ sender: Any) {
+        //delete DB
+        RealmHelper.deleteAllScanID()
+        RealmHelper.deleteAllSelfie()
+        RealmHelper.deleteAllBasicInfo()
         self.moveToNextScreen()
     }
     

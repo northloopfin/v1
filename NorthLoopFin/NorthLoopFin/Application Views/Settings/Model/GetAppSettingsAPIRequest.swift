@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AppSettingsAPIRequest:ApiRequestProtocol {
+class GetAppSettingsAPIRequest:ApiRequestProtocol {
     
     //MARK:- local properties
     var apiRequestUrl:String!
@@ -23,12 +23,12 @@ class AppSettingsAPIRequest:ApiRequestProtocol {
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
     
-    func makeAPIRequest(withReqFormData reqFromData: AppSettingsRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
+    func makeAPIRequest(withReqFormData reqFromData: GetAppSettingsRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
         
         self.apiRequestUrl = reqFromData.apiUrl
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: AppSettingsResponse.self)
+        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: GetAppSettingsResponse.self)
     }
     
     /**

@@ -56,6 +56,11 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
             self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
             self.signupFlowData.documents.year = Int(DOBArr[2]) ?? 0
+            // add passport as virtual document
+            
+            let passport:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.passportTextField.text!, documentType: "PASSPORT")
+            let documents:SignupFlowDocument=self.signupFlowData.documents
+            documents.virtualDocs.append(passport)
         }
         
     }
@@ -160,7 +165,7 @@ class SignupStepConfirm: BaseViewController {
             self.universityTextField.text = info.university
             self.checkForMandatoryFields()
         }
-        //self.setSampleData()
+        self.setSampleData()
     }
     
     //Methode to show date picker

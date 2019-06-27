@@ -145,6 +145,20 @@ class AppUtility {
         return arr
     }
     
+    class func greetingAccToTime()->String{
+        let hour = Calendar.current.component(.hour, from: Date())
+        var greeting = ""
+        
+        switch hour {
+        case 6..<12 : greeting = "Good Morning, "//print(NSLocalizedString("Morning", comment: "Morning"))
+        case 12 : greeting = "Good Afternoon, "//print(NSLocalizedString("Noon", comment: "Noon"))
+        case 13..<17 : greeting = "Good Afternoon, "//print(NSLocalizedString("Afternoon", comment: "Afternoon"))
+        case 17..<22 : greeting = "Good Evening, "//print(NSLocalizedString("Evening", comment: "Evening"))
+        default: greeting = "Good Night, " //print(NSLocalizedString("Night", comment: "Night"))
+        }
+        return greeting
+    }
+    
     class func configureZendesk(data:ZendeskData){
         
         Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",

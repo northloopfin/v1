@@ -108,8 +108,15 @@ class HomeViewController: BaseViewController {
                 if let textFields = alert.textFields {
                     // username
                     let emailEntered: UITextField = textFields[0] as! UITextField
-                    self.shareAccountDetailsPresenter.sendShareAccountDetailsRequest(email: emailEntered.text!)
-                    // not decided yet ...what to do with this
+               //check for valid email
+                    
+                    if (!(emailEntered.text?.isEmpty)! && Validations.isValidEmail(email: (emailEntered.text)!)){
+                        // valid
+                        self.shareAccountDetailsPresenter.sendShareAccountDetailsRequest(email: emailEntered.text!)
+                    }else{
+                        // show error
+                        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
+                    }
                 }
             }
         }
@@ -205,11 +212,12 @@ extension HomeViewController:HomeDelegate{
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         if let _ = currentUser?.name{
-            self.GreetingLbl.text = "Good Morning, "+(currentUser?.name)!
+            //self.GreetingLbl.text = AppUtility().greetingAccToTime() +(currentUser?.name)!
+            self.GreetingLbl.text = AppUtility.greetingAccToTime()+(currentUser?.name)!
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         
-        currentUser?.amount = 20.0//data.data.info.balance.amount
+        currentUser?.amount = data.data.info.balance.amount
         
         UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()

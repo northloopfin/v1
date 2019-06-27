@@ -152,8 +152,7 @@ class LoginViewController: BaseViewController {
     
     //This function will check for login credentials saved in KeyChain. If saved then initiate biometric otherwise let user enter credentials
     func checkForStoredLoginCredentials(){
-        if let _ = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
-            // yes key exist..trigger TouchID
+        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail),let _ = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
             self.initiateBiometric()
         }
     }

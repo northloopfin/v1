@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AppSettingsRequestModel {
+class GetAppSettingsRequestModel {
     //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
@@ -64,8 +64,8 @@ class AppSettingsRequestModel {
          
          -returns : CardRequestModel
          */
-        func build()->AppSettingsRequestModel{
-            return AppSettingsRequestModel(builderObject: self)
+        func build()->GetAppSettingsRequestModel{
+            return GetAppSettingsRequestModel(builderObject: self)
         }
     }
     

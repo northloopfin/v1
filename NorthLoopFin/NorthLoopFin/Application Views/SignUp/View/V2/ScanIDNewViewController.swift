@@ -109,9 +109,12 @@ class ScanIDNewViewController: BaseViewController {
                 print(imagesOfParticularScanID.count)
                 //loop through images of particularScanID and add them to model array
                 //Create object of that particular scan id
+                print(StorageHelper.getImagePath(imgName: imagesOfParticularScanID[0].imagePath))
                 for m in 0...(imagesOfParticularScanID.count-1){
-                    if let _ = StorageHelper.getImageFromPath(path: imagesOfParticularScanID[m].imagePath){
-                        passportImages.append(StorageHelper.getImageFromPath(path: imagesOfParticularScanID[m].imagePath)!)
+                    if let _ = StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: imagesOfParticularScanID[m].imagePath)){
+                        //passportImages.append(StorageHelper.getImageFromPath(path: imagesOfParticularScanID[m].imagePath)!)
+                        
+                        passportImages.append(StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: imagesOfParticularScanID[m].imagePath))!)
                     }
                 }
                 let model = self.modelArray[n]
@@ -348,7 +351,7 @@ class ScanIDNewViewController: BaseViewController {
                 let modelToSaveInDB:ScanIDImages = ScanIDImages()
             modelToSaveInDB.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
                 modelToSaveInDB.type = scanIDModel.type.rawValue
-                modelToSaveInDB.imagePath=StorageHelper.getImagePath(imgName: filename)
+                modelToSaveInDB.imagePath=filename//StorageHelper.getImagePath(imgName: filename)
                 RealmHelper.addScanIDInfo(info: modelToSaveInDB)
             }
         }
@@ -388,7 +391,13 @@ class ScanIDNewViewController: BaseViewController {
                 //String(format:"data:image/png;base64,%@",base64Image ?? "")
                 let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
                 //print(String(format:"data:image/png;base64,%@",base64Image ?? ""))
-                let doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT ID")//scanIDModel.type.rawValue)
+                var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")//scanIDModel.type.rawValue)
+                //check for ID Type and assign document type accordingly
+                if scanIDModel.type == AppConstants.SelectIDTYPES.ADDRESSPROOF{
+                    doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "PROOF_OF_ADDRESS")
+                }else if scanIDModel.type == AppConstants.SelectIDTYPES.OTHER{
+                    doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "OTHER")
+                }
                 arrayOfScannedDocuments.append(doc)
             }
         }

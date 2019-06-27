@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct AppSettingsResponse:Codable {
+struct GetAppSettingsResponse:Codable {
     let message: String
     
     enum CodingKeys: String, CodingKey {

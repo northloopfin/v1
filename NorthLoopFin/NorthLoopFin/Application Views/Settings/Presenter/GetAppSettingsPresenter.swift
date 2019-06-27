@@ -7,10 +7,10 @@
 //
 
 import Foundation
-class AppSettingsPresenter:ResponseCallback{
+class GetAppSettingsPresenter:ResponseCallback{
     
     private weak var delegate          : SettingsDelegates?
-    private lazy var logic         : AppSettingsBusinessLogic = AppSettingsBusinessLogic()
+    private lazy var logic         : GetAppSettingsBusinessLogic = GetAppSettingsBusinessLogic()
     
     init(delegate responseDelegate:SettingsDelegates){
         self.delegate = responseDelegate
@@ -23,7 +23,7 @@ class AppSettingsPresenter:ResponseCallback{
         
         self.delegate?.showLoader()
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
-        let requestModel = AppSettingsRequestModel.Builder()
+        let requestModel = GetAppSettingsRequestModel.Builder()
             .addRequestHeader(key: "ip", value: "127.0.0.1")
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)

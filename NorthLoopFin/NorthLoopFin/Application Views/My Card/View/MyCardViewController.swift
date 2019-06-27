@@ -109,6 +109,11 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
+    func moveToNewPincreen() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }
 
 extension MyCardViewController:CardDelegates{

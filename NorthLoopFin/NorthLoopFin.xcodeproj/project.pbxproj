@@ -341,11 +341,11 @@
 		4BFBC87C22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87B22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift */; };
 		4BFBC87E22BB80DA00B23B68 /* ShareAccountDetailsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87D22BB80DA00B23B68 /* ShareAccountDetailsBusinessLogic.swift */; };
 		4BFBC88022BB80EC00B23B68 /* ShareAccountDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87F22BB80EC00B23B68 /* ShareAccountDetailResponse.swift */; };
-		4BFBC88422BB8AEF00B23B68 /* AppSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88322BB8AEF00B23B68 /* AppSettingsPresenter.swift */; };
-		4BFBC88622BB8B3500B23B68 /* AppSettingsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88522BB8B3500B23B68 /* AppSettingsRequestModel.swift */; };
-		4BFBC88822BB8B4E00B23B68 /* AppSettingsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88722BB8B4E00B23B68 /* AppSettingsAPIRequest.swift */; };
-		4BFBC88A22BB8B6800B23B68 /* AppSettingsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88922BB8B6800B23B68 /* AppSettingsBusinessLogic.swift */; };
-		4BFBC88C22BB8B7800B23B68 /* AppSettingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88B22BB8B7800B23B68 /* AppSettingsResponse.swift */; };
+		4BFBC88422BB8AEF00B23B68 /* GetAppSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88322BB8AEF00B23B68 /* GetAppSettingsPresenter.swift */; };
+		4BFBC88622BB8B3500B23B68 /* GetAppSettingsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88522BB8B3500B23B68 /* GetAppSettingsRequestModel.swift */; };
+		4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88722BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift */; };
+		4BFBC88A22BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88922BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift */; };
+		4BFBC88C22BB8B7800B23B68 /* GetAppSettingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88B22BB8B7800B23B68 /* GetAppSettingsResponse.swift */; };
 		4BFBC88E22BB8CF600B23B68 /* SettingsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88D22BB8CF500B23B68 /* SettingsDelegates.swift */; };
 		4BFDF87422B217FB0066860D /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */; };
 		4BFDF87622B236BB0066860D /* TransactionListTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF87522B236BB0066860D /* TransactionListTo.swift */; };
@@ -737,11 +737,11 @@
 		4BFBC87B22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsRequestModel.swift; sourceTree = "<group>"; };
 		4BFBC87D22BB80DA00B23B68 /* ShareAccountDetailsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsBusinessLogic.swift; sourceTree = "<group>"; };
 		4BFBC87F22BB80EC00B23B68 /* ShareAccountDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailResponse.swift; sourceTree = "<group>"; };
-		4BFBC88322BB8AEF00B23B68 /* AppSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsPresenter.swift; sourceTree = "<group>"; };
-		4BFBC88522BB8B3500B23B68 /* AppSettingsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsRequestModel.swift; sourceTree = "<group>"; };
-		4BFBC88722BB8B4E00B23B68 /* AppSettingsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsAPIRequest.swift; sourceTree = "<group>"; };
-		4BFBC88922BB8B6800B23B68 /* AppSettingsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsBusinessLogic.swift; sourceTree = "<group>"; };
-		4BFBC88B22BB8B7800B23B68 /* AppSettingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsResponse.swift; sourceTree = "<group>"; };
+		4BFBC88322BB8AEF00B23B68 /* GetAppSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppSettingsPresenter.swift; sourceTree = "<group>"; };
+		4BFBC88522BB8B3500B23B68 /* GetAppSettingsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppSettingsRequestModel.swift; sourceTree = "<group>"; };
+		4BFBC88722BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppSettingsAPIRequest.swift; sourceTree = "<group>"; };
+		4BFBC88922BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppSettingsBusinessLogic.swift; sourceTree = "<group>"; };
+		4BFBC88B22BB8B7800B23B68 /* GetAppSettingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppSettingsResponse.swift; sourceTree = "<group>"; };
 		4BFBC88D22BB8CF500B23B68 /* SettingsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDelegates.swift; sourceTree = "<group>"; };
 		4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
 		4BFDF87522B236BB0066860D /* TransactionListTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTo.swift; sourceTree = "<group>"; };
@@ -2128,7 +2128,7 @@
 		4BFBC88122BB8A9D00B23B68 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				4BFBC88322BB8AEF00B23B68 /* AppSettingsPresenter.swift */,
+				4BFBC88322BB8AEF00B23B68 /* GetAppSettingsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2136,10 +2136,10 @@
 		4BFBC88222BB8AA600B23B68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4BFBC88522BB8B3500B23B68 /* AppSettingsRequestModel.swift */,
-				4BFBC88722BB8B4E00B23B68 /* AppSettingsAPIRequest.swift */,
-				4BFBC88922BB8B6800B23B68 /* AppSettingsBusinessLogic.swift */,
-				4BFBC88B22BB8B7800B23B68 /* AppSettingsResponse.swift */,
+				4BFBC88522BB8B3500B23B68 /* GetAppSettingsRequestModel.swift */,
+				4BFBC88722BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift */,
+				4BFBC88922BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift */,
+				4BFBC88B22BB8B7800B23B68 /* GetAppSettingsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2623,7 +2623,7 @@
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
 				1D5AB2FF22A7999100DB3B70 /* LostCardResponse.swift in Sources */,
-				4BFBC88A22BB8B6800B23B68 /* AppSettingsBusinessLogic.swift in Sources */,
+				4BFBC88A22BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift in Sources */,
 				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
@@ -2684,7 +2684,7 @@
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
 				1D5AB30F22A7C25300DB3B70 /* TwoFABusinessLogic.swift in Sources */,
 				1DCDF26A228ED1F600ABDCB1 /* SignupFlowAlDoc.swift in Sources */,
-				4BFBC88422BB8AEF00B23B68 /* AppSettingsPresenter.swift in Sources */,
+				4BFBC88422BB8AEF00B23B68 /* GetAppSettingsPresenter.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1D84407E2289545A00A77BBF /* TransactionListApiRequest.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
@@ -2735,7 +2735,7 @@
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
-				4BFBC88622BB8B3500B23B68 /* AppSettingsRequestModel.swift in Sources */,
+				4BFBC88622BB8B3500B23B68 /* GetAppSettingsRequestModel.swift in Sources */,
 				1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */,
 				1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */,
 				1D478CA9228E902C00503136 /* SignupAuthAPIRequest.swift in Sources */,
@@ -2824,7 +2824,7 @@
 				1D72718421EF14890084A57E /* LegalStuffViewController.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
-				4BFBC88C22BB8B7800B23B68 /* AppSettingsResponse.swift in Sources */,
+				4BFBC88C22BB8B7800B23B68 /* GetAppSettingsResponse.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */,
 				1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */,
@@ -2844,7 +2844,7 @@
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */,
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
-				4BFBC88822BB8B4E00B23B68 /* AppSettingsAPIRequest.swift in Sources */,
+				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,
 				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,
 				1D055D55229C6FA00078CD33 /* ACHTransaction.swift in Sources */,
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,

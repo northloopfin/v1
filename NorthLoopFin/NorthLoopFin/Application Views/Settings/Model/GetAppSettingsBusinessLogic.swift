@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class AppSettingsBusinessLogic {
+class GetAppSettingsBusinessLogic {
     
     deinit {
         print("AppSettingsBusinessLogic deinit")
@@ -24,12 +24,12 @@ class AppSettingsBusinessLogic {
      - parameter failure:   NSError Response Contaons ErrorInfo
      */
     
-    func performSaveAppSettings(withRequestModel requestModel: AppSettingsRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performSaveAppSettings(withRequestModel requestModel: GetAppSettingsRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
         
-        AppSettingsAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        GetAppSettingsAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
     
 }

@@ -123,7 +123,7 @@ class CreateAccountV2ViewController: BaseViewController {
         //self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
-        //self.setSampleData()
+        self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,6 +143,10 @@ class CreateAccountV2ViewController: BaseViewController {
             self.SSNTextField.text = info.ssn
             self.phoneTextField.text = info.phone
             self.CitizenShipTextField.text = info.citizenShip
+            //search for citizenship in the list of countries
+            let selectedCountryArr = self.countryWithCode.filter { $0.name == info.citizenShip}
+            self.selectedCountry = selectedCountryArr[0]
+            
         }
     }
     

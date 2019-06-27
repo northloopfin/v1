@@ -152,7 +152,6 @@ struct AppConstants{
     enum SelectIDTYPES:String{
         case PASSPORT="Passport"
         case I20="I-20 (3 pages)"
-        case ENROLMENTLETTER = "Enrollment Letter"
         case USIDTYPE = "US ID Type"
         case F1VISA = "F-1 Visa"
         case ADDRESSPROOF = "Address Proof"
