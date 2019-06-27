@@ -23,6 +23,7 @@ class CreateAccountV2ViewController: BaseViewController {
     
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
+    var selectedCountry:Country!
     
     var signupFlowData:SignupFlowData! = nil
     //Will remove this once Sign up completes
@@ -72,11 +73,14 @@ class CreateAccountV2ViewController: BaseViewController {
         if let data = self.signupFlowData{
             data.legalNames=[legalName]
             data.phoneNumbers=[phoneNumber]
+            let address : SignupFlowAddress = data.address
+            address.country = self.selectedCountry.code
             if (!((self.SSNTextField.text?.isEmpty)!)){
                 let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
                 let documents:SignupFlowDocument=self.signupFlowData.documents
                 documents.virtualDocs=[ssnData]
                 data.documents=documents
+                data.cipTag=1
                 
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
@@ -119,6 +123,7 @@ class CreateAccountV2ViewController: BaseViewController {
         //self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
+        //self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,6 +154,7 @@ class CreateAccountV2ViewController: BaseViewController {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.CitizenShipTextField.text=item
+            self.selectedCountry = self.countryWithCode[index]
             self.dropDown.hide()
             self.checkForMandatoryFields()
 
@@ -231,6 +237,15 @@ class CreateAccountV2ViewController: BaseViewController {
         basicInfo.phone=self.phoneTextField.text ?? ""
         basicInfo.citizenShip=self.CitizenShipTextField.text ?? ""
         RealmHelper.addBasicInfo(info: basicInfo)
+    }
+    
+    func setSampleData(){
+        self.firstNameTextField.text = "Sunita"
+        self.lastNameTextField.text = "Kumari"
+        self.SSNTextField.text = "777772222"
+        self.phoneTextField.text = "9716787066"
+        self.CitizenShipTextField.text = "Canadian"
+
     }
 }
 

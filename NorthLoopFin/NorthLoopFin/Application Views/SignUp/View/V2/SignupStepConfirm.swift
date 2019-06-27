@@ -68,6 +68,7 @@ class SignupStepConfirm: BaseViewController {
         self.setupRightNavigationBar()
         self.presenter = UniversityPresenter.init(delegate: self)
         self.presenter.sendFEtchUniversityListRequest()
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -159,6 +160,7 @@ class SignupStepConfirm: BaseViewController {
             self.universityTextField.text = info.university
             self.checkForMandatoryFields()
         }
+        //self.setSampleData()
     }
     
     //Methode to show date picker
@@ -189,6 +191,12 @@ class SignupStepConfirm: BaseViewController {
     
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
+    }
+    
+    func setSampleData(){
+        self.passportTextField.text="abc"
+        self.DOBTextField.text="11/05/1989"
+        self.universityTextField.text = "abc"
     }
 }
 

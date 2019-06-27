@@ -20,7 +20,16 @@ class TransferConfirmationViewController: BaseViewController {
     var ach:ACHNode? = nil
     
     @IBAction func nextBtnClicked(_ sender: Any) {
-        self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (ach?.nodeID)!)
+        // check for minimum balance
+        if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
+            print(currentUser.amount)
+            if (Double(self.amount)?.isLess(than: currentUser.amount))!{
+                //Insufficient Balance show popup
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.INSUFFICIENT_BALANCE.rawValue)
+            }else{
+                self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (ach?.nodeID)!)
+            }
+        }
     }
     
     override func viewDidLoad() {

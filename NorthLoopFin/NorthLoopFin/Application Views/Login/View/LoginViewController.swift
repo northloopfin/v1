@@ -7,9 +7,9 @@
 //
 
 import UIKit
-//import MFSideMenu
-//import ZendeskSDK
-//import ZendeskCoreSDK
+
+import SwiftKeychainWrapper
+
 
 class LoginViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -34,16 +34,10 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        if UserInformationUtility.sharedInstance.userattemptsIn10Min >= 3{
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
-        }else{
-            if (Validations.isValidEmail(email: self.emailTextField.text!)){
-                //manager.signInWithData(self.emailTextField.text!, self.passwordTextfield.text!)
-                self.loginPresenter.sendLoginRequest(username: self.emailTextField.text ?? "", password: self.passwordTextfield.text ?? "")
-            }else{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
-            }
-        }
+        
+        // check for TouchID authentication
+        self.login(username: self.emailTextField.text!, password: self.passwordTextfield.text!)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +63,7 @@ class LoginViewController: BaseViewController {
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
             }
         }
+        self.checkForStoredLoginCredentials()
     }
     func prepareView(){
         self.passwordTextfield.isSecureTextEntry=true
@@ -119,24 +114,6 @@ class LoginViewController: BaseViewController {
         self.loginBtn.isEnabled=false
     }
     
-//    func moveToHome(){
-//        let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
-//        var initialNavigationController:UINavigationController
-//        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
-//        let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        initialNavigationController = UINavigationController(rootViewController:homeViewController)
-//        sideMenu.delegate = homeViewController
-//        containerViewController.leftMenuViewController=sideMenu
-//        containerViewController.centerViewController=initialNavigationController
-//        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
-//        containerViewController.shadow.enabled=true;
-//        containerViewController.panMode = MFSideMenuPanModeDefault
-//        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-//        appdelegate.window?.rootViewController = containerViewController
-//    }
-    
     func moveToCreateAccount(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
@@ -151,6 +128,48 @@ class LoginViewController: BaseViewController {
         let eventProperties:[String:String] = ["EventCategory":"Login","Description":"when the user lands on the login screen/page"]
         let eventName:String = "View Login Screen"
         logEventsHelper.logEventWithName(name: eventName, andProperties: eventProperties)
+    }
+    
+    func initiateBiometric(){
+        BioMetricHelper.isValidUer(reasonString: "Authenticate for Northloop") {[unowned self] (isSuccess, stringValue) in
+            
+            if isSuccess
+            {
+                print("authenticated")
+                // when authentication successful then call login api
+                let retrievedString: String? = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)
+                print(retrievedString)
+                self.login(username: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, password: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)!)
+                
+            }
+            else
+            {
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: stringValue?.description ?? "invalid")
+            }
+            
+        }
+    }
+    
+    //This function will check for login credentials saved in KeyChain. If saved then initiate biometric otherwise let user enter credentials
+    func checkForStoredLoginCredentials(){
+        if let _ = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
+            // yes key exist..trigger TouchID
+            self.initiateBiometric()
+        }
+    }
+    
+    //this function will perform login
+    func login(username:String,password:String){
+        if UserInformationUtility.sharedInstance.userattemptsIn10Min >= 3{
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
+        }else{
+            if (Validations.isValidEmail(email: self.emailTextField.text!)){
+                //manager.signInWithData(self.emailTextField.text!, self.passwordTextfield.text!)
+                self.loginPresenter.sendLoginRequest(username: username, password: password)
+            }else{
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
+            }
+        }
     }
 }
 //MARK: UITextFiled Delegates
@@ -170,6 +189,18 @@ extension LoginViewController:LoginDelegate{
         //successfully logged in user..move to home page
         //call Zendesk API to get identity token
         UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+        // save password entered to KeyChain
+        var password:String = self.passwordTextfield.text ?? ""
+        
+        if (self.passwordTextfield.text?.isEmpty)!{
+            if let storedPassword = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
+                password=storedPassword
+            }
+        }
+        
+        if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
+            print("Password Saved to Keychain")
+        }
         self.zendeskPresenter.sendZendeskTokenRequest()
     }
     

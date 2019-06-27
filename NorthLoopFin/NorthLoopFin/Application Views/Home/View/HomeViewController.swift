@@ -208,6 +208,10 @@ extension HomeViewController:HomeDelegate{
             self.GreetingLbl.text = "Good Morning, "+(currentUser?.name)!
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
+        
+        currentUser?.amount = 20.0//data.data.info.balance.amount
+        
+        UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()
     }
 }
@@ -286,16 +290,7 @@ extension HomeViewController:SideMenuDelegate{
 extension HomeViewController:HomeTableCellDelegate{
     //Delete once client confirm
     func disputeTransactionClicked(data: IndividualTransaction) {
-        //self.moveToDisputeTransactionScreen(data: data)
     }
-    
-//    func moveToDisputeTransactionScreen(data:IndividualTransaction){
-//        //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
-//        vc.transaction = data
-//        self.navigationController?.pushViewController(vc, animated: false)
-//    }
 }
 extension HomeViewController:ShareAccountDetailDelegates{
     func didSharedAccounTDetails() {

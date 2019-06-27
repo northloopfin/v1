@@ -58,10 +58,14 @@ extension HelpViewController:CommonTableDelegate{
     }
     
     func moveToFAQ(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "FAQViewController") as! FAQViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        let urlString:String = AppConstants.FAQURL
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
     }
     func moveToLegalStuff(){
 //        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

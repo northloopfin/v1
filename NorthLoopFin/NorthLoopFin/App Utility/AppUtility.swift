@@ -126,7 +126,7 @@ class AppUtility {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                 if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let countries = jsonResult["countries"] as? [NSDictionary] {
                     for country: NSDictionary in countries {
-                        let country : Country = Country.init(name: country["name"] as! String, code: country["code"] as! String)
+                        let country : Country = Country.init(name: country["name"] as! String, code: country["alpha2Code"] as! String)
                         countryList.append(country)
                     }
                 }

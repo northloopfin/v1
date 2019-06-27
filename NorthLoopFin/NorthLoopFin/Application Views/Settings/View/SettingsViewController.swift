@@ -21,7 +21,7 @@ class SettingsViewController: BaseViewController {
 
     
     @IBAction func saveClicked(_ sender: Any) {
-        self.saveSettingsPresenter.sendSaveAppSettingsRequest()
+        //self.saveSettingsPresenter.sendSaveAppSettingsRequest()
     }
     
     override func viewDidLoad() {

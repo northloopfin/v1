@@ -16,6 +16,7 @@ class User: NSObject, NSCoding {
     var authKey:String!
     var userID:String!
     var name:String!
+    var amount:Double!
     
     override init() {
         super.init()
@@ -48,6 +49,14 @@ class User: NSObject, NSCoding {
         if let name = aDecoder.decodeObject(forKey: "Name") as? String {
             self.name = name
         }
+        
+        if let amount = aDecoder.decodeDouble(forKey:"Amount") as Double? {
+           self.amount = amount
+        }
+        
+//        if let amount = aDecoder.decodeObject(forKey: "Amount") as? Double {
+//            self.amount = amount
+//        }
     }
     func encode(with aCoder: NSCoder) {
         
@@ -69,5 +78,13 @@ class User: NSObject, NSCoding {
         if let nameEncoded = self.name {
             aCoder.encode(nameEncoded, forKey: "Name")
         }
+        
+        if let amountEncoded = self.amount {
+            aCoder.encode(amountEncoded, forKey: "Amount")
+        }
+        
+//        if let amountEncoded = self.amount as? Double {
+//            aCoder.encode(amountEncoded, forKey: "Amount")
+//        }
     }
 }

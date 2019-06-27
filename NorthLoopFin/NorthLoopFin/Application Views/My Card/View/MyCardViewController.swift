@@ -113,6 +113,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
 
 extension MyCardViewController:CardDelegates{
     func didFetchCardStatus(data:Card) {
+        print(data.data.status)
         if (data.data.status == "ACTIVE"){
             self.isLockCard = false
             self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)

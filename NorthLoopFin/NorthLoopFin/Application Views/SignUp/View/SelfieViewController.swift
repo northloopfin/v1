@@ -96,7 +96,7 @@ class SelfieViewController: BaseViewController {
         let docObject:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "SELFIE")
         var physicalDocArr = self.signupFlowData.documents.physicalDocs
         physicalDocArr.append(docObject)
-        print(physicalDocArr)
+        //print(physicalDocArr)
         if let _ = self.signupFlowData{
             self.signupFlowData.documents.physicalDocs = physicalDocArr
         }

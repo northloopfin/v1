@@ -18,9 +18,11 @@ struct AppConstants{
     static let UserDefaultKeyForCrash = "Crash"
     static let UserDefaultKeyForDeviceToken = "DeviceToken"
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
+    static let KeyChainKeyForPassword = "NorthLoopPassword"
 
 
     static let CountryExceptionURL = "https://northloop.zendesk.com/hc/en-us/articles/360027983032"
+    static let FAQURL = "https://northloop.zendesk.com/hc/en-us/"
 
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"
@@ -63,6 +65,7 @@ struct AppConstants{
         case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure, you want to change Address"
         case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
+        case INSUFFICIENT_BALANCE = "Insufficient Balance"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -153,6 +156,9 @@ struct AppConstants{
         case USIDTYPE = "US ID Type"
         case F1VISA = "F-1 Visa"
         case ADDRESSPROOF = "Address Proof"
+        case STATEID = "State ID"
+        case DRIVERLICENSE = "Driver's License"
+        case OTHER = "Other"
     }
     enum AGREEMENTTYPE:String{
         case ACCOUNT = "Account"

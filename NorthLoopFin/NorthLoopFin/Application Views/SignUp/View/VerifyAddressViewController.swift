@@ -37,7 +37,8 @@ class VerifyAddressViewController: BaseViewController {
     
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
-            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text!, houseNo: self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!)
+            let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text! + " " + self.houseNumbertextfield.text!, houseNo: self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country)
 
             if let _  = self.signupFlowData{
                 self.signupFlowData.address = addess
@@ -48,7 +49,7 @@ class VerifyAddressViewController: BaseViewController {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        //self.updateSignupFlowData()
+        self.updateSignupFlowData()
         
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
@@ -75,7 +76,7 @@ class VerifyAddressViewController: BaseViewController {
             do {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
-                print(jsonString!)
+                //print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.presenter.startSignUpSynapse(requestDic: dic)
@@ -108,6 +109,7 @@ class VerifyAddressViewController: BaseViewController {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
         self.fetchDatafromRealmIfAny()
+        //self.setSampleData()
     }
     
     func fetchDatafromRealmIfAny(){
@@ -208,6 +210,13 @@ class VerifyAddressViewController: BaseViewController {
     
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
+    }
+    func setSampleData(){
+        self.streetAddress.text = "1"
+        self.houseNumbertextfield.text="Market Street"
+        self.cityTextfield.text = "San Francisco"
+        self.textState.text="CA"
+        self.zipTextfield.text="94105"
     }
 }
 //MARK: UITextField Delegates

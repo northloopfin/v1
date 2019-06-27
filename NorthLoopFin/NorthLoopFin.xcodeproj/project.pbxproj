@@ -120,7 +120,6 @@
 		1D29C85522A9297B0092E3EB /* ChangePhoneDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29C85422A9297B0092E3EB /* ChangePhoneDelegates.swift */; };
 		1D3538382223E54F00716A94 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3538372223E54E00716A94 /* country.json */; };
 		1D35383B2223E58E00716A94 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35383A2223E58E00716A94 /* Country.swift */; };
-		1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D3AA52B21E024520075DBD0 /* Auth0.plist */; };
 		1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */; };
 		1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */; };
 		1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D44CCFE228EF0B7007382F2 /* UIDeviceHelper.swift */; };
@@ -335,6 +334,7 @@
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
 		4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */; };
 		4B94418F22ACC236005AD3BD /* DisputeTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */; };
+		4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */; };
 		4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4C35322B0C42D00743580 /* DateExtension.swift */; };
 		4BFBC87722BB807400B23B68 /* ShareAccountDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87622BB807400B23B68 /* ShareAccountDetailsPresenter.swift */; };
 		4BFBC87A22BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87922BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift */; };
@@ -503,7 +503,6 @@
 		1D29C85422A9297B0092E3EB /* ChangePhoneDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneDelegates.swift; sourceTree = "<group>"; };
 		1D3538372223E54E00716A94 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		1D35383A2223E58E00716A94 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		1D3AA52B21E024520075DBD0 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1D3E553B21F1A6CC00557825 /* LostInsufficientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostInsufficientViewController.swift; sourceTree = "<group>"; };
 		1D3E554321F1AFB000557825 /* ConfirmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedViewController.swift; sourceTree = "<group>"; };
 		1D44CCFE228EF0B7007382F2 /* UIDeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceHelper.swift; sourceTree = "<group>"; };
@@ -731,6 +730,7 @@
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
 		4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionBusinessModel.swift; sourceTree = "<group>"; };
 		4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionResponse.swift; sourceTree = "<group>"; };
+		4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricHelper.swift; sourceTree = "<group>"; };
 		4BF4C35322B0C42D00743580 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		4BFBC87622BB807400B23B68 /* ShareAccountDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsPresenter.swift; sourceTree = "<group>"; };
 		4BFBC87922BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsAPIRequest.swift; sourceTree = "<group>"; };
@@ -1993,7 +1993,6 @@
 				297FB9A121B51A32008D60CE /* Main.storyboard */,
 				297FB9A421B51A34008D60CE /* Assets.xcassets */,
 				297FB9A621B51A34008D60CE /* LaunchScreen.storyboard */,
-				1D3AA52B21E024520075DBD0 /* Auth0.plist */,
 				297FB9A921B51A34008D60CE /* Info.plist */,
 			);
 			path = NorthLoopFin;
@@ -2054,6 +2053,7 @@
 				4BF4C35322B0C42D00743580 /* DateExtension.swift */,
 				4BFFE3CE22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift */,
 				4BFFE3D022BB4B7300D85610 /* RangeExtension.swift */,
+				4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2314,6 +2314,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -2378,7 +2381,6 @@
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
-				1D3AA52C21E024520075DBD0 /* Auth0.plist in Resources */,
 				1D3538382223E54F00716A94 /* country.json in Resources */,
 				1D180DA2229EA01500FC3390 /* ATMFirstTableViewCell.xib in Resources */,
 			);
@@ -2783,6 +2785,7 @@
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				1D055D40229C02720078CD33 /* FetchACHRequestModel.swift in Sources */,
 				1D913CDE228F61F10075B16D /* SignupSynapseRequestModel.swift in Sources */,
+				4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				1D29C83B22A8F6530092E3EB /* ChangePhoneViewController.swift in Sources */,

@@ -22,10 +22,7 @@ class MyCardTableCell: UITableViewCell {
         let lock = sender as! PWSwitch
         //lock.isSelected = !lock.isSelected
         self.delegate?.switchClicked(isOn: lock.isSelected, tag: lock.tag)
-//        let lock = sender as! UISwitch
-//        if (lock.isOn){
-//            lock.thumbTintColor = Colors.Taupe776857
-//        }
+
     }
     @IBOutlet weak var lock: PWSwitch!
     @IBOutlet weak var optionLbl: UILabel!
