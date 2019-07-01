@@ -1,14 +1,14 @@
 //
-//  AppSettingsAPIRequest.swift
+//  SetAppSettingsAPIRequest.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 20/06/19.
+//  Created by daffolapmac-48 on 28/06/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class GetAppSettingsAPIRequest:ApiRequestProtocol {
+class SetAppSettingsAPIRequest:ApiRequestProtocol {
     
     //MARK:- local properties
     var apiRequestUrl:String!
@@ -23,13 +23,12 @@ class GetAppSettingsAPIRequest:ApiRequestProtocol {
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
     
-    func makeAPIRequest(withReqFormData reqFromData: GetAppSettingsRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
+    func makeAPIRequest(withReqFormData reqFromData: SetAppSettingsRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback){
         
         self.apiRequestUrl = reqFromData.apiUrl
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        //ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: GetAppSettingsResponse.self)
-        ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: GetAppSettingsResponse.self)
+        ServiceManager.sharedInstance.requestPOSTWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: SetAppSettingsResponse.self)
     }
     
     /**
@@ -48,4 +47,3 @@ class GetAppSettingsAPIRequest:ApiRequestProtocol {
         ServiceManager.sharedInstance.cancelTaskWithURL(self.apiRequestUrl)
     }
 }
-

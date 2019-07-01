@@ -144,9 +144,10 @@ extension MyAccountViewController:CommonTableDelegate{
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     func moveToSettings(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-        self.navigationController?.pushViewController(vc, animated: false)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+//        self.navigationController?.pushViewController(vc, animated: false)
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
 }
 

@@ -1,14 +1,14 @@
 //
-//  AppSettingsRequestModel.swift
+//  SetAppSettingsRequestModel.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 20/06/19.
+//  Created by daffolapmac-48 on 28/06/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class GetAppSettingsRequestModel {
+class SetAppSettingsRequestModel {
     //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
@@ -64,8 +64,8 @@ class GetAppSettingsRequestModel {
          
          -returns : CardRequestModel
          */
-        func build()->GetAppSettingsRequestModel{
-            return GetAppSettingsRequestModel(builderObject: self)
+        func build()->SetAppSettingsRequestModel{
+            return SetAppSettingsRequestModel(builderObject: self)
         }
     }
     
@@ -75,6 +75,6 @@ class GetAppSettingsRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.GETAPPSETTINGS.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.SAHREACCOUNTDETAILS.rawValue
     }
 }

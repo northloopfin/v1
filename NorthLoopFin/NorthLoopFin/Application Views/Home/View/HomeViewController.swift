@@ -283,9 +283,10 @@ extension HomeViewController:SideMenuDelegate{
     }
     func navigateToExpenses(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
     func navigateToHelp(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)

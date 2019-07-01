@@ -19,8 +19,8 @@ class AgreementViewController: BaseViewController, WKNavigationDelegate{
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Agreement")
         webView.loadFileURL(getURLToShow(), allowingReadAccessTo: getURLToShow())
-        let request = URLRequest(url: getURLToShow())
-        webView.load(request)
+        //let request = URLRequest(url: getURLToShow())
+        //webView.load(request)
 
     }
     func getURLToShow()->URL{

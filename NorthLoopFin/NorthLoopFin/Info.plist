@@ -8,6 +8,8 @@
 	<string>$(BACKEND_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>NorthLoop</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -34,7 +36,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>19</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -67,8 +69,12 @@
 	<string>Used to click ID and Selfie</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This application use your location to find ATMs near by you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This application use your location to find ATMs near by you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This application use your location to find ATMs near by you</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to choose ID and Selfie</string>
 	<key>Twilio Key</key>
 	<string>$(TWILIO_API_KEY)</string>
 	<key>UIAppFonts</key>

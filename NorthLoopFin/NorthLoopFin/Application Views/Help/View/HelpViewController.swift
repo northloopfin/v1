@@ -59,13 +59,19 @@ extension HelpViewController:CommonTableDelegate{
     
     func moveToFAQ(){
         let urlString:String = AppConstants.FAQURL
-            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
-            }
+//            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                } else {
+//                    UIApplication.shared.openURL(url)
+//                }
+//            }
+        let urlValue = URL.init(string: urlString)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.navTitle="FAQ"
+        vc.url = urlValue
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     func moveToLegalStuff(){
 //        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

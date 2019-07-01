@@ -109,7 +109,7 @@ class VerifyAddressViewController: BaseViewController {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
         self.fetchDatafromRealmIfAny()
-        self.setSampleData()
+        //self.setSampleData()
     }
     
     func fetchDatafromRealmIfAny(){

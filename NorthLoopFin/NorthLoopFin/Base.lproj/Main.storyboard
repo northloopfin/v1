@@ -459,7 +459,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account in minutes and start banking with North Loop, your global bank account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="384" translatesAutoresizingMaskIntoConstraints="NO" id="Pky-vU-pyS" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="357" width="290" height="35"/>
+                                        <rect key="frame" x="15" y="355" width="290" height="37"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.51372549019607838" green="0.50980392156862742" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2262,7 +2262,33 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64T-2c-Cuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4950" y="630.63380281690138"/>
+            <point key="canvasLocation" x="4898" y="645"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Owt-x3-vVR">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="IGH-Uj-q73" customClass="WebViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N2R-me-jSW" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="DNo-NV-oNu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DNo-NV-oNu" firstAttribute="top" secondItem="N2R-me-jSW" secondAttribute="top" id="4WP-MQ-Alf"/>
+                            <constraint firstItem="DNo-NV-oNu" firstAttribute="trailing" secondItem="GhC-eD-I0h" secondAttribute="trailing" id="bbr-FY-mVD"/>
+                            <constraint firstItem="DNo-NV-oNu" firstAttribute="bottom" secondItem="GhC-eD-I0h" secondAttribute="bottom" id="fTE-MC-gR9"/>
+                            <constraint firstItem="DNo-NV-oNu" firstAttribute="leading" secondItem="GhC-eD-I0h" secondAttribute="leading" id="pDV-ju-R4G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GhC-eD-I0h"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obF-xL-bxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5535" y="644"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="DzK-i2-BHn">
@@ -4911,7 +4937,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="511" width="320" height="57"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-XA-Vbh" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="79.5" y="7" width="161" height="30"/>
+                                        <rect key="frame" x="87" y="7" width="146" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="owH-e3-MmN"/>
                                         </constraints>

@@ -72,7 +72,7 @@ class SignupStepConfirm: BaseViewController {
         self.updateTextFieldUI()
         self.setupRightNavigationBar()
         self.presenter = UniversityPresenter.init(delegate: self)
-        self.presenter.sendFEtchUniversityListRequest()
+        //self.presenter.sendFEtchUniversityListRequest()
 
         
     }
@@ -82,17 +82,17 @@ class SignupStepConfirm: BaseViewController {
     }
     
     func prepareView(){
-        self.universityTextField.inputView = UIView.init(frame: CGRect.zero)
-        self.universityTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-        dropDown.anchorView = self.universityTextField
-        dropDown.dataSource = self.universities
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self.universityTextField.text=item
-            self.dropDown.hide()
-            self.checkForMandatoryFields()
-            
-        }
+       // self.universityTextField.inputView = UIView.init(frame: CGRect.zero)
+        //self.universityTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        //dropDown.anchorView = self.universityTextField
+        //dropDown.dataSource = self.universities
+//        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+//            print("Selected item: \(item) at index: \(index)")
+//            self.universityTextField.text=item
+//            self.dropDown.hide()
+//            self.checkForMandatoryFields()
+//            
+//        }
         self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
         self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
@@ -165,7 +165,7 @@ class SignupStepConfirm: BaseViewController {
             self.universityTextField.text = info.university
             self.checkForMandatoryFields()
         }
-        self.setSampleData()
+        //self.setSampleData()
     }
     
     //Methode to show date picker
@@ -226,19 +226,19 @@ extension SignupStepConfirm:UITextFieldDelegate{
             self.showDatePicker()
         }
     }
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == self.universityTextField
-        {
-            //IQKeyboardManager.shared.resignFirstResponder()
-            
-            self.dropDown.show()
-            return false
-        }
-        else
-        {
-            return true
-        }
-    }
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        if textField == self.universityTextField
+//        {
+//            //IQKeyboardManager.shared.resignFirstResponder()
+//
+//            self.dropDown.show()
+//            return false
+//        }
+//        else
+//        {
+//            return true
+//        }
+//    }
 }
 
 extension SignupStepConfirm: FetchUniversityDelegates{

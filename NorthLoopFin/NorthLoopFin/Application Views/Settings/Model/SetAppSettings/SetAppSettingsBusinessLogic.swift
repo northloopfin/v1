@@ -1,19 +1,17 @@
 //
-//  AppSettingsBusinessLogic.swift
+//  SetAppSettingsBusinessLogic.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 20/06/19.
+//  Created by daffolapmac-48 on 28/06/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-
-
-class GetAppSettingsBusinessLogic {
+class SetAppSettingsBusinessLogic {
     
     deinit {
-        print("AppSettingsBusinessLogic deinit")
+        print("SetAppSettingsBusinessLogic deinit")
     }
     
     /**
@@ -24,12 +22,12 @@ class GetAppSettingsBusinessLogic {
      - parameter failure:   NSError Response Contaons ErrorInfo
      */
     
-    func performGetAppSettings(withRequestModel requestModel: GetAppSettingsRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performSaveAppSettings(withRequestModel requestModel: SetAppSettingsRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
         
-        GetAppSettingsAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        SetAppSettingsAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
     
 }

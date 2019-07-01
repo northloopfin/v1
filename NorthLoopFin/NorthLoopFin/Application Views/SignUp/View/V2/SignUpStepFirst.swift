@@ -58,7 +58,7 @@ class SignUpStepFirst: BaseViewController {
         self.setupRightNavigationBar()
         self.updateTextFieldUI()
         self.presenter = SignupAuthPresenter.init(delegate:self)
-        self.setSampleData()
+        //self.setSampleData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -17,32 +17,27 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var optionsTableView: UITableView!
     
     var data:[MyCardOtionsModel]=[]
-    var saveSettingsPresenter : GetAppSettingsPresenter!
+    var getSettingsPresenter : GetAppSettingsPresenter!
+    var setSettingsPresenter: SetAppSettingsPresenter!
 
     
     @IBAction func saveClicked(_ sender: Any) {
-        //self.saveSettingsPresenter.sendSaveAppSettingsRequest()
+        self.setSettingsPresenter.sendSaveAppSettingsRequest()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         self.optionsTableView.reloadData()
-        self.saveSettingsPresenter = GetAppSettingsPresenter.init(delegate: self)
-
+        self.getSettingsPresenter = GetAppSettingsPresenter.init(delegate: self)
+        self.setSettingsPresenter = SetAppSettingsPresenter.init(delegate: self)
+        self.getSettingsPresenter.sendGetAppSettingsRequest()
     }
     
-    override func viewDidLayoutSubviews() {
-//        let shadowOffst = CGSize.init(width: 0, height: -55)
-//        let shadowOpacity = 0.1
-//        let shadowRadius = 49
-//        let shadowColor = Colors.Zorba161149133
-//        self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-    }
     func prepareView(){
         let option1 = MyCardOtionsModel.init(AppConstants.SettingsOptions.LOWBALANCEALERT.rawValue, isSwitch: true,isSelected: true)
         let option2 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true, isSelected: true)
-        let option3 = MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true, isSelected: true)
+        let option3 = MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: false, isSelected: false)
         let option4 = MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: true, isSelected: true)
         data.append(option1)
         data.append(option2)
@@ -86,6 +81,11 @@ extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 3{
+            //Check for update clicked.. call api to check
+        }
+    }
 }
 
 extension SettingsViewController:MyCardTableCellDelegate{
@@ -111,6 +111,10 @@ extension SettingsViewController:MyCardTableCellDelegate{
 extension SettingsViewController:SettingsDelegates{
     func didSaveAppSettings() {
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY.rawValue)
+    }
+    
+    func didGetAppSettings(){
+        
     }
 }
 

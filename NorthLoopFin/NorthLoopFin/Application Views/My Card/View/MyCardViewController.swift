@@ -98,7 +98,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         case 1:
             self.moveToLostCardScreen()
         case 2:
-            self.moveToLostCardScreen()
+            self.moveToNewPincreen()
         default:
               break
         }

@@ -123,7 +123,7 @@ class CreateAccountV2ViewController: BaseViewController {
         //self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
-        self.setSampleData()
+        //self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

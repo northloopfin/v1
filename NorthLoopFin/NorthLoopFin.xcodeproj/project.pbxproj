@@ -329,7 +329,13 @@
 		297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB9F821B65240008D60CE /* AppUtility.swift */; };
 		2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F421B64EE0008D60CE /* Staging.xcconfig */; };
 		2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F521B64EF4008D60CE /* Production.xcconfig */; };
+		4B07A87122C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */; };
+		4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */; };
+		4B07A87522C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87422C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift */; };
+		4B07A87722C5CD6E004C65B2 /* SetAppSettingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87622C5CD6E004C65B2 /* SetAppSettingsResponse.swift */; };
+		4B07A87922C5CF36004C65B2 /* SetAppSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87822C5CF36004C65B2 /* SetAppSettingsPresenter.swift */; };
 		4B08FFB922AF705100ABAFF3 /* UpdateAddressRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */; };
+		4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29324122C610D800C4D7E2 /* WebViewController.swift */; };
 		4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */; };
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
 		4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */; };
@@ -724,8 +730,14 @@
 		3E77A97A965E68B582769403 /* Pods-NorthLoopFinTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.production.xcconfig"; sourceTree = "<group>"; };
 		3F7D083137E81A93B7BC6FB3 /* Pods-NorthLoopFinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		44B1E2C4395260AA2C23AFF5 /* Pods-NorthLoopFin.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.staging.xcconfig"; sourceTree = "<group>"; };
+		4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsRequestModel.swift; sourceTree = "<group>"; };
+		4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsAPIRequest.swift; sourceTree = "<group>"; };
+		4B07A87422C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsBusinessLogic.swift; sourceTree = "<group>"; };
+		4B07A87622C5CD6E004C65B2 /* SetAppSettingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsResponse.swift; sourceTree = "<group>"; };
+		4B07A87822C5CF36004C65B2 /* SetAppSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsPresenter.swift; sourceTree = "<group>"; };
 		4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressRequestBody.swift; sourceTree = "<group>"; };
 		4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NorthLoopFin.entitlements; sourceTree = "<group>"; };
+		4B29324122C610D800C4D7E2 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionRequestModel.swift; sourceTree = "<group>"; };
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
 		4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionBusinessModel.swift; sourceTree = "<group>"; };
@@ -1398,6 +1410,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6B7EE021EDE3CF0075D58E /* HelpViewController.swift */,
+				4B29324122C610D800C4D7E2 /* WebViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2103,6 +2116,17 @@
 			path = "App Utility";
 			sourceTree = "<group>";
 		};
+		4B07A86F22C5CC94004C65B2 /* SetAppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */,
+				4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */,
+				4B07A87422C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift */,
+				4B07A87622C5CD6E004C65B2 /* SetAppSettingsResponse.swift */,
+			);
+			path = SetAppSettings;
+			sourceTree = "<group>";
+		};
 		4B94418722ACC221005AD3BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2129,6 +2153,7 @@
 			isa = PBXGroup;
 			children = (
 				4BFBC88322BB8AEF00B23B68 /* GetAppSettingsPresenter.swift */,
+				4B07A87822C5CF36004C65B2 /* SetAppSettingsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2136,6 +2161,7 @@
 		4BFBC88222BB8AA600B23B68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B07A86F22C5CC94004C65B2 /* SetAppSettings */,
 				4BFBC88522BB8B3500B23B68 /* GetAppSettingsRequestModel.swift */,
 				4BFBC88722BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift */,
 				4BFBC88922BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift */,
@@ -2579,6 +2605,7 @@
 				1D180D70229E4D4300FC3390 /* ZendeskAPIRequest.swift in Sources */,
 				1D81CE4322253DF300B61037 /* LogEventsHelper.swift in Sources */,
 				4BFBC87C22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift in Sources */,
+				4B07A87122C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */,
@@ -2656,6 +2683,7 @@
 				1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
+				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
@@ -2703,6 +2731,7 @@
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				4BFDF88622B8D64F0066860D /* UpgradeRequestModel.swift in Sources */,
 				1D055D30229BD6F50078CD33 /* LinkACHRquestModel.swift in Sources */,
+				4B07A87922C5CF36004C65B2 /* SetAppSettingsPresenter.swift in Sources */,
 				1D29C83D22A90FE00092E3EB /* LostCardConfirmationViewController.swift in Sources */,
 				1D055D48229C031C0078CD33 /* ACHNode.swift in Sources */,
 				1D180D8A229E762B00FC3390 /* ATMFinderRequestModel.swift in Sources */,
@@ -2811,6 +2840,7 @@
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
 				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
 				1D9AF08922A509C800A9055F /* TransactionListExtra.swift in Sources */,
+				4B07A87522C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift in Sources */,
 				1D913CE0228F621F0075B16D /* SignupSynapseAPIRequest.swift in Sources */,
 				4BFFE3CF22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift in Sources */,
 				1D6B7ED921EC7F360075D58E /* SelfSizedTableView.swift in Sources */,
@@ -2840,6 +2870,7 @@
 				1D29C84F22A917440092E3EB /* ChangePhoneAPIRequest.swift in Sources */,
 				1D180D68229CF5AB00FC3390 /* TransferSuceessViewController.swift in Sources */,
 				1D180D92229E76B300FC3390 /* ATMLocation.swift in Sources */,
+				4B07A87722C5CD6E004C65B2 /* SetAppSettingsResponse.swift in Sources */,
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */,
@@ -2873,6 +2904,7 @@
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
 				1D180D79229E53C500FC3390 /* ZendeskPresenter.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
+				4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */,
 				1D8440832289545A00A77BBF /* TransactionHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
