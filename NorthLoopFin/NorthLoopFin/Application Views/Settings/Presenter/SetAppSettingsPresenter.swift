@@ -18,7 +18,7 @@ class SetAppSettingsPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendSaveAppSettingsRequest(){
+    func sendSaveAppSettingsRequest(isTransactionOn:Bool,isLowBalanceOn:Bool, isDealOfferOn:Bool){
         
         // convert requestbody to json string and assign to request model request param
         
@@ -28,6 +28,9 @@ class SetAppSettingsPresenter:ResponseCallback{
             .addRequestHeader(key: "ip", value: "127.0.0.1")
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
+            .addRequestQueryParams(key: "transaction", value: isTransactionOn as AnyObject)
+            .addRequestQueryParams(key: "low_balance", value: isLowBalanceOn as AnyObject)
+            .addRequestQueryParams(key: "deals_offers", value: isDealOfferOn as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
         

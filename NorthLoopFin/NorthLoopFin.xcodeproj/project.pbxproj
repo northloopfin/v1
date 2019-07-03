@@ -341,7 +341,13 @@
 		4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */; };
 		4B94418F22ACC236005AD3BD /* DisputeTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */; };
 		4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */; };
+		4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */; };
+		4BE8338322CB172A00765F05 /* CheckUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */; };
+		4BE8338522CB175300765F05 /* CheckUpdateAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338422CB175300765F05 /* CheckUpdateAPIRequest.swift */; };
+		4BE8338722CB176900765F05 /* CheckUpdateBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338622CB176900765F05 /* CheckUpdateBusinessLogic.swift */; };
+		4BE8338922CB178300765F05 /* CheckUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */; };
 		4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4C35322B0C42D00743580 /* DateExtension.swift */; };
+		4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */; };
 		4BFBC87722BB807400B23B68 /* ShareAccountDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87622BB807400B23B68 /* ShareAccountDetailsPresenter.swift */; };
 		4BFBC87A22BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87922BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift */; };
 		4BFBC87C22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87B22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift */; };
@@ -743,7 +749,13 @@
 		4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionBusinessModel.swift; sourceTree = "<group>"; };
 		4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionResponse.swift; sourceTree = "<group>"; };
 		4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricHelper.swift; sourceTree = "<group>"; };
+		4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdatePresenter.swift; sourceTree = "<group>"; };
+		4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateRequestModel.swift; sourceTree = "<group>"; };
+		4BE8338422CB175300765F05 /* CheckUpdateAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateAPIRequest.swift; sourceTree = "<group>"; };
+		4BE8338622CB176900765F05 /* CheckUpdateBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateBusinessLogic.swift; sourceTree = "<group>"; };
+		4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateResponse.swift; sourceTree = "<group>"; };
 		4BF4C35322B0C42D00743580 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPreferencesData.swift; sourceTree = "<group>"; };
 		4BFBC87622BB807400B23B68 /* ShareAccountDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsPresenter.swift; sourceTree = "<group>"; };
 		4BFBC87922BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsAPIRequest.swift; sourceTree = "<group>"; };
 		4BFBC87B22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsRequestModel.swift; sourceTree = "<group>"; };
@@ -2138,6 +2150,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4BE8338122CB16E900765F05 /* CheckUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */,
+				4BE8338422CB175300765F05 /* CheckUpdateAPIRequest.swift */,
+				4BE8338622CB176900765F05 /* CheckUpdateBusinessLogic.swift */,
+				4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */,
+			);
+			path = CheckUpdate;
+			sourceTree = "<group>";
+		};
 		4BFBC87822BB807E00B23B68 /* ShareAccountDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -2154,6 +2177,7 @@
 			children = (
 				4BFBC88322BB8AEF00B23B68 /* GetAppSettingsPresenter.swift */,
 				4B07A87822C5CF36004C65B2 /* SetAppSettingsPresenter.swift */,
+				4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2161,11 +2185,13 @@
 		4BFBC88222BB8AA600B23B68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4BE8338122CB16E900765F05 /* CheckUpdate */,
 				4B07A86F22C5CC94004C65B2 /* SetAppSettings */,
 				4BFBC88522BB8B3500B23B68 /* GetAppSettingsRequestModel.swift */,
 				4BFBC88722BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift */,
 				4BFBC88922BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift */,
 				4BFBC88B22BB8B7800B23B68 /* GetAppSettingsResponse.swift */,
+				4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2610,6 +2636,7 @@
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
 				1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */,
 				1D5AB2F722A798E500DB3B70 /* LostCardPresenter.swift in Sources */,
+				4BE8338322CB172A00765F05 /* CheckUpdateRequestModel.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
@@ -2656,6 +2683,7 @@
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
 				1D5AB2DC22A6764D00DB3B70 /* UpdateCardPresenter.swift in Sources */,
 				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
+				4BE8338922CB178300765F05 /* CheckUpdateResponse.swift in Sources */,
 				1D180D96229E77C700FC3390 /* ATMCoordinates.swift in Sources */,
 				1D9F45FA228AC0E3009D76FC /* CardsPresenter.swift in Sources */,
 				1D180DBA229FC56C00FC3390 /* InternationalTransferDetails.swift in Sources */,
@@ -2761,6 +2789,7 @@
 				1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */,
 				1D180DAC229FC43500FC3390 /* AccountAPIRequestModel.swift in Sources */,
 				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
+				4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
@@ -2789,6 +2818,7 @@
 				1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
+				4BE8338722CB176900765F05 /* CheckUpdateBusinessLogic.swift in Sources */,
 				1D5AB30522A7B5AD00DB3B70 /* Select2FAModeViewController.swift in Sources */,
 				1DFE480721D739BC003EFECA /* PhoneVerificationBusinessLogic.swift in Sources */,
 				1D84408C228A9CED00A77BBF /* TransactionDetailPresenter.swift in Sources */,
@@ -2874,6 +2904,8 @@
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */,
+				4BE8338522CB175300765F05 /* CheckUpdateAPIRequest.swift in Sources */,
+				4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */,
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
 				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,
 				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,

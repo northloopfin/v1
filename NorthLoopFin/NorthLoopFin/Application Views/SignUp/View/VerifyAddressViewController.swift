@@ -38,7 +38,7 @@ class VerifyAddressViewController: BaseViewController {
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
             let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
-            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text! + " " + self.houseNumbertextfield.text!, houseNo: self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country)
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text! + " " + self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country)
 
             if let _  = self.signupFlowData{
                 self.signupFlowData.address = addess
@@ -61,6 +61,7 @@ class VerifyAddressViewController: BaseViewController {
                     let jsonString = String(data: jsonData, encoding: .utf8)
                     //print(jsonString!)
                     let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+                    //print(dic)
                     //all fine with jsonData here
                     self.changeAddressPresnter.sendChangeAddressRequest(requestDic: dic)
                 } catch {
@@ -109,7 +110,7 @@ class VerifyAddressViewController: BaseViewController {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
         self.fetchDatafromRealmIfAny()
-        //self.setSampleData()
+        self.setSampleData()
     }
     
     func fetchDatafromRealmIfAny(){
@@ -201,6 +202,8 @@ class VerifyAddressViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
+        }else{
+            self.checkForMandatoryField()
         }
     }
     
@@ -222,7 +225,7 @@ class VerifyAddressViewController: BaseViewController {
 //MARK: UITextField Delegates
 extension VerifyAddressViewController:UITextFieldDelegate{
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    fileprivate func checkForMandatoryField() {
         if (!(self.streetAddress.text?.isEmpty)! && !(self.houseNumbertextfield.text?.isEmpty)!) && !(self.cityTextfield.text?.isEmpty)! && !(self.textState.text?.isEmpty)! && !(self.zipTextfield.text?.isEmpty)!{
             if (Validations.isValidZip(value: self.zipTextfield.text!)){
                 self.activateDoneBtn()
@@ -230,6 +233,10 @@ extension VerifyAddressViewController:UITextFieldDelegate{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
             }
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkForMandatoryField()
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

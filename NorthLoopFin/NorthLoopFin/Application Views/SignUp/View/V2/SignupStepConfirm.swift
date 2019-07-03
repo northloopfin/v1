@@ -137,6 +137,8 @@ class SignupStepConfirm: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.nextBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     
@@ -165,7 +167,7 @@ class SignupStepConfirm: BaseViewController {
             self.universityTextField.text = info.university
             self.checkForMandatoryFields()
         }
-        //self.setSampleData()
+        self.setSampleData()
     }
     
     //Methode to show date picker

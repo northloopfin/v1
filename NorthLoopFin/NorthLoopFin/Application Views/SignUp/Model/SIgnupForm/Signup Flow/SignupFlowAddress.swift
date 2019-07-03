@@ -9,18 +9,16 @@
 import Foundation
 
 class SignupFlowAddress: Codable {
-    let street, houseNo, city, state: String
+    let street, city, state: String
     var zip,country: String
     
     enum CodingKeys: String, CodingKey {
         case street
-        case houseNo = "house_no"
         case city, state, zip, country
     }
     
-    init(street: String, houseNo: String, city: String, state: String, zip: String,countty:String) {
+    init(street: String, city: String, state: String, zip: String,countty:String) {
         self.street = street
-        self.houseNo = houseNo
         self.city = city
         self.state = state
         self.zip = zip

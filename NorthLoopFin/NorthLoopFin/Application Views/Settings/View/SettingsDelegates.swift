@@ -10,5 +10,6 @@ import Foundation
 
 protocol SettingsDelegates:BaseViewProtocol{
     func didSaveAppSettings()
-    func didGetAppSettings()
+    func didGetAppSettings(data:GetPreferencesData)
+    func didCheckUpdate(data:CheckUpdateResponse)
 }

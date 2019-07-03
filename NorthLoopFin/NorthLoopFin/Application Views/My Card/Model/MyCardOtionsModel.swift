@@ -12,7 +12,7 @@ struct MyCardOtionsModel {
     let option: String
     //let transactionInfo: TransactionInfo
     let haveSwitch: Bool
-    let isSwitchSelected: Bool
+    var isSwitchSelected: Bool
     
     init(_ option:String, isSwitch:Bool, isSelected:Bool){
         self.option = option

@@ -37,7 +37,7 @@ class UpdateCardPresenter:ResponseCallback{
             let jsonString = String(data: jsonData, encoding: .utf8)
             //print(jsonString!)
             let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
-            print(dic)
+            //print(dic)
             requestModel.requestQueryParams = dic
         }catch {
             //handle error

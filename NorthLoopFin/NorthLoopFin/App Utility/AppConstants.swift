@@ -19,10 +19,13 @@ struct AppConstants{
     static let UserDefaultKeyForDeviceToken = "DeviceToken"
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
     static let KeyChainKeyForPassword = "NorthLoopPassword"
+    static let PageLimit:Int = 10
+    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
 
     static let CountryExceptionURL = "https://northloop.zendesk.com/hc/en-us/articles/360027983032"
     static let FAQURL = "https://northloop.zendesk.com/hc/en-us/"
+    static let AppStoreUrl = "itms://itunes.apple.com/app/1470578407"
 
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"
@@ -66,6 +69,8 @@ struct AppConstants{
         case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
         case INSUFFICIENT_BALANCE = "Insufficient Balance"
+        case NEWER_VERSION_AVAILABLE = "A newer version of this app is available. Do you want to update?"
+        case APP_IS_UPTO_DATE = "App is upto date" 
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {

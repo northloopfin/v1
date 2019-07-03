@@ -123,7 +123,7 @@ class CreateAccountV2ViewController: BaseViewController {
         //self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
-        //self.setSampleData()
+        self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -216,6 +216,8 @@ class CreateAccountV2ViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.nextBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     
@@ -246,9 +248,7 @@ class CreateAccountV2ViewController: BaseViewController {
     func setSampleData(){
         self.firstNameTextField.text = "Sunita"
         self.lastNameTextField.text = "Kumari"
-        self.SSNTextField.text = "777772222"
         self.phoneTextField.text = "9716787066"
-        self.CitizenShipTextField.text = "Canadian"
 
     }
 }

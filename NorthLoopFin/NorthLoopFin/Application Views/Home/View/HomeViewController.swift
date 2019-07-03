@@ -134,6 +134,7 @@ class HomeViewController: BaseViewController {
     
     /// This method is used to get list of Tranactions from api
     func getTransactionList(){
+        self.showLoader()
         transactionListPresenter.sendTransactionListRequest()
     }
     
@@ -195,6 +196,23 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.moveToDetailScreen(detailModel: self.transactionDataSource[indexPath.section].rowData[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //Here we check for last section and last row
+        if indexPath.section == self.transactionDataSource.count-1 && indexPath.row == self.transactionDataSource[indexPath.section].rowData.count-1{
+            //we are at last section and last row. Right time to load more data
+            if self.transactionListPresenter.hasMoreTransactionToLoad{
+                self.transactionListPresenter.currentPage = self.transactionListPresenter.currentPage + 1
+                let spinner = UIActivityIndicatorView(style: .gray)
+                spinner.startAnimating()
+                spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: ledgersTableView.bounds.width, height: CGFloat(44))
+                
+                self.ledgersTableView.tableFooterView = spinner
+                self.ledgersTableView.tableFooterView?.isHidden = false
+                transactionListPresenter.sendTransactionListRequest()
+            }
+        }
     }
 }
 
