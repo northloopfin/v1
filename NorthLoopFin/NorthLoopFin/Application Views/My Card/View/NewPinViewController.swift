@@ -65,6 +65,8 @@ class NewPinViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.changeBtn.isEnabled=false
+        }else{
+            checkMandatoryFields()
         }
     }
     
@@ -102,12 +104,16 @@ class NewPinViewController: BaseViewController {
     }
 }
 extension NewPinViewController:UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    fileprivate func checkMandatoryFields() {
         if (!(self.confirmPin.text?.isEmpty)! && !(self.newPin.text?.isEmpty)!) //&& !((self.confirmPin.text?.isEmpty)!)
         {
             self.changeBtn.isEnabled=true
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        checkMandatoryFields()
     }
 }
 extension NewPinViewController:SetPinDelegates{

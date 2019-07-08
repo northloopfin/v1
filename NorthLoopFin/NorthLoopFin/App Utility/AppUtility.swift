@@ -126,7 +126,8 @@ class AppUtility {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                 if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let countries = jsonResult["countries"] as? [NSDictionary] {
                     for country: NSDictionary in countries {
-                        let country : Country = Country.init(name: country["name"] as! String, code: country["alpha2Code"] as! String)
+                        //let country : Country = Country.init(name: country["name"] as! String, code: country["alpha2Code"] as! String), dial
+                        let country: Country = Country.init(name: country["name"] as! String, code: country["code"] as! String, dialCode: country["dial_code"] as! String)
                         countryList.append(country)
                     }
                 }
@@ -141,6 +142,15 @@ class AppUtility {
         let countriesArr = self.getCountryList()
         for country in countriesArr{
             arr.append(country.name)
+        }
+        return arr
+    }
+    
+    class func getCountryCodeOnly()->[String]{
+        var arr:[String]=[]
+        let countriesArr = self.getCountryList()
+        for country in countriesArr{
+            arr.append(country.dialCode)
         }
         return arr
     }

@@ -20,10 +20,11 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var loginBtn: CommonButton!
     @IBOutlet weak var createAccountBtn: UIButton!
+    @IBOutlet weak var rememberMeCheckBox: CheckBox!
     
     var loginPresenter:LoginPresenter!
     var zendeskPresenter:ZendeskPresenter!
-
+    var isRememberMeSelected:Bool = false
 
     
     @IBAction func forgetPasswordClicked(_ sender: Any) {
@@ -40,6 +41,11 @@ class LoginViewController: BaseViewController {
         
     }
     
+    @IBAction func valueChanged(_ sender: Any) {
+        let check = sender as! CheckBox
+        self.isRememberMeSelected = check.isChecked
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarTitle(title: "")
@@ -50,13 +56,12 @@ class LoginViewController: BaseViewController {
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "")
         self.prepareView()
-       // manager=FirebaseManager.init(delegate: self)
         self.loginPresenter = LoginPresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
 
         self.logEventForLogin()
-        if let email = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail){
-            self.emailTextField.text = email as? String
+        if let email = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForEmail){
+            self.emailTextField.text = email
         }
         if AccountLockTimer.sharedInstance.timer != nil{
             if (AccountLockTimer.sharedInstance.timer?.state.isRunning)!{
@@ -66,6 +71,11 @@ class LoginViewController: BaseViewController {
         self.checkForStoredLoginCredentials()
     }
     func prepareView(){
+        self.rememberMeCheckBox.style = .circle
+        self.rememberMeCheckBox.borderStyle = .roundedSquare(radius: 8)
+        self.rememberMeCheckBox.isChecked=self.isRememberMeSelected
+        //self.rememberMeCheckBox.borderStyle = .roundedSquare(radius: 8)
+        
         self.passwordTextfield.isSecureTextEntry=true
         self.loginBtn.isEnabled=false
         self.mainTitleLbl.textColor=Colors.MainTitleColor
@@ -103,6 +113,8 @@ class LoginViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
+        }else{
+            checkMandatoryFields()
         }
     }
     //change appearance of done button
@@ -139,8 +151,7 @@ class LoginViewController: BaseViewController {
                 // when authentication successful then call login api
                 let retrievedString: String? = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)
                 print(retrievedString)
-                self.login(username: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String, password: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)!)
-                
+                self.login(username: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForEmail)!, password: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)!)
             }
             else
             {
@@ -152,7 +163,7 @@ class LoginViewController: BaseViewController {
     
     //This function will check for login credentials saved in KeyChain. If saved then initiate biometric otherwise let user enter credentials
     func checkForStoredLoginCredentials(){
-        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail),let _ = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
+        if let _ = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForEmail),let _ = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
             self.initiateBiometric()
         }
     }
@@ -173,13 +184,17 @@ class LoginViewController: BaseViewController {
 }
 //MARK: UITextFiled Delegates
 extension LoginViewController:UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    fileprivate func checkMandatoryFields() {
         if (!(self.emailTextField.text?.isEmpty)! && !(self.passwordTextfield.text?.isEmpty)!)// && !(self.emailTextField.text?.isEmpty)! )
         {
             
             self.changeApperanceOfDone()
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        checkMandatoryFields()
     }
 }
 
@@ -187,18 +202,20 @@ extension LoginViewController:LoginDelegate{
     func didLoggedIn(data: LoginData) {
         //successfully logged in user..move to home page
         //call Zendesk API to get identity token
-        UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
-        // save password entered to KeyChain
-        var password:String = self.passwordTextfield.text ?? ""
-        
-        if (self.passwordTextfield.text?.isEmpty)!{
-            if let storedPassword = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword){
-                password=storedPassword
+        // save email and password only if remember is enabled
+        if self.rememberMeCheckBox.isChecked{
+            UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+            // save password entered to KeyChain
+            let password:String = self.passwordTextfield.text ?? ""
+            
+            
+            if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
+                print("Password Saved to Keychain")
             }
-        }
-        
-        if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
-            print("Password Saved to Keychain")
+            let email:String = self.emailTextField.text ?? ""
+            if KeychainWrapper.standard.set(email, forKey: AppConstants.KeyChainKeyForEmail){
+                print("email Saved to Keychain")
+            }
         }
         self.zendeskPresenter.sendZendeskTokenRequest()
     }

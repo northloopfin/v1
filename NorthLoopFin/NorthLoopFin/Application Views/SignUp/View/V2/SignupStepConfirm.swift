@@ -17,7 +17,8 @@ class SignupStepConfirm: BaseViewController {
     @IBOutlet weak var DOBTextField: UITextField!
     @IBOutlet weak var universityTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
-    
+    @IBOutlet weak var customProgressView: ProgressView!
+
     let datePicker = UIDatePicker()
     var signupFlowData:SignupFlowData!=nil
     var presenter: UniversityPresenter!
@@ -93,6 +94,7 @@ class SignupStepConfirm: BaseViewController {
 //            self.checkForMandatoryFields()
 //            
 //        }
+        self.customProgressView.progressView.setProgress(0.17*5, animated: true)
         self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
         self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
@@ -201,9 +203,9 @@ class SignupStepConfirm: BaseViewController {
     }
     
     func setSampleData(){
-        self.passportTextField.text="abc"
+        self.passportTextField.text="777772222"
         self.DOBTextField.text="11/05/1989"
-        self.universityTextField.text = "abc"
+        self.universityTextField.text = "Cornell University"
     }
 }
 

@@ -55,6 +55,8 @@ class ForgetPasswordViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
+        }else{
+            checkMandatoryFields()
         }
     }
     //change appearance of done button
@@ -68,13 +70,17 @@ class ForgetPasswordViewController: BaseViewController {
 }
 
 extension ForgetPasswordViewController:UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    fileprivate func checkMandatoryFields() {
         if (!(self.emailTextfield.text?.isEmpty)!)
         {
             
             self.changeApperanceOfDone()
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        checkMandatoryFields()
     }
 }
 

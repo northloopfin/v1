@@ -33,6 +33,8 @@ class ScanIDNewViewController: BaseViewController {
     @IBOutlet weak var uploadedImageBack : UIImageView!
     @IBOutlet weak var uploadedImageExtra : UIImageView!
 
+    @IBOutlet weak var customProgressView: ProgressView!
+
     var imageArray:[UIImage]=[]
     var selectedOption:AppConstants.SelectIDTYPES!
     var selectedButtonTag:Int=0
@@ -140,6 +142,7 @@ class ScanIDNewViewController: BaseViewController {
     }
   
     func prepareView(){
+        self.customProgressView.progressView.setProgress(0.17*3, animated: true)
         uploadImage3HeightConstraint.constant=0
         uploadImage2HeightConstraint.constant=0
 
@@ -324,9 +327,7 @@ class ScanIDNewViewController: BaseViewController {
     @IBAction func nextClicked(_ sender: Any) {
         // move to Selfie Screen
         self.showErrForSelectedOptions()
-        self.saveImageInDB()
-        //self.formSignupFlowData()
-        self.updateSignupFlowDataWithCompressedImages()
+        
 //        UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
 //        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 //        let vc = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
@@ -376,6 +377,8 @@ class ScanIDNewViewController: BaseViewController {
                 }
             }
         }
+        self.saveImageInDB()
+        self.updateSignupFlowDataWithCompressedImages()
     }
     
     func updateSignupFlowDataWithCompressedImages(){
@@ -412,6 +415,7 @@ class ScanIDNewViewController: BaseViewController {
                     // compress here
                     try image.compressImage(500, completion: { (image, compressRatio) in
                         let base64Image=image.toBase64();
+                        //let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
                         let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
                         //print(fullBase64String)
                         var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")//scanIDModel.type.rawValue)

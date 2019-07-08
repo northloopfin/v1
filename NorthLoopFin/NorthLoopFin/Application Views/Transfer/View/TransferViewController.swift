@@ -71,6 +71,8 @@ class TransferViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
+        }else{
+            checkMandatoryFields()
         }
     }
     //change appearance of done button
@@ -86,12 +88,16 @@ class TransferViewController: BaseViewController {
 }
 //MARK: UITextFiled Delegates
 extension TransferViewController:UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    fileprivate func checkMandatoryFields() {
         if (!(self.bankAccountNumberTextfield.text?.isEmpty)! && !(self.nicknameTextField.text?.isEmpty)!) && !((self.rountingNumberTextField.text?.isEmpty)!){
             
             self.changeApperanceOfDone()
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        checkMandatoryFields()
     }
 }
 

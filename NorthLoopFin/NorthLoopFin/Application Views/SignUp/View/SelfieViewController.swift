@@ -18,6 +18,7 @@ class SelfieViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var openCamera: LabelWithLetterSpace!
     @IBOutlet weak var selfieImageView: UIImageView!
+    @IBOutlet weak var customProgressView: ProgressView!
 
     var signupFlowData:SignupFlowData!=nil
     override func viewDidLoad() {
@@ -52,6 +53,7 @@ class SelfieViewController: BaseViewController {
     
     /// Prepare View by setting color and font to view components
     func prepareView(){
+        self.customProgressView.progressView.setProgress(0.17*4, animated: true)
         // Set Text Color
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.step1Lbl.textColor = Colors.DustyGray155155155
@@ -92,8 +94,9 @@ class SelfieViewController: BaseViewController {
         do {
             try self.selfieImage.compressImage(1000, completion: { (image, compressRatio) in
                 let base64Image = self.selfieImage.toBase64()
+                //let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
                 let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
-                let docObject:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "SELFIE")
+                let docObject:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "OTHER")
                 var physicalDocArr = self.signupFlowData.documents.physicalDocs
                 physicalDocArr.append(docObject)
                 if let _ = self.signupFlowData{

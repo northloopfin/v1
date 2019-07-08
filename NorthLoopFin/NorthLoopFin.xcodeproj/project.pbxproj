@@ -340,6 +340,9 @@
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
 		4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */; };
 		4B94418F22ACC236005AD3BD /* DisputeTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */; };
+		4B9CA55F22CF3FF1003655DC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CA55E22CF3FF1003655DC /* ChatViewController.swift */; };
+		4B9CA56722CF5C8C003655DC /* FSChatViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CA56622CF5C8C003655DC /* FSChatViewStyling.swift */; };
+		4B9CA56922CF5E6C003655DC /* FSChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CA56822CF5E6B003655DC /* FSChatViewController.swift */; };
 		4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */; };
 		4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */; };
 		4BE8338322CB172A00765F05 /* CheckUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */; };
@@ -348,6 +351,10 @@
 		4BE8338922CB178300765F05 /* CheckUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */; };
 		4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4C35322B0C42D00743580 /* DateExtension.swift */; };
 		4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */; };
+		4BF9D77322CC8D4A00F8EDBA /* PromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */; };
+		4BF9D77522CC9C2B00F8EDBA /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9D77422CC9C2B00F8EDBA /* CheckBox.swift */; };
+		4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFA951822CDF1F200E16B6D /* ProgressView.swift */; };
+		4BFA951B22CDF21B00E16B6D /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFA951A22CDF21B00E16B6D /* ProgressView.xib */; };
 		4BFBC87722BB807400B23B68 /* ShareAccountDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87622BB807400B23B68 /* ShareAccountDetailsPresenter.swift */; };
 		4BFBC87A22BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87922BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift */; };
 		4BFBC87C22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC87B22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift */; };
@@ -748,6 +755,9 @@
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
 		4B94418A22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionBusinessModel.swift; sourceTree = "<group>"; };
 		4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionResponse.swift; sourceTree = "<group>"; };
+		4B9CA55E22CF3FF1003655DC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4B9CA56622CF5C8C003655DC /* FSChatViewStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSChatViewStyling.swift; sourceTree = "<group>"; };
+		4B9CA56822CF5E6B003655DC /* FSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSChatViewController.swift; sourceTree = "<group>"; };
 		4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricHelper.swift; sourceTree = "<group>"; };
 		4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdatePresenter.swift; sourceTree = "<group>"; };
 		4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateRequestModel.swift; sourceTree = "<group>"; };
@@ -756,6 +766,10 @@
 		4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateResponse.swift; sourceTree = "<group>"; };
 		4BF4C35322B0C42D00743580 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPreferencesData.swift; sourceTree = "<group>"; };
+		4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeViewController.swift; sourceTree = "<group>"; };
+		4BF9D77422CC9C2B00F8EDBA /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		4BFA951822CDF1F200E16B6D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		4BFA951A22CDF21B00E16B6D /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		4BFBC87622BB807400B23B68 /* ShareAccountDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsPresenter.swift; sourceTree = "<group>"; };
 		4BFBC87922BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsAPIRequest.swift; sourceTree = "<group>"; };
 		4BFBC87B22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAccountDetailsRequestModel.swift; sourceTree = "<group>"; };
@@ -1530,6 +1544,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B9CA55D22CF3FC5003655DC /* Chat */,
 				4BFDF87D22B8BBD10066860D /* Upgrade Premium */,
 				1D29C83422A8F5790092E3EB /* Change Phone Number */,
 				1D5AB30022A7B51700DB3B70 /* 2FA */,
@@ -1672,6 +1687,8 @@
 				1D6B7ED821EC7F350075D58E /* SelfSizedTableView.swift */,
 				1D72718521EF30A00084A57E /* CommonTableDelegate.swift */,
 				1D11FE20221126B700234E6D /* CommonButton.swift */,
+				4BFA951822CDF1F200E16B6D /* ProgressView.swift */,
+				4BFA951A22CDF21B00E16B6D /* ProgressView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1741,6 +1758,7 @@
 				1DF31A75228D86B4001ACE61 /* SignupStepConfirm.swift */,
 				1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */,
 				4BFFE3D222BB50AD00D85610 /* AgreementViewController.swift */,
+				4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -2052,6 +2070,7 @@
 		297FB9CE21B531DE008D60CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4BF9D77422CC9C2B00F8EDBA /* CheckBox.swift */,
 				1D79792622A10926003F36A4 /* LocationService.swift */,
 				1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */,
 				1D818A0A21C10E3E000C8F5F /* UITableViewExtension.swift */,
@@ -2148,6 +2167,16 @@
 				4B94418B22ACC236005AD3BD /* DisputeTransactionResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4B9CA55D22CF3FC5003655DC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4B9CA56822CF5E6B003655DC /* FSChatViewController.swift */,
+				4B9CA56622CF5C8C003655DC /* FSChatViewStyling.swift */,
+				4B9CA55E22CF3FF1003655DC /* ChatViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		4BE8338122CB16E900765F05 /* CheckUpdate */ = {
@@ -2409,6 +2438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFA951B22CDF21B00E16B6D /* ProgressView.xib in Resources */,
 				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */,
@@ -2602,6 +2632,8 @@
 				1D844056228806B600A77BBF /* Login.swift in Sources */,
 				1D180DB4229FC48200FC3390 /* UserTransferDetailData.swift in Sources */,
 				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
+				4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */,
+				4BF9D77322CC8D4A00F8EDBA /* PromoCodeViewController.swift in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */,
 				4BFDF88222B8BC130066860D /* UpgradePremiumViewController.swift in Sources */,
@@ -2722,6 +2754,7 @@
 				1D180D8E229E764C00FC3390 /* ATMFinderBusinessModel.swift in Sources */,
 				1D6B7EDC21EDBA2E0075D58E /* GoalCollectionViewCell.swift in Sources */,
 				1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */,
+				4B9CA56922CF5E6C003655DC /* FSChatViewController.swift in Sources */,
 				1D165F4F222D18AA00D06914 /* StorageHelper.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
 				1D29C83322A8F0AD0092E3EB /* LostCardDelegates.swift in Sources */,
@@ -2781,11 +2814,13 @@
 				1D84405A22883EDB00A77BBF /* LoginData.swift in Sources */,
 				4BFDF89522B9E8590066860D /* FetchUniversityBusinessModel.swift in Sources */,
 				1D19D31822953986008D367E /* SignupSynapseData.swift in Sources */,
+				4BF9D77522CC9C2B00F8EDBA /* CheckBox.swift in Sources */,
 				297FB9E921B554F8008D60CE /* ErrorResolver.swift in Sources */,
 				1DE6D94522A0D24000014572 /* DisputeTransactionViewController.swift in Sources */,
 				1D0A882221CCC2FA00187439 /* SetPasswordViewController.swift in Sources */,
 				1D055D57229C6FB80078CD33 /* ACHTransactionData.swift in Sources */,
 				1D259D90228AE0940053D0AB /* Card.swift in Sources */,
+				4B9CA56722CF5C8C003655DC /* FSChatViewStyling.swift in Sources */,
 				1DD066F2221E577C00E1AD6D /* TappableImageView.swift in Sources */,
 				1D180DAC229FC43500FC3390 /* AccountAPIRequestModel.swift in Sources */,
 				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
@@ -2817,6 +2852,7 @@
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */,
 				1D4AD772228440A2007A9C2F /* LoginDelegate.swift in Sources */,
+				4B9CA55F22CF3FF1003655DC /* ChatViewController.swift in Sources */,
 				1D8440712289541A00A77BBF /* AccountBalance.swift in Sources */,
 				4BE8338722CB176900765F05 /* CheckUpdateBusinessLogic.swift in Sources */,
 				1D5AB30522A7B5AD00DB3B70 /* Select2FAModeViewController.swift in Sources */,

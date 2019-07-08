@@ -18,10 +18,10 @@ class LostCardViewController: BaseViewController {
     
     @IBAction func chatWithUsClicked(_ sender: Any) {
         // Pushes the chat widget onto the navigation controller
-        ZDCChat.start(in: navigationController, withConfig: nil)
+        //ZDCChat.start(in: navigationController, withConfig: nil)
         
         // Hides the back button because we are in a tab controller
-        ZDCChat.instance().chatViewController.navigationItem.hidesBackButton = false
+        //ZDCChat.instance().chatViewController.navigationItem.hidesBackButton = false
     }
     var presenter:LostCardPresenter!
 

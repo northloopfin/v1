@@ -134,7 +134,6 @@ class HomeViewController: BaseViewController {
     
     /// This method is used to get list of Tranactions from api
     func getTransactionList(){
-        self.showLoader()
         transactionListPresenter.sendTransactionListRequest()
     }
     
@@ -200,7 +199,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Here we check for last section and last row
-        if indexPath.section == self.transactionDataSource.count-1 && indexPath.row == self.transactionDataSource[indexPath.section].rowData.count-1{
+        if indexPath.section == self.transactionDataSource.count-1 && indexPath.row == self.transactionDataSource[indexPath.section].rowData.count-1 {
             //we are at last section and last row. Right time to load more data
             if self.transactionListPresenter.hasMoreTransactionToLoad{
                 self.transactionListPresenter.currentPage = self.transactionListPresenter.currentPage + 1
@@ -211,6 +210,8 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
                 self.ledgersTableView.tableFooterView = spinner
                 self.ledgersTableView.tableFooterView?.isHidden = false
                 transactionListPresenter.sendTransactionListRequest()
+            }else{
+                self.ledgersTableView.tableFooterView?.isHidden = true
             }
         }
     }
@@ -219,10 +220,29 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
 extension HomeViewController:HomeDelegate{
     //MARK: HomeDelegate
     func didFetchedTransactionList(data: [TransactionListModel]) {
-        self.transactionDataSource.append(contentsOf: data)
+        
+        if self.transactionDataSource.count > 0 {
+            if data.count > 0 {
+                
+                var lastTransactionOfCurrentArr: TransactionListModel = self.transactionDataSource.last!
+                let firstTransactionOfRecievedArr: TransactionListModel = data.first!
+                // now compare date
+                if Validations.matchTwoStrings(string1: lastTransactionOfCurrentArr.sectionTitle , string2: firstTransactionOfRecievedArr.sectionTitle ){
+                    //they are same , means got transaction of same date in pagination
+                    lastTransactionOfCurrentArr.rowData.append(contentsOf: firstTransactionOfRecievedArr.rowData)
+                    self.transactionDataSource[self.transactionDataSource.count-1] = lastTransactionOfCurrentArr
+                    
+                    
+                }else{
+                    // it's of different date simply append result
+                    self.transactionDataSource.append(contentsOf: data)
+                }
+            }
+        }else{
+            self.transactionDataSource.append(contentsOf: data)
+        }
         self.ledgersTableView.reloadData()
         self.checkForFirstTimeLandOnHome()
-
     }
     func didFetchedError(error:ErrorModel){
         

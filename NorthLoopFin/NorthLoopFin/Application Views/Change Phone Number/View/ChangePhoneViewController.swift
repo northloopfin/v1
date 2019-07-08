@@ -59,6 +59,8 @@ class ChangePhoneViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.changeBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     

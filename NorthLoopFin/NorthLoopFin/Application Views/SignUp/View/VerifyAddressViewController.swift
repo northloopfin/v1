@@ -18,6 +18,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var textState: UITextField!
     @IBOutlet weak var zipTextfield: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var customProgressView: ProgressView!
 
     @IBOutlet weak var doneBtn: CommonButton!
     
@@ -77,7 +78,7 @@ class VerifyAddressViewController: BaseViewController {
             do {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
-                //print(jsonString!)
+               // print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.presenter.startSignUpSynapse(requestDic: dic)
@@ -145,6 +146,7 @@ class VerifyAddressViewController: BaseViewController {
     
     /// Prepare View by setting up font and color of UI components
     func prepareView(){
+        self.customProgressView.progressView.setProgress(0.17*6, animated: true)
         dropDown.anchorView = self.textState
         dropDown.dataSource = AppUtility.getStatesArray()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -216,7 +218,7 @@ class VerifyAddressViewController: BaseViewController {
     }
     func setSampleData(){
         self.streetAddress.text = "1"
-        self.houseNumbertextfield.text="Market Street"
+        self.houseNumbertextfield.text="Market St."
         self.cityTextfield.text = "San Francisco"
         self.textState.text="CA"
         self.zipTextfield.text="94105"
@@ -275,7 +277,15 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
 extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
-        AppUtility.moveToHomeScreen()
+        //AppUtility.moveToHomeScreen()
+        //move to promocode
+        self.moveToPromoCode()
+    }
+    
+    func moveToPromoCode(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "PromoCodeViewController") as! PromoCodeViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 

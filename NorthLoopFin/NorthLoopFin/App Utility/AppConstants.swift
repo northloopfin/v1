@@ -19,7 +19,9 @@ struct AppConstants{
     static let UserDefaultKeyForDeviceToken = "DeviceToken"
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
     static let KeyChainKeyForPassword = "NorthLoopPassword"
-    static let PageLimit:Int = 10
+    static let KeyChainKeyForEmail = "NorthLoopEmail"
+
+    static let PageLimit:Int = 20
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
 
@@ -70,7 +72,8 @@ struct AppConstants{
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
         case INSUFFICIENT_BALANCE = "Insufficient Balance"
         case NEWER_VERSION_AVAILABLE = "A newer version of this app is available. Do you want to update?"
-        case APP_IS_UPTO_DATE = "App is upto date" 
+        case APP_IS_UPTO_DATE = "App is upto date"
+        case PROMOCODE_NOT_VALID = "Promocode not valid"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {

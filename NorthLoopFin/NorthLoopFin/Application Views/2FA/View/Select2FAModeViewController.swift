@@ -87,6 +87,8 @@ class Select2FAModeViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.proceedBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     

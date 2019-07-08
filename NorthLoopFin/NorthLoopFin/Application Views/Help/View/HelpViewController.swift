@@ -8,6 +8,7 @@
 
 import UIKit
 import ZDCChat
+import IQKeyboardManagerSwift
 
 class HelpViewController: BaseViewController {
     @IBOutlet weak var containerView: CommonTable!
@@ -87,20 +88,32 @@ extension HelpViewController:CommonTableDelegate{
     }
     func openZendeskChat(){
         // Pushes the chat widget onto the navigation controller
-
-        ZDCChat.start(in: self.navigationController) { (config) in
-            config?.preChatDataRequirements.name = ZDCPreChatDataRequirement.optionalEditable
-            config!.preChatDataRequirements.email = ZDCPreChatDataRequirement.optionalEditable
-            config?.preChatDataRequirements.phone = ZDCPreChatDataRequirement.optionalEditable
-            config?.preChatDataRequirements.department = ZDCPreChatDataRequirement.optionalEditable
-            config?.preChatDataRequirements.message = ZDCPreChatDataRequirement.optionalEditable
-        }
         
-        ZDCChatUI.appearance().backChatButtonImage = "Back"
-        ZDCChatUI.appearance().chatBackgroundImage="oval"
-
+        //FSChatViewStyling.chatViewStyling()
+        FSChatViewStyling.startTheChat(self.navigationController!, vc: self)
+        
     }
+
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        //IQKeyboardManager.shar
+//        ZDCChat.start(in: self.navigationController) { (config) in
+//            config?.preChatDataRequirements.name = ZDCPreChatDataRequirement.notRequired
+//            config!.preChatDataRequirements.email = ZDCPreChatDataRequirement.notRequired
+//            config?.preChatDataRequirements.phone = ZDCPreChatDataRequirement.notRequired
+//            config?.preChatDataRequirements.department = ZDCPreChatDataRequirement.notRequired
+//            config?.preChatDataRequirements.message = ZDCPreChatDataRequirement.notRequired
+//            config?.emailTranscriptAction = ZDCEmailTranscriptAction.neverSend
+//        }
+//
+//        ZDCChatUI.appearance().backChatButtonImage = "Back"
+//        ZDCChatUI.appearance().chatBackgroundAnchor = ZDCChatBackgroundAnchor.top.rawValue as NSNumber
+//        ZDCChatUI.appearance().chatBackgroundImage="oval"
+//
+ 
+    
     @objc func popController(){
-        self.navigationController?.popViewController(animated: false)
+       // self.navigationController?.popViewController(animated: false)
     }
 }

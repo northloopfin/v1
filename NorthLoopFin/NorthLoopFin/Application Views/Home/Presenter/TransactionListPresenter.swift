@@ -23,7 +23,7 @@ class TransactionListPresenter: ResponseCallback{
     //MARK:- Methods to make decision and call  Api.
     
     func sendTransactionListRequest(){
-        //self.homeDelegate?.showLoader()
+        self.homeDelegate?.showLoader()
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = TransactionListRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue

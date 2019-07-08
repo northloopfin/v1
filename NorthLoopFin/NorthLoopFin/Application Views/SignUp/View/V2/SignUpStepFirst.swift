@@ -21,6 +21,7 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var agreementLbl: LabelWithLetterSpace!
 
     var presenter: SignupAuthPresenter!
+    @IBOutlet weak var customProgressView: ProgressView!
 
     @IBAction func nextClicked(_ sender: Any) {
         validateForm()
@@ -66,7 +67,7 @@ class SignUpStepFirst: BaseViewController {
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
-        
+        self.customProgressView.progressView.setProgress(0.17*1, animated: true)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
         self.agreementLbl.addGestureRecognizer(tap)
         self.agreementLbl.isUserInteractionEnabled = true
@@ -182,10 +183,10 @@ extension SignUpStepFirst:SignupAuthDelegate{
         UserDefaults.saveToUserDefault(completeToken as AnyObject, key: AppConstants.UserDefaultKeyForAccessToken)
         UserDefaults.saveToUserDefault(self.emailTextField.text! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
         
-        // save password entered to KeyChain
-        if KeychainWrapper.standard.set(self.confirmPassTextField.text!, forKey: AppConstants.KeyChainKeyForPassword){
-            print("Password Saved to Keychain")
-        }
+        // save password entered to KeyChain //remove once client confirm
+//        if KeychainWrapper.standard.set(self.confirmPassTextField.text!, forKey: AppConstants.KeyChainKeyForPassword){
+//            print("Password Saved to Keychain")
+//        }
        // let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
         let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "SEND|RECEIVE|TIER|1", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
         let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"")
