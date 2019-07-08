@@ -80,7 +80,7 @@ class TransactionDetailViewController: BaseViewController {
         var shadowOffst = CGSize.init(width: 0, height: -55)
         var shadowOpacity = 0.1
         var shadowRadius = 49
-        var shadowColor = Colors.Zorba161149133
+        var shadowColor = Colors.PurpleColor17673149
         self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         shadowOffst = CGSize.init(width: 0, height: 6)
         shadowOpacity = 0.9

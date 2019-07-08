@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import NorthLoopFin
+//@testable import NorthLoopFin
 
 class NorthLoopFinTests: XCTestCase {
 
