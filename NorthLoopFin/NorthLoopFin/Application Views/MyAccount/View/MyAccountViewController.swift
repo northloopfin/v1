@@ -107,8 +107,22 @@ extension MyAccountViewController:CommonTableDelegate{
             case 0:
                 print("Cancel: \(buttonIndex)")
             default:
-                self.performActionAccordingToSelectedOptionToChange()
+                self.initiateBiometric()
             }
+        }
+    }
+    
+    func initiateBiometric(){
+        BioMetricHelper.isValidUer(reasonString: "Authenticate for Northloop") {[unowned self] (isSuccess, stringValue) in
+            if isSuccess
+            {
+                    self.performActionAccordingToSelectedOptionToChange()
+            }
+            else
+            {
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: stringValue?.description ?? "invalid")
+            }
+            
         }
     }
     
@@ -147,6 +161,7 @@ extension MyAccountViewController:CommonTableDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         self.navigationController?.pushViewController(vc, animated: false)
+        //self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
 }
 

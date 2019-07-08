@@ -163,6 +163,8 @@ class VerifyAddressNewViewController: BaseViewController {
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
     }
+    
+    
 }
 
 extension VerifyAddressNewViewController:UITextFieldDelegate{

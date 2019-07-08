@@ -1,19 +1,17 @@
 //
-//  AppSettingsBusinessLogic.swift
+//  CheckUpdateBusinessLogic.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 20/06/19.
+//  Created by daffolapmac-48 on 02/07/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-
-
-class AppSettingsBusinessLogic {
+class CheckUpdateBusinessLogic {
     
     deinit {
-        print("AppSettingsBusinessLogic deinit")
+        print("CheckUpdateBusinessLogic deinit")
     }
     
     /**
@@ -24,12 +22,12 @@ class AppSettingsBusinessLogic {
      - parameter failure:   NSError Response Contaons ErrorInfo
      */
     
-    func performSaveAppSettings(withRequestModel requestModel: AppSettingsRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performCheckUpdate(withRequestModel requestModel: CheckUpdateRequestModel, presenterDelegate:ResponseCallback) ->Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()
         
-        AppSettingsAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
+        CheckUpdateAPIRequest().makeAPIRequest(withReqFormData: requestModel, errorResolver: errorResolver, responseCallback: presenterDelegate)
     }
     
 }

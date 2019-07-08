@@ -11,6 +11,10 @@ import Foundation
 class TransactionListPresenter: ResponseCallback{
     private weak var homeDelegate          : HomeDelegate?
     private lazy var homeTransactionListBusinessLogic         : HomeTransactionListBusinessLogic = HomeTransactionListBusinessLogic()
+    
+    var totalTransactionCount:Int = 1
+    var currentPage:Int = 1
+    var hasMoreTransactionToLoad:Bool = true
     //MARK:- Constructor
     
     init(delegate responseDelegate:HomeDelegate){
@@ -27,8 +31,8 @@ class TransactionListPresenter: ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.USERID.rawValue, value: currentUser.userID)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
-            .addRequestQueryParams(key: "page", value: 1 as AnyObject)
-            .addRequestQueryParams(key: "per_page", value: 20 as AnyObject)
+            .addRequestQueryParams(key: "page", value: self.currentPage as AnyObject)
+            .addRequestQueryParams(key: "per_page", value: AppConstants.PageLimit as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
     self.homeTransactionListBusinessLogic.performTransactionList(withCapsuleListRequestModel: requestModel, presenterDelegate: self)
@@ -37,6 +41,11 @@ class TransactionListPresenter: ResponseCallback{
     //MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         let response = responseObject as! TransactionHistory
+        self.currentPage = response.data.page
+        self.totalTransactionCount = response.data.transCount
+        if self.currentPage >= response.data.pageCount{
+            self.hasMoreTransactionToLoad = false
+        }
         let requiredData = self.createRequiredData(data: response.data.trans)
         self.homeDelegate?.didFetchedTransactionList(data: requiredData)
         self.homeDelegate?.hideLoader()

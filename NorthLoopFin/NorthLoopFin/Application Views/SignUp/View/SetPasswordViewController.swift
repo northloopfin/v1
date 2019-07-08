@@ -107,6 +107,8 @@ class SetPasswordViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
+        }else{
+            checkMandatoryFields()
         }
     }
     //change appearance of done button
@@ -141,12 +143,16 @@ class SetPasswordViewController: BaseViewController {
 
 //MARK: UITextFiled Delegates
 extension SetPasswordViewController:UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    fileprivate func checkMandatoryFields() {
         if (!(self.passwordTextField.text?.isEmpty)! && !(self.confirmPasswordTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)! )
-            {
+        {
             self.changeApperanceOfDone()
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        checkMandatoryFields()
     }
 }
 

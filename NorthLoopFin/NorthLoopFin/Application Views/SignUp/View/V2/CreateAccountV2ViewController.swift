@@ -17,12 +17,17 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var SSNTextField: UITextField!
     @IBOutlet weak var CitizenShipTextField: UITextField!
+    @IBOutlet weak var countryCodeTextField: UITextField!
+    @IBOutlet weak var customProgressView: ProgressView!
+
     @IBOutlet weak var nextBtn: CommonButton!
    // @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     
-    let dropDown = DropDown()
+    let citizenShipDropDown = DropDown()
+    let countryCodeDropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
+    var selectedCountry:Country!
     
     var signupFlowData:SignupFlowData! = nil
     //Will remove this once Sign up completes
@@ -72,11 +77,14 @@ class CreateAccountV2ViewController: BaseViewController {
         if let data = self.signupFlowData{
             data.legalNames=[legalName]
             data.phoneNumbers=[phoneNumber]
+            let address : SignupFlowAddress = data.address
+            address.country = self.selectedCountry.code
             if (!((self.SSNTextField.text?.isEmpty)!)){
                 let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
                 let documents:SignupFlowDocument=self.signupFlowData.documents
                 documents.virtualDocs=[ssnData]
                 data.documents=documents
+                data.cipTag=1
                 
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
@@ -111,14 +119,10 @@ class CreateAccountV2ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
-        
-        self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
-        self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-        //self.inactivateNextBtn()
         self.nextBtn.isEnabled=false
-        //self.setupRightNavigationBar()
         updateTextFieldUI()
         self.prepareView()
+        self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -138,18 +142,40 @@ class CreateAccountV2ViewController: BaseViewController {
             self.SSNTextField.text = info.ssn
             self.phoneTextField.text = info.phone
             self.CitizenShipTextField.text = info.citizenShip
+            //search for citizenship in the list of countries
+            let selectedCountryArr = self.countryWithCode.filter { $0.name == info.citizenShip}
+            self.selectedCountry = selectedCountryArr[0]
+            
         }
     }
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
+        self.customProgressView.progressView.setProgress(0.17*2, animated: true)
         
-        dropDown.anchorView = self.CitizenShipTextField
-        dropDown.dataSource = AppUtility.getCountriesOnly()
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+        self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
+        self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        
+        self.countryCodeTextField.inputView = UIView.init(frame: CGRect.zero)
+        self.countryCodeTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        
+        //Drop Down for Country Code
+        self.countryCodeDropDown.anchorView = self.countryCodeTextField
+        self.countryCodeDropDown.dataSource = AppUtility.getCountryCodeOnly()
+        self.countryCodeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.countryCodeTextField.text=item
+            self.countryCodeDropDown.hide()
+            self.checkForMandatoryFields()
+        }
+        //Drop Down for citizenship
+        citizenShipDropDown.anchorView = self.CitizenShipTextField
+        citizenShipDropDown.dataSource = AppUtility.getCountriesOnly()
+        citizenShipDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.CitizenShipTextField.text=item
-            self.dropDown.hide()
+            self.selectedCountry = self.countryWithCode[index]
+            self.citizenShipDropDown.hide()
             self.checkForMandatoryFields()
 
         }
@@ -177,11 +203,13 @@ class CreateAccountV2ViewController: BaseViewController {
     }
     
     func updateTextFieldUI(){
+        
         self.firstNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.lastNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.SSNTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.phoneTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.CitizenShipTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.countryCodeTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
         let placeholderColor=Colors.DustyGray155155155
         let placeholderFont = UIFont.init(name: "Calibri", size: 16)
@@ -193,19 +221,23 @@ class CreateAccountV2ViewController: BaseViewController {
         self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.SSNTextField.applyAttributesWithValues(placeholderText: "SSN (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.CitizenShipTextField.applyAttributesWithValues(placeholderText: "Citizenship", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.CitizenShipTextField.applyAttributesWithValues(placeholderText: "Citizenship*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.countryCodeTextField.applyAttributesWithValues(placeholderText: "Code*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
         self.phoneTextField.setLeftPaddingPoints(19)
         self.SSNTextField.setLeftPaddingPoints(19)
         self.CitizenShipTextField.setLeftPaddingPoints(19)
+        self.countryCodeTextField.setLeftPaddingPoints(19)
 
     }
     
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.nextBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     
@@ -232,6 +264,13 @@ class CreateAccountV2ViewController: BaseViewController {
         basicInfo.citizenShip=self.CitizenShipTextField.text ?? ""
         RealmHelper.addBasicInfo(info: basicInfo)
     }
+    
+    func setSampleData(){
+        self.firstNameTextField.text = "Sunita"
+        self.lastNameTextField.text = "Kumari"
+        self.phoneTextField.text = "9716787066"
+
+    }
 }
 
 extension CreateAccountV2ViewController:UITextFieldDelegate{
@@ -241,7 +280,7 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
     
     // Methode will check for mandatory fields and perform accordingly
     func checkForMandatoryFields(){
-        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)!)
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)! && !(self.countryCodeTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
         }
@@ -252,7 +291,10 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
         {
             //IQKeyboardManager.shared.resignFirstResponder()
             
-            self.dropDown.show()
+            self.citizenShipDropDown.show()
+            return false
+        }else if textField == self.countryCodeTextField{
+            self.countryCodeDropDown.show()
             return false
         }
         else

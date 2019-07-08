@@ -1,14 +1,14 @@
 //
-//  AppSettingsRequestModel.swift
+//  CheckUpdateRequestModel.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 20/06/19.
+//  Created by daffolapmac-48 on 02/07/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
 
-class AppSettingsRequestModel {
+class CheckUpdateRequestModel {
     //MARK:- CapsuleListRequestModel properties
     
     //Note :- Property Name must be same as key used in request API
@@ -64,8 +64,8 @@ class AppSettingsRequestModel {
          
          -returns : CardRequestModel
          */
-        func build()->AppSettingsRequestModel{
-            return AppSettingsRequestModel(builderObject: self)
+        func build()->CheckUpdateRequestModel{
+            return CheckUpdateRequestModel(builderObject: self)
         }
     }
     
@@ -75,6 +75,6 @@ class AppSettingsRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.SAHREACCOUNTDETAILS.rawValue
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.CHECKUPDATE.rawValue
     }
 }

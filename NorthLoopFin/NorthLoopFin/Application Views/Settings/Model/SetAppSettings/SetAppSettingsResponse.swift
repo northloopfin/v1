@@ -1,13 +1,14 @@
 //
-//  AppSettingsResponse.swift
+//  SetAppSettingsResponse.swift
 //  NorthLoopFin
 //
-//  Created by daffolapmac-48 on 20/06/19.
+//  Created by daffolapmac-48 on 28/06/19.
 //  Copyright © 2019 NorthLoop. All rights reserved.
 //
 
 import Foundation
-struct AppSettingsResponse:Codable {
+
+struct SetAppSettingsResponse:Codable {
     let message: String
     
     enum CodingKeys: String, CodingKey {

@@ -7,36 +7,36 @@
 //
 
 import Foundation
-class AppSettingsPresenter:ResponseCallback{
+class GetAppSettingsPresenter:ResponseCallback{
     
     private weak var delegate          : SettingsDelegates?
-    private lazy var logic         : AppSettingsBusinessLogic = AppSettingsBusinessLogic()
+    private lazy var logic         : GetAppSettingsBusinessLogic = GetAppSettingsBusinessLogic()
     
     init(delegate responseDelegate:SettingsDelegates){
         self.delegate = responseDelegate
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendSaveAppSettingsRequest(){
+    func sendGetAppSettingsRequest(){
         
         // convert requestbody to json string and assign to request model request param
         
         self.delegate?.showLoader()
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
-        let requestModel = AppSettingsRequestModel.Builder()
+        let requestModel = GetAppSettingsRequestModel.Builder()
             .addRequestHeader(key: "ip", value: "127.0.0.1")
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
         
-        self.logic.performSaveAppSettings(withRequestModel: requestModel, presenterDelegate: self)
+        self.logic.performGetAppSettings(withRequestModel: requestModel, presenterDelegate: self)
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        //let response = responseObject as! FetchUniversityResponse
+        let response = responseObject as! GetAppSettingsResponse
         self.delegate?.hideLoader()
-        self.delegate?.didSaveAppSettings()
+        self.delegate?.didGetAppSettings(data: response.data)
     }
     
     func servicesManagerError(error: ErrorModel) {

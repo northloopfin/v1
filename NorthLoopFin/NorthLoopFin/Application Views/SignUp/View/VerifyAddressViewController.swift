@@ -18,6 +18,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var textState: UITextField!
     @IBOutlet weak var zipTextfield: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var customProgressView: ProgressView!
 
     @IBOutlet weak var doneBtn: CommonButton!
     
@@ -37,7 +38,8 @@ class VerifyAddressViewController: BaseViewController {
     
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
-            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text!, houseNo: self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!)
+            let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text! + " " + self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country)
 
             if let _  = self.signupFlowData{
                 self.signupFlowData.address = addess
@@ -48,7 +50,7 @@ class VerifyAddressViewController: BaseViewController {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        //self.updateSignupFlowData()
+        self.updateSignupFlowData()
         
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
@@ -60,6 +62,7 @@ class VerifyAddressViewController: BaseViewController {
                     let jsonString = String(data: jsonData, encoding: .utf8)
                     //print(jsonString!)
                     let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+                    //print(dic)
                     //all fine with jsonData here
                     self.changeAddressPresnter.sendChangeAddressRequest(requestDic: dic)
                 } catch {
@@ -75,7 +78,7 @@ class VerifyAddressViewController: BaseViewController {
             do {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
-                print(jsonString!)
+               // print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.presenter.startSignUpSynapse(requestDic: dic)
@@ -108,6 +111,7 @@ class VerifyAddressViewController: BaseViewController {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
         self.fetchDatafromRealmIfAny()
+        self.setSampleData()
     }
     
     func fetchDatafromRealmIfAny(){
@@ -142,6 +146,7 @@ class VerifyAddressViewController: BaseViewController {
     
     /// Prepare View by setting up font and color of UI components
     func prepareView(){
+        self.customProgressView.progressView.setProgress(0.17*6, animated: true)
         dropDown.anchorView = self.textState
         dropDown.dataSource = AppUtility.getStatesArray()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -199,6 +204,8 @@ class VerifyAddressViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
+        }else{
+            self.checkForMandatoryField()
         }
     }
     
@@ -209,11 +216,18 @@ class VerifyAddressViewController: BaseViewController {
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
     }
+    func setSampleData(){
+        self.streetAddress.text = "1"
+        self.houseNumbertextfield.text="Market St."
+        self.cityTextfield.text = "San Francisco"
+        self.textState.text="CA"
+        self.zipTextfield.text="94105"
+    }
 }
 //MARK: UITextField Delegates
 extension VerifyAddressViewController:UITextFieldDelegate{
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    fileprivate func checkForMandatoryField() {
         if (!(self.streetAddress.text?.isEmpty)! && !(self.houseNumbertextfield.text?.isEmpty)!) && !(self.cityTextfield.text?.isEmpty)! && !(self.textState.text?.isEmpty)! && !(self.zipTextfield.text?.isEmpty)!{
             if (Validations.isValidZip(value: self.zipTextfield.text!)){
                 self.activateDoneBtn()
@@ -221,6 +235,10 @@ extension VerifyAddressViewController:UITextFieldDelegate{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
             }
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkForMandatoryField()
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -259,7 +277,15 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
 extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
-        AppUtility.moveToHomeScreen()
+        //AppUtility.moveToHomeScreen()
+        //move to promocode
+        self.moveToPromoCode()
+    }
+    
+    func moveToPromoCode(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "PromoCodeViewController") as! PromoCodeViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 

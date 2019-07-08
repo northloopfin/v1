@@ -10,9 +10,11 @@ import Foundation
 struct Country : Decodable {
     var name: String
     var code: String
+    var dialCode: String
     
-    init(name:String,code:String) {
+    init(name:String,code:String, dialCode:String) {
         self.name=name
         self.code=code
+        self.dialCode=dialCode
     }
 }

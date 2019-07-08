@@ -12,6 +12,7 @@ class CommonButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
      var isBtnSelected:Bool = false
     
@@ -32,6 +33,7 @@ class CommonButton: UIButton {
         //self.setTitleColor(tintColor, for: .normal)
         //self.setTitleColor(tintColor.withAlphaComponent(0.3), for: .highlighted)
         //self.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)
+        self.showsTouchWhenHighlighted=true
     }
     override func setTitle(_ title: String?, for state: UIControl.State)
     {

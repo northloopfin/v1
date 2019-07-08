@@ -23,7 +23,7 @@ class ResetPasswordPresenter: ResponseCallback{
         self.delegate?.showLoader()
         
         let requestModel = ResetPasswordRequestModel.Builder()
-            .addRequestQueryParams(key: "username", value: name as AnyObject)
+            .addRequestQueryParams(key: "email", value: name as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
             .build()
         print(requestModel.requestHeader)

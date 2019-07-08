@@ -100,7 +100,11 @@ class MakeTransferViewController: BaseViewController {
     }
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
+            self.inactivateDoneBtn()
+        }else{
+            self.checkForMandatoryFields()
         }
+        
     }
     //change appearance of done button
     func changeApperanceOfDone(){

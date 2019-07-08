@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 
 class SignUpStepFirst: BaseViewController {
@@ -20,6 +21,7 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var agreementLbl: LabelWithLetterSpace!
 
     var presenter: SignupAuthPresenter!
+    @IBOutlet weak var customProgressView: ProgressView!
 
     @IBAction func nextClicked(_ sender: Any) {
         validateForm()
@@ -57,6 +59,7 @@ class SignUpStepFirst: BaseViewController {
         self.setupRightNavigationBar()
         self.updateTextFieldUI()
         self.presenter = SignupAuthPresenter.init(delegate:self)
+        self.setSampleData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -64,7 +67,7 @@ class SignUpStepFirst: BaseViewController {
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
-        
+        self.customProgressView.progressView.setProgress(0.17*1, animated: true)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
         self.agreementLbl.addGestureRecognizer(tap)
         self.agreementLbl.isUserInteractionEnabled = true
@@ -102,7 +105,7 @@ class SignUpStepFirst: BaseViewController {
                 self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.ACCOUNT)
             }
         }
-        if let rangeForCard = self.agreementLbl.text?.range(of: "Card")?.nsRange{
+        if let rangeForCard = self.agreementLbl.text?.range(of: "Card Agreement")?.nsRange{
             if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForCard) {
                             // Substring tapped
                 self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.CARD)
@@ -143,18 +146,31 @@ class SignUpStepFirst: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.nextBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
-}
-
-extension SignUpStepFirst:UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    
+    func checkForMandatoryFields(){
         if (!(self.paswwordTextField.text?.isEmpty)! && !(self.confirmPassTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)!
             )
             //(self.emailTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
         }
+    }
+    
+    // Remove this sample values
+    func setSampleData(){
+        self.emailTextField.text = "Sunita210@gmail.com"
+        self.paswwordTextField.text = "test1234!"
+        self.confirmPassTextField.text = "test1234!"
+    }
+}
+
+extension SignUpStepFirst:UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.checkForMandatoryFields()
     }
 }
 
@@ -166,10 +182,15 @@ extension SignUpStepFirst:SignupAuthDelegate{
         //We are storing this accestoken here teporarily, Will store access token 
         UserDefaults.saveToUserDefault(completeToken as AnyObject, key: AppConstants.UserDefaultKeyForAccessToken)
         UserDefaults.saveToUserDefault(self.emailTextField.text! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+        
+        // save password entered to KeyChain //remove once client confirm
+//        if KeychainWrapper.standard.set(self.confirmPassTextField.text!, forKey: AppConstants.KeyChainKeyForPassword){
+//            print("Password Saved to Keychain")
+//        }
        // let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
-        let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
-        let address:SignupFlowAddress = SignupFlowAddress.init(street: "", houseNo: "", city: "", state: "", zip: "")
-        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 1)
+        let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "SEND|RECEIVE|TIER|1", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
+        let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"")
+        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 2)
        
         // move to next step of Sign Up
         self.moveToSignupStepSecond(data: signupFlowData)
@@ -182,4 +203,5 @@ extension SignUpStepFirst:SignupAuthDelegate{
         vc.signupFlowData=data
         self.navigationController?.pushViewController(vc, animated: false)
     }
+
 }

@@ -20,6 +20,8 @@ class MyCardViewController: BaseViewController {
     var data:[MyCardOtionsModel]=[]
     var isLockCard:Bool = false
     var isSpendAbroad:Bool = false
+    var dailyATMWithdrawalLimit:Int = 0
+    var dailyTransactionLimit:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +100,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         case 1:
             self.moveToLostCardScreen()
         case 2:
-            self.moveToLostCardScreen()
+            self.moveToNewPincreen()
         default:
               break
         }
@@ -109,22 +111,36 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
+    func moveToNewPincreen() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
 }
 
 extension MyCardViewController:CardDelegates{
     func didFetchCardStatus(data:Card) {
+        print(data.data.status)
+        self.dailyTransactionLimit = data.data.preferences.dailyTransactionLimit
+        self.dailyATMWithdrawalLimit = data.data.preferences.dailyATMWithdrawalLimit
+        
         if (data.data.status == "ACTIVE"){
             self.isLockCard = false
-            self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
+            var option:MyCardOtionsModel = self.data[0]
+            option.isSwitchSelected = self.isLockCard
+            
+            var optionSpendAbroad : MyCardOtionsModel = self.data[3]
+            optionSpendAbroad.isSwitchSelected = data.data.preferences.allowForeignTransactions
+            //self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
             //check for spend abroad preference
-            if data.data.preferences.allowForeignTransactions{
+            
                 //if spend abroad is true, then reload table accordingly
-                self.data[3] = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: true)
+                //self.data[3] = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: data.data.preferences.allowForeignTransactions)
                 self.optionsTableView.reloadData()
-            }
+            
         }else{
             self.isLockCard = true
-            //self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: f)
+            
         }
         
     }
@@ -189,11 +205,12 @@ extension MyCardViewController:MyCardTableCellDelegate{
     
     
     func createRequestForUpdateCardStatus(){
-        let preference = UpdateCardPreferenceBody.init(allowForeignTransactions: self.isSpendAbroad, dailyATMWithdrawalLimit: 0, dailyTransactionLimit: 0)
+        let preference = UpdateCardPreferenceBody.init(allowForeignTransactions: self.isSpendAbroad, dailyATMWithdrawalLimit: self.dailyATMWithdrawalLimit, dailyTransactionLimit: self.dailyTransactionLimit)
         var card = UpdateCardRequestBody.init(status: "ACTIVE", pre: preference)
         if self.isLockCard{
             card = UpdateCardRequestBody.init(status: "INACTIVE", pre: preference)
         }
+        
         self.updatePresenter.updateCardStatus(requestBody: card)
     }
     

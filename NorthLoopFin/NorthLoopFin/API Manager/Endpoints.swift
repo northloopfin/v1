@@ -31,6 +31,8 @@ struct Endpoints{
         case UPGRADEPREMIUM = "banking/transactions/upgrade"
         case UNIVERSITYLIST = "banking/schools"
         case SAHREACCOUNTDETAILS = "banking/account"
+        case GETAPPSETTINGS = "banking/preferences"
+        case CHECKUPDATE = "banking/app-version-updates"
 
     }
     

@@ -18,9 +18,16 @@ struct AppConstants{
     static let UserDefaultKeyForCrash = "Crash"
     static let UserDefaultKeyForDeviceToken = "DeviceToken"
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
+    static let KeyChainKeyForPassword = "NorthLoopPassword"
+    static let KeyChainKeyForEmail = "NorthLoopEmail"
+
+    static let PageLimit:Int = 20
+    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
 
     static let CountryExceptionURL = "https://northloop.zendesk.com/hc/en-us/articles/360027983032"
+    static let FAQURL = "https://northloop.zendesk.com/hc/en-us/"
+    static let AppStoreUrl = "itms://itunes.apple.com/app/1470578407"
 
     enum URL: String{
         case TWILIO_BASE_URL = "https://api.authy.com/protected/json/"
@@ -63,6 +70,10 @@ struct AppConstants{
         case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure, you want to change Address"
         case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
+        case INSUFFICIENT_BALANCE = "Insufficient Balance"
+        case NEWER_VERSION_AVAILABLE = "A newer version of this app is available. Do you want to update?"
+        case APP_IS_UPTO_DATE = "App is upto date"
+        case PROMOCODE_NOT_VALID = "Promocode not valid"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -149,10 +160,12 @@ struct AppConstants{
     enum SelectIDTYPES:String{
         case PASSPORT="Passport"
         case I20="I-20 (3 pages)"
-        case ENROLMENTLETTER = "Enrollment Letter"
         case USIDTYPE = "US ID Type"
         case F1VISA = "F-1 Visa"
         case ADDRESSPROOF = "Address Proof"
+        case STATEID = "State ID"
+        case DRIVERLICENSE = "Driver's License"
+        case OTHER = "Other"
     }
     enum AGREEMENTTYPE:String{
         case ACCOUNT = "Account"

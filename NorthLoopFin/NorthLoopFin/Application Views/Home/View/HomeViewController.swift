@@ -108,8 +108,15 @@ class HomeViewController: BaseViewController {
                 if let textFields = alert.textFields {
                     // username
                     let emailEntered: UITextField = textFields[0] as! UITextField
-                    self.shareAccountDetailsPresenter.sendShareAccountDetailsRequest(email: emailEntered.text!)
-                    // not decided yet ...what to do with this
+               //check for valid email
+                    
+                    if (!(emailEntered.text?.isEmpty)! && Validations.isValidEmail(email: (emailEntered.text)!)){
+                        // valid
+                        self.shareAccountDetailsPresenter.sendShareAccountDetailsRequest(email: emailEntered.text!)
+                    }else{
+                        // show error
+                        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.EMAIL_NOT_VALID.rawValue)
+                    }
                 }
             }
         }
@@ -189,15 +196,53 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.moveToDetailScreen(detailModel: self.transactionDataSource[indexPath.section].rowData[indexPath.row])
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //Here we check for last section and last row
+        if indexPath.section == self.transactionDataSource.count-1 && indexPath.row == self.transactionDataSource[indexPath.section].rowData.count-1 {
+            //we are at last section and last row. Right time to load more data
+            if self.transactionListPresenter.hasMoreTransactionToLoad{
+                self.transactionListPresenter.currentPage = self.transactionListPresenter.currentPage + 1
+                let spinner = UIActivityIndicatorView(style: .gray)
+                spinner.startAnimating()
+                spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: ledgersTableView.bounds.width, height: CGFloat(44))
+                
+                self.ledgersTableView.tableFooterView = spinner
+                self.ledgersTableView.tableFooterView?.isHidden = false
+                transactionListPresenter.sendTransactionListRequest()
+            }else{
+                self.ledgersTableView.tableFooterView?.isHidden = true
+            }
+        }
+    }
 }
 
 extension HomeViewController:HomeDelegate{
     //MARK: HomeDelegate
     func didFetchedTransactionList(data: [TransactionListModel]) {
-        self.transactionDataSource.append(contentsOf: data)
+        
+        if self.transactionDataSource.count > 0 {
+            if data.count > 0 {
+                
+                var lastTransactionOfCurrentArr: TransactionListModel = self.transactionDataSource.last!
+                let firstTransactionOfRecievedArr: TransactionListModel = data.first!
+                // now compare date
+                if Validations.matchTwoStrings(string1: lastTransactionOfCurrentArr.sectionTitle , string2: firstTransactionOfRecievedArr.sectionTitle ){
+                    //they are same , means got transaction of same date in pagination
+                    lastTransactionOfCurrentArr.rowData.append(contentsOf: firstTransactionOfRecievedArr.rowData)
+                    self.transactionDataSource[self.transactionDataSource.count-1] = lastTransactionOfCurrentArr
+                    
+                    
+                }else{
+                    // it's of different date simply append result
+                    self.transactionDataSource.append(contentsOf: data)
+                }
+            }
+        }else{
+            self.transactionDataSource.append(contentsOf: data)
+        }
         self.ledgersTableView.reloadData()
         self.checkForFirstTimeLandOnHome()
-
     }
     func didFetchedError(error:ErrorModel){
         
@@ -205,9 +250,14 @@ extension HomeViewController:HomeDelegate{
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         if let _ = currentUser?.name{
-            self.GreetingLbl.text = "Good Morning, "+(currentUser?.name)!
+            //self.GreetingLbl.text = AppUtility().greetingAccToTime() +(currentUser?.name)!
+            self.GreetingLbl.text = AppUtility.greetingAccToTime()+(currentUser?.name)!
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
+        
+        currentUser?.amount = data.data.info.balance.amount
+        
+        UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()
     }
 }
@@ -271,9 +321,10 @@ extension HomeViewController:SideMenuDelegate{
     }
     func navigateToExpenses(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
     func navigateToHelp(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
@@ -286,16 +337,7 @@ extension HomeViewController:SideMenuDelegate{
 extension HomeViewController:HomeTableCellDelegate{
     //Delete once client confirm
     func disputeTransactionClicked(data: IndividualTransaction) {
-        //self.moveToDisputeTransactionScreen(data: data)
     }
-    
-//    func moveToDisputeTransactionScreen(data:IndividualTransaction){
-//        //self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let vc = storyBoard.instantiateViewController(withIdentifier: "DisputeTransactionViewController") as! DisputeTransactionViewController
-//        vc.transaction = data
-//        self.navigationController?.pushViewController(vc, animated: false)
-//    }
 }
 extension HomeViewController:ShareAccountDetailDelegates{
     func didSharedAccounTDetails() {

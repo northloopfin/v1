@@ -18,16 +18,12 @@ class MyCardTableCell: UITableViewCell {
      weak var delegate: MyCardTableCellDelegate?
 
     @IBAction func switchClicked(_ sender: Any) {
-        print("wow")
-        let lock = sender as! PWSwitch
-        //lock.isSelected = !lock.isSelected
-        self.delegate?.switchClicked(isOn: lock.isSelected, tag: lock.tag)
-//        let lock = sender as! UISwitch
-//        if (lock.isOn){
-//            lock.thumbTintColor = Colors.Taupe776857
-//        }
+        let lock = sender as! UISwitch
+        print(lock.isOn)
+        self.delegate?.switchClicked(isOn: lock.isOn, tag: lock.tag)
+
     }
-    @IBOutlet weak var lock: PWSwitch!
+    @IBOutlet weak var lock: UISwitch!
     @IBOutlet weak var optionLbl: UILabel!
     
 
@@ -50,12 +46,9 @@ class MyCardTableCell: UITableViewCell {
             let shadowColor = Colors.Zorba161149133
             self.lock.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
             lock.isHidden=false
-            if data.isSwitchSelected{
-                lock.setOn(true, animated: false)
-            }else{
-                lock.setOn(false, animated: false)
+            print(data.isSwitchSelected)
+            lock.setOn(data.isSwitchSelected, animated: true)
 
-            }
         }else{
             lock.isHidden=true
         }

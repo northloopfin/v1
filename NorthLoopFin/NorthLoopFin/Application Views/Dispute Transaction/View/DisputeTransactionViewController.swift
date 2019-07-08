@@ -61,6 +61,8 @@ class DisputeTransactionViewController: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.reportBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     

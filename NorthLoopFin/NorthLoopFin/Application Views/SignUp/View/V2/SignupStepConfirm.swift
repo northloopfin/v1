@@ -17,7 +17,8 @@ class SignupStepConfirm: BaseViewController {
     @IBOutlet weak var DOBTextField: UITextField!
     @IBOutlet weak var universityTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
-    
+    @IBOutlet weak var customProgressView: ProgressView!
+
     let datePicker = UIDatePicker()
     var signupFlowData:SignupFlowData!=nil
     var presenter: UniversityPresenter!
@@ -56,6 +57,11 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
             self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
             self.signupFlowData.documents.year = Int(DOBArr[2]) ?? 0
+            // add passport as virtual document
+            
+            let passport:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.passportTextField.text!, documentType: "PASSPORT")
+            let documents:SignupFlowDocument=self.signupFlowData.documents
+            documents.virtualDocs.append(passport)
         }
         
     }
@@ -67,7 +73,8 @@ class SignupStepConfirm: BaseViewController {
         self.updateTextFieldUI()
         self.setupRightNavigationBar()
         self.presenter = UniversityPresenter.init(delegate: self)
-        self.presenter.sendFEtchUniversityListRequest()
+        //self.presenter.sendFEtchUniversityListRequest()
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -76,17 +83,18 @@ class SignupStepConfirm: BaseViewController {
     }
     
     func prepareView(){
-        self.universityTextField.inputView = UIView.init(frame: CGRect.zero)
-        self.universityTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-        dropDown.anchorView = self.universityTextField
-        dropDown.dataSource = self.universities
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self.universityTextField.text=item
-            self.dropDown.hide()
-            self.checkForMandatoryFields()
-            
-        }
+       // self.universityTextField.inputView = UIView.init(frame: CGRect.zero)
+        //self.universityTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        //dropDown.anchorView = self.universityTextField
+        //dropDown.dataSource = self.universities
+//        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+//            print("Selected item: \(item) at index: \(index)")
+//            self.universityTextField.text=item
+//            self.dropDown.hide()
+//            self.checkForMandatoryFields()
+//            
+//        }
+        self.customProgressView.progressView.setProgress(0.17*5, animated: true)
         self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
         self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
@@ -131,6 +139,8 @@ class SignupStepConfirm: BaseViewController {
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.nextBtn.isEnabled=false
+        }else{
+            self.checkForMandatoryFields()
         }
     }
     
@@ -159,6 +169,7 @@ class SignupStepConfirm: BaseViewController {
             self.universityTextField.text = info.university
             self.checkForMandatoryFields()
         }
+        self.setSampleData()
     }
     
     //Methode to show date picker
@@ -190,6 +201,12 @@ class SignupStepConfirm: BaseViewController {
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+    
+    func setSampleData(){
+        self.passportTextField.text="777772222"
+        self.DOBTextField.text="11/05/1989"
+        self.universityTextField.text = "Cornell University"
+    }
 }
 
 
@@ -213,19 +230,19 @@ extension SignupStepConfirm:UITextFieldDelegate{
             self.showDatePicker()
         }
     }
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == self.universityTextField
-        {
-            //IQKeyboardManager.shared.resignFirstResponder()
-            
-            self.dropDown.show()
-            return false
-        }
-        else
-        {
-            return true
-        }
-    }
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        if textField == self.universityTextField
+//        {
+//            //IQKeyboardManager.shared.resignFirstResponder()
+//
+//            self.dropDown.show()
+//            return false
+//        }
+//        else
+//        {
+//            return true
+//        }
+//    }
 }
 
 extension SignupStepConfirm: FetchUniversityDelegates{
