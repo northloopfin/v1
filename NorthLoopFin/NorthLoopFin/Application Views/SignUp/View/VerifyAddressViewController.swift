@@ -282,7 +282,7 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
 extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
-        //AppUtility.moveToHomeScreen()
+        AppUtility.moveToHomeScreen()
         //move to promocode
 //        self.moveToPromoCode()
     }
