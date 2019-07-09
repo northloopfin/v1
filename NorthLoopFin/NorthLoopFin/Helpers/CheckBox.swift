@@ -49,13 +49,13 @@ open class CheckBox: UIControl {
     var checkmarkSize: CGFloat = 0.5
     
     @IBInspectable
-    var uncheckedBorderColor: UIColor = Colors.Taupe776857
+    var uncheckedBorderColor: UIColor = Colors.PurpleColor17673149
     
     @IBInspectable
-    var checkedBorderColor: UIColor  = Colors.Taupe776857
+    var checkedBorderColor: UIColor  = Colors.PurpleColor17673149
     
     @IBInspectable
-    var checkmarkColor: UIColor = Colors.Taupe776857
+    var checkmarkColor: UIColor = Colors.PurpleColor17673149
     
     var checkboxBackgroundColor: UIColor! = .white
     
