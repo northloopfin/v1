@@ -19,6 +19,7 @@ class MyAccountViewController: BaseViewController {
     // var to track which option is clicked
     var isChangePhoneClicked:Bool=false
     var isChangeAddressClicked:Bool=false
+    var isChangePasswordClicked:Bool=false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,13 @@ class MyAccountViewController: BaseViewController {
         self.twoFApresenter = TwoFAPresenter.init(delegate: self)
 
     }
+    
+    func resetChangeOptionVar(){
+         isChangePhoneClicked=false
+         isChangeAddressClicked=false
+         isChangePasswordClicked=false
+    }
+    
     override func viewDidLayoutSubviews() {
         let shadowOffst = CGSize.init(width: 0, height: -55)
         let shadowOpacity = 0.1
@@ -47,7 +55,6 @@ class MyAccountViewController: BaseViewController {
         dataSource.append(AppConstants.ProfileOptions.APPSETTINGS.rawValue)
         dataSource.append(AppConstants.ProfileOptions.LOGOUT.rawValue)
 
-
         customView.dataSource = dataSource
         customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
@@ -58,21 +65,21 @@ class MyAccountViewController: BaseViewController {
 
 extension MyAccountViewController:CommonTableDelegate{
     func didSelectOption(optionVal: Int) {
+        self.resetChangeOptionVar()
         switch optionVal {
+            
         case 0:
             self.moveToAccountDetail()
         case 1:
             //change address
             self.isChangeAddressClicked=true
-            self.isChangePhoneClicked=false
             self.showConfirmPopUp()
         case 2:
-            // send reset password API request
-            self.sendResetPasswordAPIRequest()
+            self.isChangePasswordClicked=true
+            self.showConfirmPopUp()
         case 3:
             //change Phone Number
             self.isChangePhoneClicked=true
-            self.isChangeAddressClicked=false
             self.showConfirmPopUp()
         case 4:
             //go to settings page
@@ -100,6 +107,13 @@ extension MyAccountViewController:CommonTableDelegate{
                 cancelButton: "Cancel",
                 otherButtons: ["Confirmed"]
             )
+        }else if self.isChangePasswordClicked{
+            params = Parameters(
+                title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
+                message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_CHANGE_PASSWORD.rawValue,
+                cancelButton: "Cancel",
+                otherButtons: ["Confirmed"]
+            )
         }
         
         AlertHelperKit().showAlertWithHandler(self, parameters: params) { buttonIndex in
@@ -107,30 +121,50 @@ extension MyAccountViewController:CommonTableDelegate{
             case 0:
                 print("Cancel: \(buttonIndex)")
             default:
-                self.initiateBiometric()
+                // initiate Biometric for other options except Password
+                if self.isChangePasswordClicked{
+                    self.performActionAccordingToSelectedOptionToChangeWhenNoAuth()
+                }else{
+                    self.initiateBiometric()
+
+                }
             }
         }
     }
     
     func initiateBiometric(){
-        BioMetricHelper.isValidUer(reasonString: "Authenticate for Northloop") {[unowned self] (isSuccess, stringValue) in
-            if isSuccess
-            {
-                    self.performActionAccordingToSelectedOptionToChange()
+        if BioMetricHelper.isDeviceSupportedforAuth(){
+            //yes
+            BioMetricHelper.isValidUer(reasonString: "Authenticate for Northloop") {[unowned self] (isSuccess, stringValue) in
+                if isSuccess
+                {
+                    self.performActionAccordingToSelectedOptionToChangeWithAuth()
+                }
+                else
+                {
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: stringValue?.description ?? "invalid")
+                }
             }
-            else
-            {
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: stringValue?.description ?? "invalid")
-            }
-            
+        }else{
+            self.performActionAccordingToSelectedOptionToChangeWhenNoAuth()
         }
     }
     
-    func performActionAccordingToSelectedOptionToChange(){
+    // perform when biometric is successful
+    func performActionAccordingToSelectedOptionToChangeWhenNoAuth(){
+        if self.isChangePhoneClicked {
+            self.twoFApresenter.sendTwoFARequest(sendToAPI: false)
+        }else if self.isChangeAddressClicked || self.isChangePasswordClicked{
+            self.moveTo2FA()
+        }
+    }
+    
+    // perform when biometric is not available
+    func performActionAccordingToSelectedOptionToChangeWithAuth(){
         if self.isChangePhoneClicked{
             self.moveToOTP()
         }else if self.isChangeAddressClicked{
-            self.moveTo2FA()
+            self.moveToAddressScreen()
         }
     }
     
@@ -163,6 +197,13 @@ extension MyAccountViewController:CommonTableDelegate{
         self.navigationController?.pushViewController(vc, animated: false)
         //self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
+    
+    func moveToAddressScreen(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
+        vc.screenThatInitiatedThisFlow = AppConstants.Screens.CHANGEADDRESS
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }
 
 
@@ -186,7 +227,12 @@ extension MyAccountViewController:TwoFADelegates{
     func moveTo2FA(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "Select2FAModeViewController") as! Select2FAModeViewController
-        vc.screenWhichInitiated = AppConstants.Screens.CHANGEADDRESS
+        if self.isChangePasswordClicked{
+            vc.screenWhichInitiated = AppConstants.Screens.ChangePASSWORD
+        }else if self.isChangeAddressClicked{
+            vc.screenWhichInitiated = AppConstants.Screens.CHANGEADDRESS
+        }
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }
+

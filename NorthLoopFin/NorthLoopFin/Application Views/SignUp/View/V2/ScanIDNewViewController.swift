@@ -51,7 +51,8 @@ class ScanIDNewViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkForSSN()
-        self.initialiseData()
+       // self.initialiseData()
+        self.disableImageThumbTouch()
         self.prepareView()
         self.checkDBForImages()
         self.setupRightNavigationBar()
@@ -231,10 +232,13 @@ class ScanIDNewViewController: BaseViewController {
         if selectedButton.isBtnSelected{
            // print(self.modelArray.count)
             print("selectedTag \(selectedButton.tag)")
+                self.disableImageThumbTouch()
+            if self.modelArray.count >= selectedButton.tag{
                 let model = self.modelArray[selectedButton.tag]
                 self.imageArray = model.images
                 self.selectedOption = model.type
                 self.setImages()
+            }
         }else{
             print("selectedTag \(selectedButton.tag)")
             //get button from array and update its selection state
@@ -304,7 +308,6 @@ class ScanIDNewViewController: BaseViewController {
             self.resetLabels()
             self.view.layoutIfNeeded()
             self.uploadedImageFront.image = self.imageArray[0]
-            //self.uploadedImageBack.image = self.imageArray[1]
         }else{
             self.uploadImage3HeightConstraint.constant=60
             self.uploadImage2HeightConstraint.constant=60
@@ -360,20 +363,28 @@ class ScanIDNewViewController: BaseViewController {
     }
     
     func showErrForSelectedOptions(){
-        if let optionSelected = self.selectedOption{
-            
-            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
-                optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF || optionSelected == AppConstants.SelectIDTYPES.STATEID || optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE || optionSelected == AppConstants.SelectIDTYPES.OTHER{
-                if self.imageArray.count < 1 {
-                    print("show error for passport")
-                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
-                    return
-                }
-            }else{
-                if self.imageArray.count < 3{
-                    print("show error for I-20")
-                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
-                    return
+        
+        //check for SSN flow
+        
+        if let _ = self.signupData{
+            if self.signupData.documents.virtualDocs.count == 0{
+                // yes NON SSN Flow
+                if let optionSelected = self.selectedOption{
+                    
+                    if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
+                        optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF || optionSelected == AppConstants.SelectIDTYPES.STATEID || optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE || optionSelected == AppConstants.SelectIDTYPES.OTHER{
+                        if self.imageArray.count < 1 {
+                            print("show error for passport")
+                            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                            return
+                        }
+                    }else{
+                        if self.imageArray.count < 3{
+                            print("show error for I-20")
+                            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                            return
+                        }
+                    }
                 }
             }
         }
@@ -382,10 +393,11 @@ class ScanIDNewViewController: BaseViewController {
     }
     
     func updateSignupFlowDataWithCompressedImages(){
+        self.showLoader()
         DispatchQueue.global(qos: .userInitiated).async {
             // Do some time consuming task in this background thread
             // Mobile app will remain to be responsive to user actions
-            self.showLoader()
+            
             print("Performing time consuming task in this background thread")
             self.formSignupFlowData()
             DispatchQueue.main.async {
@@ -395,7 +407,7 @@ class ScanIDNewViewController: BaseViewController {
                 self.hideLoader()
                 UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "SelfieViewController") as! SelfieViewController
+                let vc = storyBoard.instantiateViewController(withIdentifier: "SignupStepConfirm") as! SignupStepConfirm
                 vc.signupFlowData=self.signupData
                 self.navigationController?.pushViewController(vc, animated: false)
             }
@@ -473,54 +485,80 @@ class ScanIDNewViewController: BaseViewController {
                 default:
                     break
                 }
+                
+                self.addSelectedImagesToModel()
                 self.checkForCompletedStateOfScanId()
             }
         }
-    /// This function will check whether images of all scan ID has been uploaded or not. If so, then enable next button
-        func checkForCompletedStateOfScanId(){
-            if let optionSelected = self.selectedOption{
-                
-                if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
-                    optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF ||
-                    optionSelected ==  AppConstants.SelectIDTYPES.STATEID ||
-                    optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE ||
-                    optionSelected == AppConstants.SelectIDTYPES.OTHER{
-                    if self.imageArray.count == 1 {
-                        let model = self.modelArray[selectedButtonTag]
-                        model.images = self.imageArray
-                        model.type = optionSelected
-                        if selectedButtonTag != self.optionBtnsArray.count-1{
-                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                            nextBtnToEnable.sendActions(for: .touchUpInside)}
-                    }
-                }else{
-                    if self.imageArray.count == 3{
-                        let model = self.modelArray[selectedButtonTag]
-                        model.images = self.imageArray
-                        model.type = optionSelected
-                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                        nextBtnToEnable.sendActions(for: .touchUpInside)
-                    }
-                }
-            }
-            // enable next button in the array
-//            if selectedButtonTag != self.optionBtnsArray.count-1{
-//                let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-//                nextBtnToEnable.sendActions(for: .touchUpInside)
-//            }
+    fileprivate func addSelectedImagesToModel() {
+        if let optionSelected = self.selectedOption{
             
-            if self.modelArray.count == self.optionsArr.count{
-                self.nextBtn.isEnabled=true
+            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
+                optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF ||
+                optionSelected ==  AppConstants.SelectIDTYPES.STATEID ||
+                optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE ||
+                optionSelected == AppConstants.SelectIDTYPES.OTHER{
+                if self.imageArray.count == 1 {
+                    let model = SelectIDType.init(type: optionSelected, images: self.imageArray)//self.modelArray[selectedButtonTag]
+                    // model.images = self.imageArray
+                    //model.type = optionSelected
+                    self.modelArray.append(model)
+                    if selectedButtonTag != self.optionBtnsArray.count-1{
+                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                        nextBtnToEnable.sendActions(for: .touchUpInside)}
+                    // disable touch for image thumbnail
+                    self.disableImageThumbTouch()
+                }
             }else{
-                self.nextBtn.isEnabled=false
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                if self.imageArray.count == 3{
+                    //                        let model = self.modelArray[selectedButtonTag]
+                    //                        model.images = self.imageArray
+                    //                        model.type = optionSelected
+                    let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
+                    self.modelArray.append(model)
+                    let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                    nextBtnToEnable.sendActions(for: .touchUpInside)
+                    // disable touch for image thumbnail
+                    self.disableImageThumbTouch()
+                }
             }
         }
     }
+    
+    /// This function will check whether images of all scan ID has been uploaded or not. If so, then enable next button
+        func checkForCompletedStateOfScanId(){
+            
+            // check whether its ssn user
+            if let _ = self.signupData{
+                if (self.signupData.documents.virtualDocs.count == 1){
+                    // yes it is, then only one documnet upload is sufficient
+                    if self.modelArray.count == 1{
+                     //1 document has been uploaded
+                        self.nextBtn.isEnabled=true
+                    }
+                }else{
+                    // Non SSN User
+                    if self.modelArray.count == self.optionsArr.count{
+                        self.nextBtn.isEnabled=true
+                    }else{
+                        self.nextBtn.isEnabled=false
+                        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                    }
+                }
+            }
+        }
+            
+    func disableImageThumbTouch(){
+        self.uploadedImageBack.tappable  = false
+        self.uploadedImageExtra.tappable  = false
+        self.uploadedImageFront.tappable  = false
+    }
+}
+            
+            
 
 extension ScanIDNewViewController:ImagePreviewDelegate{
     func imageUpdatedFor(index: Int, image:UIImage){
-        print(index)
         self.imageArray.insert(image, at: index)
         self.refreshImages(image: image, index: index)
     }
@@ -528,10 +566,13 @@ extension ScanIDNewViewController:ImagePreviewDelegate{
     func refreshImages(image:UIImage,index:Int){
         switch index {
         case 0:
+            self.uploadedImageFront.tappable=true
             self.uploadedImageFront.image=image
         case 1:
+            self.uploadedImageBack.tappable=true
             self.uploadedImageBack.image=image
         case 2:
+            self.uploadedImageExtra.tappable=true
             self.uploadedImageExtra.image=image
         default:
             break

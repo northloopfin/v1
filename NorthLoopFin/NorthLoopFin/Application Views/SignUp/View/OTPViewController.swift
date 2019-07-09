@@ -25,6 +25,7 @@ class OTPViewController: BaseViewController {
     //var sendPresenter:PhoneVerificationStartPresenter!
 
     var presenter:TwoFAVerifyPresenter!
+    var resetPresenter:ResetPasswordPresenter!
     //These are used to know the mode of OTP verification
     var isPhoneSelectedForOTP:Bool = false
     var isEmailSelectedForOTP:Bool = false
@@ -45,7 +46,7 @@ class OTPViewController: BaseViewController {
         if isPhoneSelectedForOTP{
             self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
         }
-        if (isEmailSelectedForOTP || self.screenWhichInitiatedOTP == AppConstants.Screens.CHANGEPHONE){
+        if (isEmailSelectedForOTP || self.screenWhichInitiatedOTP == AppConstants.Screens.CHANGEPHONE || self.screenWhichInitiatedOTP == AppConstants.Screens.ChangePASSWORD){
             self.presenter.verifyTwoFARequest(sendToAPI: false, otp: OTPString)
         }
         
@@ -100,6 +101,7 @@ class OTPViewController: BaseViewController {
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled = false
         self.presenter = TwoFAVerifyPresenter.init(delegate: self)
+        self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
 //        self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
 //        self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.prepareView()
@@ -230,6 +232,12 @@ extension OTPViewController:TwoFAVerifyDelegates{
             self.moveToChangePhoneScreen()
         case AppConstants.Screens.CHANGEADDRESS :
             self.moveToChangeAddress()
+        case AppConstants.Screens.ChangePASSWORD :
+            // call reset password api
+            if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
+                self.resetPresenter.sendResetPasswordRequesy(username: currentUser.userEmail)
+            }
+            
         default:
             break
         }
@@ -251,5 +259,10 @@ extension OTPViewController:TwoFAVerifyDelegates{
         let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
         vc.screenThatInitiatedThisFlow = self.screenWhichInitiatedOTP
         self.navigationController?.pushViewController(vc, animated: false)
+    }
+}
+extension OTPViewController: ResetPasswordDelegate{
+    func didSentResetPasswordRequest(){
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.RESET_EMAIL_SENT.rawValue)
     }
 }

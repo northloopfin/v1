@@ -123,6 +123,11 @@ class RealmHelper{
 
                 infoToBeUpdated.zip = newInfo.zip
             }
+            if newInfo.arrivalDate != ""{
+                print("arrival updated")
+                
+                infoToBeUpdated.arrivalDate = newInfo.arrivalDate
+            }
         }
     }
     

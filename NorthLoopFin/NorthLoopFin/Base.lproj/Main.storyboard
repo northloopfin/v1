@@ -370,7 +370,7 @@ W1s 2Bx,UK</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Im-zp-ndt">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Im-zp-ndt">
                                 <rect key="frame" x="18" y="493" width="284" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -598,8 +598,28 @@ W1s 2Bx,UK</string>
                                                             <outlet property="delegate" destination="Zrh-81-Kal" id="f3O-6F-5q2"/>
                                                         </connections>
                                                     </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-e3-gaL">
+                                                        <rect key="frame" x="25" y="145" width="270" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Zrh-81-Kal" id="Lcy-UP-UCf"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-D6-Weq">
+                                                        <rect key="frame" x="25" y="207" width="270" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Zrh-81-Kal" id="j7R-b9-wli"/>
+                                                        </connections>
+                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-oK-gfL" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="203.5" width="270" height="45"/>
+                                                        <rect key="frame" x="25" y="277" width="270" height="45"/>
                                                         <color key="backgroundColor" red="0.63137254901960782" green="0.58431372549019611" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="3z6-Ea-scI"/>
@@ -626,34 +646,27 @@ W1s 2Bx,UK</string>
                                                             <action selector="nextClicked:" destination="Zrh-81-Kal" eventType="touchUpInside" id="CEg-d3-AQY"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-e3-gaL">
-                                                        <rect key="frame" x="25" y="145" width="270" height="50"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="Zrh-81-Kal" id="Lcy-UP-UCf"/>
-                                                        </connections>
-                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="bsU-oK-gfL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="41W-T7-zLc"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="top" secondItem="7S4-On-lFi" secondAttribute="top" constant="22" id="96i-YV-57b"/>
+                                                    <constraint firstItem="c7x-D6-Weq" firstAttribute="height" secondItem="bvv-e3-gaL" secondAttribute="height" id="CWA-os-uGd"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" id="EAw-XA-bZ7"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="top" secondItem="whs-du-iTR" secondAttribute="bottom" constant="11" id="EPz-tR-Hn8"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="leading" secondItem="7S4-On-lFi" secondAttribute="leading" constant="25" id="ETg-KF-q0W"/>
-                                                    <constraint firstAttribute="bottom" secondItem="bsU-oK-gfL" secondAttribute="bottom" constant="20" id="IIE-bV-Woc"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="KOP-Ew-9dk"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="height" secondItem="SI4-vm-lbj" secondAttribute="height" id="QAN-Dz-5qI"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="leading" secondItem="whs-du-iTR" secondAttribute="leading" id="RM5-tK-Tdj"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="top" secondItem="SI4-vm-lbj" secondAttribute="bottom" constant="12" id="Z1k-zK-tdD"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="ZPN-2H-Wgo"/>
+                                                    <constraint firstItem="c7x-D6-Weq" firstAttribute="top" secondItem="bvv-e3-gaL" secondAttribute="bottom" constant="12" id="Zpo-Ha-7yC"/>
+                                                    <constraint firstItem="c7x-D6-Weq" firstAttribute="trailing" secondItem="bvv-e3-gaL" secondAttribute="trailing" id="dhD-6A-n0L"/>
                                                     <constraint firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" constant="25" id="jbj-yx-8hl"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="height" secondItem="whs-du-iTR" secondAttribute="height" id="mvK-Px-Hk2"/>
+                                                    <constraint firstItem="c7x-D6-Weq" firstAttribute="leading" secondItem="bvv-e3-gaL" secondAttribute="leading" id="pBc-tN-bqo"/>
                                                     <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="qYx-Hr-h3p"/>
-                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="top" secondItem="bvv-e3-gaL" secondAttribute="bottom" constant="8.5" id="rq2-lb-Y9F"/>
+                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="top" secondItem="c7x-D6-Weq" secondAttribute="bottom" constant="20" id="qsz-Q6-wV1"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -760,6 +773,7 @@ W1s 2Bx,UK</string>
                     </view>
                     <connections>
                         <outlet property="DOBTextField" destination="SI4-vm-lbj" id="d0O-nV-keu"/>
+                        <outlet property="arrivalDate" destination="c7x-D6-Weq" id="5Mo-y7-Ebc"/>
                         <outlet property="customProgressView" destination="mNY-Cb-C2b" id="zsM-Kc-dUK"/>
                         <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>

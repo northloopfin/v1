@@ -190,7 +190,7 @@ extension SignUpStepFirst:SignupAuthDelegate{
        // let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
         let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "SEND|RECEIVE|TIER|1", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
         let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"")
-        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 2)
+        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 2, arrivalDate:Date().millisecondsSince1970)
        
         // move to next step of Sign Up
         self.moveToSignupStepSecond(data: signupFlowData)

@@ -93,6 +93,19 @@ class AppUtility {
         return date!
     }
     
+    class func datefromStringUsingCalender(date:String)->Date{
+        let calendar = Calendar.current
+        var dateComponents: DateComponents? = calendar.dateComponents([.hour, .minute, .second], from: Date())
+        
+        let separatedDate = date.components(separatedBy: "/")
+        dateComponents?.day = Int(separatedDate[0])
+        dateComponents?.month = Int(separatedDate[1])
+        dateComponents?.year = Int(separatedDate[2])
+        
+        let date: Date? = calendar.date(from: dateComponents!)
+        return date!
+    }
+    
     class func checkIfDateFallsAfterYear2014(dateStr: String)->Bool{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

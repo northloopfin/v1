@@ -35,7 +35,7 @@ class ResetPasswordPresenter: ResponseCallback{
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.delegate?.hideLoader()
         //save this user to local memory of app
-        let response = responseObject as! ResetPassword
+        //let response = responseObject as! ResetPassword
         self.delegate?.didSentResetPasswordRequest()
     }
     

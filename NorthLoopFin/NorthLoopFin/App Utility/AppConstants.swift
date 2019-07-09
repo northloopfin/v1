@@ -67,6 +67,7 @@ struct AppConstants{
         case ROUTING_NUMBER_NOT_VALID = "Please enter a valid Routing Number"
         case CARD_NOT_ACTIVE_YET = "Card Isn't Activated Yet"
         case CONFIRM_MESSAGE_TO_CHANGE_PHONE = "Are you sure, you want to change Phone?"
+        case CONFIRM_MESSAGE_TO_CHANGE_PASSWORD = "Are you sure, you want to change Password?"
         case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure, you want to change Address"
         case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
@@ -74,6 +75,7 @@ struct AppConstants{
         case NEWER_VERSION_AVAILABLE = "A newer version of this app is available. Do you want to update?"
         case APP_IS_UPTO_DATE = "App is upto date"
         case PROMOCODE_NOT_VALID = "Promocode not valid"
+        case SSN_NOT_VALID = "Please enter a valid SSN Number"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
@@ -105,6 +107,7 @@ struct AppConstants{
         case SETPIN = "Set Pin"
         case CHANGEPHONE = "ChangePhone"
         case CHANGEADDRESS = "ChangeAddress"
+        case ChangePASSWORD = "ChangePassword"
 
     }
     

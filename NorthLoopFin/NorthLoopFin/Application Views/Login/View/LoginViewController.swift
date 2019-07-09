@@ -147,10 +147,8 @@ class LoginViewController: BaseViewController {
             
             if isSuccess
             {
-                print("authenticated")
                 // when authentication successful then call login api
-                let retrievedString: String? = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)
-                print(retrievedString)
+                
                 self.login(username: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForEmail)!, password: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)!)
             }
             else

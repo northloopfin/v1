@@ -47,19 +47,62 @@ class CreateAccountV2ViewController: BaseViewController {
     }
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
-        if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
-            if (self.phoneTextField.text!.isEmpty){
+        self.validateNames()
+//        if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
+//            if (self.phoneTextField.text!.isEmpty){
+//                self.updateSignUpFormData()
+//            }else {
+//                if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
+//                    self.updateSignUpFormData()
+//                }else{
+//                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)
+//                }
+//            }
+//        }
+//        else{
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
+//        }
+    }
+    
+    func validatePhoneNumber(){
+        if !((self.phoneTextField.text?.isEmpty)!){
+            //its not empty so validate phone
+            if Validations.isValidPhone(phone: self.phoneTextField.text ?? ""){
+                // yes valid
                 self.updateSignUpFormData()
-            }else {
-                if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
-                    self.updateSignUpFormData()
-                }else{
-                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)
-                }
+            }else{
+                //show error
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)
+                return
             }
+        }else{
+            self.updateSignUpFormData()
         }
-        else{
+    }
+    
+    func validateSSN(){
+        if !((self.SSNTextField.text?.isEmpty)!){
+            //its not empty so validate phone
+            if Validations.isValidSSN(ssn: self.SSNTextField.text ?? ""){
+                // yes valid
+                self.validatePhoneNumber()
+            }else{
+                //show error
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.SSN_NOT_VALID.rawValue)
+                return
+            }
+        }else{
+            self.validatePhoneNumber()
+        }
+    }
+    
+    func validateNames(){
+        if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
+            self.validateSSN()
+            
+        }else{
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
+            return
         }
     }
     
@@ -145,7 +188,7 @@ class CreateAccountV2ViewController: BaseViewController {
             //search for citizenship in the list of countries
             let selectedCountryArr = self.countryWithCode.filter { $0.name == info.citizenShip}
             self.selectedCountry = selectedCountryArr[0]
-            
+            //self.countryCodeTextField.text = self.selectedCountry.dialCode
         }
     }
     
@@ -222,7 +265,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.SSNTextField.applyAttributesWithValues(placeholderText: "SSN (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.CitizenShipTextField.applyAttributesWithValues(placeholderText: "Citizenship*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.countryCodeTextField.applyAttributesWithValues(placeholderText: "Code*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.countryCodeTextField.applyAttributesWithValues(placeholderText: "Code", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.firstNameTextField.setLeftPaddingPoints(19)
         self.lastNameTextField.setLeftPaddingPoints(19)
@@ -269,6 +312,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.firstNameTextField.text = "Sunita"
         self.lastNameTextField.text = "Kumari"
         self.phoneTextField.text = "9716787066"
+        self.SSNTextField.text = "777772222"
 
     }
 }
@@ -280,7 +324,7 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
     
     // Methode will check for mandatory fields and perform accordingly
     func checkForMandatoryFields(){
-        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)! && !(self.countryCodeTextField.text?.isEmpty)!)
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)! )
         {
             self.nextBtn.isEnabled=true
         }

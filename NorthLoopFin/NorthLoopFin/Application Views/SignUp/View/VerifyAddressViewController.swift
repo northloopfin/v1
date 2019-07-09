@@ -50,7 +50,7 @@ class VerifyAddressViewController: BaseViewController {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        self.updateSignupFlowData()
+        
         
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
@@ -62,7 +62,7 @@ class VerifyAddressViewController: BaseViewController {
                     let jsonString = String(data: jsonData, encoding: .utf8)
                     //print(jsonString!)
                     let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
-                    //print(dic)
+                    print(dic)
                     //all fine with jsonData here
                     self.changeAddressPresnter.sendChangeAddressRequest(requestDic: dic)
                 } catch {
@@ -72,7 +72,7 @@ class VerifyAddressViewController: BaseViewController {
             }
         }else{
             self.persistDataRealm()
-
+            self.updateSignupFlowData()
             UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
             let jsonEncoder = JSONEncoder()
             do {
@@ -105,6 +105,11 @@ class VerifyAddressViewController: BaseViewController {
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
         self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
+        if let _ =  self.screenThatInitiatedThisFlow{
+            if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS{
+                self.customProgressView.isHidden = true
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -217,11 +222,11 @@ class VerifyAddressViewController: BaseViewController {
         self.doneBtn.isEnabled=false
     }
     func setSampleData(){
-        self.streetAddress.text = "1"
-        self.houseNumbertextfield.text="Market St."
-        self.cityTextfield.text = "San Francisco"
-        self.textState.text="CA"
-        self.zipTextfield.text="94105"
+        self.streetAddress.text = "100 Via Floresta Drive"
+        self.houseNumbertextfield.text="100 Via Floresta Dr Boca Raton FL 33487"
+        self.cityTextfield.text = "Boca Raton"
+        self.textState.text="FL"
+        self.zipTextfield.text="33487"
     }
 }
 //MARK: UITextField Delegates

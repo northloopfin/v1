@@ -23,7 +23,7 @@ class TransactionListPresenter: ResponseCallback{
     //MARK:- Methods to make decision and call  Api.
     
     func sendTransactionListRequest(){
-        self.homeDelegate?.showLoader()
+        //self.homeDelegate?.showLoader()
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = TransactionListRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
@@ -62,8 +62,12 @@ class TransactionListPresenter: ResponseCallback{
         let dic  = Dictionary.init(grouping: data) { (element) -> Date in
             element.date
         }
+        
         // sort keys here
-        let sortedKeys = dic.keys.sorted()
+        let sortedKeys = dic.keys.sorted { (e1, e2) -> Bool in
+            e1>e2
+        }
+        
         sortedKeys.forEach { (key) in
             //print(key)
             let values = dic[key]

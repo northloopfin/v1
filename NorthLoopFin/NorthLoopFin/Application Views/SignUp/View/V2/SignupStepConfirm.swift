@@ -16,6 +16,8 @@ class SignupStepConfirm: BaseViewController {
     @IBOutlet weak var passportTextField: UITextField!
     @IBOutlet weak var DOBTextField: UITextField!
     @IBOutlet weak var universityTextField: UITextField!
+    @IBOutlet weak var arrivalDate: UITextField!
+
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var customProgressView: ProgressView!
 
@@ -26,7 +28,6 @@ class SignupStepConfirm: BaseViewController {
     var universities:[String]=[]
     
     @IBAction func nextClicked(_ sender: Any) {
-        
         self.validateForm()
     }
     //validation form here
@@ -53,6 +54,10 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.university=self.universityTextField.text!
             self.signupFlowData.documents.email = self.signupFlowData.email
             self.signupFlowData.documents.phoneNumber = self.signupFlowData.phoneNumbers[0]
+            // get milliseconds from date entered for arrival
+            let arrivaleDate = AppUtility.datefromStringUsingCalender(date: self.arrivalDate.text ?? "")
+            self.signupFlowData.arrivalDate = arrivaleDate.millisecondsSince1970
+            print(arrivaleDate.millisecondsSince1970)
             let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
             self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
             self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
@@ -97,10 +102,13 @@ class SignupStepConfirm: BaseViewController {
         self.customProgressView.progressView.setProgress(0.17*5, animated: true)
         self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
         self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.arrivalDate.inputView = UIView.init(frame: CGRect.zero)
+        self.arrivalDate.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.passportTextField.textColor = Colors.DustyGray155155155
         self.DOBTextField.textColor = Colors.DustyGray155155155
+        self.arrivalDate.textColor = Colors.DustyGray155155155
         self.universityTextField.textColor = Colors.DustyGray155155155
         
         
@@ -108,6 +116,7 @@ class SignupStepConfirm: BaseViewController {
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
         self.passportTextField.font = AppFonts.textBoxCalibri16
         self.DOBTextField.font = AppFonts.textBoxCalibri16
+        self.arrivalDate.font = AppFonts.textBoxCalibri16
         self.universityTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
         
@@ -116,6 +125,7 @@ class SignupStepConfirm: BaseViewController {
     func updateTextFieldUI(){
         self.passportTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.DOBTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.arrivalDate.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.universityTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         //self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
@@ -126,13 +136,14 @@ class SignupStepConfirm: BaseViewController {
         let textfieldCorber = 5.0
         
         self.passportTextField.applyAttributesWithValues(placeholderText: "Passport Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth(dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth (dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.universityTextField.applyAttributesWithValues(placeholderText: "University*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.passportTextField.setLeftPaddingPoints(19)
         self.DOBTextField.setLeftPaddingPoints(19)
-        //self.phoneTextField.setLeftPaddingPoints(19)
+        self.arrivalDate.setLeftPaddingPoints(19)
         self.universityTextField.setLeftPaddingPoints(19)
     }
     
@@ -150,6 +161,7 @@ class SignupStepConfirm: BaseViewController {
         let info:BasicInfo = BasicInfo()
         info.passportNumber=self.passportTextField.text ?? ""
         info.DOB=self.DOBTextField.text ?? ""
+        info.arrivalDate = self.arrivalDate.text ?? ""
         info.university=self.universityTextField.text ?? ""
         let result = RealmHelper.retrieveBasicInfo()
         print(result)
@@ -167,34 +179,45 @@ class SignupStepConfirm: BaseViewController {
             self.passportTextField.text = info.passportNumber
             self.DOBTextField.text = info.DOB
             self.universityTextField.text = info.university
+            self.arrivalDate.text = info.arrivalDate
             self.checkForMandatoryFields()
         }
         self.setSampleData()
     }
     
     //Methode to show date picker
-    func showDatePicker(){
+    func showDatePicker(tag: Int){
         //Format Date
         datePicker.datePickerMode = .date
         
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker(view:)));
+        doneButton.tag = tag
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         self.DOBTextField.inputAccessoryView = toolbar
         self.DOBTextField.inputView = datePicker
+        self.arrivalDate.inputAccessoryView = toolbar
+        self.arrivalDate.inputView = datePicker
     }
     
-    @objc func donedatePicker(){
+    @objc func donedatePicker(view:UIBarButtonItem){
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        self.DOBTextField.text = formatter.string(from: datePicker.date)
+        if view.tag == 0{
+            self.DOBTextField.text = formatter.string(from: datePicker.date)
+
+        }else{
+            self.arrivalDate.text = formatter.string(from: datePicker.date)
+
+        }
+        //view.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
@@ -217,7 +240,7 @@ extension SignupStepConfirm:UITextFieldDelegate{
     
     //check for mandatory fields
     func checkForMandatoryFields(){
-        if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)!
+        if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)! && !(self.arrivalDate.text?.isEmpty)!
             )
         {
             self.nextBtn.isEnabled=true
@@ -226,8 +249,9 @@ extension SignupStepConfirm:UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.DOBTextField{
-            
-            self.showDatePicker()
+            self.showDatePicker(tag: 0)
+        }else if textField == self.arrivalDate{
+            self.showDatePicker(tag: 1)
         }
     }
 //    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

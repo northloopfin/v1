@@ -23,7 +23,7 @@ class TransferConfirmationViewController: BaseViewController {
         // check for minimum balance
         if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
             print(currentUser.amount)
-            if (Double(self.amount)?.isLess(than: currentUser.amount))!{
+            if (currentUser.amount.isLess(than: Double(self.amount) ?? 0.0)){
                 //Insufficient Balance show popup
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.INSUFFICIENT_BALANCE.rawValue)
             }else{
