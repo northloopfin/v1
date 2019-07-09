@@ -39,7 +39,7 @@ class VerifyAddressViewController: BaseViewController {
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
             let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
-            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text! + " " + self.houseNumbertextfield.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country)
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country,houseNumber: self.houseNumbertextfield.text!)
 
             if let _  = self.signupFlowData{
                 self.signupFlowData.address = addess
@@ -78,7 +78,7 @@ class VerifyAddressViewController: BaseViewController {
             do {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
-               // print(jsonString!)
+                print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.presenter.startSignUpSynapse(requestDic: dic)

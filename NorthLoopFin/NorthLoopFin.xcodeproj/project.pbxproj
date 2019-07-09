@@ -351,6 +351,8 @@
 		4BE8338922CB178300765F05 /* CheckUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */; };
 		4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4C35322B0C42D00743580 /* DateExtension.swift */; };
 		4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */; };
+		4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4BF9968C22D45B3F009071CA /* ConsumerCardAgreement.pdf */; };
+		4BF9968F22D45F10009071CA /* ConsumerDepositAgreement.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4BF9968E22D45F10009071CA /* ConsumerDepositAgreement.pdf */; };
 		4BF9D77322CC8D4A00F8EDBA /* PromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */; };
 		4BF9D77522CC9C2B00F8EDBA /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9D77422CC9C2B00F8EDBA /* CheckBox.swift */; };
 		4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFA951822CDF1F200E16B6D /* ProgressView.swift */; };
@@ -383,9 +385,7 @@
 		4BFFE3CF22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3CE22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift */; };
 		4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3D022BB4B7300D85610 /* RangeExtension.swift */; };
 		4BFFE3D322BB50AD00D85610 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3D222BB50AD00D85610 /* AgreementViewController.swift */; };
-		4BFFE3DF22BB693300D85610 /* CardAgreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DC22BB693300D85610 /* CardAgreement.html */; };
 		4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DD22BB693300D85610 /* AccountAgreement.html */; };
-		4BFFE3E122BB693300D85610 /* DepositAgreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DE22BB693300D85610 /* DepositAgreement.html */; };
 		61B88BE40F88EDFCFD2B93BD /* Pods_NorthLoopFinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */; };
 		E6A1ACCA12D73B5988A6E8ED /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */; };
 		EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */; };
@@ -766,6 +766,8 @@
 		4BE8338822CB178300765F05 /* CheckUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateResponse.swift; sourceTree = "<group>"; };
 		4BF4C35322B0C42D00743580 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		4BF9245A22C9F55E002188BA /* GetPreferencesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPreferencesData.swift; sourceTree = "<group>"; };
+		4BF9968C22D45B3F009071CA /* ConsumerCardAgreement.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ConsumerCardAgreement.pdf; sourceTree = "<group>"; };
+		4BF9968E22D45F10009071CA /* ConsumerDepositAgreement.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ConsumerDepositAgreement.pdf; sourceTree = "<group>"; };
 		4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeViewController.swift; sourceTree = "<group>"; };
 		4BF9D77422CC9C2B00F8EDBA /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		4BFA951822CDF1F200E16B6D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -798,9 +800,7 @@
 		4BFFE3CE22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITapGestureRecogniserExtension.swift; sourceTree = "<group>"; };
 		4BFFE3D022BB4B7300D85610 /* RangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeExtension.swift; sourceTree = "<group>"; };
 		4BFFE3D222BB50AD00D85610 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
-		4BFFE3DC22BB693300D85610 /* CardAgreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CardAgreement.html; sourceTree = "<group>"; };
 		4BFFE3DD22BB693300D85610 /* AccountAgreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AccountAgreement.html; sourceTree = "<group>"; };
-		4BFFE3DE22BB693300D85610 /* DepositAgreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DepositAgreement.html; sourceTree = "<group>"; };
 		4FE18586CD8D3F50E9C70CA2 /* Pods-NorthLoopFinTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.staging.xcconfig"; sourceTree = "<group>"; };
 		74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2277,9 +2277,9 @@
 		4BFFE3DB22BB691A00D85610 /* LocalHtml */ = {
 			isa = PBXGroup;
 			children = (
+				4BF9968E22D45F10009071CA /* ConsumerDepositAgreement.pdf */,
+				4BF9968C22D45B3F009071CA /* ConsumerCardAgreement.pdf */,
 				4BFFE3DD22BB693300D85610 /* AccountAgreement.html */,
-				4BFFE3DC22BB693300D85610 /* CardAgreement.html */,
-				4BFFE3DE22BB693300D85610 /* DepositAgreement.html */,
 			);
 			name = LocalHtml;
 			sourceTree = "<group>";
@@ -2446,13 +2446,13 @@
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
-				4BFFE3E122BB693300D85610 /* DepositAgreement.html in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
-				4BFFE3DF22BB693300D85610 /* CardAgreement.html in Resources */,
+				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
 				1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */,
 				1DF64E2521E666F9008774CE /* SideMenuTableCell.xib in Resources */,
+				4BF9968F22D45F10009071CA /* ConsumerDepositAgreement.pdf in Resources */,
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
 				1D180D6A229D349800FC3390 /* northloop.gif in Resources */,
 				4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */,

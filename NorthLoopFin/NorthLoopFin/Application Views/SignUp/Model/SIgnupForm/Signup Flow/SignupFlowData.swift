@@ -16,7 +16,8 @@ class SignupFlowData: Codable {
     var documents: SignupFlowDocument
     var suppID: String
     var cipTag: Int
-    var arrivalDate:Int64
+    var arrivalDate:String
+    var deviceType:String
     
     enum CodingKeys: String, CodingKey {
         //case userID = "user_id"
@@ -28,9 +29,10 @@ class SignupFlowData: Codable {
         case suppID = "supp_id"
         case cipTag = "cip_tag"
         case arrivalDate = "arrival_date"
+        case deviceType = "device_type"
     }
     
-    init(userID: String, userIP: String, email: String,university: String,passport: String,address:SignupFlowAddress, phoneNumbers: [String], legalNames: [String], password: String, documents: SignupFlowDocument, suppID: String, cipTag: Int, arrivalDate:Int64) {
+    init(userID: String, userIP: String, email: String,university: String,passport: String,address:SignupFlowAddress, phoneNumbers: [String], legalNames: [String], password: String, documents: SignupFlowDocument, suppID: String, cipTag: Int, arrivalDate:String,deviceType:String) {
         //self.userID = userID
         self.userIP = userIP
         self.email = email
@@ -44,5 +46,6 @@ class SignupFlowData: Codable {
         self.suppID = suppID
         self.cipTag = cipTag
         self.arrivalDate = arrivalDate
+        self.deviceType = deviceType
     }
 }

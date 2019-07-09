@@ -56,8 +56,7 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.documents.phoneNumber = self.signupFlowData.phoneNumbers[0]
             // get milliseconds from date entered for arrival
             let arrivaleDate = AppUtility.datefromStringUsingCalender(date: self.arrivalDate.text ?? "")
-            self.signupFlowData.arrivalDate = arrivaleDate.millisecondsSince1970
-            print(arrivaleDate.millisecondsSince1970)
+            self.signupFlowData.arrivalDate = String(arrivaleDate.millisecondsSince1970)
             let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
             self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
             self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
@@ -254,22 +253,11 @@ extension SignupStepConfirm:UITextFieldDelegate{
             self.showDatePicker(tag: 1)
         }
     }
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        if textField == self.universityTextField
-//        {
-//            //IQKeyboardManager.shared.resignFirstResponder()
-//
-//            self.dropDown.show()
-//            return false
-//        }
-//        else
-//        {
-//            return true
-//        }
-//    }
+
 }
 
 extension SignupStepConfirm: FetchUniversityDelegates{
+    //remove once confirmed
     func didFetchedUniversityList(data:[String]) {
         self.universities=data
         self.dropDown.dataSource = self.universities

@@ -18,7 +18,9 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var loginLbl: UIButtonWithSpacing!
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
-    @IBOutlet weak var agreementLbl: LabelWithLetterSpace!
+    @IBOutlet weak var termsAgreementLbl: LabelWithLetterSpace!
+    @IBOutlet weak var cardDepositAgreementLbl: LabelWithLetterSpace!
+
 
     var presenter: SignupAuthPresenter!
     @IBOutlet weak var customProgressView: ProgressView!
@@ -69,8 +71,11 @@ class SignUpStepFirst: BaseViewController {
     func prepareView(){
         self.customProgressView.progressView.setProgress(0.17*1, animated: true)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
-        self.agreementLbl.addGestureRecognizer(tap)
-        self.agreementLbl.isUserInteractionEnabled = true
+        let cardDepositTap = UITapGestureRecognizer(target: self, action: #selector(cardTapLabel(tap:)))
+        self.termsAgreementLbl.addGestureRecognizer(tap)
+        self.termsAgreementLbl.isUserInteractionEnabled = true
+        self.cardDepositAgreementLbl.addGestureRecognizer(cardDepositTap)
+        self.cardDepositAgreementLbl.isUserInteractionEnabled = true
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.paswwordTextField.textColor = Colors.DustyGray155155155
@@ -91,23 +96,26 @@ class SignUpStepFirst: BaseViewController {
     
     @objc func tapLabel(tap: UITapGestureRecognizer) {
         
-        if let rangeForDeposit = self.agreementLbl.text?.range(of: "Deposit")?.nsRange{
-            if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForDeposit) {
+        if let rangeForDeposit = self.termsAgreementLbl.text?.range(of: "Terms of Service and Privacy Policy")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.termsAgreementLbl, inRange: rangeForDeposit) {
                             // Substring tapped
                 //open deposit agreement
-                self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.DEPOSIT)
-            }
-        }
-        
-        if let rangeForAccount = self.agreementLbl.text?.range(of: "Account")?.nsRange{
-            if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForAccount) {
-                            // Substring tapped
                 self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.ACCOUNT)
             }
         }
-        if let rangeForCard = self.agreementLbl.text?.range(of: "Card Agreement")?.nsRange{
-            if tap.didTapAttributedTextInLabel(label: self.agreementLbl, inRange: rangeForCard) {
-                            // Substring tapped
+    }
+    
+    @objc func cardTapLabel(tap: UITapGestureRecognizer) {
+        
+        if let rangeForAccount = self.cardDepositAgreementLbl.text?.range(of: "Deposit Agreement")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.cardDepositAgreementLbl, inRange: rangeForAccount) {
+                // Substring tapped
+                self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.DEPOSIT)
+            }
+        }
+        if let rangeForCard = self.cardDepositAgreementLbl.text?.range(of: "Cardholder Agreement")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.cardDepositAgreementLbl, inRange: rangeForCard) {
+                // Substring tapped
                 self.navigateToAgreement(agreementType: AppConstants.AGREEMENTTYPE.CARD)
             }
         }
@@ -183,17 +191,14 @@ extension SignUpStepFirst:SignupAuthDelegate{
         UserDefaults.saveToUserDefault(completeToken as AnyObject, key: AppConstants.UserDefaultKeyForAccessToken)
         UserDefaults.saveToUserDefault(self.emailTextField.text! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
         
-        // save password entered to KeyChain //remove once client confirm
-//        if KeychainWrapper.standard.set(self.confirmPassTextField.text!, forKey: AppConstants.KeyChainKeyForPassword){
-//            print("Password Saved to Keychain")
-//        }
-       // let emptyAlDoc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: "", documentType: "")
+
         let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "SEND|RECEIVE|TIER|1", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
-        let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"")
-        let signupFlowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "122eddfgbeafrfvbbb", cipTag: 2, arrivalDate:Date().millisecondsSince1970)
+        let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"",houseNumber:"")
+
+        let signupflowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "Test", cipTag: 2, arrivalDate: String(Date().millisecondsSince1970), deviceType: "IOS")
        
         // move to next step of Sign Up
-        self.moveToSignupStepSecond(data: signupFlowData)
+        self.moveToSignupStepSecond(data: signupflowData)
         
     }
     

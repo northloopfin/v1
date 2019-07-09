@@ -114,7 +114,7 @@ class CreateAccountV2ViewController: BaseViewController {
         if (self.phoneTextField.text?.isEmpty)!{
             phoneNumber="5555555555"
         }else{
-            phoneNumber = self.phoneTextField.text!
+            phoneNumber = self.countryCodeTextField.text!+self.phoneTextField.text!
         }
         
         if let data = self.signupFlowData{

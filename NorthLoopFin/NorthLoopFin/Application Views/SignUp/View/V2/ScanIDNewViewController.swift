@@ -427,8 +427,8 @@ class ScanIDNewViewController: BaseViewController {
                     // compress here
                     try image.compressImage(500, completion: { (image, compressRatio) in
                         let base64Image=image.toBase64();
-                        //let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
-                        let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+                        let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        //let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
                         //print(fullBase64String)
                         var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")//scanIDModel.type.rawValue)
                         //check for ID Type and assign document type accordingly
