@@ -48,20 +48,6 @@ class CreateAccountV2ViewController: BaseViewController {
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
         self.validateNames()
-//        if (Validations.isValidName(value: self.firstNameTextField.text!) && Validations.isValidName(value: self.lastNameTextField.text!)){
-//            if (self.phoneTextField.text!.isEmpty){
-//                self.updateSignUpFormData()
-//            }else {
-//                if (Validations.isValidPhone(phone: self.phoneTextField.text!)){
-//                    self.updateSignUpFormData()
-//                }else{
-//                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.PHONE_NOT_VALID.rawValue)
-//                }
-//            }
-//        }
-//        else{
-//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.NAME_NOT_VALID.rawValue)
-//        }
     }
     
     func validatePhoneNumber(){

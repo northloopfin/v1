@@ -169,6 +169,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         
         //self.addressLbl.text = data.data.to.meta.address
         self.amtLbl.text = "$"+String(data.data.amount.amount)
+        self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
         //self.transactionPurposeLbl.text =
         //let url = URL(string: data.data.to.meta.merchantLogo)
         //self.transactionImg.kf.setImage(with:url)

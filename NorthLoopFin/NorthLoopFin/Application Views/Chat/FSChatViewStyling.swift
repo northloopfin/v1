@@ -66,10 +66,10 @@ open class FSChatViewStyling: NSObject{
         
         // Customize the loader appearence
         ZDCLoadingView.appearance().loadingLabelFont = UIFont.boldSystemFont(ofSize: 16.0)
-        ZDCLoadingView.appearance().loadingLabelTextColor = Colors.Taupe776857
-        ZDCLoadingErrorView.appearance().messageColor = Colors.Taupe776857
+        ZDCLoadingView.appearance().loadingLabelTextColor = Colors.Amour244233239
+        ZDCLoadingErrorView.appearance().messageColor = Colors.Amour244233239
         ZDCLoadingErrorView.appearance().messageFont = UIFont.boldSystemFont(ofSize: 14.0)
-        ZDCLoadingErrorView.appearance().titleColor = Colors.Taupe776857
+        ZDCLoadingErrorView.appearance().titleColor = Colors.Amour244233239
         ZDCLoadingErrorView.appearance().titleFont = UIFont.boldSystemFont(ofSize: 16.0)
         
         insets = UIEdgeInsets(top: 10.0, left: 70.0, bottom: 10.0, right: 20.0)
@@ -82,10 +82,10 @@ open class FSChatViewStyling: NSObject{
         ZDCVisitorChatCell.appearance().bubbleInsets = NSValue(uiEdgeInsets: insets)
         insets = UIEdgeInsets(top: 12.0, left: 15.0, bottom: 12.0, right: 15.0)
         ZDCVisitorChatCell.appearance().textInsets = NSValue(uiEdgeInsets: insets)
-        ZDCVisitorChatCell.appearance().bubbleColor = Colors.Taupe776857
+        ZDCVisitorChatCell.appearance().bubbleColor = Colors.PurpleColor17673149
         ZDCVisitorChatCell.appearance().bubbleCornerRadius = 3.0
         ZDCVisitorChatCell.appearance().textAlignment = NSTextAlignment.left.rawValue as NSNumber
-        ZDCVisitorChatCell.appearance().bubbleBorderColor = Colors.Taupe776857
+        ZDCVisitorChatCell.appearance().bubbleBorderColor = Colors.PurpleColor17673149
         ZDCVisitorChatCell.appearance().textColor = UIColor.white
         ZDCVisitorChatCell.appearance().textFont = UIFont.systemFont(ofSize: 14.0)
         ZDCVisitorChatCell.appearance().unsentTextColor = UIColor.white
@@ -98,7 +98,7 @@ open class FSChatViewStyling: NSObject{
         insets = UIEdgeInsets(top: 12.0, left: 15.0, bottom: 12.0, right: 15.0)
         ZDCAgentChatCell.appearance().textInsets = NSValue(uiEdgeInsets: insets)
         ZDCAgentChatCell.appearance().bubbleColor = Colors.whiteColor
-        ZDCAgentChatCell.appearance().bubbleBorderColor = Colors.Taupe776857
+        ZDCAgentChatCell.appearance().bubbleBorderColor = Colors.Amour244233239
         ZDCAgentChatCell.appearance().bubbleCornerRadius = 3.0
         ZDCAgentChatCell.appearance().textAlignment = NSTextAlignment.left.rawValue as NSNumber
         ZDCAgentChatCell.appearance().textColor = Colors.Taupe776857
@@ -150,7 +150,7 @@ open class FSChatViewStyling: NSObject{
         ZDCChat.instance().chatViewController.automaticallyAdjustsScrollViewInsets = false
         ZDCChat.instance().chatViewController.registerForKeyboardNotifications()
             ZDCChat.instance().chatViewController.requiresNavBar = true
-        ZDCChat.instance()?.chatViewController.navigationController?.navigationBar.tintColor = Colors.Taupe776857
+        ZDCChat.instance()?.chatViewController.navigationController?.navigationBar.tintColor = Colors.Amour244233239
         ZDCChat.instance()?.chatViewController.navigationController?.navigationBar.barTintColor = Colors.ivory255254247
     }
     

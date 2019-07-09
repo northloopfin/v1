@@ -10,7 +10,7 @@ import Foundation
 
 struct TransactionListLocation: Codable {
     let addressCity, addressCountryCode, addressPostalCode, addressSubdivision: String
-    let lat, lon: Int
+    let lat, lon: Double
     
     enum CodingKeys: String, CodingKey {
         case addressCity = "address_city"
@@ -25,9 +25,8 @@ struct TransactionListLocation: Codable {
         addressCountryCode = try values.decodeIfPresent(String.self, forKey: .addressCountryCode) ?? ""
         addressPostalCode = try values.decodeIfPresent(String.self, forKey: .addressPostalCode) ?? ""
         addressSubdivision = try values.decodeIfPresent(String.self, forKey: .addressSubdivision) ?? ""
-        lat = try values.decodeIfPresent(Int.self, forKey: .lat) ?? 0
-        lon = try values.decodeIfPresent(Int.self, forKey: .lon) ?? 0
-
+        lat = try values.decodeIfPresent(Double.self, forKey: .lat) ?? 0.0
+        lon = try values.decodeIfPresent(Double.self, forKey: .lon) ?? 0.0
 
     }
 }

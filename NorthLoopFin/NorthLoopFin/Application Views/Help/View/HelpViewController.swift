@@ -13,10 +13,12 @@ import IQKeyboardManagerSwift
 class HelpViewController: BaseViewController {
     @IBOutlet weak var containerView: CommonTable!
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
+    var twoFApresenter:TwoFAPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.twoFApresenter = TwoFAPresenter.init(delegate: self)
     }
     override func viewDidLayoutSubviews() {
         let shadowOffst = CGSize.init(width: 0, height: -55)
@@ -48,7 +50,9 @@ extension HelpViewController:CommonTableDelegate{
         case 0:
             self.moveToFAQ()
         case 1:
-            self.openZendeskChat()
+            // check for biometric
+            //self.openZendeskChat()
+            self.initiateBiometric()
         case 2:
             self.moveToATMFinder()
         case 3:
@@ -75,9 +79,6 @@ extension HelpViewController:CommonTableDelegate{
         self.navigationController?.pushViewController(vc, animated: false)
     }
     func moveToLegalStuff(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LegalStuffViewController") as! LegalStuffViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
     
@@ -86,34 +87,46 @@ extension HelpViewController:CommonTableDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ATMFinderViewController") as! ATMFinderViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
+    
+    func initiateBiometric(){
+        if BioMetricHelper.isDeviceSupportedforAuth(){
+            //yes
+            BioMetricHelper.isValidUer(reasonString: "Authenticate for Northloop") {[unowned self] (isSuccess, stringValue) in
+                if isSuccess
+                {
+                    self.openZendeskChat()
+                }
+                else
+                {
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: stringValue?.description ?? "invalid")
+                }
+            }
+        }else{
+            //call 2fa and move to OTP screen
+            self.twoFApresenter.sendTwoFARequest(sendToAPI: false)
+            
+        }
+    }
     func openZendeskChat(){
         // Pushes the chat widget onto the navigation controller
-        
-        //FSChatViewStyling.chatViewStyling()
         FSChatViewStyling.startTheChat(self.navigationController!, vc: self)
-        
     }
-
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-        //IQKeyboardManager.shar
-//        ZDCChat.start(in: self.navigationController) { (config) in
-//            config?.preChatDataRequirements.name = ZDCPreChatDataRequirement.notRequired
-//            config!.preChatDataRequirements.email = ZDCPreChatDataRequirement.notRequired
-//            config?.preChatDataRequirements.phone = ZDCPreChatDataRequirement.notRequired
-//            config?.preChatDataRequirements.department = ZDCPreChatDataRequirement.notRequired
-//            config?.preChatDataRequirements.message = ZDCPreChatDataRequirement.notRequired
-//            config?.emailTranscriptAction = ZDCEmailTranscriptAction.neverSend
-//        }
-//
-//        ZDCChatUI.appearance().backChatButtonImage = "Back"
-//        ZDCChatUI.appearance().chatBackgroundAnchor = ZDCChatBackgroundAnchor.top.rawValue as NSNumber
-//        ZDCChatUI.appearance().chatBackgroundImage="oval"
-//
- 
     
     @objc func popController(){
-       // self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: false)
+    }
+}
+
+extension HelpViewController:TwoFADelegates{
+    func didGetOTP() {
+        //move to OTP screen
+        self.moveToOTP()
+    }
+    
+    func moveToOTP(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        vc.screenWhichInitiatedOTP = AppConstants.Screens.CHAT
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

@@ -237,7 +237,8 @@ extension OTPViewController:TwoFAVerifyDelegates{
             if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
                 self.resetPresenter.sendResetPasswordRequesy(username: currentUser.userEmail)
             }
-            
+        case AppConstants.Screens.CHAT :
+            FSChatViewStyling.startTheChat(self.navigationController!, vc: self)
         default:
             break
         }

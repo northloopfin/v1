@@ -76,7 +76,7 @@ class MakeTransferViewController: BaseViewController {
         self.amountTextField.font=AppFonts.textBoxCalibri16
         
         self.nicknameTextField.font=AppFonts.textBoxCalibri16
-        self.nextBtn.titleLabel!.font=AppFonts.calibri15
+        self.nextBtn.titleLabel!.font=AppFonts.btnTitleCalibri18
         self.configureTextFields()
     }
     func configureTextFields(){
