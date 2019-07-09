@@ -145,6 +145,9 @@ extension SettingsViewController:SettingsDelegates{
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true,isSelected: data.transaction))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true,isSelected: data.dealsOffers))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false,isSelected: data.dealsOffers))
+        self.isLowAlertOn = data.lowBalance
+        self.isTransactionOn = data.transaction
+        self.isDealsOffersOn = data.dealsOffers
         self.optionsTableView.reloadData()
     }
     

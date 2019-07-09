@@ -68,4 +68,11 @@ class Validations {
         let valid = NSPredicate(format: "SELF MATCHES %@", phoneRegex).evaluate(with: routingNumber)
         return valid
     }
+    
+    class func isValidSSN(ssn:String) -> Bool{
+        if ssn.count == 9{
+            return true
+        }
+        return false
+    }
 }

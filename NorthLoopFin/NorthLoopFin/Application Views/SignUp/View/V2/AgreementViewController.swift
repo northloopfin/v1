@@ -17,7 +17,7 @@ class AgreementViewController: BaseViewController, WKNavigationDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
-        self.setNavigationBarTitle(title: "Agreement")
+        self.setNavigationBarTitle(title: "")
         webView.loadFileURL(getURLToShow(), allowingReadAccessTo: getURLToShow())
         //let request = URLRequest(url: getURLToShow())
         //webView.load(request)
@@ -30,9 +30,9 @@ class AgreementViewController: BaseViewController, WKNavigationDelegate{
         case .ACCOUNT:
             url = Bundle.main.url(forResource: "AccountAgreement", withExtension: "html")!
         case .DEPOSIT:
-            url = Bundle.main.url(forResource: "DepositAgreement", withExtension: "html")!
+            url = Bundle.main.url(forResource: "ConsumerDepositAgreement", withExtension: "pdf")!
         case .CARD:
-            url = Bundle.main.url(forResource: "CardAgreement", withExtension: "html")!
+            url = Bundle.main.url(forResource: "ConsumerCardAgreement", withExtension: "pdf")!
         default:
             break
         }
