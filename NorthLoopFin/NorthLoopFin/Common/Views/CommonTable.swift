@@ -49,7 +49,7 @@ extension CommonTable:UITableViewDelegate,UITableViewDataSource{
         
         let cell: CommonTableCell = tableView.dequeueReusableCell(withIdentifier: "CommonTableCell") as! CommonTableCell
         let backgroundView = UIView()
-        backgroundView.backgroundColor = Colors.Cameo213186154
+        backgroundView.backgroundColor = Colors.PurpleColor17673149
         cell.selectedBackgroundView = backgroundView
         cell.bindData(data: dataSource[indexPath.row])
         return cell
