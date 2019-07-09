@@ -80,7 +80,7 @@ class LoginViewController: BaseViewController {
         self.loginBtn.isEnabled=false
         self.mainTitleLbl.textColor=Colors.MainTitleColor
         self.mainTitleLbl.font=AppFonts.mainTitleCalibriBold25
-        self.orLbl.textColor=Colors.Taupe776857
+        self.orLbl.textColor=Colors.PurpleColor17673149
         self.orLbl.font=AppFonts.calibri15
         self.emailTextField.textColor = Colors.DustyGray155155155
         self.passwordTextfield.textColor=Colors.DustyGray155155155
