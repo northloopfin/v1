@@ -46,7 +46,6 @@ class MyCardTableCell: UITableViewCell {
             let shadowColor = Colors.PurpleColor17673149
             self.lock.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
             lock.isHidden=false
-            print(data.isSwitchSelected)
             lock.setOn(data.isSwitchSelected, animated: true)
 
         }else{

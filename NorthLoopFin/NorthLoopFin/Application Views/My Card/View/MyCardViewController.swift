@@ -123,14 +123,20 @@ extension MyCardViewController:CardDelegates{
         print(data.data.status)
         self.dailyTransactionLimit = data.data.preferences.dailyTransactionLimit
         self.dailyATMWithdrawalLimit = data.data.preferences.dailyATMWithdrawalLimit
+        self.isSpendAbroad = data.data.preferences.allowForeignTransactions
         
         if (data.data.status == "ACTIVE"){
             self.isLockCard = false
-            var option:MyCardOtionsModel = self.data[0]
-            option.isSwitchSelected = self.isLockCard
-            
-            var optionSpendAbroad : MyCardOtionsModel = self.data[3]
-            optionSpendAbroad.isSwitchSelected = data.data.preferences.allowForeignTransactions
+            self.data = []
+        self.data.append(MyCardOtionsModel.init("Lock Your Card", isSwitch: true,isSelected: self.isLockCard))
+        self.data.append(MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false,isSelected: false))
+        self.data.append(MyCardOtionsModel.init("Set a New PIN", isSwitch: false,isSelected: false))
+        self.data.append(MyCardOtionsModel.init("Spend Abroad", isSwitch: true,isSelected: self.isSpendAbroad))
+//            var option:MyCardOtionsModel = self.data[0]
+//            option.isSwitchSelected = self.isLockCard
+//
+//            var optionSpendAbroad : MyCardOtionsModel = self.data[3]
+//            optionSpendAbroad.isSwitchSelected = self.isSpendAbroad
             //self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
             //check for spend abroad preference
             

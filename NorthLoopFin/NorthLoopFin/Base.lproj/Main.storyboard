@@ -5487,6 +5487,9 @@ We’ve sent an email confirming.</string>
                                                 <real key="value" value="0.22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginClicked:" destination="qnq-tZ-bhZ" eventType="touchUpInside" id="39Q-9k-v7B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
