@@ -284,14 +284,14 @@ extension VerifyAddressViewController:ZendeskDelegates{
         AppUtility.configureZendesk(data: data)
         //AppUtility.moveToHomeScreen()
         //move to promocode
-        self.moveToPromoCode()
+//        self.moveToPromoCode()
     }
     
-    func moveToPromoCode(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "PromoCodeViewController") as! PromoCodeViewController
-        self.navigationController?.pushViewController(vc, animated: false)
-    }
+//    func moveToPromoCode(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = storyBoard.instantiateViewController(withIdentifier: "PromoCodeViewController") as! PromoCodeViewController
+//        self.navigationController?.pushViewController(vc, animated: false)
+//    }
 }
 
 extension VerifyAddressViewController:ChangeAddressDelegate{

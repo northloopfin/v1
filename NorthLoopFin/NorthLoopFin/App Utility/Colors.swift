@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 struct Colors{
     static let DustyGray155155155 = UIColor.init(red: 155, green: 155, blue: 155)
+    static let PurpleColor17673149 = UIColor.init(red: 176, green: 73, blue: 149)
     static let Mercury226226226 = UIColor.init(red: 226, green: 226, blue: 226)
     static let Zorba161149133 = UIColor.init(red: 161, green: 149, blue: 133)
     static let Alto224224224 = UIColor.init(red: 224, green: 224, blue: 224)

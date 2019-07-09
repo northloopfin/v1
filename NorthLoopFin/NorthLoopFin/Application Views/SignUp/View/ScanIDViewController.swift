@@ -69,7 +69,7 @@ class ScanIDViewController: BaseViewController {
             let selectedButton=sender as! UIButton
             selectedButton.layer.borderWidth=0.0
             selectedButton.setTitleColor(UIColor.white, for: .normal)
-            selectedButton.backgroundColor = Colors.Cameo213186154//UIColor.lightGray
+            selectedButton.backgroundColor = Colors.PurpleColor17673149//UIColor.lightGray
             selectedButton.set(image: UIImage.init(named: "tick"), title: (selectedButton.titleLabel?.text)!, titlePosition: .left, additionalSpacing: 10.0, state: .normal)
             
         }

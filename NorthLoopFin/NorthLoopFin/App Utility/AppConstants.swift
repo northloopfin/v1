@@ -118,6 +118,7 @@ struct AppConstants{
         case UPGRADE = "Upgrade"
         case EXPENSES = "Expenses"
         case HELP = "Help"
+        case FEEDBACK = "Feedback"
         case SETTINGS = "Settings"
     }
     

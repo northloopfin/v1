@@ -19,7 +19,7 @@ class CommonButton: UIButton {
     override var isEnabled:Bool {
         didSet {
             if isEnabled{
-                self.backgroundColor = Colors.Zorba161149133
+                self.backgroundColor = Colors.PurpleColor17673149
             }else{
                 self.backgroundColor = Colors.Alto224224224
             }

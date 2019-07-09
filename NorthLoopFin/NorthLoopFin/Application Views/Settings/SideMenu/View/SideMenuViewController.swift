@@ -35,6 +35,7 @@ class SideMenuViewController: UIViewController {
         //self.data.append(AppConstants.SideMenuOptions.UPGRADE.rawValue)
         self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
     }
 }
 
@@ -53,7 +54,7 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cell: SideMenuTableCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableCell") as! SideMenuTableCell
         let backgroundView = UIView()
-        backgroundView.backgroundColor = Colors.Cameo213186154
+        backgroundView.backgroundColor = Colors.PurpleColor17673149
         cell.selectedBackgroundView = backgroundView
         cell.bindData(data: data[indexPath.row])
         return cell
@@ -81,8 +82,10 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
             case 4:
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
-
             case 5:
+            //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
+                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
+            case 6:
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
                 break
             default:
