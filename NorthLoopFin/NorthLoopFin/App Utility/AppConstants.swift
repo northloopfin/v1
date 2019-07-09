@@ -108,6 +108,7 @@ struct AppConstants{
         case CHANGEPHONE = "ChangePhone"
         case CHANGEADDRESS = "ChangeAddress"
         case ChangePASSWORD = "ChangePassword"
+        case CHAT = "Chat"
 
     }
     
