@@ -279,11 +279,12 @@ extension HomeViewController:SideMenuDelegate{
             self.navigateToMyAccount()
         case .UPGRADE:
             self.navigateToUpgrade()
-            
         case .EXPENSES:
             self.navigateToExpenses()
         case .SETTINGS:
             self.navigateToSettings()
+        case .FEEDBACK:
+            self.navigateToFeedback()
         default:
             break
         }
@@ -331,6 +332,10 @@ extension HomeViewController:SideMenuDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    func navigateToFeedback(){
+        guard let url = URL(string: "https://docs.google.com/forms/d/16fBuC42DLWnVZubL-wPTOTTEXc876jIqG4rglnuW4A4/edit") else { return }
+        UIApplication.shared.open(url)
     }
     
 }
