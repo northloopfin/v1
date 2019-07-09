@@ -109,7 +109,7 @@ class MakeTransferViewController: BaseViewController {
     //change appearance of done button
     func changeApperanceOfDone(){
         self.nextBtn.isEnabled=true
-        self.nextBtn.backgroundColor = Colors.Zorba161149133
+        self.nextBtn.backgroundColor = Colors.PurpleColor17673149
     }
     
     func inactivateDoneBtn(){

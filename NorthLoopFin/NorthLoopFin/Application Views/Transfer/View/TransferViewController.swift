@@ -78,7 +78,7 @@ class TransferViewController: BaseViewController {
     //change appearance of done button
     func changeApperanceOfDone(){
         self.saveBtn.isEnabled=true
-        self.saveBtn.backgroundColor = Colors.Zorba161149133
+        self.saveBtn.backgroundColor = Colors.PurpleColor17673149
     }
     
     func inactivateDoneBtn(){

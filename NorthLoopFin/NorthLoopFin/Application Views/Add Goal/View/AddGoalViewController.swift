@@ -69,7 +69,7 @@ class AddGoalViewController: BaseViewController {
     }
     func activateDoneBtn(){
         self.doneBtn.isEnabled=true
-        self.doneBtn.backgroundColor = Colors.Zorba161149133
+        self.doneBtn.backgroundColor = Colors.PurpleColor17673149
     }
     
     func inactivateDoneBtn(){
