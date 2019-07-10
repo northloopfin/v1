@@ -54,6 +54,10 @@ class VerifyAddressViewController: BaseViewController {
         
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
+               
+                //check if address is real
+                
+                
                 //call api to update address here
                 let requestBody = self.createUpdateAddressRequestBody()
                 let jsonEncoder = JSONEncoder()

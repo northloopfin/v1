@@ -329,6 +329,7 @@
 		297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB9F821B65240008D60CE /* AppUtility.swift */; };
 		2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F421B64EE0008D60CE /* Staging.xcconfig */; };
 		2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F521B64EF4008D60CE /* Production.xcconfig */; };
+		448CE8FE22D5E88500F4D201 /* AddressHelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CE8FD22D5E88500F4D201 /* AddressHelperClass.swift */; };
 		4B07A87122C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */; };
 		4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */; };
 		4B07A87522C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87422C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift */; };
@@ -742,6 +743,7 @@
 		298CAB0623F715EE193F4F2D /* Pods-NorthLoopFinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E77A97A965E68B582769403 /* Pods-NorthLoopFinTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.production.xcconfig"; sourceTree = "<group>"; };
 		3F7D083137E81A93B7BC6FB3 /* Pods-NorthLoopFinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		448CE8FD22D5E88500F4D201 /* AddressHelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressHelperClass.swift; sourceTree = "<group>"; };
 		44B1E2C4395260AA2C23AFF5 /* Pods-NorthLoopFin.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.staging.xcconfig"; sourceTree = "<group>"; };
 		4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsRequestModel.swift; sourceTree = "<group>"; };
 		4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsAPIRequest.swift; sourceTree = "<group>"; };
@@ -1102,6 +1104,7 @@
 				1DFE480121D71B32003EFECA /* SIgnupForm */,
 				1DFE480021D71B22003EFECA /* Twilio */,
 				1D0C2ADD22045EAB00527FAB /* User.swift */,
+				448CE8FD22D5E88500F4D201 /* AddressHelperClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2758,6 +2761,7 @@
 				1D165F4F222D18AA00D06914 /* StorageHelper.swift in Sources */,
 				1D908FD221CCF837005C96BB /* AllDoneViewController.swift in Sources */,
 				1D29C83322A8F0AD0092E3EB /* LostCardDelegates.swift in Sources */,
+				448CE8FE22D5E88500F4D201 /* AddressHelperClass.swift in Sources */,
 				1D055D3C229C009B0078CD33 /* LinkACHData.swift in Sources */,
 				1D0C2ADE22045EAB00527FAB /* User.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
