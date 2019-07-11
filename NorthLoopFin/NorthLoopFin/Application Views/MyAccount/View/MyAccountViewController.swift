@@ -98,21 +98,21 @@ extension MyAccountViewController:CommonTableDelegate{
             title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
             message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_CHANGE_ADDRESS.rawValue,
             cancelButton: "Cancel",
-            otherButtons: ["Confirmed"]
+            otherButtons: ["Confirm"]
         )
         if self.isChangePhoneClicked{
             params = Parameters(
                 title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
                 message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_CHANGE_PHONE.rawValue,
                 cancelButton: "Cancel",
-                otherButtons: ["Confirmed"]
+                otherButtons: ["Confirm"]
             )
         }else if self.isChangePasswordClicked{
             params = Parameters(
                 title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
                 message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_CHANGE_PASSWORD.rawValue,
                 cancelButton: "Cancel",
-                otherButtons: ["Confirmed"]
+                otherButtons: ["Confirm"]
             )
         }
         

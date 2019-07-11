@@ -66,9 +66,9 @@ struct AppConstants{
         case DOB_NOT_VALID = "Person could not be younger than 18 years"
         case ROUTING_NUMBER_NOT_VALID = "Please enter a valid Routing Number"
         case CARD_NOT_ACTIVE_YET = "Card Isn't Activated Yet"
-        case CONFIRM_MESSAGE_TO_CHANGE_PHONE = "Are you sure, you want to change Phone?"
-        case CONFIRM_MESSAGE_TO_CHANGE_PASSWORD = "Are you sure, you want to change Password?"
-        case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure, you want to change Address"
+        case CONFIRM_MESSAGE_TO_CHANGE_PHONE = "Are you sure you want to change your phone number?"
+        case CONFIRM_MESSAGE_TO_CHANGE_PASSWORD = "Are you sure you want to change your password?"
+        case CONFIRM_MESSAGE_TO_CHANGE_ADDRESS = "Are you sure you want to change your registered address?"
         case FIRST_TIME_LAND_HOME_MESSAGE = "Welcome to North Loop. Enter an email below if you want to send your account details to someone"
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
         case INSUFFICIENT_BALANCE = "Insufficient Balance"
@@ -134,6 +134,13 @@ struct AppConstants{
         case TERMSANDPOLICY = "Terms & Policy"
         case PRIVACY = "Privacy"
         case OTHERSTUFF = "Other Stuff"
+    }
+    
+    enum LegalTCOptions:String{
+        case DEPOSITAGREEMENT = "Deposit Account Agreement"
+        case TERMSOFSERVICE = "Terms of Service"
+        case PRIVACYPOLICY = "Privacy Policy"
+        case CARDHOLDERAGREEMENT = "Cardholder Agreement"
     }
     
     enum SettingsOptions:String {

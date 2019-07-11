@@ -179,14 +179,14 @@ extension MyCardViewController:MyCardTableCellDelegate{
             title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
             message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_LOCK_CARD.rawValue,
             cancelButton: "Cancel",
-            otherButtons: ["Confirmed"]
+            otherButtons: ["Confirm"]
         )
         if self.isSpendAbroad{
             params = Parameters(
                 title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
                 message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_SPEND_ABROAD.rawValue,
                 cancelButton: "Cancel",
-                otherButtons: ["Confirmed"]
+                otherButtons: ["Confirm"]
             )
         }
         

@@ -120,9 +120,8 @@ class ScanIDNewViewController: BaseViewController {
                         passportImages.append(StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: imagesOfParticularScanID[m].imagePath))!)
                     }
                 }
-                let model = self.modelArray[n]
-                model.type = self.optionsArr[n]
-                model.images = passportImages
+                let model = SelectIDType.init(type: self.optionsArr[n], images: passportImages)// self.modelArray[n]
+               self.modelArray.append(model)
                 print(self.modelArray.count)
             }
             self.selectedOption = self.optionsArr[0]
@@ -339,7 +338,7 @@ class ScanIDNewViewController: BaseViewController {
     }
     
     func saveImageInDB(){
-        RealmHelper.deleteAllScanID()
+        
         for n in 0...(self.modelArray.count-1){
             
             //loop through image array of this model
@@ -388,6 +387,7 @@ class ScanIDNewViewController: BaseViewController {
                 }
             }
         }
+        RealmHelper.deleteAllScanID()
         self.saveImageInDB()
         self.updateSignupFlowDataWithCompressedImages()
     }
@@ -427,8 +427,8 @@ class ScanIDNewViewController: BaseViewController {
                     // compress here
                     try image.compressImage(500, completion: { (image, compressRatio) in
                         let base64Image=image.toBase64();
-                        let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
-                        //let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
+                        //let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
                         //print(fullBase64String)
                         var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")//scanIDModel.type.rawValue)
                         //check for ID Type and assign document type accordingly

@@ -49,9 +49,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()
     }
-    @IBAction func doneClicked(_ sender: Any) {
-        
-        
+    fileprivate func convertDataToDicAndCallAPI() {
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
                 //call api to update address here
@@ -88,6 +86,17 @@ class VerifyAddressViewController: BaseViewController {
             }
         }
     }
+    
+    @IBAction func doneClicked(_ sender: Any) {
+        if (Validations.isValidZip(value: self.zipTextfield.text!)){
+                convertDataToDicAndCallAPI()
+            }else{
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+            }
+        
+        
+    }
+    
     
     func createUpdateAddressRequestBody()->UpdateAddressRequestBody{
         let updatedAddress:UpdatedAddress = UpdatedAddress.init(houseNo: self.houseNumbertextfield.text ?? "", state: self.textState.text ?? "", street: self.streetAddress.text ?? "", city: self.cityTextfield.text ?? "", zip: self.zipTextfield.text ?? "", country: "US")
@@ -151,6 +160,10 @@ class VerifyAddressViewController: BaseViewController {
     
     /// Prepare View by setting up font and color of UI components
     func prepareView(){
+        self.textState.inputView = UIView.init(frame: CGRect.zero)
+        self.textState.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.textState.setRightIcon(UIImage.init(named: "chevron")!)
+        
         self.customProgressView.progressView.setProgress(0.17*6, animated: true)
         dropDown.anchorView = self.textState
         dropDown.dataSource = AppUtility.getStatesArray()
@@ -234,11 +247,8 @@ extension VerifyAddressViewController:UITextFieldDelegate{
     
     fileprivate func checkForMandatoryField() {
         if (!(self.streetAddress.text?.isEmpty)! && !(self.houseNumbertextfield.text?.isEmpty)!) && !(self.cityTextfield.text?.isEmpty)! && !(self.textState.text?.isEmpty)! && !(self.zipTextfield.text?.isEmpty)!{
-            if (Validations.isValidZip(value: self.zipTextfield.text!)){
                 self.activateDoneBtn()
-            }else{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
-            }
+//
         }
     }
     
