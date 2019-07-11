@@ -64,13 +64,6 @@ extension HelpViewController:CommonTableDelegate{
     
     func moveToFAQ(){
         let urlString:String = AppConstants.FAQURL
-//            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
-//                if #available(iOS 10.0, *) {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                } else {
-//                    UIApplication.shared.openURL(url)
-//                }
-//            }
         let urlValue = URL.init(string: urlString)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
@@ -79,7 +72,9 @@ extension HelpViewController:CommonTableDelegate{
         self.navigationController?.pushViewController(vc, animated: false)
     }
     func moveToLegalStuff(){
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LegalStuffViewController") as! LegalStuffViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     func moveToATMFinder(){

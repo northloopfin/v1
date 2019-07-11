@@ -26,13 +26,21 @@ class LegalStuffViewController: BaseViewController {
     /// Prepare View For display
     func prepareView(){
         var dataSource:[String] = []
-        dataSource.append(AppConstants.FAQOptions.TERMSANDPOLICY.rawValue)
-        dataSource.append(AppConstants.FAQOptions.PRIVACY.rawValue)
-        dataSource.append(AppConstants.FAQOptions.OTHERSTUFF.rawValue)
+        dataSource.append(AppConstants.LegalTCOptions.DEPOSITAGREEMENT.rawValue)
+        dataSource.append(AppConstants.LegalTCOptions.TERMSOFSERVICE.rawValue)
+        dataSource.append(AppConstants.LegalTCOptions.PRIVACYPOLICY.rawValue)
+        dataSource.append(AppConstants.LegalTCOptions.CARDHOLDERAGREEMENT.rawValue)
+
         
         containerView.dataSource = dataSource
         containerViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "Legal Stuff")
         self.setupRightNavigationBar()
+    }
+}
+
+extension LegalStuffViewController:CommonTableDelegate{
+    func didSelectOption(optionVal: Int) {
+        // open relevant document here
     }
 }
