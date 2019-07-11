@@ -132,16 +132,7 @@ extension MyCardViewController:CardDelegates{
         self.data.append(MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false,isSelected: false))
         self.data.append(MyCardOtionsModel.init("Set a New PIN", isSwitch: false,isSelected: false))
         self.data.append(MyCardOtionsModel.init("Spend Abroad", isSwitch: true,isSelected: self.isSpendAbroad))
-//            var option:MyCardOtionsModel = self.data[0]
-//            option.isSwitchSelected = self.isLockCard
-//
-//            var optionSpendAbroad : MyCardOtionsModel = self.data[3]
-//            optionSpendAbroad.isSwitchSelected = self.isSpendAbroad
-            //self.data[0] = MyCardOtionsModel.init("Lock Your Card", isSwitch: true, isSelected: false)
-            //check for spend abroad preference
-            
-                //if spend abroad is true, then reload table accordingly
-                //self.data[3] = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: data.data.preferences.allowForeignTransactions)
+
                 self.optionsTableView.reloadData()
             
         }else{
