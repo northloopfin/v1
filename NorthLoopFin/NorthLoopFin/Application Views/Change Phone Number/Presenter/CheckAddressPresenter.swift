@@ -18,22 +18,50 @@ class CheckAddressPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendChangeAddressRequest(requestDic:[String:AnyObject]){
+    func checkAddressWithLobAPI(addressData:[String: Any] ){
+         self.delegate?.showLoader()
+        var request = URLRequest(url: URL.init(string: Endpoints.APIEndpoints.CHECKADDRESS.rawValue)!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
         
-        // convert requestbody to json string and assign to request model request param
-        self.delegate?.showLoader()
+        do{
+            let jsonData = try JSONSerialization.data(withJSONObject: addressData, options: .prettyPrinted)
+            let str = String.init(data: jsonData, encoding: .utf8)
+            request.httpBody = str?.data(using: .utf8)
+        }
+        catch{
+            print("Error while adding body to request")
+        }
         
-        let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
-        let requestModel = ChangeAddressRequestModel.Builder()
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
-                , value: currentUser.accessToken)
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
-            .addRequestHeader(key: "ip", value: "127.0.0.1")
-            .build()
-        requestModel.requestQueryParams = requestDic
-        requestModel.apiUrl = requestModel.getEndPoint()
-        self.logic.performChangeAddress(withRequestModel: requestModel, presenterDelegate: self)
+        let authStr = "live_pub_c3edd6cdec6446299fece43678d8932:"
+        let authData = authStr.data(using: .ascii)
+        let authValue = String(format: "Basic %@", authData?.base64EncodedString() ?? "")
+        request.setValue(authValue, forHTTPHeaderField: "Authorization")
+        
+        print(request)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                let status:String = responseJSON["deliverability"] as! String
+                if status == "deliverable" {
+                    self.delegate?.didVerifyAddress()
+                }else{
+                     self.delegate?.showErrorAlert("", alertMessage: "Incorrect address please check and try again")
+                }
+                // print(responseJSON)
+//                self.delegate.sendForNextAPI(response: responseJSON)
+            }else{
+                self.delegate?.showErrorAlert("", alertMessage: "Incorrect address please check and try again")
+            }
+        }
+        
+        task.resume()
     }
+    
     
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {

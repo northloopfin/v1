@@ -11,7 +11,7 @@ import DropDown
 import IQKeyboardManagerSwift
 //import MFSideMenu
 
-class VerifyAddressViewController: BaseViewController {
+class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
     @IBOutlet weak var streetAddress: UITextField!
     @IBOutlet weak var houseNumbertextfield: UITextField!
     @IBOutlet weak var cityTextfield: UITextField!
@@ -51,26 +51,10 @@ class VerifyAddressViewController: BaseViewController {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        
-        
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
-                //call api to update address here
-                let requestBody = self.createUpdateAddressRequestBody()
-                let jsonEncoder = JSONEncoder()
-                do {
-                    let jsonData = try jsonEncoder.encode(requestBody)
-                    let jsonString = String(data: jsonData, encoding: .utf8)
-                    //print(jsonString!)
-                    let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
-                    print(dic)
-                    //all fine with jsonData here
-                    self.changeAddressPresnter.sendChangeAddressRequest(requestDic: dic)
-                } catch {
-                    //handle errors
-                    print(error)
-                }
-            }
+               let dic: [String: Any] = self.createCheckAddressRequestBody()
+               self.checkAddressPresnter.checkAddressWithLobAPI(addressData: dic)            }
         }else{
             self.persistDataRealm()
             self.updateSignupFlowData()
@@ -90,11 +74,34 @@ class VerifyAddressViewController: BaseViewController {
         }
     }
     
+    func didVerifyAddress() {
+        //call api to update address here
+        let requestBody = self.createUpdateAddressRequestBody()
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(requestBody)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            //print(jsonString!)
+            let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+            print(dic)
+            //all fine with jsonData here
+            self.changeAddressPresnter.sendChangeAddressRequest(requestDic: dic)
+        } catch {
+            //handle errors
+            print(error)
+        }
+    }
+    
     func createUpdateAddressRequestBody()->UpdateAddressRequestBody{
         let updatedAddress:UpdatedAddress = UpdatedAddress.init(houseNo: self.houseNumbertextfield.text ?? "", state: self.textState.text ?? "", street: self.streetAddress.text ?? "", city: self.cityTextfield.text ?? "", zip: self.zipTextfield.text ?? "", country: "US")
         let updateAddressRequestBody = UpdateAddressRequestBody.init(address: updatedAddress)
         return updateAddressRequestBody
         
+    }
+    
+    func createCheckAddressRequestBody() -> [String: Any] {
+        let dictBody: [String: Any] = ["primary_line": "\(self.houseNumbertextfield.text) \(self.streetAddress.text)", "city": self.cityTextfield.text,"zip_code": self.zipTextfield.text,"state": self.streetAddress.text]
+        return dictBody
     }
     
     override func viewDidLoad() {
@@ -300,8 +307,8 @@ extension VerifyAddressViewController:ChangeAddressDelegate{
         AppUtility.moveToHomeScreen()
     }
 }
-extension VerifyAddressViewController:CheckAddressDelegate{
-    func didVerifyAddress() {
-        
-    }
-}
+//extension VerifyAddressViewController:CheckAddressDelegate{
+//    func didVerifyAddress() {
+//
+//    }
+//}
