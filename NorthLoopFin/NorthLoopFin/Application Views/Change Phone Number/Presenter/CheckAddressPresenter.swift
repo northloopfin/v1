@@ -40,6 +40,7 @@ class CheckAddressPresenter:ResponseCallback{
         
         print(request)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            self.delegate?.hideLoader()
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
@@ -50,12 +51,12 @@ class CheckAddressPresenter:ResponseCallback{
                 if status == "deliverable" {
                     self.delegate?.didVerifyAddress()
                 }else{
-                     self.delegate?.showErrorAlert("", alertMessage: "Incorrect address please check and try again")
+                     self.delegate?.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: "Incorrect address please check and try again")
                 }
                 // print(responseJSON)
 //                self.delegate.sendForNextAPI(response: responseJSON)
             }else{
-                self.delegate?.showErrorAlert("", alertMessage: "Incorrect address please check and try again")
+                self.delegate?.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: "Incorrect address please check and try again")
             }
         }
         
