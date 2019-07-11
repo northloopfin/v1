@@ -36,6 +36,7 @@ class ChangeAddressPresenter:ResponseCallback{
         self.logic.performChangeAddress(withRequestModel: requestModel, presenterDelegate: self)
     }
     
+    
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         // let response = responseObject as! SetPinResponse
         self.delegate?.hideLoader()

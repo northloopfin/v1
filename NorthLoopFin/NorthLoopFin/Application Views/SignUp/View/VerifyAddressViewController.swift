@@ -11,7 +11,7 @@ import DropDown
 import IQKeyboardManagerSwift
 //import MFSideMenu
 
-class VerifyAddressViewController: BaseViewController {
+class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
     @IBOutlet weak var streetAddress: UITextField!
     @IBOutlet weak var houseNumbertextfield: UITextField!
     @IBOutlet weak var cityTextfield: UITextField!
@@ -32,6 +32,7 @@ class VerifyAddressViewController: BaseViewController {
     var screenThatInitiatedThisFlow:AppConstants.Screens?
 
     var changeAddressPresnter:ChangeAddressPresenter!
+    var checkAddressPresnter:CheckAddressPresenter!
 
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -49,7 +50,12 @@ class VerifyAddressViewController: BaseViewController {
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()
     }
-    fileprivate func convertDataToDicAndCallAPI() {
+    @IBAction func doneClicked(_ sender: Any) {
+        let dic: [String: Any] = self.createCheckAddressRequestBody()
+        self.checkAddressPresnter.checkAddressWithLobAPI(addressData: dic)
+    }
+    
+    func didVerifyAddress() {
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
                 //call api to update address here
@@ -105,6 +111,11 @@ class VerifyAddressViewController: BaseViewController {
         
     }
     
+    func createCheckAddressRequestBody() -> [String: Any] {
+        let dictBody: [String: Any] = ["primary_line": "\(self.houseNumbertextfield.text ?? "") \(self.streetAddress.text ?? "")", "city": self.cityTextfield.text ?? "","zip_code": self.zipTextfield.text ?? "","state": self.streetAddress.text ?? ""]
+        return dictBody
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
@@ -114,6 +125,7 @@ class VerifyAddressViewController: BaseViewController {
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
         self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
+        self.checkAddressPresnter = CheckAddressPresenter.init(delegate: self)
         if let _ =  self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS{
                 self.customProgressView.isHidden = true
@@ -309,3 +321,8 @@ extension VerifyAddressViewController:ChangeAddressDelegate{
         AppUtility.moveToHomeScreen()
     }
 }
+//extension VerifyAddressViewController:CheckAddressDelegate{
+//    func didVerifyAddress() {
+//
+//    }
+//}
