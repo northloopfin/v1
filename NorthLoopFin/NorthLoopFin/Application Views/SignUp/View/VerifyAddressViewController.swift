@@ -32,6 +32,7 @@ class VerifyAddressViewController: BaseViewController {
     var screenThatInitiatedThisFlow:AppConstants.Screens?
 
     var changeAddressPresnter:ChangeAddressPresenter!
+    var checkAddressPresnter:CheckAddressPresenter!
 
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -297,5 +298,10 @@ extension VerifyAddressViewController:ZendeskDelegates{
 extension VerifyAddressViewController:ChangeAddressDelegate{
     func didAddressChanged() {
         AppUtility.moveToHomeScreen()
+    }
+}
+extension VerifyAddressViewController:CheckAddressDelegate{
+    func didVerifyAddress() {
+        
     }
 }

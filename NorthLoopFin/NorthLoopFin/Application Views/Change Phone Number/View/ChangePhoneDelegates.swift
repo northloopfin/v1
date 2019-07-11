@@ -14,4 +14,7 @@ protocol ChangePhoneDelegate: BaseViewProtocol {
 protocol ChangeAddressDelegate: BaseViewProtocol {
     func didAddressChanged()
 }
+protocol CheckAddressDelegate: BaseViewProtocol {
+    func didVerifyAddress()
+}
 
