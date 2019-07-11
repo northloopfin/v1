@@ -66,8 +66,13 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! SideMenuTableCell
+        cell.menuOptionLbl.textColor = Colors.Taupe776857
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! SideMenuTableCell
+        cell.menuOptionLbl.textColor = .white
         switch  (indexPath as NSIndexPath).row {
             case 0:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.MYCARD)
