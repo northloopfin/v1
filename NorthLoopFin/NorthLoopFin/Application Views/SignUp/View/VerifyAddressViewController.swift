@@ -93,15 +93,15 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
         }
     }
     
-    @IBAction func doneClicked(_ sender: Any) {
-        if (Validations.isValidZip(value: self.zipTextfield.text!)){
-                convertDataToDicAndCallAPI()
-            }else{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
-            }
-        
-        
-    }
+//    @IBAction func doneClicked(_ sender: Any) {
+//        if (Validations.isValidZip(value: self.zipTextfield.text!)){
+//                convertDataToDicAndCallAPI()
+//            }else{
+//                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+//            }
+//        
+//        
+//    }
     
     
     func createUpdateAddressRequestBody()->UpdateAddressRequestBody{
