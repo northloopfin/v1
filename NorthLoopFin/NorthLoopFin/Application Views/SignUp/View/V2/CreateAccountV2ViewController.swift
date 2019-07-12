@@ -114,7 +114,6 @@ class CreateAccountV2ViewController: BaseViewController {
                 documents.virtualDocs=[ssnData]
                 data.documents=documents
                 data.cipTag=1
-                
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
         }
@@ -151,13 +150,13 @@ class CreateAccountV2ViewController: BaseViewController {
         self.nextBtn.isEnabled=false
         updateTextFieldUI()
         self.prepareView()
-        self.setSampleData()
+        //self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        self.fetchDatafromRealmIfAny()
+       // self.fetchDatafromRealmIfAny()
     }
     
     func fetchDatafromRealmIfAny(){

@@ -143,7 +143,7 @@ class LoginViewController: BaseViewController {
     }
     
     func initiateBiometric(){
-        BioMetricHelper.isValidUer(reasonString: "Authenticate for Northloop") {[unowned self] (isSuccess, stringValue) in
+        BioMetricHelper.isValidUer(reasonString: "Sign in using TouchID/FaceID") {[unowned self] (isSuccess, stringValue) in
             
             if isSuccess
             {

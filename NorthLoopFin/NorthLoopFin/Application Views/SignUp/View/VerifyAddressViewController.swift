@@ -76,7 +76,7 @@ class VerifyAddressViewController: BaseViewController {
             do {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
-                print(jsonString!)
+                //print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.presenter.startSignUpSynapse(requestDic: dic)
@@ -93,8 +93,6 @@ class VerifyAddressViewController: BaseViewController {
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
             }
-        
-        
     }
     
     
@@ -124,8 +122,8 @@ class VerifyAddressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        self.fetchDatafromRealmIfAny()
-        self.setSampleData()
+        //self.fetchDatafromRealmIfAny()
+        //self.setSampleData()
     }
     
     func fetchDatafromRealmIfAny(){
@@ -293,6 +291,7 @@ extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
         AppUtility.moveToHomeScreen()
+        RealmHelper.deleteAllFromDatabase()
         //move to promocode
 //        self.moveToPromoCode()
     }

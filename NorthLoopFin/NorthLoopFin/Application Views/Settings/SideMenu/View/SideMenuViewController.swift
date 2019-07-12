@@ -33,7 +33,7 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.TRANSFER.rawValue)
         self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
         //self.data.append(AppConstants.SideMenuOptions.UPGRADE.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
+        //self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
         self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
     }
@@ -82,14 +82,17 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.MYACCOUNT)
             case 3:
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.UPGRADE)
-                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
+                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
+                //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
 
             case 4:
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
-                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
+                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
+                //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
             case 5:
             //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.EXPENSES)
-                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
+                //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
+                break
             case 6:
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
                 break

@@ -36,7 +36,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>25</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -69,6 +69,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to click ID and Selfie</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Face Authentication </string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This application use your location to find ATMs near by you</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -104,8 +106,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Face Authentication </string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

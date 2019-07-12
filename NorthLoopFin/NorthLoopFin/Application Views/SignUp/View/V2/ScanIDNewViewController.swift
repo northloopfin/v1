@@ -54,7 +54,7 @@ class ScanIDNewViewController: BaseViewController {
        // self.initialiseData()
         self.disableImageThumbTouch()
         self.prepareView()
-        self.checkDBForImages()
+        //self.checkDBForImages()
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
@@ -108,21 +108,31 @@ class ScanIDNewViewController: BaseViewController {
             // loop through options array
             for n in 0...(self.optionsArr.count-1){
                 //loop through images stored in db to find out images for particular type
-                let imagesOfParticularScanID=imagesFromDb.filter{$0.type == self.optionsArr[n].rawValue}
-                print(imagesOfParticularScanID.count)
+            
+//               let imagesOfParticularScanID = imagesFromDb.filter { (model) -> Bool in
+//                    model.type == self.optionsArr[n].rawValue
+//                }
+////                =imagesFromDb.filter{$0.type == self.optionsArr[n].rawValue}
+//                print(imagesOfParticularScanID)
                 //loop through images of particularScanID and add them to model array
                 //Create object of that particular scan id
-                print(StorageHelper.getImagePath(imgName: imagesOfParticularScanID[0].imagePath))
-                for m in 0...(imagesOfParticularScanID.count-1){
-                    if let _ = StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: imagesOfParticularScanID[m].imagePath)){
-                        //passportImages.append(StorageHelper.getImageFromPath(path: imagesOfParticularScanID[m].imagePath)!)
-                        
-                        passportImages.append(StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: imagesOfParticularScanID[m].imagePath))!)
+                //print(StorageHelper.getImagePath(imgName: imagesOfParticularScanID[0].imagePath))
+                for m in 0...(imagesFromDb.count-1){
+                    
+                    let model = imagesFromDb[m]
+                    if model.type == self.optionsArr[n].rawValue{
+                        print(StorageHelper.getImagePath(imgName: model.imagePath))
+                        if let _ = StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: model.imagePath)){
+                            //passportImages.append(StorageHelper.getImageFromPath(path: imagesOfParticularScanID[m].imagePath)!)
+                            
+                            passportImages.append(StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: model.imagePath))!)
+                        }
                     }
+                    
                 }
                 let model = SelectIDType.init(type: self.optionsArr[n], images: passportImages)// self.modelArray[n]
                self.modelArray.append(model)
-                print(self.modelArray.count)
+               // print(self.modelArray.count)
             }
             self.selectedOption = self.optionsArr[0]
             self.getImageFromDBForSelctedOption()
@@ -200,7 +210,7 @@ class ScanIDNewViewController: BaseViewController {
                 btn.isBtnSelected=true
                 btn.layer.borderWidth=0.0
                 btn.setTitleColor(UIColor.white, for: .normal)
-                btn.backgroundColor = Colors.Cameo213186154
+                btn.backgroundColor = Colors.PurpleColor17673149
                 btn.set(image: UIImage.init(named: "tick"), title: (btn.titleLabel?.text)!, titlePosition: .left, additionalSpacing: 10.0, state: .normal)
             }else{
                 btn.setTitleColor(Colors.DustyGray155155155, for: .normal)
@@ -282,7 +292,7 @@ class ScanIDNewViewController: BaseViewController {
         sender.isBtnSelected=true
         sender.layer.borderWidth=0.0
         sender.setTitleColor(UIColor.white, for: .normal)
-        sender.backgroundColor = Colors.Cameo213186154
+        sender.backgroundColor = Colors.PurpleColor17673149
         sender.set(image: UIImage.init(named: "tick"), title: (sender.titleLabel?.text)!, titlePosition: .left, additionalSpacing: 10.0, state: .normal)
     }
     /// Methode will reset Label text to original
@@ -388,7 +398,7 @@ class ScanIDNewViewController: BaseViewController {
             }
         }
         RealmHelper.deleteAllScanID()
-        self.saveImageInDB()
+       // self.saveImageInDB()
         self.updateSignupFlowDataWithCompressedImages()
     }
     
@@ -468,8 +478,21 @@ class ScanIDNewViewController: BaseViewController {
         func openCamera(_ sender: Any){
             CameraHandler.shared.showActionSheet(vc: self)
             CameraHandler.shared.imagePickedBlock = { (image) in
-                self.imageArray.append(image)
+               
                 let btn = sender as! UIButton
+                if self.imageArray.count < 1{
+                    self.imageArray.append(image)
+                }else{
+                    if self.imageArray.indices.contains(btn.tag){
+                        // yes exist
+                        self.imageArray[btn.tag] = image
+                    }else{
+                        self.imageArray.append(image)
+                    }
+                    
+                }
+                
+                //self.imageArray.insert(image, at: btn.tag)
                 switch btn.tag {
                 case 0:
                     self.uploadedImageFront.image=image
@@ -499,25 +522,36 @@ class ScanIDNewViewController: BaseViewController {
                 optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE ||
                 optionSelected == AppConstants.SelectIDTYPES.OTHER{
                 if self.imageArray.count == 1 {
-                    let model = SelectIDType.init(type: optionSelected, images: self.imageArray)//self.modelArray[selectedButtonTag]
-                    // model.images = self.imageArray
-                    //model.type = optionSelected
-                    self.modelArray.append(model)
-                    if selectedButtonTag != self.optionBtnsArray.count-1{
-                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                        nextBtnToEnable.sendActions(for: .touchUpInside)}
+                    //check whether model exist in array
+                    if let index = self.modelArray.index(where: { $0.type == optionSelected }){
+                        //yes it exist
+                        let selectedOptionData = self.modelArray[index]
+                        selectedOptionData.images = self.imageArray
+                    }else{
+                        let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
+                        self.modelArray.append(model)
+                        if selectedButtonTag != self.optionBtnsArray.count-1{
+                            let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                            nextBtnToEnable.sendActions(for: .touchUpInside)}
+                    }
+                    
+                    
                     // disable touch for image thumbnail
                     self.disableImageThumbTouch()
                 }
             }else{
                 if self.imageArray.count == 3{
-                    //                        let model = self.modelArray[selectedButtonTag]
-                    //                        model.images = self.imageArray
-                    //                        model.type = optionSelected
-                    let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
-                    self.modelArray.append(model)
-                    let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                    nextBtnToEnable.sendActions(for: .touchUpInside)
+                    
+                    if let index = self.modelArray.index(where: { $0.type == optionSelected }){
+                        //yes it exist
+                        let selectedOptionData = self.modelArray[index]
+                        selectedOptionData.images = self.imageArray
+                    }else{
+                        let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
+                        self.modelArray.append(model)
+                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                        nextBtnToEnable.sendActions(for: .touchUpInside)
+                    }
                     // disable touch for image thumbnail
                     self.disableImageThumbTouch()
                 }
@@ -559,7 +593,12 @@ class ScanIDNewViewController: BaseViewController {
 
 extension ScanIDNewViewController:ImagePreviewDelegate{
     func imageUpdatedFor(index: Int, image:UIImage){
-        self.imageArray.insert(image, at: index)
+        if self.imageArray.count > 1{
+            self.imageArray.append(image)
+        }else{
+            self.imageArray[index]=image
+        }
+        //self.imageArray.insert(image, at: index)
         self.refreshImages(image: image, index: index)
     }
     

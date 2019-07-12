@@ -59,7 +59,7 @@ class MakeTransferViewController: BaseViewController {
         self.initialiseUIWithEmptyData()
         self.nicknameTextField.inputView = UIView.init(frame: CGRect.zero)
         self.nicknameTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-        self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
+        //self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
         
         dropDown.anchorView = self.nicknameTextField
         dropDown.dataSource = self.achArray
@@ -170,6 +170,7 @@ extension MakeTransferViewController:FetchACHDelegates{
             let nickname = data[n].nickname
             self.achArray.append(nickname)
             }
+            self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
             self.nicknameHeightConstraint.constant=50
             self.amoutHeightConstraint.constant=50
             self.payBtnHeightConstarint.constant=45

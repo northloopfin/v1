@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // Override point for customization after application launch.
         self.registerForPushNotifications()
+        print(StorageHelper.getDirectoryPath())
 
         //Configure Firebase
         FirebaseApp.configure()
