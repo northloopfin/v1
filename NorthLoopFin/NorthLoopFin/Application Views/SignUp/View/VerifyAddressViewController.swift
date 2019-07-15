@@ -11,7 +11,7 @@ import DropDown
 import IQKeyboardManagerSwift
 //import MFSideMenu
 
-class VerifyAddressViewController: BaseViewController {
+class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
     @IBOutlet weak var streetAddress: UITextField!
     @IBOutlet weak var houseNumbertextfield: UITextField!
     @IBOutlet weak var cityTextfield: UITextField!
@@ -32,6 +32,7 @@ class VerifyAddressViewController: BaseViewController {
     var screenThatInitiatedThisFlow:AppConstants.Screens?
 
     var changeAddressPresnter:ChangeAddressPresenter!
+    var checkAddressPresnter:CheckAddressPresenter!
 
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -50,8 +51,11 @@ class VerifyAddressViewController: BaseViewController {
         dropDown.show()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        
-        
+        let dic: [String: Any] = self.createCheckAddressRequestBody()
+        self.checkAddressPresnter.checkAddressWithLobAPI(addressData: dic)
+    }
+    
+    func didVerifyAddress() {
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
                 //call api to update address here
@@ -89,11 +93,27 @@ class VerifyAddressViewController: BaseViewController {
         }
     }
     
+//    @IBAction func doneClicked(_ sender: Any) {
+//        if (Validations.isValidZip(value: self.zipTextfield.text!)){
+//                convertDataToDicAndCallAPI()
+//            }else{
+//                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+//            }
+//        
+//        
+//    }
+    
+    
     func createUpdateAddressRequestBody()->UpdateAddressRequestBody{
         let updatedAddress:UpdatedAddress = UpdatedAddress.init(houseNo: self.houseNumbertextfield.text ?? "", state: self.textState.text ?? "", street: self.streetAddress.text ?? "", city: self.cityTextfield.text ?? "", zip: self.zipTextfield.text ?? "", country: "US")
         let updateAddressRequestBody = UpdateAddressRequestBody.init(address: updatedAddress)
         return updateAddressRequestBody
         
+    }
+    
+    func createCheckAddressRequestBody() -> [String: Any] {
+        let dictBody: [String: Any] = ["primary_line": "\(self.houseNumbertextfield.text ?? "") \(self.streetAddress.text ?? "")", "city": self.cityTextfield.text ?? "","zip_code": self.zipTextfield.text ?? "","state": self.streetAddress.text ?? ""]
+        return dictBody
     }
     
     override func viewDidLoad() {
@@ -105,6 +125,7 @@ class VerifyAddressViewController: BaseViewController {
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
         self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
+        self.checkAddressPresnter = CheckAddressPresenter.init(delegate: self)
         if let _ =  self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS{
                 self.customProgressView.isHidden = true
@@ -151,6 +172,10 @@ class VerifyAddressViewController: BaseViewController {
     
     /// Prepare View by setting up font and color of UI components
     func prepareView(){
+        self.textState.inputView = UIView.init(frame: CGRect.zero)
+        self.textState.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.textState.setRightIcon(UIImage.init(named: "chevron")!)
+        
         self.customProgressView.progressView.setProgress(0.17*6, animated: true)
         dropDown.anchorView = self.textState
         dropDown.dataSource = AppUtility.getStatesArray()
@@ -234,11 +259,8 @@ extension VerifyAddressViewController:UITextFieldDelegate{
     
     fileprivate func checkForMandatoryField() {
         if (!(self.streetAddress.text?.isEmpty)! && !(self.houseNumbertextfield.text?.isEmpty)!) && !(self.cityTextfield.text?.isEmpty)! && !(self.textState.text?.isEmpty)! && !(self.zipTextfield.text?.isEmpty)!{
-            if (Validations.isValidZip(value: self.zipTextfield.text!)){
                 self.activateDoneBtn()
-            }else{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
-            }
+//
         }
     }
     
@@ -299,3 +321,8 @@ extension VerifyAddressViewController:ChangeAddressDelegate{
         AppUtility.moveToHomeScreen()
     }
 }
+//extension VerifyAddressViewController:CheckAddressDelegate{
+//    func didVerifyAddress() {
+//
+//    }
+//}

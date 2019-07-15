@@ -24,6 +24,8 @@ class RealmHelper{
             realm.add(info)
         }
     }
+    
+   
     static func addSelfieInfo(info: SelfieImage) {
         let realm = try! Realm()
         try! realm.write() {
@@ -159,7 +161,8 @@ class RealmHelper{
     static func deleteAllScanID(){
         let realm = try! Realm()
         try! realm.write() {
-            realm.delete(realm.objects(ScanIDImages.self))
+            let allScanID = realm.objects(ScanIDImages.self)
+            realm.delete(allScanID)
         }
     }
     static func deleteAllSelfie(){

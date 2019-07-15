@@ -33,6 +33,7 @@ struct Endpoints{
         case SAHREACCOUNTDETAILS = "banking/account"
         case GETAPPSETTINGS = "banking/preferences"
         case CHECKUPDATE = "banking/app-version-updates"
+        case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
 
     }
     

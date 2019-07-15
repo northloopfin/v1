@@ -21,8 +21,8 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var customProgressView: ProgressView!
 
     @IBOutlet weak var nextBtn: CommonButton!
-    @IBOutlet weak var loginLbl: UIButtonWithSpacing!
-    @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
+    //@IBOutlet weak var loginLbl: UIButtonWithSpacing!
+    //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     
     let citizenShipDropDown = DropDown()
     let countryCodeDropDown = DropDown()
@@ -184,10 +184,11 @@ class CreateAccountV2ViewController: BaseViewController {
         
         self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
         self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.CitizenShipTextField.setRightIcon(UIImage.init(named: "chevron")!)
         
         self.countryCodeTextField.inputView = UIView.init(frame: CGRect.zero)
         self.countryCodeTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-        
+        self.countryCodeTextField.setRightIcon(UIImage.init(named: "chevron")!)
         //Drop Down for Country Code
         self.countryCodeDropDown.anchorView = self.countryCodeTextField
         self.countryCodeDropDown.dataSource = AppUtility.getCountryCodeOnly()
@@ -216,8 +217,10 @@ class CreateAccountV2ViewController: BaseViewController {
         self.SSNTextField.textColor = Colors.DustyGray155155155
         self.CitizenShipTextField.textColor = Colors.DustyGray155155155
 
-        self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
+
+     //   self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
+     //   self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
+
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
@@ -227,8 +230,8 @@ class CreateAccountV2ViewController: BaseViewController {
         self.SSNTextField.font = AppFonts.textBoxCalibri16
         self.CitizenShipTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
-        self.alreadyHaveaccountLbl.font = AppFonts.calibri15
-        self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
+        //self.alreadyHaveaccountLbl.font = AppFonts.calibri15
+       // self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
     }
     
     func updateTextFieldUI(){

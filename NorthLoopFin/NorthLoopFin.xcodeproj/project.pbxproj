@@ -329,6 +329,7 @@
 		297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB9F821B65240008D60CE /* AppUtility.swift */; };
 		2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F421B64EE0008D60CE /* Staging.xcconfig */; };
 		2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9F521B64EF4008D60CE /* Production.xcconfig */; };
+		4493B54A22D7063B00A8C58F /* CheckAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493B54922D7063B00A8C58F /* CheckAddressPresenter.swift */; };
 		4B07A87122C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */; };
 		4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */; };
 		4B07A87522C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87422C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift */; };
@@ -742,6 +743,7 @@
 		298CAB0623F715EE193F4F2D /* Pods-NorthLoopFinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E77A97A965E68B582769403 /* Pods-NorthLoopFinTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.production.xcconfig"; sourceTree = "<group>"; };
 		3F7D083137E81A93B7BC6FB3 /* Pods-NorthLoopFinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4493B54922D7063B00A8C58F /* CheckAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAddressPresenter.swift; sourceTree = "<group>"; };
 		44B1E2C4395260AA2C23AFF5 /* Pods-NorthLoopFin.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.staging.xcconfig"; sourceTree = "<group>"; };
 		4B07A87022C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsRequestModel.swift; sourceTree = "<group>"; };
 		4B07A87222C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsAPIRequest.swift; sourceTree = "<group>"; };
@@ -1170,6 +1172,7 @@
 			children = (
 				1D29C83E22A916A00092E3EB /* ChangePhonePresenter.swift */,
 				1D29C84022A916B00092E3EB /* ChangeAddressPresenter.swift */,
+				4493B54922D7063B00A8C58F /* CheckAddressPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2865,6 +2868,7 @@
 				1DE6D95122A0ED4700014572 /* DisputeTransactionDelegates.swift in Sources */,
 				1D790E0821D33A6A0088107A /* Validations.swift in Sources */,
 				1DD066EA221AAE0D00E1AD6D /* ScanIDNewViewController.swift in Sources */,
+				4493B54A22D7063B00A8C58F /* CheckAddressPresenter.swift in Sources */,
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
 				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
 				1D5AB2ED22A791B300DB3B70 /* SetPinAPIRequest.swift in Sources */,
@@ -3155,7 +3159,7 @@
 				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3171,7 +3175,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.northloop.NorthLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = NorthLoop_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "NorthLoopFin-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3185,9 +3189,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3203,7 +3207,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.northloop.NorthLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = NorthLoop_Adhoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "NorthLoopFin-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3363,10 +3367,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3383,7 +3387,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.northloop.NorthLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = NorthLoop_Adhoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "NorthLoopFin-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3503,7 +3507,7 @@
 				CODE_SIGN_ENTITLEMENTS = NorthLoopFin/NorthLoopFin.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3520,7 +3524,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-DPRODUCTION\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.northloop.NorthLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = NorthLoop_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "NorthLoopFin-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -176,8 +176,8 @@ class AppUtility {
         case 6..<12 : greeting = "Good Morning, "//print(NSLocalizedString("Morning", comment: "Morning"))
         case 12 : greeting = "Good Afternoon, "//print(NSLocalizedString("Noon", comment: "Noon"))
         case 13..<17 : greeting = "Good Afternoon, "//print(NSLocalizedString("Afternoon", comment: "Afternoon"))
-        case 17..<22 : greeting = "Good Evening, "//print(NSLocalizedString("Evening", comment: "Evening"))
-        default: greeting = "Good Night, " //print(NSLocalizedString("Night", comment: "Night"))
+        case 17..<24 : greeting = "Good Evening, "//print(NSLocalizedString("Evening", comment: "Evening"))
+        default: greeting = "Good Evening, " //print(NSLocalizedString("Night", comment: "Night"))
         }
         return greeting
     }

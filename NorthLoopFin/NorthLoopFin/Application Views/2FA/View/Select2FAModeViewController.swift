@@ -48,6 +48,8 @@ class Select2FAModeViewController: BaseViewController {
         
         self.twoFAModeTextField.inputView = UIView.init(frame: CGRect.zero)
         self.twoFAModeTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.twoFAModeTextField.setRightIcon(UIImage.init(named: "chevron")!)
+        
         //set drop down here
         dropDown.anchorView = self.twoFAModeTextField
         dropDown.dataSource = self.dropDownDataSource

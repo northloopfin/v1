@@ -59,6 +59,8 @@ class MakeTransferViewController: BaseViewController {
         self.initialiseUIWithEmptyData()
         self.nicknameTextField.inputView = UIView.init(frame: CGRect.zero)
         self.nicknameTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
+        
         dropDown.anchorView = self.nicknameTextField
         dropDown.dataSource = self.achArray
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
