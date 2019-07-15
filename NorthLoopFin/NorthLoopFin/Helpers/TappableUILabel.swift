@@ -50,4 +50,34 @@ extension UILabel {
     @objc private func tapped() {
         callback()
     }
+    
+    func underLineText(fullText:String, underlinedText:String){
+        let attributesForUnderLine: [NSAttributedString.Key: Any] = [
+            .font : AppFonts.calibri15 ,
+            .foregroundColor : Colors.NeonCarrot25414966,
+            .underlineStyle : NSUnderlineStyle.single.rawValue]
+        //let attributesForNormalText: [NSAttributedString.Key: Any] = [
+           // .font : AppFonts.calibri15 ,
+            //.foregroundColor : Colors.NeonCarrot25414966]
+        
+        let rangeOfUnderLine = (fullText as NSString).range(of: underlinedText)//(textToSet as NSString).range(of: "Edit Now")
+        //let rangeOfNormalText = fullText.range(of: fullText)//(textToSet as NSString).range(of: "Want to change your preferences?")
+        //let range = rangeOfNormalText-rangeOfUnderLine
+        let attributedText = NSMutableAttributedString(string: fullText)
+        attributedText.addAttributes(attributesForUnderLine, range: rangeOfUnderLine)
+        self.attributedText = attributedText
+    }
+    
+    func underlineMulyiplePartOfString(fullString: String, underlineString1:String, underlineString2:String){
+        let attributesForUnderLine: [NSAttributedString.Key: Any] = [
+            .font : AppFonts.calibri15 ,
+            .foregroundColor : Colors.NeonCarrot25414966,
+            .underlineStyle : NSUnderlineStyle.single.rawValue]
+        let rangeOfUnderLine1 = (fullString as NSString).range(of: underlineString1)
+        let rangeOfUnderLine2 = (fullString as NSString).range(of: underlineString2)
+        let attributedText = NSMutableAttributedString(string: fullString)
+        attributedText.addAttributes(attributesForUnderLine, range: rangeOfUnderLine1)
+        attributedText.addAttributes(attributesForUnderLine, range: rangeOfUnderLine2)
+        self.attributedText = attributedText
+    }
 }

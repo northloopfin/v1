@@ -9,9 +9,9 @@
 import UIKit
 import DropDown
 import IQKeyboardManagerSwift
-//import MFSideMenu
+import RealmSwift
 
-class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
+class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var streetAddress: UITextField!
     @IBOutlet weak var houseNumbertextfield: UITextField!
     @IBOutlet weak var cityTextfield: UITextField!
@@ -30,9 +30,9 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
 
     //var to keep track of which screen has initiated the process
     var screenThatInitiatedThisFlow:AppConstants.Screens?
+    lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
 
     var changeAddressPresnter:ChangeAddressPresenter!
-    var checkAddressPresnter:CheckAddressPresenter!
 
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -50,12 +50,7 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()
     }
-    @IBAction func doneClicked(_ sender: Any) {
-        let dic: [String: Any] = self.createCheckAddressRequestBody()
-        self.checkAddressPresnter.checkAddressWithLobAPI(addressData: dic)
-    }
-    
-    func didVerifyAddress() {
+    fileprivate func convertDataToDicAndCallAPI() {
         if let _ = self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
                 //call api to update address here
@@ -82,7 +77,7 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
             do {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
-                print(jsonString!)
+                //print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.presenter.startSignUpSynapse(requestDic: dic)
@@ -93,15 +88,15 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
         }
     }
     
-//    @IBAction func doneClicked(_ sender: Any) {
-//        if (Validations.isValidZip(value: self.zipTextfield.text!)){
-//                convertDataToDicAndCallAPI()
-//            }else{
-//                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
-//            }
-//        
-//        
-//    }
+    @IBAction func doneClicked(_ sender: Any) {
+        if (Validations.isValidZip(value: self.zipTextfield.text!)){
+                //delete all images from document directory
+                //StorageHelper.clearAllFileFromDirectory()
+                convertDataToDicAndCallAPI()
+            }else{
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+            }
+    }
     
     
     func createUpdateAddressRequestBody()->UpdateAddressRequestBody{
@@ -109,11 +104,6 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
         let updateAddressRequestBody = UpdateAddressRequestBody.init(address: updatedAddress)
         return updateAddressRequestBody
         
-    }
-    
-    func createCheckAddressRequestBody() -> [String: Any] {
-        let dictBody: [String: Any] = ["primary_line": "\(self.houseNumbertextfield.text ?? "") \(self.streetAddress.text ?? "")", "city": self.cityTextfield.text ?? "","zip_code": self.zipTextfield.text ?? "","state": self.streetAddress.text ?? ""]
-        return dictBody
     }
     
     override func viewDidLoad() {
@@ -125,7 +115,6 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
         self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
-        self.checkAddressPresnter = CheckAddressPresenter.init(delegate: self)
         if let _ =  self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS{
                 self.customProgressView.isHidden = true
@@ -141,11 +130,10 @@ class VerifyAddressViewController: BaseViewController,CheckAddressDelegate {
     }
     
     func fetchDatafromRealmIfAny(){
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
+        
+        if self.basicInfo.count > 0{
             self.doneBtn.isEnabled=true
-            let info = result.first!
+            let info = self.basicInfo.first!
             self.streetAddress.text = info.streetAddress
             self.houseNumbertextfield.text = info.houseNumber
             self.cityTextfield.text = info.city
@@ -305,6 +293,7 @@ extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
         AppUtility.moveToHomeScreen()
+        RealmHelper.deleteAllFromDatabase()
         //move to promocode
 //        self.moveToPromoCode()
     }
@@ -321,8 +310,3 @@ extension VerifyAddressViewController:ChangeAddressDelegate{
         AppUtility.moveToHomeScreen()
     }
 }
-//extension VerifyAddressViewController:CheckAddressDelegate{
-//    func didVerifyAddress() {
-//
-//    }
-//}

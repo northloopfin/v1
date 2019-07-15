@@ -8,6 +8,7 @@
 
 import Foundation
 import DropDown
+import RealmSwift
 
 
 class SignupStepConfirm: BaseViewController {
@@ -18,6 +19,7 @@ class SignupStepConfirm: BaseViewController {
     @IBOutlet weak var universityTextField: UITextField!
     @IBOutlet weak var arrivalDate: UITextField!
 
+    lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var customProgressView: ProgressView!
 
@@ -55,8 +57,11 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.documents.email = self.signupFlowData.email
             self.signupFlowData.documents.phoneNumber = self.signupFlowData.phoneNumbers[0]
             // get milliseconds from date entered for arrival
-            let arrivaleDate = AppUtility.datefromStringUsingCalender(date: self.arrivalDate.text ?? "")
-            self.signupFlowData.arrivalDate = String(arrivaleDate.millisecondsSince1970)
+            if !(self.arrivalDate.text?.isEmpty)!{
+                let arrivaleDate = AppUtility.datefromStringUsingCalender(date: self.arrivalDate.text ?? "")
+                self.signupFlowData.arrivalDate = String(arrivaleDate.millisecondsSince1970)
+            }
+            
             let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
             self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
             self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
@@ -136,7 +141,7 @@ class SignupStepConfirm: BaseViewController {
         
         self.passportTextField.applyAttributesWithValues(placeholderText: "Passport Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth (dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (dd/mm/yyyy) optional", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.universityTextField.applyAttributesWithValues(placeholderText: "University*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
@@ -170,11 +175,10 @@ class SignupStepConfirm: BaseViewController {
     }
     
     func retrieveDataFromDB(){
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
+        //let result = RealmHelper.retrieveBasicInfo()
+        if self.basicInfo.count > 0{
             //self.nextBtn.isEnabled=true
-            let info = result.first!
+            let info = self.basicInfo.first!
             self.passportTextField.text = info.passportNumber
             self.DOBTextField.text = info.DOB
             self.universityTextField.text = info.university
@@ -188,6 +192,7 @@ class SignupStepConfirm: BaseViewController {
     func showDatePicker(tag: Int){
         //Format Date
         datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
         
         //ToolBar
         let toolbar = UIToolbar();
@@ -239,7 +244,7 @@ extension SignupStepConfirm:UITextFieldDelegate{
     
     //check for mandatory fields
     func checkForMandatoryFields(){
-        if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)! && !(self.arrivalDate.text?.isEmpty)!
+        if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)!
             )
         {
             self.nextBtn.isEnabled=true

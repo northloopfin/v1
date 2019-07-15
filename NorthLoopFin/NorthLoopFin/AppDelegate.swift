@@ -29,10 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if crash happen prior delete local database
         if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
             RealmHelper.deleteAllFromDatabase()
+            //StorageHelper.clearAllFileFromDirectory()
             UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForCrash)
         }
         // Override point for customization after application launch.
         self.registerForPushNotifications()
+        print(StorageHelper.getDirectoryPath())
 
         //Configure Firebase
         FirebaseApp.configure()

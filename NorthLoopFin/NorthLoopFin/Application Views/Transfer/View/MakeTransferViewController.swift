@@ -59,7 +59,7 @@ class MakeTransferViewController: BaseViewController {
         self.initialiseUIWithEmptyData()
         self.nicknameTextField.inputView = UIView.init(frame: CGRect.zero)
         self.nicknameTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-        self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
+        //self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
         
         dropDown.anchorView = self.nicknameTextField
         dropDown.dataSource = self.achArray
@@ -128,9 +128,16 @@ class MakeTransferViewController: BaseViewController {
     }
     
     func moveToLinkAchScreen(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "TransferViewController") as! TransferViewController
-        self.navigationController?.pushViewController(vc, animated: false)
+        if self.achArray.count >= 2{
+            //show error message
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.MAXIMUM_NODES_ADDED.rawValue)
+            return
+        }else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "TransferViewController") as! TransferViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        
     }
 }
 extension MakeTransferViewController:UITextFieldDelegate{
@@ -170,6 +177,7 @@ extension MakeTransferViewController:FetchACHDelegates{
             let nickname = data[n].nickname
             self.achArray.append(nickname)
             }
+            self.nicknameTextField.setRightIcon(UIImage.init(named: "chevron")!)
             self.nicknameHeightConstraint.constant=50
             self.amoutHeightConstraint.constant=50
             self.payBtnHeightConstarint.constant=45

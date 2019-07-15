@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import RealmSwift
 
 class CreateAccountV2ViewController: BaseViewController {
 
@@ -21,6 +22,7 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var customProgressView: ProgressView!
 
     @IBOutlet weak var nextBtn: CommonButton!
+    lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
     //@IBOutlet weak var loginLbl: UIButtonWithSpacing!
     //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     
@@ -95,29 +97,7 @@ class CreateAccountV2ViewController: BaseViewController {
 //    Methode will update signp form data model
     func updateSignUpFormData(){
         self.saveDataToRealm()
-        let legalName = self.firstNameTextField.text!+" "+self.lastNameTextField.text!
-        var phoneNumber = self.phoneTextField.text!
-        if (self.phoneTextField.text?.isEmpty)!{
-            phoneNumber="5555555555"
-        }else{
-            phoneNumber = self.countryCodeTextField.text!+self.phoneTextField.text!
-        }
         
-        if let data = self.signupFlowData{
-            data.legalNames=[legalName]
-            data.phoneNumbers=[phoneNumber]
-            let address : SignupFlowAddress = data.address
-            address.country = self.selectedCountry.code
-            if (!((self.SSNTextField.text?.isEmpty)!)){
-                let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
-                let documents:SignupFlowDocument=self.signupFlowData.documents
-                documents.virtualDocs=[ssnData]
-                data.documents=documents
-                data.cipTag=1
-                
-            }
-            self.moveToSignupStepThree(withData: self.signupFlowData)
-        }
     }
     
     //Call Phone Verification Service
@@ -157,15 +137,13 @@ class CreateAccountV2ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        self.fetchDatafromRealmIfAny()
+       // self.fetchDatafromRealmIfAny()
     }
     
     func fetchDatafromRealmIfAny(){
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
+        if self.basicInfo.count > 0{
             self.nextBtn.isEnabled=true
-            let info = result.first!
+            let info = self.basicInfo.first!
             self.firstNameTextField.text = info.firstname
             self.lastNameTextField.text = info.lastname
             self.SSNTextField.text = info.ssn
@@ -174,7 +152,6 @@ class CreateAccountV2ViewController: BaseViewController {
             //search for citizenship in the list of countries
             let selectedCountryArr = self.countryWithCode.filter { $0.name == info.citizenShip}
             self.selectedCountry = selectedCountryArr[0]
-            //self.countryCodeTextField.text = self.selectedCountry.dialCode
         }
     }
     
@@ -252,7 +229,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.firstNameTextField.applyAttributesWithValues(placeholderText: "First Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.lastNameTextField.applyAttributesWithValues(placeholderText: "Last Name*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.SSNTextField.applyAttributesWithValues(placeholderText: "SSN (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No (Optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.phoneTextField.applyAttributesWithValues(placeholderText: "Phone No", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.CitizenShipTextField.applyAttributesWithValues(placeholderText: "Citizenship*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.countryCodeTextField.applyAttributesWithValues(placeholderText: "Code", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
@@ -286,15 +263,33 @@ class CreateAccountV2ViewController: BaseViewController {
     
    //will save this screen data to DB
     func saveDataToRealm(){
-        RealmHelper.deleteAllBasicInfo()
         let basicInfo:BasicInfo=BasicInfo()
-    basicInfo.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
+        basicInfo.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
         basicInfo.firstname=self.firstNameTextField.text ?? ""
         basicInfo.lastname=self.lastNameTextField.text ?? ""
         basicInfo.ssn=self.SSNTextField.text ?? ""
         basicInfo.phone=self.phoneTextField.text ?? ""
         basicInfo.citizenShip=self.CitizenShipTextField.text ?? ""
         RealmHelper.addBasicInfo(info: basicInfo)
+        
+        let legalName = self.firstNameTextField.text!+" "+self.lastNameTextField.text!
+        
+        let phoneNumber = self.countryCodeTextField.text!+self.phoneTextField.text!
+        
+        if let data = self.signupFlowData{
+            data.legalNames=[legalName]
+            data.phoneNumbers=[phoneNumber]
+            let address : SignupFlowAddress = data.address
+            address.country = self.selectedCountry.code
+            if (!((self.SSNTextField.text?.isEmpty)!)){
+                let ssnData:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.SSNTextField.text!, documentType: "SSN")
+                let documents:SignupFlowDocument=self.signupFlowData.documents
+                documents.virtualDocs=[ssnData]
+                data.documents=documents
+                data.cipTag=1
+            }
+            self.moveToSignupStepThree(withData: self.signupFlowData)
+        }
     }
     
     func setSampleData(){
@@ -313,7 +308,7 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
     
     // Methode will check for mandatory fields and perform accordingly
     func checkForMandatoryFields(){
-        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)! )
+        if (!(self.firstNameTextField.text?.isEmpty)! && !(self.lastNameTextField.text?.isEmpty)! && !(self.CitizenShipTextField.text?.isEmpty)! && !(self.phoneTextField.text?.isEmpty)! && !(self.countryCodeTextField.text?.isEmpty)! )
         {
             self.nextBtn.isEnabled=true
         }

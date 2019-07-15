@@ -76,6 +76,7 @@ struct AppConstants{
         case APP_IS_UPTO_DATE = "App is upto date"
         case PROMOCODE_NOT_VALID = "Promocode not valid"
         case SSN_NOT_VALID = "Please enter a valid SSN Number"
+        case MAXIMUM_NODES_ADDED = "You already have 2 accounts linked. Please remove one before adding another"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {

@@ -17,7 +17,7 @@ class Validations {
     //Function validate text as valid password. Minimum 8 character length
    class func isValidPassword(password:String) -> Bool {
         //let passwordRegEx = "(?:(?:(?=.*?[0-9])(?=.*?[-!@#$%&*ˆ+=_])|(?:(?=.*?[0-9])|(?=.*?[A-Z])|(?=.*?[-!@#$%&*ˆ+=_])))|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[-!@#$%&*ˆ+=_]))[A-Za-z0-9-!@#$%&*ˆ+=_]{8,20}"
-    let passwordRegEx = "^(?=.*[A-Z])(?=.*[!@#$&*_])(?=.*[0-9])(?=.*[a-z]).{8,20}$"
+    let passwordRegEx = "^(?=.*[A-Z])(?=.*[!@#\\$%\\^&\\*])(?=.*[0-9])(?=.*[a-z]).{8,20}$"
         let passwordTest = NSPredicate(format:"SELF MATCHES[c] %@", passwordRegEx)
         return passwordTest.evaluate(with: password)
     }

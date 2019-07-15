@@ -66,4 +66,16 @@ class StorageHelper{
             print("Something wronge.")
         }
     }
+    
+    static func clearAllFileFromDirectory() {
+        let fileManager = FileManager.default
+        let myDocuments = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        
+        do {
+            try fileManager.removeItem(at: myDocuments)
+        } catch {
+            return
+        }
+    }
 }

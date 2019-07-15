@@ -69,6 +69,12 @@ class SignUpStepFirst: BaseViewController {
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
+        //Underline text
+        self.termsAgreementLbl.underLineText(fullText: self.termsAgreementLbl.text ?? "", underlinedText: "Terms of Service and Privacy Policy")
+        self.cardDepositAgreementLbl.underlineMulyiplePartOfString(fullString: self.cardDepositAgreementLbl.text ?? "", underlineString1: "Deposit", underlineString2: "Cardholder Agreement")//underLineText(fullText: self.cardDepositAgreementLbl.text ?? "", underlinedText: "Deposit Agreement")
+        //self.cardDepositAgreementLbl.underLineText(fullText: self.cardDepositAgreementLbl.text ?? "", underlinedText: "Cardholder Agreement")
+        
+        
         self.customProgressView.progressView.setProgress(0.17*1, animated: true)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
         let cardDepositTap = UITapGestureRecognizer(target: self, action: #selector(cardTapLabel(tap:)))
@@ -171,8 +177,8 @@ class SignUpStepFirst: BaseViewController {
     // Remove this sample values
     func setSampleData(){
         self.emailTextField.text = "Sunita210@gmail.com"
-        self.paswwordTextField.text = "test1234!"
-        self.confirmPassTextField.text = "test1234!"
+        self.paswwordTextField.text = "Test1234!"
+        self.confirmPassTextField.text = "Test1234!"
     }
 }
 
