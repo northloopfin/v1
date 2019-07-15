@@ -175,7 +175,8 @@ class RealmHelper{
     static func deleteAllBasicInfo(){
         let realm = try! Realm()
         try! realm.write() {
-            realm.delete(realm.objects(BasicInfo.self))
+            let allBasicInfo = realm.objects(BasicInfo.self)
+            realm.delete(allBasicInfo)
         }
     }
 }

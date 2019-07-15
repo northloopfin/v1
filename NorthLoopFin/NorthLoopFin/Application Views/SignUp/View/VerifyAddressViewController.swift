@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 import IQKeyboardManagerSwift
-//import MFSideMenu
+import RealmSwift
 
 class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var streetAddress: UITextField!
@@ -30,6 +30,7 @@ class VerifyAddressViewController: BaseViewController {
 
     //var to keep track of which screen has initiated the process
     var screenThatInitiatedThisFlow:AppConstants.Screens?
+    lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
 
     var changeAddressPresnter:ChangeAddressPresenter!
 
@@ -89,6 +90,8 @@ class VerifyAddressViewController: BaseViewController {
     
     @IBAction func doneClicked(_ sender: Any) {
         if (Validations.isValidZip(value: self.zipTextfield.text!)){
+                //delete all images from document directory
+                StorageHelper.clearAllFileFromDirectory()
                 convertDataToDicAndCallAPI()
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
@@ -122,16 +125,15 @@ class VerifyAddressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        //self.fetchDatafromRealmIfAny()
-        //self.setSampleData()
+        self.fetchDatafromRealmIfAny()
+        self.setSampleData()
     }
     
     func fetchDatafromRealmIfAny(){
-        let result = RealmHelper.retrieveBasicInfo()
-        print(result)
-        if result.count > 0{
+        
+        if self.basicInfo.count > 0{
             self.doneBtn.isEnabled=true
-            let info = result.first!
+            let info = self.basicInfo.first!
             self.streetAddress.text = info.streetAddress
             self.houseNumbertextfield.text = info.houseNumber
             self.cityTextfield.text = info.city

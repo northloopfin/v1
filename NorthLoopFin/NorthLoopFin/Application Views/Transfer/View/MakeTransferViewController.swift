@@ -128,9 +128,16 @@ class MakeTransferViewController: BaseViewController {
     }
     
     func moveToLinkAchScreen(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "TransferViewController") as! TransferViewController
-        self.navigationController?.pushViewController(vc, animated: false)
+        if self.achArray.count >= 2{
+            //show error message
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.MAXIMUM_NODES_ADDED.rawValue)
+            return
+        }else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "TransferViewController") as! TransferViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        
     }
 }
 extension MakeTransferViewController:UITextFieldDelegate{

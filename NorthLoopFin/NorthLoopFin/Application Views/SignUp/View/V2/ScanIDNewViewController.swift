@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ScanIDNewViewController: BaseViewController {
+    var threadLbl:String = "bgthread"
     @IBOutlet weak var uploadImage3HeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var uploadImage2HeightConstraint: NSLayoutConstraint!
 
@@ -34,6 +36,8 @@ class ScanIDNewViewController: BaseViewController {
     @IBOutlet weak var uploadedImageExtra : UIImageView!
 
     @IBOutlet weak var customProgressView: ProgressView!
+    
+    lazy var scanIDImages: Results<ScanIDImages> = RealmHelper.retrieveImages()
 
     var imageArray:[UIImage]=[]
     var selectedOption:AppConstants.SelectIDTYPES!
@@ -46,15 +50,17 @@ class ScanIDNewViewController: BaseViewController {
     
     //var to define the state wether data coming from Realm DB
     var isGetDataFromDB:Bool = false
+    var isSSNFlow:Bool = false
     var signupData:SignupFlowData!=nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkForSSN()
-       // self.initialiseData()
+        self.checkDBForImages()
+        
+        self.initialiseData()
         self.disableImageThumbTouch()
         self.prepareView()
-        //self.checkDBForImages()
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Scan ID")
         self.renderIDOptions()
@@ -66,60 +72,50 @@ class ScanIDNewViewController: BaseViewController {
         //loop through options
         for n in 0...(self.optionsArr.count-1){
             //check for type of option
-            let image = UIImage.init(named: "scanFrontId")
-            var imagearr:[UIImage] = [image!, image!, image!]
-            let option = self.optionsArr[n]
-            
-            if option == AppConstants.SelectIDTYPES.PASSPORT || option == AppConstants.SelectIDTYPES.F1VISA ||  option == AppConstants.SelectIDTYPES.USIDTYPE ||
-                option == AppConstants.SelectIDTYPES.ADDRESSPROOF{
-                // create data for these options. These options have single image
-                
-                
-            }else{
-                // create data for I-20. This option has three images
-                
-                imagearr = [image!]
-            }
-            let model:SelectIDType = SelectIDType.init(type: option, images: imagearr)
+            //let image = UIImage.init(named: "scanFrontId")
+            let imagearr:[UIImage] = []
+            let model:SelectIDType = SelectIDType.init(type: self.optionsArr[n], images: imagearr)
             self.modelArray.append(model)
+//            if option == AppConstants.SelectIDTYPES.PASSPORT || option == AppConstants.SelectIDTYPES.F1VISA ||  option == AppConstants.SelectIDTYPES.USIDTYPE ||
+//                option == AppConstants.SelectIDTYPES.ADDRESSPROOF{
+//                // create data for these options. These options have single image
+//
+//
+//            }else{
+//                // create data for I-20. This option has three images
+//
+//                imagearr = [image!]
+//            }
+//            let model:SelectIDType = SelectIDType.init(type: option, images: imagearr)
+//            self.modelArray.append(model)
         }
         
     }
     
     func checkForSSN(){
         if let _ = self.signupData{
-            if (self.signupData.documents.virtualDocs.count == 1){
+            let ssnVirtualDoc = self.signupData.documents.virtualDocs.filter{$0.documentType == "SSN"}//self.modelArray.filter{$0.type == optionSelected}
+            if (ssnVirtualDoc.count > 0){
                 // it must be ssn doc..then change options
                 self.optionsArr = [AppConstants.SelectIDTYPES.STATEID,AppConstants.SelectIDTYPES.DRIVERLICENSE,AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.OTHER]
+                self.isSSNFlow=true
             }else{
                 self.optionsArr = [AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.F1VISA,AppConstants.SelectIDTYPES.ADDRESSPROOF]
+                self.isSSNFlow=false
             }
         }
     }
     
     func checkDBForImages(){
-        let imagesFromDb = RealmHelper.retrieveImages()
-        var passportImages:[UIImage]=[]
-        self.nextBtn.isEnabled=false
-
-        if imagesFromDb.count>0{
+        if scanIDImages.count > 0{
+            var passportImages:[UIImage]=[]
             self.isGetDataFromDB=true
             self.nextBtn.isEnabled=true
             // loop through options array
             for n in 0...(self.optionsArr.count-1){
-                //loop through images stored in db to find out images for particular type
-            
-//               let imagesOfParticularScanID = imagesFromDb.filter { (model) -> Bool in
-//                    model.type == self.optionsArr[n].rawValue
-//                }
-////                =imagesFromDb.filter{$0.type == self.optionsArr[n].rawValue}
-//                print(imagesOfParticularScanID)
-                //loop through images of particularScanID and add them to model array
-                //Create object of that particular scan id
-                //print(StorageHelper.getImagePath(imgName: imagesOfParticularScanID[0].imagePath))
-                for m in 0...(imagesFromDb.count-1){
+                for m in 0...(self.scanIDImages.count-1){
                     
-                    let model = imagesFromDb[m]
+                    let model = self.scanIDImages[m]
                     if model.type == self.optionsArr[n].rawValue{
                         print(StorageHelper.getImagePath(imgName: model.imagePath))
                         if let _ = StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: model.imagePath)){
@@ -128,17 +124,50 @@ class ScanIDNewViewController: BaseViewController {
                             passportImages.append(StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: model.imagePath))!)
                         }
                     }
-                    
                 }
                 let model = SelectIDType.init(type: self.optionsArr[n], images: passportImages)// self.modelArray[n]
-               self.modelArray.append(model)
-               // print(self.modelArray.count)
+                self.modelArray.append(model)
+                // print(self.modelArray.count)
             }
             self.selectedOption = self.optionsArr[0]
             self.getImageFromDBForSelctedOption()
             self.setImages()
-
         }
+//        DispatchQueue(label: threadLbl).async {
+//            print("Fetch Saved Data")
+//            let imagesFromDb = RealmHelper.retrieveImages()
+//            DispatchQueue.main.async {
+//                var passportImages:[UIImage]=[]
+//                self.nextBtn.isEnabled=false
+//
+//                if imagesFromDb.count>0{
+//                    self.isGetDataFromDB=true
+//                    self.nextBtn.isEnabled=true
+//                    // loop through options array
+//                    for n in 0...(self.optionsArr.count-1){
+//                        for m in 0...(imagesFromDb.count-1){
+//
+//                            let model = imagesFromDb[m]
+//                            if model.type == self.optionsArr[n].rawValue{
+//                                print(StorageHelper.getImagePath(imgName: model.imagePath))
+//                                if let _ = StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: model.imagePath)){
+//                                    //passportImages.append(StorageHelper.getImageFromPath(path: imagesOfParticularScanID[m].imagePath)!)
+//
+//                                    passportImages.append(StorageHelper.getImageFromPath(path: StorageHelper.getImagePath(imgName: model.imagePath))!)
+//                                }
+//                            }
+//                        }
+//                        let model = SelectIDType.init(type: self.optionsArr[n], images: passportImages)// self.modelArray[n]
+//                        self.modelArray.append(model)
+//                        // print(self.modelArray.count)
+//                    }
+//                    self.selectedOption = self.optionsArr[0]
+//                    self.getImageFromDBForSelctedOption()
+//                    self.setImages()
+//
+//                }
+//            }
+//        }
     }
     ///Methode will set image array read from db
     func getImageFromDBForSelctedOption(){
@@ -355,6 +384,7 @@ class ScanIDNewViewController: BaseViewController {
             //Also create name with help of array index and model type
             let scanIDModel = self.modelArray[n]
             let imagesArr = self.modelArray[n].images
+            if imagesArr.count > 0{
             for n in 0...(imagesArr.count-1){
                 let imagedata:Data = imagesArr[n].jpegData(compressionQuality: 0.5)!
                 let filename:String = scanIDModel.type.rawValue+String(n)+".jpg"
@@ -363,12 +393,13 @@ class ScanIDNewViewController: BaseViewController {
                 StorageHelper.saveImageDocumentDirectory(fileName: filename, data: imagedata)
                 //create ScanIDTypes model to save into DB
                 let modelToSaveInDB:ScanIDImages = ScanIDImages()
-            modelToSaveInDB.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
+                modelToSaveInDB.email=UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForEmail) as! String
                 modelToSaveInDB.type = scanIDModel.type.rawValue
                 modelToSaveInDB.imagePath=filename//StorageHelper.getImagePath(imgName: filename)
                 RealmHelper.addScanIDInfo(info: modelToSaveInDB)
             }
         }
+    }
     }
     
     func showErrForSelectedOptions(){
@@ -397,8 +428,7 @@ class ScanIDNewViewController: BaseViewController {
                 }
             }
         }
-        RealmHelper.deleteAllScanID()
-       // self.saveImageInDB()
+        self.saveImageInDB()
         self.updateSignupFlowDataWithCompressedImages()
     }
     
@@ -431,6 +461,7 @@ class ScanIDNewViewController: BaseViewController {
             let scanIDModel = self.modelArray[n]
             //let imagesArr = scanIDModel.images
             //Prepare data for document
+            if scanIDModel.images.count > 0{
             for m in 0...(scanIDModel.images.count-1){
                 let image = scanIDModel.images[m]
                 do {
@@ -455,6 +486,7 @@ class ScanIDNewViewController: BaseViewController {
                 
             }
         }
+    }
         //save data to SignupFlowData
         if let _ = self.signupData{
             self.signupData.documents.physicalDocs = arrayOfScannedDocuments
@@ -521,41 +553,74 @@ class ScanIDNewViewController: BaseViewController {
                 optionSelected ==  AppConstants.SelectIDTYPES.STATEID ||
                 optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE ||
                 optionSelected == AppConstants.SelectIDTYPES.OTHER{
-                if self.imageArray.count == 1 {
+                if self.imageArray.count == 1{
                     //check whether model exist in array
                     if let index = self.modelArray.index(where: { $0.type == optionSelected }){
-                        //yes it exist
-                        let selectedOptionData = self.modelArray[index]
-                        selectedOptionData.images = self.imageArray
-                    }else{
-                        let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
-                        self.modelArray.append(model)
+                    //yes it exist
+                    let selectedOptionData = self.modelArray[index]
+                    selectedOptionData.images = self.imageArray
+                    }
+                    if !self.isSSNFlow{
                         if selectedButtonTag != self.optionBtnsArray.count-1{
                             let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                            nextBtnToEnable.sendActions(for: .touchUpInside)}
+                            nextBtnToEnable.sendActions(for: .touchUpInside)
+                        }
                     }
-                    
-                    
-                    // disable touch for image thumbnail
-                    self.disableImageThumbTouch()
                 }
+                
+//                if self.imageArray.count == 1 {
+//                    //check whether model exist in array
+//                    if let index = self.modelArray.index(where: { $0.type == optionSelected }){
+//                        //yes it exist
+//                        let selectedOptionData = self.modelArray[index]
+//                        selectedOptionData.images = self.imageArray
+//                    }else{
+//                        let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
+//                        self.modelArray.append(model)
+//                        if selectedButtonTag != self.optionBtnsArray.count-1{
+//                            let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+//                            nextBtnToEnable.sendActions(for: .touchUpInside)}
+//                    }
+//
+//
+//                    // disable touch for image thumbnail
+//                    self.disableImageThumbTouch()
+//                }
+                
             }else{
+                
                 if self.imageArray.count == 3{
-                    
                     if let index = self.modelArray.index(where: { $0.type == optionSelected }){
                         //yes it exist
                         let selectedOptionData = self.modelArray[index]
                         selectedOptionData.images = self.imageArray
-                    }else{
-                        let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
-                        self.modelArray.append(model)
-                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
-                        nextBtnToEnable.sendActions(for: .touchUpInside)
+                        
                     }
-                    // disable touch for image thumbnail
-                    self.disableImageThumbTouch()
+                    if !self.isSSNFlow{
+                        if selectedButtonTag != self.optionBtnsArray.count-1{
+                            let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+                            nextBtnToEnable.sendActions(for: .touchUpInside)
+                        }
+                    }
                 }
+//                if self.imageArray.count == 3{
+//
+//                    if let index = self.modelArray.index(where: { $0.type == optionSelected }){
+//                        //yes it exist
+//                        let selectedOptionData = self.modelArray[index]
+//                        selectedOptionData.images = self.imageArray
+//                    }else{
+//                        let model = SelectIDType.init(type: optionSelected, images: self.imageArray)
+//                        self.modelArray.append(model)
+//                        let nextBtnToEnable = self.optionBtnsArray[selectedButtonTag+1]
+//                        nextBtnToEnable.sendActions(for: .touchUpInside)
+//                    }
+//                    // disable touch for image thumbnail
+//                    self.disableImageThumbTouch()
+//                }
             }
+           
+            self.disableImageThumbTouch()
         }
     }
     
@@ -566,18 +631,13 @@ class ScanIDNewViewController: BaseViewController {
             if let _ = self.signupData{
                 if (self.signupData.documents.virtualDocs.count == 1){
                     // yes it is, then only one documnet upload is sufficient
-                    if self.modelArray.count == 1{
+                    if self.modelArray[0].images.count > 0{
                      //1 document has been uploaded
                         self.nextBtn.isEnabled=true
                     }
                 }else{
                     // Non SSN User
-                    if self.modelArray.count == self.optionsArr.count{
                         self.nextBtn.isEnabled=true
-                    }else{
-                        self.nextBtn.isEnabled=false
-                        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
-                    }
                 }
             }
         }
