@@ -57,8 +57,11 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.documents.email = self.signupFlowData.email
             self.signupFlowData.documents.phoneNumber = self.signupFlowData.phoneNumbers[0]
             // get milliseconds from date entered for arrival
-            let arrivaleDate = AppUtility.datefromStringUsingCalender(date: self.arrivalDate.text ?? "")
-            self.signupFlowData.arrivalDate = String(arrivaleDate.millisecondsSince1970)
+            if !(self.arrivalDate.text?.isEmpty)!{
+                let arrivaleDate = AppUtility.datefromStringUsingCalender(date: self.arrivalDate.text ?? "")
+                self.signupFlowData.arrivalDate = String(arrivaleDate.millisecondsSince1970)
+            }
+            
             let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
             self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
             self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0

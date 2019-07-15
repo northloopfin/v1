@@ -91,7 +91,7 @@ class VerifyAddressViewController: BaseViewController {
     @IBAction func doneClicked(_ sender: Any) {
         if (Validations.isValidZip(value: self.zipTextfield.text!)){
                 //delete all images from document directory
-                StorageHelper.clearAllFileFromDirectory()
+                //StorageHelper.clearAllFileFromDirectory()
                 convertDataToDicAndCallAPI()
             }else{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)

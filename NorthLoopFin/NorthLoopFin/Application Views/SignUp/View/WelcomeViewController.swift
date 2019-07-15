@@ -32,6 +32,7 @@ class WelcomeViewController: BaseViewController {
     
     @IBAction func createAccountClicked(_ sender: Any) {
         RealmHelper.deleteAllFromDatabase()
+        //StorageHelper.clearAllFileFromDirectory()
         self.moveToNextScreen()
         // check if there is something in DB then resume signup otherwise new flow
 //        let result = RealmHelper.retrieveBasicInfo()

@@ -194,8 +194,10 @@ class CreateAccountV2ViewController: BaseViewController {
         self.SSNTextField.textColor = Colors.DustyGray155155155
         self.CitizenShipTextField.textColor = Colors.DustyGray155155155
 
-        //self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        //self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
+
+     //   self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
+     //   self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
+
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
