@@ -201,21 +201,34 @@ extension LoginViewController:LoginDelegate{
         //successfully logged in user..move to home page
         //call Zendesk API to get identity token
         // save email and password only if remember is enabled
-        if self.rememberMeCheckBox.isChecked{
-            UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
-            // save password entered to KeyChain
-            let password:String = self.passwordTextfield.text ?? ""
-            
-            
-            if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
-                print("Password Saved to Keychain")
+        if data.isVerified{
+            //if user is verified
+            if self.rememberMeCheckBox.isChecked{
+                UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+                // save password entered to KeyChain
+                let password:String = self.passwordTextfield.text ?? ""
+                
+                
+                if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
+                    print("Password Saved to Keychain")
+                }
+                let email:String = self.emailTextField.text ?? ""
+                if KeychainWrapper.standard.set(email, forKey: AppConstants.KeyChainKeyForEmail){
+                    print("email Saved to Keychain")
+                }
             }
-            let email:String = self.emailTextField.text ?? ""
-            if KeychainWrapper.standard.set(email, forKey: AppConstants.KeyChainKeyForEmail){
-                print("email Saved to Keychain")
-            }
+            self.zendeskPresenter.sendZendeskTokenRequest()
+        }else{
+            //if user is not verified
+            self.moveToWaitList()
         }
-        self.zendeskPresenter.sendZendeskTokenRequest()
+        
+    }
+    
+    func moveToWaitList(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     

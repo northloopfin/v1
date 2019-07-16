@@ -433,7 +433,7 @@ class ScanIDNewViewController: BaseViewController {
     }
     
     func updateSignupFlowDataWithCompressedImages(){
-        self.showLoader()
+       // self.showLoader()
         DispatchQueue.global(qos: .userInitiated).async {
             // Do some time consuming task in this background thread
             // Mobile app will remain to be responsive to user actions
@@ -444,7 +444,7 @@ class ScanIDNewViewController: BaseViewController {
                 // Task consuming task has completed
                 // Update UI from this block of code
                 print("Time consuming task has completed. From here we are allowed to update user interface.")
-                self.hideLoader()
+                //self.hideLoader()
                 UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: "SignupStepConfirm") as! SignupStepConfirm

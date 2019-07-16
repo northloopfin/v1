@@ -141,7 +141,7 @@ class SignupStepConfirm: BaseViewController {
         
         self.passportTextField.applyAttributesWithValues(placeholderText: "Passport Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth (dd/mm/yyyy)*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (dd/mm/yyyy) optional", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (dd/mm/yyyy) (optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.universityTextField.applyAttributesWithValues(placeholderText: "University*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         //self.emailTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
@@ -192,7 +192,12 @@ class SignupStepConfirm: BaseViewController {
     func showDatePicker(tag: Int){
         //Format Date
         datePicker.datePickerMode = .date
-        datePicker.minimumDate = Date()
+        if tag == 0{
+            datePicker.minimumDate = nil
+        }else{
+            datePicker.minimumDate = Date()
+        }
+        
         
         //ToolBar
         let toolbar = UIToolbar();

@@ -107,14 +107,25 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func moveToLostCardScreen() {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        if self.isLockCard{
+            self.showAlertForInactiveCadrs()
+            return
+        }else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
+            self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        }
+        
     }
     func moveToNewPincreen() {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        if self.isLockCard{
+            self.showAlertForInactiveCadrs()
+            return
+        }else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
+            self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        }
     }
 }
 
@@ -135,7 +146,7 @@ extension MyCardViewController:CardDelegates{
 
                 self.optionsTableView.reloadData()
             
-        }else{
+        }else if data.data.status == "PENDING"{
             self.isLockCard = true
             
         }
@@ -162,43 +173,60 @@ extension MyCardViewController:MyCardTableCellDelegate{
         case 0:
             //lock you card
             self.isLockCard=isOn
-            self.showConfirmationAlert()
+            self.showConfirmationAlertForLockCard()
             
         case 3:
             // spend abroad
             self.isSpendAbroad=isOn
-            self.showConfirmationAlert()
+            self.showConfirmationAlertForSpendAbroad()
         
         default:
             break
         }
     }
     
-    func showConfirmationAlert(){
-        var params = Parameters(
+    func showConfirmationAlertForLockCard(){
+        let paramsForLockCard = Parameters(
             title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
             message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_TO_LOCK_CARD.rawValue,
             cancelButton: "Cancel",
             otherButtons: ["Confirm"]
         )
-        if self.isSpendAbroad{
-            params = Parameters(
-                title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
-                message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_SPEND_ABROAD.rawValue,
-                cancelButton: "Cancel",
-                otherButtons: ["Confirm"]
-            )
-        }
         
-        AlertHelperKit().showAlertWithHandler(self, parameters: params) { buttonIndex in
+        
+        AlertHelperKit().showAlertWithHandler(self, parameters: paramsForLockCard) { buttonIndex in
             switch buttonIndex {
             case 0:
                 print("Cancel: \(buttonIndex)")
+                self.isLockCard=false
+                self.optionsTableView.reloadData()
             default:
                 self.createRequestForUpdateCardStatus()
             }
         }
     }
+    
+    func showConfirmationAlertForSpendAbroad(){
+      let  params = Parameters(
+            title: AppConstants.ErrorHandlingKeys.CONFIRM_TITLE.rawValue,
+            message: AppConstants.ErrorMessages.CONFIRM_MESSAGE_SPEND_ABROAD.rawValue,
+            cancelButton: "Cancel",
+            otherButtons: ["Confirm"]
+        )
+        
+        AlertHelperKit().showAlertWithHandler(self, parameters: params) { buttonIndex in
+            switch buttonIndex {
+            case 0:
+                print("Cancel: \(buttonIndex)")
+                self.isSpendAbroad=false
+                self.optionsTableView.reloadData()
+
+            default:
+                self.createRequestForUpdateCardStatus()
+            }
+        }
+    }
+    
     
     
     func createRequestForUpdateCardStatus(){

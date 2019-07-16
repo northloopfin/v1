@@ -10,15 +10,17 @@ import Foundation
 struct AccountData: Codable {
     let info: AccountInfo
     let isActive: Bool
-    
+    let isVerified: Bool
     enum CodingKeys: String, CodingKey {
         case info
         case isActive = "is_active"
+        case isVerified
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         info = try values.decodeIfPresent(AccountInfo.self, forKey: .info)!
         isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive) ?? false
+        isVerified = try values.decodeIfPresent(Bool.self, forKey: .isVerified) ?? false
     }
 }

@@ -50,7 +50,6 @@
 		1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4D222D18AA00D06914 /* BasicInfo.swift */; };
 		1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D165F4E222D18AA00D06914 /* RealmHelper.swift */; };
 		1D180D68229CF5AB00FC3390 /* TransferSuceessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D67229CF5AB00FC3390 /* TransferSuceessViewController.swift */; };
-		1D180D6A229D349800FC3390 /* northloop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1D180D69229D349700FC3390 /* northloop.gif */; };
 		1D180D6E229E4CBE00FC3390 /* ZendeskRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D6D229E4CBE00FC3390 /* ZendeskRequestModel.swift */; };
 		1D180D70229E4D4300FC3390 /* ZendeskAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D6F229E4D4300FC3390 /* ZendeskAPIRequest.swift */; };
 		1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D180D71229E4D5500FC3390 /* ZendeskBusiness.swift */; };
@@ -336,6 +335,14 @@
 		4B07A87722C5CD6E004C65B2 /* SetAppSettingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87622C5CD6E004C65B2 /* SetAppSettingsResponse.swift */; };
 		4B07A87922C5CF36004C65B2 /* SetAppSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07A87822C5CF36004C65B2 /* SetAppSettingsPresenter.swift */; };
 		4B08FFB922AF705100ABAFF3 /* UpdateAddressRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */; };
+		4B15361722DD8FFA009CE548 /* WaitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15361622DD8FFA009CE548 /* WaitListViewController.swift */; };
+		4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */; };
+		4B15362222DDA914009CE548 /* createAcc.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362022DDA913009CE548 /* createAcc.gif */; };
+		4B15362322DDA914009CE548 /* queue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362122DDA913009CE548 /* queue.gif */; };
+		4B15362522DDA91F009CE548 /* pika.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362422DDA91F009CE548 /* pika.gif */; };
+		4B15362722DDA9E4009CE548 /* northloop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362622DDA9E3009CE548 /* northloop.gif */; };
+		4B15362922DDB1FF009CE548 /* GiFHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15362822DDB1FF009CE548 /* GiFHUD.swift */; };
+		4B15362B22DDCE68009CE548 /* jeremy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362A22DDCE66009CE548 /* jeremy.gif */; };
 		4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29324122C610D800C4D7E2 /* WebViewController.swift */; };
 		4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */; };
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
@@ -453,7 +460,6 @@
 		1D165F4D222D18AA00D06914 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		1D165F4E222D18AA00D06914 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		1D180D67229CF5AB00FC3390 /* TransferSuceessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSuceessViewController.swift; sourceTree = "<group>"; };
-		1D180D69229D349700FC3390 /* northloop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = northloop.gif; sourceTree = "<group>"; };
 		1D180D6D229E4CBE00FC3390 /* ZendeskRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskRequestModel.swift; sourceTree = "<group>"; };
 		1D180D6F229E4D4300FC3390 /* ZendeskAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskAPIRequest.swift; sourceTree = "<group>"; };
 		1D180D71229E4D5500FC3390 /* ZendeskBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendeskBusiness.swift; sourceTree = "<group>"; };
@@ -752,6 +758,14 @@
 		4B07A87822C5CF36004C65B2 /* SetAppSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppSettingsPresenter.swift; sourceTree = "<group>"; };
 		4B08FFB822AF705100ABAFF3 /* UpdateAddressRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressRequestBody.swift; sourceTree = "<group>"; };
 		4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NorthLoopFin.entitlements; sourceTree = "<group>"; };
+		4B15361622DD8FFA009CE548 /* WaitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitListViewController.swift; sourceTree = "<group>"; };
+		4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		4B15362022DDA913009CE548 /* createAcc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = createAcc.gif; sourceTree = "<group>"; };
+		4B15362122DDA913009CE548 /* queue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = queue.gif; sourceTree = "<group>"; };
+		4B15362422DDA91F009CE548 /* pika.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika.gif; sourceTree = "<group>"; };
+		4B15362622DDA9E3009CE548 /* northloop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = northloop.gif; sourceTree = "<group>"; };
+		4B15362822DDB1FF009CE548 /* GiFHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiFHUD.swift; sourceTree = "<group>"; };
+		4B15362A22DDCE66009CE548 /* jeremy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jeremy.gif; sourceTree = "<group>"; };
 		4B29324122C610D800C4D7E2 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionRequestModel.swift; sourceTree = "<group>"; };
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
@@ -1762,6 +1776,7 @@
 				1DF31A77228D89A5001ACE61 /* SignupCountryException.swift */,
 				4BFFE3D222BB50AD00D85610 /* AgreementViewController.swift */,
 				4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */,
+				4B15361622DD8FFA009CE548 /* WaitListViewController.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -1996,7 +2011,6 @@
 		297FB99121B51A32008D60CE = {
 			isa = PBXGroup;
 			children = (
-				1D180D69229D349700FC3390 /* northloop.gif */,
 				1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */,
 				1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */,
 				297FB99C21B51A32008D60CE /* NorthLoopFin */,
@@ -2021,6 +2035,11 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
+				4B15362A22DDCE66009CE548 /* jeremy.gif */,
+				4B15362622DDA9E3009CE548 /* northloop.gif */,
+				4B15362422DDA91F009CE548 /* pika.gif */,
+				4B15362022DDA913009CE548 /* createAcc.gif */,
+				4B15362122DDA913009CE548 /* queue.gif */,
 				4BFFE3DB22BB691A00D85610 /* LocalHtml */,
 				4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */,
 				1D180D6B229E421D00FC3390 /* Zendesk */,
@@ -2073,6 +2092,8 @@
 		297FB9CE21B531DE008D60CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4B15362822DDB1FF009CE548 /* GiFHUD.swift */,
+				4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */,
 				4BF9D77422CC9C2B00F8EDBA /* CheckBox.swift */,
 				1D79792622A10926003F36A4 /* LocationService.swift */,
 				1DB6479B21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift */,
@@ -2443,23 +2464,27 @@
 			files = (
 				4BFA951B22CDF21B00E16B6D /* ProgressView.xib in Resources */,
 				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
+				4B15362322DDA914009CE548 /* queue.gif in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
+				4B15362722DDA9E4009CE548 /* northloop.gif in Resources */,
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
+				4B15362522DDA91F009CE548 /* pika.gif in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
+				4B15362B22DDCE68009CE548 /* jeremy.gif in Resources */,
 				1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */,
 				1DF64E2521E666F9008774CE /* SideMenuTableCell.xib in Resources */,
 				4BF9968F22D45F10009071CA /* ConsumerDepositAgreement.pdf in Resources */,
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
-				1D180D6A229D349800FC3390 /* northloop.gif in Resources */,
 				4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */,
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
+				4B15362222DDA914009CE548 /* createAcc.gif in Resources */,
 				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
@@ -2828,6 +2853,7 @@
 				1D180DAC229FC43500FC3390 /* AccountAPIRequestModel.swift in Sources */,
 				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
 				4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */,
+				4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
@@ -2919,9 +2945,11 @@
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
 				1D055D4A229C325C0078CD33 /* FetchACHPresenter.swift in Sources */,
 				1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */,
+				4B15362922DDB1FF009CE548 /* GiFHUD.swift in Sources */,
 				1D84407D2289545A00A77BBF /* RecentStatus.swift in Sources */,
 				4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */,
 				1D72718421EF14890084A57E /* LegalStuffViewController.swift in Sources */,
+				4B15361722DD8FFA009CE548 /* WaitListViewController.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
 				1D9EFE0321C8DCD7004C1C77 /* CAGradientLayerExtension.swift in Sources */,
 				4BFBC88C22BB8B7800B23B68 /* GetAppSettingsResponse.swift in Sources */,

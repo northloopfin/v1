@@ -17,6 +17,13 @@ class StorageHelper{
         //let imageData = UIImageJPEGRepresentation(image!, 0.5)
         fileManager.createFile(atPath: paths as String, contents: data, attributes: nil)
     }
+    
+    static func saveImagesInGivenDirectory(imageName:String, imgData:Data, directoryName:String){
+        self.createDirectory(directoryName: directoryName)
+        let directoryPath = self.getGivenDirectoryPath(directory: directoryName)
+        
+        
+    }
     static func getDirectoryPath() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0]
@@ -57,6 +64,13 @@ class StorageHelper{
             print("Already dictionary created.")
         }
     }
+    
+    static func getGivenDirectoryPath(directory:String)->String{
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(directory)
+        return paths
+    }
+    
     func deleteDirectory(directoryName:String){
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(directoryName)
@@ -77,5 +91,10 @@ class StorageHelper{
         } catch {
             return
         }
+    }
+    
+    static func clearImagesSavedInDocumentDirectory(){
+        let documentsPath = self.getDirectoryPath()
+        
     }
 }
