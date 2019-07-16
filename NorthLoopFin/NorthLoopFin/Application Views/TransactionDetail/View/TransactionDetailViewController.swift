@@ -41,7 +41,7 @@ class TransactionDetailViewController: BaseViewController {
         self.setNavigationBarTitle()
         self.updateUIForRecievedData()
         self.configureTable()
-        self.historyOptions.append(contentsOf: ["Number of Visits","Average Spend"])
+        self.historyOptions.append(contentsOf:  []) //["Number of Visits","Average Spend"])
         self.presenter = TransactionDetailPresenter.init(delegate: self)
         self.getTransactionDetail()
     }
@@ -125,7 +125,7 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
         self.historyTableView.dataSource=self
         self.historyTableView.registerTableViewCell(tableViewCell: TransactionDetailHistoryCell.self)
         self.historyTableView.registerTableViewHeaderFooterView(tableViewHeaderFooter: TransactionDetailHistoryTableHeader.self)
-        self.historyTableViewHeightConstraint.constant=137
+        self.historyTableViewHeightConstraint.constant=0//137
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyOptions.count
@@ -162,6 +162,8 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
                 self.beneficiaryNameLbl.text = data.data.to.meta!.merchantName
                 let url = URL(string: data.data.to.meta!.merchantLogo)
                 self.transactionImg.kf.setImage(with:url)
+                
+                self.transactionPurposeLbl.text = data.data.to.meta!.merchantCategory
             }
         }else if data.data.to.type == "ACH-US"{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
