@@ -9,6 +9,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setGifLoaderImage()
         // Do any additional setup after loading the view.
     }
 
@@ -38,18 +39,33 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     
     
     func showLoader() {
-//        GIFHUD.shared.setGif(named: "northloop.gif")
-//        GIFHUD.shared.show()
+        
         UIApplication.shared.beginIgnoringInteractionEvents()
-        SVProgressHUD.show()
+        GIFHUD.shared.show()
+        //SVProgressHUD.show()
     }
 
     func hideLoader() {
-//        GIFHUD.shared.dismiss {
-//            print("dismissed")
-//        }
+
         if UIApplication.shared.isIgnoringInteractionEvents { UIApplication.shared.endIgnoringInteractionEvents() }
-        SVProgressHUD.dismiss()
+//        SVProgressHUD.dismiss()
+        GIFHUD.shared.dismiss(completion: {
+            print("GiFHUD dismissed")
+        })
+    }
+    
+    func setGifLoaderImage (withImageName imageName: String = "northloop.gif") {
+        GIFHUD.shared.setGif(named: imageName)
+//        GIFHUD.shared.frame = CGRect (x: 0, y: 0, width: 300, height: 300)
+//        GIFHUD.shared.imageView?.frame =  CGRect (x: 0, y: 0, width: 300, height: 300)
+//        GIFHUD.shared.layer.backgroundColor = UIColor.red.cgColor
+//        GIFHUD.shared.layer.cornerRadius = 20
+//        GIFHUD.shared.layer.masksToBounds = true
+        
+    }
+    
+    func configureHud(size:CGSize){
+        GIFHUD.shared.hudSize = CGSize(width: size.width, height: size.height)
     }
     
     func showErrorAlert(_ alertTitle: String, alertMessage: String) {

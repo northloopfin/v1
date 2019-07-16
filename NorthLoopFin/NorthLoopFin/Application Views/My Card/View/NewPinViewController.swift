@@ -91,7 +91,7 @@ class NewPinViewController: BaseViewController {
         var base64String = ""
 
         do {
-            let publicKey = try PublicKey(pemNamed: publicKeyString)
+            let publicKey = try PublicKey(pemEncoded: publicKeyString)//try PublicKey(pemNamed: publicKeyString)
             let clearPin = self.newPin.text!
             let clear = try ClearMessage(string: clearPin, using: .utf8)
             let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)

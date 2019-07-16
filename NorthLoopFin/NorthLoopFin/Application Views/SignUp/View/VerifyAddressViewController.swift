@@ -27,6 +27,7 @@ class VerifyAddressViewController: BaseViewController {
     var signupFlowData:SignupFlowData!=nil
     var presenter: SignupSynapsePresenter!
     var zendeskPresenter: ZendeskPresenter!
+    var accountInfoPresenter : AccountInfoPresenter!
 
     //var to keep track of which screen has initiated the process
     var screenThatInitiatedThisFlow:AppConstants.Screens?
@@ -108,6 +109,9 @@ class VerifyAddressViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureHud(size: CGSize.init(width: 400 , height: 400))
+        self.setGifLoaderImage(withImageName: "createAcc.gif")
+        
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled=false
         self.changeTextFieldAppearance()
@@ -115,11 +119,16 @@ class VerifyAddressViewController: BaseViewController {
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
         self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
+        accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
         if let _ =  self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS{
                 self.customProgressView.isHidden = true
             }
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+       // self.configureHud(frame: CGRect.init(x: 0, y: 0, width: 300, height: 300))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -292,21 +301,47 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
 extension VerifyAddressViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
-        AppUtility.moveToHomeScreen()
+        //AppUtility.moveToHomeScreen()
         RealmHelper.deleteAllFromDatabase()
-        //move to promocode
-//        self.moveToPromoCode()
+        //call account-info API
+        self.callAccountInfoAPI()
+        
     }
     
-//    func moveToPromoCode(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let vc = storyBoard.instantiateViewController(withIdentifier: "PromoCodeViewController") as! PromoCodeViewController
-//        self.navigationController?.pushViewController(vc, animated: false)
-//    }
+    func callAccountInfoAPI(){
+        self.accountInfoPresenter.getAccountInfo()
+    }
+    
+    func moveToWaitList(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }
 
 extension VerifyAddressViewController:ChangeAddressDelegate{
     func didAddressChanged() {
         AppUtility.moveToHomeScreen()
     }
+}
+extension VerifyAddressViewController:HomeDelegate{
+    //MARK: HomeDelegate
+    func didFetchedTransactionList(data: [TransactionListModel]) {
+        
+        
+    }
+    func didFetchedError(error:ErrorModel){
+        
+    }
+    func didFetchedAccountInfo(data:Account){
+        // check isVerified key and open screen accordingly
+        if data.data.isVerified{
+            // yes user is verified..move to Home
+            AppUtility.moveToHomeScreen()
+        }else{
+            //no..move to waitlist
+            self.moveToWaitList()
+        }
+    }
+        
 }
