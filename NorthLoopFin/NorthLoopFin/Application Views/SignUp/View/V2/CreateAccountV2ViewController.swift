@@ -22,6 +22,8 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var customProgressView: ProgressView!
 
     @IBOutlet weak var nextBtn: CommonButton!
+    @IBOutlet weak var ssnInfoBtn: UIButton!
+    
     lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
     //@IBOutlet weak var loginLbl: UIButtonWithSpacing!
     //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
@@ -46,6 +48,13 @@ class CreateAccountV2ViewController: BaseViewController {
     
     @IBAction func countryExceptionClicked(_ sender: Any) {
         self.openCountryExceptionLink()
+    }
+    
+    @IBAction func ssnInfoBtnClicked(_ sender: Any) {
+        //move to info screen
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "SSNInfoViewController") as! SSNInfoViewController
+        self.present(vc, animated: false, completion: nil)
     }
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
