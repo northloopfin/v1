@@ -39,8 +39,11 @@ class ATMTableViewCell: UITableViewCell {
     func bindData(data:ATM){
         self.data  = data
         self.atmName.text = data.atmLocation.name
-        self.atmAddress.text = data.atmLocation.address.street + " (get directions)"
-        self.atmDistance.text = String(data.distance)+" miles"
+        let addressString = NSMutableAttributedString(string: "\(data.atmLocation.address.street) " )
+        let getDirectionString = NSAttributedString(string: "(get directions)", attributes: [ NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue ])
+        addressString.append(getDirectionString)
+        self.atmAddress.attributedText = addressString
+        self.atmDistance.text = String(format: "%.2f",data.distance)+" miles"
         if data.atmLocation.isAvailable24Hours{
             self.dayNightImage.isHidden = false
         }
