@@ -54,7 +54,7 @@ extension UILabel {
     func underLineText(fullText:String, underlinedText:String){
         let attributesForUnderLine: [NSAttributedString.Key: Any] = [
             .font : AppFonts.calibri15 ,
-            .foregroundColor : Colors.NeonCarrot25414966,
+            .foregroundColor : Colors.PurpleColor17673149,
             .underlineStyle : NSUnderlineStyle.single.rawValue]
         //let attributesForNormalText: [NSAttributedString.Key: Any] = [
            // .font : AppFonts.calibri15 ,
@@ -71,7 +71,7 @@ extension UILabel {
     func underlineMulyiplePartOfString(fullString: String, underlineString1:String, underlineString2:String){
         let attributesForUnderLine: [NSAttributedString.Key: Any] = [
             .font : AppFonts.calibri15 ,
-            .foregroundColor : Colors.NeonCarrot25414966,
+            .foregroundColor : Colors.PurpleColor17673149,
             .underlineStyle : NSUnderlineStyle.single.rawValue]
         let rangeOfUnderLine1 = (fullString as NSString).range(of: underlineString1)
         let rangeOfUnderLine2 = (fullString as NSString).range(of: underlineString2)

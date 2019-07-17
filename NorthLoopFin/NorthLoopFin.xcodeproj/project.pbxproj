@@ -339,10 +339,9 @@
 		4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */; };
 		4B15362222DDA914009CE548 /* createAcc.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362022DDA913009CE548 /* createAcc.gif */; };
 		4B15362322DDA914009CE548 /* queue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362122DDA913009CE548 /* queue.gif */; };
-		4B15362522DDA91F009CE548 /* pika.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362422DDA91F009CE548 /* pika.gif */; };
 		4B15362722DDA9E4009CE548 /* northloop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362622DDA9E3009CE548 /* northloop.gif */; };
 		4B15362922DDB1FF009CE548 /* GiFHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15362822DDB1FF009CE548 /* GiFHUD.swift */; };
-		4B15362B22DDCE68009CE548 /* jeremy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362A22DDCE66009CE548 /* jeremy.gif */; };
+		4B15362D22DEEDAA009CE548 /* SSNInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15362C22DEEDAA009CE548 /* SSNInfoViewController.swift */; };
 		4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29324122C610D800C4D7E2 /* WebViewController.swift */; };
 		4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */; };
 		4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */; };
@@ -762,10 +761,9 @@
 		4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		4B15362022DDA913009CE548 /* createAcc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = createAcc.gif; sourceTree = "<group>"; };
 		4B15362122DDA913009CE548 /* queue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = queue.gif; sourceTree = "<group>"; };
-		4B15362422DDA91F009CE548 /* pika.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pika.gif; sourceTree = "<group>"; };
 		4B15362622DDA9E3009CE548 /* northloop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = northloop.gif; sourceTree = "<group>"; };
 		4B15362822DDB1FF009CE548 /* GiFHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiFHUD.swift; sourceTree = "<group>"; };
-		4B15362A22DDCE66009CE548 /* jeremy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jeremy.gif; sourceTree = "<group>"; };
+		4B15362C22DEEDAA009CE548 /* SSNInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNInfoViewController.swift; sourceTree = "<group>"; };
 		4B29324122C610D800C4D7E2 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4B94418822ACC235005AD3BD /* DisputeTransactionRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionRequestModel.swift; sourceTree = "<group>"; };
 		4B94418922ACC235005AD3BD /* DisputeTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisputeTransactionAPIRequest.swift; sourceTree = "<group>"; };
@@ -1777,6 +1775,7 @@
 				4BFFE3D222BB50AD00D85610 /* AgreementViewController.swift */,
 				4BF9D77222CC8D4A00F8EDBA /* PromoCodeViewController.swift */,
 				4B15361622DD8FFA009CE548 /* WaitListViewController.swift */,
+				4B15362C22DEEDAA009CE548 /* SSNInfoViewController.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -2035,9 +2034,7 @@
 		297FB99C21B51A32008D60CE /* NorthLoopFin */ = {
 			isa = PBXGroup;
 			children = (
-				4B15362A22DDCE66009CE548 /* jeremy.gif */,
 				4B15362622DDA9E3009CE548 /* northloop.gif */,
-				4B15362422DDA91F009CE548 /* pika.gif */,
 				4B15362022DDA913009CE548 /* createAcc.gif */,
 				4B15362122DDA913009CE548 /* queue.gif */,
 				4BFFE3DB22BB691A00D85610 /* LocalHtml */,
@@ -2472,12 +2469,10 @@
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
-				4B15362522DDA91F009CE548 /* pika.gif in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
-				4B15362B22DDCE68009CE548 /* jeremy.gif in Resources */,
 				1D913EFB21EC72BC009D7E52 /* CommonTableCell.xib in Resources */,
 				1DF64E2521E666F9008774CE /* SideMenuTableCell.xib in Resources */,
 				4BF9968F22D45F10009071CA /* ConsumerDepositAgreement.pdf in Resources */,
@@ -2932,6 +2927,7 @@
 				1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D29C85522A9297B0092E3EB /* ChangePhoneDelegates.swift in Sources */,
+				4B15362D22DEEDAA009CE548 /* SSNInfoViewController.swift in Sources */,
 				1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */,
 				1D6AA0882212CCB700DD04F4 /* AccountLockTimer.swift in Sources */,
 				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
