@@ -185,7 +185,7 @@ class SignupStepConfirm: BaseViewController {
             self.arrivalDate.text = info.arrivalDate
             self.checkForMandatoryFields()
         }
-        self.setSampleData()
+        //self.setSampleData()
     }
     
     //Methode to show date picker
