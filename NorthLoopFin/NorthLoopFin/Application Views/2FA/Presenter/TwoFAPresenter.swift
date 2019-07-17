@@ -31,9 +31,9 @@ class TwoFAPresenter:ResponseCallback{
             .build()
             requestModel.apiUrl = requestModel.getEndPoint()+"false"
             if sendToAPI{
-            requestModel.apiUrl = requestModel.getEndPoint()+"true"
-
+                requestModel.apiUrl = requestModel.getEndPoint()+"true"
             }
+        
         self.logic.performTwoFA(withRequestModel: requestModel, presenterDelegate: self)
     }
     

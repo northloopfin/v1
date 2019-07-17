@@ -29,7 +29,6 @@ class AllDoneViewController: BaseViewController {
     }
     
     @IBAction func doneClicked(_ sender: Any) {
-        
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForScreen)
         let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
         var initialNavigationController:UINavigationController

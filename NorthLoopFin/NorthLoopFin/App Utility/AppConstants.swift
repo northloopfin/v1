@@ -73,7 +73,7 @@ struct AppConstants{
         case ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY = "Shared successfully"
         case INSUFFICIENT_BALANCE = "Insufficient Balance"
         case NEWER_VERSION_AVAILABLE = "A newer version of this app is available. Do you want to update?"
-        case APP_IS_UPTO_DATE = "App is upto date"
+        case APP_IS_UPTO_DATE = "You have the most recent version of North Loop"
         case PROMOCODE_NOT_VALID = "Promocode not valid"
         case SSN_NOT_VALID = "Please enter a valid SSN Number"
         case MAXIMUM_NODES_ADDED = "You already have 2 accounts linked. Please remove one before adding another"

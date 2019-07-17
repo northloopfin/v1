@@ -245,7 +245,15 @@ extension HomeViewController:HomeDelegate{
         self.checkForFirstTimeLandOnHome()
     }
     func didFetchedError(error:ErrorModel){
-        
+        if error.getErrorMessage().contains("phone") {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+            vc.delegate = self
+            vc.screenWhichInitiatedOTP = AppConstants.Screens.HOME
+            self.present(vc, animated: true) {
+                
+            }
+        }
     }
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
@@ -259,6 +267,12 @@ extension HomeViewController:HomeDelegate{
         
         UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()
+    }
+}
+
+extension HomeViewController:OTPControllerDelegates{
+    func OTP_Verified(){
+        self.getAccountInfo()
     }
 }
 

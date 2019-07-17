@@ -8,23 +8,31 @@
 
 import UIKit
 
+protocol OTPControllerDelegates: BaseViewProtocol {
+    func OTP_Verified()
+}
+
 class OTPViewController: BaseViewController {
 
     @IBOutlet weak var otpField1: UITextField!
     @IBOutlet weak var otpField2: UITextField!
     @IBOutlet weak var otpField3: UITextField!
     @IBOutlet weak var otpField4: UITextField!
-    @IBOutlet weak var doneBtn: CommonButton!
+    @IBOutlet weak var otpField6: UITextField!
+    @IBOutlet weak var otpField5: UITextField!
 
+    @IBOutlet weak var doneBtn: CommonButton!
     @IBOutlet weak var resendLbl: UILabel!
     @IBOutlet weak var sentToLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
-    
+    public weak var delegate : OTPControllerDelegates?
+
     //Obselete now..remove once things get fix from backend
     //var presenter:PhoneVerificationCheckPresenter!
     //var sendPresenter:PhoneVerificationStartPresenter!
 
     var presenter:TwoFAVerifyPresenter!
+    var requestPresenter:TwoFAPresenter!
     var resetPresenter:ResetPasswordPresenter!
     //These are used to know the mode of OTP verification
     var isPhoneSelectedForOTP:Bool = false
@@ -33,22 +41,25 @@ class OTPViewController: BaseViewController {
     var screenWhichInitiatedOTP:AppConstants.Screens?
     
     @IBAction func resendOTPClicked(_ sender: Any) {
-        self.callPhoneVerificationAPI()
+        self.requestPresenter.sendTwoFARequest(sendToAPI: true)
+//        self.callPhoneVerificationAPI()
     }
     //Call Phone Verification Service Start
     func callPhoneVerificationAPI(){
         //sendPresenter.sendPhoneVerificationRequest()
     }
     @IBAction func doneClicked(_ sender: Any) {
-        let OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!
-        
+        var OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!+self.otpField5.text!
+        OTPString = OTPString + self.otpField5.text!
         //call verify api here
-        if isPhoneSelectedForOTP{
-            self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
-        }
-        if (isEmailSelectedForOTP || self.screenWhichInitiatedOTP == AppConstants.Screens.CHANGEPHONE || self.screenWhichInitiatedOTP == AppConstants.Screens.ChangePASSWORD){
-            self.presenter.verifyTwoFARequest(sendToAPI: false, otp: OTPString)
-        }
+        self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
+
+//        if isPhoneSelectedForOTP{
+//            self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
+//        }
+//        if (isEmailSelectedForOTP || self.screenWhichInitiatedOTP == AppConstants.Screens.CHANGEPHONE || self.screenWhichInitiatedOTP == AppConstants.Screens.ChangePASSWORD){
+//            self.presenter.verifyTwoFARequest(sendToAPI: false, otp: OTPString)
+//        }
         
 
 //        let result = RealmHelper.retrieveBasicInfo()
@@ -101,6 +112,7 @@ class OTPViewController: BaseViewController {
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled = false
         self.presenter = TwoFAVerifyPresenter.init(delegate: self)
+        self.requestPresenter = TwoFAPresenter.init(delegate: self)
         self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
 //        self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
 //        self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
@@ -117,6 +129,8 @@ class OTPViewController: BaseViewController {
         self.otpField2.textColor = Colors.DustyGray155155155
         self.otpField3.textColor = Colors.DustyGray155155155
         self.otpField4.textColor = Colors.DustyGray155155155
+        self.otpField5.textColor = Colors.DustyGray155155155
+        self.otpField6.textColor = Colors.DustyGray155155155
         self.resendLbl.textColor=Colors.Taupe776857
         
         //set font here
@@ -126,6 +140,8 @@ class OTPViewController: BaseViewController {
         self.otpField2.font = AppFonts.textBoxCalibri16
         self.otpField3.font = AppFonts.textBoxCalibri16
         self.otpField4.font = AppFonts.textBoxCalibri16
+        self.otpField5.font = AppFonts.textBoxCalibri16
+        self.otpField6.font = AppFonts.textBoxCalibri16
         self.resendLbl.font = AppFonts.calibriBold18
         self.doneBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
     }
@@ -137,6 +153,8 @@ class OTPViewController: BaseViewController {
         otpField2.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         otpField3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         otpField4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        otpField5.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        otpField6.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         //Define Style for OTP text input
         let placeholderColor=Colors.DustyGray155155155
         let placeholderFont = UIFont.init(name: "Calibri", size: 16)
@@ -147,7 +165,9 @@ class OTPViewController: BaseViewController {
         self.otpField1.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
          self.otpField2.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
          self.otpField3.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-         self.otpField4.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.otpField4.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.otpField5.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.otpField6.applyAttributesWithValues(placeholderText: "", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
     }
     //Move Focus to next OTP text input when single OTP entered
     @objc func textFieldDidChange(textField: UITextField){
@@ -165,8 +185,14 @@ class OTPViewController: BaseViewController {
                 otpField4.becomeFirstResponder()
             case otpField4:
                 self.addShadow(view: otpField4)
+                otpField5.becomeFirstResponder()
+            case otpField5:
+                self.addShadow(view: otpField5)
+                otpField6.becomeFirstResponder()
+            case otpField6:
+                self.addShadow(view: otpField6)
                 checkForEmptyField()
-                otpField4.resignFirstResponder()
+                otpField6.resignFirstResponder()
             default:
                 break
             }
@@ -184,7 +210,13 @@ class OTPViewController: BaseViewController {
                 otpField4.becomeFirstResponder()
             case otpField4:
                 self.removeShadow(view: otpField4)
-                otpField4.becomeFirstResponder()
+                otpField5.becomeFirstResponder()
+            case otpField5:
+                self.removeShadow(view: otpField5)
+                otpField6.becomeFirstResponder()
+            case otpField6:
+                self.removeShadow(view: otpField6)
+                otpField6.becomeFirstResponder()
             default:
                 break
             }
@@ -196,7 +228,7 @@ class OTPViewController: BaseViewController {
     
     //Check for empty OTP Field
     func checkForEmptyField(){
-        if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)!){
+        if (!(self.otpField1.text?.isEmpty)! && !(self.otpField2.text?.isEmpty)! && !(self.otpField3.text?.isEmpty)! && !(self.otpField4.text?.isEmpty)! && !(self.otpField5.text?.isEmpty)! && !(self.otpField6.text?.isEmpty)!){
             self.doneBtn.isEnabled=true
             
             
@@ -219,6 +251,12 @@ class OTPViewController: BaseViewController {
 extension OTPViewController:UITextFieldDelegate{
     
 }
+extension OTPViewController:TwoFADelegates{
+    func didGetOTP() {
+        
+    }
+}
+
 extension OTPViewController:TwoFAVerifyDelegates{
     func didVerifiedOTP() {
         self.moveToRelevantScreen()
@@ -236,6 +274,10 @@ extension OTPViewController:TwoFAVerifyDelegates{
             // call reset password api
             if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
                 self.resetPresenter.sendResetPasswordRequesy(username: currentUser.userEmail)
+            }
+        case AppConstants.Screens.HOME:
+            delegate?.OTP_Verified()
+            self.dismiss(animated: true) {
             }
         case AppConstants.Screens.CHAT :
             FSChatViewStyling.startTheChat(self.navigationController!, vc: self)

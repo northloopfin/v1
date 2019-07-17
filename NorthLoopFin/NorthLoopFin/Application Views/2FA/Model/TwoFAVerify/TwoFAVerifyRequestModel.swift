@@ -77,4 +77,9 @@ class TwoFAVerifyRequestModel {
     func getEndPoint()->String{
         return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TWOFAVERIFY.rawValue
     }
+    
+    func getEndPointMobile()->String{
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TWOFAMOBILE.rawValue
+    }
+
 }
