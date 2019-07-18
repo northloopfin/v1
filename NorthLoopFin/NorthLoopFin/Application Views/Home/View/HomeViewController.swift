@@ -246,13 +246,7 @@ extension HomeViewController:HomeDelegate{
     }
     func didFetchedError(error:ErrorModel){
         if error.getErrorMessage().contains("phone") {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
-            vc.delegate = self
-            vc.screenWhichInitiatedOTP = AppConstants.Screens.HOME
-            self.present(vc, animated: true) {
-                
-            }
+            self.navigateToOTP()
         }
     }
     func didFetchedAccountInfo(data:Account){
@@ -260,6 +254,11 @@ extension HomeViewController:HomeDelegate{
         if let _ = currentUser?.name{
             //self.GreetingLbl.text = AppUtility().greetingAccToTime() +(currentUser?.name)!
             self.GreetingLbl.text = AppUtility.greetingAccToTime()+(currentUser?.name)!
+        }
+        if !data.data.isPhoneVerified {
+            self.navigateToOTP()
+        }else if !data.data.isVerified{
+            self.moveToWaitList()
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         
@@ -302,6 +301,21 @@ extension HomeViewController:SideMenuDelegate{
         default:
             break
         }
+    }
+    
+    func navigateToOTP(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        vc.delegate = self
+        vc.screenWhichInitiatedOTP = AppConstants.Screens.HOME
+        self.present(vc, animated: true) {
+        }
+    }
+
+    func moveToWaitList(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func navigateToMyCard(){

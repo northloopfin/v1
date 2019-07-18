@@ -50,7 +50,7 @@ class OTPViewController: BaseViewController {
     }
     @IBAction func doneClicked(_ sender: Any) {
         var OTPString = self.otpField1.text!+self.otpField2.text!+self.otpField3.text!+self.otpField4.text!+self.otpField5.text!
-        OTPString = OTPString + self.otpField5.text!
+        OTPString = OTPString + self.otpField6.text!
         //call verify api here
         self.presenter.verifyTwoFARequest(sendToAPI: true, otp: OTPString)
 
