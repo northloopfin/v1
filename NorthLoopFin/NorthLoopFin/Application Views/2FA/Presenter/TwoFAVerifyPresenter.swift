@@ -30,7 +30,7 @@ class TwoFAVerifyPresenter:ResponseCallback{
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()+"false?"
         if sendToAPI{
-            requestModel.apiUrl = requestModel.getEndPoint()+"true?"
+            requestModel.apiUrl = requestModel.getEndPointMobile()+"?mfa="+otp
         }
         self.logic.verifyTwoFA(withRequestModel: requestModel, presenterDelegate: self)
     }

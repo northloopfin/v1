@@ -40,7 +40,8 @@ class AccountInfoPresenter: ResponseCallback{
     }
     
     func servicesManagerError(error: ErrorModel) {
-        self.homeDelegate?.showErrorAlert(error.getErrorTitle(), alertMessage: error.getErrorMessage())
+//        self.homeDelegate?.showErrorAlert(error.getErrorTitle(), alertMessage: error.getErrorMessage())
+        self.homeDelegate?.didFetchedError(error: error)
         self.homeDelegate?.hideLoader()
     }
 }

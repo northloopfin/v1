@@ -245,7 +245,9 @@ extension HomeViewController:HomeDelegate{
         self.checkForFirstTimeLandOnHome()
     }
     func didFetchedError(error:ErrorModel){
-        
+        if error.getErrorMessage().contains("phone") {
+            self.navigateToOTP()
+        }
     }
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
@@ -253,12 +255,23 @@ extension HomeViewController:HomeDelegate{
             //self.GreetingLbl.text = AppUtility().greetingAccToTime() +(currentUser?.name)!
             self.GreetingLbl.text = AppUtility.greetingAccToTime()+(currentUser?.name)!
         }
+        if !data.data.isPhoneVerified {
+            self.navigateToOTP()
+        }else if !data.data.isVerified{
+            self.moveToWaitList()
+        }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         
         currentUser?.amount = data.data.info.balance.amount
         
         UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()
+    }
+}
+
+extension HomeViewController:OTPControllerDelegates{
+    func OTP_Verified(){
+        self.getAccountInfo()
     }
 }
 
@@ -288,6 +301,21 @@ extension HomeViewController:SideMenuDelegate{
         default:
             break
         }
+    }
+    
+    func navigateToOTP(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        vc.delegate = self
+        vc.screenWhichInitiatedOTP = AppConstants.Screens.HOME
+        self.present(vc, animated: true) {
+        }
+    }
+
+    func moveToWaitList(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func navigateToMyCard(){
