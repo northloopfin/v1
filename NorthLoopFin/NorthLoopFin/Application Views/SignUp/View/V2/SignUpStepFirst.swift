@@ -20,8 +20,14 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     @IBOutlet weak var termsAgreementLbl: LabelWithLetterSpace!
     @IBOutlet weak var cardDepositAgreementLbl: LabelWithLetterSpace!
+    
+    @IBOutlet weak var termsPolicyCheckBox: CheckBox!
+    @IBOutlet weak var depositCardCheckbox: CheckBox!
 
-
+    //var to store state of checkboxes
+    var isTermsPolicyChecked:Bool=false
+    var isDepositCardAgreementChecked:Bool=false
+    
     var presenter: SignupAuthPresenter!
     @IBOutlet weak var customProgressView: ProgressView!
 
@@ -61,20 +67,34 @@ class SignUpStepFirst: BaseViewController {
         self.setupRightNavigationBar()
         self.updateTextFieldUI()
         self.presenter = SignupAuthPresenter.init(delegate:self)
-        self.setSampleData()
+        //self.setSampleData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    @IBAction func checkBoxvalueChanged(_ sender: Any) {
+        let check = sender as! CheckBox
+        if check.tag == 0{
+            self.isTermsPolicyChecked = check.isChecked
+        }else if check.tag == 1{
+            self.isDepositCardAgreementChecked = check.isChecked
+        }
+        self.checkForMandatoryFields()
     }
     
     /// Prepare view by setting color and fonts to view components
     func prepareView(){
         //Underline text
         self.termsAgreementLbl.underLineText(fullText: self.termsAgreementLbl.text ?? "", underlinedText: "Terms of Service and Privacy Policy")
-        self.cardDepositAgreementLbl.underlineMulyiplePartOfString(fullString: self.cardDepositAgreementLbl.text ?? "", underlineString1: "Deposit", underlineString2: "Cardholder Agreement")//underLineText(fullText: self.cardDepositAgreementLbl.text ?? "", underlinedText: "Deposit Agreement")
-        //self.cardDepositAgreementLbl.underLineText(fullText: self.cardDepositAgreementLbl.text ?? "", underlinedText: "Cardholder Agreement")
+        self.cardDepositAgreementLbl.underlineMulyiplePartOfString(fullString: self.cardDepositAgreementLbl.text ?? "", underlineString1: "Deposit", underlineString2: "Cardholder Agreement")
         
-        
+        self.termsPolicyCheckBox.style = .tick
+        self.depositCardCheckbox.style = .tick
+        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 6)
+        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 6)
+        self.termsPolicyCheckBox.tag=0
+        self.depositCardCheckbox.tag=1
         self.customProgressView.progressView.setProgress(0.17*1, animated: true)
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
         let cardDepositTap = UITapGestureRecognizer(target: self, action: #selector(cardTapLabel(tap:)))
@@ -166,11 +186,13 @@ class SignUpStepFirst: BaseViewController {
     }
     
     func checkForMandatoryFields(){
-        if (!(self.paswwordTextField.text?.isEmpty)! && !(self.confirmPassTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)!
+        if (!(self.paswwordTextField.text?.isEmpty)! && !(self.confirmPassTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)! && self.isTermsPolicyChecked && self.isDepositCardAgreementChecked
             )
             //(self.emailTextField.text?.isEmpty)!)
         {
             self.nextBtn.isEnabled=true
+        }else{
+            self.nextBtn.isEnabled=false
         }
     }
     
