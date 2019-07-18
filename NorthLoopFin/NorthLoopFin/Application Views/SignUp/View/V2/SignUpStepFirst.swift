@@ -16,8 +16,6 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var paswwordTextField: UITextField!
     @IBOutlet weak var confirmPassTextField: UITextField!
     @IBOutlet weak var nextBtn: CommonButton!
-    @IBOutlet weak var loginLbl: UIButtonWithSpacing!
-    @IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     @IBOutlet weak var termsAgreementLbl: LabelWithLetterSpace!
     @IBOutlet weak var cardDepositAgreementLbl: LabelWithLetterSpace!
     
@@ -67,7 +65,7 @@ class SignUpStepFirst: BaseViewController {
         self.setupRightNavigationBar()
         self.updateTextFieldUI()
         self.presenter = SignupAuthPresenter.init(delegate:self)
-        //self.setSampleData()
+        self.setSampleData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -107,8 +105,6 @@ class SignUpStepFirst: BaseViewController {
         self.paswwordTextField.textColor = Colors.DustyGray155155155
         self.confirmPassTextField.textColor = Colors.DustyGray155155155
         self.emailTextField.textColor = Colors.DustyGray155155155
-        self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
@@ -116,8 +112,6 @@ class SignUpStepFirst: BaseViewController {
         self.confirmPassTextField.font = AppFonts.textBoxCalibri16
         self.emailTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
-        self.alreadyHaveaccountLbl.font = AppFonts.calibri15
-        self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
     }
     
     @objc func tapLabel(tap: UITapGestureRecognizer) {

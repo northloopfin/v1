@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if crash happen prior delete local database
         if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
             RealmHelper.deleteAllFromDatabase()
-            //StorageHelper.clearAllFileFromDirectory()
+            UserInformationUtility.sharedInstance.deleteCurrentUser()
             UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForCrash)
         }
         // Override point for customization after application launch.
@@ -83,43 +83,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initialViewController() ->Void
     {
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let _:User = UserInformationUtility.sharedInstance.getCurrentUser(){
-            self.moveUserToScreenWhereLeft()
-        }else{
-            let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
-            self.moveToScreen(vc: vc)
-        }
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+        self.moveToScreen(vc: vc)
     }
     
-    func moveUserToScreenWhereLeft(){
-        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        var vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
-        if let screen:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForScreen) as? String{
-            switch screen {
-                case AppConstants.Screens.USERDETAIL.rawValue:
-                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: CreateAccountV2ViewController.self)) as!  CreateAccountV2ViewController
-                    self.moveToScreen(vc: vc)
-                case AppConstants.Screens.OTP.rawValue:
-                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: OTPViewController.self)) as!  OTPViewController
-                    self.moveToScreen(vc: vc)
-                case AppConstants.Screens.SCANID.rawValue:
-                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: ScanIDViewController.self)) as!  ScanIDViewController
-                    self.moveToScreen(vc: vc)
-                case AppConstants.Screens.SELFIETIME.rawValue:
-                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: SelfieViewController.self)) as!  SelfieViewController
-                    self.moveToScreen(vc: vc)
-                case AppConstants.Screens.VERIFYADDRESS.rawValue:
-                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: VerifyAddressViewController.self)) as!  VerifyAddressViewController
-                    self.moveToScreen(vc: vc)
-                case AppConstants.Screens.HOME.rawValue:
-                    self.moveToHomeScreen()
-            default:
-                break
-            }
-        }else{
-            self.moveToHomeScreen()
-        }
-    }
+    //Remove this code once Client confirm..Requirements not clear here
+//    func moveUserToScreenWhereLeft(){
+//        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
+//        var vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+//        if let screen:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForScreen) as? String{
+//            switch screen {
+//                case AppConstants.Screens.USERDETAIL.rawValue:
+//                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: CreateAccountV2ViewController.self)) as!  CreateAccountV2ViewController
+//                    self.moveToScreen(vc: vc)
+//                case AppConstants.Screens.OTP.rawValue:
+//                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: OTPViewController.self)) as!  OTPViewController
+//                    self.moveToScreen(vc: vc)
+//                case AppConstants.Screens.SCANID.rawValue:
+//                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: ScanIDViewController.self)) as!  ScanIDViewController
+//                    self.moveToScreen(vc: vc)
+//                case AppConstants.Screens.SELFIETIME.rawValue:
+//                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: SelfieViewController.self)) as!  SelfieViewController
+//                    self.moveToScreen(vc: vc)
+//                case AppConstants.Screens.VERIFYADDRESS.rawValue:
+//                    vc = storyBoard.instantiateViewController(withIdentifier: String(describing: VerifyAddressViewController.self)) as!  VerifyAddressViewController
+//                    self.moveToScreen(vc: vc)
+//                case AppConstants.Screens.HOME.rawValue:
+//                    self.moveToHomeScreen()
+//            default:
+//                break
+//            }
+//        }else{
+//            self.moveToHomeScreen()
+//        }
+//    }
     
     func moveToHomeScreen(){
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)

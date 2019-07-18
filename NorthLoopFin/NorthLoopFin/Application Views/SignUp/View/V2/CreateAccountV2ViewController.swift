@@ -140,7 +140,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.nextBtn.isEnabled=false
         updateTextFieldUI()
         self.prepareView()
-        //self.setSampleData()
+        self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
