@@ -41,21 +41,21 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     func showLoader() {
         
         UIApplication.shared.beginIgnoringInteractionEvents()
-        GIFHUD.shared.show()
-        //SVProgressHUD.show()
+        //GIFHUD.shared.show()
+        SVProgressHUD.show()
     }
 
     func hideLoader() {
 
         if UIApplication.shared.isIgnoringInteractionEvents { UIApplication.shared.endIgnoringInteractionEvents() }
-//        SVProgressHUD.dismiss()
-        GIFHUD.shared.dismiss(completion: {
-            print("GiFHUD dismissed")
-        })
+        SVProgressHUD.dismiss()
+//        GIFHUD.shared.dismiss(completion: {
+//            print("GiFHUD dismissed")
+//        })
     }
     
     func setGifLoaderImage (withImageName imageName: String = "northloop.gif") {
-        GIFHUD.shared.setGif(named: imageName)
+        //GIFHUD.shared.setGif(named: imageName)
 //        GIFHUD.shared.frame = CGRect (x: 0, y: 0, width: 300, height: 300)
 //        GIFHUD.shared.imageView?.frame =  CGRect (x: 0, y: 0, width: 300, height: 300)
 //        GIFHUD.shared.layer.backgroundColor = UIColor.red.cgColor

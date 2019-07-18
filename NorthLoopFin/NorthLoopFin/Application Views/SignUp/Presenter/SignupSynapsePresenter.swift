@@ -20,8 +20,16 @@ class SignupSynapsePresenter:ResponseCallback{
     
     func startSignUpSynapse(requestDic:[String:AnyObject]){
         self.delegate?.showLoader()
+        var token:String=""
+        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken){
+            token = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String
+        }else{
+            if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
+                token = currentUser.accessToken
+            }
+        }
         
-        let token:String = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String
+        
         let requestModel = SignupSynapseRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: Endpoints.APIRequestHeaders.APPLICATION_JSON.rawValue)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: token )
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
