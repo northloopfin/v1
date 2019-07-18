@@ -17,3 +17,6 @@ protocol FetchACHDelegates:BaseViewProtocol {
 protocol ACHTransactionDelegates:BaseViewProtocol {
     func didSentFetchACH()
 }
+protocol DeleteACHDelegates:BaseViewProtocol {
+    func didDeleteACH(data:DeletedACHNode)
+}

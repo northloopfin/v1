@@ -33,6 +33,14 @@ class MakeTransferViewController: BaseViewController {
     @IBAction func linkACHClicked(_ sender: Any) {
         self.moveToLinkAchScreen()
     }
+    
+    @IBAction func viewAccountClicked(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ViewAccountsViewController") as! ViewAccountsViewController
+        vc.achNodeArray = achNodeArray
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
@@ -173,6 +181,7 @@ extension MakeTransferViewController:FetchACHDelegates{
     func didSentFetchACH(data: [ACHNode]) {
         if data.count > 0{
         self.achNodeArray=data
+        self.achArray.removeAll()
         for n in 0...(data.count-1) {
             let nickname = data[n].nickname
             self.achArray.append(nickname)

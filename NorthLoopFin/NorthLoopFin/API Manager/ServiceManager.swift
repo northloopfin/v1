@@ -257,6 +257,52 @@ class ServiceManager: NSObject  {
     
     
     /**
+     Method is used for Put Request Api Call with parameter
+     
+     - parameter urlString:         URL String that is used for Api call
+     - parameter requestDictionary: dictionary used as a parameter
+     - parameter successBlock:      return success response
+     - parameter failureBlock:      return failure response
+     */
+    
+    func requestDELETEWithURL<T:Codable>(_ urlString:String, andRequestDictionary requestDictionary:[String : AnyObject], requestHeader:[String:AnyObject], responseCallBack:ApiResponseReceiver , returningClass:T.Type) -> Void{
+        
+        self.delegate = responseCallBack
+        
+        // Checking the rechability of Network
+        if ReachabilityManager.shared.isNetworkAvailable {
+            
+            // Instantiate session manager Object
+            let manager:AFHTTPSessionManager = self.sessionManager()
+            
+            //Iterating request header dictionary and adding into API Manager
+            for (key, value) in requestHeader {
+                manager.requestSerializer.setValue(value as? String, forHTTPHeaderField: key)
+            }
+            
+            var error:NSError?
+            var paramStr = ""
+            for (key, value) in requestDictionary {
+                paramStr = key + "=" + (value as! String)
+            }
+
+            let postData = NSMutableData(data: paramStr.data(using: String.Encoding.utf8)!)
+
+            // Creating Immutable PUT NSURL Request
+            var request:URLRequest = manager.requestSerializer.request(withMethod: "DELETE", urlString: urlString, parameters: requestDictionary, error: &error) as URLRequest
+            request.httpBody = postData as Data
+ 
+            // Calling Api with NSURLRequest and session Manager and fetching Response from server
+            self.dataTaskWithRequestAndSessionManager(request, sessionManager: manager, returningClass:returningClass)
+        }else{
+            
+            // Generating common network error
+            self.delegate?.onError(self.getNetworkError() , errorObject: nil)
+        }
+    }
+    
+    
+    /**
      Calling Api with NSURLRequest and session Manager and fetching Response from server
      
      - parameter request:        NSURLRequest request used for interacting with server
