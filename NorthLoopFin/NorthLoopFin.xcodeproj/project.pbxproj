@@ -338,7 +338,6 @@
 		4B15361722DD8FFA009CE548 /* WaitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15361622DD8FFA009CE548 /* WaitListViewController.swift */; };
 		4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */; };
 		4B15362222DDA914009CE548 /* createAcc.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362022DDA913009CE548 /* createAcc.gif */; };
-		4B15362322DDA914009CE548 /* queue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362122DDA913009CE548 /* queue.gif */; };
 		4B15362722DDA9E4009CE548 /* northloop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B15362622DDA9E3009CE548 /* northloop.gif */; };
 		4B15362922DDB1FF009CE548 /* GiFHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15362822DDB1FF009CE548 /* GiFHUD.swift */; };
 		4B15362D22DEEDAA009CE548 /* SSNInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15362C22DEEDAA009CE548 /* SSNInfoViewController.swift */; };
@@ -351,6 +350,7 @@
 		4B9CA56722CF5C8C003655DC /* FSChatViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CA56622CF5C8C003655DC /* FSChatViewStyling.swift */; };
 		4B9CA56922CF5E6C003655DC /* FSChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CA56822CF5E6B003655DC /* FSChatViewController.swift */; };
 		4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */; };
+		4BBCE8F822E18B7800A34695 /* queue.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4BBCE8F722E18B7800A34695 /* queue.gif */; };
 		4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */; };
 		4BE8338322CB172A00765F05 /* CheckUpdateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */; };
 		4BE8338522CB175300765F05 /* CheckUpdateAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8338422CB175300765F05 /* CheckUpdateAPIRequest.swift */; };
@@ -769,7 +769,6 @@
 		4B15361622DD8FFA009CE548 /* WaitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitListViewController.swift; sourceTree = "<group>"; };
 		4B15361822DDA2AF009CE548 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		4B15362022DDA913009CE548 /* createAcc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = createAcc.gif; sourceTree = "<group>"; };
-		4B15362122DDA913009CE548 /* queue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = queue.gif; sourceTree = "<group>"; };
 		4B15362622DDA9E3009CE548 /* northloop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = northloop.gif; sourceTree = "<group>"; };
 		4B15362822DDB1FF009CE548 /* GiFHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiFHUD.swift; sourceTree = "<group>"; };
 		4B15362C22DEEDAA009CE548 /* SSNInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNInfoViewController.swift; sourceTree = "<group>"; };
@@ -782,6 +781,7 @@
 		4B9CA56622CF5C8C003655DC /* FSChatViewStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSChatViewStyling.swift; sourceTree = "<group>"; };
 		4B9CA56822CF5E6B003655DC /* FSChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSChatViewController.swift; sourceTree = "<group>"; };
 		4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioMetricHelper.swift; sourceTree = "<group>"; };
+		4BBCE8F722E18B7800A34695 /* queue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = queue.gif; sourceTree = "<group>"; };
 		4BE8337F22CB16C700765F05 /* CheckUpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdatePresenter.swift; sourceTree = "<group>"; };
 		4BE8338222CB172A00765F05 /* CheckUpdateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateRequestModel.swift; sourceTree = "<group>"; };
 		4BE8338422CB175300765F05 /* CheckUpdateAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdateAPIRequest.swift; sourceTree = "<group>"; };
@@ -2058,8 +2058,8 @@
 			isa = PBXGroup;
 			children = (
 				4B15362622DDA9E3009CE548 /* northloop.gif */,
+				4BBCE8F722E18B7800A34695 /* queue.gif */,
 				4B15362022DDA913009CE548 /* createAcc.gif */,
-				4B15362122DDA913009CE548 /* queue.gif */,
 				4BFFE3DB22BB691A00D85610 /* LocalHtml */,
 				4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */,
 				1D180D6B229E421D00FC3390 /* Zendesk */,
@@ -2504,7 +2504,6 @@
 			files = (
 				4BFA951B22CDF21B00E16B6D /* ProgressView.xib in Resources */,
 				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
-				4B15362322DDA914009CE548 /* queue.gif in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
@@ -2527,6 +2526,7 @@
 				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
+				4BBCE8F822E18B7800A34695 /* queue.gif in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,

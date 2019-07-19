@@ -134,8 +134,7 @@ class VerifyAddressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        self.fetchDatafromRealmIfAny()
-        self.setSampleData()
+        //self.fetchDatafromRealmIfAny()
     }
     
     func fetchDatafromRealmIfAny(){
@@ -243,13 +242,7 @@ class VerifyAddressViewController: BaseViewController {
     func inactivateDoneBtn(){
         self.doneBtn.isEnabled=false
     }
-    func setSampleData(){
-        self.streetAddress.text = "100 Via Floresta Drive"
-        self.houseNumbertextfield.text="100 Via Floresta Dr Boca Raton FL 33487"
-        self.cityTextfield.text = "Boca Raton"
-        self.textState.text="FL"
-        self.zipTextfield.text="33487"
-    }
+    
 }
 //MARK: UITextField Delegates
 extension VerifyAddressViewController:UITextFieldDelegate{

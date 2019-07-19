@@ -65,7 +65,6 @@ class SignUpStepFirst: BaseViewController {
         self.setupRightNavigationBar()
         self.updateTextFieldUI()
         self.presenter = SignupAuthPresenter.init(delegate:self)
-        self.setSampleData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -89,8 +88,8 @@ class SignUpStepFirst: BaseViewController {
         
         self.termsPolicyCheckBox.style = .tick
         self.depositCardCheckbox.style = .tick
-        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 6)
-        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 6)
+        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 2)
+        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 2)
         self.termsPolicyCheckBox.tag=0
         self.depositCardCheckbox.tag=1
         self.customProgressView.progressView.setProgress(0.17*1, animated: true)
@@ -190,12 +189,6 @@ class SignUpStepFirst: BaseViewController {
         }
     }
     
-    // Remove this sample values
-    func setSampleData(){
-        self.emailTextField.text = "Sunita210@gmail.com"
-        self.paswwordTextField.text = "Test1234!"
-        self.confirmPassTextField.text = "Test1234!"
-    }
 }
 
 extension SignUpStepFirst:UITextFieldDelegate{
@@ -217,7 +210,7 @@ extension SignUpStepFirst:SignupAuthDelegate{
         let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: "127.0.0.1", name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "SEND|RECEIVE|TIER|1", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
         let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"",houseNumber:"")
 
-        let signupflowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "Test", cipTag: 2, arrivalDate: String(Date().millisecondsSince1970), deviceType: "IOS")
+        let signupflowData:SignupFlowData = SignupFlowData.init(userID: data.data.id, userIP: "127.0.0.1", email: data.data.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.confirmPassTextField.text!, documents: emptyDoc, suppID: "Test", cipTag: 2, arrivalDate: "", deviceType: "IOS")
        
         // move to next step of Sign Up
         self.moveToSignupStepSecond(data: signupflowData)
