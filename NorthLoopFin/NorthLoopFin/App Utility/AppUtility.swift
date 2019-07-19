@@ -70,7 +70,15 @@ class AppUtility {
     /// Date from miliseconds
     ///
     /// - Parameter seconds: miliseconds
-    class func dateFromMilliseconds(seconds: Double)-> String{
+    class func dateFromMilliseconds(seconds: Double)-> Date{
+        
+        //Convert to Date
+        let date = Date.init(timeIntervalSince1970: seconds/1000)//NSDate(timeIntervalSince1970: seconds)
+
+        return date
+    }
+    
+    class func dateStringFromMillisecondsWithoutTime(seconds: Double)-> String{
         
         //Convert to Date
         let date = Date.init(timeIntervalSince1970: seconds/1000)//NSDate(timeIntervalSince1970: seconds)
@@ -84,6 +92,31 @@ class AppUtility {
         return dateString
     }
     
+    class func getFormattedDateFullString(date: Date)->String{
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let dayOfMonth = calendar.component(.day, from: date)
+        
+        let daySub = AppUtility.daySuffix(date: date)
+        
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyy" //HH:mm:a"
+        
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        var dateString = dateFormatter.string(from: date)
+        let pre = (dayOfMonth<10 ? "0" : "")
+        //print("formatted date is =  \(dateString)")
+        let range:Range<String.Index>  = dateString.range(of: "\(pre)\(dayOfMonth)")!
+        let index: Int = dateString.distance(from: dateString.startIndex, to: range.lowerBound) + 2
+        
+        dateString.insert(daySub.first!, at: dateString.index(dateString.startIndex, offsetBy: index))
+        dateString.insert(daySub.last!, at: dateString.index(dateString.startIndex, offsetBy: index+1))
+        dateString.insert(",", at: dateString.index(dateString.startIndex, offsetBy: index+2))
+        
+        return dateString
+    }
+    
     class func getDateFromString(dateString:String)->Date{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
@@ -93,6 +126,18 @@ class AppUtility {
         return date!
     }
     
+    class func daySuffix(date: Date) -> String {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let dayOfMonth = calendar.component(.day, from: date)
+        switch dayOfMonth {
+        case 1, 21, 31: return "st"
+        case 2, 22: return "nd"
+        case 3, 23: return "rd"
+        default: return "th"
+        }
+    }
+
     class func datefromStringUsingCalender(date:String)->Date{
         let calendar = Calendar.current
         var dateComponents: DateComponents? = calendar.dateComponents([.hour, .minute, .second], from: Date())

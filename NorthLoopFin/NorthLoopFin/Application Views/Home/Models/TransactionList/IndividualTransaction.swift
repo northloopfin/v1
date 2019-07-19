@@ -39,7 +39,7 @@ struct IndividualTransaction: Codable {
         recentStatus = try values.decodeIfPresent(RecentStatus.self, forKey: .recentStatus)!
         to = try values.decodeIfPresent(TransactionListTo.self, forKey: .to)!
 
-        let dateString = AppUtility.dateFromMilliseconds(seconds: Double(extra.createdOn))
+        let dateString = AppUtility.dateStringFromMillisecondsWithoutTime(seconds: Double(extra.createdOn))
         date = AppUtility.getDateFromString(dateString: dateString)
     }
 }

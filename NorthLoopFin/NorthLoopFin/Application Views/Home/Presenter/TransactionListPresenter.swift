@@ -73,7 +73,9 @@ class TransactionListPresenter: ResponseCallback{
             let values = dic[key]
             //print(values)
             let date = AppUtility.dateFromMilliseconds(seconds: Double(values![0].extra.createdOn))
-            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: date, rowData: values ?? [])
+            let dateString = AppUtility.getFormattedDateFullString(date: date)
+            
+            let transationListModel:TransactionListModel = TransactionListModel.init(sectionTitle: dateString, rowData: values ?? [])
             dataArr.append(transationListModel)
         }
         return dataArr

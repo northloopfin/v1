@@ -156,6 +156,16 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
 
 extension TransactionDetailViewController:TransactionDetailDelegate{
     
+    func formatCategory(category:String) -> String{
+        let categoryDic = ["bank_fee":"Bank Fee","bill/loan":"bill","loan":"bill","digital_payment":"Digital","pos":"POS","subscription_service":"Subscription","transfer":"Transfer","withdrawal":"Withdrawal","grocery":"Grocery","dining":"Dining","medical":"Medical","retail":"Retail","service":"Service","travel/transportation":"Travel","travel":"Travel","transportation":"Travel"]
+        
+        if categoryDic.keys.contains(category.lowercased()) {
+            return categoryDic[category.lowercased()]!
+        }
+        
+        return category.capitalized
+    }
+    
     func didFetchedTransactionDetail(data:TransactionDetail){
         if data.data.to.type == "EXTERNAL-US"{
             if let _ = data.data.to.meta{
@@ -163,7 +173,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
                 let url = URL(string: data.data.to.meta!.merchantLogo)
                 self.transactionImg.kf.setImage(with:url)
                 
-                self.transactionPurposeLbl.text = data.data.to.meta!.merchantCategory
+                self.transactionPurposeLbl.text = formatCategory(category: data.data.to.meta!.merchantCategory) 
             }
         }else if data.data.to.type == "ACH-US"{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
