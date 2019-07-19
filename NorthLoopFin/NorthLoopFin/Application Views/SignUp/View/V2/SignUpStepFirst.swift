@@ -89,8 +89,8 @@ class SignUpStepFirst: BaseViewController {
         
         self.termsPolicyCheckBox.style = .tick
         self.depositCardCheckbox.style = .tick
-        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 6)
-        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 6)
+        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 2)
+        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 2)
         self.termsPolicyCheckBox.tag=0
         self.depositCardCheckbox.tag=1
         self.customProgressView.progressView.setProgress(0.17*1, animated: true)

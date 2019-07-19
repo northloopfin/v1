@@ -579,7 +579,7 @@ W1s 2Bx,UK</string>
                                                         <rect key="frame" x="25" y="22" width="325" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="IRg-FJ-1N5"/>
+                                                            <constraint firstAttribute="height" constant="50" id="fif-Bo-ldr"/>
                                                         </constraints>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
@@ -591,6 +591,9 @@ W1s 2Bx,UK</string>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SI4-vm-lbj">
                                                         <rect key="frame" x="25" y="83" width="325" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="CIc-zb-CID"/>
+                                                        </constraints>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -629,6 +632,9 @@ W1s 2Bx,UK</string>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-e3-gaL">
                                                         <rect key="frame" x="25" y="145" width="325" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Mv1-1d-DAT"/>
+                                                        </constraints>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -639,6 +645,9 @@ W1s 2Bx,UK</string>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-xB-y1i">
                                                         <rect key="frame" x="25" y="207" width="325" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="POM-lS-7Za"/>
+                                                        </constraints>
                                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -657,7 +666,6 @@ W1s 2Bx,UK</string>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="leading" secondItem="7S4-On-lFi" secondAttribute="leading" constant="25" id="ETg-KF-q0W"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="KOP-Ew-9dk"/>
                                                     <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="Mv3-GN-98s"/>
-                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="height" secondItem="SI4-vm-lbj" secondAttribute="height" id="QAN-Dz-5qI"/>
                                                     <constraint firstItem="SI4-vm-lbj" firstAttribute="leading" secondItem="whs-du-iTR" secondAttribute="leading" id="RM5-tK-Tdj"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="top" secondItem="SI4-vm-lbj" secondAttribute="bottom" constant="12" id="Z1k-zK-tdD"/>
                                                     <constraint firstItem="bvv-e3-gaL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="ZPN-2H-Wgo"/>
@@ -665,8 +673,6 @@ W1s 2Bx,UK</string>
                                                     <constraint firstItem="bsU-oK-gfL" firstAttribute="top" secondItem="vQl-xB-y1i" secondAttribute="bottom" constant="13" id="d8o-39-UnZ"/>
                                                     <constraint firstItem="vQl-xB-y1i" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="g68-fb-QZX"/>
                                                     <constraint firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" constant="25" id="jbj-yx-8hl"/>
-                                                    <constraint firstItem="SI4-vm-lbj" firstAttribute="height" secondItem="whs-du-iTR" secondAttribute="height" id="mvK-Px-Hk2"/>
-                                                    <constraint firstItem="vQl-xB-y1i" firstAttribute="height" secondItem="SI4-vm-lbj" secondAttribute="height" id="nC1-TA-30C"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -775,10 +781,14 @@ W1s 2Bx,UK</string>
                     <connections>
                         <outlet property="DOBTextField" destination="SI4-vm-lbj" id="d0O-nV-keu"/>
                         <outlet property="arrivalDate" destination="vQl-xB-y1i" id="N6p-Hv-YAJ"/>
+                        <outlet property="arrivalHeightConstraint" destination="POM-lS-7Za" id="rXS-HG-jUf"/>
                         <outlet property="customProgressView" destination="mNY-Cb-C2b" id="zsM-Kc-dUK"/>
+                        <outlet property="dobHeightConstraint" destination="CIc-zb-CID" id="HxQ-Us-PX5"/>
                         <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>
+                        <outlet property="passportHeightConstraint" destination="fif-Bo-ldr" id="5yT-Tp-64V"/>
                         <outlet property="passportTextField" destination="whs-du-iTR" id="cN5-Mh-G6D"/>
+                        <outlet property="universityHeightConstraint" destination="Mv1-1d-DAT" id="MzU-nA-POc"/>
                         <outlet property="universityTextField" destination="bvv-e3-gaL" id="zsp-aS-7qM"/>
                     </connections>
                 </viewController>
@@ -1289,7 +1299,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-Cd-362" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="104" width="129" height="31"/>
+                                <rect key="frame" x="25" y="104" width="136" height="31"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1300,7 +1310,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ID type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8A-3Y-RvI" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="163" width="138" height="22"/>
+                                <rect key="frame" x="25" y="163" width="145" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1311,10 +1321,10 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-vg-Owi" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="197" width="126" height="34"/>
+                                <rect key="frame" x="25" y="197" width="325" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-Kp-deV">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1330,7 +1340,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-xW-A7B">
-                                <rect key="frame" x="25" y="256" width="126" height="69"/>
+                                <rect key="frame" x="25" y="256" width="325" height="69"/>
                                 <subviews>
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-ev-rK7">
                                         <rect key="frame" x="21" y="12" width="60" height="45"/>
@@ -1351,7 +1361,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-HS-rum">
-                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="Pbq-ka-Xqp"/>
                                         </connections>
@@ -1372,10 +1382,10 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PX-9n-Y8b">
-                                <rect key="frame" x="25" y="335" width="126" height="69"/>
+                                <rect key="frame" x="25" y="335" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFs-V2-k3t">
-                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="2o1-DH-qN9"/>
                                         </connections>
@@ -1416,7 +1426,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCy-ip-oLr" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="500" width="126" height="45"/>
+                                <rect key="frame" x="25" y="500" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="PUf-ZF-Lkh"/>
@@ -1432,10 +1442,10 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH5-E1-Z8N">
-                                <rect key="frame" x="25" y="414" width="126" height="69"/>
+                                <rect key="frame" x="25" y="414" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-Pw-XBa">
-                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="y2h-87-oBI"/>
@@ -1477,7 +1487,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-NH-3af" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="12" y="143" width="152" height="8"/>
+                                <rect key="frame" x="12" y="143" width="351" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="jXF-Fi-w20"/>
@@ -5462,94 +5472,122 @@ We’ve sent an email confirming.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-Zf-3DG">
                                 <rect key="frame" x="0.0" y="525.5" width="375" height="141.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="I have read and agree to the Terms of Service and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-6n-Yh0" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="11" width="296" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="5ii-Be-dAj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and agree to the terms of the Deposit Agreement and Cardholder Agreement" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfW-yK-FCj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="61" width="296" height="41"/>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                <real key="value" value="0.40000000000000002"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igW-cJ-SVs" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="15" width="25" height="25"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKt-2A-7DC">
+                                        <rect key="frame" x="0.0" y="47" width="375" height="47"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQS-zd-uTp" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="35" y="4" width="18" height="18"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="18" id="1au-FD-tdd"/>
+                                                    <constraint firstAttribute="height" constant="18" id="Fl3-I8-lco"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="uncheckedBorderColor">
+                                                        <color key="value" red="0.67843137254901964" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
+                                                        <color key="value" red="0.69019607843137254" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
+                                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="checkBoxvalueChanged:" destination="qnq-tZ-bhZ" eventType="valueChanged" id="gT1-fC-6J3"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and agree to the terms of the Deposit Agreement and Cardholder Agreement" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfW-yK-FCj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="61" y="4" width="294" height="37"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="yTP-VM-AGa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                        <real key="value" value="0.40000000000000002"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="I00-pi-xfd"/>
-                                            <constraint firstAttribute="height" constant="25" id="s2c-Ry-j7c"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZfW-yK-FCj" secondAttribute="trailing" constant="20" id="1BO-tC-2ra"/>
+                                            <constraint firstItem="ZfW-yK-FCj" firstAttribute="leading" secondItem="RQS-zd-uTp" secondAttribute="trailing" constant="8" id="Aoo-mh-Tqt"/>
+                                            <constraint firstItem="ZfW-yK-FCj" firstAttribute="top" secondItem="PKt-2A-7DC" secondAttribute="top" constant="4" id="Rgl-rX-3gX"/>
+                                            <constraint firstItem="RQS-zd-uTp" firstAttribute="leading" secondItem="PKt-2A-7DC" secondAttribute="leading" constant="35" id="rO9-4A-km3"/>
+                                            <constraint firstItem="RQS-zd-uTp" firstAttribute="top" secondItem="PKt-2A-7DC" secondAttribute="top" constant="4" id="u9y-wa-ubH"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="uncheckedBorderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
-                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="checkBoxvalueChanged:" destination="qnq-tZ-bhZ" eventType="valueChanged" id="2Rz-U8-Rss"/>
-                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQS-zd-uTp" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="63" width="25" height="25"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtl-2P-vTt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igW-cJ-SVs" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="35" y="4" width="18" height="18"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="18" id="I00-pi-xfd"/>
+                                                    <constraint firstAttribute="height" constant="18" id="s2c-Ry-j7c"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="uncheckedBorderColor">
+                                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
+                                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
+                                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="checkBoxvalueChanged:" destination="qnq-tZ-bhZ" eventType="valueChanged" id="2Rz-U8-Rss"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="I have read and agree to the Terms of Service and Privacy Policy" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-6n-Yh0" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="61" y="4" width="294" height="37"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="kjp-6b-A0g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                        <real key="value" value="0.40000000000000002"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="1au-FD-tdd"/>
-                                            <constraint firstAttribute="height" constant="25" id="Fl3-I8-lco"/>
+                                            <constraint firstItem="igW-cJ-SVs" firstAttribute="leading" secondItem="dtl-2P-vTt" secondAttribute="leading" constant="35" id="0DV-7O-WK5"/>
+                                            <constraint firstItem="igW-cJ-SVs" firstAttribute="top" secondItem="dtl-2P-vTt" secondAttribute="top" constant="4" id="Rnk-1c-v9l"/>
+                                            <constraint firstAttribute="height" constant="47" id="Wtk-ba-74F"/>
+                                            <constraint firstItem="QX5-6n-Yh0" firstAttribute="leading" secondItem="igW-cJ-SVs" secondAttribute="trailing" constant="8" id="ZWU-RZ-dvG"/>
+                                            <constraint firstAttribute="trailing" secondItem="QX5-6n-Yh0" secondAttribute="trailing" constant="20" id="coG-jD-9C6"/>
+                                            <constraint firstItem="QX5-6n-Yh0" firstAttribute="top" secondItem="igW-cJ-SVs" secondAttribute="top" id="jao-BH-CDf"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="uncheckedBorderColor">
-                                                <color key="value" red="0.67843137254901964" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
-                                                <color key="value" red="0.69019607843137254" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
-                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="checkBoxvalueChanged:" destination="qnq-tZ-bhZ" eventType="valueChanged" id="gT1-fC-6J3"/>
-                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="RQS-zd-uTp" firstAttribute="leading" secondItem="igW-cJ-SVs" secondAttribute="leading" id="A7D-OK-fSr"/>
-                                    <constraint firstItem="ZfW-yK-FCj" firstAttribute="leading" secondItem="QX5-6n-Yh0" secondAttribute="leading" id="HYd-68-xjU"/>
-                                    <constraint firstItem="ZfW-yK-FCj" firstAttribute="height" secondItem="QX5-6n-Yh0" secondAttribute="height" id="Lcf-Tc-4Cd"/>
-                                    <constraint firstItem="QX5-6n-Yh0" firstAttribute="leading" secondItem="igW-cJ-SVs" secondAttribute="trailing" constant="5" id="Ppa-tE-yq4"/>
-                                    <constraint firstItem="RQS-zd-uTp" firstAttribute="top" secondItem="igW-cJ-SVs" secondAttribute="bottom" constant="23" id="Vlj-rE-kPw"/>
-                                    <constraint firstItem="ZfW-yK-FCj" firstAttribute="trailing" secondItem="QX5-6n-Yh0" secondAttribute="trailing" id="fv4-zq-j9h"/>
-                                    <constraint firstItem="QX5-6n-Yh0" firstAttribute="top" secondItem="Dpv-Zf-3DG" secondAttribute="top" constant="11" id="htC-FI-zqi"/>
-                                    <constraint firstAttribute="trailing" secondItem="QX5-6n-Yh0" secondAttribute="trailing" constant="19" id="jc0-vl-fRX"/>
-                                    <constraint firstItem="igW-cJ-SVs" firstAttribute="leading" secondItem="Dpv-Zf-3DG" secondAttribute="leading" constant="30" id="jwx-8H-r9U"/>
-                                    <constraint firstItem="igW-cJ-SVs" firstAttribute="top" secondItem="Dpv-Zf-3DG" secondAttribute="top" constant="15" id="rHL-1k-CsU"/>
-                                    <constraint firstItem="ZfW-yK-FCj" firstAttribute="top" secondItem="QX5-6n-Yh0" secondAttribute="bottom" constant="9" id="yEC-Nh-IxC"/>
-                                    <constraint firstItem="ZfW-yK-FCj" firstAttribute="leading" secondItem="RQS-zd-uTp" secondAttribute="trailing" constant="5" id="zog-eD-4g0"/>
+                                    <constraint firstItem="dtl-2P-vTt" firstAttribute="top" secondItem="Dpv-Zf-3DG" secondAttribute="top" id="DqV-we-Auh"/>
+                                    <constraint firstItem="PKt-2A-7DC" firstAttribute="top" secondItem="dtl-2P-vTt" secondAttribute="bottom" id="Fii-wa-o9L"/>
+                                    <constraint firstItem="PKt-2A-7DC" firstAttribute="height" secondItem="dtl-2P-vTt" secondAttribute="height" id="Hb6-La-FRG"/>
+                                    <constraint firstItem="PKt-2A-7DC" firstAttribute="top" secondItem="dtl-2P-vTt" secondAttribute="bottom" id="MXG-QL-hkc"/>
+                                    <constraint firstItem="PKt-2A-7DC" firstAttribute="leading" secondItem="Dpv-Zf-3DG" secondAttribute="leading" id="QgL-Jn-8Do"/>
+                                    <constraint firstAttribute="trailing" secondItem="dtl-2P-vTt" secondAttribute="trailing" id="fgx-Ek-otV"/>
+                                    <constraint firstItem="dtl-2P-vTt" firstAttribute="leading" secondItem="Dpv-Zf-3DG" secondAttribute="leading" id="g8G-DX-4xM"/>
+                                    <constraint firstAttribute="trailing" secondItem="PKt-2A-7DC" secondAttribute="trailing" id="y6f-fo-yU6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -6053,7 +6091,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXk-aV-rlQ" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="425" width="325" height="45"/>
+                                <rect key="frame" x="25" y="486" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="oku-1U-Mn6"/>
@@ -6074,11 +6112,14 @@ The Internal Revenue Service does not require your consent to any provision of t
                                     <action selector="okBtnClicked:" destination="V4P-OP-7u3" eventType="touchUpInside" id="juJ-lR-s4f"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UpgradeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uOc-Ea-BTl">
-                                <rect key="frame" x="44" y="86" width="287" height="189"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uOc-Ea-BTl">
+                                <rect key="frame" x="44" y="86" width="287" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="pSh-5Q-r5h"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’re on the waitlist! We’ll email you when you can get access" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elb-nR-s8F" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="325" width="325" height="60"/>
+                                <rect key="frame" x="25" y="386" width="325" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5xF-iy-oYP"/>
                                 </constraints>
@@ -6113,7 +6154,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I11-bY-3g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9284" y="1497.3013493253375"/>
+            <point key="canvasLocation" x="9082" y="1317"/>
         </scene>
     </scenes>
     <resources>
