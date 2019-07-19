@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IT8-t2-lbH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IT8-t2-lbH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1103,7 +1103,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldx-yJ-P2E" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="133" width="136" height="31"/>
+                                <rect key="frame" x="25" y="133" width="129" height="31"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1114,7 +1114,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ID type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmA-jl-4yA" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="172" width="145" height="22"/>
+                                <rect key="frame" x="25" y="172" width="138" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1125,10 +1125,10 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-xo-vSO" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="206" width="325" height="34"/>
+                                <rect key="frame" x="25" y="206" width="46" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50X-HH-94b">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1144,7 +1144,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
-                                <rect key="frame" x="25" y="265" width="325" height="69"/>
+                                <rect key="frame" x="25" y="265" width="46" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
@@ -1165,7 +1165,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-pn-kP6">
-                                        <rect key="frame" x="8" y="0.0" width="317" height="69"/>
+                                        <rect key="frame" x="8" y="0.0" width="38" height="69"/>
                                         <connections>
                                             <action selector="scanFrontClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="dJh-Wf-QZR"/>
                                         </connections>
@@ -1186,10 +1186,10 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
-                                <rect key="frame" x="25" y="351" width="325" height="69"/>
+                                <rect key="frame" x="25" y="351" width="46" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="69"/>
                                         <connections>
                                             <action selector="scanBackClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="uLY-ls-sWh"/>
                                         </connections>
@@ -1228,7 +1228,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Na-LzZ" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="500" width="325" height="45"/>
+                                <rect key="frame" x="25" y="500" width="46" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jp4-O9-PWE"/>
@@ -2135,7 +2135,7 @@ W1s 2Bx,UK</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-SW-U9N">
-                                <rect key="frame" x="134" y="78" width="107" height="107"/>
+                                <rect key="frame" x="134" y="77.999999999999986" width="107.00000000000003" height="107.00000000000004"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="2Md-8R-lxZ"/>
                                     <constraint firstAttribute="height" constant="107" id="NXJ-ee-ax2"/>
@@ -3606,7 +3606,7 @@ and get $200</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostInsufficient" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-ak-cRw">
-                                <rect key="frame" x="93" y="49" width="189" height="98"/>
+                                <rect key="frame" x="93" y="49" width="189.00000000000006" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="crO-bU-c2Q"/>
                                     <constraint firstAttribute="height" constant="98" id="dbR-oQ-7Nu"/>
@@ -3709,7 +3709,7 @@ up and site back and relax.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-7q-Pm6">
-                                <rect key="frame" x="134" y="60" width="107" height="70"/>
+                                <rect key="frame" x="134" y="60" width="107.00000000000003" height="70.000000000000028"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="KLa-Zc-8RN"/>
                                     <constraint firstAttribute="width" constant="107" id="iQu-3E-igV"/>
@@ -5763,6 +5763,28 @@ The Internal Revenue Service does not require your consent to any provision of t
                                     <action selector="linkACHClicked:" destination="3tg-b2-OAo" eventType="touchUpInside" id="5Ny-ng-baj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-xI-lwd" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="500" width="325" height="45"/>
+                                <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Owz-OO-AWK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="VIEW ACCOUNTS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="viewAccountClicked:" destination="3tg-b2-OAo" eventType="touchUpInside" id="dc5-9z-WpX"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Account" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZq-xa-uYe">
                                 <rect key="frame" x="25" y="102" width="325" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5794,6 +5816,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                         <constraints>
                             <constraint firstItem="9wa-LI-5OZ" firstAttribute="top" secondItem="OZq-xa-uYe" secondAttribute="bottom" constant="20" id="2K7-xM-b35"/>
                             <constraint firstItem="otf-qv-7fZ" firstAttribute="top" secondItem="Th2-sl-iud" secondAttribute="top" id="7Ta-sc-VxO"/>
+                            <constraint firstItem="a8d-xI-lwd" firstAttribute="top" secondItem="ZJm-ID-jmd" secondAttribute="bottom" constant="20" id="OAg-K0-cdy"/>
                             <constraint firstItem="ZJm-ID-jmd" firstAttribute="top" secondItem="yZM-c9-cSk" secondAttribute="bottom" constant="20" id="QhT-Cv-wff"/>
                             <constraint firstItem="XYb-J2-nHm" firstAttribute="trailing" secondItem="otf-qv-7fZ" secondAttribute="trailing" id="RMS-9k-Frz"/>
                             <constraint firstItem="XYb-J2-nHm" firstAttribute="trailing" secondItem="ZJm-ID-jmd" secondAttribute="trailing" constant="25" id="SRH-0m-RyO"/>
@@ -5803,9 +5826,11 @@ The Internal Revenue Service does not require your consent to any provision of t
                             <constraint firstItem="otf-qv-7fZ" firstAttribute="leading" secondItem="XYb-J2-nHm" secondAttribute="leading" id="aPr-nk-HqQ"/>
                             <constraint firstItem="OZq-xa-uYe" firstAttribute="leading" secondItem="XYb-J2-nHm" secondAttribute="leading" constant="25" id="aWf-iL-Yhk"/>
                             <constraint firstItem="yZM-c9-cSk" firstAttribute="leading" secondItem="XYb-J2-nHm" secondAttribute="leading" constant="25" id="cDs-SI-YEP"/>
+                            <constraint firstItem="XYb-J2-nHm" firstAttribute="trailing" secondItem="a8d-xI-lwd" secondAttribute="trailing" constant="25" id="iv8-tw-9ya"/>
                             <constraint firstItem="OZq-xa-uYe" firstAttribute="top" secondItem="XYb-J2-nHm" secondAttribute="top" constant="82" id="kdd-p4-yJJ"/>
                             <constraint firstItem="yZM-c9-cSk" firstAttribute="top" secondItem="9wa-LI-5OZ" secondAttribute="bottom" constant="148" id="nIH-Y7-5kI"/>
                             <constraint firstItem="ZJm-ID-jmd" firstAttribute="leading" secondItem="XYb-J2-nHm" secondAttribute="leading" constant="25" id="oKh-Sd-gww"/>
+                            <constraint firstItem="a8d-xI-lwd" firstAttribute="leading" secondItem="XYb-J2-nHm" secondAttribute="leading" constant="25" id="p1D-DU-Tlv"/>
                             <constraint firstItem="XYb-J2-nHm" firstAttribute="trailing" secondItem="yZM-c9-cSk" secondAttribute="trailing" constant="25" id="udS-6N-b4F"/>
                             <constraint firstItem="9wa-LI-5OZ" firstAttribute="leading" secondItem="XYb-J2-nHm" secondAttribute="leading" constant="25" id="xYT-d2-xOJ"/>
                         </constraints>
@@ -5824,6 +5849,58 @@ The Internal Revenue Service does not require your consent to any provision of t
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj6-eq-7ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7628" y="640"/>
+        </scene>
+        <!--View Accounts View Controller-->
+        <scene sceneID="Jvj-JB-1Af">
+            <objects>
+                <viewController storyboardIdentifier="ViewAccountsViewController" id="Eui-WF-ADz" customClass="ViewAccountsViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWs-Gc-d6J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUN-WL-OOm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aAG-e1-8UJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Eui-WF-ADz" id="WiO-hJ-8Gd"/>
+                                            <outlet property="delegate" destination="Eui-WF-ADz" id="Oi3-AU-hJf"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aAG-e1-8UJ" secondAttribute="trailing" id="PFU-Og-cSi"/>
+                                    <constraint firstAttribute="bottom" secondItem="aAG-e1-8UJ" secondAttribute="bottom" id="bVk-5e-E7r"/>
+                                    <constraint firstItem="aAG-e1-8UJ" firstAttribute="top" secondItem="sUN-WL-OOm" secondAttribute="top" id="uGU-tZ-5be"/>
+                                    <constraint firstItem="aAG-e1-8UJ" firstAttribute="leading" secondItem="sUN-WL-OOm" secondAttribute="leading" id="zNN-4N-OR1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sUN-WL-OOm" firstAttribute="leading" secondItem="TmH-Ac-AKE" secondAttribute="leading" id="45O-E2-clV"/>
+                            <constraint firstItem="TmH-Ac-AKE" firstAttribute="bottom" secondItem="sUN-WL-OOm" secondAttribute="bottom" id="Den-vP-xtd"/>
+                            <constraint firstItem="TmH-Ac-AKE" firstAttribute="trailing" secondItem="sUN-WL-OOm" secondAttribute="trailing" id="GPQ-dk-k0A"/>
+                            <constraint firstItem="sUN-WL-OOm" firstAttribute="top" secondItem="TmH-Ac-AKE" secondAttribute="top" id="URS-0F-PDz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TmH-Ac-AKE"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aAG-e1-8UJ" id="4ja-o2-8AH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fto-Mq-ud2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6937" y="1413"/>
         </scene>
         <!--Finder View Controller-->
         <scene sceneID="3uX-RE-BKz">

@@ -395,6 +395,15 @@
 		4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DD22BB693300D85610 /* AccountAgreement.html */; };
 		61B88BE40F88EDFCFD2B93BD /* Pods_NorthLoopFinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74161144440DBE27B92E1ED2 /* Pods_NorthLoopFinTests.framework */; };
 		E6A1ACCA12D73B5988A6E8ED /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0F06B96BCCCE02E43D19E7 /* Pods_NorthLoopFinUITests.framework */; };
+		EA04726122E070F800D5B834 /* ViewAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */; };
+		EA04726422E0725E00D5B834 /* ACHAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726222E0725E00D5B834 /* ACHAccountCell.swift */; };
+		EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA04726322E0725E00D5B834 /* ACHAccountCell.xib */; };
+		EA04726822E0806400D5B834 /* DeleteACHPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726722E0806400D5B834 /* DeleteACHPresenter.swift */; };
+		EA04726D22E08FB600D5B834 /* DeleteACHAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726A22E08FB600D5B834 /* DeleteACHAPIRequest.swift */; };
+		EA04726E22E08FB600D5B834 /* DeleteACHBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726B22E08FB600D5B834 /* DeleteACHBusinessLogic.swift */; };
+		EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */; };
+		EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727122E09F1500D5B834 /* DeleteACH.swift */; };
+		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
 		EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */; };
 /* End PBXBuildFile section */
 
@@ -824,6 +833,15 @@
 		CC51A72AADCB05C7B834831E /* Pods-NorthLoopFinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D2C0CA2F4F7F5E5508F01524 /* Pods-NorthLoopFinUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.staging.xcconfig"; sourceTree = "<group>"; };
 		E9F864D4E9967EEA4C8CB382 /* Pods-NorthLoopFin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.debug.xcconfig"; sourceTree = "<group>"; };
+		EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAccountsViewController.swift; sourceTree = "<group>"; };
+		EA04726222E0725E00D5B834 /* ACHAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHAccountCell.swift; sourceTree = "<group>"; };
+		EA04726322E0725E00D5B834 /* ACHAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ACHAccountCell.xib; sourceTree = "<group>"; };
+		EA04726722E0806400D5B834 /* DeleteACHPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHPresenter.swift; sourceTree = "<group>"; };
+		EA04726A22E08FB600D5B834 /* DeleteACHAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHAPIRequest.swift; sourceTree = "<group>"; };
+		EA04726B22E08FB600D5B834 /* DeleteACHBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHBusinessLogic.swift; sourceTree = "<group>"; };
+		EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHRequestModel.swift; sourceTree = "<group>"; };
+		EA04727122E09F1500D5B834 /* DeleteACH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteACH.swift; sourceTree = "<group>"; };
+		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
 		F05C98038699AA9883A8B0D9 /* Pods-NorthLoopFinUITests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.production.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -875,6 +893,7 @@
 				1D055D58229C72080078CD33 /* ACHTransaction */,
 				1D055D3E229C024D0078CD33 /* FetchACH */,
 				1D055D2B229BD6BF0078CD33 /* LinkACH */,
+				EA04726622E0806400D5B834 /* DeleteACH */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -885,6 +904,7 @@
 				1D055D4D229C6DFA0078CD33 /* ACHTransaction */,
 				1D055D3D229C02430078CD33 /* FetchACH */,
 				1D055D2C229BD6C80078CD33 /* LinkACH */,
+				EA04726922E08FB600D5B834 /* DeleteACH */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1619,6 +1639,8 @@
 				1D818A0621C1063B000C8F5F /* HomeTableSectionCell.swift */,
 				1D818A0821C1065A000C8F5F /* HomeTableSectionCell.xib */,
 				1D818A0C21C17DE4000C8F5F /* HomeDelegate.swift */,
+				EA04726222E0725E00D5B834 /* ACHAccountCell.swift */,
+				EA04726322E0725E00D5B834 /* ACHAccountCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1914,6 +1936,7 @@
 				1D055D37229BFEFC0078CD33 /* MakeTransferViewController.swift */,
 				1D055D4B229C38DE0078CD33 /* TransferConfirmationViewController.swift */,
 				1D180D67229CF5AB00FC3390 /* TransferSuceessViewController.swift */,
+				EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2337,6 +2360,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA04726622E0806400D5B834 /* DeleteACH */ = {
+			isa = PBXGroup;
+			children = (
+				EA04726722E0806400D5B834 /* DeleteACHPresenter.swift */,
+			);
+			path = DeleteACH;
+			sourceTree = "<group>";
+		};
+		EA04726922E08FB600D5B834 /* DeleteACH */ = {
+			isa = PBXGroup;
+			children = (
+				EA04726A22E08FB600D5B834 /* DeleteACHAPIRequest.swift */,
+				EA04726B22E08FB600D5B834 /* DeleteACHBusinessLogic.swift */,
+				EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */,
+				EA04727122E09F1500D5B834 /* DeleteACH.swift */,
+				EA04727322E09F9800D5B834 /* DeletedACHNode.swift */,
+			);
+			path = DeleteACH;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2478,6 +2521,7 @@
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
 				4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */,
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
+				EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */,
 				4B15362222DDA914009CE548 /* createAcc.gif in Resources */,
 				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
@@ -2742,6 +2786,7 @@
 				1D180D96229E77C700FC3390 /* ATMCoordinates.swift in Sources */,
 				1D9F45FA228AC0E3009D76FC /* CardsPresenter.swift in Sources */,
 				1D180DBA229FC56C00FC3390 /* InternationalTransferDetails.swift in Sources */,
+				EA04726E22E08FB600D5B834 /* DeleteACHBusinessLogic.swift in Sources */,
 				1DCDF266228ED0ED00ABDCB1 /* SignupFlowData.swift in Sources */,
 				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
 				1D8440802289545A00A77BBF /* Amount.swift in Sources */,
@@ -2796,14 +2841,18 @@
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
 				1D5AB30F22A7C25300DB3B70 /* TwoFABusinessLogic.swift in Sources */,
 				1DCDF26A228ED1F600ABDCB1 /* SignupFlowAlDoc.swift in Sources */,
+				EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */,
 				4BFBC88422BB8AEF00B23B68 /* GetAppSettingsPresenter.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1D84407E2289545A00A77BBF /* TransactionListApiRequest.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
+				EA04726D22E08FB600D5B834 /* DeleteACHAPIRequest.swift in Sources */,
 				1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */,
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				1D5AB31922A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift in Sources */,
+				EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */,
 				1D5AB2E822A67DF700DB3B70 /* UpdateCardPreferenceBody.swift in Sources */,
+				EA04726822E0806400D5B834 /* DeleteACHPresenter.swift in Sources */,
 				1D5AB31322A7C7C300DB3B70 /* TwoFADelegates.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D913CE4228F62880075B16D /* SignupSynapsePresenter.swift in Sources */,
@@ -2872,6 +2921,7 @@
 				1D9F45FE228AC13E009D76FC /* CardAPIRequest.swift in Sources */,
 				1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */,
 				1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */,
+				EA04726422E0725E00D5B834 /* ACHAccountCell.swift in Sources */,
 				4BFDF89022B9E8160066860D /* UniversityPresenter.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */,
@@ -2895,6 +2945,7 @@
 				1D5AB2ED22A791B300DB3B70 /* SetPinAPIRequest.swift in Sources */,
 				4BFDF89922B9E8920066860D /* FetchUniversityResponse.swift in Sources */,
 				1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */,
+				EA04726122E070F800D5B834 /* ViewAccountsViewController.swift in Sources */,
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D5AB2F322A7965E00DB3B70 /* SetPinPresenter.swift in Sources */,
@@ -2971,6 +3022,7 @@
 				4BE8338522CB175300765F05 /* CheckUpdateAPIRequest.swift in Sources */,
 				4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */,
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
+				EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */,
 				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,
 				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,
 				1D055D55229C6FA00078CD33 /* ACHTransaction.swift in Sources */,
