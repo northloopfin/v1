@@ -140,7 +140,6 @@ class CreateAccountV2ViewController: BaseViewController {
         self.nextBtn.isEnabled=false
         updateTextFieldUI()
         self.prepareView()
-        self.setSampleData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -299,14 +298,6 @@ class CreateAccountV2ViewController: BaseViewController {
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
         }
-    }
-    
-    func setSampleData(){
-        self.firstNameTextField.text = "Sunita"
-        self.lastNameTextField.text = "Kumari"
-        self.phoneTextField.text = "9716787066"
-        //self.SSNTextField.text = "777772222"
-
     }
 }
 
