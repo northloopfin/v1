@@ -196,7 +196,6 @@ class SignupStepConfirm: BaseViewController {
             self.arrivalDate.text = info.arrivalDate
             self.checkForMandatoryFields()
         }
-        self.setSampleData()
     }
     
     //Methode to show date picker
@@ -245,11 +244,7 @@ class SignupStepConfirm: BaseViewController {
         self.view.endEditing(true)
     }
     
-    func setSampleData(){
-        self.passportTextField.text="777772222"
-        self.DOBTextField.text="11/05/1989"
-        self.universityTextField.text = "Cornell University"
-    }
+    
 }
 
 
