@@ -295,7 +295,7 @@ class CreateAccountV2ViewController: BaseViewController {
                 let documents:SignupFlowDocument=self.signupFlowData.documents
                 documents.virtualDocs=[ssnData]
                 data.documents=documents
-                data.cipTag=1
+                data.cipTag=3 // changed from 1->3 as per client requirement
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
         }
@@ -305,7 +305,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.firstNameTextField.text = "Sunita"
         self.lastNameTextField.text = "Kumari"
         self.phoneTextField.text = "9716787066"
-        self.SSNTextField.text = "777772222"
+        //self.SSNTextField.text = "777772222"
 
     }
 }
