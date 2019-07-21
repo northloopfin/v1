@@ -1,8 +1,8 @@
 
 
 import Foundation
-import ZendeskSDK
-import ZendeskCoreSDK
+//import ZendeskSDK
+//import ZendeskCoreSDK
 import MFSideMenu
 
 class AppUtility {
@@ -204,6 +204,15 @@ class AppUtility {
         return arr
     }
     
+    class func getCountryInitialOnly()->[String]{
+        var arr:[String]=[]
+        let countriesArr = self.getCountryList()
+        for country in countriesArr{
+            arr.append(country.code)
+        }
+        return arr
+    }
+    
     class func getCountryCodeOnly()->[String]{
         var arr:[String]=[]
         let countriesArr = self.getCountryList()
@@ -229,12 +238,12 @@ class AppUtility {
     
     class func configureZendesk(data:ZendeskData){
         
-        Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",
-                           clientId: "mobile_sdk_client_76a94439fa38a9e41ecb",
-                           zendeskUrl: "https://northloop.zendesk.com")
-        let identity = Identity.createJwt(token: data.accessToken)
-        Zendesk.instance?.setIdentity(identity)
-        Support.initialize(withZendesk: Zendesk.instance)
+//        Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",
+//                           clientId: "mobile_sdk_client_76a94439fa38a9e41ecb",
+//                           zendeskUrl: "https://northloop.zendesk.com")
+//        let identity = Identity.createJwt(token: data.accessToken)
+//        Zendesk.instance?.setIdentity(identity)
+//        Support.initialize(withZendesk: Zendesk.instance)
     }
     
     class func moveToHomeScreen() {

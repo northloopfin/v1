@@ -176,10 +176,10 @@ class CreateAccountV2ViewController: BaseViewController {
         self.countryCodeTextField.setRightIcon(UIImage.init(named: "chevron")!)
         //Drop Down for Country Code
         self.countryCodeDropDown.anchorView = self.countryCodeTextField
-        self.countryCodeDropDown.dataSource = AppUtility.getCountryCodeOnly()
+        self.countryCodeDropDown.dataSource = AppUtility.getCountryInitialOnly()
         self.countryCodeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            self.countryCodeTextField.text=item
+            self.countryCodeTextField.text=AppUtility.getCountryCodeOnly()[index]
             self.countryCodeDropDown.hide()
             self.checkForMandatoryFields()
         }
