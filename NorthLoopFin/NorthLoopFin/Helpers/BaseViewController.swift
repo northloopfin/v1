@@ -9,7 +9,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setGifLoaderImage()
+//        self.setGifLoaderImage()
         // Do any additional setup after loading the view.
     }
 
@@ -55,13 +55,13 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     }
     
     func setGifLoaderImage (withImageName imageName: String = "northloop.gif") {
-        //GIFHUD.shared.setGif(named: imageName)
-//        GIFHUD.shared.frame = CGRect (x: 0, y: 0, width: 300, height: 300)
-//        GIFHUD.shared.imageView?.frame =  CGRect (x: 0, y: 0, width: 300, height: 300)
-//        GIFHUD.shared.layer.backgroundColor = UIColor.red.cgColor
-//        GIFHUD.shared.layer.cornerRadius = 20
-//        GIFHUD.shared.layer.masksToBounds = true
-        
+        GIFHUD.shared.setGif(named: imageName)
+        GIFHUD.shared.frame = CGRect (x: 0, y: 0, width: 300, height: 300)
+        GIFHUD.shared.imageView?.frame =  CGRect (x: 0, y: 0, width: 300, height: 300)
+        GIFHUD.shared.layer.backgroundColor = UIColor.red.cgColor
+        GIFHUD.shared.layer.cornerRadius = 20
+        GIFHUD.shared.layer.masksToBounds = true
+        GIFHUD.shared.show()
     }
     
     func configureHud(size:CGSize){

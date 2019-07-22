@@ -12,6 +12,14 @@ protocol CardDelegates: BaseViewProtocol {
     func didFetchCardStatus(data:Card)
 }
 
+protocol CardInfoDelegates: BaseViewProtocol {
+    func didFetchCardInfo(data:CardInfo)
+}
+
+protocol CardAuthDelegates: BaseViewProtocol {
+    func didFetchCardAuth(data:CardAuthData)
+}
+
 protocol UpdateCardDelegates :BaseViewProtocol{
     func didUpdateCardStatus(data:Card)
 }

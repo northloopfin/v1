@@ -19,7 +19,7 @@ class SignupSynapsePresenter:ResponseCallback{
     //MARK:- Methods to make decision and call  Api.
     
     func startSignUpSynapse(requestDic:[String:AnyObject]){
-        self.delegate?.showLoader()
+//        self.delegate?.showLoader()
         var token:String=""
         if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken){
             token = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken) as! String
@@ -42,14 +42,16 @@ class SignupSynapsePresenter:ResponseCallback{
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         print(responseObject)
+        GIFHUD.shared.dismiss()
         let response = responseObject as! SignupSynapse
-        self.delegate?.hideLoader()
+//        self.delegate?.hideLoader()
         //self.delegate?.didFetchCardStatus(data: response)
         self.delegate?.didSignedUpSynapse(data: response)
     }
     
     func servicesManagerError(error: ErrorModel) {
-        self.delegate?.hideLoader()
+        GIFHUD.shared.dismiss()
+//        self.delegate?.hideLoader()
         self.delegate?.showErrorAlert(error.getErrorTitle(), alertMessage: error.getErrorMessage())
     }
 }

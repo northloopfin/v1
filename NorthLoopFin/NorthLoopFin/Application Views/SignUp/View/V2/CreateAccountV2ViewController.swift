@@ -179,7 +179,7 @@ class CreateAccountV2ViewController: BaseViewController {
         self.countryCodeDropDown.dataSource = AppUtility.getCountryInitialOnly()
         self.countryCodeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            self.countryCodeTextField.text=AppUtility.getCountryCodeOnly()[index]
+            self.countryCodeTextField.text=AppUtility.getCountryOfInitial(initial: item)
             self.countryCodeDropDown.hide()
             self.checkForMandatoryFields()
         }

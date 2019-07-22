@@ -167,6 +167,13 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
     }
     
     func didFetchedTransactionDetail(data:TransactionDetail){
+        if let _  = data.data.to.meta{
+            let imageName = AppUtility.getMerchantCategoryIconName(category: data.data.to.meta!.merchantCategory)
+            if imageName.count > 0{
+                self.transactionImg.image = UIImage.init(imageLiteralResourceName: AppUtility.getMerchantCategoryIconName(category: data.data.to.meta!.merchantCategory))
+            }
+        }
+        
         if data.data.to.type == "EXTERNAL-US"{
             if let _ = data.data.to.meta{
                 self.beneficiaryNameLbl.text = data.data.to.meta!.merchantName
@@ -180,7 +187,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         }
         
         //self.addressLbl.text = data.data.to.meta.address
-        self.amtLbl.text = "$"+String(data.data.amount.amount)
+        self.amtLbl.text = "$" + String(format: "%.2f",data.data.amount.amount)
         self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
         //self.transactionPurposeLbl.text =
         //let url = URL(string: data.data.to.meta.merchantLogo)

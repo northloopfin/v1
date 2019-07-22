@@ -38,6 +38,18 @@ class HomeTableCell: UITableViewCell {
     func bindData(data: IndividualTransaction,delegate:HomeTableCellDelegate){
         self.delegate = delegate
         self.individualTransaction=data
+        self.beneficiaryImg.image = nil
+        self.beneficiaryImg.backgroundColor = UIColor.lightGray
+    
+        if let _  = data.to.meta{
+            let imageName = AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory)
+            if imageName.count > 0{
+                self.beneficiaryImg.backgroundColor = UIColor.clear
+                self.beneficiaryImg.image = UIImage.init(imageLiteralResourceName: AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory))
+            }
+        }
+        
+        
         if data.to.type == "EXTERNAL-US"{
             if let _  = data.to.meta{
                 self.beneficiaryName.text = data.to.meta?.merchantName
@@ -47,7 +59,7 @@ class HomeTableCell: UITableViewCell {
         }else if data.to.type == "ACH-US"{
             self.beneficiaryName.text = data.to.user.legalNames[0]
         }        
-        self.transactionAmt.text = "$" + String(data.amount.amount)
+        self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
         
     }
 }

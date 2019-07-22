@@ -81,6 +81,8 @@ class VerifyAddressViewController: BaseViewController {
                 //print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
+                self.setGifLoaderImage(withImageName: "createAcc.gif")
+
                 self.presenter.startSignUpSynapse(requestDic: dic)
             } catch {
                 //handle errors
@@ -110,7 +112,7 @@ class VerifyAddressViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureHud(size: CGSize.init(width: 400 , height: 400))
-        self.setGifLoaderImage(withImageName: "createAcc.gif")
+//        self.setGifLoaderImage(withImageName: "createAcc.gif")
         
         self.setupRightNavigationBar()
         self.doneBtn.isEnabled=false

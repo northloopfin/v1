@@ -210,7 +210,10 @@ class AppUtility {
         for country in countriesArr{
             arr.append(country.code)
         }
-        return arr
+        
+        let sortedArray = arr.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+
+        return sortedArray
     }
     
     class func getCountryCodeOnly()->[String]{
@@ -221,7 +224,27 @@ class AppUtility {
         }
         return arr
     }
+
+    class func getCountryOfInitial(initial:String)->String{
+        let countriesArr = self.getCountryList()
+        for country in countriesArr{
+            if country.code == initial{
+                return country.dialCode
+            }
+        }
+        return ""
+    }
     
+    class func getMerchantCategoryIconName(category:String)->String {
+        let dic:Dictionary = ["ach":"Transfer.png","atm":"deposit.png","cash":"withdrawal.png","interchange":"POS.png","pos":"POS.png","wire":"Transfer.png"]
+        for cat in dic.keys {
+            if category.lowercased().contains(cat){
+                return dic[cat]!
+            }
+        }
+        return ""
+    }
+
     class func greetingAccToTime()->String{
         let hour = Calendar.current.component(.hour, from: Date())
         var greeting = ""

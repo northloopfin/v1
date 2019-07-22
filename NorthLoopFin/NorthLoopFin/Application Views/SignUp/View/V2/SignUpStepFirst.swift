@@ -41,6 +41,7 @@ class SignUpStepFirst: BaseViewController {
     
     //Validate form for empty text , valid email, valid phone
     func validateForm(){
+        
         if (Validations.isValidEmail(email: self.emailTextField.text!)){
             if (Validations.isValidPassword(password: self.paswwordTextField.text!)){
                 // Move to next Step
@@ -59,7 +60,6 @@ class SignUpStepFirst: BaseViewController {
     }
     // Life Cycle of Controller
     override func viewDidLoad() {
-
         self.prepareView()
         self.nextBtn.isEnabled=false
         self.setupRightNavigationBar()
