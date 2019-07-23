@@ -43,16 +43,13 @@ class SignupStepConfirm: BaseViewController {
     func validateForm(){
         
         if Validations.isValidDob(dateString: self.DOBTextField.text ?? ""){
-        
-            if self.arrivalDate.text?.isEmpty == false{
-                self.saveDataToRealm()
-                //update SignupFlowdata
-                self.updateSignupFlowData()
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
-                vc.signupFlowData=self.signupFlowData
-                self.navigationController?.pushViewController(vc, animated: false)
-            }
+            self.saveDataToRealm()
+            //update SignupFlowdata
+            self.updateSignupFlowData()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
+            vc.signupFlowData=self.signupFlowData
+            self.navigationController?.pushViewController(vc, animated: false)
         }else{
             //show error for age
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.DOB_NOT_VALID.rawValue)
@@ -156,7 +153,7 @@ class SignupStepConfirm: BaseViewController {
         }
         
         self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.universityTextField.applyAttributesWithValues(placeholderText: "University*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.passportTextField.setLeftPaddingPoints(19)
