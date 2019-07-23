@@ -345,15 +345,19 @@ class ScanIDNewViewController: BaseViewController {
             self.uploadImage2HeightConstraint.constant=0
             self.resetLabels()
             self.view.layoutIfNeeded()
-            self.uploadedImageFront.image = self.imageArray[0]
+            if self.imageArray.count > 0{
+                self.uploadedImageFront.image = self.imageArray[0]
+            }
         }else{
             self.uploadImage3HeightConstraint.constant=60
             self.uploadImage2HeightConstraint.constant=60
             self.setLabelsForI20()
             self.view.layoutIfNeeded()
+            if self.imageArray.count > 0{
             self.uploadedImageFront.image = self.imageArray[0]
             self.uploadedImageBack.image = self.imageArray[1]
             self.uploadedImageExtra.image = self.imageArray[2]
+            }
         }
     }
     func resetImages(){
@@ -471,12 +475,12 @@ class ScanIDNewViewController: BaseViewController {
                         //let fullBase64String = "data:image/gif;base64,R0lGODlhAQABAAAAACw="
                         let fullBase64String = String(format:"data:image/png;base64,%@",base64Image ?? "")
                         //print(fullBase64String)
-                        var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")//scanIDModel.type.rawValue)
+                        var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "OTHER")//scanIDModel.type.rawValue)
                         //check for ID Type and assign document type accordingly
                         if scanIDModel.type == AppConstants.SelectIDTYPES.ADDRESSPROOF{
                             doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "PROOF_OF_ADDRESS")
-                        }else if scanIDModel.type == AppConstants.SelectIDTYPES.OTHER{
-                            doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "OTHER")
+                        }else if scanIDModel.type == AppConstants.SelectIDTYPES.PASSPORT{
+                            doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")
                         }
                         arrayOfScannedDocuments.append(doc)
                     })

@@ -14,9 +14,16 @@ class MyCardViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var optionsTableView: UITableView!
     var presenter: CardsPresenter!
+    var authPresenter: CardAuthPresenter!
+    var infoPresenter: CardInfoPresenter!
     var updatePresenter: UpdateCardPresenter!
 
-
+    @IBOutlet weak var nameOnCard: UILabel!
+    @IBOutlet weak var validThrough: UILabel!
+    @IBOutlet weak var cvv: UILabel!
+    @IBOutlet weak var cardNumber: UILabel!
+    
+    @IBOutlet weak var vwVirtualCard: UIView!
     var data:[MyCardOtionsModel]=[]
     var isLockCard:Bool = false
     var isSpendAbroad:Bool = false
@@ -31,6 +38,8 @@ class MyCardViewController: BaseViewController {
         self.optionsTableView.reloadData()
         self.presenter = CardsPresenter.init(delegate: self)
         self.updatePresenter = UpdateCardPresenter.init(delegate: self)
+        self.infoPresenter = CardInfoPresenter.init(delegate: self)
+        self.authPresenter = CardAuthPresenter.init(delegate: self)
         self.getCardStatus()
     }
     
@@ -63,6 +72,10 @@ class MyCardViewController: BaseViewController {
     
     func getCardStatus(){
         self.presenter.getCardStatus()
+    }
+
+    func getCardAuth(){
+        self.authPresenter.getCardAuth()
     }
 }
 
@@ -150,7 +163,50 @@ extension MyCardViewController:CardDelegates{
             self.isLockCard = true
             
         }
+        self.getCardAuth()
+    }
+}
+
+extension MyCardViewController:CardAuthDelegates{
+    func didFetchCardAuth(data: CardAuthData) {
+        self.infoPresenter.getCardInfo(cardAuthData: data)
+    }
+}
+
+extension MyCardViewController:CardInfoDelegates{
+    func didFetchCardInfo(data: CardInfo) {
+        print(data)
+        self.vwVirtualCard.isHidden = false
+        self.nameOnCard.text = data.nickname
+        self.cvv.text = data.cvc
+        self.validThrough.text = data.exp
+        self.cardNumber.text = modifyCreditCardString(creditCardString: data.card_number)
+        let parts = data.exp.components(separatedBy: "-")
+        if parts.count == 3 {
+            self.validThrough.text = parts[1] + "/" + parts[2]
+        }
+    }
+    
+    func modifyCreditCardString(creditCardString : String) -> String
+    {
+        let trimmedString = creditCardString.components(separatedBy: .whitespaces).joined()
+        let arrOfCharacters = Array(trimmedString.characters)
         
+        var modifiedCreditCardString = ""
+        if(arrOfCharacters.count > 0)
+        {
+            for i in 0...arrOfCharacters.count-1
+            {
+                modifiedCreditCardString.append(arrOfCharacters[i])
+                
+                if((i+1) % 4 == 0 && i+1 != arrOfCharacters.count)
+                {
+                
+                    modifiedCreditCardString.append(" ")
+                }
+            }
+        }
+        return modifiedCreditCardString
     }
 }
 

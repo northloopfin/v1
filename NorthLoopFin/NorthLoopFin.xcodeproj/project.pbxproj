@@ -404,6 +404,17 @@
 		EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */; };
 		EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727122E09F1500D5B834 /* DeleteACH.swift */; };
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
+		EA4ED02322E5CC4700D1F438 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02222E5CC4700D1F438 /* CardInfo.swift */; };
+		EA4ED02522E5CD8500D1F438 /* CardInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */; };
+		EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */; };
+		EA4ED02922E5CE7200D1F438 /* CardInfoBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02822E5CE7200D1F438 /* CardInfoBusinessLogic.swift */; };
+		EA4ED02B22E5CF3200D1F438 /* CardInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02A22E5CF3200D1F438 /* CardInfoPresenter.swift */; };
+		EA4ED03122E5D1C400D1F438 /* CardAuthRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02D22E5D1C400D1F438 /* CardAuthRequestModel.swift */; };
+		EA4ED03222E5D1C400D1F438 /* CardAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02E22E5D1C400D1F438 /* CardAuth.swift */; };
+		EA4ED03322E5D1C400D1F438 /* CardAuthAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02F22E5D1C400D1F438 /* CardAuthAPIRequest.swift */; };
+		EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */; };
+		EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03522E5D39100D1F438 /* CardAuthData.swift */; };
+		EA4ED03822E5D54800D1F438 /* CardAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */; };
 		EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */; };
 /* End PBXBuildFile section */
 
@@ -842,6 +853,17 @@
 		EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHRequestModel.swift; sourceTree = "<group>"; };
 		EA04727122E09F1500D5B834 /* DeleteACH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteACH.swift; sourceTree = "<group>"; };
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
+		EA4ED02222E5CC4700D1F438 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
+		EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoRequestModel.swift; sourceTree = "<group>"; };
+		EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoAPIRequest.swift; sourceTree = "<group>"; };
+		EA4ED02822E5CE7200D1F438 /* CardInfoBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoBusinessLogic.swift; sourceTree = "<group>"; };
+		EA4ED02A22E5CF3200D1F438 /* CardInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoPresenter.swift; sourceTree = "<group>"; };
+		EA4ED02D22E5D1C400D1F438 /* CardAuthRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuthRequestModel.swift; sourceTree = "<group>"; };
+		EA4ED02E22E5D1C400D1F438 /* CardAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuth.swift; sourceTree = "<group>"; };
+		EA4ED02F22E5D1C400D1F438 /* CardAuthAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuthAPIRequest.swift; sourceTree = "<group>"; };
+		EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuthBusinessLogic.swift; sourceTree = "<group>"; };
+		EA4ED03522E5D39100D1F438 /* CardAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthData.swift; sourceTree = "<group>"; };
+		EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthPresenter.swift; sourceTree = "<group>"; };
 		F05C98038699AA9883A8B0D9 /* Pods-NorthLoopFinUITests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.production.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1843,6 +1865,8 @@
 		1DF64E1521E5FDB3008774CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EA4ED02C22E5D1C300D1F438 /* CardAuth */,
+				EA4ED02122E5CC4700D1F438 /* CardInfo */,
 				1D5AB2E922A7909000DB3B70 /* SetPin */,
 				1D5AB2DD22A6765500DB3B70 /* UpdateCardStatus */,
 				1DF64E1C21E60527008774CE /* MyCardOtionsModel.swift */,
@@ -1875,6 +1899,8 @@
 				1D9F45F9228AC0E3009D76FC /* CardsPresenter.swift */,
 				1D5AB2DB22A6764D00DB3B70 /* UpdateCardPresenter.swift */,
 				1D5AB2F222A7965E00DB3B70 /* SetPinPresenter.swift */,
+				EA4ED02A22E5CF3200D1F438 /* CardInfoPresenter.swift */,
+				EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2380,6 +2406,29 @@
 			path = DeleteACH;
 			sourceTree = "<group>";
 		};
+		EA4ED02122E5CC4700D1F438 /* CardInfo */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED02222E5CC4700D1F438 /* CardInfo.swift */,
+				EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */,
+				EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */,
+				EA4ED02822E5CE7200D1F438 /* CardInfoBusinessLogic.swift */,
+			);
+			path = CardInfo;
+			sourceTree = "<group>";
+		};
+		EA4ED02C22E5D1C300D1F438 /* CardAuth */ = {
+			isa = PBXGroup;
+			children = (
+				EA4ED02D22E5D1C400D1F438 /* CardAuthRequestModel.swift */,
+				EA4ED02E22E5D1C400D1F438 /* CardAuth.swift */,
+				EA4ED02F22E5D1C400D1F438 /* CardAuthAPIRequest.swift */,
+				EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */,
+				EA4ED03522E5D39100D1F438 /* CardAuthData.swift */,
+			);
+			path = CardAuth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2736,9 +2785,11 @@
 				1DF31A78228D89A5001ACE61 /* SignupCountryException.swift in Sources */,
 				1D5AB2F722A798E500DB3B70 /* LostCardPresenter.swift in Sources */,
 				4BE8338322CB172A00765F05 /* CheckUpdateRequestModel.swift in Sources */,
+				EA4ED02322E5CC4700D1F438 /* CardInfo.swift in Sources */,
 				297FB9EA21B554F8008D60CE /* ErrorModel.swift in Sources */,
 				1DD066F4221E9CD000E1AD6D /* VerifyAddressNewViewController.swift in Sources */,
 				1DB8C0DD21F97198009F437A /* NotificationSettingsViewController.swift in Sources */,
+				EA4ED02922E5CE7200D1F438 /* CardInfoBusinessLogic.swift in Sources */,
 				4B94418F22ACC236005AD3BD /* DisputeTransactionResponse.swift in Sources */,
 				1D055D4F229C6E260078CD33 /* ACHTransactionRequestModel.swift in Sources */,
 				1D180D6E229E4CBE00FC3390 /* ZendeskRequestModel.swift in Sources */,
@@ -2763,6 +2814,7 @@
 				1D5AB30722A7B5ED00DB3B70 /* TwoFAPresenter.swift in Sources */,
 				1D180D98229E7DCA00FC3390 /* ATMDelegates.swift in Sources */,
 				4BFDF88C22B8D68E0066860D /* UpgradeResponse.swift in Sources */,
+				EA4ED03222E5D1C400D1F438 /* CardAuth.swift in Sources */,
 				1D055D42229C02860078CD33 /* FetchACHAPIRequest.swift in Sources */,
 				1D5AB30922A7B62400DB3B70 /* TwoFAVerifyPresenter.swift in Sources */,
 				1D55EE82228593CE0003BEDB /* LoginApiRequest.swift in Sources */,
@@ -2772,6 +2824,7 @@
 				1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
+				EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */,
 				1D055D3A229C00790078CD33 /* LinkACH.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
@@ -2796,6 +2849,7 @@
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D29C84922A917050092E3EB /* ChangeAddressBusinessModel.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
+				EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */,
 				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
 				1D915C0E220816C100223480 /* Env.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
@@ -2814,6 +2868,7 @@
 				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
+				EA4ED02B22E5CF3200D1F438 /* CardInfoPresenter.swift in Sources */,
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
 				1D180D76229E4E6600FC3390 /* ZendeskData.swift in Sources */,
 				1D5AB2E622A67D1500DB3B70 /* UpdateCardRequestBody.swift in Sources */,
@@ -2922,6 +2977,7 @@
 				1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */,
 				1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */,
 				EA04726422E0725E00D5B834 /* ACHAccountCell.swift in Sources */,
+				EA4ED02522E5CD8500D1F438 /* CardInfoRequestModel.swift in Sources */,
 				4BFDF89022B9E8160066860D /* UniversityPresenter.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
 				1D29C85122A917540092E3EB /* ChangePhoneBusinessModel.swift in Sources */,
@@ -2973,6 +3029,7 @@
 				1D9AF08522A5068500A9055F /* TransactionHistoryData.swift in Sources */,
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
+				EA4ED03322E5D1C400D1F438 /* CardAuthAPIRequest.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
 				1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */,
@@ -3039,17 +3096,20 @@
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
+				EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */,
 				1D915C1222082CD400223480 /* Timer.swift in Sources */,
 				1D5AB2F922A798F900DB3B70 /* LostCardRequestModel.swift in Sources */,
 				1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				1D055D4C229C38DE0078CD33 /* TransferConfirmationViewController.swift in Sources */,
+				EA4ED03122E5D1C400D1F438 /* CardAuthRequestModel.swift in Sources */,
 				1DE6D94722A0D30500014572 /* DisputeTransactionPresenter.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,
 				1D29C85322A917650092E3EB /* ChangePhoneResponse.swift in Sources */,
 				1D055D22229BCA860078CD33 /* ResetPasswordRequestModel.swift in Sources */,
 				1D180DB0229FC45F00FC3390 /* AccountBusinessModel.swift in Sources */,
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
+				EA4ED03822E5D54800D1F438 /* CardAuthPresenter.swift in Sources */,
 				1D180D79229E53C500FC3390 /* ZendeskPresenter.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 				4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */,

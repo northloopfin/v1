@@ -35,6 +35,7 @@ struct Endpoints{
         case GETAPPSETTINGS = "banking/preferences"
         case CHECKUPDATE = "banking/app-version-updates"
         case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
+        case CARDINFO = "https://uat-api.synapsefi.com/v3.1"
 
     }
     

@@ -156,21 +156,38 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
 
 extension TransactionDetailViewController:TransactionDetailDelegate{
     
+    func formatCategory(category:String) -> String{
+        let categoryDic = ["bank_fee":"Bank Fee","bill/loan":"bill","loan":"bill","digital_payment":"Digital","pos":"POS","subscription_service":"Subscription","transfer":"Transfer","withdrawal":"Withdrawal","grocery":"Grocery","dining":"Dining","medical":"Medical","retail":"Retail","service":"Service","travel/transportation":"Travel","travel":"Travel","transportation":"Travel"]
+        
+        if categoryDic.keys.contains(category.lowercased()) {
+            return categoryDic[category.lowercased()]!
+        }
+        
+        return category.capitalized
+    }
+    
     func didFetchedTransactionDetail(data:TransactionDetail){
+        if let _  = data.data.to.meta{
+            let imageName = AppUtility.getMerchantCategoryIconName(category: data.data.to.meta!.merchantCategory)
+            if imageName.count > 0{
+                self.transactionImg.image = UIImage.init(imageLiteralResourceName: AppUtility.getMerchantCategoryIconName(category: data.data.to.meta!.merchantCategory))
+            }
+        }
+        
         if data.data.to.type == "EXTERNAL-US"{
             if let _ = data.data.to.meta{
                 self.beneficiaryNameLbl.text = data.data.to.meta!.merchantName
                 let url = URL(string: data.data.to.meta!.merchantLogo)
                 self.transactionImg.kf.setImage(with:url)
                 
-                self.transactionPurposeLbl.text = data.data.to.meta!.merchantCategory
+                self.transactionPurposeLbl.text = formatCategory(category: data.data.to.meta!.merchantCategory) 
             }
         }else if data.data.to.type == "ACH-US"{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
         }
         
         //self.addressLbl.text = data.data.to.meta.address
-        self.amtLbl.text = "$"+String(data.data.amount.amount)
+        self.amtLbl.text = "$" + String(format: "%.2f",data.data.amount.amount)
         self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
         //self.transactionPurposeLbl.text =
         //let url = URL(string: data.data.to.meta.merchantLogo)

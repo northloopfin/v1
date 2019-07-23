@@ -1,8 +1,8 @@
 
 
 import Foundation
-import ZendeskSDK
-import ZendeskCoreSDK
+//import ZendeskSDK
+//import ZendeskCoreSDK
 import MFSideMenu
 
 class AppUtility {
@@ -70,7 +70,15 @@ class AppUtility {
     /// Date from miliseconds
     ///
     /// - Parameter seconds: miliseconds
-    class func dateFromMilliseconds(seconds: Double)-> String{
+    class func dateFromMilliseconds(seconds: Double)-> Date{
+        
+        //Convert to Date
+        let date = Date.init(timeIntervalSince1970: seconds/1000)//NSDate(timeIntervalSince1970: seconds)
+
+        return date
+    }
+    
+    class func dateStringFromMillisecondsWithoutTime(seconds: Double)-> String{
         
         //Convert to Date
         let date = Date.init(timeIntervalSince1970: seconds/1000)//NSDate(timeIntervalSince1970: seconds)
@@ -84,6 +92,31 @@ class AppUtility {
         return dateString
     }
     
+    class func getFormattedDateFullString(date: Date)->String{
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let dayOfMonth = calendar.component(.day, from: date)
+        
+        let daySub = AppUtility.daySuffix(date: date)
+        
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyy" //HH:mm:a"
+        
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        var dateString = dateFormatter.string(from: date)
+        let pre = (dayOfMonth<10 ? "0" : "")
+        //print("formatted date is =  \(dateString)")
+        let range:Range<String.Index>  = dateString.range(of: "\(pre)\(dayOfMonth)")!
+        let index: Int = dateString.distance(from: dateString.startIndex, to: range.lowerBound) + 2
+        
+        dateString.insert(daySub.first!, at: dateString.index(dateString.startIndex, offsetBy: index))
+        dateString.insert(daySub.last!, at: dateString.index(dateString.startIndex, offsetBy: index+1))
+        dateString.insert(",", at: dateString.index(dateString.startIndex, offsetBy: index+2))
+        
+        return dateString
+    }
+    
     class func getDateFromString(dateString:String)->Date{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
@@ -93,6 +126,18 @@ class AppUtility {
         return date!
     }
     
+    class func daySuffix(date: Date) -> String {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let dayOfMonth = calendar.component(.day, from: date)
+        switch dayOfMonth {
+        case 1, 21, 31: return "st"
+        case 2, 22: return "nd"
+        case 3, 23: return "rd"
+        default: return "th"
+        }
+    }
+
     class func datefromStringUsingCalender(date:String)->Date{
         let calendar = Calendar.current
         var dateComponents: DateComponents? = calendar.dateComponents([.hour, .minute, .second], from: Date())
@@ -159,6 +204,18 @@ class AppUtility {
         return arr
     }
     
+    class func getCountryInitialOnly()->[String]{
+        var arr:[String]=[]
+        let countriesArr = self.getCountryList()
+        for country in countriesArr{
+            arr.append(country.code)
+        }
+        
+        let sortedArray = arr.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+
+        return sortedArray
+    }
+    
     class func getCountryCodeOnly()->[String]{
         var arr:[String]=[]
         let countriesArr = self.getCountryList()
@@ -167,7 +224,27 @@ class AppUtility {
         }
         return arr
     }
+
+    class func getCountryOfInitial(initial:String)->String{
+        let countriesArr = self.getCountryList()
+        for country in countriesArr{
+            if country.code == initial{
+                return country.dialCode
+            }
+        }
+        return ""
+    }
     
+    class func getMerchantCategoryIconName(category:String)->String {
+        let dic:Dictionary = ["ach":"Transfer.png","atm":"deposit.png","cash":"withdrawal.png","interchange":"POS.png","pos":"POS.png","wire":"Transfer.png"]
+        for cat in dic.keys {
+            if category.lowercased().contains(cat){
+                return dic[cat]!
+            }
+        }
+        return ""
+    }
+
     class func greetingAccToTime()->String{
         let hour = Calendar.current.component(.hour, from: Date())
         var greeting = ""
@@ -184,12 +261,12 @@ class AppUtility {
     
     class func configureZendesk(data:ZendeskData){
         
-        Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",
-                           clientId: "mobile_sdk_client_76a94439fa38a9e41ecb",
-                           zendeskUrl: "https://northloop.zendesk.com")
-        let identity = Identity.createJwt(token: data.accessToken)
-        Zendesk.instance?.setIdentity(identity)
-        Support.initialize(withZendesk: Zendesk.instance)
+//        Zendesk.initialize(appId: "00ca8f987b37a9caeefb796b76ca62d145d851439c3b8241",
+//                           clientId: "mobile_sdk_client_76a94439fa38a9e41ecb",
+//                           zendeskUrl: "https://northloop.zendesk.com")
+//        let identity = Identity.createJwt(token: data.accessToken)
+//        Zendesk.instance?.setIdentity(identity)
+//        Support.initialize(withZendesk: Zendesk.instance)
     }
     
     class func moveToHomeScreen() {
