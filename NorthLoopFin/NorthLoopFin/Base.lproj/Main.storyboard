@@ -2275,6 +2275,28 @@ to your registered address</string>
                                     <constraint firstAttribute="width" constant="311" id="zlX-GE-QLb"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-Ka-RmU">
+                                <rect key="frame" x="243" y="279" width="100" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="HJM-G6-pj1"/>
+                                    <constraint firstAttribute="width" constant="100" id="OUF-85-HYF"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="What’s this?">
+                                            <attributes>
+                                                <color key="NSColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Calibri-Italic"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="whatsClicked:" destination="iZA-6I-3a2" eventType="touchUpInside" id="ENM-q9-EaU"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-ZG-mVm" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="25" y="329" width="325" height="280"/>
                                 <subviews>
@@ -2313,10 +2335,70 @@ to your registered address</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-ga-Mvq">
+                                <rect key="frame" x="28.5" y="271" width="318" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What’s this?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCo-9D-UWP">
+                                        <rect key="frame" x="18" y="12" width="239.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
+                                        <color key="textColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VA-0I-0IU">
+                                        <rect key="frame" x="272" y="12" width="35" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="cTq-Hm-0vw"/>
+                                            <constraint firstAttribute="width" constant="35" id="wdW-Ru-8Hi"/>
+                                        </constraints>
+                                        <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="closeClicked:" destination="iZA-6I-3a2" eventType="touchUpInside" id="3Gd-gA-FXP"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmz-rV-zls">
+                                        <rect key="frame" x="14" y="45" width="290" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="eTE-Z2-Z9k"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="A virtual card is the same as your regular debit card. Use these details to shop online and use in other online transactions.">
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="Calibri"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="4dE-ll-uAU"/>
+                                    <constraint firstItem="Qmz-rV-zls" firstAttribute="leading" secondItem="Olh-ga-Mvq" secondAttribute="leading" constant="14" id="9aO-tC-9Qa"/>
+                                    <constraint firstItem="1VA-0I-0IU" firstAttribute="centerY" secondItem="WCo-9D-UWP" secondAttribute="centerY" id="Kpa-2R-fu5"/>
+                                    <constraint firstItem="1VA-0I-0IU" firstAttribute="leading" secondItem="WCo-9D-UWP" secondAttribute="trailing" constant="14.5" id="QiL-JM-Fvm"/>
+                                    <constraint firstAttribute="height" constant="125" id="SF0-xn-yKv"/>
+                                    <constraint firstItem="Qmz-rV-zls" firstAttribute="top" secondItem="WCo-9D-UWP" secondAttribute="bottom" constant="5" id="Sxj-5k-ZW1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qmz-rV-zls" secondAttribute="trailing" constant="14" id="Wbo-07-HS8"/>
+                                    <constraint firstItem="WCo-9D-UWP" firstAttribute="top" secondItem="Olh-ga-Mvq" secondAttribute="top" constant="12" id="aIf-Qc-fZg"/>
+                                    <constraint firstItem="WCo-9D-UWP" firstAttribute="leading" secondItem="Olh-ga-Mvq" secondAttribute="leading" constant="18" id="d5l-Cg-9V1"/>
+                                    <constraint firstAttribute="trailing" secondItem="1VA-0I-0IU" secondAttribute="trailing" constant="11" id="dXY-KT-EjP"/>
+                                    <constraint firstItem="WCo-9D-UWP" firstAttribute="height" secondItem="1VA-0I-0IU" secondAttribute="height" id="nF2-gj-V3s"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Olh-ga-Mvq" firstAttribute="centerY" secondItem="aLA-tj-KiY" secondAttribute="centerY" id="2G3-fT-3Hs"/>
+                            <constraint firstItem="uu7-Ka-RmU" firstAttribute="top" secondItem="uOE-Pd-gTI" secondAttribute="bottom" constant="10" id="8gp-Ym-njr"/>
                             <constraint firstItem="uOE-Pd-gTI" firstAttribute="centerX" secondItem="aLA-tj-KiY" secondAttribute="centerX" id="8lN-h9-Fup"/>
+                            <constraint firstItem="Olh-ga-Mvq" firstAttribute="centerX" secondItem="aLA-tj-KiY" secondAttribute="centerX" id="9eY-KT-NYy"/>
                             <constraint firstItem="uOE-Pd-gTI" firstAttribute="top" secondItem="Yk2-OX-k7j" secondAttribute="top" constant="55" id="GTX-5a-fAG"/>
                             <constraint firstItem="s90-AS-2Ul" firstAttribute="leading" secondItem="Yk2-OX-k7j" secondAttribute="leading" id="IWR-K0-pbS"/>
                             <constraint firstItem="cPw-ZG-mVm" firstAttribute="top" secondItem="uOE-Pd-gTI" secondAttribute="bottom" constant="60" id="MYG-SR-7ad"/>
@@ -2325,6 +2407,7 @@ to your registered address</string>
                             <constraint firstItem="s90-AS-2Ul" firstAttribute="top" secondItem="aLA-tj-KiY" secondAttribute="top" id="fXJ-jF-epK"/>
                             <constraint firstItem="Yk2-OX-k7j" firstAttribute="trailing" secondItem="cPw-ZG-mVm" secondAttribute="trailing" constant="25" id="hW1-Aq-SeM"/>
                             <constraint firstItem="s90-AS-2Ul" firstAttribute="trailing" secondItem="Yk2-OX-k7j" secondAttribute="trailing" id="yOK-ik-qvh"/>
+                            <constraint firstItem="uu7-Ka-RmU" firstAttribute="trailing" secondItem="uOE-Pd-gTI" secondAttribute="trailing" id="yhx-73-1hx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yk2-OX-k7j"/>
                     </view>
@@ -2336,6 +2419,7 @@ to your registered address</string>
                         <outlet property="optionsTableView" destination="2ur-EL-Rch" id="RXl-ew-K8R"/>
                         <outlet property="validThrough" destination="UBr-d5-hcQ" id="1nC-4V-4lw"/>
                         <outlet property="vwVirtualCard" destination="uOE-Pd-gTI" id="ZlJ-wX-chB"/>
+                        <outlet property="vwWhatsThis" destination="Olh-ga-Mvq" id="0zl-Fk-YLy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vm-wK-vvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2498,11 +2582,14 @@ to your registered address</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-M9-Wtg" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="104" width="325" height="280"/>
+                                <rect key="frame" x="25" y="104" width="325" height="430"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2MS-cr-vFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="280"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="350"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="uu0-Io-Olo"/>
+                                        </constraints>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2514,14 +2601,79 @@ to your registered address</string>
                                             <outlet property="delegate" destination="gaf-sK-vrB" id="XvJ-MH-8qZ"/>
                                         </connections>
                                     </tableView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k84-K9-9un">
+                                        <rect key="frame" x="0.0" y="350" width="325" height="0.0"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKa-WG-wIL">
+                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="0.0"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                                <state key="normal" title="15%">
+                                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tipValueClicked:" destination="gaf-sK-vrB" eventType="touchUpInside" id="FDR-B1-y1U"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7J-Sq-VM0">
+                                                <rect key="frame" x="108.5" y="0.0" width="108" height="0.0"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                                <state key="normal" title="18%">
+                                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tipValueClicked:" destination="gaf-sK-vrB" eventType="touchUpInside" id="izR-wp-hR1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgZ-KO-EQw">
+                                                <rect key="frame" x="216.5" y="0.0" width="108.5" height="0.0"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                                <state key="normal" title="20%">
+                                                    <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tipValueClicked:" destination="gaf-sK-vrB" eventType="touchUpInside" id="kx6-mg-eiN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="SKa-WG-wIL" firstAttribute="leading" secondItem="k84-K9-9un" secondAttribute="leading" id="Chv-mQ-rIs"/>
+                                            <constraint firstAttribute="height" id="X7N-Uz-Fo3"/>
+                                            <constraint firstItem="WgZ-KO-EQw" firstAttribute="leading" secondItem="u7J-Sq-VM0" secondAttribute="trailing" id="Xbl-6Z-viE"/>
+                                            <constraint firstAttribute="bottom" secondItem="WgZ-KO-EQw" secondAttribute="bottom" id="YgW-Cv-5Zg"/>
+                                            <constraint firstItem="SKa-WG-wIL" firstAttribute="width" secondItem="k84-K9-9un" secondAttribute="width" multiplier="1/3" id="bZP-DU-UiM"/>
+                                            <constraint firstItem="WgZ-KO-EQw" firstAttribute="top" secondItem="k84-K9-9un" secondAttribute="top" id="h4G-gh-eiK"/>
+                                            <constraint firstAttribute="trailing" secondItem="WgZ-KO-EQw" secondAttribute="trailing" id="hx5-s0-3oj"/>
+                                            <constraint firstAttribute="bottom" secondItem="SKa-WG-wIL" secondAttribute="bottom" id="nca-VJ-VS4"/>
+                                            <constraint firstAttribute="bottom" secondItem="u7J-Sq-VM0" secondAttribute="bottom" id="oWd-e7-8Qc"/>
+                                            <constraint firstItem="u7J-Sq-VM0" firstAttribute="width" secondItem="SKa-WG-wIL" secondAttribute="width" id="q1Q-dt-s8N"/>
+                                            <constraint firstItem="u7J-Sq-VM0" firstAttribute="top" secondItem="k84-K9-9un" secondAttribute="top" id="w8a-cp-qYS"/>
+                                            <constraint firstItem="u7J-Sq-VM0" firstAttribute="leading" secondItem="SKa-WG-wIL" secondAttribute="trailing" id="wCL-GN-Czb"/>
+                                            <constraint firstItem="SKa-WG-wIL" firstAttribute="top" secondItem="k84-K9-9un" secondAttribute="top" id="xAd-vO-Tot"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="2MS-cr-vFd" firstAttribute="top" secondItem="bVX-M9-Wtg" secondAttribute="top" id="2yZ-66-cMw"/>
-                                    <constraint firstAttribute="bottom" secondItem="2MS-cr-vFd" secondAttribute="bottom" id="5lT-UK-Z0G"/>
-                                    <constraint firstAttribute="height" constant="280" id="PPe-co-nQn"/>
+                                    <constraint firstItem="k84-K9-9un" firstAttribute="leading" secondItem="bVX-M9-Wtg" secondAttribute="leading" id="46n-pL-FfU"/>
+                                    <constraint firstAttribute="trailing" secondItem="k84-K9-9un" secondAttribute="trailing" id="NtZ-qi-A84"/>
+                                    <constraint firstAttribute="height" constant="430" id="PPe-co-nQn"/>
                                     <constraint firstItem="2MS-cr-vFd" firstAttribute="leading" secondItem="bVX-M9-Wtg" secondAttribute="leading" id="R4E-4J-8k8"/>
                                     <constraint firstAttribute="trailing" secondItem="2MS-cr-vFd" secondAttribute="trailing" id="ati-Xx-Nei"/>
+                                    <constraint firstItem="k84-K9-9un" firstAttribute="top" secondItem="2MS-cr-vFd" secondAttribute="bottom" id="q8i-Zh-jEj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2536,7 +2688,7 @@ to your registered address</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-s8-4g8" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="442" width="325" height="45"/>
+                                <rect key="frame" x="25" y="554" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="5dp-dP-4X3"/>
@@ -2561,7 +2713,7 @@ to your registered address</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Qf4-s8-4g8" firstAttribute="top" secondItem="bVX-M9-Wtg" secondAttribute="bottom" constant="58" id="2GO-yV-yne"/>
+                            <constraint firstItem="Qf4-s8-4g8" firstAttribute="top" secondItem="bVX-M9-Wtg" secondAttribute="bottom" constant="20" id="2GO-yV-yne"/>
                             <constraint firstItem="bVX-M9-Wtg" firstAttribute="leading" secondItem="INS-95-WH8" secondAttribute="leading" constant="25" id="DgX-SF-FDj"/>
                             <constraint firstItem="INS-95-WH8" firstAttribute="trailing" secondItem="bVX-M9-Wtg" secondAttribute="trailing" constant="25" id="Fju-KX-0aP"/>
                             <constraint firstItem="bVX-M9-Wtg" firstAttribute="top" secondItem="INS-95-WH8" secondAttribute="top" constant="84" id="R7v-fl-lFf"/>
@@ -2571,6 +2723,7 @@ to your registered address</string>
                         <viewLayoutGuide key="safeArea" id="INS-95-WH8"/>
                     </view>
                     <connections>
+                        <outlet property="constTipView" destination="X7N-Uz-Fo3" id="gKj-Ck-cxo"/>
                         <outlet property="containerView" destination="bVX-M9-Wtg" id="PXj-JH-D2f"/>
                         <outlet property="customViewHeightConstraint" destination="PPe-co-nQn" id="341-cS-oeH"/>
                         <outlet property="optionsTableView" destination="2MS-cr-vFd" id="Hm2-sz-Z12"/>
@@ -2578,7 +2731,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmx-kE-pio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6937.5" y="-45.422535211267608"/>
+            <point key="canvasLocation" x="6936.8000000000002" y="-45.42728635682159"/>
         </scene>
         <!--Transfer View Controller-->
         <scene sceneID="HJK-m4-uBU">
