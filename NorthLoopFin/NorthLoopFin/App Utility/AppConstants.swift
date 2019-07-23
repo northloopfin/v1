@@ -150,8 +150,7 @@ struct AppConstants{
         case TRANSACTIONALERT = "Transaction Alert"
         case DEALSOFFERS = "Deals & Offers"
         case CHECKFORUPDATE = "Check for Update"
-        
-        
+        case TIPHINT = "Tip Hint for Restaurants"        
     }
     
     enum ProfileOptions:String{

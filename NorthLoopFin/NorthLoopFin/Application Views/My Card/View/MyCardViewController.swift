@@ -23,6 +23,7 @@ class MyCardViewController: BaseViewController {
     @IBOutlet weak var cvv: UILabel!
     @IBOutlet weak var cardNumber: UILabel!
     
+    @IBOutlet weak var vwWhatsThis: UIView!
     @IBOutlet weak var vwVirtualCard: UIView!
     var data:[MyCardOtionsModel]=[]
     var isLockCard:Bool = false
@@ -34,6 +35,7 @@ class MyCardViewController: BaseViewController {
         super.viewDidLoad()
         self.prepareView()
         self.prepareViewData()
+        self.prepareWhatsThisView()
         self.configureTableView()
         self.optionsTableView.reloadData()
         self.presenter = CardsPresenter.init(delegate: self)
@@ -69,13 +71,30 @@ class MyCardViewController: BaseViewController {
         self.setNavigationBarTitle(title: "My Card")
         self.setupRightNavigationBar()
     }
-    
+
+    func prepareWhatsThisView(){
+        //set shadow to container view
+        let shadowOffst = CGSize.init(width: 0, height: 5)
+        let shadowOpacity = 0.5
+        let shadowRadius = 5
+        let shadowColor = UIColor.init(red: 205, green: 205, blue: 205)
+        self.vwWhatsThis.layer.addShadowAndRoundedCorners(roundedCorner: 6.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+    }
+
     func getCardStatus(){
         self.presenter.getCardStatus()
     }
 
     func getCardAuth(){
         self.authPresenter.getCardAuth()
+    }
+    
+    @IBAction func closeClicked(_ sender: Any) {
+        vwWhatsThis.isHidden = true
+    }
+
+    @IBAction func whatsClicked(_ sender: Any) {
+        vwWhatsThis.isHidden = false
     }
 }
 

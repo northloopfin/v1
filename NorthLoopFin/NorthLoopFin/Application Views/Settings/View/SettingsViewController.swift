@@ -16,6 +16,7 @@ class SettingsViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var optionsTableView: UITableView!
     
+    @IBOutlet weak var constTipView: NSLayoutConstraint!
     var data:[MyCardOtionsModel]=[]
     var getSettingsPresenter : GetAppSettingsPresenter!
     var setSettingsPresenter: SetAppSettingsPresenter!
@@ -24,9 +25,11 @@ class SettingsViewController: BaseViewController {
     var isLowAlertOn:Bool = false
     var isTransactionOn:Bool = false
     var isDealsOffersOn:Bool = false
-    
+    var isTipOn:Bool = false
+    var tipPercentage:Int = 15
+
     @IBAction func saveClicked(_ sender: Any) {
-        self.setSettingsPresenter.sendSaveAppSettingsRequest(isTransactionOn: self.isTransactionOn, isLowBalanceOn: self.isLowAlertOn, isDealOfferOn: self.isDealsOffersOn)
+        self.setSettingsPresenter.sendSaveAppSettingsRequest(isTransactionOn: self.isTransactionOn, isLowBalanceOn: self.isLowAlertOn, isDealOfferOn: self.isDealsOffersOn, isTipOn: self.isTipOn, tipPercentage: self.tipPercentage)
     }
     
     override func viewDidLoad() {
@@ -44,10 +47,12 @@ class SettingsViewController: BaseViewController {
         let option2 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true, isSelected: false)
         let option3 = MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true, isSelected: false)
         let option4 = MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false, isSelected: true)
+        let option5 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TIPHINT.rawValue, isSwitch: true, isSelected: false)
         data.append(option1)
         data.append(option2)
         data.append(option3)
         data.append(option4)
+        data.append(option5)
         customViewHeightConstraint.constant = CGFloat(data.count*70)
         
         let shadowOffst = CGSize.init(width: 0, height: -55)
@@ -58,6 +63,19 @@ class SettingsViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Settings")
         self.setupRightNavigationBar()
         self.configureTableView()
+    }
+    
+    @IBAction func tipValueClicked(_ sender: UIButton) {
+        sender.backgroundColor = Colors.PurpleColor17673149
+        sender.isSelected = true
+        tipPercentage = sender.tag
+        for btn in sender.superview!.subviews {
+            let bt = btn as! UIButton
+            if bt != sender{
+                bt.isSelected = false
+                bt.backgroundColor = UIColor.init(red: 246, green: 246, blue: 246)
+            }
+        }
     }
 }
 
@@ -113,6 +131,14 @@ extension SettingsViewController:MyCardTableCellDelegate{
         case 2:
             self.isDealsOffersOn=isOn
             //Deal and Offers
+        case 4:
+            self.isTipOn=isOn
+            self.constTipView.constant = self.isTipOn ? 80 : 0;
+            customViewHeightConstraint.constant = CGFloat(data.count*70) + self.constTipView.constant
+            if tipPercentage != 0 && containerView.viewWithTag(tipPercentage) != nil {
+                self.tipValueClicked(containerView.viewWithTag(tipPercentage) as! UIButton)
+            }
+            //Tip
         default:
             break
         }
@@ -145,9 +171,17 @@ extension SettingsViewController:SettingsDelegates{
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true,isSelected: data.transaction))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true,isSelected: data.dealsOffers))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false,isSelected: data.dealsOffers))
+        self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.TIPHINT.rawValue, isSwitch: true,isSelected: data.tipSuggestion))
         self.isLowAlertOn = data.lowBalance
         self.isTransactionOn = data.transaction
         self.isDealsOffersOn = data.dealsOffers
+        self.isTipOn = data.tipSuggestion
+        tipPercentage = data.tipPercentage
+        if tipPercentage != 0 && containerView.viewWithTag(tipPercentage) != nil {
+            self.tipValueClicked(containerView.viewWithTag(tipPercentage) as! UIButton)
+        }
+        self.constTipView.constant  = self.isTipOn ? 80 : 0;
+        customViewHeightConstraint.constant = CGFloat(self.data.count*70) + self.constTipView.constant
         self.optionsTableView.reloadData()
     }
     
