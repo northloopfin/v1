@@ -303,6 +303,7 @@ class CreateAccountV2ViewController: BaseViewController {
 
 extension CreateAccountV2ViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         self.checkForMandatoryFields()
     }
     

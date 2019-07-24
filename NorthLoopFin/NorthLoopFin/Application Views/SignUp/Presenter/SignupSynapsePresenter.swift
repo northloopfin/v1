@@ -32,7 +32,7 @@ class SignupSynapsePresenter:ResponseCallback{
         
         let requestModel = SignupSynapseRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: Endpoints.APIRequestHeaders.APPLICATION_JSON.rawValue)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: token )
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
             .build()
         requestModel.requestQueryParams = requestDic
         requestModel.apiUrl = requestModel.getEndPoint()

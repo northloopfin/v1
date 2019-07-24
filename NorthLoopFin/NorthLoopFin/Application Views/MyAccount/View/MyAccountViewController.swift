@@ -40,9 +40,9 @@ class MyAccountViewController: BaseViewController {
         let shadowOffst = CGSize.init(width: 0, height: -55)
         let shadowOpacity = 0.1
         let shadowRadius = 49
-        let shadowColor = Colors.PurpleColor17673149
-    self.customView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-        
+        let shadowColor = Colors.Taupe776857
+        self.customView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.customView.containerView.layer.roundCorners(radius: 15.0)
     }
     
     func prepareView(){

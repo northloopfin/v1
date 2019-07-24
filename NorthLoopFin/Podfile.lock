@@ -121,13 +121,13 @@ PODS:
   - ZDCChat/Localization (1.4.0)
   - ZDCChat/UI (1.4.0):
     - ZDCChat/API
-  - ZendeskSDK (2.3.0):
-    - ZendeskSDK/Providers (= 2.3.0)
-    - ZendeskSDK/UI (= 2.3.0)
-  - ZendeskSDK/Core (2.3.0)
-  - ZendeskSDK/Providers (2.3.0):
+  - ZendeskSDK (3.0.0):
+    - ZendeskSDK/Providers (= 3.0.0)
+    - ZendeskSDK/UI (= 3.0.0)
+  - ZendeskSDK/Core (3.0.0)
+  - ZendeskSDK/Providers (3.0.0):
     - ZendeskSDK/Core
-  - ZendeskSDK/UI (2.3.0):
+  - ZendeskSDK/UI (3.0.0):
     - ZendeskSDK/Core
     - ZendeskSDK/Providers
 
@@ -157,7 +157,7 @@ DEPENDENCIES:
   - SwiftKeychainWrapper
   - SwiftyRSA
   - ZDCChat
-  - ZendeskSDK (= 2.3.0)
+  - ZendeskSDK (= 3.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -240,8 +240,8 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
   ZDCChat: 1def9764647bb81cf71aebd9df38aa4024c52d12
-  ZendeskSDK: af6509ad7968d367f95b2645713802712152f879
+  ZendeskSDK: 445b63024dc3e0021d18bf86a32eb1d3e9404d66
 
-PODFILE CHECKSUM: 77f0f3d817e9bd15879299de326d619aee695341
+PODFILE CHECKSUM: fdde42cc1066b6e8f0bad413c8e181dc912f9ead
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.4

@@ -23,7 +23,7 @@ class SignupAuthPresenter:ResponseCallback{
 
         
         let requestModel = SignupAuthRquestModel.Builder()
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
             .addRequestQueryParams(key: "username", value: email as AnyObject)
             .addRequestQueryParams(key: "password", value: password as AnyObject)
             .addRequestQueryParams(key: "device_token", value: UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForDeviceToken) ?? "" as AnyObject)
