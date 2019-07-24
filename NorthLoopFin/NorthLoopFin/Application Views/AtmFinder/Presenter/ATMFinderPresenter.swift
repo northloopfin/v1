@@ -25,7 +25,7 @@ class ATMFinderPresenter: ResponseCallback{
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
         
         var requestModel = ATMFinderRequestModel.Builder()
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestQueryParams(key: "lat", value: lat as AnyObject)
@@ -33,7 +33,7 @@ class ATMFinderPresenter: ResponseCallback{
             .build()
         if zip != ""{
              requestModel = ATMFinderRequestModel.Builder()
-                .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
+                .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
                 .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
                 .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
                 .addRequestQueryParams(key: "zip", value: zip as AnyObject)

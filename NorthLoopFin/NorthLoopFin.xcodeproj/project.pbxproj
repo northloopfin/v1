@@ -415,6 +415,7 @@
 		EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */; };
 		EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03522E5D39100D1F438 /* CardAuthData.swift */; };
 		EA4ED03822E5D54800D1F438 /* CardAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */; };
+		EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E843622E88FE7009D95CD /* IP+Extension.swift */; };
 		EB8617AFB8E38CB8A49D5549 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F232E2216D9A5754838CFA9 /* Pods_NorthLoopFin.framework */; };
 /* End PBXBuildFile section */
 
@@ -864,6 +865,7 @@
 		EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuthBusinessLogic.swift; sourceTree = "<group>"; };
 		EA4ED03522E5D39100D1F438 /* CardAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthData.swift; sourceTree = "<group>"; };
 		EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthPresenter.swift; sourceTree = "<group>"; };
+		EA9E843622E88FE7009D95CD /* IP+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IP+Extension.swift"; sourceTree = "<group>"; };
 		F05C98038699AA9883A8B0D9 /* Pods-NorthLoopFinUITests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.production.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.production.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2030,6 +2032,7 @@
 				1DF64E3D21E8E00B008774CE /* UserDefaults.swift */,
 				1D6AA0872212CCB700DD04F4 /* AccountLockTimer.swift */,
 				1D81CE4222253DF300B61037 /* LogEventsHelper.swift */,
+				EA9E843622E88FE7009D95CD /* IP+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -3005,6 +3008,7 @@
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D5AB2F322A7965E00DB3B70 /* SetPinPresenter.swift in Sources */,
+				EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
 				1D055D1F229BCA610078CD33 /* ResetPasswordPresenter.swift in Sources */,
 				1D055D34229BD71F0078CD33 /* LinkACHBusinessLogic.swift in Sources */,

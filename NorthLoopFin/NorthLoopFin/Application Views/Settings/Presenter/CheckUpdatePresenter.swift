@@ -24,7 +24,7 @@ class CheckUpdatePresenter:ResponseCallback{
         self.delegate?.showLoader()
         //let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = CheckUpdateRequestModel.Builder()
-            .addRequestHeader(key: "ip", value: "127.0.0.1")
+            .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
         

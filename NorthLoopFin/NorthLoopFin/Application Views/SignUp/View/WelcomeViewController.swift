@@ -22,6 +22,7 @@ class WelcomeViewController: BaseViewController {
         createAccountBtn.showsTouchWhenHighlighted=true
         self.checkUpdatePresenter = CheckUpdatePresenter.init(delegate: self)
         self.checkUpdatePresenter.sendCheckUpdateCall()
+        self.checkForFirstTime()
     }
     
     @IBAction func loginClicked(_ sender: Any) {
@@ -46,6 +47,15 @@ class WelcomeViewController: BaseViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func checkForFirstTime(){
+        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForFreshInstall){
+            self.moveToLogin()
+        }else{
+            //key not found .. so fresh install .. stay on same screen
+            UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForFreshInstall)
+        }
     }
 }
 extension WelcomeViewController:SettingsDelegates{

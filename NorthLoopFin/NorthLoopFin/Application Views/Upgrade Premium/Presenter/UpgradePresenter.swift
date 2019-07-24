@@ -28,7 +28,7 @@ class UpgradePresenter:ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
-            .addRequestHeader(key: "ip", value: "127.0.0.1")
+            .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
             .addRequestQueryParams(key: "isUpgrade", value: sendToAPI as AnyObject)
             .addRequestQueryParams(key: "ip", value: UIDeviceHelper.getIPAddress() as AnyObject)
             .build()

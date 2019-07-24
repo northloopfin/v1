@@ -20,6 +20,7 @@ struct AppConstants{
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
     static let KeyChainKeyForPassword = "NorthLoopPassword"
     static let KeyChainKeyForEmail = "NorthLoopEmail"
+    static let UserDefaultKeyForFreshInstall = "FreshInstall"
 
     static let PageLimit:Int = 20
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String

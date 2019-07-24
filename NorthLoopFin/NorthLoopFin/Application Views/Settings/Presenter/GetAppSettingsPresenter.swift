@@ -24,7 +24,7 @@ class GetAppSettingsPresenter:ResponseCallback{
         self.delegate?.showLoader()
         let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = GetAppSettingsRequestModel.Builder()
-            .addRequestHeader(key: "ip", value: "127.0.0.1")
+            .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .build()

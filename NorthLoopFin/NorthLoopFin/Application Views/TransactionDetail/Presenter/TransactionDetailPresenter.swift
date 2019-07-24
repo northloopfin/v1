@@ -24,7 +24,7 @@ class TransactionDetailPresenter: ResponseCallback{
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let rquestModel = TransactionDetailRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken).addRequestQueryParams(key:"id", value : transactionId as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
             .build()
         rquestModel.apiUrl = rquestModel.getEndPoint()+"/"+transactionId
         self.businessLogic.performTransactionDetail( withRequestModel: rquestModel, presenterDelegate:self)

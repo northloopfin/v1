@@ -30,7 +30,7 @@ class TransactionListPresenter: ResponseCallback{
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.USERID.rawValue, value: currentUser.userID)
-            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: "127.0.0.1")//UIDeviceHelper.getIPAddress()!)
+            .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
             .addRequestQueryParams(key: "page", value: self.currentPage as AnyObject)
             .addRequestQueryParams(key: "per_page", value: AppConstants.PageLimit as AnyObject)
             .build()

@@ -24,9 +24,10 @@ class HelpViewController: BaseViewController {
         let shadowOffst = CGSize.init(width: 0, height: -55)
         let shadowOpacity = 0.1
         let shadowRadius = 49
-        let shadowColor = Colors.PurpleColor17673149
+        let shadowColor = Colors.Taupe776857
         self.containerView.delegate=self
-        self.containerView.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.containerView.containerView.layer.roundCorners(radius: 15.0)
     }
     
     /// Prepare View For display
