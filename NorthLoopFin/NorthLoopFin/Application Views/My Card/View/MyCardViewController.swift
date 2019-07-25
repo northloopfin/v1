@@ -202,7 +202,7 @@ extension MyCardViewController:CardInfoDelegates{
         self.cardNumber.text = modifyCreditCardString(creditCardString: data.card_number)
         let parts = data.exp.components(separatedBy: "-")
         if parts.count == 3 {
-            self.validThrough.text = parts[1] + "/" + parts[2]
+            self.validThrough.text = parts[1] + "/" + (parts[0]).suffix(2)
         }
     }
     

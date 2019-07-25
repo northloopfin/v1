@@ -27,6 +27,7 @@ class HomeTableCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -49,6 +50,12 @@ class HomeTableCell: UITableViewCell {
             }
         }
         
+        let shadowOffst = CGSize.init(width: 0, height: 26)
+        let shadowOpacity = 0.15
+        let shadowRadius = 30
+        let shadowColor = Colors.Taupe776857
+        self.beneficiaryImg.layer.addShadowAndRoundedCorners(roundedCorner: 0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+
         
         if data.to.type == "EXTERNAL-US"{
             if let _  = data.to.meta{

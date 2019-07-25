@@ -57,7 +57,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Guest" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="100" width="191.5" height="23.5"/>
+                                        <rect key="frame" x="25" y="133" width="169" height="24.5"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="20"/>
                                         <color key="textColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                         <rect key="frame" x="25" y="202.5" width="325" height="47"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-a3-Y8h" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="14" width="116" height="19"/>
+                                                <rect key="frame" x="36" y="13.5" width="106" height="20"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-6N-ViP" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="282" y="14" width="18" height="19"/>
+                                                <rect key="frame" x="283.5" y="13.5" width="16.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2rD-gl-dmJ" secondAttribute="bottom" constant="22" id="0P9-Fw-SYZ"/>
-                                    <constraint firstItem="PLq-sg-P5N" firstAttribute="top" secondItem="hMA-Pf-jm9" secondAttribute="top" constant="100" id="B7x-Hv-YGr"/>
+                                    <constraint firstItem="2rD-gl-dmJ" firstAttribute="top" secondItem="PLq-sg-P5N" secondAttribute="bottom" constant="45" id="2rJ-Yh-1rS"/>
                                     <constraint firstItem="2rD-gl-dmJ" firstAttribute="leading" secondItem="hMA-Pf-jm9" secondAttribute="leading" constant="25" id="EDo-11-D4r"/>
                                     <constraint firstAttribute="trailing" secondItem="2rD-gl-dmJ" secondAttribute="trailing" constant="25" id="MKV-Pp-OQZ"/>
                                     <constraint firstItem="AJd-5t-kUM" firstAttribute="top" secondItem="hMA-Pf-jm9" secondAttribute="top" id="UEk-LL-tTf"/>
@@ -150,12 +150,52 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ehb-mJ-Khl"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1Q-AV-3T9">
+                                <rect key="frame" x="0.0" y="271.5" width="375" height="395.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_home_empty_state" translatesAutoresizingMaskIntoConstraints="NO" id="A5K-Md-C0Z">
+                                        <rect key="frame" x="82.5" y="69" width="210" height="177"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="177" id="PMX-gc-IMq"/>
+                                            <constraint firstAttribute="width" constant="210" id="Ydc-St-5xD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-w4-mSF">
+                                        <rect key="frame" x="126.5" y="246" width="122" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="Cb6-Br-aCz"/>
+                                            <constraint firstAttribute="width" constant="122" id="G7q-F9-Yhc"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="No transactions yet">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="Calibri"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3Jo-w4-mSF" firstAttribute="top" secondItem="A5K-Md-C0Z" secondAttribute="bottom" id="1KR-bA-xNF"/>
+                                    <constraint firstItem="A5K-Md-C0Z" firstAttribute="centerX" secondItem="y1Q-AV-3T9" secondAttribute="centerX" id="71g-BO-wM8"/>
+                                    <constraint firstItem="3Jo-w4-mSF" firstAttribute="centerX" secondItem="y1Q-AV-3T9" secondAttribute="centerX" id="LO2-Wg-b8g"/>
+                                    <constraint firstItem="A5K-Md-C0Z" firstAttribute="centerY" secondItem="y1Q-AV-3T9" secondAttribute="centerY" constant="-40" id="wYW-Na-Sp9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="y1Q-AV-3T9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="42Z-0h-EfI"/>
                             <constraint firstItem="hMA-Pf-jm9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.407" id="5Ri-4A-kOe"/>
                             <constraint firstItem="Gs8-ou-rL1" firstAttribute="top" secondItem="hMA-Pf-jm9" secondAttribute="bottom" id="6C0-KX-PTF"/>
+                            <constraint firstAttribute="bottom" secondItem="y1Q-AV-3T9" secondAttribute="bottom" id="H1e-8V-f1G"/>
                             <constraint firstItem="Gs8-ou-rL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JpE-KK-G5m"/>
+                            <constraint firstItem="y1Q-AV-3T9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rc0-T8-g2s"/>
+                            <constraint firstItem="y1Q-AV-3T9" firstAttribute="top" secondItem="hMA-Pf-jm9" secondAttribute="bottom" id="UVn-Ic-nU0"/>
                             <constraint firstItem="hMA-Pf-jm9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WKX-7e-KkF"/>
                             <constraint firstItem="hMA-Pf-jm9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hWt-f7-dM3"/>
                             <constraint firstItem="Gs8-ou-rL1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nT8-Jr-bbh"/>
@@ -185,11 +225,12 @@
                         <outlet property="GreetingLbl" destination="PLq-sg-P5N" id="k1U-HL-nUx"/>
                         <outlet property="contentView" destination="2rD-gl-dmJ" id="U29-q4-sK7"/>
                         <outlet property="ledgersTableView" destination="Gs8-ou-rL1" id="oMj-sv-EwB"/>
+                        <outlet property="vwEmpty" destination="y1Q-AV-3T9" id="wHC-Si-FDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1239.1304347826087" y="-27.717391304347828"/>
+            <point key="canvasLocation" x="-1239.2" y="-28.335832083958024"/>
         </scene>
         <!--Transaction Detail View Controller-->
         <scene sceneID="OUh-oZ-gqU">
@@ -206,7 +247,7 @@
                             <view alpha="0.93999999999999995" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I07-P7-y2W" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="187" width="335" height="393"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Starbucks Coffee Shop" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-U8-D5L" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrt-U8-D5L" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="33" y="55" width="269" height="92"/>
                                         <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.26666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
@@ -217,13 +258,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-B5-dPj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM7-B5-dPj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="37" y="165" width="261.5" height="39.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39.5" id="gYw-iJ-jER"/>
                                         </constraints>
-                                        <string key="text">2/3 Condult St, Mayfair, London
-W1s 2Bx,UK</string>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                         <color key="textColor" red="0.83529411764705885" green="0.72941176470588232" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -236,8 +275,8 @@ W1s 2Bx,UK</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gn-UK-4pn">
                                         <rect key="frame" x="0.0" y="217.5" width="335" height="95"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$58.8" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skz-G2-2dH" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="34" y="19" width="63" height="29.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skz-G2-2dH" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="34" y="19" width="0.0" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="25"/>
                                                 <color key="textColor" red="0.63137254901960782" green="0.58431372549019611" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,8 +287,8 @@ W1s 2Bx,UK</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="13:09 Sunday , 20 Feb , 2018" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Ti-2b9" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="34" y="54.5" width="210.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-Ti-2b9" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="34" y="25" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -260,7 +299,7 @@ W1s 2Bx,UK</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-xy-LGK" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="253" y="24" width="52" height="0.0"/>
+                                                <rect key="frame" x="190" y="24" width="115" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.30196078431372547" green="0.22745098039215686" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -703,7 +742,7 @@ W1s 2Bx,UK</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUpForm" translatesAutoresizingMaskIntoConstraints="NO" id="VLZ-aM-6Oc">
-                                        <rect key="frame" x="12" y="25" width="16" height="90"/>
+                                        <rect key="frame" x="12" y="25" width="156" height="90"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENm-rI-Zte" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="24" y="126" width="215" height="20"/>
@@ -808,10 +847,10 @@ W1s 2Bx,UK</string>
                                 <rect key="frame" x="0.0" y="0.5" width="375" height="269.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobileVerifiaction" translatesAutoresizingMaskIntoConstraints="NO" id="5B0-xc-CxS">
-                                        <rect key="frame" x="29" y="49" width="16" height="113.5"/>
+                                        <rect key="frame" x="29" y="48" width="67" height="113.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code we sent to your mobile number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kLs-Vu-llU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="171" width="329" height="50"/>
+                                        <rect key="frame" x="23" y="170" width="329" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pxh-vC-DR6"/>
                                         </constraints>
@@ -825,7 +864,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent to 123 673 9875" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-Uw-mz1">
-                                        <rect key="frame" x="29" y="233.5" width="173.5" height="21"/>
+                                        <rect key="frame" x="29" y="232.5" width="155.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                         <color key="textColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -851,7 +890,7 @@ W1s 2Bx,UK</string>
                                         <rect key="frame" x="74.5" y="143" width="226" height="82"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbe-SA-efE" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="82.5" y="49" width="61.5" height="21"/>
+                                                <rect key="frame" x="86" y="49" width="54.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1103,7 +1142,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldx-yJ-P2E" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="133" width="144" height="29.5"/>
+                                <rect key="frame" x="25" y="133" width="136" height="31"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1114,7 +1153,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ID type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmA-jl-4yA" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="170.5" width="153.5" height="21"/>
+                                <rect key="frame" x="25" y="172" width="145" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1125,7 +1164,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-xo-vSO" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="203.5" width="325" height="34"/>
+                                <rect key="frame" x="25" y="206" width="325" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50X-HH-94b">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
@@ -1144,7 +1183,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
-                                <rect key="frame" x="25" y="262.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="265" width="325" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
@@ -1154,7 +1193,7 @@ W1s 2Bx,UK</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Front of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pS-Lf-OpI" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="124" y="25.5" width="109.5" height="18"/>
+                                        <rect key="frame" x="124" y="25.5" width="96.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1186,7 +1225,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
-                                <rect key="frame" x="25" y="348.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="351" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="69"/>
@@ -1202,7 +1241,7 @@ W1s 2Bx,UK</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kab-2i-Q5o" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="124" y="25.5" width="108.5" height="18"/>
+                                        <rect key="frame" x="124" y="25.5" width="92.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1228,7 +1267,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Na-LzZ" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
+                                <rect key="frame" x="25" y="500" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jp4-O9-PWE"/>
@@ -1299,7 +1338,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-Cd-362" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="104" width="144" height="29.5"/>
+                                <rect key="frame" x="25" y="104" width="129" height="31"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1310,7 +1349,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ID type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8A-3Y-RvI" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="161.5" width="153.5" height="21"/>
+                                <rect key="frame" x="25" y="163" width="138" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1321,10 +1360,10 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-vg-Owi" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="194.5" width="325" height="34"/>
+                                <rect key="frame" x="25" y="197" width="126" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-Kp-deV">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1340,7 +1379,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-xW-A7B">
-                                <rect key="frame" x="25" y="253.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="256" width="126" height="69"/>
                                 <subviews>
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-ev-rK7">
                                         <rect key="frame" x="21" y="12" width="60" height="45"/>
@@ -1350,7 +1389,7 @@ W1s 2Bx,UK</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Front of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJi-dC-hog" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="25.5" width="109.5" height="18"/>
+                                        <rect key="frame" x="125" y="25.5" width="96.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1361,7 +1400,7 @@ W1s 2Bx,UK</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-HS-rum">
-                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="Pbq-ka-Xqp"/>
                                         </connections>
@@ -1382,10 +1421,10 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PX-9n-Y8b">
-                                <rect key="frame" x="25" y="332.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="335" width="126" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFs-V2-k3t">
-                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="2o1-DH-qN9"/>
                                         </connections>
@@ -1397,7 +1436,7 @@ W1s 2Bx,UK</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQY-UN-drV" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="25.5" width="108.5" height="18"/>
+                                        <rect key="frame" x="125" y="25.5" width="92.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1426,7 +1465,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCy-ip-oLr" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
+                                <rect key="frame" x="25" y="500" width="126" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="PUf-ZF-Lkh"/>
@@ -1442,10 +1481,10 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH5-E1-Z8N">
-                                <rect key="frame" x="25" y="411.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="414" width="126" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-Pw-XBa">
-                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="y2h-87-oBI"/>
@@ -1458,7 +1497,7 @@ W1s 2Bx,UK</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwn-zx-zzU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="24" width="108.5" height="21"/>
+                                        <rect key="frame" x="125" y="24" width="92.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1487,7 +1526,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-NH-3af" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="12" y="141.5" width="351" height="8"/>
+                                <rect key="frame" x="12" y="143" width="152" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="jXF-Fi-w20"/>
@@ -1559,7 +1598,7 @@ W1s 2Bx,UK</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selfie Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bft-H7-Xdw" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="118.5" y="50" width="138" height="125"/>
+                                <rect key="frame" x="123.5" y="50" width="128" height="125"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1586,7 +1625,7 @@ W1s 2Bx,UK</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-wJ-AGv" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="112.5" y="45" width="100" height="19"/>
+                                        <rect key="frame" x="118" y="45" width="89" height="20"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                         <color key="textColor" red="0.16078431372549018" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1713,7 +1752,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMU-4A-xwK" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="136" width="210" height="31"/>
+                                <rect key="frame" x="23" y="136" width="191" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="8GH-oz-wTf"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="slH-1j-pWJ"/>
@@ -1767,7 +1806,7 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up you agree to the " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPy-qr-sd2" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="83" y="482" width="209" height="17.5"/>
+                                <rect key="frame" x="94" y="482" width="187" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1778,7 +1817,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGV-p3-fqt" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="111.5" y="502.5" width="152" height="17.5"/>
+                                <rect key="frame" x="119.5" y="503.5" width="136" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                 <color key="textColor" red="0.83529411764705885" green="0.72941176470588232" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1868,7 +1907,7 @@ W1s 2Bx,UK</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your registered address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-c1-lef" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="111" width="264.5" height="31"/>
+                                <rect key="frame" x="23" y="111" width="243" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Ino-gf-W5k"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="fch-zk-BvQ"/>
@@ -1905,13 +1944,13 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your US Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
-                                <rect key="frame" x="25" y="175" width="325" height="21"/>
+                                <rect key="frame" x="25" y="175" width="325" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-X9-ITF">
-                                <rect key="frame" x="25" y="211" width="325" height="45"/>
+                                <rect key="frame" x="25" y="212" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="VMo-WT-MOW"/>
@@ -1924,7 +1963,7 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-xB-SDV">
-                                <rect key="frame" x="25" y="265" width="325" height="45"/>
+                                <rect key="frame" x="25" y="266" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eC5-oU-hdL"/>
@@ -1937,7 +1976,7 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-Py-uCM">
-                                <rect key="frame" x="25" y="319" width="325" height="45"/>
+                                <rect key="frame" x="25" y="320" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="kcN-Yk-WNP"/>
@@ -1950,7 +1989,7 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWA-Jo-NJU">
-                                <rect key="frame" x="25" y="373" width="325" height="45"/>
+                                <rect key="frame" x="25" y="374" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0Jz-iT-1Kw"/>
@@ -1963,7 +2002,7 @@ W1s 2Bx,UK</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bet-Qc-sQj">
-                                <rect key="frame" x="25" y="427" width="325" height="45"/>
+                                <rect key="frame" x="25" y="428" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vWg-Zu-xgi"/>
@@ -2135,14 +2174,14 @@ W1s 2Bx,UK</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-SW-U9N">
-                                <rect key="frame" x="134" y="77.999999999999986" width="107.00000000000003" height="107.00000000000004"/>
+                                <rect key="frame" x="134" y="78" width="107" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="2Md-8R-lxZ"/>
                                     <constraint firstAttribute="height" constant="107" id="NXJ-ee-ax2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’re all done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-nn-Bsx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="103.5" y="211" width="168" height="31"/>
+                                <rect key="frame" x="102" y="211" width="171.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Gib-tw-qSn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="L4r-7v-dNs"/>
@@ -2157,7 +2196,7 @@ W1s 2Bx,UK</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Es4-5K-pZ1" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="19" y="264" width="337" height="66"/>
+                                <rect key="frame" x="19" y="264" width="337" height="105"/>
                                 <string key="text">We’ll approve your account within 24 hours
 and send yout North Loop Visa/Debit card
 to your registered address</string>
@@ -2171,7 +2210,7 @@ to your registered address</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhB-f3-Ost" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="394" width="325" height="45"/>
+                                <rect key="frame" x="25" y="433" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7bc-9C-s3R"/>
@@ -3142,7 +3181,7 @@ to your registered address</string>
                                 <rect key="frame" x="0.0" y="560" width="375" height="107"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bye-7W-UYq">
-                                        <rect key="frame" x="142.5" y="42" width="90.5" height="22"/>
+                                        <rect key="frame" x="147.5" y="42" width="80" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="aFU-D7-yI9"/>
                                         </constraints>
@@ -3470,7 +3509,7 @@ to your registered address</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order A New Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-eN-CK5" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="194" width="271" height="40.5"/>
+                                <rect key="frame" x="25" y="194" width="266" height="40.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40.5" id="Xhg-Jb-SRX"/>
                                 </constraints>
@@ -3628,7 +3667,7 @@ to your registered address</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add $ to your North Loop card to Sending" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLZ-wU-F5Z" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="46.5" y="223" width="282.5" height="40"/>
+                                <rect key="frame" x="61" y="223" width="253" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VLn-nm-baU"/>
                                 </constraints>
@@ -3799,14 +3838,14 @@ and get $200</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostInsufficient" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-ak-cRw">
-                                <rect key="frame" x="93" y="49" width="189.00000000000006" height="98"/>
+                                <rect key="frame" x="93" y="49" width="189" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="crO-bU-c2Q"/>
                                     <constraint firstAttribute="height" constant="98" id="dbR-oQ-7Nu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biV-9g-IOx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="223" width="250.5" height="80"/>
+                                <rect key="frame" x="48.5" y="223" width="278" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="v7T-G7-gwO"/>
                                 </constraints>
@@ -3909,7 +3948,7 @@ up and site back and relax.</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-7q-Pm6">
-                                        <rect key="frame" x="134" y="40" width="107.00000000000003" height="107.00000000000003"/>
+                                        <rect key="frame" x="134" y="40" width="107" height="107"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wnc-7q-Pm6" secondAttribute="height" multiplier="1:1" id="Vx0-4l-reQ"/>
                                         </constraints>
@@ -4263,7 +4302,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="126" y="328" width="123" height="31"/>
+                                <rect key="frame" x="133.5" y="328" width="108" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
@@ -4772,7 +4811,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your home address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-U6-dcU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="129" width="216.5" height="31"/>
+                                <rect key="frame" x="23" y="129" width="198.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="7aZ-W2-gPv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="K2H-HN-IhB"/>
@@ -4809,13 +4848,13 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-kD-l2t">
-                                <rect key="frame" x="25" y="168" width="325" height="21"/>
+                                <rect key="frame" x="25" y="168" width="325" height="22"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXf-zw-6GU">
-                                <rect key="frame" x="25" y="209" width="325" height="45"/>
+                                <rect key="frame" x="25" y="210" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tdn-SC-446"/>
@@ -4828,7 +4867,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Z9-bsR">
-                                <rect key="frame" x="25" y="263" width="325" height="45"/>
+                                <rect key="frame" x="25" y="264" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="4cX-aW-AFu"/>
@@ -4841,7 +4880,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NS-5o-XiT">
-                                <rect key="frame" x="88" y="317" width="262" height="45"/>
+                                <rect key="frame" x="88" y="318" width="262" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="L4m-KR-pc1"/>
@@ -4854,7 +4893,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-c1-NyD">
-                                <rect key="frame" x="25" y="317" width="55" height="45"/>
+                                <rect key="frame" x="25" y="318" width="55" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="qkG-gi-TvP"/>
@@ -4867,7 +4906,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-nf-fDD">
-                                <rect key="frame" x="25" y="371" width="325" height="45"/>
+                                <rect key="frame" x="25" y="372" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tn9-QK-0e8"/>
@@ -5363,7 +5402,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUpForm" translatesAutoresizingMaskIntoConstraints="NO" id="TCY-HI-fXy">
-                                        <rect key="frame" x="12" y="25" width="16" height="90"/>
+                                        <rect key="frame" x="12" y="25" width="156" height="90"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provide:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAQ-Ru-W1p" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="24" y="126" width="215" height="20"/>
@@ -5587,7 +5626,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-XA-Vbh" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="107" y="16.5" width="161" height="30"/>
+                                        <rect key="frame" x="114.5" y="16.5" width="146" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="owH-e3-MmN"/>
                                         </constraints>
@@ -5667,7 +5706,7 @@ We’ve sent an email confirming.</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account to continue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSQ-ht-gdc" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="103" width="243.5" height="25"/>
+                                        <rect key="frame" x="12" y="103" width="224" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Wnp-qY-bdG"/>
                                         </constraints>
@@ -6583,6 +6622,7 @@ The Internal Revenue Service does not require your consent to any provision of t
         <image name="UpgradeIcon" width="177" height="189.5"/>
         <image name="WelcomeImg" width="120" height="215"/>
         <image name="addaccount" width="221" height="182"/>
+        <image name="bg_home_empty_state" width="542" height="413"/>
         <image name="cardUnlockedBg" width="371" height="254"/>
         <image name="cross" width="14" height="14"/>
         <image name="directdeposit" width="181" height="184"/>
