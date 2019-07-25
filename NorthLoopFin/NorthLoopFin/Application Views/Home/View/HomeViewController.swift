@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     var accountInfoPresenter : AccountInfoPresenter!
     var shareAccountDetailsPresenter : ShareAccountDetailsPresenter!
 
+    @IBOutlet weak var vwEmpty: UIView!
     @IBOutlet weak var contentView: GradientView!
     
     var transactionDataSource: [TransactionListModel] = [] {
@@ -239,8 +240,12 @@ extension HomeViewController:HomeDelegate{
                 }
             }
         }else{
+            if data.count == 0 {
+                self.vwEmpty.isHidden = false
+            }
             self.transactionDataSource.append(contentsOf: data)
         }
+        self.ledgersTableView.isHidden = !self.vwEmpty.isHidden
         self.ledgersTableView.reloadData()
         self.checkForFirstTimeLandOnHome()
     }
@@ -253,7 +258,8 @@ extension HomeViewController:HomeDelegate{
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         if let _ = currentUser?.name{
             //self.GreetingLbl.text = AppUtility().greetingAccToTime() +(currentUser?.name)!
-            self.GreetingLbl.text = AppUtility.greetingAccToTime()+(currentUser?.name)!
+            let nameParts = currentUser?.name.split(separator: " ")
+            self.GreetingLbl.text = AppUtility.greetingAccToTime()+(nameParts?.count == 0 ? "" : nameParts![0])
         }
         if !data.data.isPhoneVerified {
             self.navigateToOTP()

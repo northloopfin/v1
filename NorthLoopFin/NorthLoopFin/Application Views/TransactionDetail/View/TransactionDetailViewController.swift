@@ -186,6 +186,8 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
         }
         
+        self.timestampLbl.text = fullStringFromDate(seconds: data.data.extra.processOn)
+        //13:09 Sunday , 20 Feb , 2018
         //self.addressLbl.text = data.data.to.meta.address
         self.amtLbl.text = "$" + String(format: "%.2f",data.data.amount.amount)
         self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
@@ -193,4 +195,35 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         //let url = URL(string: data.data.to.meta.merchantLogo)
         //self.transactionImg.kf.setImage(with:url)
     }
+    
+    func fullStringFromDate(seconds: Int)-> String{
+        
+        //Convert to Date
+        let date = Date.init(timeIntervalSince1970: TimeInterval(seconds/1000))//NSDate(timeIntervalSince1970: seconds)
+        
+        var dateString = ""
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        dateString = formatter.string(from: date)
+        
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.weekday, from: date)
+
+        let weekdays = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ]
+        
+
+        dateString =  dateString + " " + weekdays[weekDay-1] + ", " +  AppUtility.getFormattedDateFullString(date: date)
+        
+        return dateString
+    }
+
 }
