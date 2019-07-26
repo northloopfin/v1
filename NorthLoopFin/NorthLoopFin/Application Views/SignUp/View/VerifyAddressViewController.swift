@@ -81,7 +81,7 @@ class VerifyAddressViewController: BaseViewController {
                 //print(jsonString!)
                 let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
-//                self.setGifLoaderImage(withImageName: "createAcc.gif")
+                self.setGifLoaderImage(withImageName: "createAcc.gif")
 
                 self.presenter.startSignUpSynapse(requestDic: dic)
             } catch {

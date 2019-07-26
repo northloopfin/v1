@@ -19,6 +19,7 @@ class TransactionDetailViewController: BaseViewController {
     @IBOutlet weak var transactionPurposeLbl: UILabel!
     @IBOutlet weak var timestampLbl: UILabel!
     @IBOutlet weak var amtLbl: UILabel!
+    @IBOutlet weak var successLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
     @IBOutlet weak var transactionImg: UIImageView!
     var detailModel:IndividualTransaction!
@@ -77,16 +78,20 @@ class TransactionDetailViewController: BaseViewController {
     func updateUIForRecievedData(){
         
         //set shadow to container view
-        var shadowOffst = CGSize.init(width: 0, height: -55)
-        var shadowOpacity = 0.1
-        var shadowRadius = 49
-        var shadowColor = Colors.PurpleColor17673149
-        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-        shadowOffst = CGSize.init(width: 0, height: 6)
-        shadowOpacity = 0.9
-        shadowRadius = 16
-        shadowColor = UIColor.init(red: 0, green: 107, blue: 79)
-        self.transactionImg.layer.addShadowAndRoundedCorners(roundedCorner: 31, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+//        var shadowOffst = CGSize.init(width: 0, height: -55)
+//        var shadowOpacity = 0.1
+//        var shadowRadius = 49
+//        var shadowColor = Colors.PurpleColor17673149
+//        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+//        shadowOffst = CGSize.init(width: 0, height: 6)
+//        shadowOpacity = 0.9
+//        shadowRadius = 16
+//        shadowColor = UIColor.init(red: 0, green: 107, blue: 79)
+//        self.transactionImg.layer.addShadowAndRoundedCorners(roundedCorner: 31, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.transactionImg.layer.cornerRadius = 31
+        self.transactionImg.layer.masksToBounds = true
+        self.successLbl.layer.cornerRadius = 15
+        self.successLbl.layer.masksToBounds = true
         //self.beneficiaryNameLbl.text = self.detailModel
 //        self.beneficiaryNameLbl.text = self.detailModel.name
 //        self.amtLbl.text =  String(self.detailModel.amount)
@@ -188,9 +193,10 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         
         self.timestampLbl.text = fullStringFromDate(seconds: data.data.extra.processOn)
         //13:09 Sunday , 20 Feb , 2018
-        //self.addressLbl.text = data.data.to.meta.address
+        self.addressLbl.text = data.data.to.meta?.address
         self.amtLbl.text = "$" + String(format: "%.2f",data.data.amount.amount)
         self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
+        self.successLbl.text = self.detailModel.recentStatus.status + " "
         //self.transactionPurposeLbl.text =
         //let url = URL(string: data.data.to.meta.merchantLogo)
         //self.transactionImg.kf.setImage(with:url)
