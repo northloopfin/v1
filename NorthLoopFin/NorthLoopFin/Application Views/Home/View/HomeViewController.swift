@@ -55,6 +55,11 @@ class HomeViewController: BaseViewController {
         self.navigationController?.navigationBar.makeTransparent()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.contentView.cornerRadius = self.contentView.frame.size.height/2
+    }
+    
     //Methode initialises the rightbutton for navigation
     override func setupRightNavigationBar(){
         let leftBarItem = UIBarButtonItem()
@@ -125,12 +130,13 @@ class HomeViewController: BaseViewController {
     
 
     func updateUIWithData(){
+        /*
         let shadowOffst = CGSize.init(width: 0, height: 9)
         let shadowOpacity = 0.21
         let shadowRadius = 72
         //let shadowColor = UIColor.blue
         let shadowColor = Colors.PurpleColor17673149
-        self.contentView.layer.addShadowAndRoundedCorners(roundedCorner: 12.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.contentView.layer.addShadowAndRoundedCorners(roundedCorner: self.contentView.frame.size.height/2, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)*/
     }
     
     /// This method is used to get list of Tranactions from api

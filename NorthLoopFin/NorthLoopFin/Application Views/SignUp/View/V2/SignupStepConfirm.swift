@@ -74,9 +74,12 @@ class SignupStepConfirm: BaseViewController {
             self.signupFlowData.documents.year = Int(DOBArr[2]) ?? 0
             // add passport as virtual document
             
-            let passport:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.passportTextField.text!, documentType: "PASSPORT")
-            let documents:SignupFlowDocument=self.signupFlowData.documents
-            documents.virtualDocs.append(passport)
+            let ssnVirtualDoc = self.signupFlowData.documents.virtualDocs.filter{$0.documentType == "SSN"}
+            if (ssnVirtualDoc.count == 0){
+                let passport:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.passportTextField.text!, documentType: "PASSPORT")
+                let documents:SignupFlowDocument=self.signupFlowData.documents
+                documents.virtualDocs.append(passport)
+            }
         }
         
     }
