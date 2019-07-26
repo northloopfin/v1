@@ -230,7 +230,7 @@ extension HomeViewController:HomeDelegate{
         
         if self.transactionDataSource.count > 0 {
             if data.count > 0 {
-                
+
                 var lastTransactionOfCurrentArr: TransactionListModel = self.transactionDataSource.last!
                 let firstTransactionOfRecievedArr: TransactionListModel = data.first!
                 // now compare date
@@ -238,8 +238,8 @@ extension HomeViewController:HomeDelegate{
                     //they are same , means got transaction of same date in pagination
                     lastTransactionOfCurrentArr.rowData.append(contentsOf: firstTransactionOfRecievedArr.rowData)
                     self.transactionDataSource[self.transactionDataSource.count-1] = lastTransactionOfCurrentArr
-                    
-                    
+
+
                 }else{
                     // it's of different date simply append result
                     self.transactionDataSource.append(contentsOf: data)
@@ -248,6 +248,8 @@ extension HomeViewController:HomeDelegate{
         }else{
             if data.count == 0 {
                 self.vwEmpty.isHidden = false
+            } else {
+                self.vwEmpty.isHidden = true
             }
             self.transactionDataSource.append(contentsOf: data)
         }

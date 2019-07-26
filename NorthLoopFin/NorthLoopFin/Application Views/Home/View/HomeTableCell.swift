@@ -54,7 +54,7 @@ class HomeTableCell: UITableViewCell {
         let shadowOpacity = 0.15
         let shadowRadius = 30
         let shadowColor = Colors.Taupe776857
-        self.beneficiaryImg.layer.addShadowAndRoundedCorners(roundedCorner: 0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+//        self.beneficiaryImg.layer.addShadowAndRoundedCorners(roundedCorner: 15, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
 
         
         if data.to.type == "EXTERNAL-US"{
@@ -65,7 +65,21 @@ class HomeTableCell: UITableViewCell {
             }
         }else if data.to.type == "ACH-US"{
             self.beneficiaryName.text = data.to.user.legalNames[0]
-        }        
+        } else if data.from.type == "EXTERNAL-US"{
+            if let _  = data.from.meta{
+                if let name = data.from.meta?.merchantName, !name.isEmpty {
+                    self.beneficiaryName.text = name
+                } else {
+                    if let type = data.from.meta?.type {
+                        self.beneficiaryName.text = type
+                    }
+                }
+                if let logo = data.from.meta?.merchantLogo {
+                    let url = URL(string:logo)
+                    self.beneficiaryImg.kf.setImage(with: url)
+                }
+            }
+        }
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
         
     }
