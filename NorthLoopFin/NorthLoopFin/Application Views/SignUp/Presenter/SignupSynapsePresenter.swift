@@ -29,13 +29,12 @@ class SignupSynapsePresenter:ResponseCallback{
             }
         }
         
-        
         let requestModel = SignupSynapseRequestModel.Builder().addRequestHeader(key: Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: Endpoints.APIRequestHeaders.APPLICATION_JSON.rawValue)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: token )
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
             .build()
         requestModel.requestQueryParams = requestDic
-        requestModel.apiUrl = requestModel.getEndPoint()
+        requestModel.apiUrl = requestModel.getEndPoint() + (requestDic.keys.contains("ssn") ? "/3" : "")
         self.logic.performSignUpSynapse(withRequestModel: requestModel, presenterDelegate: self)
         
     }
