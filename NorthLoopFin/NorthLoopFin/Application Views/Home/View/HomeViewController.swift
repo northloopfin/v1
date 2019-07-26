@@ -312,6 +312,9 @@ extension HomeViewController:SideMenuDelegate{
             self.navigateToSettings()
         case .FEEDBACK:
             self.navigateToFeedback()
+        case .PREMIUM:
+            self.navigateCarousel()
+
         default:
             break
         }
@@ -379,7 +382,12 @@ extension HomeViewController:SideMenuDelegate{
         guard let url = URL(string: "https://docs.google.com/forms/d/16fBuC42DLWnVZubL-wPTOTTEXc876jIqG4rglnuW4A4/edit") else { return }
         UIApplication.shared.open(url)
     }
-    
+    func navigateCarousel(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let carouselViewComtroller = storyBoard.instantiateViewController(withIdentifier: "CarouselViewComtroller") as! CarouselViewComtroller
+        self.navigationController?.pushViewController(carouselViewComtroller, animated: false)
+    }
 }
 extension HomeViewController:HomeTableCellDelegate{
     //Delete once client confirm

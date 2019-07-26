@@ -306,6 +306,9 @@
 		1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */; };
 		1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */; };
 		1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */; };
+		1FFAE5AD22EB129C0007296A /* CarouselViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */; };
+		1FFAE5B022EB154F0007296A /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAE5AE22EB154F0007296A /* CarouselCell.swift */; };
+		1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFAE5AF22EB154F0007296A /* CarouselCell.xib */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
 		297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A421B51A34008D60CE /* Assets.xcassets */; };
@@ -737,6 +740,9 @@
 		1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckPresenter.swift; sourceTree = "<group>"; };
 		1DFE481021DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCheckAPIRequest.swift; sourceTree = "<group>"; };
 		1DFE481221DA3ACE003EFECA /* PhoneVerifyCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerifyCheck.swift; sourceTree = "<group>"; };
+		1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewComtroller.swift; sourceTree = "<group>"; };
+		1FFAE5AE22EB154F0007296A /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		1FFAE5AF22EB154F0007296A /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
 		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1603,6 +1609,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				1FFAE5AB22EB11F90007296A /* Carousel */,
 				4B9CA55D22CF3FC5003655DC /* Chat */,
 				4BFDF87D22B8BBD10066860D /* Upgrade Premium */,
 				1D29C83422A8F5790092E3EB /* Change Phone Number */,
@@ -2057,6 +2064,24 @@
 				1DD066EF221BC1D000E1AD6D /* SelectIDType.swift */,
 			);
 			path = SIgnupForm;
+			sourceTree = "<group>";
+		};
+		1FFAE5AB22EB11F90007296A /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				1FFAE5B222EB17D10007296A /* View */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		1FFAE5B222EB17D10007296A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */,
+				1FFAE5AE22EB154F0007296A /* CarouselCell.swift */,
+				1FFAE5AF22EB154F0007296A /* CarouselCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		297FB99121B51A32008D60CE = {
@@ -2564,6 +2589,7 @@
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
+				1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
@@ -3023,6 +3049,7 @@
 				1D478CAF228E981700503136 /* SignupAuthPresenter.swift in Sources */,
 				1D055D28229BCF950078CD33 /* ResetPassword.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
+				1FFAE5B022EB154F0007296A /* CarouselCell.swift in Sources */,
 				1D055D26229BCAC00078CD33 /* ResetPasswordAPIRequest.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D8440822289545A00A77BBF /* Recipient.swift in Sources */,
@@ -3033,6 +3060,7 @@
 				1D9AF08522A5068500A9055F /* TransactionHistoryData.swift in Sources */,
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
+				1FFAE5AD22EB129C0007296A /* CarouselViewComtroller.swift in Sources */,
 				EA4ED03322E5D1C400D1F438 /* CardAuthAPIRequest.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
