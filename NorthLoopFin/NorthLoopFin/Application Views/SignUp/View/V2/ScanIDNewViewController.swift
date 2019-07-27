@@ -67,6 +67,8 @@ class ScanIDNewViewController: BaseViewController {
         self.addTapGesture()
     }
     
+    
+    
     //Initialise some dummy data initialially
     func initialiseData(){
         //loop through options
@@ -97,7 +99,7 @@ class ScanIDNewViewController: BaseViewController {
             let ssnVirtualDoc = self.signupData.documents.virtualDocs.filter{$0.documentType == "SSN"}//self.modelArray.filter{$0.type == optionSelected}
             if (ssnVirtualDoc.count > 0){
                 // it must be ssn doc..then change options
-                self.optionsArr = [AppConstants.SelectIDTYPES.STATEID,AppConstants.SelectIDTYPES.DRIVERLICENSE,AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.OTHER]
+                self.optionsArr = [AppConstants.SelectIDTYPES.STATEID] //,AppConstants.SelectIDTYPES.DRIVERLICENSE,AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.OTHER]
                 self.isSSNFlow=true
             }else{
                 self.optionsArr = [AppConstants.SelectIDTYPES.PASSPORT,AppConstants.SelectIDTYPES.I20,AppConstants.SelectIDTYPES.F1VISA,AppConstants.SelectIDTYPES.ADDRESSPROOF]
@@ -176,8 +178,19 @@ class ScanIDNewViewController: BaseViewController {
             self.imageArray=model.images
         }
     }
+    
     override func viewDidLayoutSubviews() {
-        
+        let vws = [self.scanFrontView, self.scanBackView, self.uploadImage3]
+        for vw in vws {
+            let shadowOffst = CGSize.init(width: 0, height: 1)
+            let shadowOpacity = 0.2
+            let shadowRadius = 5
+            let shadowColor = Colors.PurpleColor17673149
+            vw?.layer.addShadowAndRoundedCorners(roundedCorner: 5.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+            
+            vw?.layer.borderColor = Colors.PurpleColor17673149.cgColor
+            vw?.layer.borderWidth = 1
+        }
     }
   
     func prepareView(){
@@ -190,6 +203,7 @@ class ScanIDNewViewController: BaseViewController {
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
         self.selectYourIDLbl.font = AppFonts.btnTitleCalibri18
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
+        
     }
     
     func addTapGesture(){
@@ -292,7 +306,7 @@ class ScanIDNewViewController: BaseViewController {
             
             if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA || optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
                 optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF || optionSelected == AppConstants.SelectIDTYPES.STATEID || optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE || optionSelected == AppConstants.SelectIDTYPES.OTHER{
-                if self.imageArray.count < 1 {
+                if self.imageArray.count < 1 ||  (optionSelected == AppConstants.SelectIDTYPES.STATEID && self.imageArray.count < 2) {
                     print("show error for passport")
                     self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
                     return
@@ -315,7 +329,11 @@ class ScanIDNewViewController: BaseViewController {
         }else{
             self.resetLabels()
             uploadImage3HeightConstraint.constant=0
-            uploadImage2HeightConstraint.constant=0
+            if self.isSSNFlow && self.selectedOption == AppConstants.SelectIDTYPES.STATEID{
+                uploadImage2HeightConstraint.constant=60
+            }else{
+                uploadImage2HeightConstraint.constant=0
+            }
         }
         self.view.layoutIfNeeded()
         sender.isBtnSelected=true
@@ -337,26 +355,38 @@ class ScanIDNewViewController: BaseViewController {
     }
         
     func setImages(){
-        if self.selectedOption==AppConstants.SelectIDTYPES.PASSPORT || self.selectedOption==AppConstants.SelectIDTYPES.F1VISA || self.selectedOption==AppConstants.SelectIDTYPES.USIDTYPE ||
-            self.selectedOption==AppConstants.SelectIDTYPES.ADDRESSPROOF || self.selectedOption==AppConstants.SelectIDTYPES.STATEID ||
-            self.selectedOption==AppConstants.SelectIDTYPES.DRIVERLICENSE ||
-            self.selectedOption==AppConstants.SelectIDTYPES.OTHER{
+        if self.isSSNFlow{
             self.uploadImage3HeightConstraint.constant=0
-            self.uploadImage2HeightConstraint.constant=0
-            self.resetLabels()
+            self.uploadImage2HeightConstraint.constant=60
             self.view.layoutIfNeeded()
             if self.imageArray.count > 0{
                 self.uploadedImageFront.image = self.imageArray[0]
+                if self.imageArray.count > 0{
+                    self.uploadedImageBack.image = self.imageArray[1]
+                }
             }
         }else{
-            self.uploadImage3HeightConstraint.constant=60
-            self.uploadImage2HeightConstraint.constant=60
-            self.setLabelsForI20()
-            self.view.layoutIfNeeded()
-            if self.imageArray.count > 0{
-            self.uploadedImageFront.image = self.imageArray[0]
-            self.uploadedImageBack.image = self.imageArray[1]
-            self.uploadedImageExtra.image = self.imageArray[2]
+            if self.selectedOption==AppConstants.SelectIDTYPES.PASSPORT || self.selectedOption==AppConstants.SelectIDTYPES.F1VISA || self.selectedOption==AppConstants.SelectIDTYPES.USIDTYPE ||
+                self.selectedOption==AppConstants.SelectIDTYPES.ADDRESSPROOF || self.selectedOption==AppConstants.SelectIDTYPES.STATEID ||
+                self.selectedOption==AppConstants.SelectIDTYPES.DRIVERLICENSE ||
+                self.selectedOption==AppConstants.SelectIDTYPES.OTHER{
+                self.uploadImage3HeightConstraint.constant=0
+                self.uploadImage2HeightConstraint.constant=0
+                self.resetLabels()
+                self.view.layoutIfNeeded()
+                if self.imageArray.count > 0{
+                    self.uploadedImageFront.image = self.imageArray[0]
+                }
+            }else{
+                self.uploadImage3HeightConstraint.constant=60
+                self.uploadImage2HeightConstraint.constant=60
+                self.setLabelsForI20()
+                self.view.layoutIfNeeded()
+                if self.imageArray.count > 2{
+                self.uploadedImageFront.image = self.imageArray[0]
+                self.uploadedImageBack.image = self.imageArray[1]
+                self.uploadedImageExtra.image = self.imageArray[2]
+                }
             }
         }
     }
@@ -417,7 +447,7 @@ class ScanIDNewViewController: BaseViewController {
                     
                     if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
                         optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF || optionSelected == AppConstants.SelectIDTYPES.STATEID || optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE || optionSelected == AppConstants.SelectIDTYPES.OTHER{
-                        if self.imageArray.count < 1 {
+                        if self.imageArray.count < 1 || (optionSelected == AppConstants.SelectIDTYPES.STATEID && self.imageArray.count < 2) {
                             print("show error for passport")
                             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
                             return
@@ -430,6 +460,13 @@ class ScanIDNewViewController: BaseViewController {
                         }
                     }
                 }
+            }else{
+                if (self.imageArray.count < 2) {
+                    print("show error for passport")
+                    self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMPLETE_DOCUMENT_UPLOAD.rawValue)
+                    return
+                }
+
             }
         }
         self.saveImageInDB()
@@ -477,10 +514,18 @@ class ScanIDNewViewController: BaseViewController {
                         //print(fullBase64String)
                         var doc:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "OTHER")//scanIDModel.type.rawValue)
                         //check for ID Type and assign document type accordingly
-                        if scanIDModel.type == AppConstants.SelectIDTYPES.ADDRESSPROOF{
-                            doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "PROOF_OF_ADDRESS")
-                        }else if scanIDModel.type == AppConstants.SelectIDTYPES.PASSPORT{
-                            doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")
+                        if self.isSSNFlow{
+                            if m == 0{
+                                doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")
+                            }else{
+                                doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID_BACK")
+                            }
+                        }else{
+                            if scanIDModel.type == AppConstants.SelectIDTYPES.ADDRESSPROOF{
+                                doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "PROOF_OF_ADDRESS")
+                            }else if scanIDModel.type == AppConstants.SelectIDTYPES.PASSPORT{
+                                doc = SignupFlowAlDoc.init(documentValue: fullBase64String, documentType: "GOVT_ID")
+                            }
                         }
                         arrayOfScannedDocuments.append(doc)
                     })
@@ -552,7 +597,16 @@ class ScanIDNewViewController: BaseViewController {
     fileprivate func addSelectedImagesToModel() {
         if let optionSelected = self.selectedOption{
             
-            if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
+            if self.isSSNFlow && optionSelected == AppConstants.SelectIDTYPES.STATEID{
+                if self.imageArray.count == 2{
+                    //check whether model exist in array
+                    if let index = self.modelArray.index(where: { $0.type == optionSelected }){
+                        //yes it exist
+                        let selectedOptionData = self.modelArray[index]
+                        selectedOptionData.images = self.imageArray
+                    }
+                 }
+            }else if optionSelected == AppConstants.SelectIDTYPES.PASSPORT || optionSelected == AppConstants.SelectIDTYPES.F1VISA ||  optionSelected == AppConstants.SelectIDTYPES.USIDTYPE ||
                 optionSelected == AppConstants.SelectIDTYPES.ADDRESSPROOF ||
                 optionSelected ==  AppConstants.SelectIDTYPES.STATEID ||
                 optionSelected == AppConstants.SelectIDTYPES.DRIVERLICENSE ||
@@ -562,7 +616,7 @@ class ScanIDNewViewController: BaseViewController {
                     if let index = self.modelArray.index(where: { $0.type == optionSelected }){
                     //yes it exist
                     let selectedOptionData = self.modelArray[index]
-                    selectedOptionData.images = self.imageArray
+                        selectedOptionData.images = self.imageArray
                     }
                     if !self.isSSNFlow{
                         if selectedButtonTag != self.optionBtnsArray.count-1{
@@ -635,13 +689,13 @@ class ScanIDNewViewController: BaseViewController {
             if let _ = self.signupData{
                 if (self.signupData.documents.virtualDocs.count == 1){
                     // yes it is, then only one documnet upload is sufficient
-                    if self.modelArray[0].images.count > 0{
+                    if self.modelArray[0].images.count > 1{
                      //1 document has been uploaded
                         self.nextBtn.isEnabled=true
                     }
                 }else{
                     // Non SSN User
-                        self.nextBtn.isEnabled=true
+                    self.nextBtn.isEnabled=true
                 }
             }
         }

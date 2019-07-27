@@ -79,10 +79,25 @@ class VerifyAddressViewController: BaseViewController {
                 let jsonData = try jsonEncoder.encode(self.signupFlowData)
                 let jsonString = String(data: jsonData, encoding: .utf8)
                 //print(jsonString!)
-                let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+                var dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
                 self.setGifLoaderImage(withImageName: "createAcc.gif")
-
+                
+                for document in self.signupFlowData!.documents.virtualDocs{
+                    if document.documentType.lowercased() == "ssn"{
+                        dic["ssn"] = document.documentValue as AnyObject
+                        if dic.keys.contains("passport"){
+                            dic.removeValue(forKey: "passport")
+                        }
+                        if dic.keys.contains("arrival_date"){
+                            dic.removeValue(forKey: "arrival_date")
+                        }
+                        if dic.keys.contains("university"){
+                            dic.removeValue(forKey: "university")
+                        }
+                    }
+                }
+            
                 self.presenter.startSignUpSynapse(requestDic: dic)
             } catch {
                 //handle errors
@@ -326,7 +341,10 @@ extension VerifyAddressViewController:HomeDelegate{
         
     }
     func didFetchedError(error:ErrorModel){
-        
+        if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
+        }else{
+            self.moveToWaitList()
+        }
     }
     func didFetchedAccountInfo(data:Account){
         // check isVerified key and open screen accordingly

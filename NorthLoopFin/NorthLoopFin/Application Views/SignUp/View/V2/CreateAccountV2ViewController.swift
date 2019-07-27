@@ -295,6 +295,11 @@ class CreateAccountV2ViewController: BaseViewController {
                 documents.virtualDocs=[ssnData]
                 data.documents=documents
                 data.cipTag=3 // changed from 1->3 as per client requirement
+            }else{
+                let documents:SignupFlowDocument=self.signupFlowData.documents
+                documents.virtualDocs=[]
+                data.documents=documents
+                data.cipTag=2 // changed from 1->3 as per client requirement
             }
             self.moveToSignupStepThree(withData: self.signupFlowData)
         }

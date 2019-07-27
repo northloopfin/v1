@@ -86,7 +86,9 @@ class MyCardViewController: BaseViewController {
     }
 
     func getCardAuth(){
-        self.authPresenter.getCardAuth()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.authPresenter.getCardAuth()
+        }
     }
     
     @IBAction func closeClicked(_ sender: Any) {
@@ -188,7 +190,9 @@ extension MyCardViewController:CardDelegates{
 
 extension MyCardViewController:CardAuthDelegates{
     func didFetchCardAuth(data: CardAuthData) {
-        self.infoPresenter.getCardInfo(cardAuthData: data)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.infoPresenter.getCardInfo(cardAuthData: data)
+        }
     }
 }
 
