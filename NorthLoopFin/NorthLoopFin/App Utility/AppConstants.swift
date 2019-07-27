@@ -123,6 +123,7 @@ struct AppConstants{
         case HELP = "Help"
         case FEEDBACK = "Feedback"
         case SETTINGS = "Settings"
+        case PREMIUM = "Premium"
     }
     
     enum HelpOptions:String{
@@ -245,6 +246,77 @@ struct AppConstants{
         case VirginIslands = "VI"
     }
     
+    enum CarouselItem: Int,CaseIterable {
+        case First, Second, Third, Foruth
+        
+        init?(id: Int) {
+            switch id {
+            case 1:
+                self = .First
+            case 2:
+                self = .Second
+            case 3:
+                self = .Third
+            case 4:
+                self = .Foruth
+            default:
+                return nil
+            }
+        }
+        
+        func id() -> Int {
+            switch self {
+            case .First:
+                return 1
+            case .Second:
+                return 2
+            case .Third:
+                return 3
+            case .Foruth:
+                return 4
+            }
+        }
+        
+        func title() -> String? {
+            switch self {
+            case .First:
+                return "Unlimited Currency Protect"
+            case .Second:
+                return nil
+            case .Third:
+                return nil
+            case .Foruth:
+                return nil
+            }
+        }
+        
+        func description() -> String {
+            switch self {
+            case .First:
+                return "FX Insurance. Get up to $500 refunded\nwith every wire transfer. Never worry\nabout FX volatility again."
+            case .Second:
+                return "Even more cashback.\nEarn up to 5% back with North Loop Premium.\nGet one year of Amazon Prime\nStudent ($78) free."
+            case .Third:
+                return "Need a co-signer for your lease?\nWe got your back. Instant Wire Transfers?\nThey're free."
+            case .Foruth:
+                return "Upgrade Now\nMonthly: $9.99\nAnnual: $99.99"
+            }
+        }
+        
+        func image() -> UIImage? {
+            switch self {
+            case .First:
+                return UIImage (named: "carousel1")
+            case .Second:
+                return UIImage (named: "carousel2")
+            case .Third:
+                return UIImage (named: "carousel3")
+            case .Foruth:
+                return UIImage (named: "carousel4")
+            }
+        }
+    }
+
 }
 
 
