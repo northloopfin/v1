@@ -153,6 +153,8 @@ extension SettingsViewController:SettingsDelegates{
             if let appversion = AppConstants.appVersion, data.appVersion > appversion{
                 // Update is available
                 self.showAlert()
+            }else{
+                self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.APP_IS_UPTO_DATE.rawValue)
             }
         }else{
             //app is upto date
