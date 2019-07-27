@@ -269,3 +269,62 @@ extension AppDelegate:MessagingDelegate{
     }
 }
 
+extension AppDelegate {
+//    func application(_ app: UIApplication, open url: URL, options:
+//        [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if let isDynamicLink = DynamicLinks.dynamicLinks()?.shouldHandleDynamicLink(fromCustomSchemeURL: url),
+//            isDynamicLink {
+//            let dynamicLink = DynamicLinks.dynamicLinks()?.dynamicLink(fromCustomSchemeURL: url)
+//            return handleDynamicLink(dynamicLink)
+//        }
+//        // Handle incoming URL with other methods as necessary
+//        // ...
+//        return false
+//    }
+//    
+//    @available(iOS 8.0, *)
+//    func application(_ application: UIApplication,
+//                     continue userActivity: NSUserActivity,
+//                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+//        guard let dynamicLinks = DynamicLinks.dynamicLinks() else { return false }
+//        let handled = dynamicLinks.handleUniversalLink(userActivity.webpageURL!) { (dynamicLink, error) in
+//            if (dynamicLink != nil) && !(error != nil) {
+//                self.handleDynamicLink(dynamicLink)
+//            }
+//        }
+//        if !handled {
+//            // Handle incoming URL with other methods as necessary
+//            // ...
+//        }
+//        return handled
+//    }
+//    
+//    func handleDynamicLink(_ dynamicLink: DynamicLink?) -> Bool {
+//        guard let dynamicLink = dynamicLink else { return false }
+//        guard let deepLink = dynamicLink.url else { return false }
+//        let queryItems = URLComponents(url: deepLink, resolvingAgainstBaseURL: true)?.queryItems
+//        let invitedBy = queryItems?.filter({(item) in item.name == "invitedby"}).first?.value
+//        let user = Auth.auth().currentUser
+//        // If the user isn't signed in and the app was opened via an invitation
+//        // link, sign in the user anonymously and record the referrer UID in the
+//        // user's RTDB record.
+//        if user == nil && invitedBy != nil {
+//            Auth.auth().signInAnonymously() { (user, error) in
+//                if let user = user {
+//                    let userRecord = Database.database().reference().child("users").child(user.uid)
+//                    userRecord.child("referred_by").setValue(invitedBy)
+//                    if dynamicLink.matchConfidence == .weak {
+//                        // If the Dynamic Link has a weak match confidence, it is possible
+//                        // that the current device isn't the same device on which the invitation
+//                        // link was originally opened. The way you handle this situation
+//                        // depends on your app, but in general, you should avoid exposing
+//                        // personal information, such as the referrer's email address, to
+//                        // the user.
+//                    }
+//                }
+//            }
+//        }
+//        return true
+//    }
+}
+

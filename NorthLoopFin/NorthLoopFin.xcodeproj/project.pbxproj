@@ -399,6 +399,8 @@
 		58F1D3FCC96AD87BDD2B868D /* Pods_NorthLoopFinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4021D2432D9F2A0D81869A /* Pods_NorthLoopFinTests.framework */; };
 		660922F749783C02B9FD9F16 /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BC0534E632D82E88DE5CC8 /* Pods_NorthLoopFinUITests.framework */; };
 		7EE57035C2ED204599C793E1 /* Pods_NorthLoopFin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0008912489D8682AE28693C6 /* Pods_NorthLoopFin.framework */; };
+		8448754B22ECFDFF003B703B /* ReferAndEarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448754922ECFDFF003B703B /* ReferAndEarnViewController.swift */; };
+		8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448754D22ED116A003B703B /* ReferAndEarnViewController.xib */; };
 		EA04726122E070F800D5B834 /* ViewAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */; };
 		EA04726422E0725E00D5B834 /* ACHAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726222E0725E00D5B834 /* ACHAccountCell.swift */; };
 		EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA04726322E0725E00D5B834 /* ACHAccountCell.xib */; };
@@ -745,7 +747,6 @@
 		1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewComtroller.swift; sourceTree = "<group>"; };
 		1FFAE5AE22EB154F0007296A /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		1FFAE5AF22EB154F0007296A /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
-		235F5AAA9380A8FB754C58D2 /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		297FB9A221B51A32008D60CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -849,6 +850,8 @@
 		5F264876BE438BDC8A47A399 /* Pods-NorthLoopFin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.debug.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.debug.xcconfig"; sourceTree = "<group>"; };
 		66901523FC10998A4137118A /* Pods-NorthLoopFinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinTests.debug.xcconfig"; path = "Target Support Files/Pods-NorthLoopFinTests/Pods-NorthLoopFinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4021D2432D9F2A0D81869A /* Pods_NorthLoopFinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8448754922ECFDFF003B703B /* ReferAndEarnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferAndEarnViewController.swift; sourceTree = "<group>"; };
+		8448754D22ED116A003B703B /* ReferAndEarnViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReferAndEarnViewController.xib; sourceTree = "<group>"; };
 		A8C08644BA6092ED9A247345 /* Pods-NorthLoopFin.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.staging.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.staging.xcconfig"; sourceTree = "<group>"; };
 		AC5F6CC24FDA2DE554408891 /* Pods-NorthLoopFinUITests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFinUITests.production.xcconfig"; path = "Target Support Files/Pods-NorthLoopFinUITests/Pods-NorthLoopFinUITests.production.xcconfig"; sourceTree = "<group>"; };
 		EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAccountsViewController.swift; sourceTree = "<group>"; };
@@ -1610,6 +1613,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				8448754722ECFDBC003B703B /* ReferAndEarn */,
 				1FFAE5AB22EB11F90007296A /* Carousel */,
 				4B9CA55D22CF3FC5003655DC /* Chat */,
 				4BFDF87D22B8BBD10066860D /* Upgrade Premium */,
@@ -2381,6 +2385,23 @@
 			name = LocalHtml;
 			sourceTree = "<group>";
 		};
+		8448754722ECFDBC003B703B /* ReferAndEarn */ = {
+			isa = PBXGroup;
+			children = (
+				8448754822ECFDC8003B703B /* View */,
+			);
+			path = ReferAndEarn;
+			sourceTree = "<group>";
+		};
+		8448754822ECFDC8003B703B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8448754D22ED116A003B703B /* ReferAndEarnViewController.xib */,
+				8448754922ECFDFF003B703B /* ReferAndEarnViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8484442822EBC96400AA82C1 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
@@ -2598,6 +2619,7 @@
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
+				8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */,
 				1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
@@ -2800,6 +2822,7 @@
 				1D055D46229C02DE0078CD33 /* FetchACH.swift in Sources */,
 				1D180DAE229FC44800FC3390 /* AccountAPIRequest.swift in Sources */,
 				1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */,
+				8448754B22ECFDFF003B703B /* ReferAndEarnViewController.swift in Sources */,
 				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				1D84407F2289545A00A77BBF /* TransactionListRequestModel.swift in Sources */,
