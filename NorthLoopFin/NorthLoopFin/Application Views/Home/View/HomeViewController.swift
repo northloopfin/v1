@@ -314,7 +314,8 @@ extension HomeViewController:SideMenuDelegate{
             self.navigateToFeedback()
         case .PREMIUM:
             self.navigateCarousel()
-
+        case .REFER:
+            self.navigateReferAndEarn()
         default:
             break
         }
@@ -387,6 +388,11 @@ extension HomeViewController:SideMenuDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let carouselViewComtroller = storyBoard.instantiateViewController(withIdentifier: "CarouselViewComtroller") as! CarouselViewComtroller
         self.navigationController?.pushViewController(carouselViewComtroller, animated: false)
+    }
+    func navigateReferAndEarn(){
+        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+        let referAndEarnViewController = ReferAndEarnViewController.init(nibName: "ReferAndEarnViewController", bundle: nil)
+        self.navigationController?.present(referAndEarnViewController, animated: true, completion: nil)
     }
 }
 extension HomeViewController:HomeTableCellDelegate{

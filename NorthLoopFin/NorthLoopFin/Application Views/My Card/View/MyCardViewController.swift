@@ -51,7 +51,6 @@ class MyCardViewController: BaseViewController {
         let option1 = MyCardOtionsModel.init("Lock Your Card", isSwitch: true,isSelected: false)
         let option2 = MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false, isSelected: false)
         let option3 = MyCardOtionsModel.init("Set a New PIN", isSwitch: false, isSelected: false)
-       // let option4 = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: :false)
         let option4 = MyCardOtionsModel.init("Spend Abroad", isSwitch: true, isSelected: false)
         data.append(option1)
         data.append(option2)
@@ -170,19 +169,22 @@ extension MyCardViewController:CardDelegates{
         self.dailyATMWithdrawalLimit = data.data.preferences.dailyATMWithdrawalLimit
         self.isSpendAbroad = data.data.preferences.allowForeignTransactions
         
-        if (data.data.status == "ACTIVE"){
+        if (data.data.status == "ACTIVE") {
             self.isLockCard = false
             self.data = []
         self.data.append(MyCardOtionsModel.init("Lock Your Card", isSwitch: true,isSelected: self.isLockCard))
         self.data.append(MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false,isSelected: false))
         self.data.append(MyCardOtionsModel.init("Set a New PIN", isSwitch: false,isSelected: false))
         self.data.append(MyCardOtionsModel.init("Spend Abroad", isSwitch: true,isSelected: self.isSpendAbroad))
-
-                self.optionsTableView.reloadData()
-            
-        }else if data.data.status == "PENDING"{
+        self.optionsTableView.reloadData()
+        } else if data.data.status == "PENDING" {
             self.isLockCard = true
-            
+        } else if data.data.status == "INACTIVE" {
+            self.isLockCard = true
+            self.data = []
+            self.data.append(MyCardOtionsModel.init("Lock Your Card", isSwitch: true,isSelected: self.isLockCard))
+            self.data.append(MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false,isSelected: false))
+            self.optionsTableView.reloadData()
         }
         self.getCardAuth()
     }

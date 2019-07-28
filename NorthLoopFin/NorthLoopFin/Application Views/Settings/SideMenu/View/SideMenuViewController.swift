@@ -36,7 +36,8 @@ class SideMenuViewController: UIViewController {
         //self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
         self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
     }
 }
 
@@ -91,11 +92,11 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
             case 5:
-                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.PREMIUM)
+                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
                 //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
                 break
             case 6:
-                //self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
+//                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
                 break
             default:
                 break

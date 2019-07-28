@@ -124,6 +124,7 @@ struct AppConstants{
         case FEEDBACK = "Feedback"
         case SETTINGS = "Settings"
         case PREMIUM = "Premium"
+        case REFER = "Refer & Earn"
     }
     
     enum HelpOptions:String{
