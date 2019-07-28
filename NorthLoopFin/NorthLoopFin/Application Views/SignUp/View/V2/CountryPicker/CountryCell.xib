@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="KGk-i7-Jjw" customClass="CountryCell" customModule="NorthLoopFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="India(IN)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-BZ-LRw">
+                        <rect key="frame" x="65" y="0.0" width="204" height="43.5"/>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvN-XG-Gz6">
+                        <rect key="frame" x="279" y="0.0" width="26" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="NLY-Tb-gyK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ty2-tu-OVi">
+                        <rect key="frame" x="15" y="9.5" width="40" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="OPt-ev-icg"/>
+                            <constraint firstAttribute="width" constant="40" id="i5G-mc-SVZ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6FO-BZ-LRw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0Yl-HC-shp"/>
+                    <constraint firstItem="ty2-tu-OVi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="31Z-C1-XXy"/>
+                    <constraint firstAttribute="trailing" secondItem="nvN-XG-Gz6" secondAttribute="trailing" constant="15" id="BWl-vZ-Ggl"/>
+                    <constraint firstAttribute="bottom" secondItem="6FO-BZ-LRw" secondAttribute="bottom" id="Oy2-FL-WOB"/>
+                    <constraint firstItem="nvN-XG-Gz6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cOJ-Rn-nA4"/>
+                    <constraint firstAttribute="bottom" secondItem="nvN-XG-Gz6" secondAttribute="bottom" id="f0N-zh-KBs"/>
+                    <constraint firstItem="ty2-tu-OVi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h9A-Lj-3Kw"/>
+                    <constraint firstItem="6FO-BZ-LRw" firstAttribute="leading" secondItem="ty2-tu-OVi" secondAttribute="trailing" constant="10" id="kPH-e8-tft"/>
+                    <constraint firstItem="nvN-XG-Gz6" firstAttribute="leading" secondItem="6FO-BZ-LRw" secondAttribute="trailing" constant="10" id="vJB-Tl-pm1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgFlag" destination="ty2-tu-OVi" id="7Tu-iI-V12"/>
+                <outlet property="lblName" destination="6FO-BZ-LRw" id="Efp-xG-Zlo"/>
+                <outlet property="lblcountryCode" destination="nvN-XG-Gz6" id="aF9-fk-1b1"/>
+            </connections>
+            <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
+        </tableViewCell>
+    </objects>
+</document>

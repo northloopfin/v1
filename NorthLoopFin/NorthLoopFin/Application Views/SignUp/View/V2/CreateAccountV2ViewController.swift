@@ -24,12 +24,12 @@ class CreateAccountV2ViewController: BaseViewController {
     @IBOutlet weak var nextBtn: CommonButton!
     @IBOutlet weak var ssnInfoBtn: UIButton!
     
+    let countryPicker = CountryPickerView.instanceFromNib()
     lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
     //@IBOutlet weak var loginLbl: UIButtonWithSpacing!
     //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     
     let citizenShipDropDown = DropDown()
-    let countryCodeDropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
     var selectedCountry:Country!
     
@@ -136,6 +136,7 @@ class CreateAccountV2ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.countryPicker.delegate = self
         self.presenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.nextBtn.isEnabled=false
         updateTextFieldUI()
@@ -175,14 +176,14 @@ class CreateAccountV2ViewController: BaseViewController {
         self.countryCodeTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         self.countryCodeTextField.setRightIcon(UIImage.init(named: "chevron")!)
         //Drop Down for Country Code
-        self.countryCodeDropDown.anchorView = self.countryCodeTextField
-        self.countryCodeDropDown.dataSource = AppUtility.getCountryInitialOnly()
-        self.countryCodeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self.countryCodeTextField.text=AppUtility.getCountryOfInitial(initial: item)
-            self.countryCodeDropDown.hide()
-            self.checkForMandatoryFields()
-        }
+//        self.countryCodeDropDown.anchorView = self.countryCodeTextField
+//        self.countryCodeDropDown.dataSource = AppUtility.getCountryInitialOnly()
+//        self.countryCodeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+//            print("Selected item: \(item) at index: \(index)")
+//            self.countryCodeTextField.text=AppUtility.getCountryOfInitial(initial: item)
+//            self.countryCodeDropDown.hide()
+//            self.checkForMandatoryFields()
+//        }
         //Drop Down for citizenship
         citizenShipDropDown.anchorView = self.CitizenShipTextField
         citizenShipDropDown.dataSource = AppUtility.getCountriesOnly()
@@ -218,7 +219,7 @@ class CreateAccountV2ViewController: BaseViewController {
         //self.alreadyHaveaccountLbl.font = AppFonts.calibri15
        // self.loginLbl.titleLabel!.font = AppFonts.calibriBold15
     }
-    
+
     func updateTextFieldUI(){
         
         self.firstNameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
@@ -328,7 +329,8 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
             self.citizenShipDropDown.show()
             return false
         }else if textField == self.countryCodeTextField{
-            self.countryCodeDropDown.show()
+            //self.countryCodeDropDown.show()
+            self.countryPicker.show()
             return false
         }
         else
@@ -347,4 +349,12 @@ extension CreateAccountV2ViewController:PhoneVerificationDelegate{
     }
 }
 
-
+extension CreateAccountV2ViewController:CountryPickerViewDelegate {
+    func countryPickerView(picker: CountryPickerView, didSelectCountry country: Country) {
+        self.countryCodeTextField.text = country.dialCode
+    }
+    
+    func countryPickerViewDidDismiss(picker: CountryPickerView) {
+        
+    }
+}

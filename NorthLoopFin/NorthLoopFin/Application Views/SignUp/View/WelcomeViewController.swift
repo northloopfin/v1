@@ -12,13 +12,13 @@ import AlertHelperKit
 
 class WelcomeViewController: BaseViewController {
 
-    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var loginBtn: RippleButton!
     @IBOutlet weak var createAccountBtn: UIButton!
     var checkUpdatePresenter: CheckUpdatePresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginBtn.showsTouchWhenHighlighted=true
+        //loginBtn.showsTouchWhenHighlighted=true
         createAccountBtn.showsTouchWhenHighlighted=true
         self.checkUpdatePresenter = CheckUpdatePresenter.init(delegate: self)
         self.checkUpdatePresenter.sendCheckUpdateCall()
@@ -38,9 +38,11 @@ class WelcomeViewController: BaseViewController {
     
     
     func moveToLogin(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        }
     }
     
     func moveToNextScreen(){
