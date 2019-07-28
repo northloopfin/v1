@@ -133,27 +133,6 @@ open class RippleButton: UIButton {
                     self.rippleBackgroundView.alpha = 0
                     }, completion: nil)
         })
-        
-        
-//        UIView.animate(withDuration: 0.7, delay: 0,
-//            options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction],
-//            animations: {
-//                self.rippleView.transform = CGAffineTransform.identity
-//
-//                let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
-//                shadowAnim.toValue = self.tempShadowRadius
-//
-//                let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
-//                opacityAnim.toValue = self.tempShadowOpacity
-//
-//                let groupAnim = CAAnimationGroup()
-//                groupAnim.duration = 0.7
-//                groupAnim.fillMode = CAMediaTimingFillMode.forwards
-//                groupAnim.isRemovedOnCompletion = false
-//                groupAnim.animations = [shadowAnim]
-//
-//                self.layer.add(groupAnim, forKey:"shadowBack")
-//            }, completion: nil)
     }
     
     override open func layoutSubviews() {
