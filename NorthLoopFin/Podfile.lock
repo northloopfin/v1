@@ -20,11 +20,17 @@ PODS:
     - Fabric (~> 1.10.1)
   - DropDown (2.3.2)
   - Fabric (1.10.1)
+  - Firebase/Auth (6.2.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 6.1.1)
   - Firebase/Core (6.2.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.0.1)
   - Firebase/CoreOnly (6.2.0):
     - FirebaseCore (= 6.0.2)
+  - Firebase/DynamicLinks (6.2.0):
+    - Firebase/CoreOnly
+    - FirebaseDynamicLinks (~> 4.0.0)
   - Firebase/Messaging (6.2.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 4.0.2)
@@ -38,9 +44,19 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
   - FirebaseAnalyticsInterop (1.2.0)
+  - FirebaseAuth (6.1.2):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseAuthInterop (1.0.0)
   - FirebaseCore (6.0.2):
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/Logger (~> 6.0)
+  - FirebaseDynamicLinks (4.0.0):
+    - FirebaseAnalyticsInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
   - FirebaseInstanceID (4.1.1):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
@@ -86,6 +102,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.2)
   - Haptica (3.0.0)
   - HockeySDK (5.1.4):
     - HockeySDK/DefaultLib (= 5.1.4)
@@ -138,7 +155,9 @@ DEPENDENCIES:
   - Crashlytics
   - DropDown (= 2.3.2)
   - Fabric
+  - Firebase/Auth
   - Firebase/Core
+  - Firebase/DynamicLinks
   - Firebase/Messaging
   - GiFHUD-Swift
   - GoogleMaps
@@ -169,7 +188,10 @@ SPEC REPOS:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
+    - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseDynamicLinks
     - FirebaseInstanceID
     - FirebaseMessaging
     - GiFHUD-Swift
@@ -177,6 +199,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - GTMSessionFetcher
     - Haptica
     - HockeySDK
     - IQKeyboardManagerSwift
@@ -215,7 +238,10 @@ SPEC CHECKSUMS:
   Firebase: 5965bac23e7fcb5fa6d926ed429c9ecef8a2014e
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
   FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
+  FirebaseAuth: 7fa2cc010b93770831a4e7a60651b52c3b8d111a
+  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: b0f0262acebfa540e5f97b3832dbb13186980822
+  FirebaseDynamicLinks: 25fc45fdf2557ee2ee630999c301245d8911792e
   FirebaseInstanceID: cdb3827746d53ece7ae87a5c51c25c3055443366
   FirebaseMessaging: 20b6626c41be7840aed7a3dd9a14003efae3d588
   GiFHUD-Swift: 73cc759c387f1ae3d8c7f19f268639dc9720d111
@@ -223,6 +249,7 @@ SPEC CHECKSUMS:
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   Haptica: ee4abaf262f456fe3854b493f506debe421ddf2c
   HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
@@ -242,6 +269,6 @@ SPEC CHECKSUMS:
   ZDCChat: 1def9764647bb81cf71aebd9df38aa4024c52d12
   ZendeskSDK: 445b63024dc3e0021d18bf86a32eb1d3e9404d66
 
-PODFILE CHECKSUM: fdde42cc1066b6e8f0bad413c8e181dc912f9ead
+PODFILE CHECKSUM: fa148b5b1b0bc13c4441959ebccaafc10dd056d0
 
 COCOAPODS: 1.7.4

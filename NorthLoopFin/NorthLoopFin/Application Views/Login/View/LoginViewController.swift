@@ -68,7 +68,9 @@ class LoginViewController: BaseViewController {
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)
             }
         }
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
         self.checkForStoredLoginCredentials()
+        }
     }
     func prepareView(){
         self.rememberMeCheckBox.style = .circle
