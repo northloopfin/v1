@@ -24,7 +24,7 @@ class CardInfoPresenter: ResponseCallback {
             .addRequestHeader(key: "X-SP-USER"
                 , value: cardAuthData.data.oAuth_key+"|e83cf6ddcf778e37bfe3d48fc78a6502062fc")
             .addRequestHeader(key: Endpoints.APIRequestHeaders.CONTENT_TYPE.rawValue, value: Endpoints.APIRequestHeaders.APPLICATION_JSON.rawValue)
-            .addRequestHeader(key: "X-SP-USER-IP", value: UIDevice.current.ipAddress())
+            .addRequestHeader(key: "X-SP-USER-IP", value: cardAuthData.data.formatted_ip)
             .addRequestHeader(key: "full_dehydrate", value: "yes")
             .build()
         requestModel.apiUrl = requestModel.getEndPoint() + "/users/" + cardAuthData.data.user_id + "/nodes/" + cardAuthData.data.node_id + "/subnets/" + cardAuthData.data.subnet_id + "?full_dehydrate=yes"
