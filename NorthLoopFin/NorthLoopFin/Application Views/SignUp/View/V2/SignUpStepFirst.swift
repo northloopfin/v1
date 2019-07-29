@@ -66,6 +66,7 @@ class SignUpStepFirst: BaseViewController {
         self.updateTextFieldUI()
         self.presenter = SignupAuthPresenter.init(delegate:self)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }

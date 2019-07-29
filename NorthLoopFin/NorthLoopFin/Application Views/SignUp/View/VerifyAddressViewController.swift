@@ -81,7 +81,7 @@ class VerifyAddressViewController: BaseViewController {
                 //print(jsonString!)
                 var dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
                 //all fine with jsonData here
-                self.setGifLoaderImage(withImageName: "createAcc.gif")
+//                self.setGifLoaderImage(withImageName: "createAcc.gif")
                 
                 for document in self.signupFlowData!.documents.virtualDocs{
                     if document.documentType.lowercased() == "ssn"{

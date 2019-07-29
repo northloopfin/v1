@@ -29,7 +29,7 @@ class CreateAccountV2ViewController: BaseViewController {
     //@IBOutlet weak var loginLbl: UIButtonWithSpacing!
     //@IBOutlet weak var alreadyHaveaccountLbl: LabelWithLetterSpace!
     
-    let citizenShipDropDown = DropDown()
+//    let citizenShipDropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
     var selectedCountry:Country!
     
@@ -185,16 +185,16 @@ class CreateAccountV2ViewController: BaseViewController {
 //            self.checkForMandatoryFields()
 //        }
         //Drop Down for citizenship
-        citizenShipDropDown.anchorView = self.CitizenShipTextField
-        citizenShipDropDown.dataSource = AppUtility.getCountriesOnly()
-        citizenShipDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self.CitizenShipTextField.text=item
-            self.selectedCountry = self.countryWithCode[index]
-            self.citizenShipDropDown.hide()
-            self.checkForMandatoryFields()
-
-        }
+//        citizenShipDropDown.anchorView = self.CitizenShipTextField
+//        citizenShipDropDown.dataSource = AppUtility.getCountriesOnly()
+//        citizenShipDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+//            print("Selected item: \(item) at index: \(index)")
+//            self.CitizenShipTextField.text=item
+//            self.selectedCountry = self.countryWithCode[index]
+//            self.citizenShipDropDown.hide()
+//            self.checkForMandatoryFields()
+//
+//        }
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.firstNameTextField.textColor = Colors.DustyGray155155155
@@ -325,11 +325,13 @@ extension CreateAccountV2ViewController:UITextFieldDelegate{
         if textField == self.CitizenShipTextField
         {
             //IQKeyboardManager.shared.resignFirstResponder()
-            
-            self.citizenShipDropDown.show()
+            self.countryPicker.tag = 1
+            self.countryPicker.show()
+//            self.citizenShipDropDown.show()
             return false
         }else if textField == self.countryCodeTextField{
             //self.countryCodeDropDown.show()
+            self.countryPicker.tag = 0
             self.countryPicker.show()
             return false
         }
@@ -351,7 +353,13 @@ extension CreateAccountV2ViewController:PhoneVerificationDelegate{
 
 extension CreateAccountV2ViewController:CountryPickerViewDelegate {
     func countryPickerView(picker: CountryPickerView, didSelectCountry country: Country) {
-        self.countryCodeTextField.text = country.dialCode
+        if self.countryPicker.tag == 0{
+            self.countryCodeTextField.text = country.dialCode
+        }else{
+            self.CitizenShipTextField.text = country.name
+            self.selectedCountry = country
+            self.checkForMandatoryFields()
+        }
     }
     
     func countryPickerViewDidDismiss(picker: CountryPickerView) {

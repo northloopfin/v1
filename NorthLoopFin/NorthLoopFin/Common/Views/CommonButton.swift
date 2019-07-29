@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommonButton: UIButton {
+open class CommonButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,7 +16,7 @@ class CommonButton: UIButton {
     }
      var isBtnSelected:Bool = false
     
-    override var isEnabled:Bool {
+    override open var isEnabled:Bool {
         didSet {
             if isEnabled{
                 self.backgroundColor = Colors.PurpleColor17673149
@@ -35,7 +35,7 @@ class CommonButton: UIButton {
         //self.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)
         self.showsTouchWhenHighlighted=true
     }
-    override func setTitle(_ title: String?, for state: UIControl.State)
+    override open func setTitle(_ title: String?, for state: UIControl.State)
     {
         if let title = title, spacing != 0
         {
