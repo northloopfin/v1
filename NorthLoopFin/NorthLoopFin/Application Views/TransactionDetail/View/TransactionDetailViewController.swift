@@ -191,6 +191,10 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
         }
         
+        if let _  = data.data.to.meta, data.data.to.meta?.merchantCategory == "withdrawal" {
+            self.beneficiaryNameLbl.text = "Withdrawal"
+        }
+        
         self.timestampLbl.text = fullStringFromDate(seconds: data.data.extra.processOn)
         //13:09 Sunday , 20 Feb , 2018
         self.addressLbl.text = data.data.to.meta?.address

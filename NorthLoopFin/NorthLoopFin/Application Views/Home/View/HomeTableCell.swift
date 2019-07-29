@@ -56,7 +56,6 @@ class HomeTableCell: UITableViewCell {
         let shadowColor = Colors.Taupe776857
 //        self.beneficiaryImg.layer.addShadowAndRoundedCorners(roundedCorner: 15, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
 
-        
         if data.to.type == "EXTERNAL-US"{
             if let _  = data.to.meta{
                 self.beneficiaryName.text = data.to.meta?.merchantName
@@ -79,6 +78,9 @@ class HomeTableCell: UITableViewCell {
                     self.beneficiaryImg.kf.setImage(with: url)
                 }
             }
+        }
+        if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
+            self.beneficiaryName.text = "Withdrawal"
         }
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
         
