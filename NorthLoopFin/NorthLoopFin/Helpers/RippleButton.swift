@@ -9,7 +9,7 @@ import UIKit
 import QuartzCore
 
 @IBDesignable
-open class RippleButton: UIButton {
+open class RippleButton: CommonButton {
     
     @IBInspectable open var ripplePercent: Float = 0.8 {
         didSet {
@@ -17,13 +17,13 @@ open class RippleButton: UIButton {
         }
     }
     
-    @IBInspectable open var rippleColor: UIColor = UIColor(white: 0.9, alpha: 1) {
+    @IBInspectable open var rippleColor: UIColor = UIColor(red: 121, green: 47, blue: 102){  //UIColor(white: 0.9, alpha: 1) {
         didSet {
             rippleView.backgroundColor = rippleColor
         }
     }
     
-    @IBInspectable open var rippleBackgroundColor: UIColor = UIColor(white: 0.95, alpha: 1) {
+    @IBInspectable open var rippleBackgroundColor: UIColor =  UIColor.clear{ //UIColor(white: 0.95, alpha: 1) {
         didSet {
             rippleBackgroundView.backgroundColor = rippleBackgroundColor
         }

@@ -50,7 +50,6 @@ class TransactionDetailViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         
-        self.loadGoogleMap(lat: -33.86, long: 151.20)
         
     }
     //Create gradient for navigation bar
@@ -103,12 +102,11 @@ class TransactionDetailViewController: BaseViewController {
     }
     
     func loadGoogleMap(lat:Double,long:Double){
-        
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 2.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.mapView = mapView
     }
-    
+
     func getTransactionDetail(){
         presenter.sendTransactionDetailRequest(transactionId:self.detailModel?.id ?? "")
     }
@@ -195,7 +193,9 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         //13:09 Sunday , 20 Feb , 2018
         self.addressLbl.text = data.data.to.meta?.address
         self.amtLbl.text = "$" + String(format: "%.2f",data.data.amount.amount)
-        self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
+        if data.data.extra.location.lat != 0 {
+            self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
+        }
         self.successLbl.text = self.detailModel.recentStatus.status + " "
         //self.transactionPurposeLbl.text =
         //let url = URL(string: data.data.to.meta.merchantLogo)
