@@ -18,6 +18,8 @@ class HomeViewController: BaseViewController {
     var transactionListPresenter: TransactionListPresenter!
     var accountInfoPresenter : AccountInfoPresenter!
     var shareAccountDetailsPresenter : ShareAccountDetailsPresenter!
+    var cardAuthPresenter: CardAuthPresenter!
+    var cardAuthData:CardAuthData?
 
     @IBOutlet weak var vwEmpty: UIView!
     @IBOutlet weak var contentView: GradientView!
@@ -47,6 +49,7 @@ class HomeViewController: BaseViewController {
         transactionListPresenter = TransactionListPresenter.init(delegate: self)
         accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
         shareAccountDetailsPresenter = ShareAccountDetailsPresenter.init(delegate: self)
+        cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         self.getAccountInfo()
     }
     
@@ -147,6 +150,11 @@ class HomeViewController: BaseViewController {
     /// This Methode will get account info that will show current account balance
     func getAccountInfo(){
         accountInfoPresenter.getAccountInfo()
+    }
+    
+    //Getting card info for faster loading
+    func getCardInfo(){
+        cardAuthPresenter.getCardAuth()
     }
     
     //Move to detail screen
@@ -256,6 +264,7 @@ extension HomeViewController:HomeDelegate{
         self.ledgersTableView.isHidden = !self.vwEmpty.isHidden
         self.ledgersTableView.reloadData()
         self.checkForFirstTimeLandOnHome()
+        self.getCardInfo()
     }
     func didFetchedError(error:ErrorModel){
         if error.getErrorMessage().contains("phone") {
@@ -339,8 +348,11 @@ extension HomeViewController:SideMenuDelegate{
     func navigateToMyCard(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyCardViewController") as! MyCardViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let cardViewController = storyBoard.instantiateViewController(withIdentifier: "MyCardViewController") as! MyCardViewController
+        if self.cardAuthData != nil {
+            cardViewController.cardAuthData = self.cardAuthData
+        }
+        self.navigationController?.pushViewController(cardViewController, animated: false)
     }
     func navigateToSettings(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
@@ -405,4 +417,10 @@ extension HomeViewController:ShareAccountDetailDelegates{
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.ACCOUNT_DETAIL_SAHRED_SUCCESSFULLY.rawValue)
     }
     
+}
+
+extension HomeViewController:CardAuthDelegates{
+    func didFetchCardAuth(data: CardAuthData) {
+        self.cardAuthData = data
+    }
 }

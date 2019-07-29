@@ -30,6 +30,7 @@ class MyCardViewController: BaseViewController {
     var isSpendAbroad:Bool = false
     var dailyATMWithdrawalLimit:Int = 0
     var dailyTransactionLimit:Int = 0
+    var cardAuthData: CardAuthData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class MyCardViewController: BaseViewController {
         self.infoPresenter = CardInfoPresenter.init(delegate: self)
         self.authPresenter = CardAuthPresenter.init(delegate: self)
         self.getCardStatus()
+        self.vwVirtualCard.isHidden = false
     }
     
     
@@ -83,7 +85,7 @@ class MyCardViewController: BaseViewController {
     func getCardStatus(){
         self.presenter.getCardStatus()
     }
-
+    
     func getCardAuth(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.authPresenter.getCardAuth()
@@ -186,7 +188,13 @@ extension MyCardViewController:CardDelegates{
             self.data.append(MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false,isSelected: false))
             self.optionsTableView.reloadData()
         }
-        self.getCardAuth()
+        if self.cardAuthData == nil {
+            self.getCardAuth()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.infoPresenter.getCardInfo(cardAuthData: self.cardAuthData!)
+            }
+        }
     }
 }
 
@@ -201,7 +209,6 @@ extension MyCardViewController:CardAuthDelegates{
 extension MyCardViewController:CardInfoDelegates{
     func didFetchCardInfo(data: CardInfo) {
         print(data)
-        self.vwVirtualCard.isHidden = false
         self.nameOnCard.text = data.nickname
         self.cvv.text = data.cvc
         self.validThrough.text = data.exp
