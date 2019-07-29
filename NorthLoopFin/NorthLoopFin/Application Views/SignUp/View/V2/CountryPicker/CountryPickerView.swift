@@ -142,7 +142,7 @@ extension CountryPickerView: UITableViewDelegate, UITableViewDataSource {
         let country = isSearchEnable ? searchCountries[indexPath.row] : countries[indexPath.row]
         cell.selectionStyle = .none
         cell.lblName.text = country.name
-        cell.lblcountryCode.text = country.dialCode
+        cell.lblcountryCode.text = self.tag == 0 ? country.dialCode : ""
         cell.imgFlag.image = UIImage(named: country.code)
         return cell
     }

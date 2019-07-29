@@ -10,6 +10,7 @@ import Foundation
 
 struct Endpoints{
     static let Base_Url = AppUtility.infoForKey("Backend Url")
+    static let Card_Info_Url = AppUtility.infoForKey("Card Url")
 
     enum APIEndpoints:String {
         case LOGIN = "auth/login"
@@ -35,12 +36,6 @@ struct Endpoints{
         case GETAPPSETTINGS = "banking/preferences"
         case CHECKUPDATE = "banking/app-version-updates"
         case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
-//        #if PRODUCTION
-        case CARDINFO = "https://api.synapsefi.com/v3.1"
-//        #else
-//        case CARDINFO = "https://uat-api.synapsefi.com/v3.1"
-//        #endif
-
     }
     
     enum APIRequestHeaders: String{
@@ -53,7 +48,5 @@ struct Endpoints{
         case AUTHKEY = "auth"
         case IP = "ip"
         case USERID = "user_id"
-
-        
     }
 }

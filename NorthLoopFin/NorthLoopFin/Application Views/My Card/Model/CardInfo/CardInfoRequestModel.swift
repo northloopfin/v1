@@ -73,7 +73,7 @@ class CardInfoRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return  Endpoints.APIEndpoints.CARDINFO.rawValue
+        return  Endpoints.Card_Info_Url!
     }
 
 }
