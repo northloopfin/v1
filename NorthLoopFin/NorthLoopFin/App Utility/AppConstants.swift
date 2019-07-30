@@ -178,7 +178,7 @@ struct AppConstants{
         case USIDTYPE = "US ID Type"
         case F1VISA = "F-1 Visa"
         case ADDRESSPROOF = "Address Proof"
-        case STATEID = "State ID"
+        case STATEID = "ID"
         case DRIVERLICENSE = "Driver's License"
         case OTHER = "Other"
     }

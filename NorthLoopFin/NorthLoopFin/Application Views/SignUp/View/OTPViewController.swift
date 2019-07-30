@@ -117,7 +117,7 @@ class OTPViewController: BaseViewController {
 //        self.presenter = PhoneVerificationCheckPresenter.init(delegate: self)
 //        self.sendPresenter = PhoneVerificationStartPresenter.init(delegate: self)
         self.prepareView()
-
+        self.requestPresenter.sendTwoFARequest(sendToAPI: true)
     }
     
     /// Set text color and font to view components
