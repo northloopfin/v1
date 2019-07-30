@@ -203,26 +203,41 @@ extension LoginViewController:LoginDelegate{
         //successfully logged in user..move to home page
         //call Zendesk API to get identity token
         // save email and password only if remember is enabled
-        if data.isVerified{
-            //if user is verified
-            if self.rememberMeCheckBox.isChecked{
-                UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
-                // save password entered to KeyChain
-                let password:String = self.passwordTextfield.text ?? ""
-                
-                
-                if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
-                    print("Password Saved to Keychain")
+        if data.isSignupCompleted{
+            if data.isVerified{
+                //if user is verified
+                if self.rememberMeCheckBox.isChecked{
+                    UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+                    // save password entered to KeyChain
+                    let password:String = self.passwordTextfield.text ?? ""
+                    
+                    
+                    if KeychainWrapper.standard.set(password, forKey: AppConstants.KeyChainKeyForPassword){
+                        print("Password Saved to Keychain")
+                    }
+                    let email:String = self.emailTextField.text ?? ""
+                    if KeychainWrapper.standard.set(email, forKey: AppConstants.KeyChainKeyForEmail){
+                        print("email Saved to Keychain")
+                    }
                 }
-                let email:String = self.emailTextField.text ?? ""
-                if KeychainWrapper.standard.set(email, forKey: AppConstants.KeyChainKeyForEmail){
-                    print("email Saved to Keychain")
-                }
+                self.zendeskPresenter.sendZendeskTokenRequest()
+            }else{
+                //if user is not verified
+                self.moveToWaitList()
             }
-            self.zendeskPresenter.sendZendeskTokenRequest()
         }else{
-            //if user is not verified
-            self.moveToWaitList()
+            let completeToken = data.accessToken
+            //We are storing this accestoken here teporarily, Will store access token
+            UserDefaults.saveToUserDefault(completeToken as AnyObject, key: AppConstants.UserDefaultKeyForAccessToken)
+            UserDefaults.saveToUserDefault(self.emailTextField.text! as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
+            
+            
+            let emptyDoc:SignupFlowDocument = SignupFlowDocument.init(entityScope: "Arts & Entertainment", email: "", phoneNumber: "", ip: UIDevice.current.ipAddress(), name: "Test", entityType: "M", day: 0, month: 0, year: 0, desiredScope: "SEND|RECEIVE|TIER|1", docsKey: "GOVT_ID_ONLY", virtualDocs: [], physicalDocs: [])
+            let address:SignupFlowAddress = SignupFlowAddress.init(street: "", city: "", state: "", zip: "",countty:"",houseNumber:"")
+            let signupflowData:SignupFlowData = SignupFlowData.init(userID: data.userID, userIP: UIDevice.current.ipAddress(), email: data.basicInformation.email, university: "", passport: "", address: address, phoneNumbers: [], legalNames: [], password: self.passwordTextfield.text!, documents: emptyDoc, suppID: "Test", cipTag: 2, arrivalDate: "", deviceType: "IOS")
+            
+            // move to next step of Sign Up
+            self.moveToSignupStepSecond(data: signupflowData)
         }
         
     }
@@ -231,6 +246,13 @@ extension LoginViewController:LoginDelegate{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
+    func moveToSignupStepSecond(data:SignupFlowData) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
+        vc.signupFlowData=data
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     

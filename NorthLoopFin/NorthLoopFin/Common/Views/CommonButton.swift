@@ -33,7 +33,7 @@ open class CommonButton: UIButton {
         //self.setTitleColor(tintColor, for: .normal)
         //self.setTitleColor(tintColor.withAlphaComponent(0.3), for: .highlighted)
         //self.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)
-        self.showsTouchWhenHighlighted=true
+//        self.showsTouchWhenHighlighted=true
     }
     override open func setTitle(_ title: String?, for state: UIControl.State)
     {
