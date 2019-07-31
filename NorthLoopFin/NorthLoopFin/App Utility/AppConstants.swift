@@ -11,6 +11,7 @@ struct AppConstants{
     static let AuthorisationRequestHeader = "API-Key "+AppUtility.infoForKey("API Key")!
     static let GoogleMapAPIKey = AppUtility.infoForKey("Google Map Key")
     static let TwilioAPIKey = AppUtility.infoForKey("Twilio Key")
+    static let AmplitudeAPIKey = AppUtility.infoForKey("Amplitude API Key")
     static let UserDefaultKeyForUser = "UserInformation"
     static let UserDefaultKeyForScreen = "Screen"
     static let UserDefaultKeyForEmail = "Email"
@@ -78,6 +79,7 @@ struct AppConstants{
         case PROMOCODE_NOT_VALID = "Promocode not valid"
         case SSN_NOT_VALID = "Please enter a valid SSN Number"
         case MAXIMUM_NODES_ADDED = "You already have 2 accounts linked. Please remove one before adding another"
+        case ACTIVATE_YOUR_CARD = "Please activate your card"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {

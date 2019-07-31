@@ -286,6 +286,7 @@ extension HomeViewController:HomeDelegate{
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         
         currentUser?.amount = data.data.info.balance.amount
+        currentUser?.cardActivated = data.data.CardFirstTimeActivated
         
         UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()

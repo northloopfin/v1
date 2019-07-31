@@ -17,7 +17,8 @@ class User: NSObject, NSCoding {
     var userID:String!
     var name:String!
     var amount:Double!
-    
+    var cardActivated:Bool = false
+
     override init() {
         super.init()
     }
@@ -54,10 +55,12 @@ class User: NSObject, NSCoding {
            self.amount = amount
         }
         
+        self.cardActivated = aDecoder.decodeBool(forKey:"cardActivated") as Bool
 //        if let amount = aDecoder.decodeObject(forKey: "Amount") as? Double {
 //            self.amount = amount
 //        }
     }
+    
     func encode(with aCoder: NSCoder) {
         
         if let emailEncoded = self.userEmail {
@@ -82,7 +85,9 @@ class User: NSObject, NSCoding {
         if let amountEncoded = self.amount {
             aCoder.encode(amountEncoded, forKey: "Amount")
         }
-        
+
+        aCoder.encode(self.cardActivated, forKey: "cardActivated")
+
 //        if let amountEncoded = self.amount as? Double {
 //            aCoder.encode(amountEncoded, forKey: "Amount")
 //        }
