@@ -160,9 +160,11 @@ class HomeViewController: BaseViewController {
     //Move to detail screen
     func moveToDetailScreen(detailModel:IndividualTransaction){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
-       transactionDetailController.detailModel = detailModel
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
+//       transactionDetailController.detailModel = detailModel
+//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        let analysisController = storyBoard.instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
+        self.navigationController?.pushViewController(analysisController, animated: false)
     }
 }
 
