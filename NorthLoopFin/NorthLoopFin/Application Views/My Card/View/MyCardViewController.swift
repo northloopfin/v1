@@ -173,14 +173,14 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func moveToLostCardScreen() {
-        if self.isLockCard{
-            self.showAlertForInactiveCadrs()
-            return
-        }else{
+//        if self.isLockCard{
+//            self.showAlertForInactiveCadrs()
+//            return
+//        }else{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
             self.navigationController?.pushViewController(transactionDetailController, animated: false)
-        }
+//        }
         
     }
     func moveToNewPincreen() {
@@ -302,23 +302,27 @@ extension MyCardViewController:MyCardTableCellDelegate{
             return
         }
 
-        if self.isLockCard{
-            self.data = []
-            self.prepareViewData()
-            self.optionsTableView.reloadData()
-            self.showAlertForInactiveCadrs()
-            return
-        }
         switch tag {
         case 0:
             //lock you card
-            self.isLockCard=isOn
-            self.showConfirmationAlertForLockCard()
+            self.isLockCard = isOn
+            if self.isLockCard {
+                self.showConfirmationAlertForLockCard()
+            } else {
+                self.createRequestForUpdateCardStatus()
+            }
             
         case 3:
             // spend abroad
             self.isSpendAbroad=isOn
             self.showConfirmationAlertForSpendAbroad()
+            if self.isLockCard{
+                self.data = []
+                self.prepareViewData()
+                self.optionsTableView.reloadData()
+                self.showAlertForInactiveCadrs()
+                return
+            }
         
         default:
             break
@@ -338,7 +342,7 @@ extension MyCardViewController:MyCardTableCellDelegate{
             switch buttonIndex {
             case 0:
                 print("Cancel: \(buttonIndex)")
-                self.isLockCard=false
+                self.isLockCard = false
                 self.optionsTableView.reloadData()
             default:
                 self.createRequestForUpdateCardStatus()
@@ -360,7 +364,6 @@ extension MyCardViewController:MyCardTableCellDelegate{
                 print("Cancel: \(buttonIndex)")
                 self.isSpendAbroad=false
                 self.optionsTableView.reloadData()
-
             default:
                 self.createRequestForUpdateCardStatus()
             }
