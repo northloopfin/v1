@@ -23,6 +23,9 @@ class MyCardViewController: BaseViewController {
     @IBOutlet weak var cvv: UILabel!
     @IBOutlet weak var cardNumber: UILabel!
     
+    @IBOutlet weak var whatsThisButton: UIButton!
+    //    @IBOutlet weak var btnWhatsThis: UIButton!
+    @IBOutlet weak var vwActivateCard: UIView!
     @IBOutlet weak var vwWhatsThis: UIView!
     @IBOutlet weak var vwVirtualCard: UIView!
     var data:[MyCardOtionsModel]=[]
@@ -31,6 +34,7 @@ class MyCardViewController: BaseViewController {
     var dailyATMWithdrawalLimit:Int = 0
     var dailyTransactionLimit:Int = 0
     var cardAuthData: CardAuthData?
+    var cardActivated: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +47,10 @@ class MyCardViewController: BaseViewController {
         self.updatePresenter = UpdateCardPresenter.init(delegate: self)
         self.infoPresenter = CardInfoPresenter.init(delegate: self)
         self.authPresenter = CardAuthPresenter.init(delegate: self)
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        cardActivated = currentUser!.cardActivated
         self.getCardStatus()
-        self.vwVirtualCard.isHidden = false
+        self.vwActivateCard.cornerRadius = 4
     }
     
     
@@ -83,12 +89,26 @@ class MyCardViewController: BaseViewController {
     }
 
     func getCardStatus(){
-        self.presenter.getCardStatus()
+        if cardActivated == true{
+            self.presenter.getCardStatus()
+        }else{
+            self.vwActivateCard.isHidden = false
+        }
     }
     
     func getCardAuth(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.authPresenter.getCardAuth()
+        }
+    }
+    
+    func getCardInfo(){
+        if cardActivated == true{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.infoPresenter.getCardInfo(cardAuthData: self.cardAuthData!)
+            }
+        }else{
+            self.vwActivateCard.isHidden = false
         }
     }
     
@@ -98,6 +118,13 @@ class MyCardViewController: BaseViewController {
 
     @IBAction func whatsClicked(_ sender: Any) {
         vwWhatsThis.isHidden = false
+    }
+    
+    @IBAction func cardActivateClicked(_ sender: UIButton) {
+        self.vwVirtualCard.isUserInteractionEnabled = false
+         let preference = UpdateCardPreferenceBody.init(allowForeignTransactions: true, dailyATMWithdrawalLimit: self.dailyATMWithdrawalLimit, dailyTransactionLimit: self.dailyTransactionLimit)
+        let card = UpdateCardRequestBody.init(status: "ACTIVE", pre: preference)
+        self.updatePresenter.updateCardStatus(requestBody: card, firstTimeActivate: true)
     }
 }
 
@@ -129,6 +156,10 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if cardActivated == false{
+            self.showAlertForActiveCard()
+            return
+        }
         switch indexPath.row {
         case 0:
             print("Zero")
@@ -166,6 +197,16 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
 
 extension MyCardViewController:CardDelegates{
     func didFetchCardStatus(data:Card) {
+    
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        if currentUser?.cardActivated == false{
+            self.cardActivated = true
+            currentUser?.cardActivated = true
+            UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
+        }
+        
+        self.vwVirtualCard.isUserInteractionEnabled = true
+        self.vwActivateCard.isHidden = true
         print(data.data.status)
         self.dailyTransactionLimit = data.data.preferences.dailyTransactionLimit
         self.dailyATMWithdrawalLimit = data.data.preferences.dailyATMWithdrawalLimit
@@ -188,11 +229,12 @@ extension MyCardViewController:CardDelegates{
             self.data.append(MyCardOtionsModel.init("Report Lost or Stolen", isSwitch: false,isSelected: false))
             self.optionsTableView.reloadData()
         }
-        if self.cardAuthData == nil {
-            self.getCardAuth()
-        } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.infoPresenter.getCardInfo(cardAuthData: self.cardAuthData!)
+        
+        if self.cardNumber.text!.isEmpty{
+            if self.cardAuthData == nil {
+                self.getCardAuth()
+            } else {
+                self.getCardInfo()
             }
         }
     }
@@ -200,15 +242,13 @@ extension MyCardViewController:CardDelegates{
 
 extension MyCardViewController:CardAuthDelegates{
     func didFetchCardAuth(data: CardAuthData) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.infoPresenter.getCardInfo(cardAuthData: data)
-        }
+        self.cardAuthData = data
+        self.getCardInfo()
     }
 }
 
 extension MyCardViewController:CardInfoDelegates{
     func didFetchCardInfo(data: CardInfo) {
-        print(data)
         self.nameOnCard.text = data.nickname
         self.cvv.text = data.cvc
         self.validThrough.text = data.exp
@@ -217,6 +257,9 @@ extension MyCardViewController:CardInfoDelegates{
         if parts.count == 3 {
             self.validThrough.text = parts[1] + "/" + (parts[0]).suffix(2)
         }
+        self.vwVirtualCard.isHidden = false
+        self.whatsThisButton.isHidden = false
+        self.vwActivateCard.isHidden = true
     }
     
     func modifyCreditCardString(creditCardString : String) -> String
@@ -244,12 +287,21 @@ extension MyCardViewController:CardInfoDelegates{
 
 extension MyCardViewController:UpdateCardDelegates{
     func didUpdateCardStatus(data: Card) {
+        self.didFetchCardStatus(data: data)
         //Nothing to do here. May be in futur ewe can use this function to update UI
     }
 }
 
 extension MyCardViewController:MyCardTableCellDelegate{
     func switchClicked(isOn: Bool, tag: Int) {
+        if cardActivated == false{
+            self.data[0] = (MyCardOtionsModel.init("Lock Your Card", isSwitch: true,isSelected: false))
+            self.data[3] = (MyCardOtionsModel.init("Spend Abroad", isSwitch: true,isSelected: false))
+            self.optionsTableView.reloadData()
+            self.showAlertForActiveCard()
+            return
+        }
+
         if self.isLockCard{
             self.data = []
             self.prepareViewData()
@@ -331,4 +383,9 @@ extension MyCardViewController:MyCardTableCellDelegate{
     func showAlertForInactiveCadrs(){
         self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.CARD_NOT_ACTIVE_YET.rawValue)
     }
+    
+    func showAlertForActiveCard(){
+        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ACTIVATE_YOUR_CARD.rawValue)
+    }
+
 }

@@ -34,7 +34,6 @@
 		1D055D57229C6FB80078CD33 /* ACHTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D56229C6FB80078CD33 /* ACHTransactionData.swift */; };
 		1D055D5A229C722D0078CD33 /* ACHTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D055D59229C722D0078CD33 /* ACHTransactionPresenter.swift */; };
 		1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */; };
-		1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */; };
 		1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881B21CB6E2100187439 /* OTPViewController.swift */; };
 		1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881D21CBC28400187439 /* ScanIDViewController.swift */; };
 		1D0A882021CC8BFE00187439 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */; };
@@ -416,6 +415,26 @@
 		EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */; };
 		EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727122E09F1500D5B834 /* DeleteACH.swift */; };
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
+		EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */; };
+		EA1FC14122F1526C002A7103 /* AMPLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */; };
+		EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12122F1526C002A7103 /* AMPUtils.m */; };
+		EA1FC14322F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC12222F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der */; };
+		EA1FC14422F1526C002A7103 /* ISPCertificatePinning.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12722F1526C002A7103 /* ISPCertificatePinning.m */; };
+		EA1FC14522F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12922F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m */; };
+		EA1FC14622F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12A22F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.m */; };
+		EA1FC14722F1526C002A7103 /* AMPRevenue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12C22F1526C002A7103 /* AMPRevenue.m */; };
+		EA1FC14822F1526C002A7103 /* api.amplitude.com.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC12D22F1526C002A7103 /* api.amplitude.com.der */; };
+		EA1FC14922F1526C002A7103 /* AMPTrackingOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12E22F1526C002A7103 /* AMPTrackingOptions.m */; };
+		EA1FC14A22F1526C002A7103 /* ComodoRsaDomainValidationCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC12F22F1526C002A7103 /* ComodoRsaDomainValidationCA.der */; };
+		EA1FC14B22F1526C002A7103 /* AMPURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13022F1526C002A7103 /* AMPURLSession.m */; };
+		EA1FC14C22F1526C002A7103 /* AppledocSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13122F1526C002A7103 /* AppledocSettings.plist */; };
+		EA1FC14D22F1526C002A7103 /* AMPDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13322F1526C002A7103 /* AMPDatabaseHelper.m */; };
+		EA1FC14E22F1526C002A7103 /* AMPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13422F1526C002A7103 /* AMPDeviceInfo.m */; };
+		EA1FC14F22F1526C002A7103 /* AMPIdentify.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13522F1526C002A7103 /* AMPIdentify.m */; };
+		EA1FC15022F1526C002A7103 /* AMPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13722F1526C002A7103 /* AMPURLConnection.m */; };
+		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
+		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
+		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
 		EA4ED02322E5CC4700D1F438 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02222E5CC4700D1F438 /* CardInfo.swift */; };
 		EA4ED02522E5CD8500D1F438 /* CardInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */; };
 		EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */; };
@@ -477,7 +496,6 @@
 		1D055D56229C6FB80078CD33 /* ACHTransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHTransactionData.swift; sourceTree = "<group>"; };
 		1D055D59229C722D0078CD33 /* ACHTransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHTransactionPresenter.swift; sourceTree = "<group>"; };
 		1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalStudentViewController.swift; sourceTree = "<group>"; };
-		1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D0A881B21CB6E2100187439 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1D0A881D21CBC28400187439 /* ScanIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDViewController.swift; sourceTree = "<group>"; };
 		1D0A881F21CC8BFE00187439 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
@@ -875,6 +893,43 @@
 		EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHRequestModel.swift; sourceTree = "<group>"; };
 		EA04727122E09F1500D5B834 /* DeleteACH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteACH.swift; sourceTree = "<group>"; };
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
+		EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA1FC11C22F1526B002A7103 /* AMPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLConnection.h; sourceTree = "<group>"; };
+		EA1FC11D22F1526B002A7103 /* AMPIdentify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPIdentify.h; sourceTree = "<group>"; };
+		EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPLocationManagerDelegate.m; sourceTree = "<group>"; };
+		EA1FC11F22F1526C002A7103 /* AMPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPDeviceInfo.h; sourceTree = "<group>"; };
+		EA1FC12022F1526C002A7103 /* AMPDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPDatabaseHelper.h; sourceTree = "<group>"; };
+		EA1FC12122F1526C002A7103 /* AMPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPUtils.m; sourceTree = "<group>"; };
+		EA1FC12222F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComodoCaLimitedRsaCertificationAuthority.der; sourceTree = "<group>"; };
+		EA1FC12322F1526C002A7103 /* AMPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPConstants.h; sourceTree = "<group>"; };
+		EA1FC12522F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPPinnedNSURLSessionDelegate.h; sourceTree = "<group>"; };
+		EA1FC12622F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPPinnedNSURLConnectionDelegate.h; sourceTree = "<group>"; };
+		EA1FC12722F1526C002A7103 /* ISPCertificatePinning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPCertificatePinning.m; sourceTree = "<group>"; };
+		EA1FC12822F1526C002A7103 /* SSLCertificatePinning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SSLCertificatePinning-Prefix.pch"; sourceTree = "<group>"; };
+		EA1FC12922F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPPinnedNSURLSessionDelegate.m; sourceTree = "<group>"; };
+		EA1FC12A22F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPPinnedNSURLConnectionDelegate.m; sourceTree = "<group>"; };
+		EA1FC12B22F1526C002A7103 /* ISPCertificatePinning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPCertificatePinning.h; sourceTree = "<group>"; };
+		EA1FC12C22F1526C002A7103 /* AMPRevenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPRevenue.m; sourceTree = "<group>"; };
+		EA1FC12D22F1526C002A7103 /* api.amplitude.com.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = api.amplitude.com.der; sourceTree = "<group>"; };
+		EA1FC12E22F1526C002A7103 /* AMPTrackingOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPTrackingOptions.m; sourceTree = "<group>"; };
+		EA1FC12F22F1526C002A7103 /* ComodoRsaDomainValidationCA.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComodoRsaDomainValidationCA.der; sourceTree = "<group>"; };
+		EA1FC13022F1526C002A7103 /* AMPURLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPURLSession.m; sourceTree = "<group>"; };
+		EA1FC13122F1526C002A7103 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
+		EA1FC13222F1526C002A7103 /* Amplitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Amplitude.h; sourceTree = "<group>"; };
+		EA1FC13322F1526C002A7103 /* AMPDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPDatabaseHelper.m; sourceTree = "<group>"; };
+		EA1FC13422F1526C002A7103 /* AMPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPDeviceInfo.m; sourceTree = "<group>"; };
+		EA1FC13522F1526C002A7103 /* AMPIdentify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPIdentify.m; sourceTree = "<group>"; };
+		EA1FC13622F1526C002A7103 /* AMPLocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPLocationManagerDelegate.h; sourceTree = "<group>"; };
+		EA1FC13722F1526C002A7103 /* AMPURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPURLConnection.m; sourceTree = "<group>"; };
+		EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComodoRsaCA.der; sourceTree = "<group>"; };
+		EA1FC13922F1526C002A7103 /* Amplitude+SSLPinning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Amplitude+SSLPinning.h"; sourceTree = "<group>"; };
+		EA1FC13A22F1526C002A7103 /* AMPRevenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPRevenue.h; sourceTree = "<group>"; };
+		EA1FC13B22F1526C002A7103 /* AMPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPConstants.m; sourceTree = "<group>"; };
+		EA1FC13C22F1526C002A7103 /* AMPARCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPARCMacros.h; sourceTree = "<group>"; };
+		EA1FC13D22F1526C002A7103 /* AMPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPUtils.h; sourceTree = "<group>"; };
+		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
+		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
+		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
 		EA4ED02222E5CC4700D1F438 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoRequestModel.swift; sourceTree = "<group>"; };
 		EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoAPIRequest.swift; sourceTree = "<group>"; };
@@ -2117,7 +2172,7 @@
 		297FB99121B51A32008D60CE = {
 			isa = PBXGroup;
 			children = (
-				1D09F8F722A19C77003BBCE2 /* GoogleService-Info.plist */,
+				EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */,
 				1DB6479E22015756004C483E /* NorthLoopFin-Bridging-Header.h */,
 				297FB99C21B51A32008D60CE /* NorthLoopFin */,
 				297FB9B121B51A34008D60CE /* NorthLoopFinTests */,
@@ -2144,6 +2199,7 @@
 				8484442822EBC96400AA82C1 /* Gifs */,
 				4BFFE3DB22BB691A00D85610 /* LocalHtml */,
 				4B08FFBA22AF7C6B00ABAFF3 /* NorthLoopFin.entitlements */,
+				EA1FC11B22F1526B002A7103 /* Amplitude */,
 				1D180D6B229E421D00FC3390 /* Zendesk */,
 				1D165F49222D189B00D06914 /* Realm */,
 				1D3538372223E54E00716A94 /* country.json */,
@@ -2490,6 +2546,57 @@
 			path = DeleteACH;
 			sourceTree = "<group>";
 		};
+		EA1FC11B22F1526B002A7103 /* Amplitude */ = {
+			isa = PBXGroup;
+			children = (
+				EA1FC11C22F1526B002A7103 /* AMPURLConnection.h */,
+				EA1FC11D22F1526B002A7103 /* AMPIdentify.h */,
+				EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */,
+				EA1FC11F22F1526C002A7103 /* AMPDeviceInfo.h */,
+				EA1FC12022F1526C002A7103 /* AMPDatabaseHelper.h */,
+				EA1FC12122F1526C002A7103 /* AMPUtils.m */,
+				EA1FC12222F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der */,
+				EA1FC12322F1526C002A7103 /* AMPConstants.h */,
+				EA1FC12422F1526C002A7103 /* SSLCertificatePinning */,
+				EA1FC12C22F1526C002A7103 /* AMPRevenue.m */,
+				EA1FC12D22F1526C002A7103 /* api.amplitude.com.der */,
+				EA1FC12E22F1526C002A7103 /* AMPTrackingOptions.m */,
+				EA1FC12F22F1526C002A7103 /* ComodoRsaDomainValidationCA.der */,
+				EA1FC13022F1526C002A7103 /* AMPURLSession.m */,
+				EA1FC13122F1526C002A7103 /* AppledocSettings.plist */,
+				EA1FC13222F1526C002A7103 /* Amplitude.h */,
+				EA1FC13322F1526C002A7103 /* AMPDatabaseHelper.m */,
+				EA1FC13422F1526C002A7103 /* AMPDeviceInfo.m */,
+				EA1FC13522F1526C002A7103 /* AMPIdentify.m */,
+				EA1FC13622F1526C002A7103 /* AMPLocationManagerDelegate.h */,
+				EA1FC13722F1526C002A7103 /* AMPURLConnection.m */,
+				EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */,
+				EA1FC13922F1526C002A7103 /* Amplitude+SSLPinning.h */,
+				EA1FC13A22F1526C002A7103 /* AMPRevenue.h */,
+				EA1FC13B22F1526C002A7103 /* AMPConstants.m */,
+				EA1FC13C22F1526C002A7103 /* AMPARCMacros.h */,
+				EA1FC13D22F1526C002A7103 /* AMPUtils.h */,
+				EA1FC13E22F1526C002A7103 /* AMPURLSession.h */,
+				EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */,
+				EA1FC14022F1526C002A7103 /* Amplitude.m */,
+			);
+			path = Amplitude;
+			sourceTree = "<group>";
+		};
+		EA1FC12422F1526C002A7103 /* SSLCertificatePinning */ = {
+			isa = PBXGroup;
+			children = (
+				EA1FC12522F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.h */,
+				EA1FC12622F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.h */,
+				EA1FC12722F1526C002A7103 /* ISPCertificatePinning.m */,
+				EA1FC12822F1526C002A7103 /* SSLCertificatePinning-Prefix.pch */,
+				EA1FC12922F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m */,
+				EA1FC12A22F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.m */,
+				EA1FC12B22F1526C002A7103 /* ISPCertificatePinning.h */,
+			);
+			path = SSLCertificatePinning;
+			sourceTree = "<group>";
+		};
 		EA4ED02122E5CC4700D1F438 /* CardInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2638,15 +2745,17 @@
 				4BFA951B22CDF21B00E16B6D /* ProgressView.xib in Resources */,
 				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
-				1D09F8F822A19C77003BBCE2 /* GoogleService-Info.plist in Resources */,
+				EA1FC14C22F1526C002A7103 /* AppledocSettings.plist in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
 				4B15362722DDA9E4009CE548 /* northloop.gif in Resources */,
 				1FF70EB422ED7500007A9309 /* CountryPickerView.xib in Resources */,
+				EA1FC14A22F1526C002A7103 /* ComodoRsaDomainValidationCA.der in Resources */,
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1FF70EB522ED7500007A9309 /* CountryCell.xib in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
+				EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */,
 				8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */,
 				1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
@@ -2660,12 +2769,15 @@
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
 				EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */,
 				4B15362222DDA914009CE548 /* createAcc.gif in Resources */,
+				EA1FC14322F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */,
 				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
 				4BBCE8F822E18B7800A34695 /* queue.gif in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
+				EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
+				EA1FC14822F1526C002A7103 /* api.amplitude.com.der in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
 				1D3538382223E54F00716A94 /* country.json in Resources */,
 				1D180DA2229EA01500FC3390 /* ATMFirstTableViewCell.xib in Resources */,
@@ -2838,6 +2950,8 @@
 				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
 				4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */,
 				4BF9D77322CC8D4A00F8EDBA /* PromoCodeViewController.swift in Sources */,
+				EA1FC15022F1526C002A7103 /* AMPURLConnection.m in Sources */,
+				EA1FC14E22F1526C002A7103 /* AMPDeviceInfo.m in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */,
 				4BFDF88222B8BC130066860D /* UpgradePremiumViewController.swift in Sources */,
@@ -2954,6 +3068,7 @@
 				1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
+				EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */,
 				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
@@ -2961,6 +3076,7 @@
 				1D72718021EF14670084A57E /* FAQViewController.swift in Sources */,
 				1D180D76229E4E6600FC3390 /* ZendeskData.swift in Sources */,
 				1D5AB2E622A67D1500DB3B70 /* UpdateCardRequestBody.swift in Sources */,
+				EA1FC14B22F1526C002A7103 /* AMPURLSession.m in Sources */,
 				1D180DB2229FC47200FC3390 /* UserTransferDetail.swift in Sources */,
 				1D5AB2FD22A7997B00DB3B70 /* LostCardBusinessLogic.swift in Sources */,
 				1D180D8E229E764C00FC3390 /* ATMFinderBusinessModel.swift in Sources */,
@@ -3022,6 +3138,7 @@
 				1FF70EB322ED7500007A9309 /* CountryPickerView.swift in Sources */,
 				1D5AB31D22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift in Sources */,
 				1D4AD7762284462D007A9C2F /* Endpoints.swift in Sources */,
+				EA1FC14D22F1526C002A7103 /* AMPDatabaseHelper.m in Sources */,
 				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
 				1D180D86229E760500FC3390 /* ATMFinder.swift in Sources */,
@@ -3043,6 +3160,7 @@
 				1D180DAC229FC43500FC3390 /* AccountAPIRequestModel.swift in Sources */,
 				1DFE480521D73625003EFECA /* PhoneVerificationStartAPIRequest.swift in Sources */,
 				4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */,
+				EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */,
 				4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
@@ -3052,11 +3170,13 @@
 				1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */,
 				1D478CA9228E902C00503136 /* SignupAuthAPIRequest.swift in Sources */,
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
+				EA1FC14622F1526C002A7103 /* ISPPinnedNSURLConnectionDelegate.m in Sources */,
 				1D818A0F21C17F35000C8F5F /* TransactionListPresenter.swift in Sources */,
 				1D790E0E21D393D10088107A /* CameraHandler.swift in Sources */,
 				1D8440842289545A00A77BBF /* TransactionListModel.swift in Sources */,
 				1D180D84229E75EB00FC3390 /* ATMFinderViewController.swift in Sources */,
 				1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */,
+				EA1FC14922F1526C002A7103 /* AMPTrackingOptions.m in Sources */,
 				1D5AB2EF22A791C600DB3B70 /* SetPinBusinessLogic.swift in Sources */,
 				1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
@@ -3099,10 +3219,12 @@
 				EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */,
 				1D165F51222D18AA00D06914 /* ScanIDImages.swift in Sources */,
 				1D055D1F229BCA610078CD33 /* ResetPasswordPresenter.swift in Sources */,
+				EA1FC14122F1526C002A7103 /* AMPLocationManagerDelegate.m in Sources */,
 				1D055D34229BD71F0078CD33 /* LinkACHBusinessLogic.swift in Sources */,
 				4B94418D22ACC236005AD3BD /* DisputeTransactionAPIRequest.swift in Sources */,
 				1D51758E21C6706300BCF9E4 /* TransactionDetailHistoryTableHeader.swift in Sources */,
 				1D055D40229C02720078CD33 /* FetchACHRequestModel.swift in Sources */,
+				EA1FC14722F1526C002A7103 /* AMPRevenue.m in Sources */,
 				1D913CDE228F61F10075B16D /* SignupSynapseRequestModel.swift in Sources */,
 				4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
@@ -3155,6 +3277,7 @@
 				4BFBC88C22BB8B7800B23B68 /* GetAppSettingsResponse.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */,
+				EA1FC14F22F1526C002A7103 /* AMPIdentify.m in Sources */,
 				1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */,
 				1DCDF268228ED19C00ABDCB1 /* SignupFlowDocument.swift in Sources */,
 				1D165F52222D18AA00D06914 /* BasicInfo.swift in Sources */,
@@ -3170,12 +3293,14 @@
 				1D180D92229E76B300FC3390 /* ATMLocation.swift in Sources */,
 				4B07A87722C5CD6E004C65B2 /* SetAppSettingsResponse.swift in Sources */,
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
+				EA1FC14522F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
 				4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */,
 				4BE8338522CB175300765F05 /* CheckUpdateAPIRequest.swift in Sources */,
 				4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */,
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
 				EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */,
+				EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */,
 				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,
 				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,
 				1D055D55229C6FA00078CD33 /* ACHTransaction.swift in Sources */,
@@ -3185,6 +3310,7 @@
 				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
 				1D818A0D21C17DE4000C8F5F /* HomeDelegate.swift in Sources */,
 				1D180D88229E761400FC3390 /* ATMFinderData.swift in Sources */,
+				EA1FC14422F1526C002A7103 /* ISPCertificatePinning.m in Sources */,
 				1D055D24229BCA9B0078CD33 /* ResetPasswordBusinessLogic.swift in Sources */,
 				1D29C83F22A916A00092E3EB /* ChangePhonePresenter.swift in Sources */,
 				1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */,

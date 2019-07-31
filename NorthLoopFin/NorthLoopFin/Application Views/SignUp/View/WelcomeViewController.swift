@@ -46,6 +46,7 @@ class WelcomeViewController: BaseViewController {
     }
     
     func moveToNextScreen(){
+//        logEventsHelper.logEventsWithName(name: "Signup - Create Account")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
