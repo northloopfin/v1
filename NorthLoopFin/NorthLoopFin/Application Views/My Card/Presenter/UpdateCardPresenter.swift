@@ -40,8 +40,8 @@ class UpdateCardPresenter:ResponseCallback{
             //print(dic)
             if firstTimeActivate {
                 dic["preferences"] = ["allow_foreign_transactions":true] as AnyObject;
+                requestModel.apiUrl = requestModel.apiUrl + "firstTimeActive=true"
             }
-            requestModel.apiUrl = requestModel.apiUrl + "firstTimeActive=true"
             requestModel.requestQueryParams = dic
         }catch {
             //handle error
