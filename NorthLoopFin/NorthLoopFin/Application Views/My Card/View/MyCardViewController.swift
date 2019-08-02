@@ -34,6 +34,7 @@ class MyCardViewController: BaseViewController {
     var dailyATMWithdrawalLimit:Int = 0
     var dailyTransactionLimit:Int = 0
     var cardAuthData: CardAuthData?
+    var cardInfoData: CardInfo?
     var cardActivated: Bool = false
     
     override func viewDidLoad() {
@@ -104,8 +105,12 @@ class MyCardViewController: BaseViewController {
     
     func getCardInfo(){
         if cardActivated == true{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.infoPresenter.getCardInfo(cardAuthData: self.cardAuthData!)
+            if let card = AppDelegate.getDelegate().cardInfo {
+                self.didFetchCardInfo(data: card)
+            }else{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.infoPresenter.getCardInfo(cardAuthData: self.cardAuthData!)
+                }
             }
         }else{
             self.vwActivateCard.isHidden = false
@@ -249,6 +254,7 @@ extension MyCardViewController:CardAuthDelegates{
 
 extension MyCardViewController:CardInfoDelegates{
     func didFetchCardInfo(data: CardInfo) {
+        AppDelegate.getDelegate().cardInfo = data
         self.nameOnCard.text = data.nickname
         self.cvv.text = data.cvc
         self.validThrough.text = data.exp

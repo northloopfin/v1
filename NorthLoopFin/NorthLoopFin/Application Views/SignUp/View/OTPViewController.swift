@@ -259,6 +259,7 @@ extension OTPViewController:TwoFADelegates{
 
 extension OTPViewController:TwoFAVerifyDelegates{
     func didVerifiedOTP() {
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Account Verified"])
         self.moveToRelevantScreen()
     }
     

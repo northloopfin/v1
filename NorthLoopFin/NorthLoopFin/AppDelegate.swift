@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sideMenuViewController:SideMenuViewController!
     let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
     let gcmMessageIDKey = "gcm.message_id"
+    var cardInfo: CardInfo?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerForPushNotifications()
         print(StorageHelper.getDirectoryPath())
 
-//        Amplitude.instance()?.initializeApiKey(AppConstants.AmplitudeAPIKey)
+        Amplitude.instance()?.initializeApiKey(AppConstants.AmplitudeAPIKey)
         
         //Configure Firebase
         FirebaseApp.configure()
@@ -90,6 +91,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
         self.moveToScreen(vc: vc)
+    }
+    
+    class func getDelegate() -> AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
     }
     
     //Remove this code once Client confirm..Requirements not clear here
