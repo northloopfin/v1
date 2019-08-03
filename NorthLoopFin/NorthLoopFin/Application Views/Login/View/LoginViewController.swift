@@ -135,7 +135,7 @@ class LoginViewController: BaseViewController {
     }
     
     func moveToCreateAccount(){
-//        logEventsHelper.logEventsWithName(name: "Signup - Create Account")
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Create Account"])
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
         self.navigationController?.pushViewController(vc, animated: true)

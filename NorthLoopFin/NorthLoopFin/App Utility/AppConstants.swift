@@ -13,6 +13,7 @@ struct AppConstants{
     static let TwilioAPIKey = AppUtility.infoForKey("Twilio Key")
     static let AmplitudeAPIKey = AppUtility.infoForKey("Amplitude API Key")
     static let UserDefaultKeyForUser = "UserInformation"
+    static let UserDefaultKeyForCard = "CardInformation"
     static let UserDefaultKeyForScreen = "Screen"
     static let UserDefaultKeyForEmail = "Email"
     static let UserDefaultKeyForAccessToken = "AccessToken"
