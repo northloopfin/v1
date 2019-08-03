@@ -75,7 +75,7 @@ class HomeTableCell: UITableViewCell {
         }
         
       
-        self.transactionAmt.textColor = data.from.type == "DEPOSIT-US" ? UIColor.init(red: 24, green: 177, blue: 0) : self.beneficiaryName.textColor
+        self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? UIColor.init(red: 24, green: 177, blue: 0) : self.beneficiaryName.textColor
         
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
