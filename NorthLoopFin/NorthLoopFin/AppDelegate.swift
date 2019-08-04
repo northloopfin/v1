@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        
         // if crash happen prior delete local database
         if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
             RealmHelper.deleteAllFromDatabase()
