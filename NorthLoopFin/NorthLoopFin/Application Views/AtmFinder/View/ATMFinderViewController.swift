@@ -150,9 +150,12 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedAtm = self.dataSource[indexPath.row+1]
+        let addressString = "\(selectedAtm.atmLocation.address.street)"
+        
         let coordinate = CLLocationCoordinate2D(latitude: selectedAtm.atmLocation.coordinates.latitude, longitude: selectedAtm.atmLocation.coordinates.longitude)
-
-        Karte.presentPicker(destination: coordinate, presentOn: self)
+        let loc = Karte.Location(name: addressString, coordinate: coordinate)
+        
+        Karte.presentPicker(destination: loc, presentOn: self)
 
         //self.openGoogleDirectionMap(String(selectedAtm.atmLocation.coordinates.latitude), String(selectedAtm.atmLocation.coordinates.longitude))
     }

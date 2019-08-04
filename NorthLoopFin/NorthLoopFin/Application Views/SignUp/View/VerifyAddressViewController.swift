@@ -349,6 +349,7 @@ extension VerifyAddressViewController:ZendeskDelegates{
     }
     
     func moveToWaitList(){
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Account Created"])
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
         self.navigationController?.pushViewController(vc, animated: false)

@@ -31,6 +31,7 @@ class UserInformationUtility: NSObject {
     func deleteCurrentUser()
     {
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForUser)
+        AppDelegate.getDelegate().cardInfo = nil
         self.user = User()
     }
 }

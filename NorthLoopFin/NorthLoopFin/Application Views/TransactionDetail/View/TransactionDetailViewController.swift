@@ -160,7 +160,7 @@ extension TransactionDetailViewController: UITableViewDelegate,UITableViewDataSo
 extension TransactionDetailViewController:TransactionDetailDelegate{
     
     func formatCategory(category:String) -> String{
-        let categoryDic = ["bank_fee":"Bank Fee","bill/loan":"bill","loan":"bill","digital_payment":"Digital","pos":"POS","subscription_service":"Subscription","transfer":"Transfer","withdrawal":"Withdrawal","grocery":"Grocery","dining":"Dining","medical":"Medical","retail":"Retail","service":"Service","travel/transportation":"Travel","travel":"Travel","transportation":"Travel"]
+        let categoryDic = ["bank_fee":"Bank Fee","bill/loan":"bill","loan":"bill","digital_payment":"Digital","pos":"POS","subscription_service":"Subscription","transfer":"Transfer","withdrawal":"Withdrawal","grocery":"Grocery","dining":"Dining","medical":"Medical","retail":"Retail","service":"Service","travel/transportation":"Travel","travel":"Travel","transportation":"Travel", "wire":"WIRE"]
         
         if categoryDic.keys.contains(category.lowercased()) {
             return categoryDic[category.lowercased()]!
@@ -179,7 +179,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         
         if data.data.to.type == "EXTERNAL-US"{
             if let _ = data.data.to.meta{
-                self.beneficiaryNameLbl.text = data.data.to.meta!.merchantName
+                self.beneficiaryNameLbl.text = data.data.to.meta!.merchantName.isEmpty ? formatCategory(category: data.data.to.meta!.merchantCategory) : data.data.to.meta!.merchantName
                 let url = URL(string: data.data.to.meta!.merchantLogo)
                 self.transactionImg.kf.setImage(with:url)
                 
@@ -187,10 +187,12 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
             }
         }else if data.data.to.type == "ACH-US"{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
+        } else if let _  = data.data.to.meta {
+            self.beneficiaryNameLbl.text = formatCategory(category: data.data.to.meta!.merchantCategory)
         }
         
-        if let _  = data.data.to.meta, data.data.to.meta?.merchantCategory == "withdrawal" {
-            self.beneficiaryNameLbl.text = "Withdrawal"
+        if let _  = detailModel.from.meta, detailModel.from.meta?.type.lowercased() == "wire" {
+            self.transactionPurposeLbl.text = formatCategory(category: (detailModel.from.meta?.type.lowercased())!)
         }
         
         self.timestampLbl.text = fullStringFromDate(seconds: data.data.extra.processOn)
