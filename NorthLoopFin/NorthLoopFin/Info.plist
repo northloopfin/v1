@@ -2,8 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SmartyStreets Auth Token</key>
+	<string>$(SMARTYSTREETS_AUTH_TOKEN)</string>
+	<key>SmartyStreets Auth ID</key>
+	<string>$(SMARTYSTREETS_AUTH_ID)</string>
 	<key>API Key</key>
 	<string>$(API_KEY)</string>
+	<key>Amplitude API Key</key>
+	<string>$(AMPLITUDE_API_KEY)</string>
 	<key>Backend Url</key>
 	<string>$(BACKEND_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -21,7 +27,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.2</string>
+	<string>1.2.3</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -36,7 +42,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>50</string>
+	<string>2</string>
 	<key>Card Url</key>
 	<string>$(CARD_URL)</string>
 	<key>Fabric</key>

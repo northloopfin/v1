@@ -47,6 +47,6 @@ class WaitListViewController: BaseViewController {
         
         // A UIImageView with async loading
         //let imageView = UIImageView()
-        self.imageView.loadGif(name: "queue")
+//        self.imageView.loadGif(name: "queue")
     }
 }

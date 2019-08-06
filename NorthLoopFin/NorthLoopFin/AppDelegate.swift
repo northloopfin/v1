@@ -19,10 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sideMenuViewController:SideMenuViewController!
     let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
     let gcmMessageIDKey = "gcm.message_id"
+    var cardInfo: CardInfo?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
         
         // if crash happen prior delete local database
         if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
@@ -34,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerForPushNotifications()
         print(StorageHelper.getDirectoryPath())
 
+        Amplitude.instance()?.initializeApiKey(AppConstants.AmplitudeAPIKey)
+        
         //Configure Firebase
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -56,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         sleep(2)
         self.initialViewController()
-        self.logEventForAppOpen()
         
         // Line to catch exceptions
         //NSSetUncaughtExceptionHandler(uncaughtExceptionHandler);exce
@@ -64,20 +64,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(exception)
             UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForCrash)
         }
+        
+//        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]) != nil{
+//            self.logEventForAppOpen(source: "Push Notification")
+//        }else{
+//            self.logEventForAppOpen(source: "Direct")
+//        }
         return true
     }
     
 
-    func logEventForAppOpen(){
-        let eventProperties:[String:String] = ["EventCategory":"Admin","Description":"triggers when the user opens the app"]
+    func logEventForAppOpen(source: String){
+        let eventProperties:[String:String] = ["Source":source]
         let eventName:String = "App Open"
         logEventsHelper.logEventWithName(name: eventName, andProperties: eventProperties)
     }
     
     func logEventForAppClose(){
-        let eventProperties:[String:String] = ["EventCategory":"Admin","Description":"when the user closes the app"]
-        let eventName:String = "App Close"
-        logEventsHelper.logEventWithName(name: eventName, andProperties: eventProperties)
+        logEventsHelper.logEventsWithName(name: "App Close")
     }
     
     func initialViewController() ->Void
@@ -85,6 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
         self.moveToScreen(vc: vc)
+    }
+    
+    class func getDelegate() -> AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
     }
     
     //Remove this code once Client confirm..Requirements not clear here

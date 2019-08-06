@@ -21,6 +21,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loginBtn: CommonButton!
     @IBOutlet weak var createAccountBtn: UIButton!
     @IBOutlet weak var rememberMeCheckBox: CheckBox!
+    @IBOutlet weak var showPasswordBtn: UIButton!
     
     var loginPresenter:LoginPresenter!
     var zendeskPresenter:ZendeskPresenter!
@@ -39,6 +40,11 @@ class LoginViewController: BaseViewController {
         // check for TouchID authentication
         self.login(username: self.emailTextField.text!, password: self.passwordTextfield.text!)
         
+    }
+    
+    @IBAction func showPasswordClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        self.passwordTextfield.isSecureTextEntry = !sender.isSelected
     }
     
     @IBAction func valueChanged(_ sender: Any) {
@@ -129,6 +135,7 @@ class LoginViewController: BaseViewController {
     }
     
     func moveToCreateAccount(){
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Create Account"])
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "SignUpStepFirst") as! SignUpStepFirst
         self.navigationController?.pushViewController(vc, animated: true)

@@ -114,6 +114,7 @@ class CreateAccountV2ViewController: BaseViewController {
         presenter.sendPhoneVerificationRequest()
     }
     func moveToSignupStepThree(withData:SignupFlowData){
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Enters Info"])
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
         vc.signupData=withData

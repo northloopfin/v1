@@ -18,7 +18,7 @@ class UpdateCardPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func updateCardStatus(requestBody:UpdateCardRequestBody){
+    func updateCardStatus(requestBody:UpdateCardRequestBody, firstTimeActivate:Bool = false){
         
         // convert requestbody to json string and assign to request model request param
         
@@ -36,8 +36,12 @@ class UpdateCardPresenter:ResponseCallback{
             let jsonData = try jsonEncoder.encode(requestBody)
             let jsonString = String(data: jsonData, encoding: .utf8)
             //print(jsonString!)
-            let dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
+            var dic:[String:AnyObject] = jsonString?.convertToDictionary() as! [String : AnyObject]
             //print(dic)
+            if firstTimeActivate {
+                dic["preferences"] = ["allow_foreign_transactions":true] as AnyObject;
+                requestModel.apiUrl = requestModel.apiUrl + "firstTimeActive=true"
+            }
             requestModel.requestQueryParams = dic
         }catch {
             //handle error
@@ -45,7 +49,6 @@ class UpdateCardPresenter:ResponseCallback{
         }
         
         self.logic.performUpdateCardStatus(withRequestModel: requestModel, presenterDelegate: self)
-        
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {

@@ -20,6 +20,8 @@ PODS:
     - Fabric (~> 1.10.1)
   - DropDown (2.3.2)
   - Fabric (1.10.1)
+  - Firebase/Analytics (6.2.0):
+    - Firebase/Core
   - Firebase/Auth (6.2.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.1.1)
@@ -156,6 +158,7 @@ DEPENDENCIES:
   - Crashlytics
   - DropDown (= 2.3.2)
   - Fabric
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/DynamicLinks

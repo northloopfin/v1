@@ -46,6 +46,7 @@ class SignupStepConfirm: BaseViewController {
             self.saveDataToRealm()
             //update SignupFlowdata
             self.updateSignupFlowData()
+            logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Address"])
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
             vc.signupFlowData=self.signupFlowData

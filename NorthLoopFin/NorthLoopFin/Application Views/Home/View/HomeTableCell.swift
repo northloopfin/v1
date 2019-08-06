@@ -50,17 +50,14 @@ class HomeTableCell: UITableViewCell {
             }
         }
         
-        let shadowOffst = CGSize.init(width: 0, height: 26)
-        let shadowOpacity = 0.15
-        let shadowRadius = 30
-        let shadowColor = Colors.Taupe776857
-//        self.beneficiaryImg.layer.addShadowAndRoundedCorners(roundedCorner: 15, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-
         if data.to.type == "EXTERNAL-US"{
             if let _  = data.to.meta{
                 self.beneficiaryName.text = data.to.meta?.merchantName
                 let url = URL(string: (data.to.meta?.merchantLogo)!)
                 self.beneficiaryImg.kf.setImage(with: url)
+            }
+            if let _  = data.to.meta, data.to.meta?.type.lowercased() == "ach" {
+                self.beneficiaryName.text = data.to.user.legalNames.count > 0 ? data.to.user.legalNames[0] : "No name"
             }
         }else if data.to.type == "ACH-US"{
             self.beneficiaryName.text = data.to.user.legalNames[0]
@@ -79,10 +76,23 @@ class HomeTableCell: UITableViewCell {
                 }
             }
         }
+        if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
+            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+        }
+        self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? UIColor.init(red: 24, green: 177, blue: 0) : self.beneficiaryName.textColor
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
         }
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
+        
+        if data.recentStatus.status.lowercased() == "returned"{
+            let attributeString =  NSMutableAttributedString(string: self.transactionAmt.text!)
+            
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
+                                         value: NSUnderlineStyle.single.rawValue,
+                                         range: NSMakeRange(0, attributeString.length))
+            self.transactionAmt.attributedText = attributeString
+        }
         
     }
 }

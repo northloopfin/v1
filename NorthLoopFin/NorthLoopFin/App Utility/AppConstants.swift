@@ -11,7 +11,9 @@ struct AppConstants{
     static let AuthorisationRequestHeader = "API-Key "+AppUtility.infoForKey("API Key")!
     static let GoogleMapAPIKey = AppUtility.infoForKey("Google Map Key")
     static let TwilioAPIKey = AppUtility.infoForKey("Twilio Key")
+    static let AmplitudeAPIKey = AppUtility.infoForKey("Amplitude API Key")
     static let UserDefaultKeyForUser = "UserInformation"
+    static let UserDefaultKeyForCard = "CardInformation"
     static let UserDefaultKeyForScreen = "Screen"
     static let UserDefaultKeyForEmail = "Email"
     static let UserDefaultKeyForAccessToken = "AccessToken"
@@ -21,6 +23,8 @@ struct AppConstants{
     static let KeyChainKeyForPassword = "NorthLoopPassword"
     static let KeyChainKeyForEmail = "NorthLoopEmail"
     static let UserDefaultKeyForFreshInstall = "FreshInstall"
+    static let SS_Auth_ID = AppUtility.infoForKey("SmartyStreets Auth ID")
+    static let SS_Auth_Token = AppUtility.infoForKey("SmartyStreets Auth Token")
 
     static let PageLimit:Int = 20
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
@@ -78,6 +82,7 @@ struct AppConstants{
         case PROMOCODE_NOT_VALID = "Promocode not valid"
         case SSN_NOT_VALID = "Please enter a valid SSN Number"
         case MAXIMUM_NODES_ADDED = "You already have 2 accounts linked. Please remove one before adding another"
+        case ACTIVATE_YOUR_CARD = "Please activate your card"
     }
     
     enum TwilioPhoneVerificationRequestParamKeys:String {
