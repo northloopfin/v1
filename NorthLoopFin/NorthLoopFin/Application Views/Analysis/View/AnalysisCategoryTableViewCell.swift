@@ -17,15 +17,14 @@ class AnalysisCategoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    var category:AnalysisCategory? {
+    var category:UserAnalysisCategory? {
         didSet {
-            labelTitle.text = category?.title ?? ""
-            imgIcon.image = UIImage.init(named: category?.iconName ?? "")
-//            labelSumma.text = "$\(category?.summa ?? 0)"
+            labelTitle.text = category?.categoryTitle ?? ""
+            imgIcon.image = UIImage.init(named: category?.categoryIcon ?? "")
             let formatter = NumberFormatter()
             formatter.locale = Locale.current
             formatter.numberStyle = .currency
-            if let formattedTipAmount = formatter.string(from: NSNumber(value: category?.summa ?? 0)) {
+            if let formattedTipAmount = formatter.string(from: NSNumber(value: (category?.sumAmount ?? 0) * -1.0)) {
                 labelSumma.text = "\(formattedTipAmount)"
             }
         }

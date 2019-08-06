@@ -5,32 +5,19 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="pJ5-Dh-oai" customClass="AnalysisCategoryTableHeader" customModule="Test" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="pJ5-Dh-oai" customClass="AnalysisCategoryTableHeader" customModule="NorthLoopFin" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWq-zt-jAD">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="Dw9-kN-QwU">
-                            <rect key="frame" x="40" y="40" width="120" height="120"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="120" id="3zg-Yu-OFk"/>
-                                <constraint firstAttribute="width" constant="120" id="BUw-5t-kaH"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="Dw9-kN-QwU" firstAttribute="centerY" secondItem="OWq-zt-jAD" secondAttribute="centerY" id="8eF-vs-vs8"/>
-                        <constraint firstItem="Dw9-kN-QwU" firstAttribute="centerX" secondItem="OWq-zt-jAD" secondAttribute="centerX" id="PHd-dC-7Qm"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,7 +31,4 @@
             <point key="canvasLocation" x="141.30434782608697" y="58.258928571428569"/>
         </view>
     </objects>
-    <resources>
-        <image name="graph" width="145" height="147"/>
-    </resources>
 </document>

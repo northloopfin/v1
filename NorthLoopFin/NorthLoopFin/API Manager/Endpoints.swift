@@ -36,6 +36,7 @@ struct Endpoints{
         case GETAPPSETTINGS = "banking/preferences"
         case CHECKUPDATE = "banking/app-version-updates"
         case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
+        case ANALYSISOPTIONS = "http://18.219.212.170/spend_by_categories/"
     }
     
     enum APIRequestHeaders: String{

@@ -408,13 +408,17 @@
 		8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448754D22ED116A003B703B /* ReferAndEarnViewController.xib */; };
 		8469EE9C22F1FB7500B861F1 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EE9B22F1FB7500B861F1 /* AnalysisViewController.swift */; };
 		8469EEDB22F24D8100B861F1 /* AnalysisPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EED822F24D8100B861F1 /* AnalysisPresenter.swift */; };
-		8469EEDC22F24D8100B861F1 /* AnalysisCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EEDA22F24D8100B861F1 /* AnalysisCategory.swift */; };
 		8469EEE322F24D9900B861F1 /* AnalysisCategoryTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EEDD22F24D9800B861F1 /* AnalysisCategoryTableHeader.swift */; };
 		8469EEE422F24D9900B861F1 /* AnalysisCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EEDE22F24D9800B861F1 /* AnalysisCategoryTableViewCell.swift */; };
 		8469EEE522F24D9900B861F1 /* AnalysisCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8469EEDF22F24D9800B861F1 /* AnalysisCategoryTableViewCell.xib */; };
 		8469EEE622F24D9900B861F1 /* AnalysisCategoryTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8469EEE022F24D9900B861F1 /* AnalysisCategoryTableHeader.xib */; };
 		8469EEE722F24D9900B861F1 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8469EEE122F24D9900B861F1 /* CalendarTableViewCell.xib */; };
 		8469EEE822F24D9900B861F1 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469EEE222F24D9900B861F1 /* CalendarTableViewCell.swift */; };
+		8489944922F8DC1700A11073 /* AnalysisBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489944822F8DC1700A11073 /* AnalysisBusinessModel.swift */; };
+		8489944B22F8DCEC00A11073 /* AnalysisAPIRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489944A22F8DCEC00A11073 /* AnalysisAPIRequestModel.swift */; };
+		8489944D22F8E6C300A11073 /* AnalysisCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489944C22F8E6C300A11073 /* AnalysisCategories.swift */; };
+		84E78BE722F9F5A20051EFC3 /* AnalysisDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E78BE622F9F5A20051EFC3 /* AnalysisDatePresenter.swift */; };
+		84E78BE922F9F6340051EFC3 /* AnalysisPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E78BE822F9F6340051EFC3 /* AnalysisPeriod.swift */; };
 		8FFDFF382B4A5740CD6FF5F3 /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F409286EE9A66AAE2D971E5F /* Pods_NorthLoopFinUITests.framework */; };
 		EA04726122E070F800D5B834 /* ViewAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */; };
 		EA04726422E0725E00D5B834 /* ACHAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726222E0725E00D5B834 /* ACHAccountCell.swift */; };
@@ -871,13 +875,17 @@
 		8448754D22ED116A003B703B /* ReferAndEarnViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReferAndEarnViewController.xib; sourceTree = "<group>"; };
 		8469EE9B22F1FB7500B861F1 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		8469EED822F24D8100B861F1 /* AnalysisPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisPresenter.swift; sourceTree = "<group>"; };
-		8469EEDA22F24D8100B861F1 /* AnalysisCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisCategory.swift; sourceTree = "<group>"; };
 		8469EEDD22F24D9800B861F1 /* AnalysisCategoryTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisCategoryTableHeader.swift; sourceTree = "<group>"; };
 		8469EEDE22F24D9800B861F1 /* AnalysisCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8469EEDF22F24D9800B861F1 /* AnalysisCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		8469EEE022F24D9900B861F1 /* AnalysisCategoryTableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisCategoryTableHeader.xib; sourceTree = "<group>"; };
 		8469EEE122F24D9900B861F1 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		8469EEE222F24D9900B861F1 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		8489944822F8DC1700A11073 /* AnalysisBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisBusinessModel.swift; sourceTree = "<group>"; };
+		8489944A22F8DCEC00A11073 /* AnalysisAPIRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisAPIRequestModel.swift; sourceTree = "<group>"; };
+		8489944C22F8E6C300A11073 /* AnalysisCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisCategories.swift; sourceTree = "<group>"; };
+		84E78BE622F9F5A20051EFC3 /* AnalysisDatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisDatePresenter.swift; sourceTree = "<group>"; };
+		84E78BE822F9F6340051EFC3 /* AnalysisPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisPeriod.swift; sourceTree = "<group>"; };
 		B7FEFCAABB26B689DB56C828 /* Pods-NorthLoopFin.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.production.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.production.xcconfig"; sourceTree = "<group>"; };
 		C2715281AE993EDF13E8DCA6 /* Pods-NorthLoopFin.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.staging.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.staging.xcconfig"; sourceTree = "<group>"; };
 		CCA02DBA013BB596CEE380C0 /* Pods_NorthLoopFinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthLoopFinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2460,13 +2468,13 @@
 		8469EE9A22F1FB4100B861F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8469EE9B22F1FB7500B861F1 /* AnalysisViewController.swift */,
 				8469EEDD22F24D9800B861F1 /* AnalysisCategoryTableHeader.swift */,
 				8469EEE022F24D9900B861F1 /* AnalysisCategoryTableHeader.xib */,
 				8469EEDE22F24D9800B861F1 /* AnalysisCategoryTableViewCell.swift */,
 				8469EEDF22F24D9800B861F1 /* AnalysisCategoryTableViewCell.xib */,
 				8469EEE222F24D9900B861F1 /* CalendarTableViewCell.swift */,
 				8469EEE122F24D9900B861F1 /* CalendarTableViewCell.xib */,
-				8469EE9B22F1FB7500B861F1 /* AnalysisViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2475,6 +2483,7 @@
 			isa = PBXGroup;
 			children = (
 				8469EED822F24D8100B861F1 /* AnalysisPresenter.swift */,
+				84E78BE622F9F5A20051EFC3 /* AnalysisDatePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -2482,7 +2491,10 @@
 		8469EED922F24D8100B861F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8469EEDA22F24D8100B861F1 /* AnalysisCategory.swift */,
+				8489944822F8DC1700A11073 /* AnalysisBusinessModel.swift */,
+				8489944A22F8DCEC00A11073 /* AnalysisAPIRequestModel.swift */,
+				8489944C22F8E6C300A11073 /* AnalysisCategories.swift */,
+				84E78BE822F9F6340051EFC3 /* AnalysisPeriod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2905,6 +2917,7 @@
 				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RKPieChart/RKPieChart.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -2936,6 +2949,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RKPieChart.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -3012,10 +3026,11 @@
 				4B94418F22ACC236005AD3BD /* DisputeTransactionResponse.swift in Sources */,
 				1D055D4F229C6E260078CD33 /* ACHTransactionRequestModel.swift in Sources */,
 				1D180D6E229E4CBE00FC3390 /* ZendeskRequestModel.swift in Sources */,
-				8469EEDC22F24D8100B861F1 /* AnalysisCategory.swift in Sources */,
 				1D5AB2E422A676D100DB3B70 /* UpdateCardBusinessLogic.swift in Sources */,
+				8489944D22F8E6C300A11073 /* AnalysisCategories.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */,
+				84E78BE722F9F5A20051EFC3 /* AnalysisDatePresenter.swift in Sources */,
 				4BFDF87422B217FB0066860D /* AccountDetailViewController.swift in Sources */,
 				1D9AF08722A5077300A9055F /* IndividualTransaction.swift in Sources */,
 				1D19D31E2295882E008D367E /* Account.swift in Sources */,
@@ -3176,6 +3191,7 @@
 				4BE8338022CB16C700765F05 /* CheckUpdatePresenter.swift in Sources */,
 				4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
+				8489944922F8DC1700A11073 /* AnalysisBusinessModel.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
 				4BFBC88622BB8B3500B23B68 /* GetAppSettingsRequestModel.swift in Sources */,
@@ -3188,6 +3204,7 @@
 				1D8440842289545A00A77BBF /* TransactionListModel.swift in Sources */,
 				1D180D84229E75EB00FC3390 /* ATMFinderViewController.swift in Sources */,
 				1DD066F9221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift in Sources */,
+				84E78BE922F9F6340051EFC3 /* AnalysisPeriod.swift in Sources */,
 				1D5AB2EF22A791C600DB3B70 /* SetPinBusinessLogic.swift in Sources */,
 				1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
@@ -3343,6 +3360,7 @@
 				1DFE480D21D9F4E0003EFECA /* PhoneVerifyStart.swift in Sources */,
 				EA4ED03822E5D54800D1F438 /* CardAuthPresenter.swift in Sources */,
 				1D180D79229E53C500FC3390 /* ZendeskPresenter.swift in Sources */,
+				8489944B22F8DCEC00A11073 /* AnalysisAPIRequestModel.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 				4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */,
 				1D8440832289545A00A77BBF /* TransactionHistory.swift in Sources */,

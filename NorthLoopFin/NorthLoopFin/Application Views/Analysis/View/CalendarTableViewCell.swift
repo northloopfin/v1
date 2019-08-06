@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CalendarTableViewCellDelegate: class {
-    func onDate(_ title:String?)
+    func onPeriod(_ cell:UITableViewCell)
 }
 
 class CalendarTableViewCell: UITableViewCell {
@@ -27,12 +27,8 @@ class CalendarTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        if selected {
-            super.setSelected(selected, animated: animated)
-            delegate?.onDate(dateTitle)
-        }
-    }
     
+    @IBAction func onSelect(_ sender: Any) {
+        delegate?.onPeriod(self)
+    }
 }

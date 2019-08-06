@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnalysisViewController: UIViewController {
+class AnalysisViewController: BaseViewController {
     @IBOutlet weak var labelCurrentBalance: UILabel!
     @IBOutlet weak var labelSpent: UILabel!
     @IBOutlet weak var labelTotalSpent: UILabel!
@@ -19,9 +19,11 @@ class AnalysisViewController: UIViewController {
     @IBOutlet weak var constraintBtnDateWidth: NSLayoutConstraint!
     @IBOutlet weak var viewDropdown: UIView!
     var presenter: AnalysisPresenter!
+    var presenterDate = AnalysisDatePresenter()
     var isDateShown:Bool = false
+    var selectedDateIndexPath:IndexPath? = nil
     
-    var analysisOptions:[AnalysisCategory] = [] {
+    var analysisOptions:[UserAnalysisCategory] = [] {
         didSet {
             if analysisOptions.count == 0 {
                 labelNoOption.isHidden = false
@@ -34,12 +36,28 @@ class AnalysisViewController: UIViewController {
         }
     }
     
-    var dateOptions:[String] = []
+    var dateOptions:[AnalysisPeriod] = [] {
+        didSet {
+            if dateOptions.count == 0 {
+                btnDate.isHidden = true
+            } else {
+                btnDate.isHidden = false
+                let text = dateOptions.last?.title ?? ""
+                let fontAttributes = [NSAttributedString.Key.font: UIFont.init(name: "Calibri", size: 14)]
+                let size = text.size(withAttributes: fontAttributes)
+                btnDate.setTitle(text, for: .normal)
+                constraintBtnDateWidth.constant = size.width + 40
+                self.tableViewDate.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRightNavigationBar()
         configureTable()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hidePeriodPicker))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +67,7 @@ class AnalysisViewController: UIViewController {
     }
     
     //Methode initialises the rightbutton for navigation
-    //override
-    func setupRightNavigationBar() {
+    override func setupRightNavigationBar() {
         let leftBarItem = UIBarButtonItem()
         leftBarItem.style = UIBarButtonItem.Style.plain
         leftBarItem.target = self
@@ -69,25 +86,31 @@ class AnalysisViewController: UIViewController {
         viewDropdown.layer.shadowOpacity = 0.15
         viewDropdown.layer.shadowRadius = 10.0
         
-        let text = "June 2019"
-        let fontAttributes = [NSAttributedString.Key.font: UIFont.init(name: "Calibri", size: 14)]
-        let size = text.size(withAttributes: fontAttributes)
-        constraintBtnDateWidth.constant = size.width + 40
+        labelNoOption.isHidden = false
+        tableView.isHidden = true
     }
     
     @IBAction func onDate(_ sender: Any) {
         if isDateShown {
-            UIView.animate(withDuration: 0.2) {
-                self.viewDropdown.alpha = 0
-            }
+            hidePeriodPicker()
         } else {
+            if let indexPath = self.selectedDateIndexPath {
+                self.tableViewDate.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            }
             UIView.animate(withDuration: 0.2) {
                 self.viewDropdown.alpha = 1
-                self.tableViewDate.reloadData()
             }
+            isDateShown = true
+            btnDate.isSelected = true
         }
-        btnDate.isSelected = !btnDate.isSelected
-        isDateShown = !isDateShown
+    }
+    
+    @objc func hidePeriodPicker() {
+        isDateShown = false
+        btnDate.isSelected = false
+        UIView.animate(withDuration: 0.2) {
+            self.viewDropdown.alpha = 0
+        }
     }
     
     //Method to go back to previous screen
@@ -96,27 +119,33 @@ class AnalysisViewController: UIViewController {
     }
     
     func getAnalysisDetail() {
-//        presenter.sendAnalysisDetailRequest()
-        analysisOptions = [
-            AnalysisCategory(summa: -200, type: .entertainment),
-            AnalysisCategory(summa: -20, type: .food),
-            AnalysisCategory(summa: -30, type: .shopping),
-            AnalysisCategory(summa: -20, type: .miscellaneous)
-        ]
-        dateOptions = [
-            "January 2019",
-            "February 2019",
-            "March 2019",
-            "April 2019",
-            "May 2019",
-            "June 2019",
-            "July 2019",
-            "August 2019",
-            "September 2019",
-            "October 2019",
-            "November 2019",
-            "December 2019"
-        ]
+        dateOptions = presenterDate.getDateListForAnalysis()
+        self.presenter = AnalysisPresenter.init(delegate: self)
+        if let currentDate = dateOptions.last {
+            self.presenter.fetchAnalysisCategories(month: currentDate.month, year:currentDate.year)
+            selectedDateIndexPath = IndexPath.init(row: dateOptions.count - 1, section: 0)
+        } else {
+            selectCurrentDate()
+        }
+    }
+    
+    func selectCurrentDate() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        let text = formatter.string(from: Date())
+        btnDate.setTitle(text, for:.normal)
+        let fontAttributes = [NSAttributedString.Key.font: UIFont.init(name: "Calibri", size: 14)]
+        let size = text.size(withAttributes: fontAttributes)
+        constraintBtnDateWidth.constant = size.width + 40
+        UIView.animate(withDuration: 0.1) {
+            self.view.layoutIfNeeded()
+        }
+        
+        formatter.dateFormat = "MM"
+        let currentMonth = formatter.string(from: Date())
+        formatter.dateFormat = "yyyy"
+        let currentYear = formatter.string(from: Date())
+        self.presenter.fetchAnalysisCategories(month: currentMonth, year:currentYear)
     }
 }
     
@@ -134,7 +163,7 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (tableView == tableViewDate) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell", for: indexPath) as! CalendarTableViewCell
-            cell.dateTitle = dateOptions[indexPath.row]
+            cell.dateTitle = dateOptions[indexPath.row].title
             cell.delegate = self
             return cell
         }
@@ -148,6 +177,7 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
             return nil
         }
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "AnalysisCategoryTableHeader") as! AnalysisCategoryTableHeader
+        headerView.categories = analysisOptions
         return headerView
     }
     
@@ -159,15 +189,41 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
         return tableView == tableViewDate ? 0 : 200
     }
     
-    func onDate(_ title:String?) {
-        let text = title ?? "June 2019"
-        btnDate.setTitle(text, for:.normal)
-        let fontAttributes = [NSAttributedString.Key.font: UIFont.init(name: "Calibri", size: 14)]
-        let size = text.size(withAttributes: fontAttributes)
-        constraintBtnDateWidth.constant = size.width + 40
-        UIView.animate(withDuration: 0.1) {
-            self.view.layoutIfNeeded()
+    func onPeriod(_ cell:UITableViewCell) {
+        hidePeriodPicker()
+        if let indexPath = tableViewDate.indexPath(for: cell) {
+            if dateOptions.count > indexPath.row {
+                selectedDateIndexPath = indexPath
+                let text = dateOptions[indexPath.row].title
+                btnDate.setTitle(text, for:.normal)
+                let fontAttributes = [NSAttributedString.Key.font: UIFont.init(name: "Calibri", size: 14)]
+                let size = text.size(withAttributes: fontAttributes)
+                constraintBtnDateWidth.constant = size.width + 40
+                UIView.animate(withDuration: 0.1) {
+                    self.view.layoutIfNeeded()
+                }
+                self.presenter.fetchAnalysisCategories(month: dateOptions[indexPath.row].month, year:dateOptions[indexPath.row].year)
+            } else {
+                selectCurrentDate()
+            }
+        } else {
+            selectCurrentDate()
         }
     }
+    
+}
 
+extension AnalysisViewController:AnalysisPresenterDelegate {
+    func didFetchAnalysisCategories(_ categories:[UserAnalysisCategory]) {
+        analysisOptions = categories
+        var sum = 0.0
+        for option in analysisOptions {
+            sum += option.sumAmount
+        }
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        let sumCurrency = formatter.string(from: NSNumber(value:sum)) ?? "0.00"
+        labelTotalSpent.text = "Total " + sumCurrency + " spent"
+    }
 }
