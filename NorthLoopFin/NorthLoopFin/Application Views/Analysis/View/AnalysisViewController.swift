@@ -88,6 +88,12 @@ class AnalysisViewController: BaseViewController {
         
         labelNoOption.isHidden = false
         tableView.isHidden = true
+        
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+        labelCurrentBalance.text = formatter.string(from: NSNumber(value:currentUser?.amount ?? 0)) ?? "$0.00"
     }
     
     @IBAction func onDate(_ sender: Any) {
