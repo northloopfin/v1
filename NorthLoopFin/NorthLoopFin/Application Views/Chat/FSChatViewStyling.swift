@@ -26,29 +26,20 @@ open class FSChatViewStyling: NSObject{
     
     
     class func chatNavigationStyling(){
-       
         UIApplication.shared.statusBarStyle = .lightContent
-       
-        let navbarAttributes:NSDictionary = NSDictionary(dictionary:
-            ["UITextAttributeTextColor":UIColor.red])
+        let navbarAttributes:NSDictionary = NSDictionary(dictionary:["UITextAttributeTextColor":UIColor.red])
         UINavigationBar.appearance().tintColor = UIColor.red
         UINavigationBar.appearance().titleTextAttributes = navbarAttributes as! [NSAttributedString.Key : Any]
         UINavigationBar.appearance().barTintColor = UIColor.red
-        
         UINavigationBar.appearance().isTranslucent = false
-       
-        
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
         //        UINavigationBar.appearance().backgroundColor = UIColor.whiteColor()
         //        UINavigationBar.appearance().opaque = false
-        
     }
     
     class func chatViewStyling(){
         //self.chatNavigationStyling()
         var insets: UIEdgeInsets
-    
-        
         
         //ZDCChatOverlay view
         //ZDCChatOverlay.appearance().overlayBackgroundImage = UIImage(named: "ic_chat_Minimize")
@@ -128,11 +119,11 @@ open class FSChatViewStyling: NSObject{
 
    
     
-    class func startTheChat(_ nv: UINavigationController,vc:UIViewController){
-      ZDCChat.instance().api.endChat()
-      ZDCChat.instance().overlay.hide()
+    class func startTheChat(_ nv: UINavigationController,vc:UIViewController) {
+        ZDCChat.instance().api.endChat()
+        ZDCChat.instance().overlay.hide()
 
-      self.chatViewStyling()
+        self.chatViewStyling()
         // track the event
         IQKeyboardManager.shared.enable = false
         ZDCChat.instance().api.trackEvent("Chat button pressed: (no pre-chat form)")
@@ -147,6 +138,11 @@ open class FSChatViewStyling: NSObject{
             config?.preChatDataRequirements.message = ZDCPreChatDataRequirement.notRequired
             config?.emailTranscriptAction = ZDCEmailTranscriptAction.neverSend
         })
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        ZDCChat.updateVisitor { user in
+            user?.name = currentUser?.name ?? ""
+            user?.email = currentUser?.userEmail ?? ""
+        }
         ZDCChat.instance().chatViewController.automaticallyAdjustsScrollViewInsets = false
         ZDCChat.instance().chatViewController.registerForKeyboardNotifications()
             ZDCChat.instance().chatViewController.requiresNavBar = true
