@@ -17,10 +17,10 @@ class ChangeAddressPresenter:ResponseCallback{
     init(delegate responseDelegate:ChangeAddressDelegate){
         self.delegate = responseDelegate
     }
+    
     //MARK:- Methods to make decision and call  Api.
     
-    func sendChangeAddressRequest(requestDic:[String:AnyObject]){
-        
+    func sendChangeAddressRequest(requestDic:[String:AnyObject]) {
         // convert requestbody to json string and assign to request model request param
         self.delegate?.showLoader()
     
@@ -33,6 +33,16 @@ class ChangeAddressPresenter:ResponseCallback{
             .build()
         requestModel.requestQueryParams = requestDic
         requestModel.apiUrl = requestModel.getEndPoint()
+        self.logic.performChangeAddress(withRequestModel: requestModel, presenterDelegate: self)
+    }
+    
+    func sendVerificateAddressRequset(requestDic:[String:AnyObject]) {
+        self.delegate?.showLoader()
+
+        let currentUser: User = UserInformationUtility.sharedInstance.getCurrentUser()!
+        let requestModel = ChangeAddressRequestModel.Builder().build()
+        requestModel.requestQueryParams = requestDic
+        requestModel.apiUrl = Endpoints.APIEndpoints.SIGNUPSYNAPSE.rawValue
         self.logic.performChangeAddress(withRequestModel: requestModel, presenterDelegate: self)
     }
     

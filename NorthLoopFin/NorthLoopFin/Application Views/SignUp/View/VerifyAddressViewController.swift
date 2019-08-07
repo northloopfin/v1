@@ -28,12 +28,14 @@ class VerifyAddressViewController: BaseViewController {
     var presenter: SignupSynapsePresenter!
     var zendeskPresenter: ZendeskPresenter!
     var accountInfoPresenter : AccountInfoPresenter!
+    var verifiedAddress:VerifiedAddress?
 
     //var to keep track of which screen has initiated the process
     var screenThatInitiatedThisFlow:AppConstants.Screens?
     lazy var basicInfo: Results<BasicInfo> = RealmHelper.retrieveBasicInfo()
 
     var changeAddressPresnter:ChangeAddressPresenter!
+    var checkAddressPresnter:CheckAddressPresenter!
 
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
@@ -51,9 +53,10 @@ class VerifyAddressViewController: BaseViewController {
     @IBAction func statesClicked(_ sender: Any) {
         dropDown.show()
     }
+    
     fileprivate func convertDataToDicAndCallAPI() {
-        if let _ = self.screenThatInitiatedThisFlow{
-            if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
+        if let _ = self.screenThatInitiatedThisFlow {
+            if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS {
                 //call api to update address here
                 let requestBody = self.createUpdateAddressRequestBody()
                 let jsonEncoder = JSONEncoder()
@@ -70,7 +73,7 @@ class VerifyAddressViewController: BaseViewController {
                     print(error)
                 }
             }
-        }else{
+        } else {
             self.persistDataRealm()
             self.updateSignupFlowData()
             UserDefaults.saveToUserDefault(AppConstants.Screens.HOME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
@@ -106,14 +109,35 @@ class VerifyAddressViewController: BaseViewController {
         }
     }
     
+    fileprivate func convertDataForCheckAndCallAPI() {
+        let requestBody = createCheckAddressRequestBody()
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(requestBody)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            let dic = jsonString?.convertToDictionary() as! [String:String]
+            print(dic)
+            self.checkAddressPresnter.sendCheckAddressRequest(requestDic:dic)
+        } catch {
+            print(error)
+        }
+    }
+    
     @IBAction func doneClicked(_ sender: Any) {
         if (Validations.isValidZip(value: self.zipTextfield.text!)){
-                //delete all images from document directory
-                //StorageHelper.clearAllFileFromDirectory()
-                convertDataToDicAndCallAPI()
-            }else{
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
-            }
+            //delete all images from document directory
+            //StorageHelper.clearAllFileFromDirectory()
+            convertDataToDicAndCallAPI()
+        }else{
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+        }
+
+//            //delete all images from document directory
+//            //StorageHelper.clearAllFileFromDirectory()
+//            convertDataForCheckAndCallAPI()
+//        } else {
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+//        }
     }
     
     
@@ -121,7 +145,15 @@ class VerifyAddressViewController: BaseViewController {
         let updatedAddress:UpdatedAddress = UpdatedAddress.init(houseNo: self.houseNumbertextfield.text ?? "", state: self.textState.text ?? "", street: self.streetAddress.text ?? "", city: self.cityTextfield.text ?? "", zip: self.zipTextfield.text ?? "", country: "US")
         let updateAddressRequestBody = UpdateAddressRequestBody.init(address: updatedAddress)
         return updateAddressRequestBody
-        
+    }
+    
+    func createCheckAddressRequestBody() -> CheckAddress {
+        let checkAddress:CheckAddress = CheckAddress.init(
+            street: self.streetAddress.text ?? "",
+            city: self.cityTextfield.text ?? "",
+            state: self.textState.text ?? "",
+            zipcode: self.zipTextfield.text ?? "")
+        return checkAddress
     }
     
     override func viewDidLoad() {
@@ -136,6 +168,7 @@ class VerifyAddressViewController: BaseViewController {
         self.presenter = SignupSynapsePresenter.init(delegate: self)
         self.zendeskPresenter = ZendeskPresenter.init(delegate: self)
         self.changeAddressPresnter = ChangeAddressPresenter.init(delegate: self)
+        self.checkAddressPresnter = CheckAddressPresenter.init(delegate: self)
         accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
         if let _ =  self.screenThatInitiatedThisFlow{
             if self.screenThatInitiatedThisFlow == AppConstants.Screens.CHANGEADDRESS{
@@ -335,18 +368,76 @@ extension VerifyAddressViewController:ChangeAddressDelegate{
         AppUtility.moveToHomeScreen()
     }
 }
+
+extension VerifyAddressViewController:CheckAddressDelegate {
+    func didVerifyAddress(_ verifiedAddress:VerifiedAddress) {
+        self.verifiedAddress = verifiedAddress
+        if compareAddress(verifiedAddress) {
+            convertDataToDicAndCallAPI()
+        } else {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddressVerificationViewController") as! AddressVerificationViewController
+            vc.delegate = self
+            vc.dataSource = [
+                    [
+                        self.streetAddress.text ?? "",
+                        self.houseNumbertextfield.text ?? "",
+                        self.cityTextfield.text ?? "",
+                        self.textState.text ?? "",
+                        self.zipTextfield.text ?? ""
+                    ],
+                    [
+                        verifiedAddress.street,
+                        self.houseNumbertextfield.text ?? "",
+                        verifiedAddress.city,
+                        verifiedAddress.state,
+                        verifiedAddress.zipcode
+                    ]
+                ]
+            verifiedAddress.house = self.houseNumbertextfield.text ?? ""
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func compareAddress(_ verifiedAddress:VerifiedAddress) -> Bool {
+        var isEqual = true
+        if verifiedAddress.street != self.streetAddress.text {
+            isEqual = false
+        }
+        if verifiedAddress.city != self.cityTextfield.text {
+            isEqual = false
+        }
+        if verifiedAddress.state != self.textState.text {
+            isEqual = false
+        }
+        if verifiedAddress.zipcode != self.zipTextfield.text {
+            isEqual = false
+        }
+        return isEqual
+    }
+}
+
+extension VerifyAddressViewController:AddressVerificationViewDelegate {
+    func uprovedVerifiedAddress() {
+        self.streetAddress.text = verifiedAddress?.street ?? ""
+        self.cityTextfield.text = verifiedAddress?.city ?? ""
+        self.textState.text = verifiedAddress?.state ?? ""
+        self.zipTextfield.text = verifiedAddress?.zipcode ?? ""
+        convertDataToDicAndCallAPI()
+    }
+}
+
 extension VerifyAddressViewController:HomeDelegate{
     //MARK: HomeDelegate
     func didFetchedTransactionList(data: [TransactionListModel]) {
-        
-        
     }
+    
     func didFetchedError(error:ErrorModel){
         if self.screenThatInitiatedThisFlow==AppConstants.Screens.CHANGEADDRESS{
         }else{
             self.moveToWaitList()
         }
     }
+    
     func didFetchedAccountInfo(data:Account){
         // check isVerified key and open screen accordingly
         if data.data.isVerified{

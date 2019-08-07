@@ -24,6 +24,8 @@ struct AppConstants{
     static let KeyChainKeyForEmail = "NorthLoopEmail"
     static let UserDefaultKeyForFreshInstall = "FreshInstall"
     static let AppStoreID = "1470578407"
+    static let SS_Auth_ID = AppUtility.infoForKey("SmartyStreets Auth ID")
+    static let SS_Auth_Token = AppUtility.infoForKey("SmartyStreets Auth Token")
 
     static let PageLimit:Int = 20
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String

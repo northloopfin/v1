@@ -56,6 +56,9 @@ class HomeTableCell: UITableViewCell {
                 let url = URL(string: (data.to.meta?.merchantLogo)!)
                 self.beneficiaryImg.kf.setImage(with: url)
             }
+            if let _  = data.to.meta, data.to.meta?.type.lowercased() == "ach" {
+                self.beneficiaryName.text = data.to.user.legalNames.count > 0 ? data.to.user.legalNames[0] : "No name"
+            }
         }else if data.to.type == "ACH-US"{
             self.beneficiaryName.text = data.to.user.legalNames[0]
         } else if data.from.type == "EXTERNAL-US"{
@@ -73,10 +76,10 @@ class HomeTableCell: UITableViewCell {
                 }
             }
         }
-        
-      
+        if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
+            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+        }
         self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? UIColor.init(red: 24, green: 177, blue: 0) : self.beneficiaryName.textColor
-        
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
         }

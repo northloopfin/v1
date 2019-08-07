@@ -15,6 +15,9 @@ protocol ChangeAddressDelegate: BaseViewProtocol {
     func didAddressChanged()
 }
 protocol CheckAddressDelegate: BaseViewProtocol {
-    func didVerifyAddress()
+    func didVerifyAddress(_ verifiedAddress:VerifiedAddress)
+}
+protocol AddressVerificationViewDelegate: BaseViewProtocol {
+    func uprovedVerifiedAddress()
 }
 

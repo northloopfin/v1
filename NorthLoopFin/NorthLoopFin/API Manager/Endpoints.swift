@@ -49,4 +49,8 @@ struct Endpoints{
         case IP = "ip"
         case USERID = "user_id"
     }
+    
+    enum APISmartyStreetsEndpoints: String{
+        case US_Street_Address = "https://us-street.api.smartystreets.com/street-address"
+    }
 }
