@@ -23,6 +23,7 @@ struct AppConstants{
     static let KeyChainKeyForPassword = "NorthLoopPassword"
     static let KeyChainKeyForEmail = "NorthLoopEmail"
     static let UserDefaultKeyForFreshInstall = "FreshInstall"
+    static let AppStoreID = "1470578407"
 
     static let PageLimit:Int = 20
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String

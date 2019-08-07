@@ -26,7 +26,7 @@ class TwoFAVerifyPresenter:ResponseCallback{
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
-            .addRequestQueryParams(key: "mfa", value: otp as AnyObject)
+//            .addRequestQueryParams(key: "mfa", value: otp as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()+"false?"
         if sendToAPI{
