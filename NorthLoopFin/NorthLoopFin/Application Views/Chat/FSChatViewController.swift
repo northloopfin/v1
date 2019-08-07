@@ -31,10 +31,9 @@ class FSChatViewController: ZDCChatViewController
     }
     
     override func viewWillAppear(_ animated: Bool) {
-          super.viewWillAppear(true)
-          self.setupNavigationBar()
-          ZDCChat.instance().overlay.hide()
-      
+      super.viewWillAppear(true)
+      self.setupNavigationBar()
+      ZDCChat.instance().overlay.hide()
     }
   
     override func viewDidDisappear(_ animated: Bool) {
@@ -47,20 +46,12 @@ class FSChatViewController: ZDCChatViewController
 //        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
     /**
      * This function setup the Navigation bar
      * @return void
      */
     
-    func setupNavigationBar() ->Void
-    {
-        
-      
+    func setupNavigationBar() -> Void {
         UIApplication.shared.isStatusBarHidden = true
         //let navbarAttributes:NSDictionary = NSDictionary(dictionary:
           //  ["UITextAttributeTextColor":UIColor.whiteColor()])
@@ -87,28 +78,23 @@ class FSChatViewController: ZDCChatViewController
         
     }
     
-    override func viewWillDisappear(_ animated: Bool)
-    {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         ZDCChat.instance().overlay.show()
-        if let bar:UINavigationBar? =  self.navigationController?.navigationBar
-        {
+        if let bar:UINavigationBar? =  self.navigationController?.navigationBar {
             bar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
             bar?.backgroundColor = UIColor.clear
             bar?.shadowImage = UIImage()
             bar?.isTranslucent = true
-            
         }
         UIApplication.shared.isStatusBarHidden = false
-      
     }
 
     
     /**
      
      */
-    func setChatAccountKey(){
-        
+    func setChatAccountKey() {
 //        ZDCChat.configure { (defaults) -> Void in
 //            defaults?.accountKey = "3mQdNpcDgnVRSwWatyp0mMFZSg2hwVXt"
 //            

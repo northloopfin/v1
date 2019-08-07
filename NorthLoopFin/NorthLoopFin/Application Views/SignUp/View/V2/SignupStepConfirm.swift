@@ -110,6 +110,7 @@ class SignupStepConfirm: BaseViewController {
                 //ssn user - id number, date of birth
                 self.arrivalHeightConstraint.constant=0
                 self.universityHeightConstraint.constant=0
+                self.passportHeightConstraint.constant=0
             }
         }
         self.customProgressView.progressView.setProgress(0.17*5, animated: true)
@@ -263,7 +264,7 @@ extension SignupStepConfirm:UITextFieldDelegate{
             let ssnVirtualDoc = self.signupFlowData.documents.virtualDocs.filter{$0.documentType == "SSN"}
             if (ssnVirtualDoc.count > 0){
                 // SSN User
-                if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)!)
+                if (!(self.DOBTextField.text?.isEmpty)!)
                 {
                     self.nextBtn.isEnabled=true
                 }

@@ -127,10 +127,17 @@ class VerifyAddressViewController: BaseViewController {
         if (Validations.isValidZip(value: self.zipTextfield.text!)){
             //delete all images from document directory
             //StorageHelper.clearAllFileFromDirectory()
-            convertDataForCheckAndCallAPI()
-        } else {
+            convertDataToDicAndCallAPI()
+        }else{
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
         }
+
+//            //delete all images from document directory
+//            //StorageHelper.clearAllFileFromDirectory()
+//            convertDataForCheckAndCallAPI()
+//        } else {
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)
+//        }
     }
     
     

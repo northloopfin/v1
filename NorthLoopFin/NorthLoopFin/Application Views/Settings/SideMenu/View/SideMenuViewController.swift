@@ -37,7 +37,7 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
         self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
-//        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
     }
 }
 

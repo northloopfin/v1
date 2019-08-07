@@ -282,7 +282,7 @@ extension HomeViewController:HomeDelegate{
         }
         if !data.data.isPhoneVerified {
             self.navigateToOTP()
-        }else if !data.data.isVerified{
+        }else if !data.data.isAccountVerified{
             self.moveToWaitList()
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)

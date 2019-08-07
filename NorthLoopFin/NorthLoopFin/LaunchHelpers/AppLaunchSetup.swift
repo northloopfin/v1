@@ -28,6 +28,7 @@ class AppLaunchSetup: NSObject {
         ReachabilityManager.shared.startMonitoring()
         AFNetworkReachabilityManager.shared().startMonitoring()
     }
+    
     func initialiseThirdPartyIfAny(){
         GMSServices.provideAPIKey(AppConstants.GoogleMapAPIKey ?? "")
         IQKeyboardManager.shared.enable = true

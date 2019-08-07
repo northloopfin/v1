@@ -29,9 +29,10 @@ class TwoFAPresenter:ResponseCallback{
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
             .build()
-            requestModel.apiUrl = requestModel.getEndPoint()+"false"
             if sendToAPI{
-                requestModel.apiUrl = requestModel.getEndPoint()+"true"
+                requestModel.apiUrl = requestModel.getEndPointForMobile()
+            }else{
+                requestModel.apiUrl = requestModel.getEndPoint()+"false"
             }
         
         self.logic.performTwoFA(withRequestModel: requestModel, presenterDelegate: self)

@@ -77,4 +77,9 @@ class TwoFARequestModel {
     func getEndPoint()->String{
         return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TWOFA.rawValue
     }
+    
+    func getEndPointForMobile()->String{
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.TWOFAMOBILE.rawValue
+    }
+
 }
