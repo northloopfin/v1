@@ -79,7 +79,7 @@ class HomeTableCell: UITableViewCell {
         if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
             self.beneficiaryImg.image = UIImage.init(named:"Transfer")
         }
-        self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? UIColor.init(red: 24, green: 177, blue: 0) : self.beneficiaryName.textColor
+        self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
         }

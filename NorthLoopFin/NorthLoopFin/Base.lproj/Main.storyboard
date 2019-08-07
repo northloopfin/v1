@@ -16,6 +16,9 @@
         <array key="Calibri.ttf">
             <string>Calibri</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -5876,6 +5879,192 @@ We’ve sent an email confirming.</string>
             </objects>
             <point key="canvasLocation" x="919.20000000000005" y="630.13493253373315"/>
         </scene>
+        <!--Wire List Controller-->
+        <scene sceneID="3fv-Ks-F4I">
+            <objects>
+                <viewController storyboardIdentifier="WireListController" id="q67-x5-7zo" customClass="WireListController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5x-CH-nop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 35,000.84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8t-Vl-HuZ">
+                                <rect key="frame" x="100" y="20" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mMA-dv-Ct8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb0-lO-s9N">
+                                <rect key="frame" x="0.0" y="65" width="375" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KL5-Rr-6ba">
+                                        <rect key="frame" x="45" y="12" width="150" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="P8i-dv-p4Y"/>
+                                            <constraint firstAttribute="width" constant="150" id="ejp-sW-14D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="14"/>
+                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD/INR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA1-7R-QT1">
+                                        <rect key="frame" x="270" y="12" width="60" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="FDb-Fx-Sp8"/>
+                                            <constraint firstAttribute="height" constant="21" id="rSd-ej-F1u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="14"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opc-mp-FuM">
+                                        <rect key="frame" x="187" y="8.5" width="1" height="28"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="dWE-Cz-tVI"/>
+                                            <constraint firstAttribute="width" constant="1" id="l4a-fe-Jcp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dA1-7R-QT1" secondAttribute="trailing" constant="45" id="1AS-sP-Kgf"/>
+                                    <constraint firstAttribute="height" constant="45" id="Aqz-V4-NO3"/>
+                                    <constraint firstItem="KL5-Rr-6ba" firstAttribute="centerY" secondItem="hb0-lO-s9N" secondAttribute="centerY" id="LIf-Y7-7IK"/>
+                                    <constraint firstItem="KL5-Rr-6ba" firstAttribute="leading" secondItem="hb0-lO-s9N" secondAttribute="leading" constant="45" id="Pn7-Jo-OTY"/>
+                                    <constraint firstItem="opc-mp-FuM" firstAttribute="centerY" secondItem="hb0-lO-s9N" secondAttribute="centerY" id="ebv-tw-YV6"/>
+                                    <constraint firstItem="dA1-7R-QT1" firstAttribute="centerY" secondItem="hb0-lO-s9N" secondAttribute="centerY" id="t0w-R8-iwz"/>
+                                    <constraint firstItem="opc-mp-FuM" firstAttribute="centerX" secondItem="hb0-lO-s9N" secondAttribute="centerX" id="umf-rd-0IF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-3z-urG">
+                                <rect key="frame" x="0.0" y="437" width="375" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UP-sd-9wX">
+                                        <rect key="frame" x="45" y="15" width="285" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7SE-yA-HOa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Best Rate" image="ic_base_rate">
+                                            <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                <real key="value" value="0.22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnClaimRefund_clicked:" destination="q67-x5-7zo" eventType="touchUpInside" id="zKn-2i-S2z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AW9-S2-7p8">
+                                        <rect key="frame" x="45" y="85" width="285" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JjB-Is-atW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Eligible refund" image="ic_eligible_refund">
+                                            <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                <real key="value" value="0.22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnClaimRefund_clicked:" destination="q67-x5-7zo" eventType="touchUpInside" id="H5J-1T-YZd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-me-9zA" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="45" y="155" width="285" height="45"/>
+                                        <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="cKH-mA-eZv"/>
+                                        </constraints>
+                                        <state key="normal" title="CLAIM REFUND $350">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                <real key="value" value="0.22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnClaimRefund_clicked:" destination="q67-x5-7zo" eventType="touchUpInside" id="4eP-FV-hzx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="AW9-S2-7p8" firstAttribute="leading" secondItem="0Oa-3z-urG" secondAttribute="leading" constant="45" id="6B3-IP-7S5"/>
+                                    <constraint firstItem="2UP-sd-9wX" firstAttribute="leading" secondItem="0Oa-3z-urG" secondAttribute="leading" constant="45" id="7qn-Ij-sT6"/>
+                                    <constraint firstItem="2UP-sd-9wX" firstAttribute="top" secondItem="0Oa-3z-urG" secondAttribute="top" constant="15" id="CJX-Su-QEL"/>
+                                    <constraint firstAttribute="height" constant="230" id="Cly-VC-LrG"/>
+                                    <constraint firstAttribute="bottom" secondItem="dnF-me-9zA" secondAttribute="bottom" constant="30" id="D5v-Qt-2t6"/>
+                                    <constraint firstAttribute="trailing" secondItem="AW9-S2-7p8" secondAttribute="trailing" constant="45" id="Egp-rA-EO9"/>
+                                    <constraint firstAttribute="trailing" secondItem="2UP-sd-9wX" secondAttribute="trailing" constant="45" id="Qtf-Ns-BZe"/>
+                                    <constraint firstItem="AW9-S2-7p8" firstAttribute="top" secondItem="2UP-sd-9wX" secondAttribute="bottom" constant="20" id="UZG-0M-4Ov"/>
+                                    <constraint firstAttribute="trailing" secondItem="dnF-me-9zA" secondAttribute="trailing" constant="45" id="jBw-IG-sKy"/>
+                                    <constraint firstItem="dnF-me-9zA" firstAttribute="leading" secondItem="0Oa-3z-urG" secondAttribute="leading" constant="45" id="li8-xg-CFi"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rqe-YJ-8Kc">
+                                <rect key="frame" x="0.0" y="110" width="375" height="327"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="q67-x5-7zo" id="2f4-Tv-hGL"/>
+                                    <outlet property="delegate" destination="q67-x5-7zo" id="r5J-R8-YwX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Oa-3z-urG" firstAttribute="leading" secondItem="5J5-cC-Bal" secondAttribute="leading" id="3Te-MA-JoJ"/>
+                            <constraint firstItem="0Oa-3z-urG" firstAttribute="top" secondItem="rqe-YJ-8Kc" secondAttribute="bottom" id="5ff-CK-oJ4"/>
+                            <constraint firstItem="o8t-Vl-HuZ" firstAttribute="leading" secondItem="5J5-cC-Bal" secondAttribute="leading" constant="100" id="6HH-De-Y41"/>
+                            <constraint firstItem="hb0-lO-s9N" firstAttribute="top" secondItem="o8t-Vl-HuZ" secondAttribute="bottom" constant="15" id="B5N-r6-nzM"/>
+                            <constraint firstItem="rqe-YJ-8Kc" firstAttribute="top" secondItem="hb0-lO-s9N" secondAttribute="bottom" id="JgB-Jn-pPJ"/>
+                            <constraint firstItem="rqe-YJ-8Kc" firstAttribute="leading" secondItem="5J5-cC-Bal" secondAttribute="leading" id="WPQ-RX-Iqb"/>
+                            <constraint firstItem="0Oa-3z-urG" firstAttribute="trailing" secondItem="5J5-cC-Bal" secondAttribute="trailing" id="bdQ-TA-pFl"/>
+                            <constraint firstItem="hb0-lO-s9N" firstAttribute="leading" secondItem="5J5-cC-Bal" secondAttribute="leading" id="mfl-Wl-zSh"/>
+                            <constraint firstItem="0Oa-3z-urG" firstAttribute="bottom" secondItem="5J5-cC-Bal" secondAttribute="bottom" id="mwY-Gk-Jiz"/>
+                            <constraint firstItem="o8t-Vl-HuZ" firstAttribute="top" secondItem="5J5-cC-Bal" secondAttribute="top" id="whp-Wg-vmP"/>
+                            <constraint firstItem="5J5-cC-Bal" firstAttribute="trailing" secondItem="o8t-Vl-HuZ" secondAttribute="trailing" constant="100" id="wsO-hI-fQk"/>
+                            <constraint firstItem="5J5-cC-Bal" firstAttribute="trailing" secondItem="rqe-YJ-8Kc" secondAttribute="trailing" id="wua-39-0e3"/>
+                            <constraint firstItem="5J5-cC-Bal" firstAttribute="trailing" secondItem="hb0-lO-s9N" secondAttribute="trailing" id="wyt-hJ-WP4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5J5-cC-Bal"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnBestRate" destination="2UP-sd-9wX" id="3sw-Ub-p1D"/>
+                        <outlet property="btnClaimRefund" destination="dnF-me-9zA" id="Ovl-nP-kja"/>
+                        <outlet property="btnEligibleRefund" destination="AW9-S2-7p8" id="2GG-iS-YRV"/>
+                        <outlet property="lblTotalAmount" destination="o8t-Vl-HuZ" id="syd-Y4-7Wv"/>
+                        <outlet property="tableView" destination="rqe-YJ-8Kc" id="I4K-wD-d3d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGv-fj-WbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922.39999999999998" y="1368.6656671664168"/>
+        </scene>
         <!--Sign Up Step First-->
         <scene sceneID="Jwf-bG-IDA">
             <objects>
@@ -6815,7 +7004,7 @@ The Internal Revenue Service does not require your consent to any provision of t
         <!--Address Verification View Controller-->
         <scene sceneID="T0W-nu-2w7">
             <objects>
-                <viewController storyboardIdentifier="AddressVerificationViewController" id="7Wm-ga-6cG" customClass="AddressVerificationViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddressVerificationViewController" id="7Wm-ga-6cG" customClass="AddressVerificationViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xri-jC-kp3"/>
                         <viewControllerLayoutGuide type="bottom" id="lzT-fR-Xzg"/>
@@ -6840,7 +7029,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                             <constraint firstAttribute="height" constant="580" id="XFj-6x-hWX"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressVerificationTableViewCell" rowHeight="55" id="vYf-It-GTv" customClass="AddressVerificationTableViewCell" customModule="Test" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressVerificationTableViewCell" rowHeight="55" id="vYf-It-GTv" customClass="AddressVerificationTableViewCell" customModule="NorthLoopFin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="325" height="55"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vYf-It-GTv" id="UUH-0L-ST7">
@@ -6984,6 +7173,8 @@ The Internal Revenue Service does not require your consent to any provision of t
         <image name="faq1" width="124" height="114"/>
         <image name="group" width="204" height="170"/>
         <image name="homeBg" width="375" height="326"/>
+        <image name="ic_base_rate" width="32" height="32"/>
+        <image name="ic_eligible_refund" width="32" height="32"/>
         <image name="icon_yes" width="12" height="9.5"/>
         <image name="logo" width="153" height="42"/>
         <image name="lostCard" width="128" height="140"/>

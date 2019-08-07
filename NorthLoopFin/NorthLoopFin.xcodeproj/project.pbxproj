@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -419,6 +419,9 @@
 		EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */; };
 		EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727122E09F1500D5B834 /* DeleteACH.swift */; };
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
+		EA1D9FDC22FAD3E2005DAFEA /* WireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1D9FDA22FAD3E2005DAFEA /* WireCell.swift */; };
+		EA1D9FDD22FAD3E2005DAFEA /* WireCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1D9FDB22FAD3E2005DAFEA /* WireCell.xib */; };
+		EA1D9FDF22FAD989005DAFEA /* WireListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1D9FDE22FAD989005DAFEA /* WireListController.swift */; };
 		EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */; };
 		EA1FC14122F1526C002A7103 /* AMPLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */; };
 		EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12122F1526C002A7103 /* AMPUtils.m */; };
@@ -903,6 +906,9 @@
 		EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHRequestModel.swift; sourceTree = "<group>"; };
 		EA04727122E09F1500D5B834 /* DeleteACH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteACH.swift; sourceTree = "<group>"; };
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
+		EA1D9FDA22FAD3E2005DAFEA /* WireCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireCell.swift; sourceTree = "<group>"; };
+		EA1D9FDB22FAD3E2005DAFEA /* WireCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WireCell.xib; sourceTree = "<group>"; };
+		EA1D9FDE22FAD989005DAFEA /* WireListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListController.swift; sourceTree = "<group>"; };
 		EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA1FC11C22F1526B002A7103 /* AMPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLConnection.h; sourceTree = "<group>"; };
 		EA1FC11D22F1526B002A7103 /* AMPIdentify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPIdentify.h; sourceTree = "<group>"; };
@@ -2056,6 +2062,9 @@
 				1D055D4B229C38DE0078CD33 /* TransferConfirmationViewController.swift */,
 				1D180D67229CF5AB00FC3390 /* TransferSuceessViewController.swift */,
 				EA04726022E070F800D5B834 /* ViewAccountsViewController.swift */,
+				EA1D9FDA22FAD3E2005DAFEA /* WireCell.swift */,
+				EA1D9FDB22FAD3E2005DAFEA /* WireCell.xib */,
+				EA1D9FDE22FAD989005DAFEA /* WireListController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2766,6 +2775,7 @@
 				1DF64E1B21E5FDE9008774CE /* MyCardTableCell.xib in Resources */,
 				1D818A0021C0E063000C8F5F /* Calibri Bold Italic.ttf in Resources */,
 				EA1FC14C22F1526C002A7103 /* AppledocSettings.plist in Resources */,
+				EA1D9FDD22FAD3E2005DAFEA /* WireCell.xib in Resources */,
 				2985E5A721B6640500CCA2AB /* Staging.xcconfig in Resources */,
 				4B15362722DDA9E4009CE548 /* northloop.gif in Resources */,
 				1FF70EB422ED7500007A9309 /* CountryPickerView.xib in Resources */,
@@ -2884,66 +2894,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AlertHelperKit/AlertHelperKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GiFHUD-Swift/GiFHUD_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Haptica/Haptica.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Karte/Karte.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/ZendeskCoreSDK.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/ZendeskProviderSDK.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/ZendeskSDK.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/CommonUISDK.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlertHelperKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GiFHUD_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haptica.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Karte.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskProviderSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonUISDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2956,24 +2911,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
-				"${PODS_ROOT}/ZDCChat/ZDCChatStrings.bundle",
-				"${PODS_ROOT}/ZDCChat/ZDCChat.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZDCChatStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZDCChat.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3158,6 +3100,7 @@
 				8469EF6822F4FAF300B861F1 /* AddressVerificationViewController.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
+				EA1D9FDF22FAD989005DAFEA /* WireListController.swift in Sources */,
 				EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */,
 				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
@@ -3369,6 +3312,7 @@
 				4BFBC88C22BB8B7800B23B68 /* GetAppSettingsResponse.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */,
+				EA1D9FDC22FAD3E2005DAFEA /* WireCell.swift in Sources */,
 				EA1FC14F22F1526C002A7103 /* AMPIdentify.m in Sources */,
 				1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */,
 				1DCDF268228ED19C00ABDCB1 /* SignupFlowDocument.swift in Sources */,
