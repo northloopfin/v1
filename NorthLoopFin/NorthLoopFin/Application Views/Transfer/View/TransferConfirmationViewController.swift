@@ -55,9 +55,9 @@ class TransferConfirmationViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Transfer")
         self.setupRightNavigationBar()
         self.nextBtn.titleLabel?.font=AppFonts.btnTitleCalibri18
-        self.amountLbl.text = "Anount: $"+self.amount
+        self.amountLbl.text = "Amount: $"+self.amount
         self.toLbl.text = "To: " + self.ach!.nickname
-        self.accountNumberLbl.text = "Account Number: " + self.ach!.account_num
+        self.accountNumberLbl.text = "Account Number: XXX" + self.ach!.account_num
         self.dateLbl.text =  "Date: " + AppUtility.getFormattedDateFullString(date: Date())
         
         let shadowOffst = CGSize.init(width: 0, height: -55)
