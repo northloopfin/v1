@@ -1,5 +1,5 @@
 //
-//  WireListController.swift
+//  WireRateController.swift
 //  NorthLoopFin
 //
 //  Created by Milan Mendpara on 07/08/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WireListController: BaseViewController {
+class WireRateController: BaseViewController {
     @IBOutlet weak var lblTotalAmount: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnClaimRefund: RippleButton!
@@ -30,13 +30,13 @@ class WireListController: BaseViewController {
         styleButton(btn: btnBestRate)
         styleButton(btn: btnEligibleRefund)
 
-        let rateString = NSMutableAttributedString(string: "Best rate  " )
+        let rateString = NSMutableAttributedString(string: "Best rate  ", attributes: [ NSAttributedString.Key.font: AppFonts.calibri15 ] )
         let rate = NSAttributedString(string: "INR 65.00", attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
         rateString.append(rate)
         rateString.addAttributes([NSAttributedString.Key.foregroundColor: Colors.AmountGreen241770], range: NSRange(location: 0, length: rateString.length))
         btnBestRate.setAttributedTitle(rateString, for: .normal)
 
-        let eligibleString = NSMutableAttributedString(string: "Eligible Fund  " )
+        let eligibleString = NSMutableAttributedString(string: "Eligible Fund  ", attributes: [ NSAttributedString.Key.font: AppFonts.calibri15 ] )
         let eligible = NSAttributedString(string: "INR 65.00", attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
         eligibleString.append(eligible)
         eligibleString.addAttributes([NSAttributedString.Key.foregroundColor: Colors.PurpleColor17673149], range: NSRange(location: 0, length: eligibleString.length))
@@ -57,13 +57,13 @@ class WireListController: BaseViewController {
     }
 }
 
-extension WireListController:UITableViewDelegate,UITableViewDataSource{
+extension WireRateController:UITableViewDelegate,UITableViewDataSource{
     //Configure table view delgates and data source
     func configureTable(){
         self.tableView.rowHeight = 51;
         self.tableView.delegate=self
         self.tableView.dataSource=self
-        self.tableView.registerTableViewCell(tableViewCell: WireCell.self)
+        self.tableView.registerTableViewCell(tableViewCell: WireRateCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +71,7 @@ extension WireListController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: WireCell = tableView.dequeueReusableCell(withIdentifier: "WireCell") as! WireCell
+        let cell: WireRateCell = tableView.dequeueReusableCell(withIdentifier: "WireRateCell") as! WireRateCell
         cell.selectionStyle = .none
         return cell
     }

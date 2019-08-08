@@ -10,6 +10,7 @@ import UIKit
 
 class SideMenuViewController: UIViewController {
     var data:[String]=[]
+    
     @IBOutlet weak var optionsTableView: UITableView!
     var delegate:SideMenuDelegate!
     

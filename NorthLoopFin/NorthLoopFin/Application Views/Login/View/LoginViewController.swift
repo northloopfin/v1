@@ -267,11 +267,18 @@ extension LoginViewController:LoginDelegate{
         self.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: error.getErrorMessage())
     }
     
+    func moveToTest(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "CurrencyProtectController") as! CurrencyProtectController
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
+    }
+    
 }
 extension LoginViewController:ZendeskDelegates{
     func didSentZendeskToken(data: ZendeskData) {
         AppUtility.configureZendesk(data: data)
         //self.moveToHome()
+//        moveToTest()
         AppUtility.moveToHomeScreen()
     }
 }

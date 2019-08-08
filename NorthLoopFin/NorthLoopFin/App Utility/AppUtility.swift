@@ -271,15 +271,15 @@ class AppUtility {
     
     class func moveToHomeScreen() {
         let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
-        var initialNavigationController:UINavigationController
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let sideMenu:SideMenuViewController = (storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController)!
         let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        initialNavigationController = UINavigationController(rootViewController:homeViewController)
+        let tabBarController = storyBoard.instantiateViewController(withIdentifier: "HomeTabController") as! HomeTabController
+        tabBarController.homeViewController = homeViewController
         sideMenu.delegate = homeViewController
         containerViewController.leftMenuViewController=sideMenu
-        containerViewController.centerViewController=initialNavigationController
+        containerViewController.centerViewController=tabBarController
         containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
         containerViewController.shadow.enabled=true;
         containerViewController.panMode = MFSideMenuPanModeDefault
