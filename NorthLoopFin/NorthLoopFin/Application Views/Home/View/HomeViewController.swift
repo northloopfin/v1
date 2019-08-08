@@ -163,6 +163,8 @@ class HomeViewController: BaseViewController {
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "TransactionDetailViewController") as! TransactionDetailViewController
        transactionDetailController.detailModel = detailModel
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
+//        let analysisController = storyBoard.instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
+//        self.navigationController?.pushViewController(analysisController, animated: false)
     }
 }
 
@@ -379,13 +381,17 @@ extension HomeViewController:SideMenuDelegate{
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "UpgradePremiumViewController") as! UpgradePremiumViewController
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
-    func navigateToExpenses(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
+    
+    func navigateToExpenses() {
+        self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
+        let analysisController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
+        self.navigationController?.pushViewController(analysisController, animated: false)
 //        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 //        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
 //        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
+//        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
     }
+    
     func navigateToHelp(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

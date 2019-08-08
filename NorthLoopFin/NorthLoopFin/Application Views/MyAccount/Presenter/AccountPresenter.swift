@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class AccountPresenter: ResponseCallback{
+class AccountPresenter: ResponseCallback {
     
     private weak var delegate          : UserTransferDetailDelegate?
     private lazy var businessLogic         : AccountBusinessModel = AccountBusinessModel()

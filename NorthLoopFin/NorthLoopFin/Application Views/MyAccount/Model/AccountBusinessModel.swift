@@ -21,7 +21,7 @@ class AccountBusinessModel {
     ///   - loginModel: LoginRequestModel
     ///   - presenterDelegate: ResponseCallBack delegate
     
-    func performFetchUserTransferDetail(withRequestModel model: AccountAPIRequestModel, presenterDelegate:ResponseCallback) ->Void {
+    func performFetchUserTransferDetail(withRequestModel model: AccountAPIRequestModel, presenterDelegate:ResponseCallback) -> Void {
         
         //Adding predefined set of errors
         let errorResolver:ErrorResolver = ErrorResolver.registerErrorsForApiRequests() //self.registerErrorForCapsuleList()

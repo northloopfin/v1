@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnalysisCategoryTableViewCell" rowHeight="167" id="KGk-i7-Jjw" customClass="AnalysisCategoryTableViewCell" customModule="NorthLoopFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="145"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="144.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_entertainment" translatesAutoresizingMaskIntoConstraints="NO" id="h6L-qv-v2M">
+                        <rect key="frame" x="25" y="49.5" width="46" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="hBt-ZB-YNV"/>
+                            <constraint firstAttribute="height" constant="46" id="kGQ-6S-jJi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-3g-BLx">
+                        <rect key="frame" x="111" y="62.5" width="163" height="20"/>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vFi-LU-Hb4">
+                        <rect key="frame" x="279" y="63" width="100" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="mfZ-GJ-L5n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Uxb-3g-BLx" firstAttribute="centerY" secondItem="h6L-qv-v2M" secondAttribute="centerY" id="GYy-Lz-dtK"/>
+                    <constraint firstItem="Uxb-3g-BLx" firstAttribute="leading" secondItem="h6L-qv-v2M" secondAttribute="trailing" constant="40" id="Lss-Fz-bpb"/>
+                    <constraint firstItem="h6L-qv-v2M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="VWB-cT-32h"/>
+                    <constraint firstItem="vFi-LU-Hb4" firstAttribute="centerY" secondItem="h6L-qv-v2M" secondAttribute="centerY" id="b9f-wI-kOA"/>
+                    <constraint firstItem="vFi-LU-Hb4" firstAttribute="leading" secondItem="Uxb-3g-BLx" secondAttribute="trailing" constant="5" id="m53-bN-gG6"/>
+                    <constraint firstAttribute="trailing" secondItem="vFi-LU-Hb4" secondAttribute="trailing" constant="25" id="odV-01-e15"/>
+                    <constraint firstItem="h6L-qv-v2M" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pBM-WR-OIP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgIcon" destination="h6L-qv-v2M" id="xmJ-1o-iSa"/>
+                <outlet property="labelSumma" destination="vFi-LU-Hb4" id="iIW-D3-Ql7"/>
+                <outlet property="labelTitle" destination="Uxb-3g-BLx" id="qb4-eO-cDg"/>
+            </connections>
+            <point key="canvasLocation" x="71.014492753623188" y="110.15625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_entertainment" width="46" height="46"/>
+    </resources>
+</document>
