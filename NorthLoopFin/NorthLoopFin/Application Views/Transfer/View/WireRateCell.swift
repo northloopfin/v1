@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WireCell: UITableViewCell {
+class WireRateCell: UITableViewCell {
 
     @IBOutlet weak var dateField: UILabel!
     @IBOutlet weak var amountField: UILabel!
