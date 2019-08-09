@@ -8,6 +8,7 @@ struct AppFonts{
     static let textBoxCalibri16 = Font(.installed(.Calibri), size: .standard(.h16)).instance
     static let btnTitleCalibri18 = Font(.installed(.Calibri), size: .standard(.h18)).instance
     static let calibri15 = Font(.installed(.Calibri), size: .standard(.h15)).instance
+    static let calibri14 = Font(.installed(.Calibri), size: .standard(.h14)).instance
     static let calibriBold15 = Font(.installed(.CalibriBold), size: .standard(.h15)).instance
     static let calibriBold16 = Font(.installed(.CalibriBold), size: .standard(.h16)).instance
     static let calibriBold18 = Font(.installed(.CalibriBold), size: .standard(.h18)).instance

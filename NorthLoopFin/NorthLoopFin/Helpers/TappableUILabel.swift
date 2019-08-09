@@ -53,7 +53,7 @@ extension UILabel {
     
     func underLineText(fullText:String, underlinedText:String){
         let attributesForUnderLine: [NSAttributedString.Key: Any] = [
-            .font : AppFonts.calibri15 ,
+            .font : AppFonts.calibri14 ,
             .foregroundColor : Colors.PurpleColor17673149,
             .underlineStyle : NSUnderlineStyle.single.rawValue]
         //let attributesForNormalText: [NSAttributedString.Key: Any] = [
@@ -70,7 +70,7 @@ extension UILabel {
     
     func underlineMulyiplePartOfString(fullString: String, underlineString1:String, underlineString2:String){
         let attributesForUnderLine: [NSAttributedString.Key: Any] = [
-            .font : AppFonts.calibri15 ,
+            .font : AppFonts.calibri14 ,
             .foregroundColor : Colors.PurpleColor17673149,
             .underlineStyle : NSUnderlineStyle.single.rawValue]
         let rangeOfUnderLine1 = (fullString as NSString).range(of: underlineString1)
