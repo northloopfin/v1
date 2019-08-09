@@ -33,8 +33,9 @@ class TransactionDetailPresenter: ResponseCallback{
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.delegate?.hideLoader()
-        let response = responseObject as! TransactionDetail
-        self.delegate?.didFetchedTransactionDetail(data: response)
+        if let response = responseObject as? TransactionDetail {
+            self.delegate?.didFetchedTransactionDetail(data: response)
+        }
     }
     
     func servicesManagerError(error: ErrorModel) {

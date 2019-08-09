@@ -205,7 +205,6 @@ extension MyCardViewController:CardDelegates{
     
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         if currentUser?.cardActivated == false{
-            self.cardActivated = true
             currentUser?.cardActivated = true
             UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         }
@@ -266,6 +265,12 @@ extension MyCardViewController:CardInfoDelegates{
         self.vwVirtualCard.isHidden = false
         self.whatsThisButton.isHidden = false
         self.vwActivateCard.isHidden = true
+        
+        if !self.cardActivated {
+            self.cardActivated = true
+            self.moveToNewPincreen()
+        }
+
     }
     
     func modifyCreditCardString(creditCardString : String) -> String
