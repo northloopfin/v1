@@ -85,12 +85,12 @@ class SignUpStepFirst: BaseViewController {
     func prepareView(){
         //Underline text
         self.termsAgreementLbl.underLineText(fullText: self.termsAgreementLbl.text ?? "", underlinedText: "Terms of Service and Privacy Policy")
-        self.cardDepositAgreementLbl.underlineMulyiplePartOfString(fullString: self.cardDepositAgreementLbl.text ?? "", underlineString1: "Deposit", underlineString2: "Cardholder Agreement")
+        self.cardDepositAgreementLbl.underlineMulyiplePartOfString(fullString: self.cardDepositAgreementLbl.text ?? "", underlineString1: "Deposit Agreement", underlineString2: "Cardholder Agreement")
         
         self.termsPolicyCheckBox.style = .tick
         self.depositCardCheckbox.style = .tick
-        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 2)
-        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 2)
+        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 3)
+        self.depositCardCheckbox.borderStyle = .roundedSquare(radius: 3)
         self.termsPolicyCheckBox.tag=0
         self.depositCardCheckbox.tag=1
         self.customProgressView.progressView.setProgress(0.17*1, animated: true)
@@ -102,15 +102,9 @@ class SignUpStepFirst: BaseViewController {
         self.cardDepositAgreementLbl.isUserInteractionEnabled = true
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
-        self.paswwordTextField.textColor = Colors.DustyGray155155155
-        self.confirmPassTextField.textColor = Colors.DustyGray155155155
-        self.emailTextField.textColor = Colors.DustyGray155155155
         
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
-        self.paswwordTextField.font = AppFonts.textBoxCalibri16
-        self.confirmPassTextField.font = AppFonts.textBoxCalibri16
-        self.emailTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
     }
     
@@ -152,23 +146,6 @@ class SignUpStepFirst: BaseViewController {
         self.paswwordTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.confirmPassTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
          self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        //self.emailTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        
-        let placeholderColor=Colors.DustyGray155155155
-        let placeholderFont = UIFont.init(name: "Calibri", size: 16)
-        let textfieldBorderColor = Colors.Mercury226226226
-        let textFieldBorderWidth = 1.0
-        let textfieldCorber = 5.0
-        
-        self.paswwordTextField.applyAttributesWithValues(placeholderText: "Password*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.confirmPassTextField.applyAttributesWithValues(placeholderText: "Confirm Password*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.emailTextField.applyAttributesWithValues(placeholderText: "Email*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        //self.emailTextField.applyAttributesWithValues(placeholderText: "Phone No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        
-        self.paswwordTextField.setLeftPaddingPoints(19)
-        self.confirmPassTextField.setLeftPaddingPoints(19)
-        //self.phoneTextField.setLeftPaddingPoints(19)
-        self.emailTextField.setLeftPaddingPoints(19)
     }
     
     @objc func textFieldDidChange(textField: UITextField){
