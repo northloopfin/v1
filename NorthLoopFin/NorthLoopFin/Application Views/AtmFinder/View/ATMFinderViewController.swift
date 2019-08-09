@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-import Karte
+import MapKit
 
 class ATMFinderViewController: BaseViewController {
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -109,29 +109,29 @@ extension ATMFinderViewController:UITextFieldDelegate{
     }
 }
 
-extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
-    func configureTableView(){
+extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource {
+    
+    func configureTableView() {
         self.atmTableView.rowHeight = 62;
-        self.atmTableView.delegate=self
-        self.atmTableView.dataSource=self
+        self.atmTableView.delegate = self
+        self.atmTableView.dataSource = self
         self.atmTableView.registerTableViewCell(tableViewCell: ATMTableViewCell.self)
         self.atmTableView.registerTableViewCell(tableViewCell: ATMFirstTableViewCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count+1
+        return dataSource.count + 1
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row==0{
+        if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ATMFirstTableViewCell") as! ATMFirstTableViewCell
             let backgroundView = UIView()
             backgroundView.backgroundColor = Colors.Cameo213186154
             cell.selectedBackgroundView = backgroundView
             cell.bindData(count: String(self.dataSource.count))
             return cell
-            
-        }else{
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ATMTableViewCell") as! ATMTableViewCell
             let backgroundView = UIView()
             backgroundView.backgroundColor = Colors.Cameo213186154
@@ -140,25 +140,28 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
             return cell
         }
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height = 121.0
-        if indexPath.row==0{
+        if indexPath.row == 0 {
             height = 44.0
         }
         return CGFloat(height)
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedAtm = self.dataSource[indexPath.row+1]
+        if self.dataSource.count == 0 {
+            return
+        }
+        let selectedAtm = self.dataSource[indexPath.row + 1]
         let addressString = "\(selectedAtm.atmLocation.address.street)"
         
         let coordinate = CLLocationCoordinate2D(latitude: selectedAtm.atmLocation.coordinates.latitude, longitude: selectedAtm.atmLocation.coordinates.longitude)
-        let loc = Karte.Location(name: addressString, coordinate: coordinate)
-        
-        Karte.presentPicker(destination: loc, presentOn: self)
-
-        //self.openGoogleDirectionMap(String(selectedAtm.atmLocation.coordinates.latitude), String(selectedAtm.atmLocation.coordinates.longitude))
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = selectedAtm.atmLocation.locationDescription
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDefault])
     }
+    
     // will remove this comment once client confirm 
 //    func openGoogleDirectionMap(_ destinationLat: String, _ destinationLng: String) {
 //
@@ -199,6 +202,7 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource{
 //        }
 //    }
 }
+
 extension ATMFinderViewController: ATMFinderDelegates{
     func didFetchATM(data:ATMFinderData)
  {
