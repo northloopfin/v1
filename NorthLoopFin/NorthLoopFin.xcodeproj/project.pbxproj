@@ -473,6 +473,8 @@
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
+		F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */; };
 		F9386924537DD35C2672E926 /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6CAEB83188B246739E9127 /* Pods_NorthLoopFinUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -997,6 +999,8 @@
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
+		F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIdentityViewController.swift; sourceTree = "<group>"; };
 		FD8B9A051F030CDB58EA44DB /* Pods-NorthLoopFin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.debug.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1737,6 +1741,8 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
+				F4C1BEFF2300047900FC1DC1 /* Personal Detail */,
 				84D1299C22FCD666000C82A6 /* Analysis */,
 				8448754722ECFDBC003B703B /* ReferAndEarn */,
 				1FFAE5AB22EB11F90007296A /* Carousel */,
@@ -2757,6 +2763,38 @@
 			path = FloatingLabelTextField;
 			sourceTree = "<group>";
 		};
+		F4C1BEFF2300047900FC1DC1 /* Personal Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF00230008BF00FC1DC1 /* View */,
+			);
+			path = "Personal Detail";
+			sourceTree = "<group>";
+		};
+		F4C1BF00230008BF00FC1DC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4C1BF0B230093FF00FC1DC1 /* Verify Identity */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF0C2300941900FC1DC1 /* View */,
+			);
+			path = "Verify Identity";
+			sourceTree = "<group>";
+		};
+		F4C1BF0C2300941900FC1DC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2949,72 +2987,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AlertHelperKit/AlertHelperKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GiFHUD-Swift/GiFHUD_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Haptica/Haptica.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Karte/Karte.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MFSideMenu/MFSideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/RKPieChart/RKPieChart.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/ZendeskCoreSDK.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/ZendeskProviderSDK.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/ZendeskSDK.framework",
-				"${PODS_ROOT}/ZendeskSDK/ZendeskSDK/5.0.1/CommonUISDK.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlertHelperKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GiFHUD_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haptica.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Karte.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RKPieChart.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskProviderSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonUISDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3062,24 +3039,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
-				"${PODS_ROOT}/ZDCChat/ZDCChatStrings.bundle",
-				"${PODS_ROOT}/ZDCChat/ZDCChat.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZDCChatStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZDCChat.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3254,6 +3218,7 @@
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
 				1D5AB2FF22A7999100DB3B70 /* LostCardResponse.swift in Sources */,
 				4BFBC88A22BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift in Sources */,
+				F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */,
 				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
@@ -3321,6 +3286,7 @@
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
+				F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
 				8469EF7422F648A600B861F1 /* AddreddCompareModel.swift in Sources */,
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
