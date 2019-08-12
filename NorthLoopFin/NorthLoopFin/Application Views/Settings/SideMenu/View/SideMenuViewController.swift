@@ -34,7 +34,7 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.TRANSFER.rawValue)
         self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
         //self.data.append(AppConstants.SideMenuOptions.UPGRADE.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
         self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)

@@ -22,12 +22,14 @@ class HomeTabController: ESTabBarController {
 
         let wireDetail = storyBoard.instantiateViewController(withIdentifier: "CurrencyProtectController") as! CurrencyProtectController
 
-        let wireList = storyBoard.instantiateViewController(withIdentifier: "WireRateController") as! WireRateController
+        let analysisController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
+
+//        let wireList = storyBoard.instantiateViewController(withIdentifier: "WireRateController") as! WireRateController
 
         initialNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), title: nil, image: UIImage(named: "ic_home"), selectedImage: UIImage(named: "ic_home_selected"))
-        wireList.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_expenses"), selectedImage: UIImage(named: "ic_expenses_selected"))
+        analysisController.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_expenses"), selectedImage: UIImage(named: "ic_expenses_selected"))
         wireDetail.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_currency_proj"), selectedImage: UIImage(named: "ic_currency_proj_selected"))
-        self.viewControllers = [wireList, initialNavigationController,wireDetail]
+        self.viewControllers = [analysisController, initialNavigationController,wireDetail]
         self.selectedViewController = initialNavigationController
 
     }
