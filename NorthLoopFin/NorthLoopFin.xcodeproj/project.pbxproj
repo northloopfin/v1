@@ -453,6 +453,7 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA39484C2302B517007BFEF5 /* CashbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA39484B2302B517007BFEF5 /* CashbackController.swift */; };
 		EA4ED02322E5CC4700D1F438 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02222E5CC4700D1F438 /* CardInfo.swift */; };
 		EA4ED02522E5CD8500D1F438 /* CardInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */; };
 		EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */; };
@@ -464,6 +465,8 @@
 		EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */; };
 		EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03522E5D39100D1F438 /* CardAuthData.swift */; };
 		EA4ED03822E5D54800D1F438 /* CardAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */; };
+		EA6858D12302827000EEC67D /* LostCardOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6858D02302827000EEC67D /* LostCardOptionsController.swift */; };
+		EA6858D32302842000EEC67D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6858D22302842000EEC67D /* UIButtonExtension.swift */; };
 		EA8984B422FC491A00B4C33C /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B322FC491A00B4C33C /* HomeTabController.swift */; };
 		EA8984B922FC61D100B4C33C /* CurrencyProtectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8984B522FC61D000B4C33C /* CurrencyProtectCell.xib */; };
 		EA8984BA22FC61D100B4C33C /* CurrencyProtectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B622FC61D000B4C33C /* CurrencyProtectCell.swift */; };
@@ -977,6 +980,7 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA39484B2302B517007BFEF5 /* CashbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackController.swift; sourceTree = "<group>"; };
 		EA4ED02222E5CC4700D1F438 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoRequestModel.swift; sourceTree = "<group>"; };
 		EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoAPIRequest.swift; sourceTree = "<group>"; };
@@ -988,6 +992,8 @@
 		EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuthBusinessLogic.swift; sourceTree = "<group>"; };
 		EA4ED03522E5D39100D1F438 /* CardAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthData.swift; sourceTree = "<group>"; };
 		EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthPresenter.swift; sourceTree = "<group>"; };
+		EA6858D02302827000EEC67D /* LostCardOptionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardOptionsController.swift; sourceTree = "<group>"; };
+		EA6858D22302842000EEC67D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EA8984B322FC491A00B4C33C /* HomeTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
 		EA8984B522FC61D000B4C33C /* CurrencyProtectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyProtectCell.xib; sourceTree = "<group>"; };
 		EA8984B622FC61D000B4C33C /* CurrencyProtectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProtectCell.swift; sourceTree = "<group>"; };
@@ -1682,6 +1688,7 @@
 				1D72718921F059610084A57E /* LostCardViewController.swift */,
 				1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */,
 				1D29C83C22A90FE00092E3EB /* LostCardConfirmationViewController.swift */,
+				EA6858D02302827000EEC67D /* LostCardOptionsController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1768,6 +1775,7 @@
 				1D1E5A6D21C9C76B0036E998 /* SignUp */,
 				1D51758321C5008600BCF9E4 /* TransactionDetail */,
 				1D8189EF21C0AF59000C8F5F /* Home */,
+				EA3948492302B4C6007BFEF5 /* Cashback */,
 			);
 			path = "Application Views";
 			sourceTree = "<group>";
@@ -2347,6 +2355,7 @@
 				4BFFE3CE22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift */,
 				4BFFE3D022BB4B7300D85610 /* RangeExtension.swift */,
 				4BB0B3EE22C09CEA00D9A4FE /* BioMetricHelper.swift */,
+				EA6858D22302842000EEC67D /* UIButtonExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2714,6 +2723,22 @@
 				EA1FC12B22F1526C002A7103 /* ISPCertificatePinning.h */,
 			);
 			path = SSLCertificatePinning;
+			sourceTree = "<group>";
+		};
+		EA3948492302B4C6007BFEF5 /* Cashback */ = {
+			isa = PBXGroup;
+			children = (
+				EA39484A2302B4F6007BFEF5 /* View */,
+			);
+			path = Cashback;
+			sourceTree = "<group>";
+		};
+		EA39484A2302B4F6007BFEF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA39484B2302B517007BFEF5 /* CashbackController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EA4ED02122E5CC4700D1F438 /* CardInfo */ = {
@@ -3318,6 +3343,7 @@
 				EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */,
 				4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
+				EA6858D32302842000EEC67D /* UIButtonExtension.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
 				EA8984B422FC491A00B4C33C /* HomeTabController.swift in Sources */,
 				1D0A881E21CBC28400187439 /* ScanIDViewController.swift in Sources */,
@@ -3347,6 +3373,7 @@
 				1D478CA2228E865E00503136 /* SignupAuth.swift in Sources */,
 				1D9AF08F22A5429F00A9055F /* TransactionListLocation.swift in Sources */,
 				EA04726422E0725E00D5B834 /* ACHAccountCell.swift in Sources */,
+				EA6858D12302827000EEC67D /* LostCardOptionsController.swift in Sources */,
 				EA4ED02522E5CD8500D1F438 /* CardInfoRequestModel.swift in Sources */,
 				4BFDF89022B9E8160066860D /* UniversityPresenter.swift in Sources */,
 				1D915C162208306E00223480 /* main.swift in Sources */,
@@ -3486,6 +3513,7 @@
 				1D915C1222082CD400223480 /* Timer.swift in Sources */,
 				1D5AB2F922A798F900DB3B70 /* LostCardRequestModel.swift in Sources */,
 				1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */,
+				EA39484C2302B517007BFEF5 /* CashbackController.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				1D055D4C229C38DE0078CD33 /* TransferConfirmationViewController.swift in Sources */,
 				EA4ED03122E5D1C400D1F438 /* CardAuthRequestModel.swift in Sources */,

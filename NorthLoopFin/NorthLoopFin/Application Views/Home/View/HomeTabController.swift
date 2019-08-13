@@ -20,16 +20,18 @@ class HomeTabController: ESTabBarController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         initialNavigationController = UINavigationController(rootViewController:homeViewController!)
 
-        let wireDetail = storyBoard.instantiateViewController(withIdentifier: "CurrencyProtectController") as! CurrencyProtectController
+//        let wireDetail = storyBoard.instantiateViewController(withIdentifier: "CurrencyProtectController") as! CurrencyProtectController
 
         let analysisController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
+
+        let right = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "LostCardOptionsController") as! LostCardOptionsController
 
 //        let wireList = storyBoard.instantiateViewController(withIdentifier: "WireRateController") as! WireRateController
 
         initialNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), title: nil, image: UIImage(named: "ic_home"), selectedImage: UIImage(named: "ic_home_selected"))
         analysisController.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_expenses"), selectedImage: UIImage(named: "ic_expenses_selected"))
-        wireDetail.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_currency_proj"), selectedImage: UIImage(named: "ic_currency_proj_selected"))
-        self.viewControllers = [analysisController, initialNavigationController,wireDetail]
+        right.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_currency_proj"), selectedImage: UIImage(named: "ic_currency_proj_selected"))
+        self.viewControllers = [analysisController, initialNavigationController,right]
         self.selectedViewController = initialNavigationController
 
     }
