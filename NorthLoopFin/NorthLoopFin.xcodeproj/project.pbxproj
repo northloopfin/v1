@@ -475,6 +475,7 @@
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
 		F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */; };
+		F4C1BF102301C0EC00FC1DC1 /* CitizenshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */; };
 		F9386924537DD35C2672E926 /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6CAEB83188B246739E9127 /* Pods_NorthLoopFinUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -1001,6 +1002,7 @@
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
 		F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIdentityViewController.swift; sourceTree = "<group>"; };
+		F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenshipViewController.swift; sourceTree = "<group>"; };
 		FD8B9A051F030CDB58EA44DB /* Pods-NorthLoopFin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.debug.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1741,6 +1743,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */,
 				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
 				F4C1BEFF2300047900FC1DC1 /* Personal Detail */,
 				84D1299C22FCD666000C82A6 /* Analysis */,
@@ -2795,6 +2798,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF0E2301C0BE00FC1DC1 /* View */,
+			);
+			path = "Select Citizenship";
+			sourceTree = "<group>";
+		};
+		F4C1BF0E2301C0BE00FC1DC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3332,6 +3351,7 @@
 				1FF70EB322ED7500007A9309 /* CountryPickerView.swift in Sources */,
 				1D5AB31D22A7D0A300DB3B70 /* TwoFAVerifyResponse.swift in Sources */,
 				1D4AD7762284462D007A9C2F /* Endpoints.swift in Sources */,
+				F4C1BF102301C0EC00FC1DC1 /* CitizenshipViewController.swift in Sources */,
 				EA1FC14D22F1526C002A7103 /* AMPDatabaseHelper.m in Sources */,
 				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
