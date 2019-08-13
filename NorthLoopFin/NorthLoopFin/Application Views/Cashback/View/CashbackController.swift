@@ -10,26 +10,43 @@
 import Foundation
 class CashbackController: BaseViewController {
     
+    @IBOutlet weak var vwCashbackDetail: UIView!
+    @IBOutlet weak var vwCashbackSummary: CommonTable!
+    @IBOutlet weak var constSelectionUnderlineLeading: NSLayoutConstraint!
+    
+    @IBOutlet weak var btnRestaurant: UIButton!
+    @IBOutlet weak var btnGeneral: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
-        
+    }
+    
+    @IBAction func general_clicked(_ sender: UIButton) {
+        sender.titleLabel?.font = AppFonts.calibriBold17
+        btnRestaurant.titleLabel?.font = AppFonts.calibri17
+        constSelectionUnderlineLeading.constant = 0
+    }
+    
+    @IBAction func restaurant_clicked(_ sender: UIButton) {
+        sender.titleLabel?.font = AppFonts.calibriBold17
+        btnGeneral.titleLabel?.font = AppFonts.calibri17
+        constSelectionUnderlineLeading.constant = sender.frame.origin.x
     }
     
     func prepareView(){
         self.setupRightNavigationBar()
         self.setNavigationBarTitle(title: "Cashback")
+        
+        styleContainer(vw: vwCashbackDetail)
+        styleContainer(vw: vwCashbackSummary)
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func styleContainer(vw:UIView){
+        let shadowOffst = CGSize.init(width: 0, height: 1)
+        let shadowOpacity = 0.4
+        let shadowRadius = 2
+        let shadowColor = Colors.DustyGray155155155
+        vw.layer.addShadowAndRoundedCorners(roundedCorner: 5, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)        
+    }
+
 }

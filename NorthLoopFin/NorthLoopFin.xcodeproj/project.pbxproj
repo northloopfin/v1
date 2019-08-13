@@ -454,6 +454,7 @@
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
 		EA39484C2302B517007BFEF5 /* CashbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA39484B2302B517007BFEF5 /* CashbackController.swift */; };
+		EA39484E2302DD72007BFEF5 /* AnalysisTotalSpent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA39484D2302DD72007BFEF5 /* AnalysisTotalSpent.swift */; };
 		EA4ED02322E5CC4700D1F438 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02222E5CC4700D1F438 /* CardInfo.swift */; };
 		EA4ED02522E5CD8500D1F438 /* CardInfoRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */; };
 		EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */; };
@@ -476,6 +477,8 @@
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
+		F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */; };
 		F9386924537DD35C2672E926 /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6CAEB83188B246739E9127 /* Pods_NorthLoopFinUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -981,6 +984,7 @@
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
 		EA39484B2302B517007BFEF5 /* CashbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackController.swift; sourceTree = "<group>"; };
+		EA39484D2302DD72007BFEF5 /* AnalysisTotalSpent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTotalSpent.swift; sourceTree = "<group>"; };
 		EA4ED02222E5CC4700D1F438 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		EA4ED02422E5CD8500D1F438 /* CardInfoRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoRequestModel.swift; sourceTree = "<group>"; };
 		EA4ED02622E5CE0900D1F438 /* CardInfoAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoAPIRequest.swift; sourceTree = "<group>"; };
@@ -1003,6 +1007,8 @@
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
+		F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIdentityViewController.swift; sourceTree = "<group>"; };
 		FD8B9A051F030CDB58EA44DB /* Pods-NorthLoopFin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.debug.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1744,6 +1750,8 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
+				F4C1BEFF2300047900FC1DC1 /* Personal Detail */,
 				84D1299C22FCD666000C82A6 /* Analysis */,
 				8448754722ECFDBC003B703B /* ReferAndEarn */,
 				1FFAE5AB22EB11F90007296A /* Carousel */,
@@ -2604,6 +2612,7 @@
 				84D129A222FCD666000C82A6 /* AnalysisPeriod.swift */,
 				84D129A322FCD666000C82A6 /* AnalysisAPIRequestModel.swift */,
 				84D129A422FCD666000C82A6 /* AnalysisCategories.swift */,
+				EA39484D2302DD72007BFEF5 /* AnalysisTotalSpent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2780,6 +2789,38 @@
 				EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */,
 			);
 			path = FloatingLabelTextField;
+			sourceTree = "<group>";
+		};
+		F4C1BEFF2300047900FC1DC1 /* Personal Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF00230008BF00FC1DC1 /* View */,
+			);
+			path = "Personal Detail";
+			sourceTree = "<group>";
+		};
+		F4C1BF00230008BF00FC1DC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4C1BF0B230093FF00FC1DC1 /* Verify Identity */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF0C2300941900FC1DC1 /* View */,
+			);
+			path = "Verify Identity";
+			sourceTree = "<group>";
+		};
+		F4C1BF0C2300941900FC1DC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3205,6 +3246,7 @@
 				1DF64E1421E5D546008774CE /* MyCardViewController.swift in Sources */,
 				1D5AB2FF22A7999100DB3B70 /* LostCardResponse.swift in Sources */,
 				4BFBC88A22BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift in Sources */,
+				F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */,
 				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
@@ -3272,6 +3314,7 @@
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
+				F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
 				8469EF7422F648A600B861F1 /* AddreddCompareModel.swift in Sources */,
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
@@ -3440,6 +3483,7 @@
 				1D259D96228BDD930053D0AB /* TransactionDetail.swift in Sources */,
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D29C85522A9297B0092E3EB /* ChangePhoneDelegates.swift in Sources */,
+				EA39484E2302DD72007BFEF5 /* AnalysisTotalSpent.swift in Sources */,
 				4B15362D22DEEDAA009CE548 /* SSNInfoViewController.swift in Sources */,
 				EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */,
 				1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */,

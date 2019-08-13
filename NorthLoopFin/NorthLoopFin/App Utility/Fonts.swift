@@ -8,9 +8,11 @@ struct AppFonts{
     static let textBoxCalibri16 = Font(.installed(.Calibri), size: .standard(.h16)).instance
     static let btnTitleCalibri18 = Font(.installed(.Calibri), size: .standard(.h18)).instance
     static let calibri15 = Font(.installed(.Calibri), size: .standard(.h15)).instance
+    static let calibri17 = Font(.installed(.Calibri), size: .standard(.h17)).instance
     static let calibri14 = Font(.installed(.Calibri), size: .standard(.h14)).instance
     static let calibriBold15 = Font(.installed(.CalibriBold), size: .standard(.h15)).instance
     static let calibriBold16 = Font(.installed(.CalibriBold), size: .standard(.h16)).instance
+    static let calibriBold17 = Font(.installed(.CalibriBold), size: .standard(.h17)).instance
     static let calibriBold18 = Font(.installed(.CalibriBold), size: .standard(.h18)).instance
     
 }
@@ -51,6 +53,7 @@ struct Font {
         case h18 = 18.0
         case h15 = 15.0
         case h16 = 16.0
+        case h17 = 17.0
         case h14 = 14.0
         case h12 = 12.0
         case h10 = 10.0

@@ -79,7 +79,12 @@ class AnalysisAPIRequestModel {
         let testUserID = "5d37c889b942fe1de4005938"
         apiRequestUrl = Endpoints.APIEndpoints.ANALYSISOPTIONS.rawValue + testUserID + "/" + year + "/" + month
     }
-    
+
+    func setEndPointTotalSpent(userID:String, year:String, month:String) {
+        let testUserID = "5d37c889b942fe1de4005938"
+        apiRequestUrl = Endpoints.APIEndpoints.ANALYSISTOTALSPENT.rawValue + testUserID + "/" + year + "/" + month
+    }
+
     func getEndPoint() -> String {
         return apiRequestUrl
     }
