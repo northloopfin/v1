@@ -29,6 +29,7 @@ class HomeTabController: ESTabBarController {
         initialNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), title: nil, image: UIImage(named: "ic_home"), selectedImage: UIImage(named: "ic_home_selected"))
         analysisController.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_expenses"), selectedImage: UIImage(named: "ic_expenses_selected"))
         wireDetail.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_currency_proj"), selectedImage: UIImage(named: "ic_currency_proj_selected"))
+        wireDetail.tabBarItem.isEnabled = false
         self.viewControllers = [analysisController, initialNavigationController,wireDetail]
         self.selectedViewController = initialNavigationController
 
