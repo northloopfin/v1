@@ -222,14 +222,25 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
 extension AnalysisViewController:AnalysisPresenterDelegate {
     func didFetchAnalysisCategories(_ categories:[UserAnalysisCategory]) {
         analysisOptions = categories
-        var sum = 0.0
-        for option in analysisOptions {
-            sum += option.sumAmount
-        }
+//        var sum = 0.0
+//        for option in analysisOptions {
+//            sum += option.sumAmount
+//        }
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale.current
+//        formatter.numberStyle = .currency
+//        let sumCurrency = formatter.string(from: NSNumber(value:sum)) ?? "0.00"
+//        labelTotalSpent.text = "Total " + sumCurrency + " spent"
+    }
+    
+    func didFetchAnalysisTotalSpent(_ totalSpent: AnalysisTotalSpent) {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
-        let sumCurrency = formatter.string(from: NSNumber(value:sum)) ?? "0.00"
+        let sumCurrency = formatter.string(from: NSNumber(value:totalSpent.sumAmount)) ?? "0.00"
         labelTotalSpent.text = "Total " + sumCurrency + " spent"
+        if labelSpent.text?.count == 0 {
+           labelSpent.text = sumCurrency
+        }
     }
 }
