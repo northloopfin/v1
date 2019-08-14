@@ -41,8 +41,9 @@ class AnalysisViewController: BaseViewController {
             if dateOptions.count == 0 {
                 btnDate.isHidden = true
             } else {
+                dateOptions = dateOptions.reversed()
                 btnDate.isHidden = false
-                let text = dateOptions.last?.title ?? ""
+                let text = dateOptions.first?.title ?? ""
                 let fontAttributes = [NSAttributedString.Key.font: UIFont.init(name: "Calibri", size: 14)]
                 let size = text.size(withAttributes: fontAttributes)
                 btnDate.setTitle(text, for: .normal)
@@ -127,9 +128,9 @@ class AnalysisViewController: BaseViewController {
     func getAnalysisDetail() {
         dateOptions = presenterDate.getDateListForAnalysis()
         self.presenter = AnalysisPresenter.init(delegate: self)
-        if let currentDate = dateOptions.last {
+        if let currentDate = dateOptions.first {
             self.presenter.fetchAnalysisCategories(month: currentDate.month, year:currentDate.year)
-            selectedDateIndexPath = IndexPath.init(row: dateOptions.count - 1, section: 0)
+            selectedDateIndexPath = IndexPath.init(row: 0, section: 0)
         } else {
             selectCurrentDate()
         }
@@ -192,7 +193,7 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return tableView == tableViewDate ? 0 : 200
+        return tableView == tableViewDate ? 0 : 150
     }
     
     func onPeriod(_ cell:UITableViewCell) {
@@ -231,6 +232,12 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
 //        formatter.numberStyle = .currency
 //        let sumCurrency = formatter.string(from: NSNumber(value:sum)) ?? "0.00"
 //        labelTotalSpent.text = "Total " + sumCurrency + " spent"
+        if analysisOptions.count > 0 {
+            self.presenter.fetchAnalysisTotalSpent(month: dateOptions[selectedDateIndexPath!.row].month, year:dateOptions[selectedDateIndexPath!.row].year)
+        }else{
+            labelTotalSpent.text = "Total $0 spent"
+
+        }
     }
     
     func didFetchAnalysisTotalSpent(_ totalSpent: AnalysisTotalSpent) {

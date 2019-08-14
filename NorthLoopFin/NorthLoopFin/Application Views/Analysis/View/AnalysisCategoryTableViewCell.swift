@@ -24,7 +24,7 @@ class AnalysisCategoryTableViewCell: UITableViewCell {
             let formatter = NumberFormatter()
             formatter.locale = Locale.current
             formatter.numberStyle = .currency
-            if let formattedTipAmount = formatter.string(from: NSNumber(value: (category?.sumAmount ?? 0) * -1.0)) {
+            if let formattedTipAmount = formatter.string(from: NSNumber(value: (category?.sumAmount ?? 0))) {
                 labelSumma.text = "\(formattedTipAmount)"
             }
         }
