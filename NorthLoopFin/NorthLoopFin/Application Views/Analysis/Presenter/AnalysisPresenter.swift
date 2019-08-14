@@ -28,9 +28,7 @@ class AnalysisPresenter:ResponseCallback {
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = AnalysisAPIRequestModel.Builder().build()
         requestModel.setEndPoint(userID: currentUser.userID, year: year, month: month)
-       self.businessLogic.performFetchAnalysisCategories(withRequestModel:requestModel, returningClass: AnalysisOptions.self, presenterDelegate:self)
-        self.fetchAnalysisTotalSpent(month: month, year: year)
-
+        self.businessLogic.performFetchAnalysisCategories(withRequestModel:requestModel, returningClass: AnalysisOptions.self, presenterDelegate:self)
     }
     
     func fetchAnalysisTotalSpent(month:String, year:String) {

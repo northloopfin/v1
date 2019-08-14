@@ -40,14 +40,15 @@ class TransactionListPresenter: ResponseCallback{
     
     //MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        let response = responseObject as! TransactionHistory
-        self.currentPage = response.data.page
-        self.totalTransactionCount = response.data.transCount
-        if self.currentPage >= response.data.pageCount{
-            self.hasMoreTransactionToLoad = false
+        if let response = responseObject as? TransactionHistory{
+            self.currentPage = response.data.page
+            self.totalTransactionCount = response.data.transCount
+            if self.currentPage >= response.data.pageCount{
+                self.hasMoreTransactionToLoad = false
+            }
+            let requiredData = self.createRequiredData(data: response.data.trans)
+            self.homeDelegate?.didFetchedTransactionList(data: requiredData)
         }
-        let requiredData = self.createRequiredData(data: response.data.trans)
-        self.homeDelegate?.didFetchedTransactionList(data: requiredData)
         self.homeDelegate?.hideLoader()
     }
     
