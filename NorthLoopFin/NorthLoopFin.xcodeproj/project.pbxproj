@@ -477,6 +477,7 @@
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		F4AA0C1B2305AB9200CDF5C0 /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */; };
 		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
 		F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */; };
 		F4C1BF102301C0EC00FC1DC1 /* CitizenshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */; };
@@ -1008,6 +1009,7 @@
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
 		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
 		F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIdentityViewController.swift; sourceTree = "<group>"; };
 		F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenshipViewController.swift; sourceTree = "<group>"; };
@@ -1752,6 +1754,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4AA0C182305AAC000CDF5C0 /* Photo ID */,
 				F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */,
 				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
 				F4C1BEFF2300047900FC1DC1 /* Personal Detail */,
@@ -2794,6 +2797,22 @@
 			path = FloatingLabelTextField;
 			sourceTree = "<group>";
 		};
+		F4AA0C182305AAC000CDF5C0 /* Photo ID */ = {
+			isa = PBXGroup;
+			children = (
+				F4AA0C192305AAFC00CDF5C0 /* View */,
+			);
+			path = "Photo ID";
+			sourceTree = "<group>";
+		};
+		F4AA0C192305AAFC00CDF5C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4C1BEFF2300047900FC1DC1 /* Personal Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -3546,6 +3565,7 @@
 				1D180D68229CF5AB00FC3390 /* TransferSuceessViewController.swift in Sources */,
 				1D180D92229E76B300FC3390 /* ATMLocation.swift in Sources */,
 				4B07A87722C5CD6E004C65B2 /* SetAppSettingsResponse.swift in Sources */,
+				F4AA0C1B2305AB9200CDF5C0 /* PhotoIDViewController.swift in Sources */,
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				EA1FC14522F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
@@ -3774,7 +3794,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3N2LD95A88;
+				DEVELOPMENT_TEAM = 9YZW9YBU3X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3807,7 +3827,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3N2LD95A88;
+				DEVELOPMENT_TEAM = 9YZW9YBU3X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3986,7 +4006,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3N2LD95A88;
+				DEVELOPMENT_TEAM = 9YZW9YBU3X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -4124,7 +4144,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3N2LD95A88;
+				DEVELOPMENT_TEAM = 9YZW9YBU3X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
