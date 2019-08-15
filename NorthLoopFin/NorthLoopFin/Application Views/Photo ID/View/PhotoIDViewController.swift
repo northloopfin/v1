@@ -45,7 +45,7 @@ class PhotoIDViewController: BaseViewController {
         button.layer.addSublayer(buttonBorder)
     }
     @IBAction func nextButtonAction(_ sender: Any) {
-        ß
+        
     }
     /*
     // MARK: - Navigation

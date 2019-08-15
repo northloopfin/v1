@@ -2225,14 +2225,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-SW-U9N">
-                                <rect key="frame" x="134" y="77.999999999999986" width="107.00000000000003" height="107.00000000000004"/>
+                                <rect key="frame" x="134" y="78" width="107" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="2Md-8R-lxZ"/>
                                     <constraint firstAttribute="height" constant="107" id="NXJ-ee-ax2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’re all done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-nn-Bsx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="103.5" y="211" width="168" height="31"/>
+                                <rect key="frame" x="102" y="211" width="171.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Gib-tw-qSn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="L4r-7v-dNs"/>
@@ -2247,7 +2247,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Es4-5K-pZ1" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="19" y="264" width="337" height="66"/>
+                                <rect key="frame" x="19" y="264" width="337" height="105"/>
                                 <string key="text">We’ll approve your account within 24 hours
 and send yout North Loop Visa/Debit card
 to your registered address</string>
@@ -2261,7 +2261,7 @@ to your registered address</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhB-f3-Ost" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="394" width="325" height="45"/>
+                                <rect key="frame" x="25" y="433" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7bc-9C-s3R"/>
@@ -4211,14 +4211,14 @@ and get $200</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostInsufficient" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-ak-cRw">
-                                <rect key="frame" x="93" y="49" width="189.00000000000006" height="98"/>
+                                <rect key="frame" x="93" y="49" width="189" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="crO-bU-c2Q"/>
                                     <constraint firstAttribute="height" constant="98" id="dbR-oQ-7Nu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biV-9g-IOx" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="223" width="250.5" height="80"/>
+                                <rect key="frame" x="48.5" y="223" width="278" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="v7T-G7-gwO"/>
                                 </constraints>
@@ -4321,7 +4321,7 @@ up and site back and relax.</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-7q-Pm6">
-                                        <rect key="frame" x="134" y="40" width="107.00000000000003" height="107.00000000000003"/>
+                                        <rect key="frame" x="134" y="40" width="107" height="107"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wnc-7q-Pm6" secondAttribute="height" multiplier="1:1" id="Vx0-4l-reQ"/>
                                         </constraints>
@@ -8357,7 +8357,7 @@ The Internal Revenue Service does not require your consent to any provision of t
         <!--PhotoID View Controller-->
         <scene sceneID="sOk-hl-E9g">
             <objects>
-                <viewController storyboardIdentifier="SelectCitizenship" id="16c-hr-2j9" customClass="PhotoIDViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPhotoID" id="16c-hr-2j9" customClass="PhotoIDViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6x-jZ-c8M" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
