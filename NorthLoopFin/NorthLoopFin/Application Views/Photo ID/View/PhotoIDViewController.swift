@@ -20,7 +20,7 @@ class PhotoIDViewController: BaseViewController {
     @IBOutlet weak var continueButton: RippleButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.prepareView()
         // Do any additional setup after loading the view.
         
     }
@@ -37,7 +37,7 @@ class PhotoIDViewController: BaseViewController {
     func setDashBorderForButton(button:UIButton)
     {
         let buttonBorder = CAShapeLayer()
-        buttonBorder.strokeColor = UIColor.black.cgColor
+        buttonBorder.strokeColor = Colors.PurpleColor17673149.cgColor
         buttonBorder.lineDashPattern = [2, 2]
         buttonBorder.frame = button.bounds
         buttonBorder.fillColor = nil

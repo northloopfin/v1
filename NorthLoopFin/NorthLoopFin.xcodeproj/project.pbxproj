@@ -477,6 +477,7 @@
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */; };
 		F4AA0C1B2305AB9200CDF5C0 /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */; };
 		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
 		F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */; };
@@ -1009,6 +1010,7 @@
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBalanceViewController.swift; sourceTree = "<group>"; };
 		F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
 		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
 		F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIdentityViewController.swift; sourceTree = "<group>"; };
@@ -1754,6 +1756,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				F41A6A67230689580053AF0D /* Current Balance */,
 				F4AA0C182305AAC000CDF5C0 /* Photo ID */,
 				F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */,
 				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
@@ -2797,6 +2800,22 @@
 			path = FloatingLabelTextField;
 			sourceTree = "<group>";
 		};
+		F41A6A67230689580053AF0D /* Current Balance */ = {
+			isa = PBXGroup;
+			children = (
+				F41A6A6823068DDD0053AF0D /* View */,
+			);
+			path = "Current Balance";
+			sourceTree = "<group>";
+		};
+		F41A6A6823068DDD0053AF0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4AA0C182305AAC000CDF5C0 /* Photo ID */ = {
 			isa = PBXGroup;
 			children = (
@@ -3446,6 +3465,7 @@
 				EA8984BA22FC61D100B4C33C /* CurrencyProtectCell.swift in Sources */,
 				1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
+				F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
 				1D259D9E228BDF550053D0AB /* Extra.swift in Sources */,
 				1D84408E228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift in Sources */,
