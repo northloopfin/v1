@@ -17,6 +17,7 @@ class SideMenuViewController: UIViewController {
     @IBAction func crossClicked(_ sender: Any) {
         self.delegate.closeMenu()
     }
+    
     @IBAction func settingsClicked(_ sender: Any) {
         self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.SETTINGS)
         
@@ -38,7 +39,7 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
     }
 }
 
@@ -53,8 +54,8 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell: SideMenuTableCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableCell") as! SideMenuTableCell
         let backgroundView = UIView()
         backgroundView.backgroundColor = Colors.PurpleColor17673149
@@ -62,6 +63,7 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
         cell.bindData(data: data[indexPath.row])
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 62.0
@@ -85,13 +87,12 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.MYACCOUNT)
             case 3:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
-            case 4:
-                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
+//            case 4:
+//                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
 //            case 5:
 //                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
             default:
                 break
         }
-    
     }
 }
