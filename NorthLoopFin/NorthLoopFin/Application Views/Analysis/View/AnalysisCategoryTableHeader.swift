@@ -42,7 +42,7 @@ class AnalysisCategoryTableHeader: UITableViewHeaderFooterView {
         chartView.arcWidth = 25
         chartView.style = .round
         chartView.isAnimationActivated = false
-        chartView.frame = CGRect(x: (self.frame.size.width - 120) / 2, y: 20, width: 120, height: 120)
+        chartView.frame = CGRect(x: (self.frame.size.width - 120) / 2, y: 0, width: 120, height: 120)
         chartView.isTitleViewHidden = true
         let startAngle = (360.0 * Double(drownSum) / 100.0) * Double.pi / 180.0
         chartView.transform = chartView.transform.rotated(by: CGFloat(startAngle))
