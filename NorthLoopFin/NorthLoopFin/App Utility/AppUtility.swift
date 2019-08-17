@@ -282,7 +282,7 @@ class AppUtility {
         containerViewController.centerViewController=tabBarController
         containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
         containerViewController.shadow.enabled=true;
-        containerViewController.panMode = MFSideMenuPanModeDefault
+        containerViewController.panMode = MFSideMenuPanModeNone
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.window?.rootViewController = containerViewController
     }

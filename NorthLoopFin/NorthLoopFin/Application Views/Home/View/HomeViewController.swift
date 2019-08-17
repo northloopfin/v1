@@ -51,6 +51,7 @@ class HomeViewController: BaseViewController {
         shareAccountDetailsPresenter = ShareAccountDetailsPresenter.init(delegate: self)
         cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         self.getAccountInfo()
+        self.hideTabBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -284,6 +285,9 @@ extension HomeViewController:HomeDelegate{
             self.navigateToOTP()
         }else if !data.data.isAccountVerified{
             self.moveToWaitList()
+        }else{
+            self.menuContainerViewController.panMode = MFSideMenuPanModeDefault
+            self.showTabBar()
         }
         self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
         
@@ -333,6 +337,20 @@ extension HomeViewController:SideMenuDelegate{
         }
     }
     
+    func hideTabBar() {
+        var frame = self.tabBarController?.tabBar.frame
+        frame!.origin.y = self.view.frame.size.height + (frame?.size.height)!
+        self.tabBarController?.tabBar.frame = frame!
+    }
+    
+    func showTabBar() {
+        var frame = self.tabBarController?.tabBar.frame
+        frame!.origin.y = self.view.frame.size.height - (frame?.size.height)!
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tabBarController?.tabBar.frame = frame!
+        })
+    }
+
     func navigateToOTP(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
