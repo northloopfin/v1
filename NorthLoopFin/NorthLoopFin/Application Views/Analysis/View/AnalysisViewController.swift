@@ -231,7 +231,7 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
         if analysisOptions.count > 0 {
             self.presenter.fetchAnalysisTotalSpent(month: dateOptions[selectedDateIndexPath!.row].month, year:dateOptions[selectedDateIndexPath!.row].year)
         }else{
-            labelTotalSpent.text = "";//"Total $0 spent"
+            labelSpent.text = "$0";//"Total $0 spent"
         }
     }
     
@@ -241,8 +241,6 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
         formatter.numberStyle = .currency
         let sumCurrency = formatter.string(from: NSNumber(value:totalSpent.sumAmount)) ?? "0.00"
         labelTotalSpent.text = "" //"Total " + sumCurrency + " spent"
-        if labelSpent.text?.count == 0 {
-           labelSpent.text = sumCurrency
-        }
+        labelSpent.text = sumCurrency
     }
 }

@@ -38,9 +38,10 @@ class LoginPresenter: ResponseCallback{
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.loginDelegate?.hideLoader()
         //save this user to local memory of app
-        let loginResponse = responseObject as! Login
-        self.saveLoggedInUser(data: loginResponse.data)
-        self.loginDelegate?.didLoggedIn(data: loginResponse.data)
+        if let loginResponse = responseObject as? Login{
+            self.saveLoggedInUser(data: loginResponse.data)
+            self.loginDelegate?.didLoggedIn(data: loginResponse.data)
+        }
     }
     
     func servicesManagerError(error: ErrorModel) {
