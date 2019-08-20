@@ -533,7 +533,6 @@ class ScanIDNewViewController: BaseViewController {
                 }catch {
                     print("Error")
                 }
-                
             }
         }
     }
@@ -557,44 +556,45 @@ class ScanIDNewViewController: BaseViewController {
         }
     }
     //Open Camera
-        func openCamera(_ sender: Any){
-            CameraHandler.shared.showActionSheet(vc: self)
-            CameraHandler.shared.imagePickedBlock = { (image) in
-               
-                let btn = sender as! UIButton
-                if self.imageArray.count < 1{
-                    self.imageArray.append(image)
+    func openCamera(_ sender: Any){
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+           
+            let btn = sender as! UIButton
+            if self.imageArray.count < 1{
+                self.imageArray.append(image)
+            }else{
+                if self.imageArray.indices.contains(btn.tag){
+                    // yes exist
+                    self.imageArray[btn.tag] = image
                 }else{
-                    if self.imageArray.indices.contains(btn.tag){
-                        // yes exist
-                        self.imageArray[btn.tag] = image
-                    }else{
-                        self.imageArray.append(image)
-                    }
-                    
+                    self.imageArray.append(image)
                 }
                 
-                //self.imageArray.insert(image, at: btn.tag)
-                switch btn.tag {
-                case 0:
-                    self.uploadedImageFront.image=image
-                    self.uploadedImageFront.tappable=true
-                case 1:
-                    self.uploadedImageBack.image=image
-                    self.uploadedImageBack.tappable=true
-
-                case 2:
-                    self.uploadedImageExtra.image=image
-                    self.uploadedImageExtra.tappable=true
-
-                default:
-                    break
-                }
-                
-                self.addSelectedImagesToModel()
-                self.checkForCompletedStateOfScanId()
             }
+            
+            //self.imageArray.insert(image, at: btn.tag)
+            switch btn.tag {
+            case 0:
+                self.uploadedImageFront.image=image
+                self.uploadedImageFront.tappable=true
+            case 1:
+                self.uploadedImageBack.image=image
+                self.uploadedImageBack.tappable=true
+
+            case 2:
+                self.uploadedImageExtra.image=image
+                self.uploadedImageExtra.tappable=true
+
+            default:
+                break
+            }
+            
+            self.addSelectedImagesToModel()
+            self.checkForCompletedStateOfScanId()
         }
+    }
+    
     fileprivate func addSelectedImagesToModel() {
         if let optionSelected = self.selectedOption{
             

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScanOptionCell" rowHeight="79" id="KGk-i7-Jjw" customClass="ScanOptionCell" customModule="NorthLoopFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQ3-pg-vn4">
+                        <rect key="frame" x="0.0" y="14" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="Y3p-wM-xpQ"/>
+                            <constraint firstAttribute="height" constant="54" id="gav-Zr-rms"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahH-Gx-D3N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="74" y="22" width="150" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="e7i-3X-Ipc"/>
+                            <constraint firstAttribute="width" constant="150" id="kK8-4X-phY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                <real key="value" value="1.25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEV-Oc-0IY" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="74" y="43" width="201" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Y2Z-5g-zQ2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="12"/>
+                        <color key="textColor" red="0.5490196078431373" green="0.54509803921568623" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                <real key="value" value="0.93999999999999995"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nV-eh-TA2">
+                        <rect key="frame" x="275" y="26" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="SsY-sP-YaH"/>
+                            <constraint firstAttribute="height" constant="30" id="zea-dv-Xu0"/>
+                        </constraints>
+                        <state key="normal" image="ic_forward"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0nV-eh-TA2" firstAttribute="leading" secondItem="dEV-Oc-0IY" secondAttribute="trailing" id="6sC-4r-IVl"/>
+                    <constraint firstItem="oQ3-pg-vn4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IkI-b0-1Ey"/>
+                    <constraint firstItem="oQ3-pg-vn4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PHi-w4-puD"/>
+                    <constraint firstAttribute="trailing" secondItem="0nV-eh-TA2" secondAttribute="trailing" constant="15" id="c0S-Tj-BFM"/>
+                    <constraint firstItem="ahH-Gx-D3N" firstAttribute="leading" secondItem="oQ3-pg-vn4" secondAttribute="trailing" constant="20" id="dhG-Gz-AOG"/>
+                    <constraint firstItem="dEV-Oc-0IY" firstAttribute="leading" secondItem="ahH-Gx-D3N" secondAttribute="leading" id="qzs-LC-sa2"/>
+                    <constraint firstItem="ahH-Gx-D3N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="rcB-Br-khr"/>
+                    <constraint firstItem="dEV-Oc-0IY" firstAttribute="top" secondItem="ahH-Gx-D3N" secondAttribute="bottom" constant="4" id="vC6-vW-hBa"/>
+                    <constraint firstItem="0nV-eh-TA2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ymh-gw-vS5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnNext" destination="0nV-eh-TA2" id="0YU-Fo-9Un"/>
+                <outlet property="imgPreview" destination="oQ3-pg-vn4" id="C6b-7R-qB3"/>
+                <outlet property="lblSubtitle" destination="dEV-Oc-0IY" id="XOo-bV-VAX"/>
+                <outlet property="lblTitle" destination="ahH-Gx-D3N" id="VUK-ta-dEk"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="164.73214285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_forward" width="8" height="14"/>
+    </resources>
+</document>

@@ -431,6 +431,8 @@
 		EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */; };
 		EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727122E09F1500D5B834 /* DeleteACH.swift */; };
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
+		EA1AB9FA230BAA8F00FB2FA0 /* ScanVisaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */; };
+		EA1AB9FC230BB5FC00FB2FA0 /* ScanAddressProofController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */; };
 		EA1D9FDC22FAD3E2005DAFEA /* WireRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1D9FDA22FAD3E2005DAFEA /* WireRateCell.swift */; };
 		EA1D9FDD22FAD3E2005DAFEA /* WireRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1D9FDB22FAD3E2005DAFEA /* WireRateCell.xib */; };
 		EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */; };
@@ -453,6 +455,11 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA32C259230A70700031A223 /* ScanIDMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C258230A70700031A223 /* ScanIDMenuController.swift */; };
+		EA32C25C230A74B20031A223 /* ScanOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C25A230A74B20031A223 /* ScanOptionCell.swift */; };
+		EA32C25D230A74B20031A223 /* ScanOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA32C25B230A74B20031A223 /* ScanOptionCell.xib */; };
+		EA32C25F230AB57F0031A223 /* ScanPassportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C25E230AB57F0031A223 /* ScanPassportController.swift */; };
+		EA32C261230AE0BD0031A223 /* ScanI20Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C260230AE0BD0031A223 /* ScanI20Controller.swift */; };
 		EA39484C2302B517007BFEF5 /* CashbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA39484B2302B517007BFEF5 /* CashbackController.swift */; };
 		EA39484E2302DD72007BFEF5 /* AnalysisTotalSpent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA39484D2302DD72007BFEF5 /* AnalysisTotalSpent.swift */; };
 		EA4ED02322E5CC4700D1F438 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED02222E5CC4700D1F438 /* CardInfo.swift */; };
@@ -466,6 +473,7 @@
 		EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */; };
 		EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03522E5D39100D1F438 /* CardAuthData.swift */; };
 		EA4ED03822E5D54800D1F438 /* CardAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */; };
+		EA5121E6230BE67900FE9900 /* ScanIDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5121E5230BE67800FE9900 /* ScanIDController.swift */; };
 		EA6858D12302827000EEC67D /* LostCardOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6858D02302827000EEC67D /* LostCardOptionsController.swift */; };
 		EA6858D32302842000EEC67D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6858D22302842000EEC67D /* UIButtonExtension.swift */; };
 		EA8984B422FC491A00B4C33C /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B322FC491A00B4C33C /* HomeTabController.swift */; };
@@ -944,6 +952,8 @@
 		EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHRequestModel.swift; sourceTree = "<group>"; };
 		EA04727122E09F1500D5B834 /* DeleteACH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteACH.swift; sourceTree = "<group>"; };
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
+		EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVisaController.swift; sourceTree = "<group>"; };
+		EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAddressProofController.swift; sourceTree = "<group>"; };
 		EA1D9FDA22FAD3E2005DAFEA /* WireRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireRateCell.swift; sourceTree = "<group>"; };
 		EA1D9FDB22FAD3E2005DAFEA /* WireRateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WireRateCell.xib; sourceTree = "<group>"; };
 		EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -983,6 +993,11 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA32C258230A70700031A223 /* ScanIDMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDMenuController.swift; sourceTree = "<group>"; };
+		EA32C25A230A74B20031A223 /* ScanOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanOptionCell.swift; sourceTree = "<group>"; };
+		EA32C25B230A74B20031A223 /* ScanOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanOptionCell.xib; sourceTree = "<group>"; };
+		EA32C25E230AB57F0031A223 /* ScanPassportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPassportController.swift; sourceTree = "<group>"; };
+		EA32C260230AE0BD0031A223 /* ScanI20Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanI20Controller.swift; sourceTree = "<group>"; };
 		EA39484B2302B517007BFEF5 /* CashbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackController.swift; sourceTree = "<group>"; };
 		EA39484D2302DD72007BFEF5 /* AnalysisTotalSpent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTotalSpent.swift; sourceTree = "<group>"; };
 		EA4ED02222E5CC4700D1F438 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
@@ -996,6 +1011,7 @@
 		EA4ED03022E5D1C400D1F438 /* CardAuthBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAuthBusinessLogic.swift; sourceTree = "<group>"; };
 		EA4ED03522E5D39100D1F438 /* CardAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthData.swift; sourceTree = "<group>"; };
 		EA4ED03722E5D54800D1F438 /* CardAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAuthPresenter.swift; sourceTree = "<group>"; };
+		EA5121E5230BE67800FE9900 /* ScanIDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDController.swift; sourceTree = "<group>"; };
 		EA6858D02302827000EEC67D /* LostCardOptionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardOptionsController.swift; sourceTree = "<group>"; };
 		EA6858D22302842000EEC67D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EA8984B322FC491A00B4C33C /* HomeTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
@@ -1964,6 +1980,7 @@
 		1DD066F7221FDDE700E1AD6D /* V2 */ = {
 			isa = PBXGroup;
 			children = (
+				EA32C257230A70030031A223 /* ScanID Flow */,
 				1FF70EAD22ED74FF007A9309 /* CountryPicker */,
 				1DD066F8221FDE3C00E1AD6D /* CreateAccountV2ViewController.swift */,
 				1D09CA69221FFCC300C961A9 /* InternationalStudentViewController.swift */,
@@ -2734,6 +2751,21 @@
 			path = SSLCertificatePinning;
 			sourceTree = "<group>";
 		};
+		EA32C257230A70030031A223 /* ScanID Flow */ = {
+			isa = PBXGroup;
+			children = (
+				EA32C258230A70700031A223 /* ScanIDMenuController.swift */,
+				EA32C25A230A74B20031A223 /* ScanOptionCell.swift */,
+				EA32C25B230A74B20031A223 /* ScanOptionCell.xib */,
+				EA32C25E230AB57F0031A223 /* ScanPassportController.swift */,
+				EA32C260230AE0BD0031A223 /* ScanI20Controller.swift */,
+				EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */,
+				EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */,
+				EA5121E5230BE67800FE9900 /* ScanIDController.swift */,
+			);
+			path = "ScanID Flow";
+			sourceTree = "<group>";
+		};
 		EA3948492302B4C6007BFEF5 /* Cashback */ = {
 			isa = PBXGroup;
 			children = (
@@ -2963,6 +2995,7 @@
 				EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */,
 				84D129B422FCD666000C82A6 /* AnalysisCategoryTableHeader.xib in Resources */,
 				8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */,
+				EA32C25D230A74B20031A223 /* ScanOptionCell.xib in Resources */,
 				1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
@@ -3162,9 +3195,12 @@
 				EA1FC15022F1526C002A7103 /* AMPURLConnection.m in Sources */,
 				EA1FC14E22F1526C002A7103 /* AMPDeviceInfo.m in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
+				EA5121E6230BE67900FE9900 /* ScanIDController.swift in Sources */,
+				EA1AB9FC230BB5FC00FB2FA0 /* ScanAddressProofController.swift in Sources */,
 				4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */,
 				4BFDF88222B8BC130066860D /* UpgradePremiumViewController.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
+				EA32C259230A70700031A223 /* ScanIDMenuController.swift in Sources */,
 				1D055D51229C6E410078CD33 /* ACHTransactionAPIRequest.swift in Sources */,
 				1D180D8C229E763C00FC3390 /* ATMFinderAPIRequest.swift in Sources */,
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
@@ -3312,6 +3348,7 @@
 				1D180DAA229FC42000FC3390 /* AccountPresenter.swift in Sources */,
 				1D180DA4229FAA6F00FC3390 /* NewPinViewController.swift in Sources */,
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
+				EA32C261230AE0BD0031A223 /* ScanI20Controller.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
 				F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */,
@@ -3338,6 +3375,7 @@
 				1D5AB31322A7C7C300DB3B70 /* TwoFADelegates.swift in Sources */,
 				297FB9F921B65240008D60CE /* AppConstants.swift in Sources */,
 				1D913CE4228F62880075B16D /* SignupSynapsePresenter.swift in Sources */,
+				EA32C25F230AB57F0031A223 /* ScanPassportController.swift in Sources */,
 				1D180D74229E4DF700FC3390 /* ZendeskResponse.swift in Sources */,
 				1D8440812289545A00A77BBF /* HomeTransactionListBusinessLogic.swift in Sources */,
 				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
@@ -3471,6 +3509,7 @@
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
 				1D5AB31122A7C26700DB3B70 /* TwoFAResponse.swift in Sources */,
 				1D9AF08522A5068500A9055F /* TransactionHistoryData.swift in Sources */,
+				EA32C25C230A74B20031A223 /* ScanOptionCell.swift in Sources */,
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1FF70EB722ED7500007A9309 /* CountryCell.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
@@ -3520,6 +3559,7 @@
 				1D29C84522A916E00092E3EB /* ChangeAddressRequestModel.swift in Sources */,
 				1D180D90229E769500FC3390 /* ATM.swift in Sources */,
 				1D11FE21221126B700234E6D /* CommonButton.swift in Sources */,
+				EA1AB9FA230BAA8F00FB2FA0 /* ScanVisaController.swift in Sources */,
 				1D29C84122A916B00092E3EB /* ChangeAddressPresenter.swift in Sources */,
 				4BFDF88822B8D6630066860D /* UpgradeBusinessLogic.swift in Sources */,
 				1D29C84F22A917440092E3EB /* ChangePhoneAPIRequest.swift in Sources */,
