@@ -115,10 +115,21 @@ class CreateAccountV2ViewController: BaseViewController {
     }
     func moveToSignupStepThree(withData:SignupFlowData){
         logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Enters Info"])
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
-        vc.signupData=withData
-        self.navigationController?.pushViewController(vc, animated: false)
+        if withData.cipTag == 2 {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDMenuController") as! ScanIDMenuController
+            vc.signupData=withData
+            self.navigationController?.pushViewController(vc, animated: false)
+        }else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDController") as! ScanIDController
+            vc.signupData=withData
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = storyBoard.instantiateViewController(withIdentifier: "ScanIDNewViewController") as! ScanIDNewViewController
+//        vc.signupData=withData
+//        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     //Move to OTP screen
@@ -126,7 +137,7 @@ class CreateAccountV2ViewController: BaseViewController {
         UserDefaults.saveToUserDefault(AppConstants.Screens.OTP.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
-    self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     
     func moveToIntenationalStudent(){
@@ -147,21 +158,23 @@ class CreateAccountV2ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-       // self.fetchDatafromRealmIfAny()
+        self.fetchDatafromRealmIfAny()
     }
     
     func fetchDatafromRealmIfAny(){
         if self.basicInfo.count > 0{
-            self.nextBtn.isEnabled=true
+//            self.nextBtn.isEnabled=true
             let info = self.basicInfo.first!
             self.firstNameTextField.text = info.firstname
             self.lastNameTextField.text = info.lastname
             self.SSNTextField.text = info.ssn
             self.phoneTextField.text = info.phone
             self.CitizenShipTextField.text = info.citizenShip
+//            self.countryCodeTextField.text = info.countryCode
             //search for citizenship in the list of countries
             let selectedCountryArr = self.countryWithCode.filter { $0.name == info.citizenShip}
             self.selectedCountry = selectedCountryArr[0]
+            checkForMandatoryFields()
         }
     }
     
@@ -279,6 +292,7 @@ class CreateAccountV2ViewController: BaseViewController {
         basicInfo.lastname=self.lastNameTextField.text ?? ""
         basicInfo.ssn=self.SSNTextField.text ?? ""
         basicInfo.phone=self.phoneTextField.text ?? ""
+//        basicInfo.countryCode=self.countryCodeTextField.text ?? ""
         basicInfo.citizenShip=self.CitizenShipTextField.text ?? ""
         RealmHelper.addBasicInfo(info: basicInfo)
         
@@ -359,8 +373,8 @@ extension CreateAccountV2ViewController:CountryPickerViewDelegate {
         }else{
             self.CitizenShipTextField.text = country.name
             self.selectedCountry = country
-            self.checkForMandatoryFields()
         }
+        self.checkForMandatoryFields()
     }
     
     func countryPickerViewDidDismiss(picker: CountryPickerView) {
