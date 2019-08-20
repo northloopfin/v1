@@ -478,10 +478,15 @@
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */; };
+		F49A0011230B1FB30099ACD4 /* TransferDebitFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */; };
 		F4AA0C1B2305AB9200CDF5C0 /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */; };
 		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
 		F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */; };
 		F4C1BF102301C0EC00FC1DC1 /* CitizenshipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */; };
+		F4EE1B85230C5D0800CCA1E6 /* TransferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE1B84230C5D0800CCA1E6 /* TransferDetailViewController.swift */; };
+		F4EE1B88230C626B00CCA1E6 /* TransferDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE1B86230C626B00CCA1E6 /* TransferDetailTableViewCell.swift */; };
+		F4EE1B89230C626B00CCA1E6 /* TransferDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EE1B87230C626B00CCA1E6 /* TransferDetailTableViewCell.xib */; };
+		F4EE1B8B230C6D3900CCA1E6 /* TransferDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE1B8A230C6D3900CCA1E6 /* TransferDetailCellModel.swift */; };
 		F9386924537DD35C2672E926 /* Pods_NorthLoopFinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6CAEB83188B246739E9127 /* Pods_NorthLoopFinUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -1011,10 +1016,15 @@
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBalanceViewController.swift; sourceTree = "<group>"; };
+		F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDebitFromViewController.swift; sourceTree = "<group>"; };
 		F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
 		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
 		F4C1BF09230053C900FC1DC1 /* VerifyIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIdentityViewController.swift; sourceTree = "<group>"; };
 		F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenshipViewController.swift; sourceTree = "<group>"; };
+		F4EE1B84230C5D0800CCA1E6 /* TransferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailViewController.swift; sourceTree = "<group>"; };
+		F4EE1B86230C626B00CCA1E6 /* TransferDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F4EE1B87230C626B00CCA1E6 /* TransferDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferDetailTableViewCell.xib; sourceTree = "<group>"; };
+		F4EE1B8A230C6D3900CCA1E6 /* TransferDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailCellModel.swift; sourceTree = "<group>"; };
 		FD8B9A051F030CDB58EA44DB /* Pods-NorthLoopFin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthLoopFin.debug.xcconfig"; path = "Target Support Files/Pods-NorthLoopFin/Pods-NorthLoopFin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1756,6 +1766,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				F49A000E230B1B7C0099ACD4 /* New Transfer */,
 				F41A6A67230689580053AF0D /* Current Balance */,
 				F4AA0C182305AAC000CDF5C0 /* Photo ID */,
 				F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */,
@@ -2816,6 +2827,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F49A000E230B1B7C0099ACD4 /* New Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				F4EE1B8C230C705000CCA1E6 /* Model */,
+				F49A000F230B1BB60099ACD4 /* View */,
+			);
+			path = "New Transfer";
+			sourceTree = "<group>";
+		};
+		F49A000F230B1BB60099ACD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */,
+				F4EE1B84230C5D0800CCA1E6 /* TransferDetailViewController.swift */,
+				F4EE1B86230C626B00CCA1E6 /* TransferDetailTableViewCell.swift */,
+				F4EE1B87230C626B00CCA1E6 /* TransferDetailTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F4AA0C182305AAC000CDF5C0 /* Photo ID */ = {
 			isa = PBXGroup;
 			children = (
@@ -2878,6 +2909,14 @@
 				F4C1BF0F2301C0EC00FC1DC1 /* CitizenshipViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F4EE1B8C230C705000CCA1E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4EE1B8A230C6D3900CCA1E6 /* TransferDetailCellModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3038,6 +3077,7 @@
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
 				4BBCE8F822E18B7800A34695 /* queue.gif in Resources */,
+				F4EE1B89230C626B00CCA1E6 /* TransferDetailTableViewCell.xib in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */,
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
@@ -3332,10 +3372,12 @@
 				1D19D31622953957008D367E /* SignupSynapse.swift in Sources */,
 				1D165F50222D18AA00D06914 /* SelfieImage.swift in Sources */,
 				1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */,
+				F4EE1B88230C626B00CCA1E6 /* TransferDetailTableViewCell.swift in Sources */,
 				1D055D38229BFEFC0078CD33 /* MakeTransferViewController.swift in Sources */,
 				1D44CD01228F0387007382F2 /* UIImageExtension.swift in Sources */,
 				4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
+				F4EE1B8B230C6D3900CCA1E6 /* TransferDetailCellModel.swift in Sources */,
 				1D259DA8228BE39B0053D0AB /* ID.swift in Sources */,
 				4B08FFB922AF705100ABAFF3 /* UpdateAddressRequestBody.swift in Sources */,
 				1D478CA7228E901A00503136 /* SignupAuthBusinessModel.swift in Sources */,
@@ -3423,6 +3465,7 @@
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
 				1D180D86229E760500FC3390 /* ATMFinder.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
+				F49A0011230B1FB30099ACD4 /* TransferDebitFromViewController.swift in Sources */,
 				4BFBC87A22BB809D00B23B68 /* ShareAccountDetailsAPIRequest.swift in Sources */,
 				4BFDF88422B8D62F0066860D /* UpgradePresenter.swift in Sources */,
 				1D19D3202295883F008D367E /* AccountData.swift in Sources */,
@@ -3543,6 +3586,7 @@
 				1D790E0C21D366C60088107A /* UIButtonWithSpacing.swift in Sources */,
 				1D29C85522A9297B0092E3EB /* ChangePhoneDelegates.swift in Sources */,
 				EA39484E2302DD72007BFEF5 /* AnalysisTotalSpent.swift in Sources */,
+				F4EE1B85230C5D0800CCA1E6 /* TransferDetailViewController.swift in Sources */,
 				4B15362D22DEEDAA009CE548 /* SSNInfoViewController.swift in Sources */,
 				EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */,
 				1D5AB2EB22A790BA00DB3B70 /* SetPinRequestModel.swift in Sources */,
