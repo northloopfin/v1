@@ -10,7 +10,7 @@ import Foundation
 
 struct TransactionListLocation: Codable {
     let addressCity, addressCountryCode, addressPostalCode, addressSubdivision: String
-    let lat, lon: Double
+    let lat, lon: Double // it should be any since some request treat it as Double and other as string
     
     enum CodingKeys: String, CodingKey {
         case addressCity = "address_city"
@@ -25,8 +25,19 @@ struct TransactionListLocation: Codable {
         addressCountryCode = try values.decodeIfPresent(String.self, forKey: .addressCountryCode) ?? ""
         addressPostalCode = try values.decodeIfPresent(String.self, forKey: .addressPostalCode) ?? ""
         addressSubdivision = try values.decodeIfPresent(String.self, forKey: .addressSubdivision) ?? ""
-        lat = try values.decodeIfPresent(Double.self, forKey: .lat) ?? 0.0
-        lon = try values.decodeIfPresent(Double.self, forKey: .lon) ?? 0.0
-
+        if let latcoded = try? values.decodeIfPresent(Double.self, forKey: .lat) {
+            lat = latcoded ?? 0.0
+        } else if let latcoded = try? values.decodeIfPresent(String.self, forKey: .lat) {
+            lat = Double(latcoded ?? "0") ?? 0.0
+        } else {
+            lat = 0.0
+        }
+        if let loncoded = try? values.decodeIfPresent(Double.self, forKey: .lon) {
+            lon = loncoded ?? 0.0
+        } else if let loncoded = try? values.decodeIfPresent(String.self, forKey: .lon) {
+            lon = Double(loncoded ?? "0") ?? 0.0
+        } else {
+            lon = 0.0
+        }
     }
 }

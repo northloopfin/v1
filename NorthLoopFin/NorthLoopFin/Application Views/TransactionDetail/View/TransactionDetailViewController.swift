@@ -168,6 +168,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
     }
     
     func didFetchedTransactionDetail(data:TransactionDetail){
+        self.beneficiaryNameLbl.text = "North Loop"
         if let _  = data.data.to.meta{
             let imageName = AppUtility.getMerchantCategoryIconName(category: data.data.to.meta!.merchantCategory)
             if imageName.count > 0{

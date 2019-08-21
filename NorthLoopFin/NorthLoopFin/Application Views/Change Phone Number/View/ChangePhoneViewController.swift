@@ -85,9 +85,13 @@ extension ChangePhoneViewController:ChangePhoneDelegate{
     
     
         func moveToConfirmationScreen(){
+//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//            let vc = storyBoard.instantiateViewController(withIdentifier: "LostCardConfirmationViewController") as! LostCardConfirmationViewController
+//            vc.message = "Your new number is set! We have sent an email confirming."
+//            self.navigationController?.pushViewController(vc, animated: false)
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "LostCardConfirmationViewController") as! LostCardConfirmationViewController
-            vc.message = "Your new number is set! We have sent an email confirming."
+            let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+            vc.screenWhichInitiatedOTP = AppConstants.Screens.HOME
             self.navigationController?.pushViewController(vc, animated: false)
         }
     

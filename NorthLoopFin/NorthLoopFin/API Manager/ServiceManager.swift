@@ -328,6 +328,7 @@ class ServiceManager: NSObject  {
                     }
                     catch let err {
                         print("Err", err)
+                        self.delegate?.onError(error! as NSError , errorObject: responseObject as AnyObject?)
                     }
                 }
             }else {

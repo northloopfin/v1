@@ -83,6 +83,11 @@ class HomeTableCell: UITableViewCell {
             self.beneficiaryImg.clipsToBounds = true
         }
         
+        if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, data.from.user.legalNames[0] == "NORTH LOOP TECHNOLOGIES INC" {
+            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryImg.clipsToBounds = false
+        }
+        
         if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
             self.beneficiaryImg.image = UIImage.init(named:"Transfer")
             self.beneficiaryImg.clipsToBounds = false
