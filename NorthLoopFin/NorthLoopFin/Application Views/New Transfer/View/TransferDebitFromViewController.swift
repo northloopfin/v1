@@ -10,6 +10,12 @@ import UIKit
 
 class TransferDebitFromViewController: UIViewController {
 
+    @IBOutlet weak var firstBankView: UIView!
+    @IBOutlet weak var secondBankView: UIView!
+    @IBOutlet weak var addBankAccountView: UIView!
+    @IBOutlet weak var addAmountTextField: UITextField!
+    @IBOutlet weak var firstBankHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondBankHeightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
 
