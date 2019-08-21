@@ -30,11 +30,9 @@ class HomeTabController: ESTabBarController {
 
         initialHomeNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), title: nil, image: UIImage(named: "ic_home"), selectedImage: UIImage(named: "ic_home_selected"))
         initialExpenseNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_expenses"), selectedImage: UIImage(named: "ic_expenses_selected"))
-        wireDetail.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_currency_proj"), selectedImage: UIImage(named: "ic_currency_proj_selected"))
-        wireDetail.tabBarItem.isEnabled = false
+        wireDetail.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_cashback_tab"), selectedImage: UIImage(named: "ic_cashback_tab_selected"))
         self.viewControllers = [initialExpenseNavigationController, initialHomeNavigationController,wireDetail]
         self.selectedViewController = initialHomeNavigationController
-
     }
 }
 class TabContentView: ESTabBarItemContentView {
