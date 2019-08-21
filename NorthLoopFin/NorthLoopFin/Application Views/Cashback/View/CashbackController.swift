@@ -11,16 +11,33 @@ import Foundation
 class CashbackController: BaseViewController {
     
     @IBOutlet weak var vwCashbackDetail: UIView!
-    @IBOutlet weak var vwCashbackSummary: CommonTable!
+    @IBOutlet weak var vwCashbackSummary: UITableView!
     @IBOutlet weak var constSelectionUnderlineLeading: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var btnRedeem: RippleButton!
+    @IBOutlet weak var lblCashbackAmount: UILabel!
     @IBOutlet weak var btnRestaurant: UIButton!
     @IBOutlet weak var btnGeneral: UIButton!
+    var fetchPresenter: FetchCashbackPresenter!
+    var redeemPresenter: RedeemCashbackPresenter!
+    var transactions: [CashbackTransaction] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.configureTable()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getCashbackDetail()
+    }
+
     @IBAction func general_clicked(_ sender: UIButton) {
         sender.titleLabel?.font = AppFonts.calibriBold17
         btnRestaurant.titleLabel?.font = AppFonts.calibri17
@@ -34,9 +51,6 @@ class CashbackController: BaseViewController {
     }
     
     func prepareView(){
-        self.setupRightNavigationBar()
-        self.setNavigationBarTitle(title: "Cashback")
-        
         styleContainer(vw: vwCashbackDetail)
         styleContainer(vw: vwCashbackSummary)
     }
@@ -48,5 +62,64 @@ class CashbackController: BaseViewController {
         let shadowColor = Colors.DustyGray155155155
         vw.layer.addShadowAndRoundedCorners(roundedCorner: 5, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)        
     }
-
+    
+    
+    func getCashbackDetail() {
+        self.fetchPresenter = FetchCashbackPresenter.init(delegate: self)
+        self.fetchPresenter.sendFetchCashbackRequest()
+        self.btnRedeem.isEnabled = false
+    }
+    
+    @IBAction func btnRedeem_pressed(_ sender: UIButton) {
+        self.redeemPresenter = RedeemCashbackPresenter.init(delegate: self)
+        self.redeemPresenter.sendRedeemCashbackRequest()
+        self.btnRedeem.isEnabled = false
+    }
 }
+
+
+extension CashbackController: FetchCashbackDelegate{
+    func didFetchCashback(data: [CashbackDetail]) {
+        if data.count > 0 {
+            self.lblCashbackAmount.text = "$" + String(format: "%.2f",data[0].value)
+        }
+        self.btnRedeem.isEnabled = data.count > 0
+    }
+}
+
+extension CashbackController: RedeemCashbackDelegate{
+    func didRedeemCashback(data: RedeemCashback) {
+        self.showAlert(title: "", message: data.data)
+        self.lblCashbackAmount.text = "$0"
+        self.btnRedeem.isEnabled = false
+    }
+}
+extension CashbackController: UITableViewDelegate,UITableViewDataSource {
+    func configureTable(){
+        self.tableView.register(UINib(nibName:"CashbackCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CashbackCell")
+        self.tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CashbackCell", for: indexPath) as! CashbackCell
+        if indexPath.row == 0 {
+            cell.lblTitle.text = "Amazon Prime Student"
+            cell.lblSubTitle.text = "Premium users only"
+        }
+        if indexPath.row == 1{
+            cell.lblTitle.text = "Starbucks"
+            cell.lblSubTitle.text = "3% cashback on all purchases"
+        }
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 73
+    }
+}
+
