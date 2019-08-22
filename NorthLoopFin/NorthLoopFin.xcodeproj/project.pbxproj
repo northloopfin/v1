@@ -433,6 +433,7 @@
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
 		EA1D9FDC22FAD3E2005DAFEA /* WireRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1D9FDA22FAD3E2005DAFEA /* WireRateCell.swift */; };
 		EA1D9FDD22FAD3E2005DAFEA /* WireRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1D9FDB22FAD3E2005DAFEA /* WireRateCell.xib */; };
+		EA1E32B9230E9B8E0099A471 /* ComingSoonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */; };
 		EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */; };
 		EA1FC14122F1526C002A7103 /* AMPLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */; };
 		EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12122F1526C002A7103 /* AMPUtils.m */; };
@@ -954,6 +955,7 @@
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
 		EA1D9FDA22FAD3E2005DAFEA /* WireRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireRateCell.swift; sourceTree = "<group>"; };
 		EA1D9FDB22FAD3E2005DAFEA /* WireRateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WireRateCell.xib; sourceTree = "<group>"; };
+		EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonController.swift; sourceTree = "<group>"; };
 		EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA1FC11C22F1526B002A7103 /* AMPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLConnection.h; sourceTree = "<group>"; };
 		EA1FC11D22F1526B002A7103 /* AMPIdentify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPIdentify.h; sourceTree = "<group>"; };
@@ -1766,6 +1768,7 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA1E32B7230E9B750099A471 /* Coming Soon */,
 				F49A000E230B1B7C0099ACD4 /* New Transfer */,
 				F41A6A67230689580053AF0D /* Current Balance */,
 				F4AA0C182305AAC000CDF5C0 /* Photo ID */,
@@ -2703,6 +2706,54 @@
 			path = DeleteACH;
 			sourceTree = "<group>";
 		};
+		EA1902D9230D63D8002FE7FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA1902DA230D63D8002FE7FC /* Redeem */,
+				EA1902DB230D63D8002FE7FC /* Fetch */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA1902DA230D63D8002FE7FC /* Redeem */ = {
+			isa = PBXGroup;
+			children = (
+				EA1902EE230D76A5002FE7FC /* RedeemCashback.swift */,
+				EA1902EC230D76A4002FE7FC /* RedeemCashbackAPIRequest.swift */,
+				EA1902EB230D76A3002FE7FC /* RedeemCashbackBusinessModel.swift */,
+				EA1902ED230D76A5002FE7FC /* RedeemCashbackRequestModel.swift */,
+			);
+			path = Redeem;
+			sourceTree = "<group>";
+		};
+		EA1902DB230D63D8002FE7FC /* Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				EA1902DD230D6474002FE7FC /* FetchCashback.swift */,
+				EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */,
+				EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */,
+				EA1902E2230D666C002FE7FC /* FetchCashbackBusinessModel.swift */,
+			);
+			path = Fetch;
+			sourceTree = "<group>";
+		};
+		EA1902DC230D63D9002FE7FC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EA1902E5230D6746002FE7FC /* FetchCashbackPresenter.swift */,
+				EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EA1E32B7230E9B750099A471 /* Coming Soon */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */,
+			);
+			path = "Coming Soon";
+			sourceTree = "<group>";
+		};
 		EA1FC11B22F1526B002A7103 /* Amplitude */ = {
 			isa = PBXGroup;
 			children = (
@@ -3408,6 +3459,7 @@
 				1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
 				1D5AB2FB22A7996C00DB3B70 /* LostCardAPIRequest.swift in Sources */,
+				EA1E32B9230E9B8E0099A471 /* ComingSoonController.swift in Sources */,
 				1D180DAA229FC42000FC3390 /* AccountPresenter.swift in Sources */,
 				1D180DA4229FAA6F00FC3390 /* NewPinViewController.swift in Sources */,
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
@@ -3858,7 +3910,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 9YZW9YBU3X;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -3891,7 +3943,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 9YZW9YBU3X;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -4070,7 +4122,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 9YZW9YBU3X;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",
@@ -4208,7 +4260,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 9YZW9YBU3X;
+				DEVELOPMENT_TEAM = 3N2LD95A88;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"$(inherited)",

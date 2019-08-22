@@ -20,7 +20,7 @@ class HomeTabController: ESTabBarController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         initialNavigationController = UINavigationController(rootViewController:homeViewController!)
 
-        let wireDetail = storyBoard.instantiateViewController(withIdentifier: "CashbackController")
+        let wireDetail = storyBoard.instantiateViewController(withIdentifier: "CashbackController") //"ComingSoonController"
 
         let analysisController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
 
