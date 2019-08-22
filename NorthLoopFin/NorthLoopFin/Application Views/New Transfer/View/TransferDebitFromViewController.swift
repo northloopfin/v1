@@ -10,8 +10,8 @@ import UIKit
 
 class TransferDebitFromViewController: UIViewController {
 
-    @IBOutlet weak var firstBankView: UIView!
-    @IBOutlet weak var secondBankView: UIView!
+    @IBOutlet weak var firstBankView: FirstBankDetailView!
+    @IBOutlet weak var secondBankView: SecondBankDetailView!
     @IBOutlet weak var addBankAccountView: UIView!
     @IBOutlet weak var addAmountTextField: UITextField!
     @IBOutlet weak var firstBankHeightConstraint: NSLayoutConstraint!
@@ -33,4 +33,21 @@ class TransferDebitFromViewController: UIViewController {
     }
     */
 
+}
+class FirstBankDetailView:UIView
+{
+    @IBOutlet weak var checkBox:UIImageView!
+    @IBOutlet weak var bankImageView : UIImageView!
+    @IBOutlet weak var mainLabel: LabelWithLetterSpace!
+    @IBOutlet weak var tickImageView : UIImageView!
+    @IBOutlet weak var clockImageView: UIImageView!
+    @IBOutlet weak var firstSubtitle: LabelWithLetterSpace!
+    @IBOutlet weak var secondSubtitle: LabelWithLetterSpace!
+}
+class SecondBankDetailView:UIView
+{
+    @IBOutlet weak var checkBox:UIImageView!
+    @IBOutlet weak var bankImageView : UIImageView!
+    @IBOutlet weak var mainLabel: LabelWithLetterSpace!
+    @IBOutlet weak var subtitleLabel: LabelWithLetterSpace!
 }
