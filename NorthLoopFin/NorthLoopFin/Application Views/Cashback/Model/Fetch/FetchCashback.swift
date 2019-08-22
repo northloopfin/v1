@@ -24,7 +24,7 @@ struct CashbackDetail: Codable {
 }
 
 struct CashbackTransaction: Codable {
-    let cashback: Double
-    let transactionID: String
-    let merchant_name: String
+    let cashback: String
+//    let transactionID: String
+//    let merchant_name: String
 }

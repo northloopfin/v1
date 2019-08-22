@@ -87,10 +87,10 @@ class AnalysisViewController: BaseViewController {
         tableView.isHidden = true
         
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
-        let formatter = NumberFormatter()
-        formatter.locale = Locale.current
-        formatter.numberStyle = .currency
-        labelCurrentBalance.text = formatter.string(from: NSNumber(value:currentUser?.amount ?? 0)) ?? "$0.00"
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale.current
+//        formatter.numberStyle = .currency
+        labelCurrentBalance.text = "$" + String(currentUser?.amount ?? 0)
     }
     
     @IBAction func onDate(_ sender: Any) {
@@ -236,11 +236,7 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
     }
     
     func didFetchAnalysisTotalSpent(_ totalSpent: AnalysisTotalSpent) {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale.current
-        formatter.numberStyle = .currency
-        let sumCurrency = formatter.string(from: NSNumber(value:totalSpent.sumAmount)) ?? "0.00"
         labelTotalSpent.text = "" //"Total " + sumCurrency + " spent"
-        labelSpent.text = sumCurrency
+        labelSpent.text = "$" + String(totalSpent.sumAmount)
     }
 }
