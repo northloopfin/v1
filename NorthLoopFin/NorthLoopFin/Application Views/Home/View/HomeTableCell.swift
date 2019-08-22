@@ -40,7 +40,6 @@ class HomeTableCell: UITableViewCell {
         self.delegate = delegate
         self.individualTransaction=data
         self.beneficiaryImg.image = nil
-        self.beneficiaryImg.backgroundColor = UIColor.lightGray
     
         if let _  = data.to.meta{
             let imageName = AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory)
@@ -76,9 +75,24 @@ class HomeTableCell: UITableViewCell {
                 }
             }
         }
+        if ( data.to.type == "ACH-US" || data.from.type == "ACH-US") {
+            self.beneficiaryImg.clipsToBounds = false
+            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryName.text = data.to.nickname
+        }else{
+            self.beneficiaryImg.clipsToBounds = true
+        }
+        
+        if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, data.from.user.legalNames[0] == "NORTH LOOP TECHNOLOGIES INC" {
+            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryImg.clipsToBounds = false
+        }
+        
         if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
             self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryImg.clipsToBounds = false
         }
+        
         self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
@@ -93,6 +107,5 @@ class HomeTableCell: UITableViewCell {
                                          range: NSMakeRange(0, attributeString.length))
             self.transactionAmt.attributedText = attributeString
         }
-        
     }
 }

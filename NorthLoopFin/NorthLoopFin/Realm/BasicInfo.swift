@@ -17,7 +17,8 @@ class BasicInfo: Object {
     @objc dynamic var ssn = ""
     @objc dynamic var citizenShip = ""
     @objc dynamic var phone = ""
-    
+//    @objc dynamic var countryCode = ""
+
     @objc dynamic var passportNumber = ""
     @objc dynamic var DOB = ""
     @objc dynamic var university = ""

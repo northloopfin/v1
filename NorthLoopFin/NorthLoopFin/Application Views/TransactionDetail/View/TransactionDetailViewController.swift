@@ -49,8 +49,6 @@ class TransactionDetailViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        
-        
     }
     //Create gradient for navigation bar
     func setNavigationBarTitle(){
@@ -170,6 +168,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
     }
     
     func didFetchedTransactionDetail(data:TransactionDetail){
+        self.beneficiaryNameLbl.text = "North Loop"
         if let _  = data.data.to.meta{
             let imageName = AppUtility.getMerchantCategoryIconName(category: data.data.to.meta!.merchantCategory)
             if imageName.count > 0{
@@ -187,12 +186,17 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
             }
         }else if data.data.to.type == "ACH-US"{
              self.beneficiaryNameLbl.text = data.data.to.user.legalNames[0]
-        } else if let _  = data.data.to.meta {
+        }else if let _  = data.data.to.meta {
             self.beneficiaryNameLbl.text = formatCategory(category: data.data.to.meta!.merchantCategory)
         }
         
         if let _  = detailModel.from.meta, detailModel.from.meta?.type.lowercased() == "wire" {
             self.transactionPurposeLbl.text = formatCategory(category: (detailModel.from.meta?.type.lowercased())!)
+        }
+        
+        if (self.transactionPurposeLbl.text!.count == 0 && (data.data.to.type == "ACH-US" || detailModel.from.type == "ACH-US")) {
+            self.transactionPurposeLbl.text = "Transfer"
+            self.beneficiaryNameLbl.text = data.data.to.nickname
         }
         
         self.timestampLbl.text = fullStringFromDate(seconds: data.data.extra.processOn)
@@ -237,5 +241,4 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         
         return dateString
     }
-
 }

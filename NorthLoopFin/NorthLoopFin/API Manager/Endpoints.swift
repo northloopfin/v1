@@ -35,10 +35,12 @@ struct Endpoints{
         case SAHREACCOUNTDETAILS = "banking/account"
         case GETAPPSETTINGS = "banking/preferences"
         case CHECKUPDATE = "banking/app-version-updates"
+        case CASHBACK = "banking/cashback"
+        case CASHBACKREDEEM = "banking/cashback/redeem"
         case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
 //        case ANALYSISOPTIONS = "http://18.219.212.170/spend_by_categories/"
-        case ANALYSISOPTIONS = "http://18.224.66.100/spend_by_categories/"
-        case ANALYSISTOTALSPENT = "http://18.224.66.100/m_to_date_spend/"
+        case ANALYSISOPTIONS = "http://nolo-load-vpc-f927b74b2d6466e5.elb.us-east-2.amazonaws.com/spend_by_categories/"
+        case ANALYSISTOTALSPENT = "http://nolo-load-vpc-f927b74b2d6466e5.elb.us-east-2.amazonaws.com/m_to_date_spend/"
     }
     
     enum APIRequestHeaders: String{

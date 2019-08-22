@@ -352,6 +352,7 @@ extension VerifyAddressViewController:ZendeskDelegates{
     }
     
     func callAccountInfoAPI(){
+        self.moveToWaitList()
         self.accountInfoPresenter.getAccountInfo()
     }
     

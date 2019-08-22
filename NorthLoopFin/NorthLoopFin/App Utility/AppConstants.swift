@@ -65,6 +65,7 @@ struct AppConstants{
         case USER_ABOUT_TO_REACH_MAX_ATTEMPTS = "You are left with one more login attempt"
         case USER_ACCOUNT_BLOCKED = "Your Account has been block. Check inbox to reset password"
         case COMPLETE_DOCUMENT_UPLOAD = "Please complete document upload of selected ID Type"
+        case COMPLETE_DOCUMENT_UPLOAD_OF = "Please complete document upload of "
         case SELECT_ID_TYPE = "Please select ID type"
         case RESET_EMAIL_SENT = "We've just sent you an email to reset your password"
         case CONFIRM_MESSAGE_TO_LOCK_CARD = "Are you sure you want to lock this card?"
@@ -188,14 +189,15 @@ struct AppConstants{
     
     enum SelectIDTYPES:String{
         case PASSPORT="Passport"
-        case I20="I-20 (3 pages)"
+        case I20="I-20"
         case USIDTYPE = "US ID Type"
-        case F1VISA = "F-1 Visa"
+        case F1VISA = "Student Visa"
         case ADDRESSPROOF = "Address Proof"
         case STATEID = "ID"
         case DRIVERLICENSE = "Driver's License"
         case OTHER = "Other"
     }
+    
     enum AGREEMENTTYPE:String{
         case ACCOUNT = "Account"
         case DEPOSIT = "Deposit"

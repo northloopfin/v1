@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MFSideMenu
 
 class AnalysisViewController: BaseViewController {
     @IBOutlet weak var labelCurrentBalance: UILabel!
@@ -55,7 +56,6 @@ class AnalysisViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRightNavigationBar()
         configureTable()
         let tap = UITapGestureRecognizer(target: self, action: #selector(hidePeriodPicker))
         view.addGestureRecognizer(tap)
@@ -65,18 +65,14 @@ class AnalysisViewController: BaseViewController {
         super.viewDidAppear(animated)
         setupUI()
         getAnalysisDetail()
+        self.navigationController?.navigationBar.makeTransparent()
     }
     
-    //Methode initialises the rightbutton for navigation
-    override func setupRightNavigationBar() {
-        let leftBarItem = UIBarButtonItem()
-        leftBarItem.style = UIBarButtonItem.Style.plain
-        leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "btn_back")?.withRenderingMode(.alwaysOriginal)
-        leftBarItem.action = #selector(self.popController)
-        navigationItem.leftBarButtonItem = leftBarItem
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
-    
+ 
+
     func setupUI() {
         btnDate.layer.borderWidth = 1
         btnDate.layer.borderColor = UIColor(red: 176/255, green: 73/255, blue: 149/255, alpha: 1.0).cgColor
@@ -235,8 +231,7 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
         if analysisOptions.count > 0 {
             self.presenter.fetchAnalysisTotalSpent(month: dateOptions[selectedDateIndexPath!.row].month, year:dateOptions[selectedDateIndexPath!.row].year)
         }else{
-            labelTotalSpent.text = "Total $0 spent"
-
+            labelSpent.text = "$0";//"Total $0 spent"
         }
     }
     
@@ -245,9 +240,7 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
         let sumCurrency = formatter.string(from: NSNumber(value:totalSpent.sumAmount)) ?? "0.00"
-        labelTotalSpent.text = "Total " + sumCurrency + " spent"
-        if labelSpent.text?.count == 0 {
-           labelSpent.text = sumCurrency
-        }
+        labelTotalSpent.text = "" //"Total " + sumCurrency + " spent"
+        labelSpent.text = sumCurrency
     }
 }

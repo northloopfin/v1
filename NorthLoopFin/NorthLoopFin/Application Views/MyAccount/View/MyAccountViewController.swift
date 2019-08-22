@@ -162,7 +162,7 @@ extension MyAccountViewController:CommonTableDelegate{
     // perform when biometric is not available
     func performActionAccordingToSelectedOptionToChangeWithAuth(){
         if self.isChangePhoneClicked{
-            self.moveToOTP()
+            self.moveToChangePhoneScreen()
         }else if self.isChangeAddressClicked{
             self.moveToAddressScreen()
         }
@@ -224,15 +224,22 @@ extension MyAccountViewController: ResetPasswordDelegate{
 extension MyAccountViewController:TwoFADelegates{
     func didGetOTP() {
         //move to OTP screen
-        self.moveToOTP()
+        self.moveToChangePhoneScreen()
     }
     
-    func moveToOTP(){
+//    func moveToOTP(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+//        vc.screenWhichInitiatedOTP = AppConstants.Screens.CHANGEPHONE
+//        self.navigationController?.pushViewController(vc, animated: false)
+//    }
+    
+    func moveToChangePhoneScreen(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
-        vc.screenWhichInitiatedOTP = AppConstants.Screens.CHANGEPHONE
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePhoneViewController") as! ChangePhoneViewController
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    
     func moveTo2FA(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "Select2FAModeViewController") as! Select2FAModeViewController

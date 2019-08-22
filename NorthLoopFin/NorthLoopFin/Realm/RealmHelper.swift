@@ -21,7 +21,17 @@ class RealmHelper{
     static func addScanIDInfo(info: ScanIDImages) {
         let realm = try! Realm()
         try! realm.write() {
-            realm.add(info)
+            var isEdit = false
+            for obj in realm.objects(ScanIDImages.self){
+                if obj.email == info.email && obj.type == info.type && obj.imagePath == info.imagePath{
+                    obj.imagePath = info.imagePath
+                    isEdit = true
+                    break
+                }
+            }
+            if !isEdit{
+                realm.add(info)
+            }
         }
     }
     
