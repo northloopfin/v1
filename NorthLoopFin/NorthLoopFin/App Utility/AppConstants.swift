@@ -133,7 +133,15 @@ struct AppConstants{
         case PREMIUM = "Premium"
         case REFER = "Refer & Earn $10"
     }
-    
+    enum TransferDetail:String
+    {
+        case FROM = "From"
+        case TO = "To"
+        case TIME = "Time"
+        case FEES = "Fees"
+        case TOTALAMOUNT = "Total Amount"
+        case TRANSFER = "TRANSFER $"
+    }
     enum HelpOptions:String{
         case FAQ = "FAQ"
         case LEGALSTUFF = "Legal T&C"

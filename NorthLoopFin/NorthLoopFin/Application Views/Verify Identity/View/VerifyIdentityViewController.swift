@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerifyIdentityViewController: UIViewController {
+class VerifyIdentityViewController: BaseViewController {
 
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var SSNTextField: UITextField!
@@ -17,10 +17,16 @@ class VerifyIdentityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.SSNTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged);
         // Do any additional setup after loading the view.
     }
-    
+    @objc func textFieldDidChange(textField: UITextField){
+        if ((textField.text?.isEmpty)!){
+            self.nextBtn.isEnabled=false
+        }else{
+           // self.checkForMandatoryFields()
+        }
+    }
 
     /*
     // MARK: - Navigation
