@@ -479,6 +479,7 @@
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */; };
+		F4471906230F1B9500A50B13 /* LostCardDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4471905230F1B9500A50B13 /* LostCardDeliveryViewController.swift */; };
 		F49A0011230B1FB30099ACD4 /* TransferDebitFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */; };
 		F4AA0C1B2305AB9200CDF5C0 /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */; };
 		F4C1BF0823000DB500FC1DC1 /* PersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */; };
@@ -1018,6 +1019,7 @@
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBalanceViewController.swift; sourceTree = "<group>"; };
+		F4471905230F1B9500A50B13 /* LostCardDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostCardDeliveryViewController.swift; sourceTree = "<group>"; };
 		F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDebitFromViewController.swift; sourceTree = "<group>"; };
 		F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
 		F4C1BF0723000DB500FC1DC1 /* PersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailViewController.swift; sourceTree = "<group>"; };
@@ -1713,6 +1715,7 @@
 				1D29C83222A8F0AD0092E3EB /* LostCardDelegates.swift */,
 				1D29C83C22A90FE00092E3EB /* LostCardConfirmationViewController.swift */,
 				EA6858D02302827000EEC67D /* LostCardOptionsController.swift */,
+				F4471905230F1B9500A50B13 /* LostCardDeliveryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2706,46 +2709,6 @@
 			path = DeleteACH;
 			sourceTree = "<group>";
 		};
-		EA1902D9230D63D8002FE7FC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EA1902DA230D63D8002FE7FC /* Redeem */,
-				EA1902DB230D63D8002FE7FC /* Fetch */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EA1902DA230D63D8002FE7FC /* Redeem */ = {
-			isa = PBXGroup;
-			children = (
-				EA1902EE230D76A5002FE7FC /* RedeemCashback.swift */,
-				EA1902EC230D76A4002FE7FC /* RedeemCashbackAPIRequest.swift */,
-				EA1902EB230D76A3002FE7FC /* RedeemCashbackBusinessModel.swift */,
-				EA1902ED230D76A5002FE7FC /* RedeemCashbackRequestModel.swift */,
-			);
-			path = Redeem;
-			sourceTree = "<group>";
-		};
-		EA1902DB230D63D8002FE7FC /* Fetch */ = {
-			isa = PBXGroup;
-			children = (
-				EA1902DD230D6474002FE7FC /* FetchCashback.swift */,
-				EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */,
-				EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */,
-				EA1902E2230D666C002FE7FC /* FetchCashbackBusinessModel.swift */,
-			);
-			path = Fetch;
-			sourceTree = "<group>";
-		};
-		EA1902DC230D63D9002FE7FC /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				EA1902E5230D6746002FE7FC /* FetchCashbackPresenter.swift */,
-				EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		EA1E32B7230E9B750099A471 /* Coming Soon */ = {
 			isa = PBXGroup;
 			children = (
@@ -3709,6 +3672,7 @@
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
+				F4471906230F1B9500A50B13 /* LostCardDeliveryViewController.swift in Sources */,
 				EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */,
 				1D915C1222082CD400223480 /* Timer.swift in Sources */,
 				1D5AB2F922A798F900DB3B70 /* LostCardRequestModel.swift in Sources */,
