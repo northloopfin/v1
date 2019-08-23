@@ -77,19 +77,19 @@ class HomeTableCell: UITableViewCell {
         }
         if ( data.to.type == "ACH-US" || data.from.type == "ACH-US") {
             self.beneficiaryImg.clipsToBounds = false
-            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
             self.beneficiaryName.text = data.to.nickname
         }else{
             self.beneficiaryImg.clipsToBounds = true
         }
         
         if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, data.from.user.legalNames[0] == "NORTH LOOP TECHNOLOGIES INC" {
-            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
             self.beneficiaryImg.clipsToBounds = false
         }
         
         if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
-            self.beneficiaryImg.image = UIImage.init(named:"Transfer")
+            self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
             self.beneficiaryImg.clipsToBounds = false
         }
         
@@ -99,7 +99,7 @@ class HomeTableCell: UITableViewCell {
         }
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
         
-        if data.recentStatus.status.lowercased() == "returned"{
+        if ["returned","canceled"].contains(data.recentStatus.status.lowercased()){
             let attributeString =  NSMutableAttributedString(string: self.transactionAmt.text!)
             
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,

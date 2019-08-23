@@ -52,6 +52,7 @@ class HomeViewController: BaseViewController {
         cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         self.getAccountInfo()
         self.hideTabBar()
+//        self.moveToTesting()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -267,7 +268,6 @@ extension HomeViewController:HomeDelegate{
         self.ledgersTableView.isHidden = !self.vwEmpty.isHidden
         self.ledgersTableView.reloadData()
         self.checkForFirstTimeLandOnHome()
-        self.getCardInfo()
     }
     func didFetchedError(error:ErrorModel){
         if error.getErrorMessage().contains("phone") {
@@ -293,7 +293,7 @@ extension HomeViewController:HomeDelegate{
         
         currentUser?.amount = data.data.info.balance.amount
         currentUser?.cardActivated = data.data.CardFirstTimeActivated
-        
+ 
         UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()
     }
@@ -359,6 +359,12 @@ extension HomeViewController:SideMenuDelegate{
         self.present(vc, animated: true) {
         }
     }
+    
+    func moveToTesting(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "PersonalDetailViewController") as! PersonalDetailViewController
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 
     func moveToWaitList(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -396,7 +402,7 @@ extension HomeViewController:SideMenuDelegate{
     func navigateToUpgrade(){
         self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "UpgradePremiumViewController") as! UpgradePremiumViewController
+        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "CarouselViewComtroller") as! CarouselViewComtroller
         self.navigationController?.pushViewController(transactionDetailController, animated: false)
     }
     

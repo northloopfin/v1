@@ -311,9 +311,6 @@
 		1FF70EB522ED7500007A9309 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF70EB022ED74FF007A9309 /* CountryCell.xib */; };
 		1FF70EB622ED7500007A9309 /* CountryPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF70EB122ED74FF007A9309 /* CountryPickerViewDelegate.swift */; };
 		1FF70EB722ED7500007A9309 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF70EB222ED74FF007A9309 /* CountryCell.swift */; };
-		1FFAE5AD22EB129C0007296A /* CarouselViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */; };
-		1FFAE5B022EB154F0007296A /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAE5AE22EB154F0007296A /* CarouselCell.swift */; };
-		1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFAE5AF22EB154F0007296A /* CarouselCell.xib */; };
 		297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297FB99D21B51A32008D60CE /* AppDelegate.swift */; };
 		297FB9A321B51A32008D60CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A121B51A32008D60CE /* Main.storyboard */; };
 		297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 297FB9A421B51A34008D60CE /* Assets.xcassets */; };
@@ -385,13 +382,11 @@
 		4BFBC88E22BB8CF600B23B68 /* SettingsDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBC88D22BB8CF500B23B68 /* SettingsDelegates.swift */; };
 		4BFDF87422B217FB0066860D /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */; };
 		4BFDF87622B236BB0066860D /* TransactionListTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF87522B236BB0066860D /* TransactionListTo.swift */; };
-		4BFDF88222B8BC130066860D /* UpgradePremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88122B8BC130066860D /* UpgradePremiumViewController.swift */; };
 		4BFDF88422B8D62F0066860D /* UpgradePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88322B8D62F0066860D /* UpgradePresenter.swift */; };
 		4BFDF88622B8D64F0066860D /* UpgradeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88522B8D64F0066860D /* UpgradeRequestModel.swift */; };
 		4BFDF88822B8D6630066860D /* UpgradeBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88722B8D6630066860D /* UpgradeBusinessLogic.swift */; };
 		4BFDF88A22B8D6790066860D /* UpgradeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88922B8D6790066860D /* UpgradeAPIRequest.swift */; };
 		4BFDF88C22B8D68E0066860D /* UpgradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88B22B8D68E0066860D /* UpgradeResponse.swift */; };
-		4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88D22B8D6A10066860D /* UpgradeDelegates.swift */; };
 		4BFDF89022B9E8160066860D /* UniversityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF88F22B9E8160066860D /* UniversityPresenter.swift */; };
 		4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF89222B9E8430066860D /* FetchUniversityRequestModel.swift */; };
 		4BFDF89522B9E8590066860D /* FetchUniversityBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFDF89422B9E8590066860D /* FetchUniversityBusinessModel.swift */; };
@@ -468,6 +463,11 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA27E212230FC35800B7160F /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA27E20F230FC35800B7160F /* CarouselCell.xib */; };
+		EA27E213230FC35800B7160F /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E210230FC35800B7160F /* CarouselCell.swift */; };
+		EA27E214230FC35800B7160F /* CarouselViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E211230FC35800B7160F /* CarouselViewComtroller.swift */; };
+		EA27E216230FC3DD00B7160F /* UpgradeDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E215230FC3DD00B7160F /* UpgradeDelegates.swift */; };
+		EA27E219230FF36000B7160F /* PhoneNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E218230FF36000B7160F /* PhoneNumberController.swift */; };
 		EA32C259230A70700031A223 /* ScanIDMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C258230A70700031A223 /* ScanIDMenuController.swift */; };
 		EA32C25C230A74B20031A223 /* ScanOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C25A230A74B20031A223 /* ScanOptionCell.swift */; };
 		EA32C25D230A74B20031A223 /* ScanOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA32C25B230A74B20031A223 /* ScanOptionCell.xib */; };
@@ -839,9 +839,6 @@
 		1FF70EB022ED74FF007A9309 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		1FF70EB122ED74FF007A9309 /* CountryPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerViewDelegate.swift; sourceTree = "<group>"; };
 		1FF70EB222ED74FF007A9309 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
-		1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewComtroller.swift; sourceTree = "<group>"; };
-		1FFAE5AE22EB154F0007296A /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
-		1FFAE5AF22EB154F0007296A /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
 		297FB99A21B51A32008D60CE /* NorthLoopFin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorthLoopFin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		297FB99D21B51A32008D60CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		297FB9A221B51A32008D60CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -920,13 +917,11 @@
 		4BFBC88D22BB8CF500B23B68 /* SettingsDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDelegates.swift; sourceTree = "<group>"; };
 		4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
 		4BFDF87522B236BB0066860D /* TransactionListTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListTo.swift; sourceTree = "<group>"; };
-		4BFDF88122B8BC130066860D /* UpgradePremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumViewController.swift; sourceTree = "<group>"; };
 		4BFDF88322B8D62F0066860D /* UpgradePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePresenter.swift; sourceTree = "<group>"; };
 		4BFDF88522B8D64F0066860D /* UpgradeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeRequestModel.swift; sourceTree = "<group>"; };
 		4BFDF88722B8D6630066860D /* UpgradeBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeBusinessLogic.swift; sourceTree = "<group>"; };
 		4BFDF88922B8D6790066860D /* UpgradeAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeAPIRequest.swift; sourceTree = "<group>"; };
 		4BFDF88B22B8D68E0066860D /* UpgradeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeResponse.swift; sourceTree = "<group>"; };
-		4BFDF88D22B8D6A10066860D /* UpgradeDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeDelegates.swift; sourceTree = "<group>"; };
 		4BFDF88F22B9E8160066860D /* UniversityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityPresenter.swift; sourceTree = "<group>"; };
 		4BFDF89222B9E8430066860D /* FetchUniversityRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUniversityRequestModel.swift; sourceTree = "<group>"; };
 		4BFDF89422B9E8590066860D /* FetchUniversityBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUniversityBusinessModel.swift; sourceTree = "<group>"; };
@@ -1027,6 +1022,11 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA27E20F230FC35800B7160F /* CarouselCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
+		EA27E210230FC35800B7160F /* CarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		EA27E211230FC35800B7160F /* CarouselViewComtroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewComtroller.swift; sourceTree = "<group>"; };
+		EA27E215230FC3DD00B7160F /* UpgradeDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeDelegates.swift; sourceTree = "<group>"; };
+		EA27E218230FF36000B7160F /* PhoneNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberController.swift; sourceTree = "<group>"; };
 		EA32C258230A70700031A223 /* ScanIDMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDMenuController.swift; sourceTree = "<group>"; };
 		EA32C25A230A74B20031A223 /* ScanOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanOptionCell.swift; sourceTree = "<group>"; };
 		EA32C25B230A74B20031A223 /* ScanOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanOptionCell.xib; sourceTree = "<group>"; };
@@ -1368,6 +1368,7 @@
 		1D1E5A6F21C9C7960036E998 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA27E217230FF34600B7160F /* New Group */,
 				1DD066F7221FDDE700E1AD6D /* V2 */,
 				1D1E5A7121C9C7BE0036E998 /* WelcomeViewController.swift */,
 				1D0A881B21CB6E2100187439 /* OTPViewController.swift */,
@@ -1808,45 +1809,44 @@
 		1D8189EE21C0AF49000C8F5F /* Application Views */ = {
 			isa = PBXGroup;
 			children = (
-				EA1E32B7230E9B750099A471 /* Coming Soon */,
-				F49A000E230B1B7C0099ACD4 /* New Transfer */,
-				F41A6A67230689580053AF0D /* Current Balance */,
-				F4AA0C182305AAC000CDF5C0 /* Photo ID */,
-				F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */,
-				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
-				F4C1BEFF2300047900FC1DC1 /* Personal Detail */,
-				84D1299C22FCD666000C82A6 /* Analysis */,
-				8448754722ECFDBC003B703B /* ReferAndEarn */,
-				1FFAE5AB22EB11F90007296A /* Carousel */,
-				4B9CA55D22CF3FC5003655DC /* Chat */,
-				4BFDF87D22B8BBD10066860D /* Upgrade Premium */,
-				1D29C83422A8F5790092E3EB /* Change Phone Number */,
 				1D5AB30022A7B51700DB3B70 /* 2FA */,
-				1DE6D94022A0D1DC00014572 /* Dispute Transaction */,
-				1D180D7D229E758A00FC3390 /* AtmFinder */,
-				1D11FE1C220D73D200234E6D /* ForgetPassword */,
-				1D11FE18220C029B00234E6D /* Login */,
-				1DB6479721FEBEF9004C483E /* Add Goal */,
-				1DB8C0DA21F9715F009F437A /* Notification Settings */,
-				1D3E554121F1AD1600557825 /* Confirmed */,
-				1D3E553921F1A6A700557825 /* Lost Insufficient */,
-				1D72719321F0A3D80084A57E /* Direct Deposit */,
-				1D72718F21F0A0700084A57E /* My Offers */,
 				1D72718B21F084F60084A57E /* Add Account */,
-				1D72718721F0593D0084A57E /* Lost Card */,
-				1D72718121EF146D0084A57E /* Legal Stuff */,
-				1D72717D21EF14430084A57E /* FAQ */,
-				1D6B7EDE21EDE3AE0075D58E /* Help */,
-				1DF64E3821E8B437008774CE /* Expenses */,
-				1DF64E3421E8B415008774CE /* Goals */,
-				1DF64E3021E8B3F2008774CE /* MyAccount */,
+				1DB6479721FEBEF9004C483E /* Add Goal */,
+				84D1299C22FCD666000C82A6 /* Analysis */,
+				1D180D7D229E758A00FC3390 /* AtmFinder */,
 				EA3948492302B4C6007BFEF5 /* Cashback */,
-				1DF64E2C21E8B3C0008774CE /* Transfer */,
-				1DF64E2821E8B37E008774CE /* Settings */,
+				1D29C83422A8F5790092E3EB /* Change Phone Number */,
+				4B9CA55D22CF3FC5003655DC /* Chat */,
+				EA1E32B7230E9B750099A471 /* Coming Soon */,
+				1D3E554121F1AD1600557825 /* Confirmed */,
+				F41A6A67230689580053AF0D /* Current Balance */,
+				1D72719321F0A3D80084A57E /* Direct Deposit */,
+				1DE6D94022A0D1DC00014572 /* Dispute Transaction */,
+				1DF64E3821E8B437008774CE /* Expenses */,
+				1D72717D21EF14430084A57E /* FAQ */,
+				1D11FE1C220D73D200234E6D /* ForgetPassword */,
+				1DF64E3421E8B415008774CE /* Goals */,
+				1D6B7EDE21EDE3AE0075D58E /* Help */,
+				1D8189EF21C0AF59000C8F5F /* Home */,
+				1D72718121EF146D0084A57E /* Legal Stuff */,
+				1D11FE18220C029B00234E6D /* Login */,
+				1D72718721F0593D0084A57E /* Lost Card */,
+				1D3E553921F1A6A700557825 /* Lost Insufficient */,
 				1DF64E1221E5D51A008774CE /* My Card */,
+				1D72718F21F0A0700084A57E /* My Offers */,
+				1DF64E3021E8B3F2008774CE /* MyAccount */,
+				F49A000E230B1B7C0099ACD4 /* New Transfer */,
+				1DB8C0DA21F9715F009F437A /* Notification Settings */,
+				F4C1BEFF2300047900FC1DC1 /* Personal Detail */,
+				F4AA0C182305AAC000CDF5C0 /* Photo ID */,
+				8448754722ECFDBC003B703B /* ReferAndEarn */,
+				F4C1BF0D2301C08500FC1DC1 /* Select Citizenship */,
+				1DF64E2821E8B37E008774CE /* Settings */,
 				1D1E5A6D21C9C76B0036E998 /* SignUp */,
 				1D51758321C5008600BCF9E4 /* TransactionDetail */,
-				1D8189EF21C0AF59000C8F5F /* Home */,
+				1DF64E2C21E8B3C0008774CE /* Transfer */,
+				4BFDF87D22B8BBD10066860D /* Upgrade Premium */,
+				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
 			);
 			path = "Application Views";
 			sourceTree = "<group>";
@@ -2296,24 +2296,6 @@
 			path = CountryPicker;
 			sourceTree = "<group>";
 		};
-		1FFAE5AB22EB11F90007296A /* Carousel */ = {
-			isa = PBXGroup;
-			children = (
-				1FFAE5B222EB17D10007296A /* View */,
-			);
-			path = Carousel;
-			sourceTree = "<group>";
-		};
-		1FFAE5B222EB17D10007296A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1FFAE5AC22EB129C0007296A /* CarouselViewComtroller.swift */,
-				1FFAE5AE22EB154F0007296A /* CarouselCell.swift */,
-				1FFAE5AF22EB154F0007296A /* CarouselCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		297FB99121B51A32008D60CE = {
 			isa = PBXGroup;
 			children = (
@@ -2579,8 +2561,9 @@
 		4BFDF87F22B8BBE50066860D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4BFDF88122B8BC130066860D /* UpgradePremiumViewController.swift */,
-				4BFDF88D22B8D6A10066860D /* UpgradeDelegates.swift */,
+				EA27E210230FC35800B7160F /* CarouselCell.swift */,
+				EA27E20F230FC35800B7160F /* CarouselCell.xib */,
+				EA27E211230FC35800B7160F /* CarouselViewComtroller.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2588,6 +2571,7 @@
 		4BFDF88022B8BBEB0066860D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				EA27E215230FC3DD00B7160F /* UpgradeDelegates.swift */,
 				4BFDF88322B8D62F0066860D /* UpgradePresenter.swift */,
 			);
 			path = Presenter;
@@ -2844,6 +2828,14 @@
 				EA1FC12B22F1526C002A7103 /* ISPCertificatePinning.h */,
 			);
 			path = SSLCertificatePinning;
+			sourceTree = "<group>";
+		};
+		EA27E217230FF34600B7160F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				EA27E218230FF36000B7160F /* PhoneNumberController.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		EA32C257230A70030031A223 /* ScanID Flow */ = {
@@ -3171,8 +3163,8 @@
 				84D129B422FCD666000C82A6 /* AnalysisCategoryTableHeader.xib in Resources */,
 				8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */,
 				EA32C25D230A74B20031A223 /* ScanOptionCell.xib in Resources */,
+				EA27E212230FC35800B7160F /* CarouselCell.xib in Resources */,
 				EA1902EA230D6F92002FE7FC /* CashbackCell.xib in Resources */,
-				1FFAE5B122EB154F0007296A /* CarouselCell.xib in Resources */,
 				4BF9968D22D45B40009071CA /* ConsumerCardAgreement.pdf in Resources */,
 				1D818A0121C0E063000C8F5F /* Calibri Italic.ttf in Resources */,
 				2985E5A821B6640B00CCA2AB /* Production.xcconfig in Resources */,
@@ -3375,7 +3367,6 @@
 				EA5121E6230BE67900FE9900 /* ScanIDController.swift in Sources */,
 				EA1AB9FC230BB5FC00FB2FA0 /* ScanAddressProofController.swift in Sources */,
 				4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */,
-				4BFDF88222B8BC130066860D /* UpgradePremiumViewController.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
 				EA32C259230A70700031A223 /* ScanIDMenuController.swift in Sources */,
 				1D055D51229C6E410078CD33 /* ACHTransactionAPIRequest.swift in Sources */,
@@ -3383,6 +3374,7 @@
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
 				1D180DA1229EA01500FC3390 /* ATMFirstTableViewCell.swift in Sources */,
 				1D29C84722A916F40092E3EB /* ChangeAddressAPIRequest.swift in Sources */,
+				EA27E216230FC3DD00B7160F /* UpgradeDelegates.swift in Sources */,
 				1D055D46229C02DE0078CD33 /* FetchACH.swift in Sources */,
 				1D180DAE229FC44800FC3390 /* AccountAPIRequest.swift in Sources */,
 				1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */,
@@ -3486,6 +3478,7 @@
 				EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */,
 				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
 				1D915C0E220816C100223480 /* Env.swift in Sources */,
+				EA27E214230FC35800B7160F /* CarouselViewComtroller.swift in Sources */,
 				1DE34AB421CA5A77007F9320 /* UITextFieldExtension.swift in Sources */,
 				1D19D31622953957008D367E /* SignupSynapse.swift in Sources */,
 				1D165F50222D18AA00D06914 /* SelfieImage.swift in Sources */,
@@ -3533,6 +3526,7 @@
 				EA1902E0230D65AB002FE7FC /* FetchCashbackRequestModel.swift in Sources */,
 				EA32C261230AE0BD0031A223 /* ScanI20Controller.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
+				EA27E213230FC35800B7160F /* CarouselCell.swift in Sources */,
 				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
 				F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
@@ -3692,7 +3686,6 @@
 				1D478CAF228E981700503136 /* SignupAuthPresenter.swift in Sources */,
 				1D055D28229BCF950078CD33 /* ResetPassword.swift in Sources */,
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
-				1FFAE5B022EB154F0007296A /* CarouselCell.swift in Sources */,
 				1D055D26229BCAC00078CD33 /* ResetPasswordAPIRequest.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
 				1D8440822289545A00A77BBF /* Recipient.swift in Sources */,
@@ -3706,7 +3699,6 @@
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1FF70EB722ED7500007A9309 /* CountryCell.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
-				1FFAE5AD22EB129C0007296A /* CarouselViewComtroller.swift in Sources */,
 				EA4ED03322E5D1C400D1F438 /* CardAuthAPIRequest.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
 				1DD066EC221BB8E800E1AD6D /* ImagePreviewViewController.swift in Sources */,
@@ -3724,6 +3716,7 @@
 				EA1902F1230D76A6002FE7FC /* RedeemCashbackRequestModel.swift in Sources */,
 				1D9F4602228AC2A1009D76FC /* CardDelegates.swift in Sources */,
 				1D9AF08922A509C800A9055F /* TransactionListExtra.swift in Sources */,
+				EA27E219230FF36000B7160F /* PhoneNumberController.swift in Sources */,
 				4B07A87522C5CD49004C65B2 /* SetAppSettingsBusinessLogic.swift in Sources */,
 				1D913CE0228F621F0075B16D /* SignupSynapseAPIRequest.swift in Sources */,
 				4BFFE3CF22BB4B1D00D85610 /* UITapGestureRecogniserExtension.swift in Sources */,
@@ -3765,7 +3758,6 @@
 				1D844090228A9DB600A77BBF /* TransactionDetailAPIRequest.swift in Sources */,
 				EA1FC14522F1526C002A7103 /* ISPPinnedNSURLSessionDelegate.m in Sources */,
 				297FB9DF21B55484008D60CE /* ResponseCallback.swift in Sources */,
-				4BFDF88E22B8D6A10066860D /* UpgradeDelegates.swift in Sources */,
 				4BE8338522CB175300765F05 /* CheckUpdateAPIRequest.swift in Sources */,
 				4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */,
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,

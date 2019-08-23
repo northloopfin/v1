@@ -34,7 +34,7 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.MYCARD.rawValue)
         self.data.append(AppConstants.SideMenuOptions.TRANSFER.rawValue)
         self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
-        //self.data.append(AppConstants.SideMenuOptions.UPGRADE.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.UPGRADE.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
@@ -85,10 +85,10 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.TRANSFER)
             case 2:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.MYACCOUNT)
+//            case 3:
+//                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.UPGRADE)
             case 3:
                 self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
-//            case 4:
-//                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
 //            case 5:
 //                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
             default:

@@ -12,15 +12,20 @@ class CarouselViewComtroller: BaseViewController {
 
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var carouselCollectionView: UICollectionView!
-    
+    var presenter:UpgradePresenter!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
     }
     
+    @IBAction func nextClicked(_ sender: Any) {
+        self.presenter.sendUpgradePremiumRequest(sendToAPI: true)
+    }
+    
     func prepareView() {
         self.setupRightNavigationBar()
-
+        self.presenter = UpgradePresenter.init(delegate: self)
         carouselCollectionView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: "CarouselCell")
         carouselCollectionView.delegate = self
         carouselCollectionView.dataSource = self
@@ -65,5 +70,11 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         self.pageControl.currentPage = indexPath.row
+    }
+}
+
+extension CarouselViewComtroller:UpgradeDelegates{
+    func didUpgradePremium() {
+        
     }
 }

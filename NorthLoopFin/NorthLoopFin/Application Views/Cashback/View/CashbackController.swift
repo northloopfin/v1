@@ -107,10 +107,12 @@ extension CashbackController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CashbackCell", for: indexPath) as! CashbackCell
         if indexPath.row == 0 {
+            cell.imgPreview.image = UIImage(named: "ic_amazon_prime")
             cell.lblTitle.text = "Amazon Prime Student"
             cell.lblSubTitle.text = "Premium users only"
         }
         if indexPath.row == 1{
+            cell.imgPreview.image = UIImage(named: "ic_starbucks")
             cell.lblTitle.text = "Starbucks"
             cell.lblSubTitle.text = "3% cashback on all purchases"
         }
