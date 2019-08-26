@@ -22,7 +22,9 @@ class ErrorTransformer {
                errorModel.setErrorMessage(self.errorMessageForUnknownError(errorResponse.code))
             }
             else{
-                errorModel.setErrorMessage(errorResponse.debugDescription)
+                print("API ERROR: "  + errorResponse.debugDescription)
+
+                errorModel.setErrorMessage(AppConstants.ErrorMessages.GENERIC_ERROR_MESSAGE.rawValue)
             }
             errorModel.setErrorTitle(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue)
         }

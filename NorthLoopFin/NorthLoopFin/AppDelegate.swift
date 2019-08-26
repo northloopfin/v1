@@ -19,8 +19,6 @@ import FirebaseDatabase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var sideMenuViewController:SideMenuViewController!
-    let containerViewController:MFSideMenuContainerViewController=MFSideMenuContainerViewController()
     let gcmMessageIDKey = "gcm.message_id"
     var cardInfo: CardInfo?
     
@@ -129,24 +127,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 //    }
     
-    func moveToHomeScreen(){
-        let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        var initialNavigationController:UINavigationController
-        sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: SideMenuViewController.self)) as? SideMenuViewController
-        let homeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as!  HomeViewController
-        initialNavigationController = UINavigationController(rootViewController:homeViewController)
-        sideMenuViewController.delegate = homeViewController
-        initialNavigationController.navigationBar.makeTransparent()
-        containerViewController.leftMenuViewController=sideMenuViewController
-        containerViewController.centerViewController=initialNavigationController
-        containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)
-        containerViewController.shadow.enabled=true;
-        containerViewController.panMode = MFSideMenuPanModeDefault;
-        self.window?.rootViewController = containerViewController
-        self.window?.makeKeyAndVisible()
-
-    }
-    
     func moveToScreen(vc:UIViewController){
         var initialNavigationController1:UINavigationController
         //let welcomeViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
@@ -231,13 +211,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         
-        UserInformationUtility.sharedInstance.deleteCurrentUser()
-        RealmHelper.deleteAllFromDatabase()
+//        UserInformationUtility.sharedInstance.deleteCurrentUser()
+//        RealmHelper.deleteAllFromDatabase()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         
-        self.initialViewController()
+//        self.initialViewController()
 
     }
 

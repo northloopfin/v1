@@ -49,6 +49,7 @@ struct AppConstants{
     }
     
     enum ErrorMessages: String{
+        case GENERIC_ERROR_MESSAGE = "Something went wrong"
         case REQUEST_TIME_OUT = "Request Time Out"
         case PLEASE_CHECK_YOUR_INTERNET_CONNECTION = "Can't connect to the internet! Please check your connection and try again"
         case SOME_ERROR_OCCURED = "Some error occured"
@@ -263,6 +264,11 @@ struct AppConstants{
         case VirginIslands = "VI"
     }
     
+    enum UPGRADETYPE:String{
+        case MONTHLY = "$9.99"
+        case ANNUALLY = "$99.99"
+    }
+    
     enum CarouselItem: Int,CaseIterable {
         case First, Second, Third, Foruth
         
@@ -303,7 +309,7 @@ struct AppConstants{
             case .Third:
                 return nil
             case .Foruth:
-                return nil
+                return "Upgrade now"
             }
         }
         
@@ -316,7 +322,7 @@ struct AppConstants{
             case .Third:
                 return "Need a co-signer for your lease?\nWe got your back. Instant Wire Transfers?\nThey're free."
             case .Foruth:
-                return "Upgrade Now\nMonthly: $9.99\nAnnual: $99.99"
+                return ""
             }
         }
         

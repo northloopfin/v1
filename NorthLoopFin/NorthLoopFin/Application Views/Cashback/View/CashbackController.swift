@@ -8,6 +8,8 @@
 //
 
 import Foundation
+import MFSideMenu
+
 class CashbackController: BaseViewController {
     
     @IBOutlet weak var vwCashbackDetail: UIView!
@@ -30,24 +32,27 @@ class CashbackController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.setupRightNavigationBar()
         self.configureTable()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.makeTransparent()
         getCashbackDetail()
     }
 
-    @IBAction func general_clicked(_ sender: UIButton) {
-        sender.titleLabel?.font = AppFonts.calibriBold17
-        btnRestaurant.titleLabel?.font = AppFonts.calibri17
-        constSelectionUnderlineLeading.constant = 0
+    override func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "menu_purple")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.openMenu)
+        navigationItem.leftBarButtonItem = leftBarItem
     }
-    
-    @IBAction func restaurant_clicked(_ sender: UIButton) {
-        sender.titleLabel?.font = AppFonts.calibriBold17
-        btnGeneral.titleLabel?.font = AppFonts.calibri17
-        constSelectionUnderlineLeading.constant = sender.frame.origin.x
+ 
+    @objc func openMenu(){
+        self.menuContainerViewController.setMenuState(MFSideMenuStateLeftMenuOpen, completion: {})
     }
     
     func prepareView(){
@@ -70,6 +75,19 @@ class CashbackController: BaseViewController {
         self.btnRedeem.isEnabled = false
     }
     
+    
+    @IBAction func general_clicked(_ sender: UIButton) {
+        sender.titleLabel?.font = AppFonts.calibriBold17
+        btnRestaurant.titleLabel?.font = AppFonts.calibri17
+        constSelectionUnderlineLeading.constant = 0
+    }
+    
+    @IBAction func restaurant_clicked(_ sender: UIButton) {
+        sender.titleLabel?.font = AppFonts.calibriBold17
+        btnGeneral.titleLabel?.font = AppFonts.calibri17
+        constSelectionUnderlineLeading.constant = sender.frame.origin.x
+    }
+
     @IBAction func btnRedeem_pressed(_ sender: UIButton) {
         self.redeemPresenter = RedeemCashbackPresenter.init(delegate: self)
         self.redeemPresenter.sendRedeemCashbackRequest()
@@ -122,6 +140,13 @@ extension CashbackController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 73
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            guard let url = URL(string: "https://northloop.zendesk.com/hc/en-us/articles/360032248712") else { return }
+            UIApplication.shared.open(url)
+        }
     }
 }
 

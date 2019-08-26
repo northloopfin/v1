@@ -18,7 +18,7 @@ class UpgradePresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendUpgradePremiumRequest(sendToAPI:Bool){
+    func sendUpgradePremiumRequest(isMonthly:Bool){
         
         // convert requestbody to json string and assign to request model request param
         
@@ -29,7 +29,7 @@ class UpgradePresenter:ResponseCallback{
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
-            .addRequestQueryParams(key: "isUpgrade", value: sendToAPI as AnyObject)
+            .addRequestQueryParams(key: "upgradePlan", value: (isMonthly ? "monthly":"yearly") as AnyObject)
             .addRequestQueryParams(key: "ip", value: UIDeviceHelper.getIPAddress() as AnyObject)
             .build()
         requestModel.apiUrl = requestModel.getEndPoint()
@@ -38,13 +38,18 @@ class UpgradePresenter:ResponseCallback{
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        // let response = responseObject as! SetPinResponse
         self.delegate?.hideLoader()
+        if let response = responseObject as? UpgradeResponse{
+            if response.data.count > 0{
+                self.delegate?.showErrorAlert("", alertMessage: response.data)
+            }
+        }
         self.delegate?.didUpgradePremium()
     }
     
     func servicesManagerError(error: ErrorModel) {
         self.delegate?.hideLoader()
+        self.delegate?.didFailedUpgradePremium()
         self.delegate?.showErrorAlert(error.getErrorTitle(), alertMessage: error.getErrorMessage())
     }
 }

@@ -16,7 +16,7 @@ class TouchTimer: UIApplication {
     // such as disconnecting the user
     private var timeoutInSeconds: TimeInterval {
         // 1 minutes
-        return 15 * 60
+        return 2 * 60
     }
     
     private var idleTimer: Timer?

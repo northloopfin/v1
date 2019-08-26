@@ -206,7 +206,11 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         if data.data.extra.location.lat != 0 {
             self.loadGoogleMap(lat: data.data.extra.location.lat, long: data.data.extra.location.lon)
         }
-        self.successLbl.text = self.detailModel.recentStatus.status + " "
+        if self.detailModel.recentStatus.status.lowercased() == "queued-by-synapse" {
+            self.successLbl.text = "QUEUED ";
+        }else{
+            self.successLbl.text = self.detailModel.recentStatus.status + " "
+        }
         //self.transactionPurposeLbl.text =
         //let url = URL(string: data.data.to.meta.merchantLogo)
         //self.transactionImg.kf.setImage(with:url)

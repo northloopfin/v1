@@ -12,7 +12,7 @@ class CarouselViewComtroller: BaseViewController {
 
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var carouselCollectionView: UICollectionView!
-    var presenter:UpgradePresenter!
+    @IBOutlet weak var btnUpgrade: RippleButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +20,11 @@ class CarouselViewComtroller: BaseViewController {
     }
     
     @IBAction func nextClicked(_ sender: Any) {
-        self.presenter.sendUpgradePremiumRequest(sendToAPI: true)
+        carouselCollectionView.setContentOffset(CGPoint(x: carouselCollectionView.frame.size.width * 3, y: 0), animated: false)
     }
     
     func prepareView() {
         self.setupRightNavigationBar()
-        self.presenter = UpgradePresenter.init(delegate: self)
         carouselCollectionView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: "CarouselCell")
         carouselCollectionView.delegate = self
         carouselCollectionView.dataSource = self
@@ -46,11 +45,16 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
         cell.lblDetail.text = carouselItem?.description()
         
         if (carouselItem?.title() != nil) {
-            cell.lblTitleHight.constant = 50
+            cell.lblTitleHight.constant = indexPath.row == 3 ? 25 : 50;
         }
         else {
-            cell.lblTitleHight.constant = 0
+            cell.lblTitleHight.constant =  0
         }
+        
+        cell.vwUpgradeHeight.constant = indexPath.row == 3 ? 110 : 0;
+        cell.btnMonthly.addTarget(self, action: #selector(btnMonthly_clicked(btn:)), for: .touchUpInside)
+        cell.btnAnnually.addTarget(self, action: #selector(btnMonthly_clicked(btn:)), for: .touchUpInside)
+
         return cell
     }
     
@@ -70,11 +74,13 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         self.pageControl.currentPage = indexPath.row
+        btnUpgrade.isHidden = self.pageControl.currentPage == 3
     }
-}
-
-extension CarouselViewComtroller:UpgradeDelegates{
-    func didUpgradePremium() {
-        
+    
+    @objc func btnMonthly_clicked(btn:UIButton){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ConfirmUpgradeController") as! ConfirmUpgradeController
+        vc.isMonthly = btn.tag == 0
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

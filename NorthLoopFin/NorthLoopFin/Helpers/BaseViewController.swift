@@ -121,4 +121,10 @@ extension UIViewController{
         }
         return nil
     }
+    
+    func getControllerWithIdentifier(_ identifier: String) -> UIViewController{
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: identifier)
+        return vc
+    }
 }
