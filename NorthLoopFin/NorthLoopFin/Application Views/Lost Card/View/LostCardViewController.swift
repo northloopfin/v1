@@ -31,7 +31,7 @@ class LostCardViewController: BaseViewController {
     }
     
     @IBAction func normalDeliveryClicked(_ sender: Any) {
-        self.presenter.sendLostCardRequest(sendToAPI: false)
+        //self.presenter.sendLostCardRequest(sendToAPI: false)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

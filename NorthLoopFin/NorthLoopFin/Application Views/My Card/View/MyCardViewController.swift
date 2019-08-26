@@ -183,7 +183,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
 //            return
 //        }else{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
+            let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardDelivery") as! LostCardDeliveryViewController
             self.navigationController?.pushViewController(transactionDetailController, animated: false)
 //        }
         

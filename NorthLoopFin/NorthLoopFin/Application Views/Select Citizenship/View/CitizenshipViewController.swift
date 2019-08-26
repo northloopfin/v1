@@ -30,17 +30,10 @@ class CitizenshipViewController: BaseViewController {
         self.CitizenShipTextField.inputView = UIView.init(frame: CGRect.zero)
         self.CitizenShipTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         self.CitizenShipTextField.setRightIcon(UIImage.init(named: "chevron")!)
-        
-//        self.countryCodeTextField.inputView = UIView.init(frame: CGRect.zero)
-//        self.countryCodeTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
-//        self.countryCodeTextField.setRightIcon(UIImage.init(named: "chevron")!)
  
         //Set text color to view components
         self.mainTitle.textColor = Colors.MainTitleColor
         self.CitizenShipTextField.textColor = Colors.DustyGray155155155
-        
-        //   self.alreadyHaveaccountLbl.textColor = Colors.Tundora747474
-        //   self.loginLbl.titleLabel!.textColor = Colors.NeonCarrot25414966
         
         
         // Set Font to view components
@@ -81,15 +74,9 @@ extension CitizenshipViewController:UITextFieldDelegate{
             //IQKeyboardManager.shared.resignFirstResponder()
             self.countryPicker.tag = 1
             self.countryPicker.show()
-            //            self.citizenShipDropDown.show()
+            //self.citizenShipDropDown.show()
             return false
         }
-//        else if textField == self.countryCodeTextField{
-//            //self.countryCodeDropDown.show()
-//            self.countryPicker.tag = 0
-//            self.countryPicker.show()
-//            return false
-//        }
         else
         {
             return true

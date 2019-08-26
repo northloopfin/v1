@@ -8,18 +8,31 @@
 
 import UIKit
 
-class LostCardDeliveryViewController: UIViewController {
+class LostCardDeliveryViewController: BaseViewController {
 
     @IBOutlet weak var addressTextView: UITextView!
     @IBOutlet weak var standardDeliveryView: UIView!
     @IBOutlet weak var rushDeliveryView: UIView!
-    @IBOutlet weak var continueButton: RippleButton!
+    @IBOutlet weak var continueButton: CommonButton!
     @IBOutlet weak var standardImageView: UIImageView!
     @IBOutlet weak var rushImageView: UIImageView!
     @IBOutlet weak var rushLabel: LabelWithLetterSpace!
     @IBOutlet weak var standardLabel: LabelWithLetterSpace!
+    
+    var presenter:LostCardPresenter!
+    var toIssueNewCard:Bool!
+    private var isRushDeliverySelected = false
+    private var isStandardDeliverySelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: temp value change to actual value afterwards
+        toIssueNewCard = false
+        
+        self.presenter = LostCardPresenter.init(delegate: self)
+        self.setupRightNavigationBar()
+        self.setNavigationBarTitle(title: "Lost Card")
         self.prepareView()
         // Do any additional setup after loading the view.
     }
@@ -29,10 +42,13 @@ class LostCardDeliveryViewController: UIViewController {
         
         let rushViewTap = UITapGestureRecognizer(target: self, action: #selector(handleTapOnRushView))
         rushDeliveryView.addGestureRecognizer(rushViewTap)
+        continueButton.isEnabled = false
         self.deliveryAddressTextView()
     }
     func deliveryAddressTextView()
     {
+        //shown link button in textview
+        
         let simpleString = "Your new North Loop Visa Debit Card will be sent to 134, Broadway, NY."
         let stringForLink = "Change address"
         let attributedString = NSMutableAttributedString(string: simpleString+"   "+stringForLink )
@@ -54,10 +70,15 @@ class LostCardDeliveryViewController: UIViewController {
         ]
     }
     @IBAction func continueButtonAction(_ sender: Any) {
+        if isStandardDeliverySelected || isRushDeliverySelected
+        {
+            self.presenter.sendLostCardRequest(toExpedite:isRushDeliverySelected, toIssueNewCard:toIssueNewCard)
+        }
     }
     
     @objc func handleTapOnStandardView()
     {
+        //changed border color and shadow when view selected
         standardDeliveryView.layer.borderColor = Colors.PurpleColor17673149.cgColor
         standardDeliveryView.layer.borderWidth = 2
         standardDeliveryView.layer.shadowColor = Colors.PurpleColor17673149.cgColor
@@ -75,10 +96,15 @@ class LostCardDeliveryViewController: UIViewController {
         rushDeliveryView.layer.shadowOffset = CGSize(width: 0, height: 3.0)
         rushDeliveryView.layer.shadowOpacity = 0.06
         rushDeliveryView.layer.shadowRadius = 10.0
+        
+        continueButton.isEnabled = true
+        isStandardDeliverySelected = true
+        isRushDeliverySelected = false
     }
     
     @objc func handleTapOnRushView()
     {
+        //changed border color and shadow when view selected
         rushDeliveryView.layer.borderColor = Colors.PurpleColor17673149.cgColor
         rushDeliveryView.layer.borderWidth = 2
         rushDeliveryView.layer.shadowColor = Colors.PurpleColor17673149.cgColor
@@ -96,6 +122,10 @@ class LostCardDeliveryViewController: UIViewController {
         standardDeliveryView.layer.shadowOffset = CGSize(width: 0, height: 3.0)
         standardDeliveryView.layer.shadowOpacity = 0.06
         standardDeliveryView.layer.shadowRadius = 10.0
+        
+        continueButton.isEnabled = true
+        isStandardDeliverySelected = false
+        isRushDeliverySelected = true
     }
     /*
     // MARK: - Navigation
@@ -106,4 +136,16 @@ class LostCardDeliveryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+extension LostCardDeliveryViewController:LostCardDelegates{
+    func didSentLostCardRequest() {
+        self.moveToConfrimationScreen()
+    }
+    
+    func moveToConfrimationScreen(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LostCardConfirmationViewController") as! LostCardConfirmationViewController
+        vc.message = "Your card is on its way! We have sent an email confirming."
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
 }
