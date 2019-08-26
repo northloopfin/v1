@@ -20,11 +20,11 @@ struct FetchCashback: Codable {
 // MARK: - AnalysisCategories
 struct CashbackDetail: Codable {
     let value: Double
-    let transactions: [CashbackTransaction]
+//    let transactions: [CashbackTransaction]
 }
 
 struct CashbackTransaction: Codable {
-    let cashback: String
+//    let cashback: String
 //    let transactionID: String
 //    let merchant_name: String
 }

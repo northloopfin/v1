@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,13 +55,81 @@ about FX volatility again.</string>
                         <color key="textColor" red="0.45490196078431372" green="0.45098039215686275" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35M-M8-W7s">
+                        <rect key="frame" x="0.0" y="357" width="375" height="0.0"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S3-eV-ue3" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="10" width="325" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NTS-PE-4nC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="Monthly: $9.99">
+                                    <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZM-T8-qZk" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="65" width="325" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WO7-Lm-ph2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                <state key="normal" title="Annual: $99.99">
+                                    <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" id="551-ia-aYP"/>
+                            <constraint firstItem="GZM-T8-qZk" firstAttribute="top" secondItem="7S3-eV-ue3" secondAttribute="bottom" constant="10" id="e8r-9B-rza"/>
+                            <constraint firstAttribute="trailing" secondItem="7S3-eV-ue3" secondAttribute="trailing" constant="25" id="h2J-tq-1dz"/>
+                            <constraint firstAttribute="trailing" secondItem="GZM-T8-qZk" secondAttribute="trailing" constant="25" id="hgm-us-C2a"/>
+                            <constraint firstItem="7S3-eV-ue3" firstAttribute="top" secondItem="35M-M8-W7s" secondAttribute="top" constant="10" id="lff-kF-Rbo"/>
+                            <constraint firstItem="7S3-eV-ue3" firstAttribute="leading" secondItem="35M-M8-W7s" secondAttribute="leading" constant="25" id="sZT-re-zr9"/>
+                            <constraint firstItem="GZM-T8-qZk" firstAttribute="leading" secondItem="35M-M8-W7s" secondAttribute="leading" constant="25" id="wpe-d5-ZIK"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ZH2-OW-uRV" secondAttribute="trailing" constant="30" id="2OI-of-txm"/>
                 <constraint firstItem="ZH2-OW-uRV" firstAttribute="top" secondItem="wsT-TH-xXz" secondAttribute="bottom" constant="10" id="Bsp-V7-Iz4"/>
                 <constraint firstItem="ZH2-OW-uRV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="Hbr-MJ-tPe"/>
+                <constraint firstItem="35M-M8-W7s" firstAttribute="top" secondItem="wsT-TH-xXz" secondAttribute="bottom" id="JF1-63-mFh"/>
+                <constraint firstAttribute="trailing" secondItem="35M-M8-W7s" secondAttribute="trailing" id="JFf-RO-qEr"/>
                 <constraint firstItem="wsT-TH-xXz" firstAttribute="top" secondItem="tj6-dw-EPT" secondAttribute="bottom" constant="22" id="LDC-RO-DQ8"/>
+                <constraint firstItem="35M-M8-W7s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P58-4d-Aa7"/>
                 <constraint firstItem="tj6-dw-EPT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="RhX-N7-8p5"/>
                 <constraint firstItem="tj6-dw-EPT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="aeQ-xg-H53"/>
                 <constraint firstItem="wsT-TH-xXz" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bL8-oL-0po"/>
@@ -72,12 +140,15 @@ about FX volatility again.</string>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="375" height="446"/>
             <connections>
+                <outlet property="btnAnnually" destination="GZM-T8-qZk" id="woU-u4-rqo"/>
+                <outlet property="btnMonthly" destination="7S3-eV-ue3" id="mhB-cQ-05L"/>
                 <outlet property="carouselImage" destination="tj6-dw-EPT" id="hKh-hE-XnJ"/>
                 <outlet property="lblDetail" destination="ZH2-OW-uRV" id="Lit-C3-Dhc"/>
                 <outlet property="lblTitle" destination="wsT-TH-xXz" id="h0V-yt-2ZL"/>
                 <outlet property="lblTitleHight" destination="70d-4c-tuf" id="bQE-cX-8xJ"/>
+                <outlet property="vwUpgradeHeight" destination="551-ia-aYP" id="aVs-T1-lfO"/>
             </connections>
-            <point key="canvasLocation" x="38" y="47"/>
+            <point key="canvasLocation" x="37.600000000000001" y="46.776611694152926"/>
         </collectionViewCell>
     </objects>
 </document>

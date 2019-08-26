@@ -17,21 +17,21 @@ class HomeTabController: ESTabBarController {
         
         var initialHomeNavigationController:UINavigationController
         var initialExpenseNavigationController:UINavigationController
+//        var initialCashbackNavigationController:UINavigationController
 
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         initialHomeNavigationController = UINavigationController(rootViewController:homeViewController!)
 
-        let wireDetail = storyBoard.instantiateViewController(withIdentifier: "CashbackController") //"ComingSoonController"
+//        let cashbackDetail = storyBoard.instantiateViewController(withIdentifier: "CashbackController")
+//        initialCashbackNavigationController = UINavigationController(rootViewController:cashbackDetail)
 
         let analysisController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
         initialExpenseNavigationController = UINavigationController(rootViewController:analysisController)
-
-//        let wireList = storyBoard.instantiateViewController(withIdentifier: "WireRateController") as! WireRateController
-
+ 
         initialHomeNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), title: nil, image: UIImage(named: "ic_home"), selectedImage: UIImage(named: "ic_home_selected"))
         initialExpenseNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_expenses"), selectedImage: UIImage(named: "ic_expenses_selected"))
-        wireDetail.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_cashback_tab"), selectedImage: UIImage(named: "ic_cashback_tab_selected"))
-        self.viewControllers = [initialExpenseNavigationController, initialHomeNavigationController,wireDetail]
+//        initialCashbackNavigationController.tabBarItem = ESTabBarItem.init(TabContentView(), image: UIImage(named: "ic_cashback_tab"), selectedImage: UIImage(named: "ic_cashback_tab_selected"))
+        self.viewControllers = [initialExpenseNavigationController, initialHomeNavigationController]
         self.selectedViewController = initialHomeNavigationController
     }
 }

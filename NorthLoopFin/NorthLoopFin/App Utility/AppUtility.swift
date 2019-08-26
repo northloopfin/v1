@@ -277,7 +277,6 @@ class AppUtility {
         let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         let tabBarController = storyBoard.instantiateViewController(withIdentifier: "HomeTabController") as! HomeTabController
         tabBarController.homeViewController = homeViewController
-        sideMenu.delegate = homeViewController
         containerViewController.leftMenuViewController=sideMenu
         containerViewController.centerViewController=tabBarController
         containerViewController.setMenuWidth(UIScreen.main.bounds.size.width * 0.70, animated:true)

@@ -495,6 +495,7 @@
 		EA8984BB22FC61D100B4C33C /* CurrencyProtectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B722FC61D000B4C33C /* CurrencyProtectController.swift */; };
 		EA8984BC22FC61D100B4C33C /* WireRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B822FC61D100B4C33C /* WireRateController.swift */; };
 		EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E843622E88FE7009D95CD /* IP+Extension.swift */; };
+		EAA385A02313A57E004DD8D2 /* ConfirmUpgradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */; };
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -1054,6 +1055,7 @@
 		EA8984B722FC61D000B4C33C /* CurrencyProtectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProtectController.swift; sourceTree = "<group>"; };
 		EA8984B822FC61D100B4C33C /* WireRateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireRateController.swift; sourceTree = "<group>"; };
 		EA9E843622E88FE7009D95CD /* IP+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IP+Extension.swift"; sourceTree = "<group>"; };
+		EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmUpgradeController.swift; sourceTree = "<group>"; };
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -2564,6 +2566,7 @@
 				EA27E210230FC35800B7160F /* CarouselCell.swift */,
 				EA27E20F230FC35800B7160F /* CarouselCell.xib */,
 				EA27E211230FC35800B7160F /* CarouselViewComtroller.swift */,
+				EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3468,6 +3471,7 @@
 				1DCDF266228ED0ED00ABDCB1 /* SignupFlowData.swift in Sources */,
 				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
 				84D129B022FCD666000C82A6 /* AnalysisPeriod.swift in Sources */,
+				EAA385A02313A57E004DD8D2 /* ConfirmUpgradeController.swift in Sources */,
 				1D8440802289545A00A77BBF /* Amount.swift in Sources */,
 				1DF64E2B21E8B3B9008774CE /* SettingsViewController.swift in Sources */,
 				1D180D9D229E9FF600FC3390 /* ATMTableViewCell.swift in Sources */,

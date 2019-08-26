@@ -10,4 +10,5 @@ import Foundation
 
 protocol UpgradeDelegates: BaseViewProtocol {
     func didUpgradePremium()
+    func didFailedUpgradePremium()
 }

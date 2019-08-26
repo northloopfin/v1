@@ -30,3 +30,22 @@ struct AccountInfo: Codable {
 
     }
 }
+
+
+struct PremiumStatus: Codable {
+    let current_plan, validity: String
+    let auto_renew: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case current_plan
+        case validity
+        case auto_renew
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        current_plan = try values.decodeIfPresent(String.self, forKey: .current_plan) ?? ""
+        validity = try values.decodeIfPresent(String.self, forKey: .validity) ?? ""
+        auto_renew = try values.decodeIfPresent(Bool.self, forKey: .auto_renew) ?? false        
+    }
+}

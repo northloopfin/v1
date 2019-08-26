@@ -57,6 +57,7 @@ class AnalysisViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        self.setupRightNavigationBar()
         let tap = UITapGestureRecognizer(target: self, action: #selector(hidePeriodPicker))
         view.addGestureRecognizer(tap)
     }
@@ -92,6 +93,20 @@ class AnalysisViewController: BaseViewController {
 //        formatter.numberStyle = .currency
         labelCurrentBalance.text = "$" + String(currentUser?.amount ?? 0)
     }
+    
+    override func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.openMenu)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    //Method to go back to previous screen
+    @objc func openMenu(){
+        self.menuContainerViewController.setMenuState(MFSideMenuStateLeftMenuOpen, completion: {})
+    }
+
     
     @IBAction func onDate(_ sender: Any) {
         if isDateShown {
@@ -240,3 +255,5 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
         labelSpent.text = "$" + String(totalSpent.sumAmount)
     }
 }
+
+

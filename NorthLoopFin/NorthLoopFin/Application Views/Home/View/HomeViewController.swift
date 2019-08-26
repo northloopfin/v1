@@ -52,7 +52,6 @@ class HomeViewController: BaseViewController {
         cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         self.getAccountInfo()
         self.hideTabBar()
-//        self.moveToTesting()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -305,38 +304,7 @@ extension HomeViewController:OTPControllerDelegates{
     }
 }
 
-extension HomeViewController:SideMenuDelegate{
-    func closeMenu() {
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-    }
-    
-    func moveToScreen(screen: AppConstants.SideMenuOptions) {
-        switch screen {
-        case .MYCARD:
-            self.navigateToMyCard()
-        case .HELP:
-            self.navigateToHelp()
-        case .TRANSFER:
-            self.navigateToTransfer()
-        case .MYACCOUNT:
-            self.navigateToMyAccount()
-        case .UPGRADE:
-            self.navigateToUpgrade()
-        case .EXPENSES:
-            self.navigateToExpenses()
-        case .SETTINGS:
-            self.navigateToSettings()
-        case .FEEDBACK:
-            self.navigateToFeedback()
-        case .PREMIUM:
-            self.navigateCarousel()
-        case .REFER:
-            self.navigateReferAndEarn()
-        default:
-            break
-        }
-    }
-    
+extension HomeViewController{
     func hideTabBar() {
         var frame = self.tabBarController?.tabBar.frame
         frame!.origin.y = self.view.frame.size.height + (frame?.size.height)!
@@ -360,84 +328,13 @@ extension HomeViewController:SideMenuDelegate{
         }
     }
     
-    func moveToTesting(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "PersonalDetailViewController") as! PersonalDetailViewController
-        self.navigationController?.pushViewController(vc, animated: false)
-    }
-
     func moveToWaitList(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
         self.navigationController?.pushViewController(vc, animated: false)
     }
-    
-    func navigateToMyCard(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let cardViewController = storyBoard.instantiateViewController(withIdentifier: "MyCardViewController") as! MyCardViewController
-        if self.cardAuthData != nil {
-            cardViewController.cardAuthData = self.cardAuthData
-        }
-        self.navigationController?.pushViewController(cardViewController, animated: false)
-    }
-    func navigateToSettings(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func navigateToTransfer(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MakeTransferViewController") as! MakeTransferViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func navigateToMyAccount(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func navigateToUpgrade(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "CarouselViewComtroller") as! CarouselViewComtroller
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    
-    func navigateToExpenses() {
-        self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
-        let analysisController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "AnalysisViewController") as! AnalysisViewController
-        self.navigationController?.pushViewController(analysisController, animated: false)
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
-//        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-//        self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.COMING_SOON.rawValue)
-    }
-    
-    func navigateToHelp(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "HelpViewController") as! HelpViewController
-        self.navigationController?.pushViewController(transactionDetailController, animated: false)
-    }
-    func navigateToFeedback(){
-        guard let url = URL(string: "https://docs.google.com/forms/d/16fBuC42DLWnVZubL-wPTOTTEXc876jIqG4rglnuW4A4/edit") else { return }
-        UIApplication.shared.open(url)
-    }
-    func navigateCarousel(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let carouselViewComtroller = storyBoard.instantiateViewController(withIdentifier: "CarouselViewComtroller") as! CarouselViewComtroller
-        self.navigationController?.pushViewController(carouselViewComtroller, animated: false)
-    }
-    func navigateReferAndEarn(){
-        self.menuContainerViewController .toggleLeftSideMenuCompletion(nil)
-        let referAndEarnViewController = ReferAndEarnViewController.init(nibName: "ReferAndEarnViewController", bundle: nil)
-        self.navigationController?.present(referAndEarnViewController, animated: true, completion: nil)
-    }
 }
+
 extension HomeViewController:HomeTableCellDelegate{
     //Delete once client confirm
     func disputeTransactionClicked(data: IndividualTransaction) {
@@ -452,6 +349,7 @@ extension HomeViewController:ShareAccountDetailDelegates{
 
 extension HomeViewController:CardAuthDelegates{
     func didFetchCardAuth(data: CardAuthData) {
-        self.cardAuthData = data
+        let sideMenu = self.menuContainerViewController.leftMenuViewController as! SideMenuViewController
+        sideMenu.cardAuthData = self.cardAuthData
     }
 }
