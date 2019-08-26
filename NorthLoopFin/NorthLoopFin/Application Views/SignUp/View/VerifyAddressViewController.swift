@@ -110,16 +110,20 @@ class VerifyAddressViewController: BaseViewController {
     }
     
     fileprivate func convertDataForCheckAndCallAPI() {
-        let requestBody = createCheckAddressRequestBody()
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(requestBody)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            let dic = jsonString?.convertToDictionary() as! [String:String]
-            print(dic)
-            self.checkAddressPresnter.sendCheckAddressRequest(requestDic:dic)
-        } catch {
-            print(error)
+        if let _ = self.screenThatInitiatedThisFlow {
+            let requestBody = createCheckAddressRequestBody()
+            let jsonEncoder = JSONEncoder()
+            do {
+                let jsonData = try jsonEncoder.encode(requestBody)
+                let jsonString = String(data: jsonData, encoding: .utf8)
+                let dic = jsonString?.convertToDictionary() as! [String:String]
+                print(dic)
+                self.checkAddressPresnter.sendCheckAddressRequest(requestDic:dic)
+            } catch {
+                print(error)
+            }
+        } else {
+            self.convertDataToDicAndCallAPI()
         }
     }
     
