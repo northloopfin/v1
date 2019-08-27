@@ -15,6 +15,8 @@ class SettingsViewController: BaseViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var optionsTableView: UITableView!
+    @IBOutlet weak var vwTip: UIView!
+    @IBOutlet weak var constTopMargin: NSLayoutConstraint!
     
     @IBOutlet weak var constTipView: NSLayoutConstraint!
     var data:[MyCardOtionsModel]=[]
@@ -42,6 +44,12 @@ class SettingsViewController: BaseViewController {
         self.getSettingsPresenter.sendGetAppSettingsRequest()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        self.constTopMargin.constant = 50 * (self.view.frame.size.height/667)
+    }
+    
     func prepareView(){
         let option1 = MyCardOtionsModel.init(AppConstants.SettingsOptions.LOWBALANCEALERT.rawValue, isSwitch: true,isSelected: false)
         let option2 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true, isSelected: false)
@@ -53,16 +61,17 @@ class SettingsViewController: BaseViewController {
         data.append(option3)
         data.append(option4)
         data.append(option5)
-        customViewHeightConstraint.constant = CGFloat(data.count*70)
+//        customViewHeightConstraint.constant = CGFloat(data.count*70)
         
         let shadowOffst = CGSize.init(width: 0, height: -55)
         let shadowOpacity = 0.1
         let shadowRadius = 49
         let shadowColor = Colors.PurpleColor17673149
-        self.containerView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
+        self.optionsTableView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         self.setNavigationBarTitle(title: "Settings")
         self.setupRightNavigationBar()
         self.configureTableView()
+        
     }
     
     @IBAction func tipValueClicked(_ sender: UIButton) {
@@ -81,7 +90,10 @@ class SettingsViewController: BaseViewController {
 
 extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
     func configureTableView(){
-        self.optionsTableView.rowHeight = 70;
+        self.optionsTableView.rowHeight = (self.view.frame.size.height * (70/667));
+        if self.optionsTableView.rowHeight > 70 {
+            self.optionsTableView.rowHeight = 70
+        }
         self.optionsTableView.delegate=self
         self.optionsTableView.dataSource=self
         self.optionsTableView.registerTableViewCell(tableViewCell: MyCardTableCell.self)
@@ -101,7 +113,7 @@ extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 70.0
+        return self.optionsTableView.rowHeight
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -115,6 +127,10 @@ extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
     
     func checkForAppUpdate(){
         self.checkUpdatePresenter.sendCheckUpdateCall()
+    }
+    
+    func getTipViewHeight() -> CGFloat{
+        return containerView.frame.size.height - optionsTableView.frame.size.height
     }
 }
 
@@ -133,8 +149,9 @@ extension SettingsViewController:MyCardTableCellDelegate{
             //Deal and Offers
         case 4:
             self.isTipOn=isOn
-            self.constTipView.constant = self.isTipOn ? 80 : 0;
-            customViewHeightConstraint.constant = CGFloat(data.count*70) + self.constTipView.constant
+            self.vwTip.isHidden = !isOn
+//            self.constTipView.constant = self.isTipOn ? getTipViewHeight() : 0;
+//            customViewHeightConstraint.constant = CGFloat(data.count*70) + self.constTipView.constant
             if tipPercentage != 0 && containerView.viewWithTag(tipPercentage) != nil {
                 self.tipValueClicked(containerView.viewWithTag(tipPercentage) as! UIButton)
             }
@@ -182,8 +199,9 @@ extension SettingsViewController:SettingsDelegates{
         if tipPercentage != 0 && containerView.viewWithTag(tipPercentage) != nil {
             self.tipValueClicked(containerView.viewWithTag(tipPercentage) as! UIButton)
         }
-        self.constTipView.constant  = self.isTipOn ? 80 : 0;
-        customViewHeightConstraint.constant = CGFloat(self.data.count*70) + self.constTipView.constant
+        self.vwTip.isHidden = !self.isTipOn
+//        self.constTipView.constant  = self.isTipOn ? getTipViewHeight() : 0;
+//        customViewHeightConstraint.constant = CGFloat(self.data.count*70) + self.constTipView.constant
         self.optionsTableView.reloadData()
     }
     

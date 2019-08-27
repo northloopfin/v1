@@ -34,9 +34,10 @@ class GetAppSettingsPresenter:ResponseCallback{
     }
     
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
-        let response = responseObject as! GetAppSettingsResponse
+        if let response = responseObject as? GetAppSettingsResponse{
         self.delegate?.hideLoader()
         self.delegate?.didGetAppSettings(data: response.data)
+        }
     }
     
     func servicesManagerError(error: ErrorModel) {
