@@ -60,7 +60,7 @@ class MakeTransferViewController: BaseViewController {
         self.nicknameHeightConstraint.constant=0
         self.amoutHeightConstraint.constant=0
         self.payBtnHeightConstarint.constant=0
-        self.payBtnTopConstraint.constant=0
+//        self.payBtnTopConstraint.constant=0
     }
     
     func prepareView(){
@@ -190,7 +190,7 @@ extension MakeTransferViewController:FetchACHDelegates{
             self.nicknameHeightConstraint.constant=50
             self.amoutHeightConstraint.constant=50
             self.payBtnHeightConstarint.constant=45
-            self.payBtnTopConstraint.constant=148
+//            self.payBtnTopConstraint.constant=148
         }
         self.dropDown.dataSource = self.achArray
     }
