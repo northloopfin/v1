@@ -292,6 +292,11 @@ extension HomeViewController:HomeDelegate{
         
         currentUser?.amount = data.data.info.balance.amount
         currentUser?.cardActivated = data.data.CardFirstTimeActivated
+        
+        if let premium = data.data.premiumStatus{
+            let sideMenu = self.menuContainerViewController.leftMenuViewController as! SideMenuViewController
+            sideMenu.premiumStatus = premium
+        }
  
         UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         self.getTransactionList()
@@ -320,6 +325,7 @@ extension HomeViewController{
     }
 
     func navigateToOTP(){
+        return
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
         vc.delegate = self
@@ -329,6 +335,7 @@ extension HomeViewController{
     }
     
     func moveToWaitList(){
+        return
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "WaitListViewController") as! WaitListViewController
         self.navigationController?.pushViewController(vc, animated: false)

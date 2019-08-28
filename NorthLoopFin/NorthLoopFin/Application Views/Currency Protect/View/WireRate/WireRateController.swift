@@ -15,8 +15,17 @@ class WireRateController: BaseViewController {
     @IBOutlet weak var btnEligibleRefund: UIButton!
     @IBOutlet weak var btnBestRate: UIButton!
     
-    var transactionDataSource: [String] = ["1","2","3"]
+    var transactionID = ""
+    var fetchPresenter: FetchWireTransferPresenter?
+    var claimPresenter: ClaimRefundPresenter?
 
+    var wireTransfer: WireTransfer? {
+        didSet {
+            fillData()
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
@@ -25,24 +34,35 @@ class WireRateController: BaseViewController {
     }
     
     func prepareView(){
-        self.setNavigationBarTitle(title: "Wire transfer 1")
+        self.setupRightNavigationBar()
+        self.fetchPresenter = FetchWireTransferPresenter(delegate: self)
+        self.fetchPresenter?.sendFetchRequest(transactionID: transactionID)
+    
         self.setupRightNavigationBar()
         styleButton(btn: btnBestRate)
         styleButton(btn: btnEligibleRefund)
-
+    }
+    
+    func fillData(){
+        self.setNavigationBarTitle(title: (wireTransfer?.data.transaction.wire_from)!)
+        self.lblTotalAmount.text = "$ " + (wireTransfer?.data.transaction.amount)!
+        
         let rateString = NSMutableAttributedString(string: "Best rate  ", attributes: [ NSAttributedString.Key.font: AppFonts.calibri15 ] )
-        let rate = NSAttributedString(string: "INR 65.00", attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
+        let rate = NSAttributedString(string: "INR " + (wireTransfer?.data.transaction.fav_exchange_rate)!, attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
         rateString.append(rate)
         rateString.addAttributes([NSAttributedString.Key.foregroundColor: Colors.AmountGreen241770], range: NSRange(location: 0, length: rateString.length))
         btnBestRate.setAttributedTitle(rateString, for: .normal)
-
-        let eligibleString = NSMutableAttributedString(string: "Eligible Fund  ", attributes: [ NSAttributedString.Key.font: AppFonts.calibri15 ] )
-        let eligible = NSAttributedString(string: "INR 65.00", attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
+        
+        let eligibleString = NSMutableAttributedString(string: "Eligible refund  ", attributes: [ NSAttributedString.Key.font: AppFonts.calibri15 ] )
+        let eligible = NSAttributedString(string: "$ " + (wireTransfer?.data.cashbackAmount)!, attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
         eligibleString.append(eligible)
         eligibleString.addAttributes([NSAttributedString.Key.foregroundColor: Colors.PurpleColor17673149], range: NSRange(location: 0, length: eligibleString.length))
         btnEligibleRefund.setAttributedTitle(eligibleString, for: .normal)
+        if let inr = Double((wireTransfer?.data.cashbackAmount)!), inr > 0{
+            btnClaimRefund.isEnabled = true
+            btnClaimRefund.setTitle("CLAIM REFUND $ " + (wireTransfer?.data.cashbackAmount)!, for: .normal)
+        }
     }
-    
     
     func styleButton(btn:UIButton){
          let shadowOffst = CGSize.init(width: 0, height: 1)
@@ -54,6 +74,8 @@ class WireRateController: BaseViewController {
 
 
     @IBAction func btnClaimRefund_clicked(_ sender: UIButton) {
+        self.claimPresenter = ClaimRefundPresenter(delegate: self)
+        self.claimPresenter?.sendClaimRequest(transactionID: transactionID)
     }
 }
 
@@ -67,22 +89,43 @@ extension WireRateController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactionDataSource.count
+        if wireTransfer != nil{
+            return (wireTransfer?.data.pastRates.count)!
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: WireRateCell = tableView.dequeueReusableCell(withIdentifier: "WireRateCell") as! WireRateCell
         cell.selectionStyle = .none
+        cell.bindData(data: (wireTransfer?.data.pastRates[indexPath.row])!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 51.0
+        return self.tableView.rowHeight
     }
   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
 
+extension WireRateController:FetchWireTransferDelegates{
+    func didFetcWireTransfer(data: WireTransfer) {
+        wireTransfer = data
+    }
+}
 
+
+extension WireRateController:ClaimRefundDelegate{
+    func didClaimRefund(data: ClaimRefund) {
+        if data.message.count > 0{
+            self.btnClaimRefund.isEnabled = false
+            self.showErrorAlert("", alertMessage: data.message)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                self.navigationController?.popViewController(animated: true)
+//            }
+        }
+    }
+}

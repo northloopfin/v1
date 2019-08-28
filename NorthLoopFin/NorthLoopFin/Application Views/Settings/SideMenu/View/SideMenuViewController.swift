@@ -14,6 +14,7 @@ class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var optionsTableView: UITableView!
     var cardAuthData:CardAuthData?
+    var premiumStatus:PremiumStatus?
 
     @IBAction func crossClicked(_ sender: Any) {
         closeMenu()
@@ -35,11 +36,11 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.MYCARD.rawValue)
         self.data.append(AppConstants.SideMenuOptions.TRANSFER.rawValue)
         self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
-//        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
-//        self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.CURRENCYPROTECT.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
     }
 }
@@ -86,12 +87,14 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.TRANSFER)
             case 2:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.MYACCOUNT)
-//            case 3:
-//                self.moveToScreen(screen: AppConstants.SideMenuOptions.PREMIUM)
             case 3:
+                self.moveToScreen(screen: AppConstants.SideMenuOptions.PREMIUM)
+            case 4:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
 //            case 5:
-//                self.delegate.moveToScreen(screen: AppConstants.SideMenuOptions.FEEDBACK)
+//                self.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
+//            case 4:
+//                self.moveToCurrencyProtect()
             default:
                 break
         }
@@ -132,7 +135,11 @@ extension SideMenuViewController{
             break
         }
     }
-    
+
+    func moveToCurrencyProtect(){
+        self.navigateTo(vc: getControllerWithIdentifier("CurrencyProtectController"))
+    }
+
     func moveToTesting(){
         self.navigateTo(vc: getControllerWithIdentifier("PersonalDetailViewController"))
     }
@@ -154,7 +161,13 @@ extension SideMenuViewController{
         self.navigateTo(vc: getControllerWithIdentifier("MyAccountViewController"))
     }
     func navigateToUpgrade(){
-        self.navigateTo(vc: getControllerWithIdentifier("CarouselViewComtroller"))
+        if premiumStatus != nil && premiumStatus!.current_plan.count > 0{
+            let vc = getControllerWithIdentifier("PremiumDetailController") as! PremiumDetailController
+            vc.premiumStatus = premiumStatus
+            self.navigateTo(vc: vc)
+        }else{
+            self.navigateTo(vc: getControllerWithIdentifier("CarouselViewComtroller"))
+        }
     }
     func navigateToHelp(){
         self.navigateTo(vc: getControllerWithIdentifier("HelpViewController"))

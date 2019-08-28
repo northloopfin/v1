@@ -220,29 +220,7 @@ extension TransactionDetailViewController:TransactionDetailDelegate{
         
         //Convert to Date
         let date = Date.init(timeIntervalSince1970: TimeInterval(seconds/1000))//NSDate(timeIntervalSince1970: seconds)
-        
-        var dateString = ""
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        dateString = formatter.string(from: date)
-        
-        let myCalendar = Calendar(identifier: .gregorian)
-        let weekDay = myCalendar.component(.weekday, from: date)
-
-        let weekdays = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-        ]
-        
-
-        dateString =  dateString + " " + weekdays[weekDay-1] + ", " +  AppUtility.getFormattedDateFullString(date: date)
-        
-        return dateString
+                
+        return AppUtility.timeStringWithDay(date: date)  + ", " +  AppUtility.getFormattedDateFullString(date: date)
     }
 }

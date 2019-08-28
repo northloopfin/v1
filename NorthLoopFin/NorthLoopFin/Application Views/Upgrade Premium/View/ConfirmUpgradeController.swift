@@ -17,6 +17,7 @@ class ConfirmUpgradeController: BaseViewController {
 
     var presenter:UpgradePresenter!
     var isMonthly:Bool = false
+    var accountInfoPresenter : AccountInfoPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,24 @@ class ConfirmUpgradeController: BaseViewController {
 extension ConfirmUpgradeController:UpgradeDelegates{
     func didUpgradePremium() {
         self.vwSuccess.isHidden = false
+        accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
+        accountInfoPresenter.getAccountInfo()
     }
     
     func didFailedUpgradePremium() {
         btnConfirmUpgrade.isEnabled = true
+    }
+}
+
+extension ConfirmUpgradeController:HomeDelegate{
+    func didFetchedTransactionList(data: [TransactionListModel]) {
+    }
+    func didFetchedError(error:ErrorModel){
+    }
+    func didFetchedAccountInfo(data:Account){
+        if let premium = data.data.premiumStatus{
+            let sideMenu = self.menuContainerViewController.leftMenuViewController as! SideMenuViewController
+            sideMenu.premiumStatus = premium
+        }
     }
 }

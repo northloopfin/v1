@@ -76,21 +76,21 @@ class HomeTableCell: UITableViewCell {
             }
         }
         if ( data.to.type == "ACH-US" || data.from.type == "ACH-US") {
-            self.beneficiaryImg.clipsToBounds = false
             self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
             self.beneficiaryName.text = data.to.nickname
-        }else{
-            self.beneficiaryImg.clipsToBounds = true
         }
         
         if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, data.from.user.legalNames[0] == "NORTH LOOP TECHNOLOGIES INC" {
             self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
-            self.beneficiaryImg.clipsToBounds = false
+        }
+        
+        if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, (data.extra.note.lowercased().contains("cashback") || data.extra.note.lowercased().contains("reward")) {
+            self.beneficiaryImg.image = UIImage.init(named:"Rewards")
+            self.beneficiaryName.text = "Rewards"
         }
         
         if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
             self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
-            self.beneficiaryImg.clipsToBounds = false
         }
         
         self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
