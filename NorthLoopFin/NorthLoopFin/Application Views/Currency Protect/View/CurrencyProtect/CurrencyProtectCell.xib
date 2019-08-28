@@ -77,6 +77,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAmount" destination="XNY-NT-GW6" id="6Jw-88-9Fm"/>
+                <outlet property="lblSubTitle" destination="6Ui-Os-eJr" id="spU-1M-9kv"/>
+                <outlet property="lblTitle" destination="fPc-Wf-GVL" id="btO-UO-if5"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

@@ -24,4 +24,17 @@ class WireRateCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func bindData(data: ExchangeRate){
+        amountField.text = data.inr
+        
+        if let inr = Double(amountField.text!) {
+            amountField.text = String(format: "%.2f INR" , inr)
+        }
+        
+        if let wireDate = AppUtility.getDateObjectFromUTCFormat(dateStr: data.date){
+            dateField.text = AppUtility.getDashedDateStringWithoutTime(date: wireDate)
+        }else{
+            dateField.text = ""
+        }
+    }
 }

@@ -59,8 +59,6 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print(collectionView.frame.size.width)
-        print(collectionView.frame.size.height)
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
     

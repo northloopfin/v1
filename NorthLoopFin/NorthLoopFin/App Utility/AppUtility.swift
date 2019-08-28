@@ -20,7 +20,7 @@ class AppUtility {
     ///   - dateStr: UTC date in string
     ///   - format: Required date format
     /// - Returns: Reqiuired date in string
-    class func getDateFromUTCFormat(dateStr: String, format: String = "dd MMMM YYYY") -> String {
+    class func getDateStringFromUTCFormat(dateStr: String, format: String = "dd MMMM YYYY") -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -29,7 +29,14 @@ class AppUtility {
         dateFormatter.locale = Locale(identifier:"en_US_POSIX")
         return AppUtility.getFormattedDate(withFormat: format, date: date)
     }
-    
+
+    class func getDateObjectFromUTCFormat(dateStr: String, format: String = "dd MMMM YYYY") -> Date? {        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.timeZone = TimeZone(identifier:"UTC")
+        return dateFormatter.date(from: dateStr)
+    }
+
     //This function return date in form 8th December 2018
     class  func getDateFromUTCFormatUsingNumberOrdinal(dateStr: String, format: String = "MMMM YYYY")->String {
         let dateFormatter = DateFormatter()
@@ -83,15 +90,25 @@ class AppUtility {
         //Convert to Date
         let date = Date.init(timeIntervalSince1970: seconds/1000)//NSDate(timeIntervalSince1970: seconds)
         
+        return getDateStringWithoutTime(date: date)
+    }
+    
+    class func getDateStringWithoutTime(date: Date) -> String{
         //Date formatting
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd, MMM yyy" //HH:mm:a"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        let dateString = dateFormatter.string(from: date)
-        //print("formatted date is =  \(dateString)")
-        return dateString
+        return dateFormatter.string(from: date)
     }
-    
+
+    class func getDashedDateStringWithoutTime(date: Date) -> String{
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM-yyy" //HH:mm:a"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        return dateFormatter.string(from: date)
+    }
+
     class func getFormattedDateFullString(date: Date)->String{
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(identifier: "UTC")!
@@ -150,6 +167,32 @@ class AppUtility {
         let date: Date? = calendar.date(from: dateComponents!)
         return date!
     }
+    
+    class func timeStringWithDay(date: Date)-> String{
+         var dateString = ""
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        dateString = formatter.string(from: date)
+        
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.weekday, from: date)
+        
+        let weekdays = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ]
+        
+        dateString =  dateString + " " + weekdays[weekDay-1]
+        
+        return dateString
+    }
+
     
     class func checkIfDateFallsAfterYear2014(dateStr: String)->Bool{
         let dateFormatter = DateFormatter()
