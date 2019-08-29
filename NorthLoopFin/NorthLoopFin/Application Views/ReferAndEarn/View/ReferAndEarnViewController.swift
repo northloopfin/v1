@@ -48,7 +48,7 @@ class ReferAndEarnViewController: BaseViewController {
             return
         }
         let link = URL(string: "https://northloopbank.page.link/?invitedby=\(uid)")
-        let referralLink = DynamicLinkComponents(link: link!, domainURIPrefix: "https://northloopbank.page.link")
+        let referralLink = DynamicLinkComponents(link: link!, domainURIPrefix: "northloopbank.page.link")
         
         referralLink?.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.northloop.NorthLoop")
 //            referralLink.iOSParameters?.minimumAppVersion = "1.0.1"

@@ -21,6 +21,7 @@ struct Endpoints{
         case CARDUPDATE = "banking/card?"
         case CARDPIN = "banking/card/pin?"
         case SIGNUPAUTH = "auth/sign-up"
+        case REFERRAL = "reward/referral"
         case SIGNUPSYNAPSE = "banking/synapse-user"
         case RESETPASSWORD = "auth/reset-password"
         case LINKACH = "banking/link-ach"

@@ -438,6 +438,11 @@
 		EA1902F1230D76A6002FE7FC /* RedeemCashbackRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902ED230D76A5002FE7FC /* RedeemCashbackRequestModel.swift */; };
 		EA1902F2230D76A6002FE7FC /* RedeemCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902EE230D76A5002FE7FC /* RedeemCashback.swift */; };
 		EA1902F4230D77CF002FE7FC /* RedeemCashbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */; };
+		EA1AB68A23180D8D0021B59D /* ReferralPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68923180D8D0021B59D /* ReferralPresenter.swift */; };
+		EA1AB69023180DCC0021B59D /* Referral.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68C23180DCC0021B59D /* Referral.swift */; };
+		EA1AB69123180DCC0021B59D /* ReferralBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68D23180DCC0021B59D /* ReferralBusinessLogic.swift */; };
+		EA1AB69223180DCC0021B59D /* ReferralRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68E23180DCC0021B59D /* ReferralRequestModel.swift */; };
+		EA1AB69323180DCC0021B59D /* ReferralAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68F23180DCC0021B59D /* ReferralAPIRequest.swift */; };
 		EA1AB9FA230BAA8F00FB2FA0 /* ScanVisaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */; };
 		EA1AB9FC230BB5FC00FB2FA0 /* ScanAddressProofController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */; };
 		EA1E32B9230E9B8E0099A471 /* ComingSoonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */; };
@@ -997,6 +1002,11 @@
 		EA1902ED230D76A5002FE7FC /* RedeemCashbackRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCashbackRequestModel.swift; sourceTree = "<group>"; };
 		EA1902EE230D76A5002FE7FC /* RedeemCashback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCashback.swift; sourceTree = "<group>"; };
 		EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCashbackPresenter.swift; sourceTree = "<group>"; };
+		EA1AB68923180D8D0021B59D /* ReferralPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralPresenter.swift; sourceTree = "<group>"; };
+		EA1AB68C23180DCC0021B59D /* Referral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Referral.swift; sourceTree = "<group>"; };
+		EA1AB68D23180DCC0021B59D /* ReferralBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralBusinessLogic.swift; sourceTree = "<group>"; };
+		EA1AB68E23180DCC0021B59D /* ReferralRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralRequestModel.swift; sourceTree = "<group>"; };
+		EA1AB68F23180DCC0021B59D /* ReferralAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralAPIRequest.swift; sourceTree = "<group>"; };
 		EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVisaController.swift; sourceTree = "<group>"; };
 		EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAddressProofController.swift; sourceTree = "<group>"; };
 		EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonController.swift; sourceTree = "<group>"; };
@@ -1388,6 +1398,7 @@
 		1D1E5A6E21C9C78D0036E998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EA1AB68B23180DCC0021B59D /* Referral */,
 				4BFBC87822BB807E00B23B68 /* ShareAccountDetails */,
 				4BFDF89122B9E8290066860D /* FetchUniversity */,
 				1D913CDC228F61870075B16D /* SignupSynapse */,
@@ -1420,6 +1431,7 @@
 		1D1E5A7021C9C79D0036E998 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				EA1AB68923180D8D0021B59D /* ReferralPresenter.swift */,
 				1DFE480821D7446C003EFECA /* PhoneVerificationStartPresenter.swift */,
 				1DFE480E21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift */,
 				1D0BF52C2209AAC400B56E82 /* FirebasePresenter.swift */,
@@ -2802,6 +2814,17 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		EA1AB68B23180DCC0021B59D /* Referral */ = {
+			isa = PBXGroup;
+			children = (
+				EA1AB68C23180DCC0021B59D /* Referral.swift */,
+				EA1AB68D23180DCC0021B59D /* ReferralBusinessLogic.swift */,
+				EA1AB68E23180DCC0021B59D /* ReferralRequestModel.swift */,
+				EA1AB68F23180DCC0021B59D /* ReferralAPIRequest.swift */,
+			);
+			path = Referral;
+			sourceTree = "<group>";
+		};
 		EA1E32B7230E9B750099A471 /* Coming Soon */ = {
 			isa = PBXGroup;
 			children = (
@@ -3262,6 +3285,9 @@
 							com.apple.Push = {
 								enabled = 1;
 							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
 						};
 					};
 					297FB9AD21B51A34008D60CE = {
@@ -3523,6 +3549,7 @@
 				EA1AB9FC230BB5FC00FB2FA0 /* ScanAddressProofController.swift in Sources */,
 				4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */,
 				1D1E5A7221C9C7BE0036E998 /* WelcomeViewController.swift in Sources */,
+				EA1AB69123180DCC0021B59D /* ReferralBusinessLogic.swift in Sources */,
 				EA32C259230A70700031A223 /* ScanIDMenuController.swift in Sources */,
 				1D055D51229C6E410078CD33 /* ACHTransactionAPIRequest.swift in Sources */,
 				1D180D8C229E763C00FC3390 /* ATMFinderAPIRequest.swift in Sources */,
@@ -3605,6 +3632,7 @@
 				1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
 				1D908FD021CCF5B3005C96BB /* VerifyAddressViewController.swift in Sources */,
+				EA1AB69223180DCC0021B59D /* ReferralRequestModel.swift in Sources */,
 				84D129B522FCD666000C82A6 /* AnalysisCategoryTableHeader.swift in Sources */,
 				EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */,
 				EA1902E9230D6F92002FE7FC /* CashbackCell.swift in Sources */,
@@ -3647,6 +3675,7 @@
 				1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */,
 				F4EE1B88230C626B00CCA1E6 /* TransferDetailTableViewCell.swift in Sources */,
 				1D055D38229BFEFC0078CD33 /* MakeTransferViewController.swift in Sources */,
+				EA1AB68A23180D8D0021B59D /* ReferralPresenter.swift in Sources */,
 				1D44CD01228F0387007382F2 /* UIImageExtension.swift in Sources */,
 				4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */,
 				1DFE480321D735F4003EFECA /* PhoneVerificationRequestMobel.swift in Sources */,
@@ -3659,6 +3688,7 @@
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
 				EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */,
 				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
+				EA1AB69323180DCC0021B59D /* ReferralAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
 				297FB9D321B5322D008D60CE /* BaseViewController.swift in Sources */,
 				EA4ED02B22E5CF3200D1F438 /* CardInfoPresenter.swift in Sources */,
@@ -3727,6 +3757,7 @@
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				4BFDF88622B8D64F0066860D /* UpgradeRequestModel.swift in Sources */,
 				1D055D30229BD6F50078CD33 /* LinkACHRquestModel.swift in Sources */,
+				EA1AB69023180DCC0021B59D /* Referral.swift in Sources */,
 				4B07A87922C5CF36004C65B2 /* SetAppSettingsPresenter.swift in Sources */,
 				1D29C83D22A90FE00092E3EB /* LostCardConfirmationViewController.swift in Sources */,
 				1D055D48229C031C0078CD33 /* ACHNode.swift in Sources */,

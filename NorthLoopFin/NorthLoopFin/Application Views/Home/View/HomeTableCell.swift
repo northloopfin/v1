@@ -88,24 +88,37 @@ class HomeTableCell: UITableViewCell {
             self.beneficiaryImg.image = UIImage.init(named:"Rewards")
             self.beneficiaryName.text = "Rewards"
         }
-        
+
+        if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, data.extra.note.lowercased().contains("upgrade") {
+            self.beneficiaryImg.image = UIImage.init(named:"icon_subscription")
+            self.beneficiaryName.text = "North Loop Premium"
+        }
+
         if let _  = data.from.meta, data.from.meta?.type.lowercased() == "wire" {
             self.beneficiaryImg.image = UIImage.init(named:"icon_transfer")
         }
         
-        self.transactionAmt.textColor = data.to.type == "DEPOSIT-US" ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
         }
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
         
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        self.transactionAmt.textColor = data.to.user.id == currentUser?.userID ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
+
         if ["returned","canceled"].contains(data.recentStatus.status.lowercased()){
             let attributeString =  NSMutableAttributedString(string: self.transactionAmt.text!)
             
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
                                          value: NSUnderlineStyle.single.rawValue,
                                          range: NSMakeRange(0, attributeString.length))
+            
+            attributeString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                         value: self.transactionAmt.textColor,
+                                         range: NSMakeRange(0, attributeString.length))
+
             self.transactionAmt.attributedText = attributeString
         }
+        
     }
 }

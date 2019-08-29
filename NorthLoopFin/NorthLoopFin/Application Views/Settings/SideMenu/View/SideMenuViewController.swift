@@ -38,9 +38,9 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
         self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.CURRENCYPROTECT.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
-//        self.data.append(AppConstants.SideMenuOptions.CURRENCYPROTECT.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
     }
 }
@@ -90,11 +90,11 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
             case 3:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.PREMIUM)
             case 4:
+                self.moveToCurrencyProtect()
+            case 5:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
 //            case 5:
 //                self.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
-//            case 4:
-//                self.moveToCurrencyProtect()
             default:
                 break
         }

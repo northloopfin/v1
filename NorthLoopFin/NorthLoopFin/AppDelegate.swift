@@ -66,6 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.saveToUserDefault(true as AnyObject, key: AppConstants.UserDefaultKeyForCrash)
         }
         
+        DynamicLinks.performDiagnostics(completion: nil)
+
+        
 //        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]) != nil{
 //            self.logEventForAppOpen(source: "Push Notification")
 //        }else{
@@ -145,8 +148,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func application(_ app: UIApplication, open url: URL, options:
-        [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        let handled = DynamicLinks.dynamicLinks().handleUniversalLink(userActivity.webpageURL!) { (dynamiclink, error) in
+            print(self.handleDynamicLink(dynamiclink))
+        }
+        
+        return handled
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        return application(app, open: url,
+                           sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                           annotation: "")
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if DynamicLinks.dynamicLinks().shouldHandleDynamicLink(fromCustomSchemeURL: url) {
             let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: url)
             return handleDynamicLink(dynamicLink)
@@ -156,47 +174,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
-    @available(iOS 8.0, *)
-    func application(_ application: UIApplication,
-                     continue userActivity: NSUserActivity,
-                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        let handled = DynamicLinks.dynamicLinks().handleUniversalLink(userActivity.webpageURL!) { (dynamiclink, error) in
-            if (dynamiclink != nil) && (error != nil) {
-                self.handleDynamicLink(dynamiclink)
-            }
-        }
-        if !handled {
-            // Handle incoming URL with other methods as necessary
-            // ...
-        }
-        return handled
+    func getQueryStringParameter(url: String, param: String) -> String? {
+        guard let url = URLComponents(string: url) else { return nil }
+        return url.queryItems?.first(where: { $0.name == param })?.value
     }
-
 
     func handleDynamicLink(_ dynamicLink: DynamicLink?) -> Bool {
         guard let dynamicLink = dynamicLink else { return false }
         guard let deepLink = dynamicLink.url else { return false }
-        let queryItems = URLComponents(url: deepLink, resolvingAgainstBaseURL: true)?.queryItems
-        let invitedBy = queryItems?.filter({(item) in item.name == "invitedby"}).first?.value
-        let user = Auth.auth().currentUser
-        // If the user isn’t signed in and the app was opened via an invitation
-        // link, sign in the user anonymously and record the referrer UID in the
-        // user’s RTDB record.
-        if user == nil && invitedBy != nil {
-            Auth.auth().signInAnonymously() { (user, error) in
-                if let user = user {
-                    let userRecord = Database.database().reference().child("users").child(user.user.providerID)
-                    userRecord.child("referred_by").setValue(invitedBy)
-                    if dynamicLink.matchType == .weak {
-                        // If the Dynamic Link has a weak match confidence, it is possible
-                        // that the current device isn’t the same device on which the invitation
-                        // link was originally opened. The way you handle this situation
-                        // depends on your app, but in general, you should avoid exposing
-                        // personal information, such as the referrer’s email address, to
-                        // the user.
-                    }
-                }
-            }
+        let arr =  deepLink.lastPathComponent.components(separatedBy: "=")
+        if arr.count == 2, arr[0] == "invited_by" {
+            UserDefaults.saveToUserDefault(arr[1] as AnyObject, key: AppConstants.ReferralId)
         }
         return true
     }
