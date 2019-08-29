@@ -36,7 +36,8 @@ class CreateAccountV2ViewController: BaseViewController {
     var signupFlowData:SignupFlowData! = nil
     //Will remove this once Sign up completes
     var presenter:PhoneVerificationStartPresenter!
-    
+    var referralPresenter:ReferralPresenter!
+
     @IBAction func loginClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -153,6 +154,10 @@ class CreateAccountV2ViewController: BaseViewController {
         self.nextBtn.isEnabled=false
         updateTextFieldUI()
         self.prepareView()
+        if let invitedBy = UserDefaults.getUserDefaultForKey(AppConstants.ReferralId){
+            referralPresenter = ReferralPresenter(delegate: self)
+            referralPresenter.sendReferralRequest(invitedBy: invitedBy as! String)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -321,7 +326,11 @@ class CreateAccountV2ViewController: BaseViewController {
         }
     }
 }
-
+extension CreateAccountV2ViewController:ReferralDelegate{
+    func didReferralAdded() {
+        
+    }
+}
 extension CreateAccountV2ViewController:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class WireRateController: BaseViewController {
     @IBOutlet weak var lblTotalAmount: UILabel!
@@ -14,6 +15,8 @@ class WireRateController: BaseViewController {
     @IBOutlet weak var btnClaimRefund: RippleButton!
     @IBOutlet weak var btnEligibleRefund: UIButton!
     @IBOutlet weak var btnBestRate: UIButton!
+    @IBOutlet weak var vwNoRefund: UIView!
+    @IBOutlet weak var vwAction: UIView!
     
     var transactionID = ""
     var fetchPresenter: FetchWireTransferPresenter?
@@ -44,6 +47,7 @@ class WireRateController: BaseViewController {
     }
     
     func fillData(){
+        self.vwAction.isHidden = false
         self.setNavigationBarTitle(title: (wireTransfer?.data.transaction.wire_from)!)
         self.lblTotalAmount.text = "$ " + (wireTransfer?.data.transaction.amount)!
         
@@ -59,8 +63,10 @@ class WireRateController: BaseViewController {
         eligibleString.addAttributes([NSAttributedString.Key.foregroundColor: Colors.PurpleColor17673149], range: NSRange(location: 0, length: eligibleString.length))
         btnEligibleRefund.setAttributedTitle(eligibleString, for: .normal)
         if let inr = Double((wireTransfer?.data.cashbackAmount)!), inr > 0{
-            btnClaimRefund.isEnabled = true
+            btnClaimRefund.isHidden = false
             btnClaimRefund.setTitle("CLAIM REFUND $ " + (wireTransfer?.data.cashbackAmount)!, for: .normal)
+        }else{
+            vwNoRefund.isHidden = false
         }
     }
     
@@ -72,7 +78,11 @@ class WireRateController: BaseViewController {
          btn.layer.addShadowAndRoundedCorners(roundedCorner: 5, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
     }
 
+    @IBAction func whyNoRefund_clicked(_ sender: UIButton) {
+        self.view.makeToast("Fortunately for you, the currency hasn't changed against you! You sent the money on the best day in the past week", duration: 3.0, position: .bottom)
 
+    }
+    
     @IBAction func btnClaimRefund_clicked(_ sender: UIButton) {
         self.claimPresenter = ClaimRefundPresenter(delegate: self)
         self.claimPresenter?.sendClaimRequest(transactionID: transactionID)
@@ -121,7 +131,6 @@ extension WireRateController:FetchWireTransferDelegates{
 extension WireRateController:ClaimRefundDelegate{
     func didClaimRefund(data: ClaimRefund) {
         if data.message.count > 0{
-            self.btnClaimRefund.isEnabled = false
             self.showErrorAlert("", alertMessage: data.message)
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 //                self.navigationController?.popViewController(animated: true)
