@@ -185,6 +185,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let arr =  deepLink.lastPathComponent.components(separatedBy: "=")
         if arr.count == 2, arr[0] == "invited_by" {
             UserDefaults.saveToUserDefault(arr[1] as AnyObject, key: AppConstants.ReferralId)
+        }else{
+            if let invitedBy = getQueryStringParameter(url: deepLink.absoluteString, param: "invited_by"){
+                UserDefaults.saveToUserDefault(invitedBy as AnyObject, key: AppConstants.ReferralId)
+            }
         }
         return true
     }

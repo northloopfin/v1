@@ -40,7 +40,8 @@ class HomeTableCell: UITableViewCell {
         self.delegate = delegate
         self.individualTransaction=data
         self.beneficiaryImg.image = nil
-    
+        self.beneficiaryName.text = "North Loop"
+        
         if let _  = data.to.meta{
             let imageName = AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory)
             if imageName.count > 0{
@@ -90,7 +91,7 @@ class HomeTableCell: UITableViewCell {
         }
 
         if data.from.type == "DEPOSIT-US", data.from.user.legalNames.count > 0, data.extra.note.lowercased().contains("upgrade") {
-            self.beneficiaryImg.image = UIImage.init(named:"icon_subscription")
+            self.beneficiaryImg.image = UIImage.init(named:"ic_upgrade")
             self.beneficiaryName.text = "North Loop Premium"
         }
 

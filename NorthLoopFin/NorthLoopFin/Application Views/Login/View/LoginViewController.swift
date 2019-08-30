@@ -199,6 +199,14 @@ extension LoginViewController:UITextFieldDelegate{
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (!(self.emailTextField.text?.isEmpty)! && !(self.passwordTextfield.text?.isEmpty)!){
+        self.view.endEditing(true)
+        self.loginClicked(loginBtn)
+        }
+        return false
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         checkMandatoryFields()

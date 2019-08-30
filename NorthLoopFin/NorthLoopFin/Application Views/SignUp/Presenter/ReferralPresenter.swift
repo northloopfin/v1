@@ -52,5 +52,6 @@ class ReferralPresenter: ResponseCallback{
     
     func servicesManagerError(error: ErrorModel) {
         // show error to user
+        print(error)
     }
 }

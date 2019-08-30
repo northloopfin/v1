@@ -27,7 +27,7 @@ class ReferAndEarnViewController: BaseViewController {
                 if let name = currentUser?.name{
                     title = "\(name), wants to invite you to bank with North Loop"
                 }
-                let urlsToShare = [ title, "\nSign up in 2 minutes and get $10! Use my link to get started: ", url as Any ]
+                let urlsToShare = [ title, "\nSign up in 2 minutes and get $5! Use my link to get started: ", url as Any ]
                 let activityViewController = UIActivityViewController(activityItems: urlsToShare as [Any], applicationActivities: nil)
                 activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
                 self.present(activityViewController, animated: true, completion: nil)
@@ -47,13 +47,13 @@ class ReferAndEarnViewController: BaseViewController {
             completionHandler(nil);
             return
         }
-        let link = URL(string: "https://northloopbank.page.link/?invitedby=\(uid)")
-        let referralLink = DynamicLinkComponents(link: link!, domainURIPrefix: "northloopbank.page.link")
+        let link = URL(string: "https://northloopbank.page.link/invited_by=\(uid)")
+        let referralLink = DynamicLinkComponents(link: link!, domainURIPrefix: "https://northloopbank.page.link")
         
         referralLink?.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.northloop.NorthLoop")
 //            referralLink.iOSParameters?.minimumAppVersion = "1.0.1"
         referralLink?.iOSParameters?.appStoreID = AppConstants.AppStoreID
-            
+//        referralLink?.androidParameters?.packageName = DynamicLinkAndroidParameters(packageName: "com.northloop.app")
         referralLink?.shorten { (shortURL, warnings, error) in
                 if let error = error {
                     print(error.localizedDescription)
@@ -62,6 +62,4 @@ class ReferAndEarnViewController: BaseViewController {
                 completionHandler(shortURL)
             }
     }
-    
-    
 }

@@ -134,7 +134,7 @@ struct AppConstants{
         case FEEDBACK = "Feedback"
         case SETTINGS = "Settings"
         case PREMIUM = "Premium"
-        case REFER = "Refer & Earn $10"
+        case REFER = "Refer & Earn $5"
     }
     enum TransferDetail:String
     {

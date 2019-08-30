@@ -38,10 +38,10 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.MYACCOUNT.rawValue)
         self.data.append(AppConstants.SideMenuOptions.PREMIUM.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.EXPENSES.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.CURRENCYPROTECT.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.CURRENCYPROTECT.rawValue)
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
-//        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
     }
 }
 
@@ -89,12 +89,12 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.MYACCOUNT)
             case 3:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.PREMIUM)
+//            case 4:
+//                self.moveToCurrencyProtect()
             case 4:
-                self.moveToCurrencyProtect()
-            case 5:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.HELP)
-//            case 5:
-//                self.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
+            case 5:
+                self.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
             default:
                 break
         }
@@ -177,6 +177,8 @@ extension SideMenuViewController{
         UIApplication.shared.open(url)
     }
     func navigateReferAndEarn(){
-        self.navigateTo(vc: getControllerWithIdentifier("SettingsViewController"))
+        let referAndEarnViewController = ReferAndEarnViewController.init(nibName: "ReferAndEarnViewController", bundle: nil)
+        let center = self.menuContainerViewController.centerViewController as! HomeTabController
+        (center.selectedViewController as! UINavigationController).present(referAndEarnViewController, animated: true, completion: nil)
     }
 }
