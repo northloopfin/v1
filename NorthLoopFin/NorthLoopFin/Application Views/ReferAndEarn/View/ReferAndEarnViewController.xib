@@ -58,8 +58,8 @@
                     </constraints>
                     <attributedString key="attributedText">
                         <fragment>
-                            <string key="content">You get $10 and your friend gets 
-$10 when you invite them to North Loop!</string>
+                            <string key="content">You get $5 and your friend gets 
+$5 when you invite them to North Loop!</string>
                             <attributes>
                                 <color key="NSColor" red="0.30196078431372547" green="0.22745098039215686" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <font key="NSFont" metaFont="system" size="16"/>
@@ -69,17 +69,14 @@ $10 when you invite them to North Loop!</string>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5E0-pm-hVA">
-                    <rect key="frame" x="144.5" y="544" width="125" height="20"/>
-                    <string key="text">Your code: AABBCC
-
-</string>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5E0-pm-hVA">
+                    <rect key="frame" x="207" y="544" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                     <color key="textColor" red="0.30196078431372547" green="0.22745098039215686" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3l-Mk-a7F" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                    <rect key="frame" x="115.5" y="579" width="183" height="44"/>
+                    <rect key="frame" x="115.5" y="559" width="183" height="44"/>
                     <color key="backgroundColor" red="0.69019607843137254" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="183" id="CuX-sr-Zqq"/>

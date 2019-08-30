@@ -77,9 +77,5 @@ extension CurrencyProtectController:UITableViewDelegate,UITableViewDataSource{
 extension CurrencyProtectController:FetchWireListDelegates{
     func didFetcWireList(data: [WireTransaction]) {
         wireList = data
-        let vc = getControllerWithIdentifier("WireRateController") as! WireRateController
-        vc.transactionID = ""
-        self.navigationController?.pushViewController(vc, animated: true)
-
     }
 }

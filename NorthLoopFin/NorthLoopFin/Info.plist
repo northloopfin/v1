@@ -23,7 +23,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.8</string>
+	<string>1.2.9</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -36,11 +36,21 @@
 				<string>com.northloop.NorthLoop</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>northloop</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>2</string>
 	<key>Card Url</key>
 	<string>$(CARD_URL)</string>
+	<key>FirebaseDynamicLinksCustomDomains</key>
+	<array>
+		<string>https://www.northloopbank.com/invited_by</string>
+	</array>
 	<key>Google Map Key</key>
 	<string>$(GOOGLE_MAP_API_KEY)</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -107,14 +117,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>branch_key</key>
-	<string>key_live_bcPFMPCMtlfOF0pCBxB1vcolwAm6a4qZ</string>
 	<key>branch_app_domain</key>
 	<string>northloop.app.link</string>
-    <key>FirebaseDynamicLinksCustomDomains</key>
-    <array>
-        <string>https://www.northloopbank.com/invited_by</string>
-    </array>
-
+	<key>branch_key</key>
+	<string>key_live_bcPFMPCMtlfOF0pCBxB1vcolwAm6a4qZ</string>
 </dict>
 </plist>

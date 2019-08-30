@@ -51,8 +51,15 @@ class WireRateController: BaseViewController {
         self.setNavigationBarTitle(title: (wireTransfer?.data.transaction.wire_from)!)
         self.lblTotalAmount.text = "$ " + (wireTransfer?.data.transaction.amount)!
         
+        var favRate = ""
+        if let rate = (wireTransfer?.data.transaction.fav_exchange_rate){
+            if let dblRate = Double(rate), dblRate > 0{
+                favRate = String(format: "%.2f",dblRate)
+            }
+        }
+        
         let rateString = NSMutableAttributedString(string: "Best rate  ", attributes: [ NSAttributedString.Key.font: AppFonts.calibri15 ] )
-        let rate = NSAttributedString(string: "INR " + (wireTransfer?.data.transaction.fav_exchange_rate)!, attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
+        let rate = NSAttributedString(string: "INR " + favRate, attributes: [ NSAttributedString.Key.font: AppFonts.calibriBold18 ])
         rateString.append(rate)
         rateString.addAttributes([NSAttributedString.Key.foregroundColor: Colors.AmountGreen241770], range: NSRange(location: 0, length: rateString.length))
         btnBestRate.setAttributedTitle(rateString, for: .normal)
@@ -131,10 +138,8 @@ extension WireRateController:FetchWireTransferDelegates{
 extension WireRateController:ClaimRefundDelegate{
     func didClaimRefund(data: ClaimRefund) {
         if data.message.count > 0{
-            self.showErrorAlert("", alertMessage: data.message)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                self.navigationController?.popViewController(animated: true)
-//            }
+            self.view.makeToast(data.message, duration: 3.0, position: .bottom)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
