@@ -40,6 +40,9 @@ class VerifyAddressViewController: BaseViewController {
     let dropDown = DropDown()
     let countryWithCode = AppUtility.getCountryList()
     
+    
+    
+    
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
             let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
@@ -188,7 +191,7 @@ class VerifyAddressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        //self.fetchDatafromRealmIfAny()
+        self.fetchDatafromRealmIfAny()
     }
     
     func fetchDatafromRealmIfAny(){

@@ -4,6 +4,7 @@ import UIKit
 import SVProgressHUD
 import GiFHUD_Swift
 import AlertHelperKit
+import Toast_Swift
 
 class BaseViewController: UIViewController, BaseViewProtocol {
 
@@ -16,6 +17,10 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func toast(message:String){
+        self.view.makeToast(message, duration: 3.0, position: .bottom)
     }
     
     func setupRightNavigationBar(){

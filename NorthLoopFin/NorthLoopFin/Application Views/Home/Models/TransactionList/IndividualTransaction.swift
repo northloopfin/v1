@@ -20,13 +20,15 @@ struct IndividualTransaction: Codable {
     let date : Date
 //    let timeline: [RecentStatus]
     let to: TransactionListTo
-    
+    let isIncoming: Bool
+
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case v = "_v"
         case amount, client, extra,from
         case recentStatus = "recent_status"
         case to
+        case isIncoming
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -41,5 +43,6 @@ struct IndividualTransaction: Codable {
 
         let dateString = AppUtility.dateStringFromMillisecondsWithoutTime(seconds: Double(extra.createdOn))
         date = AppUtility.getDateFromString(dateString: dateString)
+        isIncoming = try values.decodeIfPresent(Bool.self, forKey: .isIncoming) ?? false
     }
 }

@@ -14,6 +14,7 @@ import IQKeyboardManagerSwift
 import FirebaseDynamicLinks
 import FirebaseAuth
 import FirebaseDatabase
+import RealmSwift
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -67,6 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         DynamicLinks.performDiagnostics(completion: nil)
+
+        let config = Realm.Configuration(
+            schemaVersion: 1,  //Increment this each time your schema changes
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                }
+        })
+        
+        Realm.Configuration.defaultConfiguration = config
+        
 
         
 //        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]) != nil{

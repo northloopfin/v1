@@ -38,6 +38,8 @@ class ScanIDController: BaseViewController {
                 [self.btnRemoveFront, self.btnRemoveBack][button.tag].isHidden = false
             }
         }
+        
+        checkForNext()
 
         // Do any additional setup after loading the view.
     }

@@ -493,6 +493,11 @@
 		EA27E214230FC35800B7160F /* CarouselViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E211230FC35800B7160F /* CarouselViewComtroller.swift */; };
 		EA27E216230FC3DD00B7160F /* UpgradeDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E215230FC3DD00B7160F /* UpgradeDelegates.swift */; };
 		EA27E219230FF36000B7160F /* PhoneNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27E218230FF36000B7160F /* PhoneNumberController.swift */; };
+		EA31340F231CF52100A77FDE /* RoutingVerificationBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31340B231CF52100A77FDE /* RoutingVerificationBusinessLogic.swift */; };
+		EA313410231CF52100A77FDE /* RoutingVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31340C231CF52100A77FDE /* RoutingVerification.swift */; };
+		EA313411231CF52100A77FDE /* RoutingVerificationAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31340D231CF52100A77FDE /* RoutingVerificationAPIRequest.swift */; };
+		EA313412231CF52100A77FDE /* RoutingVerificationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31340E231CF52100A77FDE /* RoutingVerificationRequestModel.swift */; };
+		EA313415231CF54600A77FDE /* RoutingVerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA313414231CF54400A77FDE /* RoutingVerificationPresenter.swift */; };
 		EA32C259230A70700031A223 /* ScanIDMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C258230A70700031A223 /* ScanIDMenuController.swift */; };
 		EA32C25C230A74B20031A223 /* ScanOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA32C25A230A74B20031A223 /* ScanOptionCell.swift */; };
 		EA32C25D230A74B20031A223 /* ScanOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA32C25B230A74B20031A223 /* ScanOptionCell.xib */; };
@@ -1074,6 +1079,11 @@
 		EA27E211230FC35800B7160F /* CarouselViewComtroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewComtroller.swift; sourceTree = "<group>"; };
 		EA27E215230FC3DD00B7160F /* UpgradeDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeDelegates.swift; sourceTree = "<group>"; };
 		EA27E218230FF36000B7160F /* PhoneNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberController.swift; sourceTree = "<group>"; };
+		EA31340B231CF52100A77FDE /* RoutingVerificationBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingVerificationBusinessLogic.swift; sourceTree = "<group>"; };
+		EA31340C231CF52100A77FDE /* RoutingVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingVerification.swift; sourceTree = "<group>"; };
+		EA31340D231CF52100A77FDE /* RoutingVerificationAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingVerificationAPIRequest.swift; sourceTree = "<group>"; };
+		EA31340E231CF52100A77FDE /* RoutingVerificationRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingVerificationRequestModel.swift; sourceTree = "<group>"; };
+		EA313414231CF54400A77FDE /* RoutingVerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingVerificationPresenter.swift; sourceTree = "<group>"; };
 		EA32C258230A70700031A223 /* ScanIDMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDMenuController.swift; sourceTree = "<group>"; };
 		EA32C25A230A74B20031A223 /* ScanOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanOptionCell.swift; sourceTree = "<group>"; };
 		EA32C25B230A74B20031A223 /* ScanOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanOptionCell.xib; sourceTree = "<group>"; };
@@ -1163,6 +1173,7 @@
 				1D055D3E229C024D0078CD33 /* FetchACH */,
 				1D055D2B229BD6BF0078CD33 /* LinkACH */,
 				EA04726622E0806400D5B834 /* DeleteACH */,
+				EA313413231CF54400A77FDE /* RoutingVerification */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1173,6 +1184,7 @@
 				1D055D4D229C6DFA0078CD33 /* ACHTransaction */,
 				1D055D3D229C02430078CD33 /* FetchACH */,
 				1D055D2C229BD6C80078CD33 /* LinkACH */,
+				EA31340A231CF52100A77FDE /* RoutingVerification */,
 				EA04726922E08FB600D5B834 /* DeleteACH */,
 			);
 			path = Model;
@@ -3016,6 +3028,26 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		EA31340A231CF52100A77FDE /* RoutingVerification */ = {
+			isa = PBXGroup;
+			children = (
+				EA31340B231CF52100A77FDE /* RoutingVerificationBusinessLogic.swift */,
+				EA31340C231CF52100A77FDE /* RoutingVerification.swift */,
+				EA31340D231CF52100A77FDE /* RoutingVerificationAPIRequest.swift */,
+				EA31340E231CF52100A77FDE /* RoutingVerificationRequestModel.swift */,
+			);
+			name = RoutingVerification;
+			path = "NorthLoopFin/Application Views/Transfer/Model/RoutingVerification";
+			sourceTree = SOURCE_ROOT;
+		};
+		EA313413231CF54400A77FDE /* RoutingVerification */ = {
+			isa = PBXGroup;
+			children = (
+				EA313414231CF54400A77FDE /* RoutingVerificationPresenter.swift */,
+			);
+			path = RoutingVerification;
+			sourceTree = "<group>";
+		};
 		EA32C257230A70030031A223 /* ScanID Flow */ = {
 			isa = PBXGroup;
 			children = (
@@ -3561,6 +3593,7 @@
 				1D180DAE229FC44800FC3390 /* AccountAPIRequest.swift in Sources */,
 				1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */,
 				8448754B22ECFDFF003B703B /* ReferAndEarnViewController.swift in Sources */,
+				EA313410231CF52100A77FDE /* RoutingVerification.swift in Sources */,
 				1D790E0A21D355450088107A /* ScanIDOptionsView.swift in Sources */,
 				1D67DB0121C7757500AA7F29 /* CALayerExtension.swift in Sources */,
 				84D129B622FCD666000C82A6 /* AnalysisViewController.swift in Sources */,
@@ -3721,6 +3754,7 @@
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				EA27E213230FC35800B7160F /* CarouselCell.swift in Sources */,
 				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
+				EA313411231CF52100A77FDE /* RoutingVerificationAPIRequest.swift in Sources */,
 				F4C1BF0A230053C900FC1DC1 /* VerifyIdentityViewController.swift in Sources */,
 				1D055D53229C6E620078CD33 /* ACHTransactionBusinessModel.swift in Sources */,
 				8469EF7422F648A600B861F1 /* AddreddCompareModel.swift in Sources */,
@@ -3732,6 +3766,7 @@
 				4BFBC88422BB8AEF00B23B68 /* GetAppSettingsPresenter.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1D84407E2289545A00A77BBF /* TransactionListApiRequest.swift in Sources */,
+				EA313412231CF52100A77FDE /* RoutingVerificationRequestModel.swift in Sources */,
 				1DF64E2421E666F9008774CE /* SideMenuTableCell.swift in Sources */,
 				EA04726D22E08FB600D5B834 /* DeleteACHAPIRequest.swift in Sources */,
 				1D09CA6A221FFCC300C961A9 /* InternationalStudentViewController.swift in Sources */,
@@ -3900,6 +3935,7 @@
 				1D055D36229BD8AE0078CD33 /* TransferDelegates.swift in Sources */,
 				1FF70EB722ED7500007A9309 /* CountryCell.swift in Sources */,
 				1DE6D94F22A0E9D000014572 /* DisputeTransactionConfirmationViewController.swift in Sources */,
+				EA31340F231CF52100A77FDE /* RoutingVerificationBusinessLogic.swift in Sources */,
 				EA24B3412316589E0091D307 /* FetchWireTransferAPIRequest.swift in Sources */,
 				EA4ED03322E5D1C400D1F438 /* CardAuthAPIRequest.swift in Sources */,
 				1D913EFA21EC72BC009D7E52 /* CommonTableCell.swift in Sources */,
@@ -3964,6 +4000,7 @@
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
 				EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */,
 				EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */,
+				EA313415231CF54600A77FDE /* RoutingVerificationPresenter.swift in Sources */,
 				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,
 				1DF31A76228D86B4001ACE61 /* SignupStepConfirm.swift in Sources */,
 				1D055D55229C6FA00078CD33 /* ACHTransaction.swift in Sources */,
