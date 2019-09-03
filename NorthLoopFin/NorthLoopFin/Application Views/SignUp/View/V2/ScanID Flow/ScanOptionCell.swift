@@ -14,7 +14,8 @@ class clsScanOption: NSObject{
     var title:String = ""
     var subTitle:String = ""
     var imgName:String = ""
-    
+    var isFilled:Bool = false
+
     override init() {
         
     }
@@ -47,6 +48,9 @@ class ScanOptionCell: UITableViewCell {
     func bindData(option:clsScanOption) {
         self.lblTitle.text = option.title
         self.lblSubtitle.text = option.subTitle
-        self.imgPreview.image = UIImage(named: option.imgName)
+        self.imgPreview.image = UIImage(named: option.imgName + (option.isFilled ? "_selected" : ""))
+        self.lblTitle.textColor = option.isFilled ? Colors.PurpleColor17673149 : UIColor.black
+        self.lblSubtitle.textColor = option.isFilled ? Colors.PurpleColor17673149 : Colors.TaupeGray131130131
+
     }
 }

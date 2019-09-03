@@ -175,7 +175,7 @@ class CreateAccountV2ViewController: BaseViewController {
             self.SSNTextField.text = info.ssn
             self.phoneTextField.text = info.phone
             self.CitizenShipTextField.text = info.citizenShip
-//            self.countryCodeTextField.text = info.countryCode
+            self.countryCodeTextField.text = info.countryCode
             //search for citizenship in the list of countries
             let selectedCountryArr = self.countryWithCode.filter { $0.name == info.citizenShip}
             self.selectedCountry = selectedCountryArr[0]
@@ -297,7 +297,7 @@ class CreateAccountV2ViewController: BaseViewController {
         basicInfo.lastname=self.lastNameTextField.text ?? ""
         basicInfo.ssn=self.SSNTextField.text ?? ""
         basicInfo.phone=self.phoneTextField.text ?? ""
-//        basicInfo.countryCode=self.countryCodeTextField.text ?? ""
+        basicInfo.countryCode=self.countryCodeTextField.text ?? ""
         basicInfo.citizenShip=self.CitizenShipTextField.text ?? ""
         RealmHelper.addBasicInfo(info: basicInfo)
         

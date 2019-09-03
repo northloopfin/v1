@@ -1,3 +1,4 @@
+
 //
 //  CarouselViewComtroller.swift
 //  NorthLoopFin
@@ -9,11 +10,11 @@
 import UIKit
 
 class CarouselViewComtroller: BaseViewController {
-
+    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     @IBOutlet weak var btnUpgrade: RippleButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
@@ -55,7 +56,7 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
         cell.vwUpgradeHeight.constant = indexPath.row == 3 ? 110 : 0;
         cell.btnMonthly.addTarget(self, action: #selector(btnMonthly_clicked(btn:)), for: .touchUpInside)
         cell.btnAnnually.addTarget(self, action: #selector(btnMonthly_clicked(btn:)), for: .touchUpInside)
-
+        
         return cell
     }
     

@@ -132,6 +132,22 @@ class ScanIDMenuController: BaseViewController {
             }
         }
         self.btnNext.isEnabled = isEnabled
+        
+        for obj in optionArray {
+            var requiredImage = 1
+            if obj.title == AppConstants.SelectIDTYPES.I20.rawValue{
+                requiredImage = 3
+            }
+            if dicTypeImages.keys.contains(obj.title){
+                let images:[UIImage] = dicTypeImages[obj.title]!
+                if requiredImage == images.count {
+                    obj.isFilled = true
+                }
+            }else{
+                obj.isFilled = false
+            }
+        }
+        self.menuTable.reloadData()
     }
     
     func retrieveDBImages(){

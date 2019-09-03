@@ -23,6 +23,7 @@ class MyCardViewController: BaseViewController {
     @IBOutlet weak var cvv: UILabel!
     @IBOutlet weak var cardNumber: UILabel!
     
+    @IBOutlet weak var vwViewCard: UIView!
     @IBOutlet weak var whatsThisButton: UIButton!
     //    @IBOutlet weak var btnWhatsThis: UIButton!
     @IBOutlet weak var vwActivateCard: UIView!
@@ -52,6 +53,7 @@ class MyCardViewController: BaseViewController {
         cardActivated = currentUser!.cardActivated
         self.getCardStatus()
         self.vwActivateCard.cornerRadius = 4
+        self.vwViewCard.cornerRadius = 4
         logEventsHelper.logEventWithName(name: "Card", andProperties: ["Event": "My Card"])
     }
     
@@ -93,6 +95,7 @@ class MyCardViewController: BaseViewController {
     func getCardStatus(){
         if cardActivated == true{
             self.presenter.getCardStatus()
+            self.vwViewCard.isHidden = false
         }else{
             self.vwActivateCard.isHidden = false
         }
@@ -131,6 +134,9 @@ class MyCardViewController: BaseViewController {
          let preference = UpdateCardPreferenceBody.init(allowForeignTransactions: true, dailyATMWithdrawalLimit: self.dailyATMWithdrawalLimit, dailyTransactionLimit: self.dailyTransactionLimit)
         let card = UpdateCardRequestBody.init(status: "ACTIVE", pre: preference)
         self.updatePresenter.updateCardStatus(requestBody: card, firstTimeActivate: true)
+    }
+    @IBAction func vwCardClicked(_ sender: UIButton) {
+        self.getCardInfo()
     }
 }
 
@@ -255,7 +261,7 @@ extension MyCardViewController:CardDelegates{
 extension MyCardViewController:CardAuthDelegates{
     func didFetchCardAuth(data: CardAuthData) {
         self.cardAuthData = data
-        self.getCardInfo()
+//        self.getCardInfo()
     }
 }
 
@@ -273,6 +279,7 @@ extension MyCardViewController:CardInfoDelegates{
         self.vwVirtualCard.isHidden = false
         self.whatsThisButton.isHidden = false
         self.vwActivateCard.isHidden = true
+        self.vwViewCard.isHidden = true
         
         if self.vwActivateCard.tag == 1 {
             self.vwActivateCard.tag = 0

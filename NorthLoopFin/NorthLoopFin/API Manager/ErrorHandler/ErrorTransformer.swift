@@ -14,7 +14,8 @@ class ErrorTransformer {
             if let mes = errorDict["message"] {
                 errorModel.setErrorMessage(mes as! String)
             } else {
-                errorModel.setErrorMessage(errorResponse.debugDescription)
+                print("API ERROR: "  + errorResponse.debugDescription)
+                errorModel.setErrorMessage(AppConstants.ErrorMessages.GENERIC_ERROR_MESSAGE.rawValue)
             }
         }else{
 
@@ -23,7 +24,6 @@ class ErrorTransformer {
             }
             else{
                 print("API ERROR: "  + errorResponse.debugDescription)
-
                 errorModel.setErrorMessage(AppConstants.ErrorMessages.GENERIC_ERROR_MESSAGE.rawValue)
             }
             errorModel.setErrorTitle(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue)

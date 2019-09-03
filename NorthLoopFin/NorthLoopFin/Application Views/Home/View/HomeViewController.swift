@@ -53,6 +53,10 @@ class HomeViewController: BaseViewController {
         cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         self.getAccountInfo()
         self.hideTabBar()
+        
+        if UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForOnboarding) == nil{
+            UserDefaults.saveToUserDefault("true" as AnyObject, key: AppConstants.UserDefaultKeyForOnboarding)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
