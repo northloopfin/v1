@@ -138,6 +138,7 @@ class VerifyAddressViewController: BaseViewController {
 
             //delete all images from document directory
             //StorageHelper.clearAllFileFromDirectory()
+            logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Address"])
             convertDataForCheckAndCallAPI()
         } else {
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ZIP_NOT_VALID.rawValue)

@@ -15,6 +15,7 @@ class ExpensesViewController: BaseViewController {
         self.prepareView()
 
         // Do any additional setup after loading the view.
+        logEventsHelper.logEventWithName(name: "Expenses ", andProperties: ["Event": "User clicks on 'expenses'"])
     }
     
     func prepareView(){

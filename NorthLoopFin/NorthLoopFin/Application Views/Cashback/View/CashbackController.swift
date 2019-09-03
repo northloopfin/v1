@@ -34,6 +34,7 @@ class CashbackController: BaseViewController {
         self.prepareView()
         self.setupRightNavigationBar()
         self.configureTable()
+        logEventsHelper.logEventWithName(name: "Cashback", andProperties: ["Event": "View"])
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +90,7 @@ class CashbackController: BaseViewController {
     }
 
     @IBAction func btnRedeem_pressed(_ sender: UIButton) {
+        logEventsHelper.logEventWithName(name: "Cashback", andProperties: ["Event": "Redeem"])
         self.redeemPresenter = RedeemCashbackPresenter.init(delegate: self)
         self.redeemPresenter.sendRedeemCashbackRequest()
         self.btnRedeem.isEnabled = false

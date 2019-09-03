@@ -17,6 +17,7 @@ class CarouselViewComtroller: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        logEventsHelper.logEventWithName(name: "Upgrade", andProperties: ["Event": "View Details"])
     }
     
     @IBAction func nextClicked(_ sender: Any) {
@@ -76,6 +77,7 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
     }
     
     @objc func btnMonthly_clicked(btn:UIButton){
+        logEventsHelper.logEventWithName(name: "Upgrade", andProperties: ["Event": "Select Plan"])
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ConfirmUpgradeController") as! ConfirmUpgradeController
         vc.isMonthly = btn.tag == 0

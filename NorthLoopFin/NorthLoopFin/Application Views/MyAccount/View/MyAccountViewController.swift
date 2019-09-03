@@ -176,7 +176,7 @@ extension MyAccountViewController:CommonTableDelegate{
     }
     
     func logoutUser(){
-       
+            logEventsHelper.logEventWithName(name: "Logout", andProperties: ["Event": "when the user logs out"])
             UserInformationUtility.sharedInstance.deleteCurrentUser()
             self.moveToWelcome()
     }

@@ -21,8 +21,8 @@ class SideMenuViewController: UIViewController {
     }
     
     @IBAction func settingsClicked(_ sender: Any) {
+        logEventsHelper.logEventWithName(name: "Settings", andProperties: ["Event": "User clicks and lands on Settings page"])
         self.moveToScreen(screen: AppConstants.SideMenuOptions.SETTINGS)
-        
     }
     
     override func viewDidLoad() {

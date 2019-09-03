@@ -60,6 +60,7 @@ class SignUpStepFirst: BaseViewController {
     }
     // Life Cycle of Controller
     override func viewDidLoad() {
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "when the users clicks on \"Create Account\" button after email/pw"])
         self.prepareView()
         self.nextBtn.isEnabled=false
         self.setupRightNavigationBar()

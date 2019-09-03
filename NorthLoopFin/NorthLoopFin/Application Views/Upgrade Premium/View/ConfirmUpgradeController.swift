@@ -45,6 +45,7 @@ class ConfirmUpgradeController: BaseViewController {
 
 extension ConfirmUpgradeController:UpgradeDelegates{
     func didUpgradePremium() {
+        logEventsHelper.logEventWithName(name: "Upgrade", andProperties: ["Event": "Subscribe Successful"])
         self.vwSuccess.isHidden = false
         accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
         accountInfoPresenter.getAccountInfo()

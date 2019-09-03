@@ -153,6 +153,7 @@ extension ATMFinderViewController:UITableViewDelegate,UITableViewDataSource {
         if self.dataSource.count == 0 {
             return
         }
+        logEventsHelper.logEventWithName(name: "Help", andProperties: ["Event": "ATM Map"])
         let selectedAtm = self.dataSource[indexPath.row + 1]
         let addressString = "\(selectedAtm.atmLocation.address.street)"
         

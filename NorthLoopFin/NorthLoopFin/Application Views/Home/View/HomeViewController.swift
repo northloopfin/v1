@@ -20,6 +20,7 @@ class HomeViewController: BaseViewController {
     var shareAccountDetailsPresenter : ShareAccountDetailsPresenter!
     var cardAuthPresenter: CardAuthPresenter!
     var cardAuthData:CardAuthData?
+    var currentDateForLog: Date!
 
     @IBOutlet weak var vwEmpty: UIView!
     @IBOutlet weak var contentView: GradientView!
@@ -57,6 +58,12 @@ class HomeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.makeTransparent()
+        currentDateForLog = Date()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        logEventsHelper.logEventWithName(name: "PageView", andProperties: ["Event": "Homepage", "Duration":"\(Date() - currentDateForLog)"])
     }
     
     override func viewDidLayoutSubviews() {

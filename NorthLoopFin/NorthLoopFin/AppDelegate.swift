@@ -69,11 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DynamicLinks.performDiagnostics(completion: nil)
 
         
-//        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]) != nil{
-//            self.logEventForAppOpen(source: "Push Notification")
-//        }else{
-//            self.logEventForAppOpen(source: "Direct")
-//        }
+        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]) != nil{
+            self.logEventForAppOpen(source: "Push Notification")
+        }else{
+            self.logEventForAppOpen(source: "Direct")
+        }
         return true
     }
     

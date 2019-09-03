@@ -26,6 +26,7 @@ class LoginViewController: BaseViewController {
     var loginPresenter:LoginPresenter!
     var zendeskPresenter:ZendeskPresenter!
     var isRememberMeSelected:Bool = false
+    var loginType = "Password"
 
     
     @IBAction func forgetPasswordClicked(_ sender: Any) {
@@ -157,7 +158,7 @@ class LoginViewController: BaseViewController {
             if isSuccess
             {
                 // when authentication successful then call login api
-                
+                self.loginType = "Biometric"
                 self.login(username: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForEmail)!, password: KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForPassword)!)
             }
             else
@@ -218,6 +219,7 @@ extension LoginViewController:LoginDelegate{
         //successfully logged in user..move to home page
         //call Zendesk API to get identity token
         // save email and password only if remember is enabled
+        logEventsHelper.logEventWithName(name: "Login", andProperties: ["Event": loginType])
         if data.isSignupCompleted{
             if data.isVerified{
                 //if user is verified

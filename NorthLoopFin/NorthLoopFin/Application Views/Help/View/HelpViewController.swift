@@ -19,6 +19,7 @@ class HelpViewController: BaseViewController {
         super.viewDidLoad()
         self.prepareView()
         self.twoFApresenter = TwoFAPresenter.init(delegate: self)
+        logEventsHelper.logEventWithName(name: "Help", andProperties: ["Event": "View Options"])
     }
     override func viewDidLayoutSubviews() {
         let shadowOffst = CGSize.init(width: 0, height: -55)
@@ -49,12 +50,14 @@ extension HelpViewController:CommonTableDelegate{
     func didSelectOption(optionVal:Int) {
         switch optionVal {
         case 0:
+            logEventsHelper.logEventWithName(name: "Help", andProperties: ["Event": "FAQ"])
             self.moveToFAQ()
         case 1:
             // check for biometric
             //self.openZendeskChat()
             self.initiateBiometric()
         case 2:
+            logEventsHelper.logEventWithName(name: "Help", andProperties: ["Event": "ATM Finder"])
             self.moveToATMFinder()
         case 3:
             self.moveToLegalStuff()
@@ -105,6 +108,7 @@ extension HelpViewController:CommonTableDelegate{
     }
     func openZendeskChat(){
         // Pushes the chat widget onto the navigation controller
+        logEventsHelper.logEventWithName(name: "Help", andProperties: ["Event": "Chat"])
         FSChatViewStyling.startTheChat(self.navigationController!, vc: self)
     }
     

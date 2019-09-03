@@ -52,6 +52,7 @@ class MyCardViewController: BaseViewController {
         cardActivated = currentUser!.cardActivated
         self.getCardStatus()
         self.vwActivateCard.cornerRadius = 4
+        logEventsHelper.logEventWithName(name: "Card", andProperties: ["Event": "My Card"])
     }
     
     
@@ -182,6 +183,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
 //            self.showAlertForInactiveCadrs()
 //            return
 //        }else{
+        logEventsHelper.logEventWithName(name: "Card", andProperties: ["Event": "Lost"])
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
             self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -193,6 +195,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
             self.showAlertForInactiveCadrs()
             return
         }else{
+            logEventsHelper.logEventWithName(name: "Card", andProperties: ["Event": "Pin"])
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "NewPinViewController") as! NewPinViewController
             self.navigationController?.pushViewController(transactionDetailController, animated: false)
@@ -321,6 +324,7 @@ extension MyCardViewController:MyCardTableCellDelegate{
         case 0:
             //lock you card
             self.isLockCard = isOn
+            logEventsHelper.logEventWithName(name: "Card", andProperties: ["Event": "Lock"])
             if self.isLockCard {
                 self.showConfirmationAlertForLockCard()
             } else {
