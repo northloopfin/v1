@@ -13,13 +13,17 @@ class TransferViewController: BaseViewController {
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var rountingNumberTextField: UITextField!
 
+    @IBOutlet weak var vwError: UIView!
     @IBOutlet weak var saveBtn: UIButton!
     var presenter:LinkACHPresenter!
+    var routingVeriPresenter:RoutingVerificationPresenter!
 
+    @IBOutlet weak var lblError: LabelWithLetterSpace!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         self.presenter = LinkACHPresenter.init(delegate: self)
+        self.routingVeriPresenter = RoutingVerificationPresenter.init(delegate: self)
     }
     @IBAction func saveBtnClicked(_ sender: Any) {
         // Validate Form
@@ -29,45 +33,23 @@ class TransferViewController: BaseViewController {
     //Validate form here
     func validateForm(){
         if Validations.isValidRoutingNumber(routingNumber: self.rountingNumberTextField.text!){
+            self.vwError.isHidden = true
             // Yes Valid
-            self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
+            self.routingVeriPresenter.sendRoutingVerificationRequest(routing: self.rountingNumberTextField.text!)
         }else{
+            self.vwError.isHidden = false
+            self.lblError.text = AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue
             // show error here
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue)
+//            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue)
         }
     }
     //Prepare view to display
     func prepareView(){
         self.setNavigationBarTitle(title: "Transfer")
         self.setupRightNavigationBar()
-        self.bankAccountNumberTextfield.textColor = Colors.DustyGray155155155
-        self.rountingNumberTextField.textColor = Colors.DustyGray155155155
-        self.nicknameTextField.textColor=Colors.DustyGray155155155
-        self.bankAccountNumberTextfield.font=AppFonts.textBoxCalibri16
-        self.rountingNumberTextField.font=AppFonts.textBoxCalibri16
-        self.nicknameTextField.font=AppFonts.textBoxCalibri16
         self.saveBtn.titleLabel!.font=AppFonts.calibri15
-        self.configureTextFields()
     }
-    func configureTextFields(){
-        self.bankAccountNumberTextfield.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        self.nicknameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        
-        let placeholderColor=Colors.DustyGray155155155
-        let placeholderFont = UIFont.init(name: "Calibri", size: 16)
-        let textfieldBorderColor = Colors.Mercury226226226
-        let textFieldBorderWidth = 1.0
-        let textfieldCorber = 5.0
-        
-        self.bankAccountNumberTextfield.applyAttributesWithValues(placeholderText: "Bank Account No*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.nicknameTextField.applyAttributesWithValues(placeholderText: "Nickname*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        self.rountingNumberTextField.applyAttributesWithValues(placeholderText: "Rounting Number*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
-        
-        self.bankAccountNumberTextfield.setLeftPaddingPoints(19)
-        self.nicknameTextField.setLeftPaddingPoints(19)
-        self.rountingNumberTextField.setLeftPaddingPoints(19)
-
-    }
+    
     @objc func textFieldDidChange(textField: UITextField){
         if ((textField.text?.isEmpty)!){
             self.inactivateDoneBtn()
@@ -90,8 +72,9 @@ class TransferViewController: BaseViewController {
 extension TransferViewController:UITextFieldDelegate{
     fileprivate func checkMandatoryFields() {
         if (!(self.bankAccountNumberTextfield.text?.isEmpty)! && !(self.nicknameTextField.text?.isEmpty)!) && !((self.rountingNumberTextField.text?.isEmpty)!){
-            
             self.changeApperanceOfDone()
+        }else{
+            self.inactivateDoneBtn()
         }
     }
     
@@ -104,5 +87,16 @@ extension TransferViewController:UITextFieldDelegate{
 extension TransferViewController:LinkACHDelegates{
     func didSentLinkACH() {
         self.navigationController?.popViewController(animated: false)
+    }
+}
+
+extension TransferViewController:RoutingVerificationDelegate{
+    func didRoutingVerified() {
+        self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
+    }
+    
+    func failedRoutingVerification() {
+        self.vwError.isHidden = false
+        self.lblError.text = AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue
     }
 }

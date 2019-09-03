@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Toast_Swift
 
 class WireRateController: BaseViewController {
     @IBOutlet weak var lblTotalAmount: UILabel!
@@ -86,8 +85,7 @@ class WireRateController: BaseViewController {
     }
 
     @IBAction func whyNoRefund_clicked(_ sender: UIButton) {
-        self.view.makeToast("Fortunately for you, the currency hasn't changed against you! You sent the money on the best day in the past week", duration: 3.0, position: .bottom)
-
+        self.toast(message: "Fortunately for you, the currency hasn't changed against you! You sent the money on the best day in the past week")
     }
     
     @IBAction func btnClaimRefund_clicked(_ sender: UIButton) {

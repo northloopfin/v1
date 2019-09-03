@@ -15,12 +15,10 @@ class SignupStepConfirm: BaseViewController {
     
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
     @IBOutlet weak var passportTextField: UITextField!
-    @IBOutlet weak var DOBTextField: UITextField!
     @IBOutlet weak var universityTextField: UITextField!
     @IBOutlet weak var arrivalDate: UITextField!
 
     @IBOutlet weak var passportHeightConstraint:NSLayoutConstraint!
-    @IBOutlet weak var dobHeightConstraint:NSLayoutConstraint!
     @IBOutlet weak var universityHeightConstraint:NSLayoutConstraint!
     @IBOutlet weak var arrivalHeightConstraint:NSLayoutConstraint!
 
@@ -41,21 +39,16 @@ class SignupStepConfirm: BaseViewController {
     //validation form here
     
     func validateForm(){
-        
-        if Validations.isValidDob(dateString: self.DOBTextField.text ?? ""){
-            self.saveDataToRealm()
-            //update SignupFlowdata
-            self.updateSignupFlowData()
-            logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Address"])
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
-            vc.signupFlowData=self.signupFlowData
-            self.navigationController?.pushViewController(vc, animated: false)
-        }else{
-            //show error for age
-            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.DOB_NOT_VALID.rawValue)
-        }
+        self.saveDataToRealm()
+        //update SignupFlowdata
+        self.updateSignupFlowData()
+        logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Address"])
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "VerifyAddressViewController") as! VerifyAddressViewController
+        vc.signupFlowData=self.signupFlowData
+        self.navigationController?.pushViewController(vc, animated: false)
     }
+    
     //adding values to model class
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
@@ -69,12 +62,6 @@ class SignupStepConfirm: BaseViewController {
                 self.signupFlowData.arrivalDate = String(arrivaleDate.millisecondsSince1970)
             }
             
-            let DOBArr = self.DOBTextField.text!.components(separatedBy: "/")
-            self.signupFlowData.documents.day = Int(DOBArr[0]) ?? 0
-            self.signupFlowData.documents.month = Int(DOBArr[1]) ?? 0
-            self.signupFlowData.documents.year = Int(DOBArr[2]) ?? 0
-            // add passport as virtual document
-            
             let ssnVirtualDoc = self.signupFlowData.documents.virtualDocs.filter{$0.documentType == "SSN"}
             if (ssnVirtualDoc.count == 0){
                 let passport:SignupFlowAlDoc = SignupFlowAlDoc.init(documentValue: self.passportTextField.text!, documentType: "PASSPORT")
@@ -82,7 +69,6 @@ class SignupStepConfirm: BaseViewController {
                 documents.virtualDocs.append(passport)
             }
         }
-        
     }
     
     // Life Cycle of Controller
@@ -114,14 +100,11 @@ class SignupStepConfirm: BaseViewController {
             }
         }
         self.customProgressView.progressView.setProgress(0.17*5, animated: true)
-        self.DOBTextField.inputView = UIView.init(frame: CGRect.zero)
-        self.DOBTextField.inputAccessoryView = UIView.init(frame: CGRect.zero)
         self.arrivalDate.inputView = UIView.init(frame: CGRect.zero)
         self.arrivalDate.inputAccessoryView = UIView.init(frame: CGRect.zero)
         //Set text color to view components
         self.mainTitleLbl.textColor = Colors.MainTitleColor
         self.passportTextField.textColor = Colors.DustyGray155155155
-        self.DOBTextField.textColor = Colors.DustyGray155155155
         self.arrivalDate.textColor = Colors.DustyGray155155155
         self.universityTextField.textColor = Colors.DustyGray155155155
         
@@ -129,7 +112,6 @@ class SignupStepConfirm: BaseViewController {
         // Set Font to view components
         self.mainTitleLbl.font = AppFonts.mainTitleCalibriBold25
         self.passportTextField.font = AppFonts.textBoxCalibri16
-        self.DOBTextField.font = AppFonts.textBoxCalibri16
         self.arrivalDate.font = AppFonts.textBoxCalibri16
         self.universityTextField.font = AppFonts.textBoxCalibri16
         self.nextBtn.titleLabel?.font = AppFonts.btnTitleCalibri18
@@ -138,7 +120,6 @@ class SignupStepConfirm: BaseViewController {
     
     func updateTextFieldUI(){
         self.passportTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        self.DOBTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.arrivalDate.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.universityTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
@@ -157,12 +138,10 @@ class SignupStepConfirm: BaseViewController {
             }
         }
         
-        self.DOBTextField.applyAttributesWithValues(placeholderText: "Date of Birth*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.arrivalDate.applyAttributesWithValues(placeholderText: "Arrival Date (optional)", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         self.universityTextField.applyAttributesWithValues(placeholderText: "University*", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
         
         self.passportTextField.setLeftPaddingPoints(19)
-        self.DOBTextField.setLeftPaddingPoints(19)
         self.arrivalDate.setLeftPaddingPoints(19)
         self.universityTextField.setLeftPaddingPoints(19)
     }
@@ -180,7 +159,6 @@ class SignupStepConfirm: BaseViewController {
     func saveDataToRealm(){
         let info:BasicInfo = BasicInfo()
         info.passportNumber=self.passportTextField.text ?? ""
-        info.DOB=self.DOBTextField.text ?? ""
         info.arrivalDate = self.arrivalDate.text ?? ""
         info.university=self.universityTextField.text ?? ""
         let result = RealmHelper.retrieveBasicInfo()
@@ -196,7 +174,6 @@ class SignupStepConfirm: BaseViewController {
             //self.nextBtn.isEnabled=true
             let info = self.basicInfo.first!
             self.passportTextField.text = info.passportNumber
-            self.DOBTextField.text = info.DOB
             self.universityTextField.text = info.university
             self.arrivalDate.text = info.arrivalDate
             self.checkForMandatoryFields()
@@ -224,8 +201,6 @@ class SignupStepConfirm: BaseViewController {
         
         toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
-        self.DOBTextField.inputAccessoryView = toolbar
-        self.DOBTextField.inputView = datePicker
         self.arrivalDate.inputAccessoryView = toolbar
         self.arrivalDate.inputView = datePicker
     }
@@ -235,7 +210,6 @@ class SignupStepConfirm: BaseViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         if view.tag == 0{
-            self.DOBTextField.text = formatter.string(from: datePicker.date)
 
         }else{
             self.arrivalDate.text = formatter.string(from: datePicker.date)
@@ -264,13 +238,10 @@ extension SignupStepConfirm:UITextFieldDelegate{
             let ssnVirtualDoc = self.signupFlowData.documents.virtualDocs.filter{$0.documentType == "SSN"}
             if (ssnVirtualDoc.count > 0){
                 // SSN User
-                if (!(self.DOBTextField.text?.isEmpty)!)
-                {
                     self.nextBtn.isEnabled=true
-                }
             }else{
                 // Non SSN User
-                if (!(self.passportTextField.text?.isEmpty)! && !(self.DOBTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)!
+                if (!(self.passportTextField.text?.isEmpty)! && !(self.universityTextField.text?.isEmpty)!
                     )
                 {
                     self.nextBtn.isEnabled=true
@@ -281,9 +252,7 @@ extension SignupStepConfirm:UITextFieldDelegate{
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.DOBTextField{
-            self.showDatePicker(tag: 0)
-        }else if textField == self.arrivalDate{
+        if textField == self.arrivalDate{
             self.showDatePicker(tag: 1)
         }
     }

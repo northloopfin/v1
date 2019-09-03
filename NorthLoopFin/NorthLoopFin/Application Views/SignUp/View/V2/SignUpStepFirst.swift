@@ -19,9 +19,14 @@ class SignUpStepFirst: BaseViewController {
     @IBOutlet weak var termsAgreementLbl: LabelWithLetterSpace!
     @IBOutlet weak var cardDepositAgreementLbl: LabelWithLetterSpace!
     
+    @IBOutlet weak var vwPasswordHint: UIView!
     @IBOutlet weak var termsPolicyCheckBox: CheckBox!
     @IBOutlet weak var depositCardCheckbox: CheckBox!
 
+    @IBOutlet weak var lblHintMinCharacters: UILabel!
+    @IBOutlet weak var lblHintSpecialCharacters: UILabel!
+    @IBOutlet weak var lblHintNumber: UILabel!
+    @IBOutlet weak var lblHintUppercase: UILabel!
     //var to store state of checkboxes
     var isTermsPolicyChecked:Bool=false
     var isDepositCardAgreementChecked:Bool=false
@@ -154,8 +159,35 @@ class SignUpStepFirst: BaseViewController {
         }else{
             self.checkForMandatoryFields()
         }
+        
+        self.vwPasswordHint.isHidden = textField != paswwordTextField
+        
+        if textField == paswwordTextField {
+            lblHintMinCharacters.textColor = textField.text!.count > 7 ? Colors.AmountGreen241770 : Colors.PurpleColor17673149
+            lblHintUppercase.textColor = isPasswordUpperCase() ? Colors.AmountGreen241770 : Colors.PurpleColor17673149
+            lblHintNumber.textColor = isPasswordNumber() ? Colors.AmountGreen241770 : Colors.PurpleColor17673149
+            lblHintSpecialCharacters.textColor = isPasswordSpecialChar() ? Colors.AmountGreen241770 : Colors.PurpleColor17673149
+        }
     }
     
+    func isPasswordUpperCase() -> Bool{
+        let capitalLetterRegEx  = ".*[A-Z]+.*"
+        let texttest = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
+        return texttest.evaluate(with: paswwordTextField.text)
+    }
+
+    func isPasswordSpecialChar() -> Bool{
+        let capitalLetterRegEx  = ".*[!&%$@()/]+.*"
+        let texttest = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
+        return texttest.evaluate(with: paswwordTextField.text)
+    }
+
+    func isPasswordNumber() -> Bool{
+        let capitalLetterRegEx  = ".*[0-9]+.*"
+        let texttest = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
+        return texttest.evaluate(with: paswwordTextField.text)
+    }
+
     func checkForMandatoryFields(){
         if (!(self.paswwordTextField.text?.isEmpty)! && !(self.confirmPassTextField.text?.isEmpty)! && !(self.emailTextField.text?.isEmpty)! && self.isTermsPolicyChecked && self.isDepositCardAgreementChecked
             )
@@ -172,6 +204,12 @@ class SignUpStepFirst: BaseViewController {
 extension SignUpStepFirst:UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.checkForMandatoryFields()
+        vwPasswordHint.isHidden = true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        vwPasswordHint.isHidden = true
+        return true
     }
 }
 
@@ -196,8 +234,7 @@ extension SignUpStepFirst:SignupAuthDelegate{
     }
     
     func moveToSignupStepSecond(data:SignupFlowData) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "CreateAccountV2ViewController") as! CreateAccountV2ViewController
+        let vc = self.getControllerWithIdentifier("PersonalDetailViewController") as! PersonalDetailViewController
         vc.signupFlowData=data
         self.navigationController?.pushViewController(vc, animated: false)
     }

@@ -107,7 +107,7 @@ extension CashbackController: FetchCashbackDelegate{
 
 extension CashbackController: RedeemCashbackDelegate{
     func didRedeemCashback(data: RedeemCashback) {
-        self.showAlert(title: "", message: "You'll see your account credited in a few minutes!")
+        self.toast(message: "You'll see your account credited in a few minutes!")
         self.lblCashbackAmount.text = "$0"
         self.btnRedeem.isEnabled = false
     }

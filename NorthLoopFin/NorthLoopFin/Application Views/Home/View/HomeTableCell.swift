@@ -103,9 +103,8 @@ class HomeTableCell: UITableViewCell {
             self.beneficiaryName.text = "Withdrawal"
         }
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
-        
-        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
-        self.transactionAmt.textColor = data.to.user.id == currentUser?.userID ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
+                
+        self.transactionAmt.textColor = data.isIncoming ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
 
         if ["returned","canceled"].contains(data.recentStatus.status.lowercased()){
             let attributeString =  NSMutableAttributedString(string: self.transactionAmt.text!)

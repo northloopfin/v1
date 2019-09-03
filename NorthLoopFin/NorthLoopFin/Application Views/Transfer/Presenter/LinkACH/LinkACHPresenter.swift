@@ -38,6 +38,7 @@ class LinkACHPresenter: ResponseCallback{
     //    MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.delegate?.hideLoader()
+        self.delegate?.didSentLinkACH()
         //save this user to local memory of app
         //let response = responseObject as! ResetPassword
     }
