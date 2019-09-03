@@ -42,7 +42,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1j-tb-QnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1988" y="-35"/>
+            <point key="canvasLocation" x="-2367" y="-36"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -60,7 +60,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Evening, Guest" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-sg-P5N" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="133" width="169" height="24.5"/>
+                                        <rect key="frame" x="25" y="134" width="191.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                         <rect key="frame" x="25" y="202.5" width="325" height="47"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh1-a3-Y8h" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="36" y="13.5" width="106" height="20"/>
+                                                <rect key="frame" x="36" y="14" width="116" height="19"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-6N-ViP" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="283.5" y="13.5" width="16.5" height="20"/>
+                                                <rect key="frame" x="282" y="14" width="18" height="19"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -282,7 +282,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUCCESS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rt7-h8-6Wm" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="154" width="47" height="30"/>
+                                        <rect key="frame" x="137" y="154" width="61.5" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.90588235289999997" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="IkN-FO-U2h"/>
@@ -350,7 +350,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Payment details" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJM-1g-3sF" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="25" width="90.5" height="15"/>
+                                                <rect key="frame" x="25" y="25" width="100.5" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="2My-cH-f3n"/>
                                                 </constraints>
@@ -678,21 +678,8 @@
                                                             <outlet property="delegate" destination="Zrh-81-Kal" id="C0e-YA-fAp"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SI4-vm-lbj">
-                                                        <rect key="frame" x="25" y="83" width="325" height="50"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="CIc-zb-CID"/>
-                                                        </constraints>
-                                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="Zrh-81-Kal" id="f3O-6F-5q2"/>
-                                                        </connections>
-                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-oK-gfL" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="25" y="270" width="325" height="45"/>
+                                                        <rect key="frame" x="25" y="209" width="325" height="45"/>
                                                         <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="WZR-gV-3A8"/>
@@ -720,7 +707,7 @@
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvv-e3-gaL">
-                                                        <rect key="frame" x="25" y="145" width="325" height="50"/>
+                                                        <rect key="frame" x="25" y="84" width="325" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Mv1-1d-DAT"/>
@@ -733,7 +720,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-xB-y1i">
-                                                        <rect key="frame" x="25" y="207" width="325" height="50"/>
+                                                        <rect key="frame" x="25" y="146" width="325" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="POM-lS-7Za"/>
@@ -748,21 +735,18 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="vQl-xB-y1i" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="0I7-Jo-H6h"/>
+                                                    <constraint firstItem="vQl-xB-y1i" firstAttribute="trailing" secondItem="bvv-e3-gaL" secondAttribute="trailing" id="0Sj-Nu-kcm"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="top" secondItem="whs-du-iTR" secondAttribute="bottom" constant="12" id="4Jy-rM-Kob"/>
+                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="leading" secondItem="vQl-xB-y1i" secondAttribute="leading" id="8Mz-fv-7dF"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="top" secondItem="7S4-On-lFi" secondAttribute="top" constant="22" id="96i-YV-57b"/>
-                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="C0N-Yh-Ts8"/>
-                                                    <constraint firstItem="SI4-vm-lbj" firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" id="EAw-XA-bZ7"/>
-                                                    <constraint firstItem="SI4-vm-lbj" firstAttribute="top" secondItem="whs-du-iTR" secondAttribute="bottom" constant="11" id="EPz-tR-Hn8"/>
+                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="vQl-xB-y1i" secondAttribute="trailing" id="DfN-sL-4MH"/>
                                                     <constraint firstItem="whs-du-iTR" firstAttribute="leading" secondItem="7S4-On-lFi" secondAttribute="leading" constant="25" id="ETg-KF-q0W"/>
-                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="KOP-Ew-9dk"/>
-                                                    <constraint firstItem="bsU-oK-gfL" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="Mv3-GN-98s"/>
-                                                    <constraint firstItem="SI4-vm-lbj" firstAttribute="leading" secondItem="whs-du-iTR" secondAttribute="leading" id="RM5-tK-Tdj"/>
-                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="top" secondItem="SI4-vm-lbj" secondAttribute="bottom" constant="12" id="Z1k-zK-tdD"/>
-                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="leading" secondItem="SI4-vm-lbj" secondAttribute="leading" id="ZPN-2H-Wgo"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="leading" secondItem="whs-du-iTR" secondAttribute="leading" id="MNY-ML-4gB"/>
+                                                    <constraint firstItem="bvv-e3-gaL" firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" id="T8q-sF-eA8"/>
                                                     <constraint firstItem="vQl-xB-y1i" firstAttribute="top" secondItem="bvv-e3-gaL" secondAttribute="bottom" constant="12" id="brz-aT-T2X"/>
                                                     <constraint firstItem="bsU-oK-gfL" firstAttribute="top" secondItem="vQl-xB-y1i" secondAttribute="bottom" constant="13" id="d8o-39-UnZ"/>
-                                                    <constraint firstItem="vQl-xB-y1i" firstAttribute="trailing" secondItem="SI4-vm-lbj" secondAttribute="trailing" id="g68-fb-QZX"/>
                                                     <constraint firstAttribute="trailing" secondItem="whs-du-iTR" secondAttribute="trailing" constant="25" id="jbj-yx-8hl"/>
+                                                    <constraint firstItem="vQl-xB-y1i" firstAttribute="leading" secondItem="bvv-e3-gaL" secondAttribute="leading" id="r2S-cT-f8y"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -869,11 +853,9 @@
                         <viewLayoutGuide key="safeArea" id="2xh-3O-Ud5"/>
                     </view>
                     <connections>
-                        <outlet property="DOBTextField" destination="SI4-vm-lbj" id="d0O-nV-keu"/>
                         <outlet property="arrivalDate" destination="vQl-xB-y1i" id="N6p-Hv-YAJ"/>
                         <outlet property="arrivalHeightConstraint" destination="POM-lS-7Za" id="rXS-HG-jUf"/>
                         <outlet property="customProgressView" destination="mNY-Cb-C2b" id="zsM-Kc-dUK"/>
-                        <outlet property="dobHeightConstraint" destination="CIc-zb-CID" id="HxQ-Us-PX5"/>
                         <outlet property="mainTitleLbl" destination="ENm-rI-Zte" id="mdc-TR-qca"/>
                         <outlet property="nextBtn" destination="bsU-oK-gfL" id="Ty7-Ev-Vui"/>
                         <outlet property="passportHeightConstraint" destination="fif-Bo-ldr" id="5yT-Tp-64V"/>
@@ -898,10 +880,10 @@
                                 <rect key="frame" x="0.0" y="0.5" width="375" height="269.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobileVerifiaction" translatesAutoresizingMaskIntoConstraints="NO" id="5B0-xc-CxS">
-                                        <rect key="frame" x="29" y="48" width="67" height="113.5"/>
+                                        <rect key="frame" x="29" y="49" width="16" height="113.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code we sent to your mobile number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kLs-Vu-llU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="170" width="329" height="50"/>
+                                        <rect key="frame" x="23" y="171" width="329" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pxh-vC-DR6"/>
                                         </constraints>
@@ -915,7 +897,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent to 123 673 9875" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-Uw-mz1">
-                                        <rect key="frame" x="29" y="232.5" width="155.5" height="22"/>
+                                        <rect key="frame" x="29" y="233.5" width="173.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                         <color key="textColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -941,7 +923,7 @@
                                         <rect key="frame" x="74.5" y="143" width="226" height="82"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbe-SA-efE" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="86" y="49" width="54.5" height="22"/>
+                                                <rect key="frame" x="82.5" y="49" width="61.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1193,7 +1175,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldx-yJ-P2E" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="133" width="129" height="31"/>
+                                <rect key="frame" x="25" y="133" width="144" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1204,7 +1186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ID type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmA-jl-4yA" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="172" width="138" height="22"/>
+                                <rect key="frame" x="25" y="170.5" width="153.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1215,7 +1197,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-xo-vSO" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="206" width="46" height="34"/>
+                                <rect key="frame" x="25" y="203.5" width="46" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50X-HH-94b">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="34"/>
@@ -1234,7 +1216,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
-                                <rect key="frame" x="25" y="265" width="46" height="69"/>
+                                <rect key="frame" x="25" y="262.5" width="46" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
@@ -1244,7 +1226,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Front of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pS-Lf-OpI" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="124" y="25.5" width="96.5" height="18"/>
+                                        <rect key="frame" x="124" y="25.5" width="109.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1276,7 +1258,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
-                                <rect key="frame" x="25" y="351" width="46" height="69"/>
+                                <rect key="frame" x="25" y="348.5" width="46" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="69"/>
@@ -1292,7 +1274,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kab-2i-Q5o" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="124" y="25.5" width="92.5" height="18"/>
+                                        <rect key="frame" x="124" y="25.5" width="108.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1318,7 +1300,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Na-LzZ" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="500" width="46" height="45"/>
+                                <rect key="frame" x="25" y="497.5" width="46" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jp4-O9-PWE"/>
@@ -1389,7 +1371,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-Cd-362" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="104" width="136" height="31"/>
+                                <rect key="frame" x="25" y="104" width="144" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1400,7 +1382,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ID type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8A-3Y-RvI" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="163" width="145" height="22"/>
+                                <rect key="frame" x="25" y="161.5" width="153.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1411,7 +1393,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-vg-Owi" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="197" width="325" height="34"/>
+                                <rect key="frame" x="25" y="194.5" width="325" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-Kp-deV">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
@@ -1430,7 +1412,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-xW-A7B">
-                                <rect key="frame" x="25" y="256" width="325" height="69"/>
+                                <rect key="frame" x="25" y="253.5" width="325" height="69"/>
                                 <subviews>
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-ev-rK7">
                                         <rect key="frame" x="21" y="12" width="60" height="45"/>
@@ -1440,7 +1422,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Front of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJi-dC-hog" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="25.5" width="96.5" height="18"/>
+                                        <rect key="frame" x="125" y="25.5" width="109.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1472,7 +1454,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PX-9n-Y8b">
-                                <rect key="frame" x="25" y="335" width="325" height="69"/>
+                                <rect key="frame" x="25" y="332.5" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFs-V2-k3t">
                                         <rect key="frame" x="96" y="0.0" width="229" height="69"/>
@@ -1487,7 +1469,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQY-UN-drV" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="25.5" width="92.5" height="18"/>
+                                        <rect key="frame" x="125" y="25.5" width="108.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1516,7 +1498,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCy-ip-oLr" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="500" width="325" height="45"/>
+                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="PUf-ZF-Lkh"/>
@@ -1532,7 +1514,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH5-E1-Z8N">
-                                <rect key="frame" x="25" y="414" width="325" height="69"/>
+                                <rect key="frame" x="25" y="411.5" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-Pw-XBa">
                                         <rect key="frame" x="96" y="0.0" width="229" height="69"/>
@@ -1548,7 +1530,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Back of ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwn-zx-zzU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="125" y="24" width="92.5" height="21"/>
+                                        <rect key="frame" x="125" y="24" width="108.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1577,7 +1559,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-NH-3af" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="12" y="143" width="351" height="8"/>
+                                <rect key="frame" x="12" y="141.5" width="351" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="jXF-Fi-w20"/>
@@ -1649,7 +1631,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selfie Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bft-H7-Xdw" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="123.5" y="50" width="128" height="125"/>
+                                <rect key="frame" x="118.5" y="50" width="138" height="125"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1676,7 +1658,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsB-wJ-AGv" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="118" y="45" width="89" height="20"/>
+                                        <rect key="frame" x="112.5" y="45" width="100" height="19"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                         <color key="textColor" red="0.16078431372549018" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1803,7 +1785,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMU-4A-xwK" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="136" width="191" height="31"/>
+                                <rect key="frame" x="23" y="136" width="210" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="8GH-oz-wTf"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="slH-1j-pWJ"/>
@@ -1857,7 +1839,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up you agree to the " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPy-qr-sd2" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="94" y="482" width="187" height="18.5"/>
+                                <rect key="frame" x="83" y="482" width="209" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1868,7 +1850,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGV-p3-fqt" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="119.5" y="503.5" width="136" height="18.5"/>
+                                <rect key="frame" x="111.5" y="502.5" width="152" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                 <color key="textColor" red="0.83529411764705885" green="0.72941176470588232" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1958,7 +1940,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your registered address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-c1-lef" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="111" width="243" height="31"/>
+                                <rect key="frame" x="23" y="111" width="264.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Ino-gf-W5k"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="fch-zk-BvQ"/>
@@ -1995,13 +1977,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your US Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
-                                <rect key="frame" x="25" y="175" width="325" height="22"/>
+                                <rect key="frame" x="25" y="175" width="325" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-X9-ITF">
-                                <rect key="frame" x="25" y="212" width="325" height="45"/>
+                                <rect key="frame" x="25" y="211" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="VMo-WT-MOW"/>
@@ -2014,7 +1996,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-xB-SDV">
-                                <rect key="frame" x="25" y="266" width="325" height="45"/>
+                                <rect key="frame" x="25" y="265" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eC5-oU-hdL"/>
@@ -2027,7 +2009,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-Py-uCM">
-                                <rect key="frame" x="25" y="320" width="325" height="45"/>
+                                <rect key="frame" x="25" y="319" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="kcN-Yk-WNP"/>
@@ -2040,7 +2022,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWA-Jo-NJU">
-                                <rect key="frame" x="25" y="374" width="325" height="45"/>
+                                <rect key="frame" x="25" y="373" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0Jz-iT-1Kw"/>
@@ -2053,7 +2035,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bet-Qc-sQj">
-                                <rect key="frame" x="25" y="428" width="325" height="45"/>
+                                <rect key="frame" x="25" y="427" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vWg-Zu-xgi"/>
@@ -2214,7 +2196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBY-eG-RzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17548" y="-57"/>
+            <point key="canvasLocation" x="17527" y="-57"/>
         </scene>
         <!--All Done View Controller-->
         <scene sceneID="x6U-mZ-9ev">
@@ -3573,7 +3555,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                                 <rect key="frame" x="0.0" y="20" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxe-g2-eyM" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="95" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="100" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="BX0-JV-LcX"/>
                                         </constraints>
@@ -3937,7 +3919,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                                 <rect key="frame" x="0.0" y="560" width="375" height="107"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bye-7W-UYq">
-                                        <rect key="frame" x="147.5" y="42" width="80" height="22"/>
+                                        <rect key="frame" x="142.5" y="42" width="90.5" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="aFU-D7-yI9"/>
                                         </constraints>
@@ -4177,7 +4159,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-ry-FVq" customClass="CommonTable" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="325" width="325" height="204"/>
+                                <rect key="frame" x="25" y="44" width="325" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="pho-4E-MfM"/>
@@ -4189,7 +4171,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Legal Stuff" translatesAutoresizingMaskIntoConstraints="NO" id="xgT-LP-Y2h">
-                                <rect key="frame" x="87" y="0.0" width="288" height="297"/>
+                                <rect key="frame" x="87" y="0.0" width="288" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4474,7 +4456,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order A New Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-eN-CK5" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="194" width="266" height="40.5"/>
+                                <rect key="frame" x="25" y="194" width="271" height="40.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40.5" id="Xhg-Jb-SRX"/>
                                 </constraints>
@@ -4632,7 +4614,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add $ to your North Loop card to Sending" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLZ-wU-F5Z" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="61" y="223" width="253" height="40"/>
+                                <rect key="frame" x="46.5" y="223" width="282.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VLn-nm-baU"/>
                                 </constraints>
@@ -5170,15 +5152,15 @@ up and site back and relax.</string>
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="Osz-9E-BWI" customClass="LoginViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQc-V8-KDu" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Srp-Bt-mJa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy8-Hi-yGt" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="381" width="325" height="45"/>
+                                <rect key="frame" x="25" y="361" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7uA-x8-xEK"/>
@@ -5203,7 +5185,7 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-OD-yLW">
-                                <rect key="frame" x="25" y="461" width="325" height="45"/>
+                                <rect key="frame" x="25" y="441" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="WZq-MR-K2a"/>
@@ -5222,7 +5204,7 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Qe-dSd">
-                                <rect key="frame" x="25" y="158" width="325" height="50"/>
+                                <rect key="frame" x="25" y="138" width="325" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XJq-bB-Ca1"/>
@@ -5235,7 +5217,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLl-Nt-dZh">
-                                <rect key="frame" x="25" y="223" width="325" height="50"/>
+                                <rect key="frame" x="25" y="203" width="325" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zLT-Xg-slH"/>
@@ -5248,7 +5230,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-q3-GWQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="179.5" y="434" width="16" height="19"/>
+                                <rect key="frame" x="179.5" y="414" width="16" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="JdV-PM-fba"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="y8R-gk-xoR"/>
@@ -5263,14 +5245,14 @@ up and site back and relax.</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignInLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LMG-Zb-GLr">
-                                <rect key="frame" x="25" y="50" width="144" height="42"/>
+                                <rect key="frame" x="25" y="30" width="144" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="SLH-ab-LBI"/>
                                     <constraint firstAttribute="width" constant="144" id="XS3-sb-Dze"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="133.5" y="328" width="108" height="31"/>
+                                <rect key="frame" x="133.5" y="308" width="108" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
@@ -5289,7 +5271,7 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-lY-QMx" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="55" y="280" width="108" height="31"/>
+                                <rect key="frame" x="55" y="260" width="108" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="8GE-Kv-yBG"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="Kcp-cX-Tph"/>
@@ -5310,7 +5292,7 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8Q-r1-RkV" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="112" width="143" height="21"/>
+                                <rect key="frame" x="25" y="92" width="143" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="0ST-Ln-vLP"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zbj-3s-bI7"/>
@@ -5325,7 +5307,7 @@ up and site back and relax.</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vla-3W-ISn" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="283" width="25" height="25"/>
+                                <rect key="frame" x="25" y="263" width="25" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -5349,7 +5331,7 @@ up and site back and relax.</string>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXW-u0-7Do">
-                                <rect key="frame" x="305" y="233" width="30" height="30"/>
+                                <rect key="frame" x="305" y="213" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Jgg-lP-JPF"/>
                                     <constraint firstAttribute="width" constant="30" id="v3K-gf-GC6"/>
@@ -5419,7 +5401,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9f-59-tQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18187.5" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="-2857" y="764"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="bZm-Vx-pOE">
@@ -5501,7 +5483,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjn-gR-whm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18844" y="-57"/>
+            <point key="canvasLocation" x="-2098" y="764"/>
         </scene>
         <!--Promo Code View Controller-->
         <scene sceneID="2iU-YL-bEw">
@@ -5923,7 +5905,7 @@ up and site back and relax.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-ji-9Xe" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="50" width="40" height="31"/>
+                                <rect key="frame" x="25" y="50" width="44" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -5934,7 +5916,7 @@ up and site back and relax.</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All 3 pages" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwd-Cn-S4L" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="83" width="325" height="40"/>
+                                <rect key="frame" x="25" y="81.5" width="325" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cbb-0N-DnL"/>
                                 </constraints>
@@ -5947,7 +5929,7 @@ up and site back and relax.</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nM-k3-WwT">
-                                <rect key="frame" x="25" y="143" width="325" height="200"/>
+                                <rect key="frame" x="25" y="141.5" width="325" height="200"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-o9-sQt">
                                         <rect key="frame" x="0.0" y="0.0" width="154.5" height="154.5"/>
@@ -6012,7 +5994,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6L-eP-zAp">
-                                <rect key="frame" x="25" y="343" width="325" height="200"/>
+                                <rect key="frame" x="25" y="341.5" width="325" height="200"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTg-RS-vmo">
                                         <rect key="frame" x="0.0" y="0.0" width="154.5" height="154.5"/>
@@ -6075,7 +6057,7 @@ up and site back and relax.</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Visa" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ5-oy-5B7" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="58.5" y="32" width="71.5" height="19"/>
+                                        <rect key="frame" x="50.5" y="32" width="79.5" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="Sy4-EJ-VcY"/>
                                         </constraints>
@@ -6285,7 +6267,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your home address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPM-U6-dcU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="129" width="198.5" height="31"/>
+                                <rect key="frame" x="23" y="129" width="216.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="7aZ-W2-gPv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="K2H-HN-IhB"/>
@@ -6322,13 +6304,13 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-kD-l2t">
-                                <rect key="frame" x="25" y="168" width="325" height="22"/>
+                                <rect key="frame" x="25" y="168" width="325" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXf-zw-6GU">
-                                <rect key="frame" x="25" y="210" width="325" height="45"/>
+                                <rect key="frame" x="25" y="209" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tdn-SC-446"/>
@@ -6341,7 +6323,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Z9-bsR">
-                                <rect key="frame" x="25" y="264" width="325" height="45"/>
+                                <rect key="frame" x="25" y="263" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="4cX-aW-AFu"/>
@@ -6354,7 +6336,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9NS-5o-XiT">
-                                <rect key="frame" x="88" y="318" width="262" height="45"/>
+                                <rect key="frame" x="88" y="317" width="262" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="L4m-KR-pc1"/>
@@ -6367,7 +6349,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-c1-NyD">
-                                <rect key="frame" x="25" y="318" width="55" height="45"/>
+                                <rect key="frame" x="25" y="317" width="55" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="qkG-gi-TvP"/>
@@ -6380,7 +6362,7 @@ up and site back and relax.</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-nf-fDD">
-                                <rect key="frame" x="25" y="372" width="325" height="45"/>
+                                <rect key="frame" x="25" y="371" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="tn9-QK-0e8"/>
@@ -6876,7 +6858,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUpForm" translatesAutoresizingMaskIntoConstraints="NO" id="TCY-HI-fXy">
-                                        <rect key="frame" x="12" y="25" width="156" height="90"/>
+                                        <rect key="frame" x="12" y="25" width="16" height="90"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provide:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAQ-Ru-W1p" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="24" y="126" width="215" height="20"/>
@@ -7100,7 +7082,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-XA-Vbh" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="114.5" y="16.5" width="146" height="30"/>
+                                        <rect key="frame" x="107" y="16.5" width="161" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="owH-e3-MmN"/>
                                         </constraints>
@@ -7160,7 +7142,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgM-1r-Irr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.20000000000005" y="630.13493253373315"/>
+            <point key="canvasLocation" x="-406" y="720"/>
         </scene>
         <!--Wire Rate Controller-->
         <scene sceneID="3fv-Ks-F4I">
@@ -7299,7 +7281,7 @@ We’ve sent an email confirming.</string>
                                         <rect key="frame" x="45" y="155" width="285" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SORRY, NO REFUND AVAILABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orL-S6-8fi" userLabel="Error message Label" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="67.5" y="2" width="150.5" height="18"/>
+                                                <rect key="frame" x="52.5" y="2" width="180" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="fno-Ys-neh"/>
                                                 </constraints>
@@ -7308,7 +7290,7 @@ We’ve sent an email confirming.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error_sign" translatesAutoresizingMaskIntoConstraints="NO" id="O2j-Nv-hLj" userLabel="Error Image View">
-                                                <rect key="frame" x="40.5" y="2.5" width="17" height="17"/>
+                                                <rect key="frame" x="25.5" y="2.5" width="17" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="17" id="4ck-Gb-NT4"/>
                                                     <constraint firstAttribute="height" constant="17" id="SWF-1M-xxR"/>
@@ -7626,11 +7608,11 @@ We’ve sent an email confirming.</string>
             <objects>
                 <viewController storyboardIdentifier="SignUpStepFirst" id="qnq-tZ-bhZ" customClass="SignUpStepFirst" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NGs-EO-6NQ" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-Uw-bfU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets get started!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSQ-ht-gdc" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="25" y="25" width="167.5" height="25"/>
@@ -7665,7 +7647,7 @@ We’ve sent an email confirming.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-xN-3FM">
-                                <rect key="frame" x="0.0" y="110" width="375" height="240"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="240"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36D-7l-2EQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
@@ -7845,7 +7827,7 @@ We’ve sent an email confirming.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-Zf-3DG">
-                                <rect key="frame" x="0.0" y="360" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="340" width="375" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKt-2A-7DC">
                                         <rect key="frame" x="0.0" y="50" width="375" height="50"/>
@@ -7967,7 +7949,7 @@ We’ve sent an email confirming.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-ba-Xaz" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="587" width="325" height="45"/>
+                                <rect key="frame" x="25" y="523" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="PSk-n8-Ygw"/>
@@ -8027,7 +8009,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAB-kT-S9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610.4000000000001" y="629.2353823088456"/>
+            <point key="canvasLocation" x="-1121" y="764"/>
         </scene>
         <!--Personal Detail View Controller-->
         <scene sceneID="qWi-1X-Kcq">
@@ -8054,8 +8036,8 @@ We’ve sent an email confirming.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjh-9F-flH" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="81" width="351" height="8"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjh-9F-flH" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="81" width="325" height="8"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="xOi-9I-Z5w"/>
@@ -8066,14 +8048,14 @@ We’ve sent an email confirming.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="08q-tr-yID"/>
                                     <constraint firstItem="j0G-2v-DG3" firstAttribute="top" secondItem="5iw-Rd-TL1" secondAttribute="top" constant="25" id="5Eq-aY-1xU"/>
-                                    <constraint firstItem="vjh-9F-flH" firstAttribute="leading" secondItem="5iw-Rd-TL1" secondAttribute="leading" constant="12" id="8q7-Mh-mAY"/>
+                                    <constraint firstItem="vjh-9F-flH" firstAttribute="leading" secondItem="5iw-Rd-TL1" secondAttribute="leading" constant="25" id="8q7-Mh-mAY"/>
                                     <constraint firstItem="vjh-9F-flH" firstAttribute="top" secondItem="j0G-2v-DG3" secondAttribute="bottom" constant="31" id="R2w-KK-cPv"/>
                                     <constraint firstItem="j0G-2v-DG3" firstAttribute="leading" secondItem="5iw-Rd-TL1" secondAttribute="leading" constant="25" id="WwG-s2-TQL"/>
-                                    <constraint firstAttribute="trailing" secondItem="vjh-9F-flH" secondAttribute="trailing" constant="12" id="eJe-NW-wSW"/>
+                                    <constraint firstAttribute="trailing" secondItem="vjh-9F-flH" secondAttribute="trailing" constant="25" id="eJe-NW-wSW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYl-L8-4be">
-                                <rect key="frame" x="0.0" y="110" width="375" height="240"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="240"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6h-MT-e3s">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
@@ -8234,11 +8216,10 @@ We’ve sent an email confirming.</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="continueButtonAction:" destination="Bb5-p8-5tB" eventType="touchUpInside" id="Exo-9v-gQH"/>
-                                    <segue destination="ypx-IJ-C3X" kind="show" id="zYY-nk-VfC"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjX-TN-YuI" userLabel="Error View">
-                                <rect key="frame" x="20" y="360" width="335" height="20"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjX-TN-YuI" userLabel="Error View">
+                                <rect key="frame" x="20" y="370" width="335" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any error message here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt5-jc-k3a" userLabel="Error message Label" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                         <rect key="frame" x="22" y="2" width="313" height="18"/>
@@ -8272,14 +8253,13 @@ We’ve sent an email confirming.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YQN-RR-RIE" firstAttribute="trailing" secondItem="XjX-TN-YuI" secondAttribute="trailing" constant="20" id="0Ph-qY-gUM"/>
-                            <constraint firstItem="YYl-L8-4be" firstAttribute="top" secondItem="5iw-Rd-TL1" secondAttribute="bottom" id="1PT-BG-maz"/>
                             <constraint firstItem="XjX-TN-YuI" firstAttribute="top" secondItem="YYl-L8-4be" secondAttribute="bottom" constant="10" id="8u1-qK-xRH"/>
                             <constraint firstItem="YQN-RR-RIE" firstAttribute="bottom" secondItem="fH6-YC-dix" secondAttribute="bottom" constant="35" id="BHX-vr-sh5"/>
                             <constraint firstItem="YYl-L8-4be" firstAttribute="leading" secondItem="YQN-RR-RIE" secondAttribute="leading" id="DR3-7N-9z0"/>
                             <constraint firstItem="fH6-YC-dix" firstAttribute="leading" secondItem="YQN-RR-RIE" secondAttribute="leading" constant="25" id="Evp-Ey-7h1"/>
                             <constraint firstItem="XjX-TN-YuI" firstAttribute="leading" secondItem="YQN-RR-RIE" secondAttribute="leading" constant="20" id="Gwb-it-TZe"/>
                             <constraint firstItem="5iw-Rd-TL1" firstAttribute="leading" secondItem="YQN-RR-RIE" secondAttribute="leading" id="LGB-uz-blY"/>
-                            <constraint firstItem="YYl-L8-4be" firstAttribute="top" secondItem="5iw-Rd-TL1" secondAttribute="bottom" id="kp7-YQ-WSC"/>
+                            <constraint firstItem="YYl-L8-4be" firstAttribute="top" secondItem="5iw-Rd-TL1" secondAttribute="bottom" constant="10" id="TBB-mo-LQh"/>
                             <constraint firstItem="5iw-Rd-TL1" firstAttribute="trailing" secondItem="YQN-RR-RIE" secondAttribute="trailing" id="oha-YR-aDW"/>
                             <constraint firstItem="YYl-L8-4be" firstAttribute="trailing" secondItem="YQN-RR-RIE" secondAttribute="trailing" id="pS8-7f-a0Q"/>
                             <constraint firstItem="YQN-RR-RIE" firstAttribute="trailing" secondItem="fH6-YC-dix" secondAttribute="trailing" constant="25" id="rT7-Po-wL3"/>
@@ -8295,6 +8275,7 @@ We’ve sent an email confirming.</string>
                         <outlet property="lastnameTextField" destination="KGI-So-rBD" id="Igj-40-uJ9"/>
                         <outlet property="mainTitleLbl" destination="j0G-2v-DG3" id="ATV-Ni-Rhg"/>
                         <outlet property="nextBtn" destination="fH6-YC-dix" id="8Be-zS-fuT"/>
+                        <outlet property="vwProgress" destination="vjh-9F-flH" id="eAP-mb-t65"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDb-AR-qJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8313,7 +8294,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="20" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrT-ur-geQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="154" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="164.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="JEH-JJ-PQ7"/>
                                         </constraints>
@@ -8448,7 +8429,7 @@ We’ve sent an email confirming.</string>
                                     <constraint firstAttribute="height" constant="45" id="6x1-q7-HsI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                <state key="normal" title="GET CODE">
+                                <state key="normal" title="CONTINUE">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -8461,7 +8442,6 @@ We’ve sent an email confirming.</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnNext_pressed:" destination="ypx-IJ-C3X" eventType="touchUpInside" id="SV7-eH-ItJ"/>
-                                    <segue destination="7Wm-ga-6cG" kind="show" id="WI1-tt-tNg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -9021,13 +9001,13 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="847"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnO-ce-sec">
-                                        <rect key="frame" x="25" y="70" width="325" height="31"/>
+                                        <rect key="frame" x="25" y="70" width="325" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r1k-te-h0f">
-                                        <rect key="frame" x="25" y="126" width="325" height="580"/>
+                                        <rect key="frame" x="25" y="124.5" width="325" height="580"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="580" id="XFj-6x-hWX"/>
@@ -9044,13 +9024,13 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                             <rect key="frame" x="0.0" y="0.0" width="325" height="45"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU6-b4-rZD">
-                                                                    <rect key="frame" x="16" y="14.5" width="29" height="16"/>
+                                                                    <rect key="frame" x="16" y="14.5" width="32" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_yes" translatesAutoresizingMaskIntoConstraints="NO" id="sfR-K1-7we">
-                                                                    <rect key="frame" x="50" y="17.5" width="12" height="10"/>
+                                                                    <rect key="frame" x="53" y="17.5" width="12" height="10"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10" id="6Ti-7r-px5"/>
                                                                         <constraint firstAttribute="width" constant="12" id="INk-ri-wOu"/>
@@ -9092,7 +9072,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJz-Zh-JRl">
-                                        <rect key="frame" x="25" y="734" width="325" height="45"/>
+                                        <rect key="frame" x="25" y="732.5" width="325" height="45"/>
                                         <color key="backgroundColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="ThQ-es-aj7"/>
@@ -9267,9 +9247,13 @@ The Internal Revenue Service does not require your consent to any provision of t
                                     <action selector="onDate:" destination="QNX-G2-gV6" eventType="touchUpInside" id="yaJ-SR-oiQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No options yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-br-k9m">
-                                <rect key="frame" x="132" y="275" width="111.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have made no transactions yet this month" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-br-k9m">
+                                <rect key="frame" x="62.5" y="275" width="250" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="140-F5-Mub"/>
+                                    <constraint firstAttribute="width" constant="250" id="CFP-mn-cof"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -9348,12 +9332,12 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjw-Ns-oLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-518" y="704"/>
+            <point key="canvasLocation" x="1552.8" y="674.21289355322347"/>
         </scene>
         <!--Verify Identity View Controller-->
         <scene sceneID="VWM-0d-1sN">
             <objects>
-                <viewController storyboardIdentifier="VerifyIdentity" id="lda-AL-7Ze" customClass="VerifyIdentityViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyIdentityViewController" id="lda-AL-7Ze" customClass="VerifyIdentityViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eU8-m1-ZCU" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9362,7 +9346,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your identity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iu-qf-oHc" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="200.5" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="206" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="36j-DW-9pZ"/>
                                         </constraints>
@@ -9375,8 +9359,8 @@ The Internal Revenue Service does not require your consent to any provision of t
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIL-Iq-I2S" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="81" width="351" height="8"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIL-Iq-I2S" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="81" width="325" height="8"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="zTw-kP-P89"/>
@@ -9385,8 +9369,8 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="SIL-Iq-I2S" firstAttribute="leading" secondItem="buV-qj-jbP" secondAttribute="leading" constant="12" id="37T-rl-Skx"/>
-                                    <constraint firstAttribute="trailing" secondItem="SIL-Iq-I2S" secondAttribute="trailing" constant="12" id="6ul-bp-Wtd"/>
+                                    <constraint firstItem="SIL-Iq-I2S" firstAttribute="leading" secondItem="buV-qj-jbP" secondAttribute="leading" constant="25" id="37T-rl-Skx"/>
+                                    <constraint firstAttribute="trailing" secondItem="SIL-Iq-I2S" secondAttribute="trailing" constant="25" id="6ul-bp-Wtd"/>
                                     <constraint firstItem="SIL-Iq-I2S" firstAttribute="top" secondItem="6iu-qf-oHc" secondAttribute="bottom" constant="31" id="M0D-yF-32f"/>
                                     <constraint firstItem="6iu-qf-oHc" firstAttribute="leading" secondItem="buV-qj-jbP" secondAttribute="leading" constant="25" id="YjL-eu-jiw"/>
                                     <constraint firstAttribute="height" constant="90" id="ZNZ-JP-aFY"/>
@@ -9394,7 +9378,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your 9 digit Social Security Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-3f-0gr" userLabel="SSNTextField" customClass="SkyFloatingLabelTextField" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="20" y="125" width="335" height="53"/>
+                                <rect key="frame" x="25" y="135" width="325" height="53"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="bWA-WV-9tM"/>
@@ -9446,33 +9430,66 @@ The Internal Revenue Service does not require your consent to any provision of t
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="continueButtonAction:" destination="lda-AL-7Ze" eventType="touchUpInside" id="lmM-Fa-qPI"/>
+                                    <action selector="btnNext_clicked:" destination="lda-AL-7Ze" eventType="touchUpInside" id="D4L-UT-ZgP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0y-cp-IzP" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="20" y="188" width="295" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcw-mf-o4N" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="288" width="325" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5JI-x2-x2x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="I'm an international student" image="arrowLeft">
+                                    <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSkip_clicked:" destination="lda-AL-7Ze" eventType="touchUpInside" id="1aN-NH-BU5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0y-cp-IzP" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="198" width="298" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="qfJ-i0-WWe"/>
                                 </constraints>
                                 <string key="text">We use this to verify your identity. Don't worry, we use the highest levels of security and protection. Your information is safe with us</string>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="12"/>
-                                <color key="textColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Wcw-mf-o4N" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" constant="25" id="7Tm-93-BH2"/>
                             <constraint firstItem="T0y-cp-IzP" firstAttribute="top" secondItem="3Vd-3f-0gr" secondAttribute="bottom" constant="10" id="BlH-fj-Dz6"/>
                             <constraint firstItem="9lJ-wS-lN9" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" constant="25" id="CpZ-8y-6zv"/>
-                            <constraint firstItem="3Vd-3f-0gr" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" constant="20" id="ECy-dQ-PeI"/>
-                            <constraint firstItem="T0y-cp-IzP" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" constant="20" id="Gqx-kS-jDE"/>
+                            <constraint firstItem="3Vd-3f-0gr" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" constant="25" id="ECy-dQ-PeI"/>
+                            <constraint firstItem="T0y-cp-IzP" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" constant="25" id="Gqx-kS-jDE"/>
                             <constraint firstItem="buV-qj-jbP" firstAttribute="top" secondItem="T2F-xt-mta" secondAttribute="top" id="HM8-zo-M6z"/>
                             <constraint firstItem="buV-qj-jbP" firstAttribute="trailing" secondItem="T2F-xt-mta" secondAttribute="trailing" id="Iu8-4z-9ME"/>
-                            <constraint firstItem="T2F-xt-mta" firstAttribute="trailing" secondItem="3Vd-3f-0gr" secondAttribute="trailing" constant="20" id="Q6v-5e-JsJ"/>
-                            <constraint firstItem="T2F-xt-mta" firstAttribute="trailing" secondItem="T0y-cp-IzP" secondAttribute="trailing" constant="60" id="Wco-Yf-SwA"/>
-                            <constraint firstItem="3Vd-3f-0gr" firstAttribute="top" secondItem="buV-qj-jbP" secondAttribute="bottom" constant="15" id="Xlq-vK-CDc"/>
+                            <constraint firstItem="T2F-xt-mta" firstAttribute="trailing" secondItem="3Vd-3f-0gr" secondAttribute="trailing" constant="25" id="Q6v-5e-JsJ"/>
+                            <constraint firstItem="T2F-xt-mta" firstAttribute="trailing" secondItem="T0y-cp-IzP" secondAttribute="trailing" constant="52" id="Wco-Yf-SwA"/>
+                            <constraint firstItem="3Vd-3f-0gr" firstAttribute="top" secondItem="buV-qj-jbP" secondAttribute="bottom" constant="25" id="Xlq-vK-CDc"/>
                             <constraint firstItem="buV-qj-jbP" firstAttribute="leading" secondItem="T2F-xt-mta" secondAttribute="leading" id="Zxa-pO-buD"/>
                             <constraint firstItem="T2F-xt-mta" firstAttribute="bottom" secondItem="9lJ-wS-lN9" secondAttribute="bottom" constant="35" id="eNn-oJ-3zb"/>
+                            <constraint firstItem="Wcw-mf-o4N" firstAttribute="top" secondItem="T0y-cp-IzP" secondAttribute="bottom" constant="30" id="hzl-ih-QZe"/>
+                            <constraint firstItem="T2F-xt-mta" firstAttribute="trailing" secondItem="Wcw-mf-o4N" secondAttribute="trailing" constant="25" id="o2V-oy-KTk"/>
                             <constraint firstItem="T2F-xt-mta" firstAttribute="trailing" secondItem="9lJ-wS-lN9" secondAttribute="trailing" constant="25" id="u9w-II-jYz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T2F-xt-mta"/>
@@ -9481,7 +9498,8 @@ The Internal Revenue Service does not require your consent to any provision of t
                         <outlet property="SSNTextField" destination="3Vd-3f-0gr" id="Ggc-K5-rNU"/>
                         <outlet property="discriptionLabel" destination="T0y-cp-IzP" id="IX7-ai-wgV"/>
                         <outlet property="mainTitleLbl" destination="6iu-qf-oHc" id="f3v-pK-7q7"/>
-                        <outlet property="nextBtn" destination="9lJ-wS-lN9" id="Qpf-GU-lFz"/>
+                        <outlet property="nextBtn" destination="9lJ-wS-lN9" id="tND-Jt-kGX"/>
+                        <outlet property="vwProgress" destination="SIL-Iq-I2S" id="SzI-0c-WZ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KvZ-qm-NEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -9500,7 +9518,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Citizenship" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-tq-Ywr" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="112.5" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="123.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="FtV-uV-9Sn"/>
                                         </constraints>
@@ -9625,7 +9643,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of your ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDb-39-fBg" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="241" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="260" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="SXz-2p-G73"/>
                                         </constraints>
@@ -9902,7 +9920,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="105"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-H1-m7B" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="84" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="89.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="EPO-Sg-ycj"/>
                                         </constraints>
@@ -9916,7 +9934,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debit from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A5-Jq-W4Q" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="75" width="70.5" height="17"/>
+                                        <rect key="frame" x="25" y="75" width="75" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="r1e-9L-tKR"/>
                                         </constraints>
@@ -10029,7 +10047,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer takes 1-2 bussiness days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oz-fU-6zR" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                                <rect key="frame" x="162" y="67.5" width="159.5" height="13"/>
+                                                                <rect key="frame" x="162" y="67.5" width="182.5" height="13"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="13" id="O8u-9m-aad"/>
                                                                 </constraints>
@@ -10286,7 +10304,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-So-CQQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="84" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="89.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="jD5-8L-kuq"/>
                                         </constraints>
@@ -10384,10 +10402,10 @@ The Internal Revenue Service does not require your consent to any provision of t
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_coming_soon" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-2X-ahx">
-                                <rect key="frame" x="28" y="110" width="319" height="205"/>
+                                <rect key="frame" x="28" y="110" width="319" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOr-xA-eUc" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="335" width="150" height="25"/>
+                                <rect key="frame" x="112.5" y="146" width="150" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Am3-pU-QyY"/>
                                     <constraint firstAttribute="width" constant="150" id="thC-nW-Mbx"/>
@@ -10402,7 +10420,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re working on this page and it will be available soon. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-5s-jNV" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="30" y="361" width="315" height="50"/>
+                                <rect key="frame" x="30" y="172" width="315" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wkf-U3-hRa"/>
                                     <constraint firstAttribute="width" constant="315" id="nVd-e7-yjZ"/>
@@ -10455,7 +10473,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9L-dM-1Yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1372" y="704"/>
+            <point key="canvasLocation" x="746" y="645"/>
         </scene>
         <!--ScanID Menu Controller-->
         <scene sceneID="c2f-DF-fMg">
@@ -10473,7 +10491,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8A-wh-aHh" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="115" width="136" height="31"/>
+                                <rect key="frame" x="25" y="115" width="144" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -10484,7 +10502,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You'll need to take photos of the following documents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1V-jU-7Ty" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="229" width="325" height="17.5"/>
+                                <rect key="frame" x="25" y="227.5" width="337" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -10495,14 +10513,14 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-xu-a5Z" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="12" y="186" width="351" height="8"/>
+                                <rect key="frame" x="12" y="184.5" width="351" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="wXq-KT-As3"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pKa-vx-24v">
-                                <rect key="frame" x="25" y="261.5" width="325" height="328"/>
+                                <rect key="frame" x="25" y="259" width="325" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="328" id="R6L-8d-6ve"/>
@@ -10511,10 +10529,10 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGL-g9-Eph">
-                                <rect key="frame" x="25" y="589.5" width="325" height="77.5"/>
+                                <rect key="frame" x="25" y="587" width="325" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4k-2G-6Mh" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="16.5" width="325" height="45"/>
+                                        <rect key="frame" x="0.0" y="17.5" width="325" height="45"/>
                                         <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="vKv-FM-0zb"/>
@@ -10774,7 +10792,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure details are visible and no flash is used" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-c9-GMj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e.g. utility bill, lease, dorm room assignment" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAh-c9-GMj" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
                                 <rect key="frame" x="25" y="83" width="325" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="MMG-N9-ESn"/>
@@ -10948,7 +10966,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9q-9r-xdl" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="50" width="241" height="31"/>
+                                <rect key="frame" x="25" y="50" width="260" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -10959,14 +10977,14 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A15-CL-CV8" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="106" width="325" height="8"/>
+                                <rect key="frame" x="25" y="104.5" width="325" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="YDF-x0-Az9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bM-rt-9xk">
-                                <rect key="frame" x="67.5" y="169" width="240" height="200"/>
+                                <rect key="frame" x="67.5" y="152.5" width="240" height="200"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glY-MJ-SdU">
                                         <rect key="frame" x="44" y="14" width="152.00000000000011" height="152"/>
@@ -11018,7 +11036,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-ei-CVu">
-                                <rect key="frame" x="67.5" y="399" width="240" height="200"/>
+                                <rect key="frame" x="67.5" y="382.5" width="240" height="200"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-Mc-9GG">
                                         <rect key="frame" x="44" y="14" width="152.00000000000011" height="152"/>
@@ -11070,10 +11088,10 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95n-Zo-1Bt">
-                                <rect key="frame" x="25" y="599" width="325" height="68"/>
+                                <rect key="frame" x="25" y="582.5" width="325" height="84.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k64-fl-FWh" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="11.5" width="325" height="45"/>
+                                        <rect key="frame" x="0.0" y="20" width="325" height="45"/>
                                         <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="3sY-iL-Fr6"/>
@@ -11101,7 +11119,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="95n-Zo-1Bt" secondAttribute="bottom" id="5O6-7f-cEg"/>
                             <constraint firstItem="A15-CL-CV8" firstAttribute="top" secondItem="s9q-9r-xdl" secondAttribute="bottom" constant="25" id="Eb9-sM-gIl"/>
-                            <constraint firstItem="4bM-rt-9xk" firstAttribute="top" secondItem="A15-CL-CV8" secondAttribute="bottom" constant="55" id="F1M-xd-XoX"/>
+                            <constraint firstItem="4bM-rt-9xk" firstAttribute="top" secondItem="A15-CL-CV8" secondAttribute="bottom" constant="40" id="F1M-xd-XoX"/>
                             <constraint firstItem="s9q-9r-xdl" firstAttribute="top" secondItem="xTe-pQ-nR1" secondAttribute="top" constant="30" id="GzB-Bm-pVs"/>
                             <constraint firstItem="xTe-pQ-nR1" firstAttribute="trailing" secondItem="95n-Zo-1Bt" secondAttribute="trailing" constant="25" id="LmF-ZR-Pae"/>
                             <constraint firstItem="xTe-pQ-nR1" firstAttribute="trailing" secondItem="A15-CL-CV8" secondAttribute="trailing" constant="25" id="W3C-Sf-BdP"/>
@@ -11128,6 +11146,118 @@ The Internal Revenue Service does not require your consent to any provision of t
             </objects>
             <point key="canvasLocation" x="3906" y="2177"/>
         </scene>
+        <!--OnboardingVC-->
+        <scene sceneID="t5Q-SB-8CU">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingVC" id="ZeZ-xQ-Vii" customClass="OnboardingVC" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H3c-YT-Dc1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rKV-tZ-GkT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="418"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AyH-f9-J3s">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iaF-6J-eqJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fcc-pD-eRC">
+                                <rect key="frame" x="152.5" y="426" width="70" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="JQK-Ht-hCy"/>
+                                    <constraint firstAttribute="width" constant="70" id="wjg-iU-vV5"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.94901960784313721" green="0.80784313725490198" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxr-1R-RXi" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="478" width="325" height="45"/>
+                                <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1In-no-Tp7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
+                                <state key="normal" title="SIGNUP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signup_clicked:" destination="ZeZ-xQ-Vii" eventType="touchUpInside" id="cq2-sE-wDJ"/>
+                                    <segue destination="qnq-tZ-bhZ" kind="show" id="anU-yn-qTO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-ZT-PGd" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="533" width="325" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="X4l-mz-znr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signIn_clicked:" destination="ZeZ-xQ-Vii" eventType="touchUpInside" id="KvY-tE-ebv"/>
+                                    <segue destination="Osz-9E-BWI" kind="show" id="iW8-io-foq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xsg-U7-bEs" firstAttribute="trailing" secondItem="wxr-ZT-PGd" secondAttribute="trailing" constant="25" id="4q8-1s-FZt"/>
+                            <constraint firstItem="rKV-tZ-GkT" firstAttribute="trailing" secondItem="Xsg-U7-bEs" secondAttribute="trailing" id="BbU-HY-NVH"/>
+                            <constraint firstItem="fcc-pD-eRC" firstAttribute="centerX" secondItem="H3c-YT-Dc1" secondAttribute="centerX" id="DLO-vT-Xgb"/>
+                            <constraint firstItem="Xsg-U7-bEs" firstAttribute="trailing" secondItem="cxr-1R-RXi" secondAttribute="trailing" constant="25" id="EHZ-4s-ehw"/>
+                            <constraint firstItem="rKV-tZ-GkT" firstAttribute="leading" secondItem="Xsg-U7-bEs" secondAttribute="leading" id="GXg-El-ftM"/>
+                            <constraint firstItem="cxr-1R-RXi" firstAttribute="leading" secondItem="Xsg-U7-bEs" secondAttribute="leading" constant="25" id="REs-FF-6wx"/>
+                            <constraint firstItem="fcc-pD-eRC" firstAttribute="top" secondItem="rKV-tZ-GkT" secondAttribute="bottom" constant="8" id="SfY-HP-XVR"/>
+                            <constraint firstItem="rKV-tZ-GkT" firstAttribute="top" secondItem="Xsg-U7-bEs" secondAttribute="top" id="UVG-Qm-3dZ"/>
+                            <constraint firstItem="wxr-ZT-PGd" firstAttribute="leading" secondItem="Xsg-U7-bEs" secondAttribute="leading" constant="25" id="ctG-z9-gfh"/>
+                            <constraint firstItem="wxr-ZT-PGd" firstAttribute="top" secondItem="cxr-1R-RXi" secondAttribute="bottom" constant="10" id="phA-cM-H0u"/>
+                            <constraint firstItem="Xsg-U7-bEs" firstAttribute="bottom" secondItem="wxr-ZT-PGd" secondAttribute="bottom" constant="25" id="tQo-dd-Btz"/>
+                            <constraint firstItem="rKV-tZ-GkT" firstAttribute="bottom" secondItem="Xsg-U7-bEs" secondAttribute="bottom" constant="-185" id="tyK-s6-XdU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xsg-U7-bEs"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="carouselCollectionView" destination="rKV-tZ-GkT" id="yPk-br-PN3"/>
+                        <outlet property="pageControl" destination="fcc-pD-eRC" id="DBc-Ec-sMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0jy-VV-Kzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="2937"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Clock" width="16" height="16"/>
@@ -11140,6 +11270,7 @@ The Internal Revenue Service does not require your consent to any provision of t
         <image name="WelcomeImg" width="120" height="215"/>
         <image name="addBank" width="28" height="28"/>
         <image name="addaccount" width="221" height="182"/>
+        <image name="arrowLeft" width="18" height="12"/>
         <image name="arrow_bottom" width="12" height="5"/>
         <image name="arrow_top" width="12" height="5"/>
         <image name="bg_home_empty_state" width="542" height="413"/>

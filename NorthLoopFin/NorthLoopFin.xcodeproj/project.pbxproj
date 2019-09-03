@@ -522,6 +522,7 @@
 		EA8984B422FC491A00B4C33C /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B322FC491A00B4C33C /* HomeTabController.swift */; };
 		EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E843622E88FE7009D95CD /* IP+Extension.swift */; };
 		EAA385A02313A57E004DD8D2 /* ConfirmUpgradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */; };
+		EABA3BDD231E9422007A914E /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA3BDC231E9422007A914E /* OnboardingVC.swift */; };
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -1108,6 +1109,7 @@
 		EA8984B322FC491A00B4C33C /* HomeTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
 		EA9E843622E88FE7009D95CD /* IP+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IP+Extension.swift"; sourceTree = "<group>"; };
 		EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmUpgradeController.swift; sourceTree = "<group>"; };
+		EABA3BDC231E9422007A914E /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -1906,6 +1908,7 @@
 				1DF64E2C21E8B3C0008774CE /* Transfer */,
 				4BFDF87D22B8BBD10066860D /* Upgrade Premium */,
 				F4C1BF0B230093FF00FC1DC1 /* Verify Identity */,
+				EABA3BD9231E93F8007A914E /* Onboarding */,
 			);
 			path = "Application Views";
 			sourceTree = "<group>";
@@ -3106,6 +3109,14 @@
 			path = CardAuth;
 			sourceTree = "<group>";
 		};
+		EABA3BD9231E93F8007A914E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EABA3BDC231E9422007A914E /* OnboardingVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		EAE5603A22FD8528009B2C2E /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -3668,6 +3679,7 @@
 				EA1AB69223180DCC0021B59D /* ReferralRequestModel.swift in Sources */,
 				84D129B522FCD666000C82A6 /* AnalysisCategoryTableHeader.swift in Sources */,
 				EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */,
+				EABA3BDD231E9422007A914E /* OnboardingVC.swift in Sources */,
 				EA1902E9230D6F92002FE7FC /* CashbackCell.swift in Sources */,
 				1D055D3A229C00790078CD33 /* LinkACH.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,

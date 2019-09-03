@@ -45,7 +45,7 @@ class ScanIDController: BaseViewController {
     }
     
     func prepareView(){
-        self.customProgressView.progressView.setProgress(0.17*3, animated: true)
+        self.customProgressView.progressView.setProgress(0.17*4, animated: true)
     }
     
     func checkDBForImages(){
@@ -125,10 +125,13 @@ class ScanIDController: BaseViewController {
                 //self.hideLoader()
                 logEventsHelper.logEventWithName(name: "Signup", andProperties: ["Event": "Upload Docs"])
                 UserDefaults.saveToUserDefault(AppConstants.Screens.SELFIETIME.rawValue as AnyObject, key: AppConstants.UserDefaultKeyForScreen)
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "SignupStepConfirm") as! SignupStepConfirm
+                self.signupData.documents.email = self.signupData.email
+                self.signupData.documents.phoneNumber = self.signupData.phoneNumbers[0]
+
+                let vc = self.getControllerWithIdentifier("VerifyAddressViewController") as! VerifyAddressViewController
                 vc.signupFlowData=self.signupData
                 self.navigationController?.pushViewController(vc, animated: false)
+
             }
         }
     }

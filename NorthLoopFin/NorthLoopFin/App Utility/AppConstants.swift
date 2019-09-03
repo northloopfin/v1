@@ -19,6 +19,7 @@ struct AppConstants{
     static let UserDefaultKeyForAccessToken = "AccessToken"
     static let UserDefaultKeyForCrash = "Crash"
     static let UserDefaultKeyForDeviceToken = "DeviceToken"
+    static let UserDefaultKeyForOnboarding = "Onboarding"
     static let UserDefaultKeyForFirstTimeLandOnHome = "LandedOnHome"
     static let KeyChainKeyForPassword = "NorthLoopPassword"
     static let KeyChainKeyForEmail = "NorthLoopEmail"
@@ -338,6 +339,67 @@ struct AppConstants{
                 return UIImage (named: "carousel3")
             case .Foruth:
                 return UIImage (named: "carousel4")
+            }
+        }
+    }
+
+    enum OnboardingItem: Int,CaseIterable {
+        case First, Second, Third
+        
+        init?(id: Int) {
+            switch id {
+            case 1:
+                self = .First
+            case 2:
+                self = .Second
+            case 3:
+                self = .Third
+            default:
+                return nil
+            }
+        }
+        
+        func id() -> Int {
+            switch self {
+            case .First:
+                return 1
+            case .Second:
+                return 2
+            case .Third:
+                return 3
+            }
+        }
+        
+        func title() -> String? {
+            switch self {
+            case .First:
+                return "Made for your lifestyle"
+            case .Second:
+                return "Made for global citizens"
+            case .Third:
+                return "Control your money"
+            }
+        }
+        
+        func description() -> String {
+            switch self {
+            case .First:
+                return ""
+            case .Second:
+                return "No SSN needed!\nSign up before coming to the US.\nHave your debit card waiting\nfor you when you land."
+            case .Third:
+                return "Lock your card\nVirtual Card\nInstant Transaction Notifications"
+            }
+        }
+        
+        func image() -> UIImage? {
+            switch self {
+            case .First:
+                return UIImage (named: "login_onboard_1")
+            case .Second:
+                return UIImage (named: "login_onboard_2")
+            case .Third:
+                return UIImage (named: "login_onboard_3")
             }
         }
     }

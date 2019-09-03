@@ -1,6 +1,5 @@
-
 //
-//  CarouselViewComtroller.swift
+//  OnboardingVC
 //  NorthLoopFin
 //
 //  Created by SagarR on 26/07/19.
@@ -9,23 +8,23 @@
 
 import UIKit
 
-class CarouselViewComtroller: BaseViewController {
+class OnboardingVC: BaseViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var carouselCollectionView: UICollectionView!
-    @IBOutlet weak var btnUpgrade: RippleButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
     }
     
-    @IBAction func nextClicked(_ sender: Any) {
-        carouselCollectionView.setContentOffset(CGPoint(x: carouselCollectionView.frame.size.width * 3, y: 0), animated: false)
+    @IBAction func signup_clicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func signIn_clicked(_ sender: UIButton) {
     }
     
     func prepareView() {
-        self.setupRightNavigationBar()
         carouselCollectionView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: "CarouselCell")
         carouselCollectionView.delegate = self
         carouselCollectionView.dataSource = self
@@ -33,14 +32,14 @@ class CarouselViewComtroller: BaseViewController {
     }
 }
 
-extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AppConstants.CarouselItem.allCases.count
+        return AppConstants.OnboardingItem.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as! CarouselCell
-        let carouselItem = AppConstants.CarouselItem.init(id: indexPath.item+1)
+        let carouselItem = AppConstants.OnboardingItem.init(id: indexPath.item+1)
         cell.carouselImage.image = carouselItem?.image()
         cell.lblTitle.text = carouselItem?.title()
         cell.lblDetail.text = carouselItem?.description()
@@ -53,8 +52,6 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
         }
         
         cell.vwUpgradeHeight.constant = indexPath.row == 3 ? 110 : 0;
-        cell.btnMonthly.addTarget(self, action: #selector(btnMonthly_clicked(btn:)), for: .touchUpInside)
-        cell.btnAnnually.addTarget(self, action: #selector(btnMonthly_clicked(btn:)), for: .touchUpInside)
         
         return cell
     }
@@ -73,7 +70,6 @@ extension CarouselViewComtroller: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         self.pageControl.currentPage = indexPath.row
-        btnUpgrade.isHidden = self.pageControl.currentPage == 3
     }
     
     @objc func btnMonthly_clicked(btn:UIButton){

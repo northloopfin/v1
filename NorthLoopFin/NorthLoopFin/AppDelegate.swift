@@ -26,11 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // if crash happen prior delete local database
-        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
-            RealmHelper.deleteAllFromDatabase()
-            UserInformationUtility.sharedInstance.deleteCurrentUser()
-            UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForCrash)
-        }
         // Override point for customization after application launch.
         self.registerForPushNotifications()
         print(StorageHelper.getDirectoryPath())
@@ -78,6 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Realm.Configuration.defaultConfiguration = config
         
+        if let _ = UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForCrash){
+            RealmHelper.deleteAllFromDatabase()
+            UserInformationUtility.sharedInstance.deleteCurrentUser()
+            UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForCrash)
+        }
 
         
 //        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification]) != nil{
@@ -102,7 +102,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initialViewController() ->Void
     {
         let storyBoard=UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: String(describing: WelcomeViewController.self)) as!  WelcomeViewController
+        var identifier = "WelcomeViewController"
+        if UserDefaults.getUserDefaultForKey(AppConstants.UserDefaultKeyForOnboarding) == nil{
+            identifier = "OnboardingVC"
+        }
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: identifier)
         self.moveToScreen(vc: vc)
     }
     
