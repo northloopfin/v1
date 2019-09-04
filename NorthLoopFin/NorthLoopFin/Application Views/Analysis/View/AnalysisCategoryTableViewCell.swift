@@ -21,12 +21,12 @@ class AnalysisCategoryTableViewCell: UITableViewCell {
         didSet {
             labelTitle.text = category?.categoryTitle ?? ""
             imgIcon.image = UIImage.init(named: category?.categoryIcon ?? "")
-            let formatter = NumberFormatter()
-            formatter.locale = Locale.current
-            formatter.numberStyle = .currency
-            if let formattedTipAmount = formatter.string(from: NSNumber(value: (category?.sumAmount ?? 0))) {
-                labelSumma.text = "\(formattedTipAmount)"
-            }
+//            let formatter = NumberFormatter()
+//            formatter.locale = Locale.current
+//            formatter.numberStyle = .currency
+//            if let formattedTipAmount = formatter.string(from: NSNumber(value: (category?.sumAmount ?? 0))) {
+                labelSumma.text = "$ " + String(category?.sumAmount ?? 0)
+//            }
         }
     }
 
