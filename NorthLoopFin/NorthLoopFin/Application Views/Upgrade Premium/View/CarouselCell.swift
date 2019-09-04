@@ -17,6 +17,8 @@ class CarouselCell: UICollectionViewCell {
     @IBOutlet weak var carouselImage: UIImageView!
     @IBOutlet weak var btnMonthly: UIButton!
     @IBOutlet weak var btnAnnually: UIButton!
+    @IBOutlet weak var imgBottom: NSLayoutConstraint!
+    @IBOutlet weak var titleTopToImage: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

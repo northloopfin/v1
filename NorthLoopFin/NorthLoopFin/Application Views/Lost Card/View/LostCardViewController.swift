@@ -19,19 +19,19 @@ class LostCardViewController: BaseViewController {
     @IBAction func chatWithUsClicked(_ sender: Any) {
     }
     var presenter:LostCardPresenter!
-
+    
     @IBAction func expediteClicked(_ sender: Any) {
         // Pushes the chat widget onto the navigation controller
         ZDCChat.start(in: navigationController, withConfig: nil)
         
         // Hides the back button because we are in a tab controller
         ZDCChat.instance().chatViewController.navigationItem.hidesBackButton = false
-
-//        self.presenter.sendLostCardRequest(sendToAPI: true)
+        
+        //        self.presenter.sendLostCardRequest(sendToAPI: true)
     }
     
     @IBAction func normalDeliveryClicked(_ sender: Any) {
-        self.presenter.sendLostCardRequest(sendToAPI: false)
+        //self.presenter.sendLostCardRequest(sendToAPI: false)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
