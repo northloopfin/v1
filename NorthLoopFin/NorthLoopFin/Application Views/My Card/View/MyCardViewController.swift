@@ -192,6 +192,7 @@ extension MyCardViewController:UITableViewDelegate,UITableViewDataSource{
         logEventsHelper.logEventWithName(name: "Card", andProperties: ["Event": "Lost"])
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardViewController") as! LostCardViewController
+//            let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "LostCardDelivery") as! LostCardDeliveryViewController
             self.navigationController?.pushViewController(transactionDetailController, animated: false)
 //        }
         

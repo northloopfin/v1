@@ -50,6 +50,7 @@ class SignupSynapsePresenter:ResponseCallback{
     func servicesManagerError(error: ErrorModel) {
         self.delegate?.hideLoader()
         self.delegate?.showErrorAlert(error.getErrorTitle(), alertMessage: error.getErrorMessage())
+        self.delegate?.didFailedSynapse()
     }
 }
 

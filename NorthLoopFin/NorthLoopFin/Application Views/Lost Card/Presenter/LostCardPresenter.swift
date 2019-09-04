@@ -18,7 +18,7 @@ class LostCardPresenter:ResponseCallback{
     }
     //MARK:- Methods to make decision and call  Api.
     
-    func sendLostCardRequest(sendToAPI:Bool){
+    func sendLostCardRequest(toExpedite:Bool ,toIssueNewCard:Bool){
         
         // convert requestbody to json string and assign to request model request param
         
@@ -29,9 +29,10 @@ class LostCardPresenter:ResponseCallback{
                 , value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: "ip", value: UIDevice.current.ipAddress())
-            .addRequestQueryParams(key: "expedite", value: sendToAPI as AnyObject)
+            .addRequestQueryParams(key: "expedite", value: toExpedite as AnyObject)
+            .addRequestQueryParams(key: "issueNewCard", value: toIssueNewCard as AnyObject)
             .build()
-        
+        requestModel.apiUrl = requestModel.getEndPoint()
         self.logic.performLostCard(withRequestModel: requestModel, presenterDelegate: self)
     }
     

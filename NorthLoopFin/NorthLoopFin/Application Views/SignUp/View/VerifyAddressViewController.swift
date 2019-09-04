@@ -17,10 +17,10 @@ class VerifyAddressViewController: BaseViewController {
     @IBOutlet weak var cityTextfield: UITextField!
     @IBOutlet weak var textState: UITextField!
     @IBOutlet weak var zipTextfield: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var customProgressView: ProgressView!
 
     @IBOutlet weak var doneBtn: CommonButton!
+    @IBOutlet weak var waitLabel: LabelWithLetterSpace!
     
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var mainTitleLbl: LabelWithLetterSpace!
@@ -103,7 +103,7 @@ class VerifyAddressViewController: BaseViewController {
                         }
                     }
                 }
-            
+                self.waitLabel.isHidden = false
                 self.presenter.startSignUpSynapse(requestDic: dic)
             } catch {
                 //handle errors
@@ -346,6 +346,10 @@ extension VerifyAddressViewController:SignupSynapseDelegate{
         UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForAccessToken)
         //call Zendesk API for Identity token
         self.zendeskPresenter.sendZendeskTokenRequest()
+    }
+    
+    func didFailedSynapse() {
+        self.waitLabel.isHidden = true
     }
 }
 

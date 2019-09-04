@@ -15,6 +15,7 @@ class OnboardingVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.prepareView()
     }
     
@@ -51,8 +52,10 @@ extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             cell.lblTitleHight.constant =  0
         }
         
-        cell.vwUpgradeHeight.constant = indexPath.row == 3 ? 110 : 0;
-        
+        cell.carouselImage.contentMode = indexPath.row == 0 ? UIView.ContentMode.scaleAspectFill :UIView.ContentMode.center
+        cell.imgBottom.constant = indexPath.row == 0 ? 100 : 160;
+        cell.titleTopToImage.constant = indexPath.row == 0 ? 60 : 22;
+
         return cell
     }
     
