@@ -22,6 +22,7 @@ class CurrentBalanceViewController: BaseViewController {
 
     @IBAction func addFundsButtonAction(_ sender: Any) {
     }
+    
     @IBAction func transferButtonAction(_ sender: Any) {
     }
     /*

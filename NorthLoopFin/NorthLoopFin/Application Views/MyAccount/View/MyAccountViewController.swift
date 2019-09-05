@@ -176,25 +176,11 @@ extension MyAccountViewController:CommonTableDelegate{
     }
     
     func logoutUser(){
-            logEventsHelper.logEventWithName(name: "Logout", andProperties: ["Event": "when the user logs out"])
-            UserInformationUtility.sharedInstance.deleteCurrentUser()
-            self.moveToWelcome()
+        logEventsHelper.logEventWithName(name: "Logout", andProperties: ["Event": "when the user logs out"])
+        UserInformationUtility.sharedInstance.deleteCurrentUser()
+        AppUtility.moveToWelcome()
     }
     
-    func moveToWelcome(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
-        //self.navigationController?.pushViewController(transactionDetailController, animated: false)
-        var initialNavigationController1:UINavigationController
-        
-        initialNavigationController1 = UINavigationController(rootViewController:vc)
-        initialNavigationController1.navigationBar.makeTransparent()
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.window?.rootViewController = initialNavigationController1
-        //self.window?.rootViewController = initialNavigationController1
-        //self.window?.makeKeyAndVisible()
-        //self.navigationController.rootvi
-    }
     func moveToAccountDetail(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let transactionDetailController = storyBoard.instantiateViewController(withIdentifier: "AccountDetailViewController") as! AccountDetailViewController

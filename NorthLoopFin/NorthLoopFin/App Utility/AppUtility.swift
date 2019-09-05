@@ -328,4 +328,19 @@ class AppUtility {
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.window?.rootViewController = containerViewController
     }
+    
+    class func moveToWelcome(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+        //self.navigationController?.pushViewController(transactionDetailController, animated: false)
+        var initialNavigationController1:UINavigationController
+        
+        initialNavigationController1 = UINavigationController(rootViewController:vc)
+        initialNavigationController1.navigationBar.makeTransparent()
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.window?.rootViewController = initialNavigationController1
+        //self.window?.rootViewController = initialNavigationController1
+        //self.window?.makeKeyAndVisible()
+        //self.navigationController.rootvi
+    }
 }

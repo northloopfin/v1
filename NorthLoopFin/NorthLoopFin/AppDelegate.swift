@@ -15,6 +15,7 @@ import FirebaseDynamicLinks
 import FirebaseAuth
 import FirebaseDatabase
 import RealmSwift
+import Branch
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -77,6 +78,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RealmHelper.deleteAllFromDatabase()
             UserInformationUtility.sharedInstance.deleteCurrentUser()
             UserDefaults.removeUserDefaultForKey(AppConstants.UserDefaultKeyForCrash)
+        }
+
+        Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
+            // do stuff with deep link data (nav to page, display content, etc)
+            if (params?.keys.contains("action"))!{
+                if params!["action"] as! String == "login"{
+                    if let _:User = UserInformationUtility.sharedInstance.getCurrentUser(){
+                        UserInformationUtility.sharedInstance.deleteCurrentUser()
+                    }
+                    AppUtility.moveToWelcome()
+                }
+            }
+            print(params as? [String: AnyObject] ?? {})
         }
 
         

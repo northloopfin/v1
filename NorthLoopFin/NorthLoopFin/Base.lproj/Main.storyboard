@@ -36,12 +36,12 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tKg-Zl-A14"/>
+                        <segue destination="ZeZ-xQ-Vii" kind="relationship" relationship="rootViewController" id="gA6-Gj-mpz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1j-tb-QnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2367" y="-36"/>
+            <point key="canvasLocation" x="-4601" y="-90"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1239.2" y="-28.335832083958024"/>
+            <point key="canvasLocation" x="-114" y="-90"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="OUh-oZ-gqU">
@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jL6-MU-c7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-517.60000000000002" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="785" y="-90"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="49q-vb-SfD">
@@ -645,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kp4-5a-iWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207.19999999999999" y="-37.331334332833585"/>
+            <point key="canvasLocation" x="-2778" y="-90"/>
         </scene>
         <!--Signup Step Confirm-->
         <scene sceneID="zwv-31-rd0">
@@ -865,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WQ-Mg-hyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907.24637681159425" y="-39.508928571428569"/>
+            <point key="canvasLocation" x="5604" y="-841"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XH6-OO-fPF">
@@ -1156,7 +1156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GU3-LU-mMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1601.25" y="-39.08450704225352"/>
+            <point key="canvasLocation" x="8015" y="-842"/>
         </scene>
         <!--ScanID View Controller-->
         <scene sceneID="3fd-xW-QyX">
@@ -1196,10 +1196,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-xo-vSO" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="203.5" width="46" height="34"/>
+                                <rect key="frame" x="25" y="203.5" width="325" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50X-HH-94b">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1215,7 +1215,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
-                                <rect key="frame" x="25" y="262.5" width="46" height="69"/>
+                                <rect key="frame" x="25" y="262.5" width="325" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
@@ -1236,7 +1236,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-pn-kP6">
-                                        <rect key="frame" x="8" y="0.0" width="38" height="69"/>
+                                        <rect key="frame" x="8" y="0.0" width="317" height="69"/>
                                         <connections>
                                             <action selector="scanFrontClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="dJh-Wf-QZR"/>
                                         </connections>
@@ -1257,10 +1257,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
-                                <rect key="frame" x="25" y="348.5" width="46" height="69"/>
+                                <rect key="frame" x="25" y="348.5" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="69"/>
                                         <connections>
                                             <action selector="scanBackClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="uLY-ls-sWh"/>
                                         </connections>
@@ -1299,7 +1299,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Na-LzZ" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="497.5" width="46" height="45"/>
+                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jp4-O9-PWE"/>
@@ -1352,7 +1352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3T-du-E80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240.625" y="-40.140845070422536"/>
+            <point key="canvasLocation" x="-114" y="-2975"/>
         </scene>
         <!--ScanID New View Controller-->
         <scene sceneID="6WK-Zq-GHc">
@@ -1619,7 +1619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLC-F0-MKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19460.625" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="-4975" y="-2978"/>
         </scene>
         <!--Selfie View Controller-->
         <scene sceneID="sR5-ed-IZY">
@@ -1766,7 +1766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUE-F9-8Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2910" y="-41.197183098591552"/>
+            <point key="canvasLocation" x="558" y="-2976"/>
         </scene>
         <!--Set Password View Controller-->
         <scene sceneID="7wU-G9-6dl">
@@ -1921,7 +1921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsP-No-OH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3559.1999999999998" y="-39.130434782608695"/>
+            <point key="canvasLocation" x="1631" y="2104"/>
         </scene>
         <!--Verify Address View Controller-->
         <scene sceneID="AUO-N2-nVb">
@@ -1939,7 +1939,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your registered address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-c1-lef" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="23" y="111" width="243" height="31"/>
+                                <rect key="frame" x="23" y="111" width="264.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Ino-gf-W5k"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191" id="fch-zk-BvQ"/>
@@ -1990,13 +1990,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your US Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-JM-fZV">
-                                <rect key="frame" x="25" y="175" width="325" height="22"/>
+                                <rect key="frame" x="25" y="175" width="325" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.72941176470000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street Address*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcD-X9-ITF">
-                                <rect key="frame" x="25" y="212" width="325" height="45"/>
+                                <rect key="frame" x="25" y="211" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="VMo-WT-MOW"/>
@@ -2009,7 +2009,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apt/House/Unit No*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wwd-xB-SDV">
-                                <rect key="frame" x="25" y="266" width="325" height="45"/>
+                                <rect key="frame" x="25" y="265" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eC5-oU-hdL"/>
@@ -2022,7 +2022,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-Py-uCM">
-                                <rect key="frame" x="25" y="320" width="325" height="45"/>
+                                <rect key="frame" x="25" y="319" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="kcN-Yk-WNP"/>
@@ -2035,7 +2035,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWA-Jo-NJU">
-                                <rect key="frame" x="25" y="374" width="325" height="45"/>
+                                <rect key="frame" x="25" y="373" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0Jz-iT-1Kw"/>
@@ -2048,7 +2048,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bet-Qc-sQj">
-                                <rect key="frame" x="25" y="428" width="325" height="45"/>
+                                <rect key="frame" x="25" y="427" width="325" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vWg-Zu-xgi"/>
@@ -2120,7 +2120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bER-RQ-WUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4261.6000000000004" y="-41.829085457271368"/>
+            <point key="canvasLocation" x="6354" y="-841"/>
         </scene>
         <!--Add Goal View Controller-->
         <scene sceneID="Gtx-GE-xGQ">
@@ -2213,7 +2213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBY-eG-RzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17527" y="-57"/>
+            <point key="canvasLocation" x="10730" y="-2379"/>
         </scene>
         <!--All Done View Controller-->
         <scene sceneID="x6U-mZ-9ev">
@@ -2305,7 +2305,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atj-qQ-0FZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4951.1999999999998" y="-42.728635682158924"/>
+            <point key="canvasLocation" x="7060" y="-842"/>
         </scene>
         <!--My Card View Controller-->
         <scene sceneID="l2D-ZD-JaG">
@@ -2587,7 +2587,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vm-wK-vvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5604" y="-42.728635682158924"/>
+            <point key="canvasLocation" x="-943" y="675"/>
         </scene>
         <!--Agreement View Controller-->
         <scene sceneID="EuD-ZR-7qh">
@@ -2614,7 +2614,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64T-2c-Cuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4898" y="645"/>
+            <point key="canvasLocation" x="-108" y="4227"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="Owt-x3-vVR">
@@ -2641,7 +2641,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obF-xL-bxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5535" y="644"/>
+            <point key="canvasLocation" x="737" y="4226"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="DzK-i2-BHn">
@@ -2681,7 +2681,7 @@ to your registered address</string>
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Tr-6d-7Xv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="412"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Az4-av-sKm" id="aiH-D2-GiE"/>
@@ -2689,7 +2689,7 @@ to your registered address</string>
                                         </connections>
                                     </tableView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-qX-NSa">
-                                        <rect key="frame" x="111" y="412" width="153" height="113"/>
+                                        <rect key="frame" x="111" y="450" width="153" height="113"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="113" id="ELV-77-RGV"/>
@@ -2699,7 +2699,7 @@ to your registered address</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="tLy-qX-NSa" secondAttribute="bottom" constant="58" id="KV1-yz-Ki4"/>
+                                    <constraint firstAttribute="bottom" secondItem="tLy-qX-NSa" secondAttribute="bottom" constant="20" id="KV1-yz-Ki4"/>
                                     <constraint firstItem="7Tr-6d-7Xv" firstAttribute="top" secondItem="QBh-EY-urc" secondAttribute="top" id="YZA-oP-L0u"/>
                                     <constraint firstItem="7Tr-6d-7Xv" firstAttribute="leading" secondItem="QBh-EY-urc" secondAttribute="leading" id="ixk-t0-eYM"/>
                                     <constraint firstItem="tLy-qX-NSa" firstAttribute="top" secondItem="7Tr-6d-7Xv" secondAttribute="bottom" id="jc6-bg-lA6"/>
@@ -2734,7 +2734,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7q-86-Q1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6256.875" y="-45.422535211267608"/>
+            <point key="canvasLocation" x="-1852" y="675"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="awc-JF-HgP">
@@ -2908,7 +2908,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmx-kE-pio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6936.8000000000002" y="-45.42728635682159"/>
+            <point key="canvasLocation" x="2433" y="2104"/>
         </scene>
         <!--Transfer View Controller-->
         <scene sceneID="HJK-m4-uBU">
@@ -3046,6 +3046,73 @@ to your registered address</string>
                                     <outlet property="delegate" destination="vr8-ge-M63" id="EGI-5V-IYS"/>
                                 </connections>
                             </textField>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSo-J6-KkS">
+                                <rect key="frame" x="25" y="155" width="325" height="0.0"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJq-Nl-3Zl">
+                                        <rect key="frame" x="0.0" y="-23" width="46" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="9df-yh-CeN"/>
+                                            <constraint firstAttribute="height" constant="46" id="p02-Bq-Tem"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="23"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT9-gi-Y4w" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="66" y="-23" width="259" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="b6i-vw-rvt"/>
+                                        </constraints>
+                                        <string key="text">Like your direcr deposit
+and get $200</string>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
+                                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="0.46999999999999997"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cch-Sl-P9E" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="66" y="2" width="259" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="CAY-1R-cuz"/>
+                                        </constraints>
+                                        <string key="text">Like your direcr deposit
+and get $200</string>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="12"/>
+                                        <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GJq-Nl-3Zl" firstAttribute="leading" secondItem="HSo-J6-KkS" secondAttribute="leading" id="ChW-Bb-prK"/>
+                                    <constraint firstAttribute="height" id="E9j-65-Vme"/>
+                                    <constraint firstItem="GJq-Nl-3Zl" firstAttribute="centerY" secondItem="HSo-J6-KkS" secondAttribute="centerY" id="M0b-vk-RaM"/>
+                                    <constraint firstItem="Cch-Sl-P9E" firstAttribute="leading" secondItem="GJq-Nl-3Zl" secondAttribute="trailing" constant="20" id="XuX-Q3-ZfZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cch-Sl-P9E" secondAttribute="trailing" id="bed-Oo-hE8"/>
+                                    <constraint firstItem="oT9-gi-Y4w" firstAttribute="top" secondItem="GJq-Nl-3Zl" secondAttribute="top" id="mRy-jN-5tP"/>
+                                    <constraint firstAttribute="trailing" secondItem="oT9-gi-Y4w" secondAttribute="trailing" id="pSJ-wh-h8Y"/>
+                                    <constraint firstItem="Cch-Sl-P9E" firstAttribute="top" secondItem="oT9-gi-Y4w" secondAttribute="bottom" constant="3" id="psH-6H-i5k"/>
+                                    <constraint firstItem="oT9-gi-Y4w" firstAttribute="leading" secondItem="GJq-Nl-3Zl" secondAttribute="trailing" constant="20" id="rl0-dS-sXF"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV4-Xd-9Ei" userLabel="Error View">
                                 <rect key="frame" x="25" y="321" width="325" height="20"/>
                                 <subviews>
@@ -3077,24 +3144,41 @@ to your registered address</string>
                                     <constraint firstItem="GKA-Xi-lUG" firstAttribute="centerY" secondItem="Uvd-zf-FW9" secondAttribute="centerY" id="yyw-np-iWa"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xY5-X2-uyz">
+                                <rect key="frame" x="330" y="118.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tick" translatesAutoresizingMaskIntoConstraints="NO" id="5Ol-nk-GBU">
+                                <rect key="frame" x="325" y="120.5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="v6L-Bt-anA"/>
+                                    <constraint firstAttribute="width" constant="16" id="wF1-qs-omG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="f3N-8m-bpV" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="1lY-Lo-LK2"/>
+                            <constraint firstItem="HSo-J6-KkS" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="2qv-CA-MIT"/>
                             <constraint firstItem="chp-68-h32" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="4M2-Ho-Zdl"/>
+                            <constraint firstItem="KJO-Qa-SYm" firstAttribute="top" secondItem="HSo-J6-KkS" secondAttribute="bottom" constant="20" id="7Wq-wZ-UCP"/>
+                            <constraint firstItem="HSo-J6-KkS" firstAttribute="top" secondItem="VqJ-FP-WTZ" secondAttribute="bottom" id="Cul-jo-upR"/>
                             <constraint firstItem="VqJ-FP-WTZ" firstAttribute="top" secondItem="WCc-NK-ylX" secondAttribute="top" constant="82" id="HsH-lm-oEt"/>
                             <constraint firstItem="GV4-Xd-9Ei" firstAttribute="top" secondItem="chp-68-h32" secondAttribute="bottom" constant="20" id="I76-EF-xK3"/>
                             <constraint firstItem="VqJ-FP-WTZ" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="IH1-qO-X2k"/>
                             <constraint firstItem="RDE-xt-4zK" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" id="IY8-rv-YQN"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="chp-68-h32" secondAttribute="trailing" constant="25" id="IyR-Tx-h1Q"/>
                             <constraint firstItem="RDE-xt-4zK" firstAttribute="top" secondItem="Uto-zB-TcF" secondAttribute="top" id="K2S-8G-dNH"/>
+                            <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="HSo-J6-KkS" secondAttribute="trailing" constant="25" id="Lns-jU-dce"/>
                             <constraint firstItem="KJO-Qa-SYm" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="NF7-4f-sJc"/>
                             <constraint firstItem="GV4-Xd-9Ei" firstAttribute="leading" secondItem="WCc-NK-ylX" secondAttribute="leading" constant="25" id="UC4-FQ-nLh"/>
-                            <constraint firstItem="KJO-Qa-SYm" firstAttribute="top" secondItem="VqJ-FP-WTZ" secondAttribute="bottom" constant="20" id="X1V-hy-1Py"/>
+                            <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="5Ol-nk-GBU" secondAttribute="trailing" constant="34" id="WPn-Pl-em5"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="GV4-Xd-9Ei" secondAttribute="trailing" constant="25" id="aHm-Ts-fyr"/>
+                            <constraint firstItem="5Ol-nk-GBU" firstAttribute="centerY" secondItem="xY5-X2-uyz" secondAttribute="centerY" id="bvr-7j-ICi"/>
+                            <constraint firstItem="xY5-X2-uyz" firstAttribute="centerY" secondItem="VqJ-FP-WTZ" secondAttribute="centerY" id="cmD-Ua-egh"/>
                             <constraint firstItem="chp-68-h32" firstAttribute="top" secondItem="KJO-Qa-SYm" secondAttribute="bottom" constant="20" id="dse-2I-Ezn"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="bottom" secondItem="RDE-xt-4zK" secondAttribute="bottom" id="f5Y-LM-0zz"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="KJO-Qa-SYm" secondAttribute="trailing" constant="25" id="f6r-Oa-8V5"/>
+                            <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="xY5-X2-uyz" secondAttribute="trailing" constant="25" id="m0R-2j-QEe"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="f3N-8m-bpV" secondAttribute="trailing" constant="25" id="ojN-XN-hcQ"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="bottom" secondItem="f3N-8m-bpV" secondAttribute="bottom" constant="40" id="v0j-fF-H5Q"/>
                             <constraint firstItem="WCc-NK-ylX" firstAttribute="trailing" secondItem="RDE-xt-4zK" secondAttribute="trailing" id="x08-HF-4xO"/>
@@ -3104,16 +3188,23 @@ to your registered address</string>
                     </view>
                     <connections>
                         <outlet property="bankAccountNumberTextfield" destination="chp-68-h32" id="9jl-9g-Qb3"/>
+                        <outlet property="constRoutingInfo" destination="E9j-65-Vme" id="FBq-IH-aZ4"/>
+                        <outlet property="imgRouting" destination="GJq-Nl-3Zl" id="k2O-3k-dqZ"/>
+                        <outlet property="imgTick" destination="5Ol-nk-GBU" id="Zgx-2I-bCn"/>
                         <outlet property="lblError" destination="Uvd-zf-FW9" id="y0y-wf-sMU"/>
+                        <outlet property="lblRoutingSubtitle" destination="Cch-Sl-P9E" id="Xvi-RG-Gbx"/>
+                        <outlet property="lblRoutingTitle" destination="oT9-gi-Y4w" id="MEq-lK-QDA"/>
                         <outlet property="nicknameTextField" destination="KJO-Qa-SYm" id="Vc2-d6-fZg"/>
                         <outlet property="rountingNumberTextField" destination="VqJ-FP-WTZ" id="MnO-PB-u81"/>
                         <outlet property="saveBtn" destination="f3N-8m-bpV" id="9v2-w1-oIc"/>
+                        <outlet property="spinner" destination="xY5-X2-uyz" id="zRU-4j-hmx"/>
                         <outlet property="vwError" destination="GV4-Xd-9Ei" id="pbX-fD-N0a"/>
+                        <outlet property="vwRoutingInfo" destination="HSo-J6-KkS" id="3ro-gf-EBH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5S-gV-5I7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7628" y="-45"/>
+            <point key="canvasLocation" x="-52" y="1413"/>
         </scene>
         <!--New Pin View Controller-->
         <scene sceneID="8qZ-V1-BUB">
@@ -3202,7 +3293,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UU-bK-2q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6977" y="640"/>
+            <point key="canvasLocation" x="-114" y="673"/>
         </scene>
         <!--My Account View Controller-->
         <scene sceneID="sro-Ih-xAl">
@@ -3248,7 +3339,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVp-Uk-ksi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8347.5" y="-54.929577464788736"/>
+            <point key="canvasLocation" x="-943" y="2104"/>
         </scene>
         <!--Carousel View Comtroller-->
         <scene sceneID="X9I-2Y-ZoG">
@@ -3335,7 +3426,7 @@ to your registered address</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5z-p0-VOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="2937"/>
+            <point key="canvasLocation" x="-943" y="3485"/>
         </scene>
         <!--Confirm Upgrade Controller-->
         <scene sceneID="EFC-iN-u9L">
@@ -3558,7 +3649,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65F-37-qZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="2955"/>
+            <point key="canvasLocation" x="-44" y="3486"/>
         </scene>
         <!--Premium Detail Controller-->
         <scene sceneID="Tvc-9P-Qg0">
@@ -3766,7 +3857,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lf0-Hx-3QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2479" y="2955"/>
+            <point key="canvasLocation" x="801" y="3485"/>
         </scene>
         <!--Account Detail View Controller-->
         <scene sceneID="MI6-7y-uaT">
@@ -3903,7 +3994,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lh-2R-coP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-853" y="-851"/>
+            <point key="canvasLocation" x="-52" y="2104"/>
         </scene>
         <!--Goals View Controller-->
         <scene sceneID="sKw-Pq-0Fb">
@@ -3999,7 +4090,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaM-Q1-69S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9052.5" y="-54.929577464788736"/>
+            <point key="canvasLocation" x="7969" y="-2328"/>
         </scene>
         <!--Expenses View Controller-->
         <scene sceneID="YTy-B3-WIy">
@@ -4014,7 +4105,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhz-Dc-BEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9743" y="-54"/>
+            <point key="canvasLocation" x="8865" y="-2378"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="d7c-TT-8Vx">
@@ -4060,7 +4151,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inn-pC-rRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10395" y="-54.929577464788736"/>
+            <point key="canvasLocation" x="-1007" y="4227"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6cp-VV-NvW">
@@ -4115,7 +4206,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PbI-cB-jbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11034" y="-55"/>
+            <point key="canvasLocation" x="2396" y="4226"/>
         </scene>
         <!--Notification Settings View Controller-->
         <scene sceneID="vh5-fL-ntr">
@@ -4161,7 +4252,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ey-7Q-pfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16834" y="-57"/>
+            <point key="canvasLocation" x="10780" y="-3079"/>
         </scene>
         <!--Legal Stuff View Controller-->
         <scene sceneID="dIQ-Iy-c3Z">
@@ -4213,7 +4304,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7R-39-hNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11684" y="-57.121439280359823"/>
+            <point key="canvasLocation" x="3292" y="4226"/>
         </scene>
         <!--Cashback Controller-->
         <scene sceneID="rm2-ws-z1b">
@@ -4422,7 +4513,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eN-OX-fmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3432.8000000000002" y="1350.6746626686659"/>
+            <point key="canvasLocation" x="1567" y="-55"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="obu-Np-rRO">
@@ -4437,7 +4528,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dge-Yi-mkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11894" y="614"/>
+            <point key="canvasLocation" x="4167" y="4226"/>
         </scene>
         <!--Lost Card View Controller-->
         <scene sceneID="uo9-1r-3vt">
@@ -4609,7 +4700,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtx-Jq-8dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12356.25" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="1566" y="672"/>
         </scene>
         <!--Add Account View Controller-->
         <scene sceneID="Nbv-v3-Caf">
@@ -4665,7 +4756,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1D7-hk-6sP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14289" y="-57"/>
+            <point key="canvasLocation" x="1566" y="1413"/>
         </scene>
         <!--My Offers View Controller-->
         <scene sceneID="rSv-cS-ewT">
@@ -4729,7 +4820,7 @@ the transactions correspond to such terms. This payment authorization is valid a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbF-NZ-E4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13642.5" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="9890" y="-3078"/>
         </scene>
         <!--Direct Deposit View Controller-->
         <scene sceneID="kcl-5p-WHR">
@@ -4787,7 +4878,7 @@ and get $200</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g72-6R-vVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13016.25" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="8865" y="-3098"/>
         </scene>
         <!--Lost Insufficient View Controller-->
         <scene sceneID="rLA-sE-Nan">
@@ -4847,7 +4938,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67S-yQ-DOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14919" y="-55"/>
+            <point key="canvasLocation" x="9815" y="-2379"/>
         </scene>
         <!--Sucess View Controller-->
         <scene sceneID="fww-Ro-bVt">
@@ -4894,7 +4985,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3s-u9-Oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16201.875" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="692" y="672"/>
         </scene>
         <!--Transfer Confirmation View Controller-->
         <scene sceneID="Orf-rW-MhW">
@@ -5162,7 +5253,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nT-l0-7aW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15570.4" y="-57.121439280359823"/>
+            <point key="canvasLocation" x="2434" y="1413"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="3pJ-IW-poa">
@@ -5269,7 +5360,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="133.5" y="328" width="108" height="31"/>
+                                <rect key="frame" x="126" y="328" width="123" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
@@ -5418,7 +5509,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9f-59-tQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2857" y="764"/>
+            <point key="canvasLocation" x="-1852" y="-90"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="bZm-Vx-pOE">
@@ -5500,7 +5591,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjn-gR-whm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2098" y="764"/>
+            <point key="canvasLocation" x="-2778" y="-866"/>
         </scene>
         <!--Promo Code View Controller-->
         <scene sceneID="2iU-YL-bEw">
@@ -5607,7 +5698,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fA-hv-OKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18141" y="675"/>
+            <point key="canvasLocation" x="11754" y="-3036"/>
         </scene>
         <!--Change Phone View Controller-->
         <scene sceneID="sOK-Al-M5J">
@@ -5689,7 +5780,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeL-ms-TRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18833" y="676"/>
+            <point key="canvasLocation" x="785" y="2104"/>
         </scene>
         <!--Scan Passport Controller-->
         <scene sceneID="Gcw-Me-tRu">
@@ -5911,7 +6002,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBT-Fk-UrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="2171.9640179910048"/>
+            <point key="canvasLocation" x="2756" y="-846"/>
         </scene>
         <!--ScanI20 Controller-->
         <scene sceneID="Lb2-zZ-b8z">
@@ -6180,7 +6271,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbU-0i-QxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="2177.3613193403298"/>
+            <point key="canvasLocation" x="3521" y="-841"/>
         </scene>
         <!--Image Preview View Controller-->
         <scene sceneID="Esr-cf-hxF">
@@ -6266,7 +6357,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G03-fL-UeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20100" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="-4335" y="-2978"/>
         </scene>
         <!--Verify Address New View Controller-->
         <scene sceneID="INR-Kj-I1Z">
@@ -6436,7 +6527,7 @@ up and site back and relax.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jM2-G6-oue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20739.375" y="-55.985915492957744"/>
+            <point key="canvasLocation" x="-3695" y="-2976"/>
         </scene>
         <!--Confirmed New View Controller-->
         <scene sceneID="QT1-Dq-hWd">
@@ -6506,7 +6597,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAy-QK-yWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21382.5" y="-57.04225352112676"/>
+            <point key="canvasLocation" x="6353" y="-3098"/>
         </scene>
         <!--Dispute Transaction Confirmation View Controller-->
         <scene sceneID="tFz-G2-5o3">
@@ -6581,7 +6672,7 @@ If you believe there has been a mistake, please contact us at help@nolobank.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWm-eL-4fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8348" y="1318"/>
+            <point key="canvasLocation" x="7166" y="-2327"/>
         </scene>
         <!--Transfer Suceess View Controller-->
         <scene sceneID="njp-7K-2OZ">
@@ -6649,7 +6740,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3Q-up-4gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21396" y="765"/>
+            <point key="canvasLocation" x="6367" y="-2276"/>
         </scene>
         <!--Lost Card Confirmation View Controller-->
         <scene sceneID="ltS-eA-Jof">
@@ -6717,7 +6808,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCx-FT-fpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22063" y="765"/>
+            <point key="canvasLocation" x="2402" y="672"/>
         </scene>
         <!--Dispute Transaction View Controller-->
         <scene sceneID="Y7M-Vh-Oi7">
@@ -6789,7 +6880,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsK-3M-HYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22136" y="-57"/>
+            <point key="canvasLocation" x="7106" y="-3098"/>
         </scene>
         <!--Select2FA Mode View Controller-->
         <scene sceneID="v12-oE-JE1">
@@ -6861,7 +6952,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfX-LE-psM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22871" y="-57"/>
+            <point key="canvasLocation" x="7841" y="-3098"/>
         </scene>
         <!--Create AccountV2 View Controller-->
         <scene sceneID="FLu-si-ZuT">
@@ -7159,7 +7250,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgM-1r-Irr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-406" y="720"/>
+            <point key="canvasLocation" x="-2713" y="-2976"/>
         </scene>
         <!--Wire Rate Controller-->
         <scene sceneID="3fv-Ks-F4I">
@@ -7397,7 +7488,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGv-fj-WbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285.60000000000002" y="1370.4647676161919"/>
+            <point key="canvasLocation" x="-225" y="2794"/>
         </scene>
         <!--Currency Protect Controller-->
         <scene sceneID="il6-tr-jjQ">
@@ -7474,7 +7565,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZm-A6-laj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="1368"/>
+            <point key="canvasLocation" x="-943" y="2802"/>
         </scene>
         <!--Home Tab Controller-->
         <scene sceneID="8dU-N8-HTl">
@@ -7488,7 +7579,7 @@ We’ve sent an email confirming.</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wi0-tp-Bqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="1354"/>
+            <point key="canvasLocation" x="-1006" y="-90"/>
         </scene>
         <!--Lost Card Options Controller-->
         <scene sceneID="YPA-Df-Gdv">
@@ -7618,7 +7709,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jr8-gg-tUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2549.5999999999999" y="1350.6746626686659"/>
+            <point key="canvasLocation" x="4095" y="712"/>
         </scene>
         <!--Sign Up Step First-->
         <scene sceneID="Jwf-bG-IDA">
@@ -7632,7 +7723,7 @@ We’ve sent an email confirming.</string>
                                 <rect key="frame" x="0.0" y="20" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets get started!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSQ-ht-gdc" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="167.5" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="182" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Wnp-qY-bdG"/>
                                         </constraints>
@@ -8026,7 +8117,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAB-kT-S9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121" y="764"/>
+            <point key="canvasLocation" x="-1852" y="-851"/>
         </scene>
         <!--Personal Detail View Controller-->
         <scene sceneID="qWi-1X-Kcq">
@@ -8297,7 +8388,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDb-AR-qJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68" y="-851"/>
+            <point key="canvasLocation" x="-1060" y="-851"/>
         </scene>
         <!--Phone Number Controller-->
         <scene sceneID="Vxj-X6-IbI">
@@ -8485,7 +8576,7 @@ We’ve sent an email confirming.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGT-Dc-jea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="-851.42428785607206"/>
+            <point key="canvasLocation" x="-268" y="-851"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="KXP-hZ-vuK">
@@ -8564,13 +8655,13 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RtN-bZ-CWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282.4000000000001" y="629.2353823088456"/>
+            <point key="canvasLocation" x="-5694" y="-2975"/>
         </scene>
         <!--Make Transfer View Controller-->
         <scene sceneID="3Mj-hA-Nyh">
             <objects>
                 <viewController storyboardIdentifier="MakeTransferViewController" id="3tg-b2-OAo" customClass="MakeTransferViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Th2-sl-iud" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Th2-sl-iud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -8706,7 +8797,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj6-eq-7ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7628" y="640"/>
+            <point key="canvasLocation" x="-943" y="1413"/>
         </scene>
         <!--View Accounts View Controller-->
         <scene sceneID="Jvj-JB-1Af">
@@ -8758,7 +8849,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fto-Mq-ud2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6937" y="1413"/>
+            <point key="canvasLocation" x="828" y="1413"/>
         </scene>
         <!--Finder View Controller-->
         <scene sceneID="3uX-RE-BKz">
@@ -8910,7 +9001,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q87-ic-mDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8348" y="639"/>
+            <point key="canvasLocation" x="1585" y="4226"/>
         </scene>
         <!--Wait List View Controller-->
         <scene sceneID="Zx3-L6-yhw">
@@ -9000,7 +9091,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I11-bY-3g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9080.7999999999993" y="1316.4917541229386"/>
+            <point key="canvasLocation" x="8866" y="-842"/>
         </scene>
         <!--Address Verification View Controller-->
         <scene sceneID="T0W-nu-2w7">
@@ -9151,7 +9242,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80A-8m-FKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4190" y="794"/>
+            <point key="canvasLocation" x="4910" y="-1699"/>
         </scene>
         <!--Analysis View Controller-->
         <scene sceneID="lDr-UP-PhG">
@@ -9185,7 +9276,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sk-RB-9jc">
-                                        <rect key="frame" x="10" y="120" width="166.5" height="16.5"/>
+                                        <rect key="frame" x="10" y="120" width="166.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.81960784310000001" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -9208,7 +9299,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spent this month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-a3-Cbs" userLabel="ВLabel">
-                                        <rect key="frame" x="198.5" y="120" width="166.5" height="16.5"/>
+                                        <rect key="frame" x="198.5" y="120" width="166.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.81960784310000001" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -9349,7 +9440,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjw-Ns-oLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552.8" y="674.21289355322347"/>
+            <point key="canvasLocation" x="2396" y="-54"/>
         </scene>
         <!--Verify Identity View Controller-->
         <scene sceneID="VWM-0d-1sN">
@@ -9521,7 +9612,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KvZ-qm-NEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1554" y="-845"/>
+            <point key="canvasLocation" x="558" y="-851"/>
         </scene>
         <!--Citizenship View Controller-->
         <scene sceneID="yIe-Y0-G8o">
@@ -9646,7 +9737,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je3-fJ-BaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="-845"/>
+            <point key="canvasLocation" x="-1732" y="-2975"/>
         </scene>
         <!--PhotoID View Controller-->
         <scene sceneID="sOk-hl-E9g">
@@ -9781,16 +9872,20 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPS-al-h5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2986" y="-845"/>
+            <point key="canvasLocation" x="-943" y="-2975"/>
         </scene>
         <!--Current Balance View Controller-->
         <scene sceneID="xWQ-Gh-fKs">
             <objects>
-                <viewController storyboardIdentifier="CurrentBalance" id="DtH-zd-uMJ" customClass="CurrentBalanceViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentBalanceViewController" id="DtH-zd-uMJ" customClass="CurrentBalanceViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IEL-os-cEv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zic-CB-7rk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.69019607843137254" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LD-0N-09T" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="253"/>
                                 <subviews>
@@ -9907,8 +10002,12 @@ The Internal Revenue Service does not require your consent to any provision of t
                             <constraint firstItem="NOI-pZ-eVP" firstAttribute="leading" secondItem="hRE-B9-VtO" secondAttribute="leading" constant="25" id="7Hf-0I-am1"/>
                             <constraint firstItem="hRE-B9-VtO" firstAttribute="trailing" secondItem="NOI-pZ-eVP" secondAttribute="trailing" constant="25" id="COf-zm-l0N"/>
                             <constraint firstItem="hRE-B9-VtO" firstAttribute="trailing" secondItem="6LD-0N-09T" secondAttribute="trailing" id="JK0-iE-396"/>
+                            <constraint firstItem="zic-CB-7rk" firstAttribute="leading" secondItem="IEL-os-cEv" secondAttribute="leading" id="JxW-Ok-LtY"/>
+                            <constraint firstItem="6LD-0N-09T" firstAttribute="top" secondItem="zic-CB-7rk" secondAttribute="bottom" id="XOe-Yi-FHY"/>
                             <constraint firstItem="Hdh-8t-46E" firstAttribute="top" secondItem="6LD-0N-09T" secondAttribute="bottom" constant="-50" id="jC2-VP-WHu"/>
                             <constraint firstItem="NOI-pZ-eVP" firstAttribute="top" secondItem="Hdh-8t-46E" secondAttribute="bottom" constant="15" id="kRK-Fh-8Tv"/>
+                            <constraint firstAttribute="trailing" secondItem="zic-CB-7rk" secondAttribute="trailing" id="lvN-lb-i4P"/>
+                            <constraint firstItem="zic-CB-7rk" firstAttribute="top" secondItem="IEL-os-cEv" secondAttribute="top" id="mo6-TU-xWL"/>
                             <constraint firstItem="hRE-B9-VtO" firstAttribute="trailing" secondItem="Hdh-8t-46E" secondAttribute="trailing" constant="25" id="poS-PI-QnQ"/>
                             <constraint firstItem="Hdh-8t-46E" firstAttribute="leading" secondItem="hRE-B9-VtO" secondAttribute="leading" constant="25" id="rox-Vj-wfL"/>
                             <constraint firstItem="6LD-0N-09T" firstAttribute="top" secondItem="hRE-B9-VtO" secondAttribute="top" id="zcM-PG-3ah"/>
@@ -9923,12 +10022,12 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fcc-CH-8hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3742" y="-839"/>
+            <point key="canvasLocation" x="1920.8" y="-1808.5457271364319"/>
         </scene>
         <!--Transfer Debit From View Controller-->
         <scene sceneID="wNY-Io-hRs">
             <objects>
-                <viewController storyboardIdentifier="TransferDebitFrom" id="tuf-mK-QVx" customClass="TransferDebitFromViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransferDebitFromViewController" id="tuf-mK-QVx" customClass="TransferDebitFromViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w4v-Z7-m0q" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -9937,7 +10036,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 <rect key="frame" x="0.0" y="20" width="375" height="105"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-H1-m7B" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="89.5" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="84" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="EPO-Sg-ycj"/>
                                         </constraints>
@@ -9951,7 +10050,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debit from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A5-Jq-W4Q" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="75" width="75" height="17"/>
+                                        <rect key="frame" x="25" y="75" width="70.5" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="r1e-9L-tKR"/>
                                         </constraints>
@@ -10007,7 +10106,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-Xu-UH8" userLabel="Line View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="0lp-m3-Juv"/>
                                                                 </constraints>
@@ -10031,11 +10130,16 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="32H-aK-Zc7"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                                        <real key="value" value="0.46999999999999997"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-LQ-beX">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_default_funding_acct" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-LQ-beX">
                                                                 <rect key="frame" x="138" y="43" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="BG2-nc-hUv"/>
@@ -10054,7 +10158,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="13" id="IyV-pk-QqK"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="12"/>
                                                                 <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -10064,7 +10168,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer takes 1-2 bussiness days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oz-fU-6zR" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                                <rect key="frame" x="162" y="67.5" width="182.5" height="13"/>
+                                                                <rect key="frame" x="162" y="67.5" width="159.5" height="13"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="13" id="O8u-9m-aad"/>
                                                                 </constraints>
@@ -10107,7 +10211,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfx-3a-Xdw" userLabel="Line View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="3rh-Nz-uRC"/>
                                                                 </constraints>
@@ -10131,7 +10235,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="5Gb-MJ-NgF"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -10173,14 +10277,14 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsH-bJ-y7R" userLabel="Top Line View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="O4o-Mf-AJq"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgZ-fx-p6f" userLabel="Bottom Line View">
                                                                 <rect key="frame" x="0.0" y="55" width="375" height="1"/>
-                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="bal-Lc-9Hh"/>
                                                                 </constraints>
@@ -10223,7 +10327,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                             <constraint firstAttribute="trailing" secondItem="IsH-bJ-y7R" secondAttribute="trailing" id="ozX-H1-rgW"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$ 50" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="309-7C-Ikz">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="      $ 50" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="309-7C-Ikz">
                                                         <rect key="frame" x="25" y="270" width="325" height="50"/>
                                                         <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -10307,21 +10411,21 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSr-pn-kce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4546" y="-845"/>
+            <point key="canvasLocation" x="2726" y="-1814"/>
         </scene>
         <!--Transfer Detail View Controller-->
         <scene sceneID="YYT-HX-jZe">
             <objects>
-                <viewController storyboardIdentifier="TransferDetail" id="ap0-mk-Og8" customClass="TransferDetailViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransferDetailViewController" id="ap0-mk-Og8" customClass="TransferDetailViewController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="21z-zV-eoW" customClass="GradientView" customModule="NorthLoopFin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hU-XD-nXJ" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-So-CQQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="89.5" height="25"/>
+                                        <rect key="frame" x="25" y="0.0" width="84" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="jD5-8L-kuq"/>
                                         </constraints>
@@ -10337,78 +10441,127 @@ The Internal Revenue Service does not require your consent to any provision of t
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="6uF-hY-fOC"/>
+                                    <constraint firstAttribute="height" constant="50" id="6uF-hY-fOC"/>
                                     <constraint firstItem="ghE-So-CQQ" firstAttribute="leading" secondItem="8hU-XD-nXJ" secondAttribute="leading" constant="25" id="BJw-aB-OSX"/>
-                                    <constraint firstItem="ghE-So-CQQ" firstAttribute="top" secondItem="8hU-XD-nXJ" secondAttribute="top" constant="25" id="gOC-5C-P0v"/>
+                                    <constraint firstItem="ghE-So-CQQ" firstAttribute="top" secondItem="8hU-XD-nXJ" secondAttribute="top" id="gOC-5C-P0v"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T4k-4q-uqg">
-                                <rect key="frame" x="0.0" y="100" width="375" height="447"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ap0-mk-Og8" id="1dH-Ik-uZp"/>
                                     <outlet property="delegate" destination="ap0-mk-Og8" id="9QJ-F0-xp6"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQv-Hk-6IC" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="547" width="375" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0p-cD-F9S" userLabel="Transfer Amount Button" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="5" width="325" height="45"/>
-                                        <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="epp-k3-UG9"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
-                                        <state key="normal" title="TRANSFER $50">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                <real key="value" value="0.22"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="transferAmountButtonAction:" destination="ap0-mk-Og8" eventType="touchUpInside" id="R8u-kg-l7n"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="x0p-cD-F9S" secondAttribute="trailing" constant="25" id="17s-Ct-TJH"/>
-                                    <constraint firstItem="x0p-cD-F9S" firstAttribute="top" secondItem="FQv-Hk-6IC" secondAttribute="top" constant="5" id="Ynb-3x-Kca"/>
-                                    <constraint firstItem="x0p-cD-F9S" firstAttribute="leading" secondItem="FQv-Hk-6IC" secondAttribute="leading" constant="25" id="hhi-l3-n5S"/>
-                                    <constraint firstAttribute="bottom" secondItem="x0p-cD-F9S" secondAttribute="bottom" constant="70" id="w8g-sC-3Bc"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8hU-XD-nXJ" firstAttribute="trailing" secondItem="XQt-sM-YV5" secondAttribute="trailing" id="5UU-hT-4pp"/>
-                            <constraint firstItem="FQv-Hk-6IC" firstAttribute="trailing" secondItem="XQt-sM-YV5" secondAttribute="trailing" id="CNJ-8Y-ks2"/>
+                            <constraint firstItem="XQt-sM-YV5" firstAttribute="bottom" secondItem="T4k-4q-uqg" secondAttribute="bottom" id="940-i0-5hp"/>
                             <constraint firstItem="T4k-4q-uqg" firstAttribute="top" secondItem="8hU-XD-nXJ" secondAttribute="bottom" id="Dnl-bx-MWz"/>
-                            <constraint firstItem="FQv-Hk-6IC" firstAttribute="leading" secondItem="XQt-sM-YV5" secondAttribute="leading" id="RIq-aE-qSP"/>
                             <constraint firstItem="T4k-4q-uqg" firstAttribute="trailing" secondItem="XQt-sM-YV5" secondAttribute="trailing" id="THa-t3-Zx3"/>
-                            <constraint firstItem="FQv-Hk-6IC" firstAttribute="bottom" secondItem="XQt-sM-YV5" secondAttribute="bottom" id="UfT-nw-9fM"/>
-                            <constraint firstItem="8hU-XD-nXJ" firstAttribute="top" secondItem="XQt-sM-YV5" secondAttribute="top" id="Uhj-r2-kea"/>
+                            <constraint firstItem="8hU-XD-nXJ" firstAttribute="top" secondItem="XQt-sM-YV5" secondAttribute="top" constant="20" id="Uhj-r2-kea"/>
                             <constraint firstItem="8hU-XD-nXJ" firstAttribute="leading" secondItem="XQt-sM-YV5" secondAttribute="leading" id="fdL-Lf-E8P"/>
-                            <constraint firstItem="FQv-Hk-6IC" firstAttribute="top" secondItem="T4k-4q-uqg" secondAttribute="bottom" id="hXg-un-UO7"/>
                             <constraint firstItem="T4k-4q-uqg" firstAttribute="leading" secondItem="XQt-sM-YV5" secondAttribute="leading" id="vtN-cm-rFi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XQt-sM-YV5"/>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="FQv-Hk-6IC" id="xNs-ic-Sfg"/>
                         <outlet property="mainTitleLabel" destination="ghE-So-CQQ" id="meY-fu-LRb"/>
                         <outlet property="tableView" destination="T4k-4q-uqg" id="m5g-Wp-Ody"/>
                         <outlet property="transferAmountButton" destination="x0p-cD-F9S" id="opy-bx-GF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2o7-0m-I8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="FQv-Hk-6IC" userLabel="Bottom View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1sQ-J5-McU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                            <rect key="frame" x="25" y="10" width="325" height="108"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="108" id="IiY-38-iYs"/>
+                            </constraints>
+                            <string key="text">By Clicking Confirm, you are authorizing us to initiate a debit on your behalf, from your account for the specified amount on the specified date. You agree that you will not dispute this transaction, so long as the transaction corresponds to the terms of this authorization. Please click cancel if you would like to cancel</string>
+                            <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="13"/>
+                            <color key="textColor" red="0.61568627450000002" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                    <real key="value" value="0.42999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0p-cD-F9S" userLabel="Transfer Amount Button" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                            <rect key="frame" x="25" y="136" width="325" height="45"/>
+                            <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="epp-k3-UG9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                            <state key="normal" title="TRANSFER $50">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                    <real key="value" value="0.22"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="transferAmountButtonAction:" destination="ap0-mk-Og8" eventType="touchUpInside" id="R8u-kg-l7n"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfS-yl-FDA">
+                            <rect key="frame" x="25" y="202" width="325" height="45"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="1Ao-b6-4fC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
+                            <state key="normal" title="CANCEL">
+                                <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                    <real key="value" value="0.22"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnCancel_pressed:" destination="QLG-Zk-5m9" eventType="touchUpInside" id="Jll-Fi-UTV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="x0p-cD-F9S" secondAttribute="trailing" constant="25" id="17s-Ct-TJH"/>
+                        <constraint firstAttribute="bottom" secondItem="jfS-yl-FDA" secondAttribute="bottom" constant="12" id="4Aa-1k-dNK"/>
+                        <constraint firstAttribute="trailing" secondItem="jfS-yl-FDA" secondAttribute="trailing" constant="25" id="AlB-V8-49K"/>
+                        <constraint firstItem="1sQ-J5-McU" firstAttribute="top" secondItem="FQv-Hk-6IC" secondAttribute="top" constant="10" id="KXe-Q2-Xez"/>
+                        <constraint firstAttribute="trailing" secondItem="1sQ-J5-McU" secondAttribute="trailing" constant="25" id="W0L-Oe-TtT"/>
+                        <constraint firstItem="jfS-yl-FDA" firstAttribute="top" secondItem="x0p-cD-F9S" secondAttribute="bottom" constant="21" id="Wxz-0i-pa3"/>
+                        <constraint firstItem="x0p-cD-F9S" firstAttribute="top" secondItem="FQv-Hk-6IC" secondAttribute="top" constant="136" id="Ynb-3x-Kca"/>
+                        <constraint firstItem="jfS-yl-FDA" firstAttribute="leading" secondItem="FQv-Hk-6IC" secondAttribute="leading" constant="25" id="hf4-3O-Awl"/>
+                        <constraint firstItem="x0p-cD-F9S" firstAttribute="leading" secondItem="FQv-Hk-6IC" secondAttribute="leading" constant="25" id="hhi-l3-n5S"/>
+                        <constraint firstItem="1sQ-J5-McU" firstAttribute="leading" secondItem="FQv-Hk-6IC" secondAttribute="leading" constant="25" id="xod-FZ-l4m"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ULO-26-iyr"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="5206" y="-845"/>
+            <point key="canvasLocation" x="3384.8000000000002" y="-1814.8425787106448"/>
         </scene>
         <!--Coming Soon Controller-->
         <scene sceneID="PTG-3a-dY4">
@@ -10467,30 +10620,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMl-aH-zPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5922" y="-839"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="IjF-71-v2z">
-            <objects>
-                <navigationController id="hYe-01-dSQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7n9-Ej-mMq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="2"/>
-                            <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.30196078430000001" green="0.2666666667" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="QNX-G2-gV6" kind="relationship" relationship="rootViewController" id="318-cV-kUA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9L-dM-1Yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="746" y="645"/>
+            <point key="canvasLocation" x="4102" y="-1808"/>
         </scene>
         <!--ScanID Menu Controller-->
         <scene sceneID="c2f-DF-fMg">
@@ -10604,7 +10734,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GF-ba-IAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="2172"/>
+            <point key="canvasLocation" x="1324" y="-851"/>
         </scene>
         <!--Scan Visa Controller-->
         <scene sceneID="t4J-jN-lav">
@@ -10788,7 +10918,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NyK-Sp-9wG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="2177"/>
+            <point key="canvasLocation" x="4222" y="-842"/>
         </scene>
         <!--Scan Address Proof Controller-->
         <scene sceneID="GYT-9F-mtW">
@@ -10972,7 +11102,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjP-dP-gp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3258" y="2177"/>
+            <point key="canvasLocation" x="4911" y="-842"/>
         </scene>
         <!--ScanID Controller-->
         <scene sceneID="ztO-hk-3CY">
@@ -11161,7 +11291,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UX-Gx-TCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3906" y="2177"/>
+            <point key="canvasLocation" x="2025" y="-846"/>
         </scene>
         <!--OnboardingVC-->
         <scene sceneID="t5Q-SB-8CU">
@@ -11265,6 +11395,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xsg-U7-bEs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KgO-z7-l5V"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="carouselCollectionView" destination="rKV-tZ-GkT" id="yPk-br-PN3"/>
@@ -11273,7 +11404,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jy-VV-Kzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.60000000000002" y="2936.5817091454273"/>
+            <point key="canvasLocation" x="-3695" y="-90"/>
         </scene>
         <!--Lost Card Delivery View Controller-->
         <scene sceneID="YWF-QY-ZX1">
@@ -11294,7 +11425,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWN-14-nLM" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="252" width="107.5" height="20"/>
+                                                <rect key="frame" x="25" y="252" width="119" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="2Sj-Eu-QzS"/>
                                                 </constraints>
@@ -11315,7 +11446,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBb-fg-H4E" userLabel="Address View">
-                                                <rect key="frame" x="25" y="282" width="325" height="80"/>
+                                                <rect key="frame" x="25" y="281" width="325" height="80"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your new North Loop Visa Debit Card will be sent to 134, Broadway, NY. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jft-WH-K0g" userLabel="Address Text View">
                                                         <rect key="frame" x="15" y="15" width="288" height="51"/>
@@ -11340,7 +11471,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select delivery type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBU-i1-0XF" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="392" width="127" height="17"/>
+                                                <rect key="frame" x="25" y="391" width="140" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="WuH-m0-m5h"/>
                                                 </constraints>
@@ -11354,7 +11485,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EA8-5m-KgO" userLabel="Standard Delivery View">
-                                                <rect key="frame" x="24" y="419" width="327" height="82"/>
+                                                <rect key="frame" x="24" y="418" width="327" height="82"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-om-TDk">
                                                         <rect key="frame" x="20" y="23.5" width="35" height="35"/>
@@ -11376,7 +11507,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-kh-aug" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="79" y="20" width="127.5" height="23"/>
+                                                        <rect key="frame" x="79" y="20" width="137" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="23" id="PvK-vF-82z"/>
                                                         </constraints>
@@ -11390,7 +11521,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 business days" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7t-1t-TR1" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="79" y="46" width="100.5" height="17"/>
+                                                        <rect key="frame" x="79" y="46" width="115.5" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="igF-QZ-795"/>
                                                         </constraints>
@@ -11407,7 +11538,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="080-re-1Ft" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="267.5" y="23.5" width="34.5" height="35"/>
+                                                        <rect key="frame" x="264" y="23.5" width="38" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="Roc-7Y-Zl8"/>
                                                         </constraints>
@@ -11452,7 +11583,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0X-Va-3zQ" userLabel="Rush Delivery View">
-                                                <rect key="frame" x="24" y="511" width="327" height="82"/>
+                                                <rect key="frame" x="24" y="510" width="327" height="82"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBx-hJ-6kY">
                                                         <rect key="frame" x="20" y="23.5" width="35" height="35"/>
@@ -11474,7 +11605,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rush" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCf-ms-eOh" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="79" y="20" width="45" height="23"/>
+                                                        <rect key="frame" x="79" y="20" width="51" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="23" id="0ez-YZ-OBG"/>
                                                         </constraints>
@@ -11487,7 +11618,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 business days" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhx-Bb-Afv" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="79" y="46" width="100.5" height="17"/>
+                                                        <rect key="frame" x="79" y="46" width="115.5" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="uQg-nk-bRN"/>
                                                         </constraints>
@@ -11504,7 +11635,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-ht-54A" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                        <rect key="frame" x="250" y="23.5" width="52" height="35"/>
+                                                        <rect key="frame" x="245" y="23.5" width="57" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="6Cb-tA-6sx"/>
                                                         </constraints>
@@ -11549,7 +11680,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl7-WL-nMo" userLabel="Continue Button" customClass="CommonButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="633" width="325" height="45"/>
+                                                <rect key="frame" x="25" y="632" width="325" height="45"/>
                                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="2zx-bp-oqg"/>
@@ -11634,7 +11765,118 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOW-7g-hWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6696.8000000000002" y="-851.42428785607206"/>
+            <point key="canvasLocation" x="3183" y="712"/>
+        </scene>
+        <!--Apply Credit CardVC-->
+        <scene sceneID="ntY-aW-Adw">
+            <objects>
+                <viewController storyboardIdentifier="ApplyCreditCardVC" id="ipl-bW-uLt" customClass="ApplyCreditCardVC" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cKp-AH-cYj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5D-NX-LhF" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="45" width="325" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="QDH-hL-fdU"/>
+                                </constraints>
+                                <string key="text">Sign up for a credit card, with a limit of up to $20,000 
+No credit history required</string>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="20"/>
+                                <color key="textColor" red="0.30196078431372547" green="0.26666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.17999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoLoCard" translatesAutoresizingMaskIntoConstraints="NO" id="S65-j3-h8p">
+                                <rect key="frame" x="41" y="150" width="293" height="184"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="S65-j3-h8p" secondAttribute="height" multiplier="293:184" id="qbd-DT-Wb7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vg-RQ-sZh" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="344" width="325" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="l5Y-qI-Z3G"/>
+                                </constraints>
+                                <string key="text">It's simple - use your North Loop Debit card regularly, and you'll be eligible for a credit card within 6 months. The more you use the North Loop card, the sooner you can get a credit card</string>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                                <color key="textColor" red="0.45490196078431372" green="0.45098039215686275" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.14000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-8u-0d1">
+                                <rect key="frame" x="0.0" y="454" width="375" height="213"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd1-mZ-SUH" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="84" width="325" height="45"/>
+                                        <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="OAL-2i-tDG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                <real key="value" value="0.22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnApply_clicked:" destination="ipl-bW-uLt" eventType="touchUpInside" id="diz-Yc-H0S"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gWT-mH-Tag">
+                                        <rect key="frame" x="177" y="96" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fd1-mZ-SUH" firstAttribute="leading" secondItem="ngX-8u-0d1" secondAttribute="leading" constant="25" id="1wm-vI-9Nt"/>
+                                    <constraint firstAttribute="trailing" secondItem="fd1-mZ-SUH" secondAttribute="trailing" constant="25" id="Oqi-oA-N2o"/>
+                                    <constraint firstItem="fd1-mZ-SUH" firstAttribute="centerY" secondItem="ngX-8u-0d1" secondAttribute="centerY" id="d9o-Jq-ur5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ngX-8u-0d1" firstAttribute="bottom" secondItem="bfv-tQ-iGX" secondAttribute="bottom" id="3E6-4V-EAc"/>
+                            <constraint firstItem="S65-j3-h8p" firstAttribute="leading" secondItem="bfv-tQ-iGX" secondAttribute="leading" constant="41" id="6fk-LX-KWc"/>
+                            <constraint firstItem="ngX-8u-0d1" firstAttribute="top" secondItem="5Vg-RQ-sZh" secondAttribute="bottom" id="CIp-C5-oFL"/>
+                            <constraint firstItem="5Vg-RQ-sZh" firstAttribute="top" secondItem="S65-j3-h8p" secondAttribute="bottom" constant="10" id="HZc-rB-8qI"/>
+                            <constraint firstItem="c5D-NX-LhF" firstAttribute="leading" secondItem="cKp-AH-cYj" secondAttribute="leading" constant="25" id="J4J-ZR-FhC"/>
+                            <constraint firstItem="ngX-8u-0d1" firstAttribute="leading" secondItem="bfv-tQ-iGX" secondAttribute="leading" id="TSs-BN-eU9"/>
+                            <constraint firstItem="5Vg-RQ-sZh" firstAttribute="leading" secondItem="bfv-tQ-iGX" secondAttribute="leading" constant="25" id="VYf-CW-5yh"/>
+                            <constraint firstItem="bfv-tQ-iGX" firstAttribute="trailing" secondItem="5Vg-RQ-sZh" secondAttribute="trailing" constant="25" id="YDb-V3-Myi"/>
+                            <constraint firstItem="ngX-8u-0d1" firstAttribute="trailing" secondItem="bfv-tQ-iGX" secondAttribute="trailing" id="psn-gS-aTw"/>
+                            <constraint firstItem="c5D-NX-LhF" firstAttribute="top" secondItem="bfv-tQ-iGX" secondAttribute="top" constant="25" id="qcq-qw-vQH"/>
+                            <constraint firstAttribute="trailing" secondItem="c5D-NX-LhF" secondAttribute="trailing" constant="25" id="vb6-dD-lja"/>
+                            <constraint firstItem="bfv-tQ-iGX" firstAttribute="trailing" secondItem="S65-j3-h8p" secondAttribute="trailing" constant="41" id="vnf-nz-CHc"/>
+                            <constraint firstItem="S65-j3-h8p" firstAttribute="top" secondItem="c5D-NX-LhF" secondAttribute="bottom" constant="30" id="y70-ob-IO7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfv-tQ-iGX"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="btnApply" destination="fd1-mZ-SUH" id="c4O-8k-egR"/>
+                        <outlet property="spinner" destination="gWT-mH-Tag" id="cIF-aJ-Jvv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptT-9M-9rW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="4978"/>
         </scene>
     </scenes>
     <resources>
@@ -11642,6 +11884,7 @@ The Internal Revenue Service does not require your consent to any provision of t
         <image name="DeliveryLostCard" width="184" height="179"/>
         <image name="Legal Stuff" width="289" height="297"/>
         <image name="LostInsufficient" width="206" height="236"/>
+        <image name="NoLoCard" width="292" height="184"/>
         <image name="RoundedBackgroundForImage" width="66" height="66"/>
         <image name="SelfieTime" width="111" height="112"/>
         <image name="SignInLogo" width="167" height="46"/>
@@ -11676,11 +11919,13 @@ The Internal Revenue Service does not require your consent to any provision of t
         <image name="ic_coming_soon" width="320" height="205"/>
         <image name="ic_currency_project" width="60" height="65"/>
         <image name="ic_damanged" width="82" height="82"/>
+        <image name="ic_default_funding_acct" width="16" height="16"/>
         <image name="ic_eligible_refund" width="32" height="32"/>
         <image name="ic_forward" width="8" height="14"/>
         <image name="ic_fraud" width="82" height="82"/>
         <image name="ic_lost" width="82" height="82"/>
         <image name="ic_stolen" width="82" height="82"/>
+        <image name="ic_tick" width="15" height="12"/>
         <image name="ic_upload_placeholder" width="154" height="154"/>
         <image name="ic_upload_shadow" width="389" height="391"/>
         <image name="icon_yes" width="12" height="9.5"/>
@@ -11698,7 +11943,6 @@ The Internal Revenue Service does not require your consent to any provision of t
         <image name="settings" width="24" height="24"/>
         <image name="signup thankyou" width="654" height="489"/>
         <image name="ssninfo" width="23" height="23"/>
-        <image name="tick" width="18" height="18"/>
         <image name="uncheckedBox" width="22" height="22"/>
         <image name="upgrade_success" width="272" height="288"/>
     </resources>

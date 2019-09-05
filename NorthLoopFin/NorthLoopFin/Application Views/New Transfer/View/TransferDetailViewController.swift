@@ -14,14 +14,19 @@ class TransferDetailViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var transferAmountButton: RippleButton!
     var data:[TransferDetailCellModel]=[]
+    
+    @IBOutlet weak var bottomView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRightNavigationBar()
         self.prepareView()
         self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
+    
     func prepareView()
     {
+        configureTableView()
         let row1 = TransferDetailCellModel.init(AppConstants.TransferDetail.FROM.rawValue, detailValue: "Bank of America - 6814")
         let row2 = TransferDetailCellModel.init(AppConstants.TransferDetail.TO.rawValue, detailValue: "North Loop Bank")
         let row3 = TransferDetailCellModel.init(AppConstants.TransferDetail.TIME.rawValue, detailValue: "1 - 2 business days")
@@ -53,6 +58,7 @@ extension TransferDetailViewController:UITableViewDelegate,UITableViewDataSource
         self.tableView.rowHeight = 92;
         self.tableView.delegate=self
         self.tableView.dataSource=self
+        self.tableView.tableFooterView = self.bottomView
         self.tableView.registerTableViewCell(tableViewCell:TransferDetailTableViewCell.self)
     }
     func numberOfSections(in tableView: UITableView) -> Int {

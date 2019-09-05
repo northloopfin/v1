@@ -524,6 +524,17 @@
 		EA8984B422FC491A00B4C33C /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8984B322FC491A00B4C33C /* HomeTabController.swift */; };
 		EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E843622E88FE7009D95CD /* IP+Extension.swift */; };
 		EAA385A02313A57E004DD8D2 /* ConfirmUpgradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */; };
+		EAB3064223214993009EFD8D /* FetchCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063123214992009EFD8D /* FetchCreditCard.swift */; };
+		EAB3064323214993009EFD8D /* FetchCreditCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063223214992009EFD8D /* FetchCreditCardPresenter.swift */; };
+		EAB3064423214993009EFD8D /* RequestCreditCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063423214992009EFD8D /* RequestCreditCardPresenter.swift */; };
+		EAB3064523214993009EFD8D /* RequestCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063523214992009EFD8D /* RequestCreditCard.swift */; };
+		EAB3064623214993009EFD8D /* FetchCreditCardAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063823214992009EFD8D /* FetchCreditCardAPIRequest.swift */; };
+		EAB3064823214993009EFD8D /* FetchCreditCardBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063A23214992009EFD8D /* FetchCreditCardBusinessLogic.swift */; };
+		EAB3064923214993009EFD8D /* FetchCreditCardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063B23214992009EFD8D /* FetchCreditCardRequestModel.swift */; };
+		EAB3064A23214993009EFD8D /* RequestCreditCardRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063D23214992009EFD8D /* RequestCreditCardRequestModel.swift */; };
+		EAB3064B23214993009EFD8D /* RequestCreditCardAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063E23214992009EFD8D /* RequestCreditCardAPIRequest.swift */; };
+		EAB3064C23214993009EFD8D /* RequestCreditCardBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063F23214992009EFD8D /* RequestCreditCardBusinessLogic.swift */; };
+		EAB3064D23214993009EFD8D /* ApplyCreditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3064123214992009EFD8D /* ApplyCreditCardVC.swift */; };
 		EABA3BDD231E9422007A914E /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA3BDC231E9422007A914E /* OnboardingVC.swift */; };
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
@@ -1113,6 +1124,17 @@
 		EA8984B322FC491A00B4C33C /* HomeTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
 		EA9E843622E88FE7009D95CD /* IP+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IP+Extension.swift"; sourceTree = "<group>"; };
 		EAA3859F2313A57E004DD8D2 /* ConfirmUpgradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmUpgradeController.swift; sourceTree = "<group>"; };
+		EAB3063123214992009EFD8D /* FetchCreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCreditCard.swift; sourceTree = "<group>"; };
+		EAB3063223214992009EFD8D /* FetchCreditCardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCreditCardPresenter.swift; sourceTree = "<group>"; };
+		EAB3063423214992009EFD8D /* RequestCreditCardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCreditCardPresenter.swift; sourceTree = "<group>"; };
+		EAB3063523214992009EFD8D /* RequestCreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCreditCard.swift; sourceTree = "<group>"; };
+		EAB3063823214992009EFD8D /* FetchCreditCardAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCreditCardAPIRequest.swift; sourceTree = "<group>"; };
+		EAB3063A23214992009EFD8D /* FetchCreditCardBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCreditCardBusinessLogic.swift; sourceTree = "<group>"; };
+		EAB3063B23214992009EFD8D /* FetchCreditCardRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCreditCardRequestModel.swift; sourceTree = "<group>"; };
+		EAB3063D23214992009EFD8D /* RequestCreditCardRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCreditCardRequestModel.swift; sourceTree = "<group>"; };
+		EAB3063E23214992009EFD8D /* RequestCreditCardAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCreditCardAPIRequest.swift; sourceTree = "<group>"; };
+		EAB3063F23214992009EFD8D /* RequestCreditCardBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCreditCardBusinessLogic.swift; sourceTree = "<group>"; };
+		EAB3064123214992009EFD8D /* ApplyCreditCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyCreditCardVC.swift; sourceTree = "<group>"; };
 		EABA3BDC231E9422007A914E /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
@@ -1875,6 +1897,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5AB30022A7B51700DB3B70 /* 2FA */,
+				EAB3062C23210B18009EFD8D /* Apply Credit Card */,
 				1D72718B21F084F60084A57E /* Add Account */,
 				1DB6479721FEBEF9004C483E /* Add Goal */,
 				84D1299C22FCD666000C82A6 /* Analysis */,
@@ -3114,6 +3137,80 @@
 			path = CardAuth;
 			sourceTree = "<group>";
 		};
+		EAB3062C23210B18009EFD8D /* Apply Credit Card */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063623214992009EFD8D /* Model */,
+				EAB3062F23214992009EFD8D /* Presenter */,
+				EAB3064023214992009EFD8D /* View */,
+			);
+			path = "Apply Credit Card";
+			sourceTree = "<group>";
+		};
+		EAB3062F23214992009EFD8D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063023214992009EFD8D /* Fetch */,
+				EAB3063323214992009EFD8D /* Request */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EAB3063023214992009EFD8D /* Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063123214992009EFD8D /* FetchCreditCard.swift */,
+				EAB3063223214992009EFD8D /* FetchCreditCardPresenter.swift */,
+			);
+			path = Fetch;
+			sourceTree = "<group>";
+		};
+		EAB3063323214992009EFD8D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063423214992009EFD8D /* RequestCreditCardPresenter.swift */,
+				EAB3063523214992009EFD8D /* RequestCreditCard.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		EAB3063623214992009EFD8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063723214992009EFD8D /* Fetch */,
+				EAB3063C23214992009EFD8D /* Request */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EAB3063723214992009EFD8D /* Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063823214992009EFD8D /* FetchCreditCardAPIRequest.swift */,
+				EAB3063A23214992009EFD8D /* FetchCreditCardBusinessLogic.swift */,
+				EAB3063B23214992009EFD8D /* FetchCreditCardRequestModel.swift */,
+			);
+			path = Fetch;
+			sourceTree = "<group>";
+		};
+		EAB3063C23214992009EFD8D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3063D23214992009EFD8D /* RequestCreditCardRequestModel.swift */,
+				EAB3063E23214992009EFD8D /* RequestCreditCardAPIRequest.swift */,
+				EAB3063F23214992009EFD8D /* RequestCreditCardBusinessLogic.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		EAB3064023214992009EFD8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAB3064123214992009EFD8D /* ApplyCreditCardVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EABA3BD9231E93F8007A914E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -3585,10 +3682,12 @@
 			files = (
 				1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */,
 				EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				EAB3064423214993009EFD8D /* RequestCreditCardPresenter.swift in Sources */,
 				4BFBC88E22BB8CF600B23B68 /* SettingsDelegates.swift in Sources */,
 				1D844056228806B600A77BBF /* Login.swift in Sources */,
 				1D180DB4229FC48200FC3390 /* UserTransferDetailData.swift in Sources */,
 				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
+				EAB3064C23214993009EFD8D /* RequestCreditCardBusinessLogic.swift in Sources */,
 				EA31B237231F92F200233B2A /* LostCardDeliveryViewController.swift in Sources */,
 				4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */,
 				4BF9D77322CC8D4A00F8EDBA /* PromoCodeViewController.swift in Sources */,
@@ -3604,6 +3703,7 @@
 				1D055D51229C6E410078CD33 /* ACHTransactionAPIRequest.swift in Sources */,
 				1D180D8C229E763C00FC3390 /* ATMFinderAPIRequest.swift in Sources */,
 				1DB6479A21FEBF2D004C483E /* AddGoalViewController.swift in Sources */,
+				EAB3064A23214993009EFD8D /* RequestCreditCardRequestModel.swift in Sources */,
 				1D180DA1229EA01500FC3390 /* ATMFirstTableViewCell.swift in Sources */,
 				1D29C84722A916F40092E3EB /* ChangeAddressAPIRequest.swift in Sources */,
 				EA27E216230FC3DD00B7160F /* UpgradeDelegates.swift in Sources */,
@@ -3652,6 +3752,7 @@
 				1D5AB2E422A676D100DB3B70 /* UpdateCardBusinessLogic.swift in Sources */,
 				1D0BF52D2209AAC400B56E82 /* FirebasePresenter.swift in Sources */,
 				EA24B368231688EF0091D307 /* ClaimRefundBusinessLogic.swift in Sources */,
+				EAB3064323214993009EFD8D /* FetchCreditCardPresenter.swift in Sources */,
 				1DEEEF1E2292C124002909E1 /* SignupFlowAddress.swift in Sources */,
 				4BFDF87422B217FB0066860D /* AccountDetailViewController.swift in Sources */,
 				1D9AF08722A5077300A9055F /* IndividualTransaction.swift in Sources */,
@@ -3716,6 +3817,7 @@
 				4BFDF87622B236BB0066860D /* TransactionListTo.swift in Sources */,
 				1D72719221F0A0900084A57E /* MyOffersViewController.swift in Sources */,
 				1D29C84922A917050092E3EB /* ChangeAddressBusinessModel.swift in Sources */,
+				EAB3064223214993009EFD8D /* FetchCreditCard.swift in Sources */,
 				1D67DB0521C7B56F00AA7F29 /* LabelWithLetterSpace.swift in Sources */,
 				EA4ED03422E5D1C400D1F438 /* CardAuthBusinessLogic.swift in Sources */,
 				1D844094228A9E9700A77BBF /* TransactionDetailDelegate.swift in Sources */,
@@ -3761,6 +3863,7 @@
 				1D0C2ADE22045EAB00527FAB /* User.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */,
+				EAB3064B23214993009EFD8D /* RequestCreditCardAPIRequest.swift in Sources */,
 				EA24B369231688EF0091D307 /* ClaimRefundAPIRequest.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
 				1D5AB2FB22A7996C00DB3B70 /* LostCardAPIRequest.swift in Sources */,
@@ -3782,6 +3885,7 @@
 				1DCDF26A228ED1F600ABDCB1 /* SignupFlowAlDoc.swift in Sources */,
 				EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */,
 				EA1902DE230D6474002FE7FC /* FetchCashback.swift in Sources */,
+				EAB3064923214993009EFD8D /* FetchCreditCardRequestModel.swift in Sources */,
 				4BFBC88422BB8AEF00B23B68 /* GetAppSettingsPresenter.swift in Sources */,
 				1D3E553C21F1A6CC00557825 /* LostInsufficientViewController.swift in Sources */,
 				1D84407E2289545A00A77BBF /* TransactionListApiRequest.swift in Sources */,
@@ -3881,6 +3985,7 @@
 				EA1FC14922F1526C002A7103 /* AMPTrackingOptions.m in Sources */,
 				1D5AB2EF22A791C600DB3B70 /* SetPinBusinessLogic.swift in Sources */,
 				1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */,
+				EAB3064823214993009EFD8D /* FetchCreditCardBusinessLogic.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
@@ -3936,7 +4041,9 @@
 				EA1902E3230D666C002FE7FC /* FetchCashbackAPIRequest.swift in Sources */,
 				84E26B1E231EB2D1005D5F4C /* Date+Diff.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
+				EAB3064623214993009EFD8D /* FetchCreditCardAPIRequest.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
+				EAB3064523214993009EFD8D /* RequestCreditCard.swift in Sources */,
 				1D29C83B22A8F6530092E3EB /* ChangePhoneViewController.swift in Sources */,
 				1D478CAF228E981700503136 /* SignupAuthPresenter.swift in Sources */,
 				1D055D28229BCF950078CD33 /* ResetPassword.swift in Sources */,
@@ -4043,6 +4150,7 @@
 				EA4ED02722E5CE0900D1F438 /* CardInfoAPIRequest.swift in Sources */,
 				1D915C1222082CD400223480 /* Timer.swift in Sources */,
 				1D5AB2F922A798F900DB3B70 /* LostCardRequestModel.swift in Sources */,
+				EAB3064D23214993009EFD8D /* ApplyCreditCardVC.swift in Sources */,
 				1D259DA6228BE18F0053D0AB /* RecipientMeta.swift in Sources */,
 				EA39484C2302B517007BFEF5 /* CashbackController.swift in Sources */,
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,

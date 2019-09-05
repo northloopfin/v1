@@ -36,8 +36,9 @@ class RoutingVerificationPresenter: ResponseCallback{
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.delegate?.hideLoader()
         //save this user to local memory of app
-        //let response = responseObject as! RoutingVerification
-        self.delegate?.didRoutingVerified()
+        if let response = responseObject as? RoutingVerification{
+            self.delegate?.didRoutingVerified(data: response)
+        }
     }
     
     func servicesManagerError(error: ErrorModel) {
