@@ -136,6 +136,7 @@ struct AppConstants{
         case SETTINGS = "Settings"
         case PREMIUM = "Premium"
         case REFER = "Refer & Earn $5"
+        case CREDITCARD = "Apply for Credit Card"
     }
     enum TransferDetail:String
     {

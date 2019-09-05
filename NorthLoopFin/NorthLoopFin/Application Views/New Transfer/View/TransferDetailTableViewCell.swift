@@ -24,6 +24,6 @@ class TransferDetailTableViewCell: UITableViewCell {
     }
     func configureCell(data:TransferDetailCellModel){
         self.mainTitleLabel!.text = data.mainTitleText
-        self.detailTextLabel!.text = data.detailTitleText
+        self.subtitleLabel!.text = data.detailTitleText
     }
 }

@@ -15,15 +15,24 @@ class TransferViewController: BaseViewController {
 
     @IBOutlet weak var vwError: UIView!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var constRoutingInfo: NSLayoutConstraint!
+    @IBOutlet weak var lblRoutingSubtitle: LabelWithLetterSpace!
+    @IBOutlet weak var lblRoutingTitle: LabelWithLetterSpace!
+    @IBOutlet weak var imgRouting: UIImageView!
+    @IBOutlet weak var vwRoutingInfo: UIView!
+    @IBOutlet weak var lblError: LabelWithLetterSpace!
+    
+    @IBOutlet weak var imgTick: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var presenter:LinkACHPresenter!
     var routingVeriPresenter:RoutingVerificationPresenter!
 
-    @IBOutlet weak var lblError: LabelWithLetterSpace!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
         self.presenter = LinkACHPresenter.init(delegate: self)
         self.routingVeriPresenter = RoutingVerificationPresenter.init(delegate: self)
+        inactivateDoneBtn()
     }
     @IBAction func saveBtnClicked(_ sender: Any) {
         // Validate Form
@@ -35,7 +44,8 @@ class TransferViewController: BaseViewController {
         if Validations.isValidRoutingNumber(routingNumber: self.rountingNumberTextField.text!){
             self.vwError.isHidden = true
             // Yes Valid
-            self.routingVeriPresenter.sendRoutingVerificationRequest(routing: self.rountingNumberTextField.text!)
+            spinner.startAnimating()
+            self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
         }else{
             self.vwError.isHidden = false
             self.lblError.text = AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue
@@ -48,6 +58,11 @@ class TransferViewController: BaseViewController {
         self.setNavigationBarTitle(title: "Transfer")
         self.setupRightNavigationBar()
         self.saveBtn.titleLabel!.font=AppFonts.calibri15
+        
+        self.bankAccountNumberTextfield.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.nicknameTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        self.rountingNumberTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -55,6 +70,17 @@ class TransferViewController: BaseViewController {
             self.inactivateDoneBtn()
         }else{
             checkMandatoryFields()
+        }
+        if textField == self.rountingNumberTextField {
+            if (textField.text?.count != 9){
+                constRoutingInfo.constant = 0
+                imgTick.isHidden = true
+                self.vwError.isHidden = false
+                self.lblError.text = AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue
+                inactivateDoneBtn()
+            }else{
+                spinner.startAnimating(); self.routingVeriPresenter.sendRoutingVerificationRequest(routing: self.rountingNumberTextField.text!)
+            }
         }
     }
     //change appearance of done button
@@ -91,12 +117,25 @@ extension TransferViewController:LinkACHDelegates{
 }
 
 extension TransferViewController:RoutingVerificationDelegate{
-    func didRoutingVerified() {
-        self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
+    func didRoutingVerified(data: RoutingVerification) {
+        spinner.stopAnimating()
+        constRoutingInfo.constant = 75
+        lblRoutingTitle.text = data.bank_name
+        lblRoutingSubtitle.text = data.address
+        imgTick.isHidden = false
+        if let url = URL(string: data.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!){
+            imgRouting.setImageWith(url)
+        }else{
+            imgRouting.image = nil
+        }
+        self.vwError.isHidden = true
     }
     
     func failedRoutingVerification() {
+        spinner.stopAnimating()
+        constRoutingInfo.constant = 0
         self.vwError.isHidden = false
+        imgTick.isHidden = true
         self.lblError.text = AppConstants.ErrorMessages.ROUTING_NUMBER_NOT_VALID.rawValue
     }
 }
