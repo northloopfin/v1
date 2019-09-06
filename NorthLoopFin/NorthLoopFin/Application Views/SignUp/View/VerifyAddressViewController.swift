@@ -113,7 +113,7 @@ class VerifyAddressViewController: BaseViewController {
     }
     
     fileprivate func convertDataForCheckAndCallAPI() {
-        if let _ = self.screenThatInitiatedThisFlow {
+//        if let _ = self.screenThatInitiatedThisFlow {
             let requestBody = createCheckAddressRequestBody()
             let jsonEncoder = JSONEncoder()
             do {
@@ -125,9 +125,9 @@ class VerifyAddressViewController: BaseViewController {
             } catch {
                 print(error)
             }
-        } else {
-            self.convertDataToDicAndCallAPI()
-        }
+//        } else {
+//            self.convertDataToDicAndCallAPI()
+//        }
     }
     
     @IBAction func doneClicked(_ sender: Any) {
@@ -183,6 +183,8 @@ class VerifyAddressViewController: BaseViewController {
                 self.customProgressView.isHidden = true
             }
         }
+        
+        self.fetchDatafromRealmIfAny()
     }
     
     override func viewWillLayoutSubviews() {
@@ -192,7 +194,6 @@ class VerifyAddressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Fetch from Realm if any
-        self.fetchDatafromRealmIfAny()
     }
     
     func fetchDatafromRealmIfAny(){
@@ -388,6 +389,13 @@ extension VerifyAddressViewController:CheckAddressDelegate {
         if compareAddress(verifiedAddress) {
             convertDataToDicAndCallAPI()
         } else {
+            
+//            self.streetAddress.text = verifiedAddress.street
+//            self.houseNumbertextfield.text = verifiedAddress.house
+//            self.cityTextfield.text = verifiedAddress.city
+//            self.textState.text = verifiedAddress.state
+//            self.zipTextfield.text = verifiedAddress.zipcode
+            
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddressVerificationViewController") as! AddressVerificationViewController
             vc.delegate = self
             vc.dataSource = [

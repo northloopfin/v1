@@ -55,7 +55,7 @@ class CheckAddressPresenter {
     func servicesManagerError() {
         DispatchQueue.main.async {
             self.delegate?.hideLoader()
-            self.delegate?.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: "Incorrect address please check and try again")
+            self.delegate?.showErrorAlert(AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, alertMessage: "Address not found. Please try again")
         }
     }
 }
