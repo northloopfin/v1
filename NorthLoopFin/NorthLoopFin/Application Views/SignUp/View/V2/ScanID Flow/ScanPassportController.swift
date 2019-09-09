@@ -14,6 +14,7 @@ class ScanPassportController: BaseViewController {
     @IBOutlet weak var btnUpload: UIButton!
     @IBOutlet weak var vwNext: UIView!
     
+    @IBOutlet weak var constFrontPageLabel: NSLayoutConstraint!
     var typeData:SelectIDType = SelectIDType.init(type: AppConstants.SelectIDTYPES.PASSPORT, images: [])
 
     lazy var scanIDImages: Results<ScanIDImages> = RealmHelper.retrieveImages()
@@ -45,7 +46,9 @@ class ScanPassportController: BaseViewController {
     
     func setImage(_ image: UIImage){
         self.btnUpload.setImage(image, for: .normal)
+        self.btnUpload.setBackgroundImage(UIImage(named: "ic_upload_shadow"), for: .normal)
         self.vwNext.isUserInteractionEnabled = true
+        self.constFrontPageLabel.constant = 10
         self.vwNext.alpha = 1
     }
     

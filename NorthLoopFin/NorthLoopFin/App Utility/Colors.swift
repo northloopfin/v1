@@ -22,6 +22,7 @@ struct Colors{
     static let whiteColor = UIColor.white
     static let TaupeGray131130131 = UIColor.init(red: 131, green: 130, blue: 131)
     static let ivory255254247 = UIColor.init(red: 255, green: 254, blue: 247)
+    static let LightGray251 = UIColor.init(red: 251, green: 251, blue: 251)
     static let Amour244233239 = UIColor.init(red: 244, green: 233, blue: 239)
     static let AmountGreen241770 = UIColor.init(red: 24, green: 177, blue: 0)
     static let TabGray182182182 = UIColor.init(red: 182, green: 182, blue: 182)

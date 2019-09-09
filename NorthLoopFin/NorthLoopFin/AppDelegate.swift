@@ -16,6 +16,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import RealmSwift
 import Branch
+import FBSDKCoreKit
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var cardInfo: CardInfo?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+
         // if crash happen prior delete local database
         // Override point for customization after application launch.
         self.registerForPushNotifications()
@@ -188,6 +190,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        _ = ApplicationDelegate.shared.application(app, open: url, options: options)
+
         return application(app, open: url,
                            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                            annotation: "")
