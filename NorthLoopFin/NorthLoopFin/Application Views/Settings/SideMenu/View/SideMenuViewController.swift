@@ -166,7 +166,7 @@ extension SideMenuViewController{
         self.navigateTo(vc: getControllerWithIdentifier("MyAccountViewController"))
     }
     func navigateToCreditCard(){
-        self.navigateTo(vc: getControllerWithIdentifier("ApplyCreditCardVC"))
+        self.navigateTo(vc: getControllerWithIdentifier("ApplyCreditCardVC")) //TransferDebitFromViewControllers
     }
     func navigateToUpgrade(){
         if premiumStatus != nil && premiumStatus!.current_plan.count > 0{

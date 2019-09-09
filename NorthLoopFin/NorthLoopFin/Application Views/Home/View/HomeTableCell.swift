@@ -39,11 +39,12 @@ class HomeTableCell: UITableViewCell {
     func bindData(data: IndividualTransaction,delegate:HomeTableCellDelegate){
         self.delegate = delegate
         self.individualTransaction=data
+        
         self.beneficiaryImg.image = nil
-        self.beneficiaryName.text = "North Loop"
+        self.beneficiaryName.text = "North Loop" // default name
         
         if let _  = data.to.meta{
-            let imageName = AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory)
+            let imageName = AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory) // predefine merchantCategory image. e.g., ["ach":"Transfer.png","atm":"deposit.png","cash":"withdrawal.png","interchange":"POS.png","pos":"POS.png","wire":"Transfer.png"]
             if imageName.count > 0{
                 self.beneficiaryImg.backgroundColor = UIColor.clear
                 self.beneficiaryImg.image = UIImage.init(imageLiteralResourceName: AppUtility.getMerchantCategoryIconName(category: data.to.meta!.merchantCategory))
@@ -102,11 +103,12 @@ class HomeTableCell: UITableViewCell {
         if let _  = data.to.meta, data.to.meta?.merchantCategory == "withdrawal" {
             self.beneficiaryName.text = "Withdrawal"
         }
+        
         self.transactionAmt.text = "$" + String(format: "%.2f",data.amount.amount)
                 
         self.transactionAmt.textColor = data.isIncoming ? Colors.AmountGreen241770 : self.beneficiaryName.textColor
 
-        if ["returned","canceled"].contains(data.recentStatus.status.lowercased()){
+        if ["returned","canceled"].contains(data.recentStatus.status.lowercased()){ // if recentStatus.status is returned or canceled then show strikethrough amount
             let attributeString =  NSMutableAttributedString(string: self.transactionAmt.text!)
             
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,

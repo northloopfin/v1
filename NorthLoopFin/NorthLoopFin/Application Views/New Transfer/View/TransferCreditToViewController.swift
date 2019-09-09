@@ -1,5 +1,5 @@
 //
-//  TransferDebitFromViewController.swift
+//  TransferCreditToViewController.swift
 //  NorthLoopFin
 //
 //  Created by Gaurav Malik on 19/08/19.
@@ -8,14 +8,10 @@
 
 import UIKit
 
-class TransferDebitFromViewController: BaseViewController {
+class TransferCreditToViewController: BaseViewController {
 
     @IBOutlet weak var firstBankView: UIView!
-    @IBOutlet weak var secondBankView: UIView!
     @IBOutlet weak var addBankAccountView: UIView!
-    @IBOutlet weak var addAmountTextField: UITextField!
-    @IBOutlet weak var firstBankHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var secondBankHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     var optionArray:[String] = []{
@@ -43,13 +39,13 @@ class TransferDebitFromViewController: BaseViewController {
 
 }
 
-extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSource {
+extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSource {
     
     func configureTableView() {
-        self.tableView.rowHeight = 91;
+        self.tableView.rowHeight = 76;
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.registerTableViewCell(tableViewCell: DebitFromCell.self)
+        self.tableView.registerTableViewCell(tableViewCell: BankCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,12 +53,11 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DebitFromCell") as! DebitFromCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BankCell") as! BankCell
 //        cell.bindData(option: optionArray[indexPath.row])
-        cell.vwNorthLoop.isHidden = indexPath.row == 0
-        cell.imgCheckbox.image = UIImage(named: indexPath.row == 0 ? "checkedBox" : "uncheckedBox")
+        cell.imgCheckbox.isHidden = indexPath.row == 0
         let bgColorView = UIView()
-        bgColorView.backgroundColor = .white
+        bgColorView.backgroundColor = Colors.LightGray251
         cell.selectedBackgroundView = bgColorView
     
         
@@ -85,23 +80,10 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @objc func addBank(){
         optionArray = ["1","2"]
 //        self.navigationController?.pushViewController(self.getControllerWithIdentifier(""), animated: true)
     }
-}
-
-public extension UIView {
-    
-    class func instantiateFromNib<T: UIView>(viewType: T.Type) -> T {
-        return Bundle.main.loadNibNamed(String(describing: viewType), owner: nil, options: nil)?.first as! T
-    }
-    
-    class func instantiateFromNib() -> Self {
-        return instantiateFromNib(viewType: self)
-    }
-    
 }

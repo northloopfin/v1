@@ -446,6 +446,13 @@
 		EA1AB69323180DCC0021B59D /* ReferralAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68F23180DCC0021B59D /* ReferralAPIRequest.swift */; };
 		EA1AB9FA230BAA8F00FB2FA0 /* ScanVisaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */; };
 		EA1AB9FC230BB5FC00FB2FA0 /* ScanAddressProofController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */; };
+		EA1BA8412326269A0047D831 /* DebitFromCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA8402326269A0047D831 /* DebitFromCell.swift */; };
+		EA1BA843232626AC0047D831 /* DebitFromCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1BA842232626AC0047D831 /* DebitFromCell.xib */; };
+		EA1BA847232652530047D831 /* vwAddAccountFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA846232652530047D831 /* vwAddAccountFooter.swift */; };
+		EA1BA84B232653720047D831 /* vwAddAccountFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1BA84A2326536F0047D831 /* vwAddAccountFooter.xib */; };
+		EA1BA84E232678460047D831 /* BankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1BA84C232678440047D831 /* BankCell.xib */; };
+		EA1BA84F232678460047D831 /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA84D232678450047D831 /* BankCell.swift */; };
+		EA1BA85123267B8B0047D831 /* TransferCreditToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA85023267B8B0047D831 /* TransferCreditToViewController.swift */; };
 		EA1E32B9230E9B8E0099A471 /* ComingSoonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */; };
 		EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */; };
 		EA1FC14122F1526C002A7103 /* AMPLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */; };
@@ -1029,6 +1036,13 @@
 		EA1AB68F23180DCC0021B59D /* ReferralAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralAPIRequest.swift; sourceTree = "<group>"; };
 		EA1AB9F9230BAA8E00FB2FA0 /* ScanVisaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVisaController.swift; sourceTree = "<group>"; };
 		EA1AB9FB230BB5FC00FB2FA0 /* ScanAddressProofController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAddressProofController.swift; sourceTree = "<group>"; };
+		EA1BA8402326269A0047D831 /* DebitFromCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebitFromCell.swift; sourceTree = "<group>"; };
+		EA1BA842232626AC0047D831 /* DebitFromCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebitFromCell.xib; sourceTree = "<group>"; };
+		EA1BA846232652530047D831 /* vwAddAccountFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vwAddAccountFooter.swift; sourceTree = "<group>"; };
+		EA1BA84A2326536F0047D831 /* vwAddAccountFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwAddAccountFooter.xib; sourceTree = "<group>"; };
+		EA1BA84C232678440047D831 /* BankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCell.xib; sourceTree = "<group>"; };
+		EA1BA84D232678450047D831 /* BankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
+		EA1BA85023267B8B0047D831 /* TransferCreditToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferCreditToViewController.swift; sourceTree = "<group>"; };
 		EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonController.swift; sourceTree = "<group>"; };
 		EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA1FC11C22F1526B002A7103 /* AMPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLConnection.h; sourceTree = "<group>"; };
@@ -3267,9 +3281,16 @@
 			isa = PBXGroup;
 			children = (
 				F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */,
+				EA1BA85023267B8B0047D831 /* TransferCreditToViewController.swift */,
 				F4EE1B84230C5D0800CCA1E6 /* TransferDetailViewController.swift */,
 				F4EE1B86230C626B00CCA1E6 /* TransferDetailTableViewCell.swift */,
 				F4EE1B87230C626B00CCA1E6 /* TransferDetailTableViewCell.xib */,
+				EA1BA84D232678450047D831 /* BankCell.swift */,
+				EA1BA84C232678440047D831 /* BankCell.xib */,
+				EA1BA8402326269A0047D831 /* DebitFromCell.swift */,
+				EA1BA842232626AC0047D831 /* DebitFromCell.xib */,
+				EA1BA846232652530047D831 /* vwAddAccountFooter.swift */,
+				EA1BA84A2326536F0047D831 /* vwAddAccountFooter.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3488,6 +3509,7 @@
 				EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */,
 				84D129B422FCD666000C82A6 /* AnalysisCategoryTableHeader.xib in Resources */,
 				8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */,
+				EA1BA84B232653720047D831 /* vwAddAccountFooter.xib in Resources */,
 				EA32C25D230A74B20031A223 /* ScanOptionCell.xib in Resources */,
 				EA27E212230FC35800B7160F /* CarouselCell.xib in Resources */,
 				EA1902EA230D6F92002FE7FC /* CashbackCell.xib in Resources */,
@@ -3501,6 +3523,7 @@
 				EA24B33023164FFE0091D307 /* WireRateCell.xib in Resources */,
 				4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */,
 				84D129B822FCD666000C82A6 /* CalendarTableViewCell.xib in Resources */,
+				EA1BA843232626AC0047D831 /* DebitFromCell.xib in Resources */,
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
 				EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */,
 				4B15362222DDA914009CE548 /* createAcc.gif in Resources */,
@@ -3516,6 +3539,7 @@
 				297FB9A521B51A34008D60CE /* Assets.xcassets in Resources */,
 				EA1FC14822F1526C002A7103 /* api.amplitude.com.der in Resources */,
 				297FB9A321B51A32008D60CE /* Main.storyboard in Resources */,
+				EA1BA84E232678460047D831 /* BankCell.xib in Resources */,
 				1D3538382223E54F00716A94 /* country.json in Resources */,
 				1D180DA2229EA01500FC3390 /* ATMFirstTableViewCell.xib in Resources */,
 			);
@@ -3687,6 +3711,7 @@
 				1D844056228806B600A77BBF /* Login.swift in Sources */,
 				1D180DB4229FC48200FC3390 /* UserTransferDetailData.swift in Sources */,
 				1D259D9A228BDF1F0053D0AB /* TransactionDetailAmount.swift in Sources */,
+				EA1BA847232652530047D831 /* vwAddAccountFooter.swift in Sources */,
 				EAB3064C23214993009EFD8D /* RequestCreditCardBusinessLogic.swift in Sources */,
 				EA31B237231F92F200233B2A /* LostCardDeliveryViewController.swift in Sources */,
 				4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */,
@@ -3988,6 +4013,7 @@
 				EAB3064823214993009EFD8D /* FetchCreditCardBusinessLogic.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
 				F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */,
+				EA1BA85123267B8B0047D831 /* TransferCreditToViewController.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
 				1D259D9E228BDF550053D0AB /* Extra.swift in Sources */,
 				1D84408E228A9D2700A77BBF /* TransactionDetialBusinessLogic.swift in Sources */,
@@ -4094,6 +4120,7 @@
 				4B15362922DDB1FF009CE548 /* GiFHUD.swift in Sources */,
 				1D84407D2289545A00A77BBF /* RecentStatus.swift in Sources */,
 				4B94418E22ACC236005AD3BD /* DisputeTransactionBusinessModel.swift in Sources */,
+				EA1BA8412326269A0047D831 /* DebitFromCell.swift in Sources */,
 				1D72718421EF14890084A57E /* LegalStuffViewController.swift in Sources */,
 				4B15361722DD8FFA009CE548 /* WaitListViewController.swift in Sources */,
 				1D51758821C500D300BCF9E4 /* TransactionDetailViewController.swift in Sources */,
@@ -4126,6 +4153,7 @@
 				4BF9245B22C9F55E002188BA /* GetPreferencesData.swift in Sources */,
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
 				EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */,
+				EA1BA84F232678460047D831 /* BankCell.swift in Sources */,
 				EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */,
 				EA313415231CF54600A77FDE /* RoutingVerificationPresenter.swift in Sources */,
 				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,
