@@ -90,7 +90,7 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
     
     @objc func addBank(){
         optionArray = ["1","2"]
-//        self.navigationController?.pushViewController(self.getControllerWithIdentifier(""), animated: true)
+        self.navigationController?.pushViewController(self.getControllerWithIdentifier("AddBankController"), animated: true)
     }
 }
 

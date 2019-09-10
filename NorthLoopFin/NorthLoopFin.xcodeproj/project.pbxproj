@@ -474,6 +474,9 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA22BDB9232794A60022BACD /* BankCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BDB7232794A60022BACD /* BankCollectionCell.swift */; };
+		EA22BDBA232794A60022BACD /* BankCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA22BDB8232794A60022BACD /* BankCollectionCell.xib */; };
+		EA22BDBC2327963A0022BACD /* AddBankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BDBB2327963A0022BACD /* AddBankController.swift */; };
 		EA24B32C23164FFE0091D307 /* CurrencyProtectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA24B32523164FFE0091D307 /* CurrencyProtectCell.xib */; };
 		EA24B32D23164FFE0091D307 /* CurrencyProtectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24B32623164FFE0091D307 /* CurrencyProtectCell.swift */; };
 		EA24B32E23164FFE0091D307 /* CurrencyProtectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24B32723164FFE0091D307 /* CurrencyProtectController.swift */; };
@@ -1081,6 +1084,9 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA22BDB7232794A60022BACD /* BankCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionCell.swift; sourceTree = "<group>"; };
+		EA22BDB8232794A60022BACD /* BankCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCollectionCell.xib; sourceTree = "<group>"; };
+		EA22BDBB2327963A0022BACD /* AddBankController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankController.swift; sourceTree = "<group>"; };
 		EA24B32523164FFE0091D307 /* CurrencyProtectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyProtectCell.xib; sourceTree = "<group>"; };
 		EA24B32623164FFE0091D307 /* CurrencyProtectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProtectCell.swift; sourceTree = "<group>"; };
 		EA24B32723164FFE0091D307 /* CurrencyProtectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProtectController.swift; sourceTree = "<group>"; };
@@ -3291,6 +3297,9 @@
 				EA1BA842232626AC0047D831 /* DebitFromCell.xib */,
 				EA1BA846232652530047D831 /* vwAddAccountFooter.swift */,
 				EA1BA84A2326536F0047D831 /* vwAddAccountFooter.xib */,
+				EA22BDB7232794A60022BACD /* BankCollectionCell.swift */,
+				EA22BDB8232794A60022BACD /* BankCollectionCell.xib */,
+				EA22BDBB2327963A0022BACD /* AddBankController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3522,6 +3531,7 @@
 				297FB9A821B51A34008D60CE /* LaunchScreen.storyboard in Resources */,
 				EA24B33023164FFE0091D307 /* WireRateCell.xib in Resources */,
 				4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */,
+				EA22BDBA232794A60022BACD /* BankCollectionCell.xib in Resources */,
 				84D129B822FCD666000C82A6 /* CalendarTableViewCell.xib in Resources */,
 				EA1BA843232626AC0047D831 /* DebitFromCell.xib in Resources */,
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
@@ -3865,6 +3875,7 @@
 				8469EF6822F4FAF300B861F1 /* AddressVerificationViewController.swift in Sources */,
 				1D11FE1B220C02F700234E6D /* LoginViewController.swift in Sources */,
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
+				EA22BDBC2327963A0022BACD /* AddBankController.swift in Sources */,
 				EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */,
 				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
 				EA1AB69323180DCC0021B59D /* ReferralAPIRequest.swift in Sources */,
@@ -3907,6 +3918,7 @@
 				8469EF7422F648A600B861F1 /* AddreddCompareModel.swift in Sources */,
 				1D259D9C228BDF360053D0AB /* Client.swift in Sources */,
 				1D5AB30F22A7C25300DB3B70 /* TwoFABusinessLogic.swift in Sources */,
+				EA22BDB9232794A60022BACD /* BankCollectionCell.swift in Sources */,
 				1DCDF26A228ED1F600ABDCB1 /* SignupFlowAlDoc.swift in Sources */,
 				EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */,
 				EA1902DE230D6474002FE7FC /* FetchCashback.swift in Sources */,
