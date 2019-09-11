@@ -36,6 +36,8 @@ class AddBankController: BaseViewController {
     
     @IBAction func btnVerifyContinue_pressed(_ sender: UIButton) {
         closeVerification()
+        self.navigationController?.popViewController(animated: true)
+//        self.getControllerWithIdentifier(<#T##identifier: String##String#>)
     }
     
     @IBAction func btnBackVerify_pressed(_ sender: UIButton) {

@@ -21,9 +21,11 @@ class CurrentBalanceViewController: BaseViewController {
     
 
     @IBAction func addFundsButtonAction(_ sender: Any) {
+        AppDelegate.getDelegate().isAddFlow = true
     }
     
     @IBAction func transferButtonAction(_ sender: Any) {
+        AppDelegate.getDelegate().isAddFlow = false
     }
     /*
     // MARK: - Navigation

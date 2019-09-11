@@ -43,6 +43,7 @@ class SideMenuViewController: UIViewController {
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
         self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
         self.data.append(AppConstants.SideMenuOptions.CREDITCARD.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.ADDFUNDTRANSFER.rawValue)
     }
 }
 
@@ -98,6 +99,8 @@ extension SideMenuViewController:UITableViewDelegate,UITableViewDataSource{
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.REFER)
             case 6:
                 self.moveToScreen(screen: AppConstants.SideMenuOptions.CREDITCARD)
+            case 7:
+                self.moveToScreen(screen: AppConstants.SideMenuOptions.ADDFUNDTRANSFER)
             default:
                 break
         }
@@ -136,6 +139,8 @@ extension SideMenuViewController{
             self.navigateReferAndEarn()
         case .CREDITCARD:
             self.navigateToCreditCard()
+        case .ADDFUNDTRANSFER:
+            self.navigateToAddFund()
         default:
             break
         }
@@ -166,7 +171,10 @@ extension SideMenuViewController{
         self.navigateTo(vc: getControllerWithIdentifier("MyAccountViewController"))
     }
     func navigateToCreditCard(){
-        self.navigateTo(vc: getControllerWithIdentifier("TransferDebitFromViewControllers")) //ApplyCreditCardVC")) //TransferDebitFromViewControllers
+        self.navigateTo(vc: getControllerWithIdentifier("ApplyCreditCardVC"))
+    }
+    func navigateToAddFund(){
+        self.navigateTo(vc: getControllerWithIdentifier("CurrentBalanceViewController"))
     }
     func navigateToUpgrade(){
         if premiumStatus != nil && premiumStatus!.current_plan.count > 0{

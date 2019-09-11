@@ -17,20 +17,46 @@ class TransferDebitFromViewController: BaseViewController {
     @IBOutlet weak var firstBankHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var secondBankHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblHeader: LabelWithLetterSpace!
     
+    @IBOutlet weak var nextButton: RippleButton!
     var optionArray:[String] = []{
         didSet{
             self.tableView.reloadData()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if optionArray.count > 0 {
+            nextButton.isEnabled = true
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupRightNavigationBar()
         configureTableView()
+        self.lblHeader.text = AppDelegate.getDelegate().isAddFlow ? "Add Funds" : "Transfer"
+        
+        if !AppDelegate.getDelegate().isAddFlow {
+            optionArray = ["1","2"]
+        }else{
+            nextButton.setTitle("ADD $50", for: .normal)
+            nextButton.isEnabled = false
+        }
+        
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnNext_pressed(_ sender: UIButton) {
+        if AppDelegate.getDelegate().isAddFlow {
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            self.performSegue(withIdentifier: "tocredit", sender: sender)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -73,6 +99,13 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
         let footer = vwAddAccountFooter.instantiateFromNib()
         footer.btnAddBank.addTarget(self, action: #selector(addBank), for: .touchUpInside)
         footer.amountTextField.isHidden = optionArray.count == 0
+        if optionArray.count == 0 {
+            footer.lblAddBank.text  = "Add a bank account "
+        }else{
+            footer.lblAddBank.text  =  "Add the another bank account "
+        }
+
+        
         return footer
     }
  
@@ -90,7 +123,7 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
     
     @objc func addBank(){
         optionArray = ["1","2"]
-        self.navigationController?.pushViewController(self.getControllerWithIdentifier("AddBankController"), animated: true)
+        self.tableView.reloadData(); self.navigationController?.pushViewController(self.getControllerWithIdentifier("AddBankController"), animated: true)
     }
 }
 

@@ -22,7 +22,9 @@ class TransferCreditToViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupRightNavigationBar()
         configureTableView()
+        optionArray = ["1","2"]
         // Do any additional setup after loading the view.
     }
     
@@ -67,6 +69,7 @@ extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = vwAddAccountFooter.instantiateFromNib()
         footer.btnAddBank.addTarget(self, action: #selector(addBank), for: .touchUpInside)
+        footer.lblAddBank.text = "Add the receiver bank account "
         footer.amountTextField.isHidden = optionArray.count == 0
         return footer
     }
