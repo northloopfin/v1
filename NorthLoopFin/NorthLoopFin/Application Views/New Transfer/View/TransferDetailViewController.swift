@@ -40,6 +40,7 @@ class TransferDetailViewController: BaseViewController {
     }
 
     @IBAction func transferAmountButtonAction(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     /*
     // MARK: - Navigation
