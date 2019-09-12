@@ -386,36 +386,40 @@ extension VerifyAddressViewController:ChangeAddressDelegate{
 extension VerifyAddressViewController:CheckAddressDelegate {
     func didVerifyAddress(_ verifiedAddress:VerifiedAddress) {
         self.verifiedAddress = verifiedAddress
-        if compareAddress(verifiedAddress) {
-            convertDataToDicAndCallAPI()
-        } else {
-            
-//            self.streetAddress.text = verifiedAddress.street
-//            self.houseNumbertextfield.text = verifiedAddress.house
-//            self.cityTextfield.text = verifiedAddress.city
-//            self.textState.text = verifiedAddress.state
-//            self.zipTextfield.text = verifiedAddress.zipcode
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddressVerificationViewController") as! AddressVerificationViewController
-            vc.delegate = self
-            vc.dataSource = [
-                    [
-                        self.streetAddress.text ?? "",
-                        self.houseNumbertextfield.text ?? "",
-                        self.cityTextfield.text ?? "",
-                        self.textState.text ?? "",
-                        self.zipTextfield.text ?? ""
-                    ],
-                    [
-                        verifiedAddress.street,
-                        self.houseNumbertextfield.text ?? "",
-                        verifiedAddress.city,
-                        verifiedAddress.state,
-                        verifiedAddress.zipcode
+        if verifiedAddress.dpv_match_code == "D" {
+            self.toast(message: "Please input a unit/apartment/suite number!")
+        }else{
+            if compareAddress(verifiedAddress) {
+                convertDataToDicAndCallAPI()
+            } else {
+                
+    //            self.streetAddress.text = verifiedAddress.street
+    //            self.houseNumbertextfield.text = verifiedAddress.house
+    //            self.cityTextfield.text = verifiedAddress.city
+    //            self.textState.text = verifiedAddress.state
+    //            self.zipTextfield.text = verifiedAddress.zipcode
+                
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddressVerificationViewController") as! AddressVerificationViewController
+                vc.delegate = self
+                vc.dataSource = [
+                        [
+                            self.streetAddress.text ?? "",
+                            self.houseNumbertextfield.text ?? "",
+                            self.cityTextfield.text ?? "",
+                            self.textState.text ?? "",
+                            self.zipTextfield.text ?? ""
+                        ],
+                        [
+                            verifiedAddress.street,
+                            self.houseNumbertextfield.text ?? "",
+                            verifiedAddress.city,
+                            verifiedAddress.state,
+                            verifiedAddress.zipcode
+                        ]
                     ]
-                ]
-            verifiedAddress.house = self.houseNumbertextfield.text ?? ""
-            self.present(vc, animated: true, completion: nil)
+                verifiedAddress.house = self.houseNumbertextfield.text ?? ""
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
     

@@ -32,6 +32,7 @@ class PersonalDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        self.setupRightNavigationBar()
         self.nextBtn.isEnabled=false
         if let invitedBy = UserDefaults.getUserDefaultForKey(AppConstants.ReferralId){
             referralPresenter = ReferralPresenter(delegate: self)

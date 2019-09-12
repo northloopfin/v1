@@ -256,7 +256,6 @@ extension LoginViewController:LoginDelegate{
             // move to next step of Sign Up
             self.moveToSignupStepSecond(data: signupflowData)
         }
-        
     }
     
     func moveToWaitList(){
