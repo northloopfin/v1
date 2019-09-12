@@ -253,7 +253,7 @@ extension MyCardViewController:CardDelegates{
             if self.cardAuthData == nil {
                 self.getCardAuth()
             } else {
-                self.getCardInfo()
+//                self.getCardInfo()
             }
         }
     }

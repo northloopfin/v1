@@ -19,7 +19,6 @@ class HomeViewController: BaseViewController {
     var accountInfoPresenter : AccountInfoPresenter!
     var shareAccountDetailsPresenter : ShareAccountDetailsPresenter!
     var cardAuthPresenter: CardAuthPresenter!
-    var cardAuthData:CardAuthData?
     var currentDateForLog: Date!
 
     @IBOutlet weak var vwEmpty: UIView!
@@ -50,7 +49,6 @@ class HomeViewController: BaseViewController {
         transactionListPresenter = TransactionListPresenter.init(delegate: self)
         accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
         shareAccountDetailsPresenter = ShareAccountDetailsPresenter.init(delegate: self)
-        cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         self.getAccountInfo()
         self.hideTabBar()
         
@@ -166,6 +164,7 @@ class HomeViewController: BaseViewController {
     
     //Getting card info for faster loading
     func getCardInfo(){
+        cardAuthPresenter = CardAuthPresenter.init(delegate: self)
         cardAuthPresenter.getCardAuth()
     }
     
@@ -249,7 +248,9 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
 extension HomeViewController:HomeDelegate{
     //MARK: HomeDelegate
     func didFetchedTransactionList(data: [TransactionListModel]) {
-        
+        if cardAuthPresenter == nil {
+            getCardInfo()
+        }
         if self.transactionDataSource.count > 0 {
             if data.count > 0 {
 
@@ -298,19 +299,19 @@ extension HomeViewController:HomeDelegate{
         }else{
             self.menuContainerViewController.panMode = MFSideMenuPanModeDefault
             self.showTabBar()
+            self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
+            
+            currentUser?.amount = data.data.info.balance.amount
+            currentUser?.cardActivated = data.data.CardFirstTimeActivated
+            
+            if let premium = data.data.premiumStatus{
+                let sideMenu = self.menuContainerViewController.leftMenuViewController as! SideMenuViewController
+                sideMenu.premiumStatus = premium
+            }
+            
+            UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
+            self.getTransactionList()
         }
-        self.AccBalanceLbl.text = "$"+String(data.data.info.balance.amount)
-        
-        currentUser?.amount = data.data.info.balance.amount
-        currentUser?.cardActivated = data.data.CardFirstTimeActivated
-        
-        if let premium = data.data.premiumStatus{
-            let sideMenu = self.menuContainerViewController.leftMenuViewController as! SideMenuViewController
-            sideMenu.premiumStatus = premium
-        }
- 
-        UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
-        self.getTransactionList()
     }
 }
 
@@ -366,6 +367,6 @@ extension HomeViewController:ShareAccountDetailDelegates{
 extension HomeViewController:CardAuthDelegates{
     func didFetchCardAuth(data: CardAuthData) {
         let sideMenu = self.menuContainerViewController.leftMenuViewController as! SideMenuViewController
-        sideMenu.cardAuthData = self.cardAuthData
+        sideMenu.cardAuthData = data
     }
 }
