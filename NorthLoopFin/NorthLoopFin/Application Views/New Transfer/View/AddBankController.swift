@@ -19,7 +19,10 @@ class AddBankController: BaseViewController {
     @IBOutlet weak var lblPhone: LabelWithLetterSpace!
     @IBOutlet weak var imgBankLogo: UIImageView!
     @IBOutlet weak var vwVerifyAccount: UIView!
-    var optionArray:[String] = []{
+    var institutionsPresenter:InstitutionsPresenter!
+    var topBanks:[clsInstitutions] = []
+    var institutionData:InstitutionsData!
+    var banks:[Institutions] = []{
         didSet{
             self.tableView.reloadData()
         }
@@ -30,7 +33,19 @@ class AddBankController: BaseViewController {
         self.setupRightNavigationBar()
         configureTableView()
         configureCollectionView()
-        optionArray = ["1","2","3","4"]
+        institutionsPresenter = InstitutionsPresenter(delegate: self)
+        institutionsPresenter.sendInstitutionsRequest()
+        
+        topBanks.append(clsInstitutions(name: "Chase", code: "chase", image: "https://cdn.synapsepay.com/bank_logos_v3p1/chase_v.png"))
+        topBanks.append(clsInstitutions(name: "Bank of America", code: "bofa", image: "https://cdn.synapsepay.com/bank_logos_v3p1/bankofamerica_v.png"))
+        topBanks.append(clsInstitutions(name: "Wells Fargo", code: "wells", image: "https://cdn.synapsepay.com/bank_logos_v3p1/wells fargo_v.png"))
+        topBanks.append(clsInstitutions(name: "Citibank", code: "citi", image: "https://cdn.synapsepay.com/bank_logos_v3p1/Citibank_v.png"))
+        topBanks.append(clsInstitutions(name: "PNC", code: "pnc", image: "https://cdn.synapsepay.com/bank_logos_v3p1/pnc bank_v.png"))
+        topBanks.append(clsInstitutions(name: "US Bank", code: "us", image: "https://cdn.synapsepay.com/bank_logos_v3p1/us_v.png"))
+        topBanks.append(clsInstitutions(name: "TD Bank", code: "td", image: "https://cdn.synapsepay.com/bank_logos_v3p1/TD_v.png"))
+        topBanks.append(clsInstitutions(name: "Capital One", code: "capone", image: "https://cdn.synapsepay.com/bank_logos_v3p1/CapitalOne360_v.png"))
+        topBanks.append(clsInstitutions(name: "HSBC USA", code: "hsbc", image: ""))
+        self.collectionView.reloadData()
         // Do any additional setup after loading the view.
     }
     
@@ -55,7 +70,20 @@ class AddBankController: BaseViewController {
     func closeVerification(){
         self.vwVerifyAccount.isHidden = true
     }
-
+    
+    @IBAction func txtSearch_changed(_ sender: UITextField) {
+        if let str = sender.text?.trimmingCharacters(in: .whitespaces), str.count > 0 {
+            banks = []
+            for bank in institutionData.values{
+                if bank.bankName.lowercased().contains(str){
+                    banks.append(bank)
+                }
+            }
+        }else{
+            banks = institutionData.values
+        }
+        self.tableView.reloadData()
+    }
 }
 
 extension AddBankController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
@@ -68,11 +96,18 @@ extension AddBankController:UICollectionViewDataSource,UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return topBanks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BankCollectionCell", for: indexPath) as! BankCollectionCell
+        let bank = topBanks[indexPath.row]
+        cell.lblName.text = bank.bankName
+        if let imgUrl = bank.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let url = URL(string:imgUrl){
+                cell.imgPreview.setImageWith(url)
+            }
+        }
         return cell
     }
     
@@ -101,12 +136,13 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionArray.count
+        return banks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCell") as! BankCell
         //        cell.bindData(option: optionArray[indexPath.row])
+        cell.bindData(data: banks[indexPath.row])
         cell.imgCheckbox.isHidden = true
         let bgColorView = UIView()
         bgColorView.backgroundColor = Colors.LightGray251
@@ -126,5 +162,12 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openVerification()
+    }
+}
+
+extension AddBankController:InstitutionsDelegate{
+    func didFetchInstitutions(data: InstitutionsData) {
+        institutionData = data
+        self.banks = data.values
     }
 }

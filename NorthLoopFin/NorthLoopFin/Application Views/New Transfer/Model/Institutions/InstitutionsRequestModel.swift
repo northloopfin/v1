@@ -1,5 +1,5 @@
 //
-//  RoutingVerificationRequestModel.swift
+//  InstitutionsRequestModel.swift
 //  NorthLoopFin
 //
 //  Created by Daffolapmac-19 on 27/05/19.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-class RoutingVerificationRequestModel {
+class InstitutionsRequestModel {
     
     //Note :- Property Name must be same as key used in request API
     var requestBody: [String:AnyObject]!
@@ -63,8 +62,8 @@ class RoutingVerificationRequestModel {
          
          -returns : HomeLedgerRequestModel
          */
-        func build()->RoutingVerificationRequestModel{
-            return RoutingVerificationRequestModel(builderObject: self)
+        func build()->InstitutionsRequestModel{
+            return InstitutionsRequestModel(builderObject: self)
         }
     }
     
@@ -74,6 +73,6 @@ class RoutingVerificationRequestModel {
      -returns: String containg end point
      */
     func getEndPoint()->String{
-        return Endpoints.Synapse_Url!  +  Endpoints.SynapseAPIEndpoints.ROUTINGVERIFCATION.rawValue
+        return Endpoints.Synapse_Url! + Endpoints.SynapseAPIEndpoints.INSTITUTIONS.rawValue
     }
 }

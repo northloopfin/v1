@@ -10,7 +10,8 @@ import Foundation
 
 struct Endpoints{
     static let Base_Url = AppUtility.infoForKey("Backend Url")
-    static let Card_Info_Url = AppUtility.infoForKey("Card Url")
+    static let Synapse_Url = AppUtility.infoForKey("Synapse Url")
+    static let Fingerprint = AppUtility.infoForKey("Fingerprint")
 
     enum APIEndpoints:String {
         case LOGIN = "auth/login"
@@ -42,11 +43,15 @@ struct Endpoints{
         case WIRE = "banking/currency-protect/wire/"
         case CLAIMREFUND = "banking/currency-protect/claim/"
         case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
-        case ROUTINGVERIFCATION = "/routing-number-verification"
         case CREDITCARD = "banking/creditCard"
 //      case ANALYSISOPTIONS = "http://18.219.212.170/spend_by_categories/"
         case ANALYSISOPTIONS = "http://nolo-load-vpc-f927b74b2d6466e5.elb.us-east-2.amazonaws.com/spend_by_categories/"
         case ANALYSISTOTALSPENT = "http://nolo-load-vpc-f927b74b2d6466e5.elb.us-east-2.amazonaws.com/m_to_date_spend/"
+    }
+    
+    enum SynapseAPIEndpoints:String {
+        case ROUTINGVERIFCATION = "/routing-number-verification"
+        case INSTITUTIONS = "/institutions"
     }
     
     enum APIRequestHeaders: String{

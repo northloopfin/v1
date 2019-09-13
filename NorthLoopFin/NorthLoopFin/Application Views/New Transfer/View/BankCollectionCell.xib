@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoundedBackgroundForImage" translatesAutoresizingMaskIntoConstraints="NO" id="22t-xK-4ht">
-                                <rect key="frame" x="31" y="15" width="66" height="66"/>
+                                <rect key="frame" x="29" y="13" width="70" height="70"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Atb-7B-Ngj">
                                 <rect key="frame" x="31" y="15" width="66" height="66"/>
@@ -66,20 +66,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QIs-SL-gdz" firstAttribute="leading" secondItem="O8V-hd-UcY" secondAttribute="leading" id="2si-2O-ZuY"/>
-                            <constraint firstItem="22t-xK-4ht" firstAttribute="top" secondItem="Atb-7B-Ngj" secondAttribute="top" id="3vQ-Wy-3VX"/>
+                            <constraint firstItem="22t-xK-4ht" firstAttribute="top" secondItem="Atb-7B-Ngj" secondAttribute="top" constant="-2" id="3vQ-Wy-3VX"/>
                             <constraint firstAttribute="trailing" secondItem="QIs-SL-gdz" secondAttribute="trailing" id="66h-td-1En"/>
                             <constraint firstItem="OJy-6g-pbI" firstAttribute="leading" secondItem="O8V-hd-UcY" secondAttribute="leading" id="7QR-Wq-UHc"/>
-                            <constraint firstItem="22t-xK-4ht" firstAttribute="bottom" secondItem="Atb-7B-Ngj" secondAttribute="bottom" id="9bp-ns-Fdj"/>
+                            <constraint firstItem="22t-xK-4ht" firstAttribute="bottom" secondItem="Atb-7B-Ngj" secondAttribute="bottom" constant="2" id="9bp-ns-Fdj"/>
                             <constraint firstAttribute="bottom" secondItem="l3n-lf-FlI" secondAttribute="bottom" id="DXv-qu-tzT"/>
                             <constraint firstAttribute="bottom" secondItem="QIs-SL-gdz" secondAttribute="bottom" id="FcL-vu-UHX"/>
                             <constraint firstAttribute="trailing" secondItem="l3n-lf-FlI" secondAttribute="trailing" id="KXe-B6-6hr"/>
-                            <constraint firstItem="22t-xK-4ht" firstAttribute="trailing" secondItem="Atb-7B-Ngj" secondAttribute="trailing" id="Ki3-Ra-sL5"/>
+                            <constraint firstItem="22t-xK-4ht" firstAttribute="trailing" secondItem="Atb-7B-Ngj" secondAttribute="trailing" constant="2" id="Ki3-Ra-sL5"/>
                             <constraint firstItem="OJy-6g-pbI" firstAttribute="top" secondItem="Atb-7B-Ngj" secondAttribute="bottom" id="QMX-YV-Vxy"/>
                             <constraint firstAttribute="bottom" secondItem="OJy-6g-pbI" secondAttribute="bottom" id="TkF-bB-o1m"/>
                             <constraint firstAttribute="trailing" secondItem="OJy-6g-pbI" secondAttribute="trailing" id="WbZ-5G-bd6"/>
                             <constraint firstItem="Atb-7B-Ngj" firstAttribute="top" secondItem="O8V-hd-UcY" secondAttribute="top" constant="15" id="fNv-iD-E4Z"/>
                             <constraint firstItem="Atb-7B-Ngj" firstAttribute="centerX" secondItem="O8V-hd-UcY" secondAttribute="centerX" id="lVz-Yy-14O"/>
-                            <constraint firstItem="22t-xK-4ht" firstAttribute="leading" secondItem="Atb-7B-Ngj" secondAttribute="leading" id="mkQ-aM-ZbN"/>
+                            <constraint firstItem="22t-xK-4ht" firstAttribute="leading" secondItem="Atb-7B-Ngj" secondAttribute="leading" constant="-2" id="mkQ-aM-ZbN"/>
                             <constraint firstItem="l3n-lf-FlI" firstAttribute="top" secondItem="O8V-hd-UcY" secondAttribute="top" id="upB-cx-0QS"/>
                             <constraint firstItem="Atb-7B-Ngj" firstAttribute="width" secondItem="O8V-hd-UcY" secondAttribute="width" multiplier="64/124" id="vKo-0p-cAd"/>
                         </constraints>

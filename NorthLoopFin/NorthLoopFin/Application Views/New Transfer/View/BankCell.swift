@@ -28,4 +28,14 @@ class BankCell: UITableViewCell {
     
     func configureCell(){
     }
+    
+    func bindData(data:Institutions){
+        self.bankName.text = data.bankName
+        self.imgBank.image = nil
+        if let imgUrl = data.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let url = URL(string:imgUrl){
+                self.imgBank.setImageWith(url)
+            }
+        }
+    }
 }

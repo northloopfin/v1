@@ -18,7 +18,9 @@ class ScanIDController: BaseViewController {
 
     @IBOutlet weak var btnUploadBack: UIButton!
     @IBOutlet weak var btnRemoveBack: UIButton!
-    
+    @IBOutlet weak var imgFrontShadow: UIImageView!
+    @IBOutlet weak var imgBackShadow: UIImageView!
+
     var typeData:SelectIDType = SelectIDType.init(type: AppConstants.SelectIDTYPES.STATEID, images: [])
     lazy var scanIDImages: Results<ScanIDImages> = RealmHelper.retrieveImages()
     var allButtons: [UIButton] = []
@@ -36,6 +38,11 @@ class ScanIDController: BaseViewController {
             if typeData.images.count > button.tag{
                 button.setImage(typeData.images[button.tag], for: .normal)
                 [self.btnRemoveFront, self.btnRemoveBack][button.tag].isHidden = false
+                if button.tag == 0 {
+                    self.imgFrontShadow.isHidden = false
+                }else{
+                    self.imgBackShadow.isHidden = false
+                }
             }
         }
         
@@ -66,9 +73,7 @@ class ScanIDController: BaseViewController {
     }
 
     func checkForNext(){
-        if typeData.images.count >= 2 {
-            self.btnNext.isEnabled = true
-        }
+        self.btnNext.isEnabled = typeData.images.count >= 2
     }
     
     func formSignupFlowData(){
@@ -136,12 +141,14 @@ class ScanIDController: BaseViewController {
         }
     }
 
-
+    
     @IBAction func btnRemoveBack_pressed(_ sender: UIButton) {
         self.btnUploadBack.setImage(UIImage(named: "ic_upload_placeholder"), for: .normal)
         if typeData.images.count > 1{
             typeData.images.remove(at: 1)
         }
+        imgBackShadow.isHidden = true
+
         sender.isHidden = true
         self.btnUploadBack.layer.removeShadow()
         checkForNext()
@@ -152,6 +159,8 @@ class ScanIDController: BaseViewController {
         if typeData.images.count > 0{
             typeData.images.remove(at: 0)
         }
+        imgFrontShadow.isHidden = true
+
         self.btnUploadFront.layer.removeShadow()
         sender.isHidden = true
         checkForNext()
@@ -171,6 +180,12 @@ class ScanIDController: BaseViewController {
             modelToSaveInDB.type = self.typeData.type.rawValue
             modelToSaveInDB.imagePath=filename
             RealmHelper.addScanIDInfo(info: modelToSaveInDB)
+            if sender.tag == 0 {
+                self.imgFrontShadow.isHidden = false
+            }else{
+                self.imgBackShadow.isHidden = false
+            }
+
             self.checkForNext()
         }
     }

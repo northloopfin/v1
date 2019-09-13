@@ -75,8 +75,9 @@ extension MyAccountViewController:CommonTableDelegate{
             self.isChangeAddressClicked=true
             self.showConfirmPopUp()
         case 2:
-            self.isChangePasswordClicked=true
-            self.showConfirmPopUp()
+            self.navigationController?.pushViewController(self.getControllerWithIdentifier("ChangePasswordController"), animated: true)
+//            self.isChangePasswordClicked=true
+//            self.showConfirmPopUp()
         case 3:
             //change Phone Number
             self.isChangePhoneClicked=true
@@ -154,7 +155,7 @@ extension MyAccountViewController:CommonTableDelegate{
     func performActionAccordingToSelectedOptionToChangeWhenNoAuth(){
         if self.isChangePhoneClicked {
             self.twoFApresenter.sendTwoFARequest(sendToAPI: false)
-        }else if self.isChangeAddressClicked || self.isChangePasswordClicked{
+        }else if self.isChangeAddressClicked{
             self.moveTo2FA()
         }
     }
