@@ -14,6 +14,7 @@ class BankCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        imgPreview.cornerRadius = imgPreview.frame.size.height/2
         // Initialization code
     }
 

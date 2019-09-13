@@ -20,6 +20,6 @@ struct WireList: Codable {
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        data = try values.decodeIfPresent(Array<WireTransaction>.self, forKey: .data)!
+        data = try values.decodeIfPresent(Array<WireTransaction>.self, forKey: .data) ?? []
     }
 }

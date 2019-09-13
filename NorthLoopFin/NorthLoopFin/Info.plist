@@ -45,15 +45,15 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
-	<key>Card Url</key>
-	<string>$(CARD_URL)</string>
+	<string>4</string>
 	<key>FacebookAppID</key>
 	<string>3429714543753628</string>
 	<key>FacebookAutoLogAppEventsEnabled</key>
 	<true/>
 	<key>FacebookDisplayName</key>
 	<string>North Loop</string>
+	<key>Fingerprint</key>
+	<string>$(FINGERPRINT)</string>
 	<key>FirebaseDynamicLinksCustomDomains</key>
 	<array>
 		<string>https://www.northloopbank.com/invited_by</string>
@@ -90,6 +90,8 @@
 	<string>$(SMARTYSTREETS_AUTH_ID)</string>
 	<key>SmartyStreets Auth Token</key>
 	<string>$(SMARTYSTREETS_AUTH_TOKEN)</string>
+	<key>Synapse Url</key>
+	<string>$(SYNAPSE_API_URL)</string>
 	<key>Twilio Key</key>
 	<string>$(TWILIO_API_KEY)</string>
 	<key>UIAppFonts</key>

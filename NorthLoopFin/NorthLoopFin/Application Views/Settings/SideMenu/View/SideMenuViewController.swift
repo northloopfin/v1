@@ -42,8 +42,8 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
         self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.CREDITCARD.rawValue)
-        self.data.append(AppConstants.SideMenuOptions.ADDFUNDTRANSFER.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.CREDITCARD.rawValue)
+//        self.data.append(AppConstants.SideMenuOptions.ADDFUNDTRANSFER.rawValue)
     }
 }
 
