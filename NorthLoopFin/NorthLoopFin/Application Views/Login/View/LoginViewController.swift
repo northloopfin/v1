@@ -70,6 +70,9 @@ class LoginViewController: BaseViewController {
         if let email = KeychainWrapper.standard.string(forKey: AppConstants.KeyChainKeyForEmail){
             self.emailTextField.text = email
         }
+//        self.emailTextField.text = "test@30.com"
+//        self.passwordTextfield.text = "Test1234!"
+
         if AccountLockTimer.sharedInstance.timer != nil{
             if (AccountLockTimer.sharedInstance.timer?.state.isRunning)!{
                 self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.USER_REACHED_MAX_ATTEMPTS.rawValue)

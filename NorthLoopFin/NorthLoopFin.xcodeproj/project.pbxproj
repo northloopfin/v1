@@ -450,6 +450,8 @@
 		EA1BA84F232678460047D831 /* BankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA84D232678450047D831 /* BankCell.swift */; };
 		EA1BA85123267B8B0047D831 /* TransferCreditToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA85023267B8B0047D831 /* TransferCreditToViewController.swift */; };
 		EA1E32B9230E9B8E0099A471 /* ComingSoonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */; };
+		EA1E5B1E2330E9150077BE94 /* camera-flash-off@2x in Resources */ = {isa = PBXBuildFile; fileRef = EA1E5B1C2330E9110077BE94 /* camera-flash-off@2x */; };
+		EA1E5B1F2330E9150077BE94 /* camera-flash-off.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E5B1D2330E9120077BE94 /* camera-flash-off.png */; };
 		EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */; };
 		EA1FC14122F1526C002A7103 /* AMPLocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC11E22F1526C002A7103 /* AMPLocationManagerDelegate.m */; };
 		EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC12122F1526C002A7103 /* AMPUtils.m */; };
@@ -553,6 +555,17 @@
 		EAB3064C23214993009EFD8D /* RequestCreditCardBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3063F23214992009EFD8D /* RequestCreditCardBusinessLogic.swift */; };
 		EAB3064D23214993009EFD8D /* ApplyCreditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3064123214992009EFD8D /* ApplyCreditCardVC.swift */; };
 		EABA3BDD231E9422007A914E /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA3BDC231E9422007A914E /* OnboardingVC.swift */; };
+		EACA2EA2232FB13F00891475 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2E90232FB13F00891475 /* ViewUtils.m */; };
+		EACA2EA3232FB13F00891475 /* camera-switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EACA2E91232FB13F00891475 /* camera-switch@2x.png */; };
+		EACA2EA4232FB13F00891475 /* LLSimpleCamera+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2E92232FB13F00891475 /* LLSimpleCamera+Helper.m */; };
+		EACA2EA7232FB13F00891475 /* camera-flash.png in Resources */ = {isa = PBXBuildFile; fileRef = EACA2E96232FB13F00891475 /* camera-flash.png */; };
+		EACA2EA9232FB13F00891475 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2E9B232FB13F00891475 /* UIImage+Crop.m */; };
+		EACA2EAA232FB13F00891475 /* camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EACA2E9D232FB13F00891475 /* camera-flash@2x.png */; };
+		EACA2EAB232FB13F00891475 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2E9E232FB13F00891475 /* LLSimpleCamera.m */; };
+		EACA2EAC232FB13F00891475 /* camera-switch.png in Resources */ = {isa = PBXBuildFile; fileRef = EACA2E9F232FB13F00891475 /* camera-switch.png */; };
+		EACA2EAD232FB13F00891475 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2EA0232FB13F00891475 /* UIImage+FixOrientation.m */; };
+		EACA2EAE232FB13F00891475 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2EA1232FB13F00891475 /* UIImage+Resize.m */; };
+		EACA2EB6232FC4F600891475 /* CaptureIDController.m in Sources */ = {isa = PBXBuildFile; fileRef = EACA2EB5232FC4F500891475 /* CaptureIDController.m */; };
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
@@ -1049,6 +1062,8 @@
 		EA1BA84D232678450047D831 /* BankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCell.swift; sourceTree = "<group>"; };
 		EA1BA85023267B8B0047D831 /* TransferCreditToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferCreditToViewController.swift; sourceTree = "<group>"; };
 		EA1E32B8230E9B8E0099A471 /* ComingSoonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonController.swift; sourceTree = "<group>"; };
+		EA1E5B1C2330E9110077BE94 /* camera-flash-off@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "camera-flash-off@2x"; sourceTree = "<group>"; };
+		EA1E5B1D2330E9120077BE94 /* camera-flash-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash-off.png"; sourceTree = "<group>"; };
 		EA1FC11922F1503B002A7103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA1FC11C22F1526B002A7103 /* AMPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLConnection.h; sourceTree = "<group>"; };
 		EA1FC11D22F1526B002A7103 /* AMPIdentify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPIdentify.h; sourceTree = "<group>"; };
@@ -1169,6 +1184,24 @@
 		EAB3063F23214992009EFD8D /* RequestCreditCardBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCreditCardBusinessLogic.swift; sourceTree = "<group>"; };
 		EAB3064123214992009EFD8D /* ApplyCreditCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyCreditCardVC.swift; sourceTree = "<group>"; };
 		EABA3BDC231E9422007A914E /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		EACA2E8F232FB13F00891475 /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		EACA2E90232FB13F00891475 /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		EACA2E91232FB13F00891475 /* camera-switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-switch@2x.png"; sourceTree = "<group>"; };
+		EACA2E92232FB13F00891475 /* LLSimpleCamera+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera+Helper.m"; sourceTree = "<group>"; };
+		EACA2E93232FB13F00891475 /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
+		EACA2E96232FB13F00891475 /* camera-flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash.png"; sourceTree = "<group>"; };
+		EACA2E97232FB13F00891475 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		EACA2E98232FB13F00891475 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		EACA2E9A232FB13F00891475 /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		EACA2E9B232FB13F00891475 /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
+		EACA2E9C232FB13F00891475 /* LLSimpleCamera+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera+Helper.h"; sourceTree = "<group>"; };
+		EACA2E9D232FB13F00891475 /* camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash@2x.png"; sourceTree = "<group>"; };
+		EACA2E9E232FB13F00891475 /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
+		EACA2E9F232FB13F00891475 /* camera-switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-switch.png"; sourceTree = "<group>"; };
+		EACA2EA0232FB13F00891475 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		EACA2EA1232FB13F00891475 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		EACA2EB4232FC4F500891475 /* CaptureIDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureIDController.h; sourceTree = "<group>"; };
+		EACA2EB5232FC4F500891475 /* CaptureIDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureIDController.m; sourceTree = "<group>"; };
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
@@ -3271,9 +3304,37 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		EACA2E8E232FB13F00891475 /* LLSimpleCamera */ = {
+			isa = PBXGroup;
+			children = (
+				EACA2E96232FB13F00891475 /* camera-flash.png */,
+				EACA2E9D232FB13F00891475 /* camera-flash@2x.png */,
+				EACA2E9F232FB13F00891475 /* camera-switch.png */,
+				EACA2E91232FB13F00891475 /* camera-switch@2x.png */,
+				EA1E5B1D2330E9120077BE94 /* camera-flash-off.png */,
+				EA1E5B1C2330E9110077BE94 /* camera-flash-off@2x */,
+				EACA2E93232FB13F00891475 /* LLSimpleCamera.h */,
+				EACA2E9E232FB13F00891475 /* LLSimpleCamera.m */,
+				EACA2E9C232FB13F00891475 /* LLSimpleCamera+Helper.h */,
+				EACA2E92232FB13F00891475 /* LLSimpleCamera+Helper.m */,
+				EACA2E8F232FB13F00891475 /* UIImage+Crop.h */,
+				EACA2E9B232FB13F00891475 /* UIImage+Crop.m */,
+				EACA2E97232FB13F00891475 /* UIImage+FixOrientation.h */,
+				EACA2EA0232FB13F00891475 /* UIImage+FixOrientation.m */,
+				EACA2E98232FB13F00891475 /* UIImage+Resize.h */,
+				EACA2EA1232FB13F00891475 /* UIImage+Resize.m */,
+				EACA2E9A232FB13F00891475 /* ViewUtils.h */,
+				EACA2E90232FB13F00891475 /* ViewUtils.m */,
+				EACA2EB4232FC4F500891475 /* CaptureIDController.h */,
+				EACA2EB5232FC4F500891475 /* CaptureIDController.m */,
+			);
+			path = LLSimpleCamera;
+			sourceTree = "<group>";
+		};
 		EAE5603A22FD8528009B2C2E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				EACA2E8E232FB13F00891475 /* LLSimpleCamera */,
 				EAE5603B22FD8528009B2C2E /* FloatingLabelTextField */,
 				84E26B1D231EB2D1005D5F4C /* Date+Diff.swift */,
 			);
@@ -3530,9 +3591,11 @@
 				EA1FC14A22F1526C002A7103 /* ComodoRsaDomainValidationCA.der in Resources */,
 				1D51759021C6708100BCF9E4 /* TransactionDetailHistoryTableHeader.xib in Resources */,
 				1FF70EB522ED7500007A9309 /* CountryCell.xib in Resources */,
+				EA1E5B1F2330E9150077BE94 /* camera-flash-off.png in Resources */,
 				1D8189FE21C0E063000C8F5F /* Calibri Bold.ttf in Resources */,
 				1D818A0521C105BC000C8F5F /* HomeTableCell.xib in Resources */,
 				1D6B7EDD21EDBA2E0075D58E /* GoalCollectionViewCell.xib in Resources */,
+				EACA2EA7232FB13F00891475 /* camera-flash.png in Resources */,
 				EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */,
 				84D129B422FCD666000C82A6 /* AnalysisCategoryTableHeader.xib in Resources */,
 				8448754E22ED116A003B703B /* ReferAndEarnViewController.xib in Resources */,
@@ -3550,17 +3613,21 @@
 				4BFFE3E022BB693300D85610 /* AccountAgreement.html in Resources */,
 				EA22BDBA232794A60022BACD /* BankCollectionCell.xib in Resources */,
 				84D129B822FCD666000C82A6 /* CalendarTableViewCell.xib in Resources */,
+				EACA2EAA232FB13F00891475 /* camera-flash@2x.png in Resources */,
 				EA1BA843232626AC0047D831 /* DebitFromCell.xib in Resources */,
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
 				EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */,
 				4B15362222DDA914009CE548 /* createAcc.gif in Resources */,
 				EA1FC14322F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */,
 				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
+				EACA2EA3232FB13F00891475 /* camera-switch@2x.png in Resources */,
 				EA24B32C23164FFE0091D307 /* CurrencyProtectCell.xib in Resources */,
+				EA1E5B1E2330E9150077BE94 /* camera-flash-off@2x in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
 				EA8D0CF6232BA54E002013BD /* ScanOptionCell.xib in Resources */,
 				4BBCE8F822E18B7800A34695 /* queue.gif in Resources */,
+				EACA2EAC232FB13F00891475 /* camera-switch.png in Resources */,
 				F4EE1B89230C626B00CCA1E6 /* TransferDetailTableViewCell.xib in Resources */,
 				1D8189FF21C0E063000C8F5F /* Calibri.ttf in Resources */,
 				EA1FC11A22F1503D002A7103 /* GoogleService-Info.plist in Resources */,
@@ -3810,6 +3877,7 @@
 				EA8D0CF2232BA54E002013BD /* ScanI20Controller.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
 				1D8440862289552600A77BBF /* AccountInfoApiRequest.swift in Sources */,
+				EACA2EAB232FB13F00891475 /* LLSimpleCamera.m in Sources */,
 				1D913CE2228F624E0075B16D /* SignupSynapseBusinessLogic.swift in Sources */,
 				1D0A881C21CB6E2100187439 /* OTPViewController.swift in Sources */,
 				1DEEEF202292F150002909E1 /* StringExtension.swift in Sources */,
@@ -3893,6 +3961,7 @@
 				1D5AB2E122A676B100DB3B70 /* UpdateCardAPIRequest.swift in Sources */,
 				EA22BDBC2327963A0022BACD /* AddBankController.swift in Sources */,
 				EA1FC14222F1526C002A7103 /* AMPUtils.m in Sources */,
+				EACA2EA9232FB13F00891475 /* UIImage+Crop.m in Sources */,
 				4B07A87322C5CD25004C65B2 /* SetAppSettingsAPIRequest.swift in Sources */,
 				EA1AB69323180DCC0021B59D /* ReferralAPIRequest.swift in Sources */,
 				1DD066F6221EA77900E1AD6D /* ConfirmedNewViewController.swift in Sources */,
@@ -3963,6 +4032,7 @@
 				1D8440812289545A00A77BBF /* HomeTransactionListBusinessLogic.swift in Sources */,
 				EA24B32E23164FFE0091D307 /* CurrencyProtectController.swift in Sources */,
 				1D6B7EE121EDE3CF0075D58E /* HelpViewController.swift in Sources */,
+				EACA2EAD232FB13F00891475 /* UIImage+FixOrientation.m in Sources */,
 				1D180D82229E75D700FC3390 /* ATMFinderPresenter.swift in Sources */,
 				1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */,
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
@@ -3978,6 +4048,7 @@
 				1D180DA6229FAE6100FC3390 /* SucessViewController.swift in Sources */,
 				1D055D2E229BD6E30078CD33 /* LinkACHPresenter.swift in Sources */,
 				EA8D0D04232BA692002013BD /* InstitutionsRequestModel.swift in Sources */,
+				EACA2EA2232FB13F00891475 /* ViewUtils.m in Sources */,
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
 				1D5AB30B22A7B63900DB3B70 /* TwoFARequestModel.swift in Sources */,
@@ -4085,6 +4156,7 @@
 				1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */,
 				EA04726122E070F800D5B834 /* ViewAccountsViewController.swift in Sources */,
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
+				EACA2EA4232FB13F00891475 /* LLSimpleCamera+Helper.m in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D5AB2F322A7965E00DB3B70 /* SetPinPresenter.swift in Sources */,
 				EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */,
@@ -4150,6 +4222,7 @@
 				1D180DBC229FC98B00FC3390 /* MyAccountDelegates.swift in Sources */,
 				1D478CAD228E93BE00503136 /* SignupAuthData.swift in Sources */,
 				1DF64E1A21E5FDE9008774CE /* MyCardTableCell.swift in Sources */,
+				EACA2EB6232FC4F600891475 /* CaptureIDController.m in Sources */,
 				1D055D4A229C325C0078CD33 /* FetchACHPresenter.swift in Sources */,
 				EA8D0CE6232BA4F8002013BD /* PersonalDetailViewController.swift in Sources */,
 				1DB6479C21FEFF8F004C483E /* ButtonWithImageAndTitleExtension.swift in Sources */,
@@ -4164,6 +4237,7 @@
 				4BFBC88C22BB8B7800B23B68 /* GetAppSettingsResponse.swift in Sources */,
 				297FB9E821B554F8008D60CE /* ErrorCodes.swift in Sources */,
 				1D259DA0228BDF7E0053D0AB /* CreatedOn.swift in Sources */,
+				EACA2EAE232FB13F00891475 /* UIImage+Resize.m in Sources */,
 				EA1FC14F22F1526C002A7103 /* AMPIdentify.m in Sources */,
 				84D129B122FCD666000C82A6 /* AnalysisAPIRequestModel.swift in Sources */,
 				1D4AD774228441AA007A9C2F /* LoginRequestModel.swift in Sources */,
