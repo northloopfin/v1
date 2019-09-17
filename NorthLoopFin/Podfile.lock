@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - ALCameraViewController (3.0.3)
   - AlertHelperKit (1.8.0)
   - Amplitude-iOS (4.8.0)
   - Branch (0.28.1):
@@ -194,6 +195,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - ALCameraViewController
   - AlertHelperKit (from `https://github.com/keygx/AlertHelperKit`)
   - Amplitude-iOS (~> 4.5)
   - Branch
@@ -234,6 +236,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - ALCameraViewController
     - Amplitude-iOS
     - Branch
     - Crashlytics
@@ -296,6 +299,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  ALCameraViewController: 6398a9282057f709b87a1ecc52a83b48028ade64
   AlertHelperKit: 9e5cd05c02fa3bec2c2dff972b43ef204bc3a46b
   Amplitude-iOS: 2f704f85db0a6ded42cdeadb8aa0918d68019db1
   Branch: edf6cab0cecb437d6a6abba3a25d0a0fa6f277ec
@@ -348,6 +352,6 @@ SPEC CHECKSUMS:
   ZDCChat: ead4909dceb46e82f7dbedf3a1721332e6df078e
   ZendeskSDK: 445b63024dc3e0021d18bf86a32eb1d3e9404d66
 
-PODFILE CHECKSUM: 63875ba0d604a31d4cc4f992940e711aad09da51
+PODFILE CHECKSUM: 13cf46dbcc7928f71dbbc396cb7030bc4a7399f7
 
 COCOAPODS: 1.7.4

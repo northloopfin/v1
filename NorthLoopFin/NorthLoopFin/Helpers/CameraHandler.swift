@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class CameraHandler: NSObject{
     static let shared = CameraHandler()
     
@@ -21,24 +20,44 @@ class CameraHandler: NSObject{
     func camera()
     {
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            let myPickerController = UIImagePickerController()
-            myPickerController.delegate = self;
-            myPickerController.sourceType = .camera
-            currentVC.present(myPickerController, animated: true, completion: nil)
+            if ["ScanPassportController","ScanIDController","ScanVisaController"].contains(currentVC.value(forKey: "storyboardIdentifier") as! String){
+                let vc = currentVC.getControllerWithIdentifier("CaptureIDController") as! CaptureIDController
+                vc.delegate = self
+                currentVC.present(vc, animated: true, completion: nil)
+            }else{
+                let myPickerController = UIImagePickerController()
+                myPickerController.delegate = self;
+                myPickerController.sourceType = .camera
+                currentVC.present(myPickerController, animated: true, completion: nil)
+            }
+//
+////            var f = myPickerController.view.bounds
+//////            f.size.height = f.size.height - myPickerController.navigationBar.bounds.size.height
+////            let barHeight = f.size.width * 0.5 // (f.size.height - f.size.width) / 2
+////            UIGraphicsBeginImageContext(f.size)
+////            UIColor(white: 0, alpha: 0.5).set()
+////            UIRectFillUsingBlendMode(CGRect(x: 0, y: 0, width: f.size.width, height: barHeight), .normal)
+//////            UIRectFillUsingBlendMode(CGRect(x: 0, y: f.size.height - barHeight, width: f.size.width, height: barHeight) , .normal);
+////            var overlayImage = UIGraphicsGetImageFromCurrentImageContext()
+////            UIGraphicsEndImageContext()
+////
+////            var overlayIV = UIImageView(frame: f)
+////            overlayIV.image = overlayImage
+////
+////            myPickerController.cameraOverlayView?.addSubview(overlayIV)
+//
         }
-        
+
     }
     
     func photoLibrary()
     {
-        
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             let myPickerController = UIImagePickerController()
             myPickerController.delegate = self;
             myPickerController.sourceType = .photoLibrary
             currentVC.present(myPickerController, animated: true, completion: nil)
         }
-        
     }
     
     func showActionSheet(vc: UIViewController) {
@@ -60,6 +79,14 @@ class CameraHandler: NSObject{
     
 }
 
+extension CameraHandler: CaptureDelegate{
+    func capturedImage(_ image: UIImage!) {
+        let compressedImageData = image.jpegData(compressionQuality: 0.8)
+        //convert this compressed data to image
+        let compressedImage = UIImage.init(data: compressedImageData!)
+        self.imagePickedBlock?(compressedImage!)
+    }
+}
 
 extension CameraHandler: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
