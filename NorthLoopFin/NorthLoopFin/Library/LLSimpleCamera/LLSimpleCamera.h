@@ -123,8 +123,8 @@ typedef enum : NSUInteger {
 
 /**
  * Use this method to request microphone permission before initalizing LLSimpleCamera.
- */
 + (void)requestMicrophonePermission:(void (^)(BOOL granted))completionBlock;
+ */
 
 /**
  * Returns an instance of LLSimpleCamera with the given quality.

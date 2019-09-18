@@ -436,6 +436,11 @@
 		EA1902F1230D76A6002FE7FC /* RedeemCashbackRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902ED230D76A5002FE7FC /* RedeemCashbackRequestModel.swift */; };
 		EA1902F2230D76A6002FE7FC /* RedeemCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902EE230D76A5002FE7FC /* RedeemCashback.swift */; };
 		EA1902F4230D77CF002FE7FC /* RedeemCashbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */; };
+		EA194A8023320BAB005507FC /* AccountAggregate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA194A7C23320BAB005507FC /* AccountAggregate.swift */; };
+		EA194A8123320BAB005507FC /* AccountAggregateAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA194A7D23320BAB005507FC /* AccountAggregateAPIRequest.swift */; };
+		EA194A8223320BAB005507FC /* AccountAggregateBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA194A7E23320BAB005507FC /* AccountAggregateBusinessLogic.swift */; };
+		EA194A8323320BAB005507FC /* AccountAggregateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA194A7F23320BAB005507FC /* AccountAggregateRequestModel.swift */; };
+		EA194A8523320BD4005507FC /* AccountAggregatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA194A8423320BD3005507FC /* AccountAggregatePresenter.swift */; };
 		EA1AB68A23180D8D0021B59D /* ReferralPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68923180D8D0021B59D /* ReferralPresenter.swift */; };
 		EA1AB69023180DCC0021B59D /* Referral.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68C23180DCC0021B59D /* Referral.swift */; };
 		EA1AB69123180DCC0021B59D /* ReferralBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AB68D23180DCC0021B59D /* ReferralBusinessLogic.swift */; };
@@ -1048,6 +1053,11 @@
 		EA1902ED230D76A5002FE7FC /* RedeemCashbackRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCashbackRequestModel.swift; sourceTree = "<group>"; };
 		EA1902EE230D76A5002FE7FC /* RedeemCashback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCashback.swift; sourceTree = "<group>"; };
 		EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemCashbackPresenter.swift; sourceTree = "<group>"; };
+		EA194A7C23320BAB005507FC /* AccountAggregate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountAggregate.swift; sourceTree = "<group>"; };
+		EA194A7D23320BAB005507FC /* AccountAggregateAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountAggregateAPIRequest.swift; sourceTree = "<group>"; };
+		EA194A7E23320BAB005507FC /* AccountAggregateBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountAggregateBusinessLogic.swift; sourceTree = "<group>"; };
+		EA194A7F23320BAB005507FC /* AccountAggregateRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountAggregateRequestModel.swift; sourceTree = "<group>"; };
+		EA194A8423320BD3005507FC /* AccountAggregatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountAggregatePresenter.swift; sourceTree = "<group>"; };
 		EA1AB68923180D8D0021B59D /* ReferralPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralPresenter.swift; sourceTree = "<group>"; };
 		EA1AB68C23180DCC0021B59D /* Referral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Referral.swift; sourceTree = "<group>"; };
 		EA1AB68D23180DCC0021B59D /* ReferralBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralBusinessLogic.swift; sourceTree = "<group>"; };
@@ -2918,6 +2928,17 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		EA194A7B23320BAB005507FC /* AddBank */ = {
+			isa = PBXGroup;
+			children = (
+				EA194A7C23320BAB005507FC /* AccountAggregate.swift */,
+				EA194A7D23320BAB005507FC /* AccountAggregateAPIRequest.swift */,
+				EA194A7E23320BAB005507FC /* AccountAggregateBusinessLogic.swift */,
+				EA194A7F23320BAB005507FC /* AccountAggregateRequestModel.swift */,
+			);
+			path = AddBank;
+			sourceTree = "<group>";
+		};
 		EA1AB68B23180DCC0021B59D /* Referral */ = {
 			isa = PBXGroup;
 			children = (
@@ -3217,6 +3238,7 @@
 		EA8D0D07232BA6C1002013BD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				EA194A8423320BD3005507FC /* AccountAggregatePresenter.swift */,
 				EA8D0D08232BA6C1002013BD /* InstitutionsPresenter.swift */,
 			);
 			path = Presenter;
@@ -3450,6 +3472,7 @@
 			isa = PBXGroup;
 			children = (
 				F4EE1B8A230C6D3900CCA1E6 /* TransferDetailCellModel.swift */,
+				EA194A7B23320BAB005507FC /* AddBank */,
 				EA8D0CFE232BA691002013BD /* Institutions */,
 			);
 			path = Model;
@@ -3841,6 +3864,7 @@
 				1D844092228A9E0400A77BBF /* TransactionDetailRequestModel.swift in Sources */,
 				1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */,
 				1D9F4600228AC156009D76FC /* CardRequestModel.swift in Sources */,
+				EA194A8223320BAB005507FC /* AccountAggregateBusinessLogic.swift in Sources */,
 				4BFFE3D322BB50AD00D85610 /* AgreementViewController.swift in Sources */,
 				1D8440882289556A00A77BBF /* AccountInfoBusinessLogic.swift in Sources */,
 				1D913EF521EC55C6009D7E52 /* CommonTable.swift in Sources */,
@@ -3914,6 +3938,7 @@
 				1D5AB2FF22A7999100DB3B70 /* LostCardResponse.swift in Sources */,
 				4BFBC88A22BB8B6800B23B68 /* GetAppSettingsBusinessLogic.swift in Sources */,
 				1D259DA2228BDF9D0053D0AB /* Other.swift in Sources */,
+				EA194A8323320BAB005507FC /* AccountAggregateRequestModel.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
 				1D5AB2DC22A6764D00DB3B70 /* UpdateCardPresenter.swift in Sources */,
@@ -3948,6 +3973,7 @@
 				1D8440742289541A00A77BBF /* AccountInfo.swift in Sources */,
 				F4EE1B88230C626B00CCA1E6 /* TransferDetailTableViewCell.swift in Sources */,
 				1D055D38229BFEFC0078CD33 /* MakeTransferViewController.swift in Sources */,
+				EA194A8123320BAB005507FC /* AccountAggregateAPIRequest.swift in Sources */,
 				EA1AB68A23180D8D0021B59D /* ReferralPresenter.swift in Sources */,
 				1D44CD01228F0387007382F2 /* UIImageExtension.swift in Sources */,
 				4B94418C22ACC236005AD3BD /* DisputeTransactionRequestModel.swift in Sources */,
@@ -4060,6 +4086,7 @@
 				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
 				EA8D0CF4232BA54E002013BD /* ScanOptionCell.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
+				EA194A8023320BAB005507FC /* AccountAggregate.swift in Sources */,
 				1D180D86229E760500FC3390 /* ATMFinder.swift in Sources */,
 				1DFE480F21D9F894003EFECA /* PhoneVerificationCheckPresenter.swift in Sources */,
 				EA24B35923165E740091D307 /* FetchWireListRequestModel.swift in Sources */,
@@ -4185,6 +4212,7 @@
 				EA24B32F23164FFE0091D307 /* WireRateController.swift in Sources */,
 				1D8440822289545A00A77BBF /* Recipient.swift in Sources */,
 				1D9AF08B22A5308900A9055F /* TransactionListFrom.swift in Sources */,
+				EA194A8523320BD4005507FC /* AccountAggregatePresenter.swift in Sources */,
 				EA1902E4230D666C002FE7FC /* FetchCashbackBusinessModel.swift in Sources */,
 				1D8440732289541A00A77BBF /* AccountInfoRequestModel.swift in Sources */,
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,

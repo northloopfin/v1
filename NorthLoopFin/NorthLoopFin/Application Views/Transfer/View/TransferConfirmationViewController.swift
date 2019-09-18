@@ -20,20 +20,13 @@ class TransferConfirmationViewController: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var presenter:ACHTransactionPresenter!
+    var accountInfoPresenter : AccountInfoPresenter!
     var amount:String = ""
     var ach:ACHNode? = nil
     
     @IBAction func nextBtnClicked(_ sender: Any) {
         // check for minimum balance
-        if let currentUser = UserInformationUtility.sharedInstance.getCurrentUser(){
-            print(currentUser.amount)
-            if (currentUser.amount.isLess(than: Double(self.amount) ?? 0.0)){
-                //Insufficient Balance show popup
-                self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.INSUFFICIENT_BALANCE.rawValue)
-            }else{
-                self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (ach?.nodeID)!)
-            }
-        }
+        accountInfoPresenter.getAccountInfo()
     }
     
     @IBAction func cancelBtnClicked(_ sender: Any) {
@@ -44,6 +37,7 @@ class TransferConfirmationViewController: BaseViewController {
         super.viewDidLoad()
         self.prepareView()
         self.presenter = ACHTransactionPresenter.init(delegate: self)
+        accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,5 +74,20 @@ extension TransferConfirmationViewController:ACHTransactionDelegates{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "TransferSuceessViewController") as! TransferSuceessViewController
         self.navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
+
+extension TransferConfirmationViewController:HomeDelegate{
+    func didFetchedTransactionList(data: [TransactionListModel]) {
+    }
+    func didFetchedError(error:ErrorModel){
+    }
+    func didFetchedAccountInfo(data:Account){
+        if (data.data.info.balance.amount.isLess(than: Double(self.amount) ?? 0.0)){
+            self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.INSUFFICIENT_BALANCE.rawValue)
+        }else{
+            self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (ach?.nodeID)!)
+        }
     }
 }

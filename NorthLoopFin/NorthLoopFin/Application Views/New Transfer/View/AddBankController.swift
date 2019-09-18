@@ -19,12 +19,33 @@ class AddBankController: BaseViewController {
     @IBOutlet weak var lblPhone: LabelWithLetterSpace!
     @IBOutlet weak var imgBankLogo: UIImageView!
     @IBOutlet weak var vwVerifyAccount: UIView!
+    
     var institutionsPresenter:InstitutionsPresenter!
     var topBanks:[clsInstitutions] = []
     var institutionData:InstitutionsData!
     var banks:[Institutions] = []{
         didSet{
             self.tableView.reloadData()
+        }
+    }
+    var addAccountPresenter:AccountAggregatePresenter!
+    var selectedBank:Institutions!
+    var mfaData:MFA!
+
+    @IBOutlet weak var txtSecurityAnswer: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtUserId: SkyFloatingLabelTextField!
+    @IBOutlet weak var lblVerificationTitle: LabelWithLetterSpace!
+    @IBOutlet weak var vwBankLogin: UIView!
+    @IBOutlet weak var vwSecurityQuestion: UIView!
+    @IBOutlet weak var lblErrorDescription: LabelWithLetterSpace!
+    @IBOutlet weak var vwError: UIView!
+    
+    @IBAction func textChanged(_ sender: UITextField) {
+        if self.vwBankLogin.isHidden {
+            self.btnVerifyContinue.isEnabled = txtSecurityAnswer.text!.count > 0
+        }else{
+            self.btnVerifyContinue.isEnabled = txtUserId.text!.count > 0 && txtPassword.text!.count > 0
         }
     }
     
@@ -50,8 +71,14 @@ class AddBankController: BaseViewController {
     }
     
     @IBAction func btnVerifyContinue_pressed(_ sender: UIButton) {
-        closeVerification()
-        self.navigationController?.popViewController(animated: true)
+        if !self.vwBankLogin.isHidden {
+            self.addAccountPresenter = AccountAggregatePresenter(delegate: self)
+            self.addAccountPresenter.sendAccountAggregateRequest(bank: "fake", id: txtUserId.text!, password: txtPassword.text!)
+        }else{
+            self.addAccountPresenter.sendMFARequest(token: mfaData.accessToken, answer: txtSecurityAnswer.text!)
+        }
+//        closeVerification()
+//        self.navigationController?.popViewController(animated: true)
 //        self.getControllerWithIdentifier(<#T##identifier: String##String#>)
     }
     
@@ -64,7 +91,20 @@ class AddBankController: BaseViewController {
     }
     
     func openVerification(){
+        self.btnVerifyContinue.isEnabled = false
+        self.vwBankLogin.isHidden = false
+        self.vwSecurityQuestion.isHidden = true
+        self.txtSecurityAnswer.text = ""
+        self.txtUserId.text = ""
+        self.txtPassword.text = ""
+        lblVerificationTitle.text = "Please enter your online banking username and password"
         self.vwVerifyAccount.isHidden = false
+        if let imgUrl = selectedBank.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let url = URL(string:imgUrl){
+                self.imgBankLogo.setImageWith(url)
+            }
+        }
+
     }
     
     func closeVerification(){
@@ -83,6 +123,25 @@ class AddBankController: BaseViewController {
             banks = institutionData.values
         }
         self.tableView.reloadData()
+    }
+}
+
+extension AddBankController:AccountAggregateDelegate{
+    func didFetchAccountAggregate(data: AccountAggregate) {
+        if data.data.statusCode == 202{
+//            if data.message.count > 0{
+//                self.showAlert(title: "", message: data.message)
+//            }
+            self.vwBankLogin.isHidden = true
+            self.vwSecurityQuestion.isHidden = false
+            self.lblVerificationTitle.text = data.data.mfa?.message
+            self.btnVerifyContinue.isEnabled = false
+            mfaData = data.data.mfa
+            self.txtSecurityAnswer.text = ""
+        }else if data.data.statusCode == 200{
+            self.showAlert(title: "", message: "Acount Linked Successfully!")
+            closeVerification()
+        }
     }
 }
 
@@ -161,6 +220,7 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBank = banks[indexPath.row]
         openVerification()
     }
 }

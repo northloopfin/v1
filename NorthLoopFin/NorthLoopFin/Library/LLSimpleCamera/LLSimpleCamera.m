@@ -166,17 +166,17 @@ NSString *const LLSimpleCameraErrorDomain = @"LLSimpleCameraErrorDomain";
         if(granted) {
             // request microphone permission if video is enabled
             if(self.videoEnabled) {
-                [LLSimpleCamera requestMicrophonePermission:^(BOOL granted) {
-                    if(granted) {
-                        [self initialize];
-                    }
-                    else {
-                        NSError *error = [NSError errorWithDomain:LLSimpleCameraErrorDomain
-                                                             code:LLSimpleCameraErrorCodeMicrophonePermission
-                                                         userInfo:nil];
-                        [self passError:error];
-                    }
-                }];
+//                [LLSimpleCamera requestMicrophonePermission:^(BOOL granted) {
+//                    if(granted) {
+//                        [self initialize];
+//                    }
+//                    else {
+//                        NSError *error = [NSError errorWithDomain:LLSimpleCameraErrorDomain
+//                                                             code:LLSimpleCameraErrorCodeMicrophonePermission
+//                                                         userInfo:nil];
+//                        [self passError:error];
+//                    }
+//                }];
             }
             else {
                 [self initialize];
@@ -848,19 +848,19 @@ NSString *const LLSimpleCameraErrorDomain = @"LLSimpleCameraErrorDomain";
     }
 }
 
-+ (void)requestMicrophonePermission:(void (^)(BOOL granted))completionBlock
-{
-    if([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)]) {
-        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
-            // return to main thread
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if(completionBlock) {
-                    completionBlock(granted);
-                }
-            });
-        }];
-    }
-}
+//+ (void)requestMicrophonePermission:(void (^)(BOOL granted))completionBlock
+//{
+//    if([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)]) {
+//        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+//            // return to main thread
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if(completionBlock) {
+//                    completionBlock(granted);
+//                }
+//            });
+//        }];
+//    }
+//}
 
 + (BOOL)isFrontCameraAvailable
 {
