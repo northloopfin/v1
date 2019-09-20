@@ -30,7 +30,8 @@ class AddBankController: BaseViewController {
     }
     var addAccountPresenter:AccountAggregatePresenter!
     var selectedBank:Institutions!
-    var mfaData:MFA!
+    var aggregateData:AccountAggregateData!
+    var selectedNode:ACHNode!
 
     @IBOutlet weak var txtSecurityAnswer: SkyFloatingLabelTextField!
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
@@ -41,6 +42,8 @@ class AddBankController: BaseViewController {
     @IBOutlet weak var lblErrorDescription: LabelWithLetterSpace!
     @IBOutlet weak var vwError: UIView!
     
+    @IBOutlet weak var tableAccountSelect: UITableView!
+    @IBOutlet weak var vwAccountSelection: UIView!
     @IBAction func textChanged(_ sender: UITextField) {
         if self.vwBankLogin.isHidden {
             self.btnVerifyContinue.isEnabled = txtSecurityAnswer.text!.count > 0
@@ -48,6 +51,9 @@ class AddBankController: BaseViewController {
             self.btnVerifyContinue.isEnabled = txtUserId.text!.count > 0 && txtPassword.text!.count > 0
         }
     }
+    
+    @IBOutlet weak var constTableAccountSelect: NSLayoutConstraint!
+    @IBOutlet weak var btnConfirm: RippleButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +81,7 @@ class AddBankController: BaseViewController {
             self.addAccountPresenter = AccountAggregatePresenter(delegate: self)
             self.addAccountPresenter.sendAccountAggregateRequest(bank: "fake", id: txtUserId.text!, password: txtPassword.text!)
         }else{
-            self.addAccountPresenter.sendMFARequest(token: mfaData.accessToken, answer: txtSecurityAnswer.text!)
+            self.addAccountPresenter.sendMFARequest(token: aggregateData.mfa!.accessToken, answer: txtSecurityAnswer.text!)
         }
 //        closeVerification()
 //        self.navigationController?.popViewController(animated: true)
@@ -90,15 +96,21 @@ class AddBankController: BaseViewController {
         closeVerification()
     }
     
+    @IBAction func btnConfirm_pressed(_ sender: UIButton) {
+        self.showAlert(title: "", message: "Acount Linked Successfully!")
+        closeVerification()
+    }
+    
     func openVerification(){
         self.btnVerifyContinue.isEnabled = false
         self.vwBankLogin.isHidden = false
         self.vwSecurityQuestion.isHidden = true
+        self.vwVerifyAccount.isHidden = false
+        self.vwAccountSelection.isHidden = true
         self.txtSecurityAnswer.text = ""
         self.txtUserId.text = ""
         self.txtPassword.text = ""
         lblVerificationTitle.text = "Please enter your online banking username and password"
-        self.vwVerifyAccount.isHidden = false
         if let imgUrl = selectedBank.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
             if let url = URL(string:imgUrl){
                 self.imgBankLogo.setImageWith(url)
@@ -128,6 +140,7 @@ class AddBankController: BaseViewController {
 
 extension AddBankController:AccountAggregateDelegate{
     func didFetchAccountAggregate(data: AccountAggregate) {
+        aggregateData = data.data
         if data.data.statusCode == 202{
 //            if data.message.count > 0{
 //                self.showAlert(title: "", message: data.message)
@@ -136,11 +149,19 @@ extension AddBankController:AccountAggregateDelegate{
             self.vwSecurityQuestion.isHidden = false
             self.lblVerificationTitle.text = data.data.mfa?.message
             self.btnVerifyContinue.isEnabled = false
-            mfaData = data.data.mfa
             self.txtSecurityAnswer.text = ""
         }else if data.data.statusCode == 200{
-            self.showAlert(title: "", message: "Acount Linked Successfully!")
-            closeVerification()
+            if data.data.nodes.count > 1{
+                selectedNode = nil
+                btnConfirm.isEnabled = false
+                self.constTableAccountSelect.constant = CGFloat(aggregateData.nodes.count) * self.tableView.rowHeight
+                self.vwSecurityQuestion.isHidden = true
+                self.vwAccountSelection.isHidden = false
+                self.tableAccountSelect.reloadData()
+            }else{
+                self.showAlert(title: "", message: "Acount Linked Successfully!")
+                closeVerification()
+            }
         }
     }
 }
@@ -192,17 +213,31 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerTableViewCell(tableViewCell: BankCell.self)
+        self.tableAccountSelect.registerTableViewCell(tableViewCell: BankCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return banks.count
+        if tableView == self.tableView {
+            return banks.count
+        } else{
+            if aggregateData != nil{
+                return aggregateData.nodes.count
+            }
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCell") as! BankCell
-        //        cell.bindData(option: optionArray[indexPath.row])
-        cell.bindData(data: banks[indexPath.row])
-        cell.imgCheckbox.isHidden = true
+        
+        if tableView == tableAccountSelect {
+            cell.bindData(data: aggregateData.nodes[indexPath.row].info)
+            cell.imgCheckbox.isHidden = selectedNode == nil || selectedNode.account_num != aggregateData.nodes[indexPath.row].info.account_num
+        }else{
+            //        cell.bindData(option: optionArray[indexPath.row])
+            cell.bindData(data: banks[indexPath.row])
+            cell.imgCheckbox.isHidden = true
+        }
         let bgColorView = UIView()
         bgColorView.backgroundColor = Colors.LightGray251
         cell.selectedBackgroundView = bgColorView
@@ -220,8 +255,14 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBank = banks[indexPath.row]
-        openVerification()
+        if tableView == tableAccountSelect {
+            btnConfirm.isEnabled = true
+            selectedNode = aggregateData.nodes[indexPath.row].info
+            self.tableAccountSelect.reloadData()
+        }else{
+            selectedBank = banks[indexPath.row]
+            openVerification()
+        }
     }
 }
 

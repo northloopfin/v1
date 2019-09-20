@@ -195,4 +195,8 @@ class ScanIDController: BaseViewController {
             self.updateSignupFlowDataWithCompressedImages()
         }
     }
+    
+    @IBAction func policy_pressed(_ sender: UIButton) {
+        self.openScanIDPrivacy()
+    }
 }

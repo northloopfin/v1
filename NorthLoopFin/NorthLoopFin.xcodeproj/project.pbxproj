@@ -424,6 +424,8 @@
 		EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */; };
 		EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727122E09F1500D5B834 /* DeleteACH.swift */; };
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
+		EA188F80233507D000128877 /* ScanIDPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA188F7F233507D000128877 /* ScanIDPolicy.swift */; };
+		EA188F82233507E300128877 /* ScanIDPolicy.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA188F81233507E300128877 /* ScanIDPolicy.xib */; };
 		EA1902DE230D6474002FE7FC /* FetchCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902DD230D6474002FE7FC /* FetchCashback.swift */; };
 		EA1902E0230D65AB002FE7FC /* FetchCashbackRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */; };
 		EA1902E3230D666C002FE7FC /* FetchCashbackAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */; };
@@ -1041,6 +1043,8 @@
 		EA04726C22E08FB600D5B834 /* DeleteACHRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteACHRequestModel.swift; sourceTree = "<group>"; };
 		EA04727122E09F1500D5B834 /* DeleteACH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteACH.swift; sourceTree = "<group>"; };
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
+		EA188F7F233507D000128877 /* ScanIDPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDPolicy.swift; sourceTree = "<group>"; };
+		EA188F81233507E300128877 /* ScanIDPolicy.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanIDPolicy.xib; sourceTree = "<group>"; };
 		EA1902DD230D6474002FE7FC /* FetchCashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCashback.swift; sourceTree = "<group>"; };
 		EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCashbackRequestModel.swift; sourceTree = "<group>"; };
 		EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashbackAPIRequest.swift; sourceTree = "<group>"; };
@@ -3142,6 +3146,8 @@
 				EA8D0CFA232BA5A9002013BD /* SignupStepConfirm.swift */,
 				EA8D0CFC232BA5CE002013BD /* VerifyAddressViewController.swift */,
 				EA8D0CE7232BA54E002013BD /* ScanID Flow */,
+				EA188F7F233507D000128877 /* ScanIDPolicy.swift */,
+				EA188F81233507E300128877 /* ScanIDPolicy.xib */,
 			);
 			path = "New UI";
 			sourceTree = "<group>";
@@ -3644,6 +3650,7 @@
 				EA1FC14322F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */,
 				1D913EF721EC5666009D7E52 /* CommonTable.xib in Resources */,
 				EACA2EA3232FB13F00891475 /* camera-switch@2x.png in Resources */,
+				EA188F82233507E300128877 /* ScanIDPolicy.xib in Resources */,
 				EA24B32C23164FFE0091D307 /* CurrencyProtectCell.xib in Resources */,
 				EA1E5B1E2330E9150077BE94 /* camera-flash-off@2x in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
@@ -4201,6 +4208,7 @@
 				84E26B1E231EB2D1005D5F4C /* Date+Diff.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
 				EAB3064623214993009EFD8D /* FetchCreditCardAPIRequest.swift in Sources */,
+				EA188F80233507D000128877 /* ScanIDPolicy.swift in Sources */,
 				1D72718621EF30A00084A57E /* CommonTableDelegate.swift in Sources */,
 				EAB3064523214993009EFD8D /* RequestCreditCard.swift in Sources */,
 				1D29C83B22A8F6530092E3EB /* ChangePhoneViewController.swift in Sources */,

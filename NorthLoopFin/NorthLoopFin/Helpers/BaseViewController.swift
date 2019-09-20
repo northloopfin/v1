@@ -59,6 +59,13 @@ class BaseViewController: UIViewController, BaseViewProtocol {
 //        })
     }
     
+    func openScanIDPrivacy(){
+        let vw = ScanIDPolicy.instantiateFromNib()
+        let window = UIApplication.shared.keyWindow!
+        vw.frame = window.bounds
+        window.addSubview(vw);
+    }
+    
     func setGifLoaderImage (withImageName imageName: String = "northloop.gif") {
         GIFHUD.shared.setGif(named: imageName)
         GIFHUD.shared.frame = CGRect (x: 0, y: 0, width: 300, height: 300)

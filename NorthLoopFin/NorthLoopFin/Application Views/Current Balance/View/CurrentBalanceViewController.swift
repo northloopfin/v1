@@ -15,6 +15,8 @@ class CurrentBalanceViewController: BaseViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        self.balanceLabel.text = "$"+String(currentUser!.amount)
 
         // Do any additional setup after loading the view.
     }

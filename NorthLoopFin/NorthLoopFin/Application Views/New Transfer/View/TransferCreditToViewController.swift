@@ -13,32 +13,50 @@ class TransferCreditToViewController: BaseViewController {
     @IBOutlet weak var firstBankView: UIView!
     @IBOutlet weak var addBankAccountView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblDebitFromDetail: LabelWithLetterSpace!
+    @IBOutlet weak var btnNext: RippleButton!
+    var selectedNode:ACHNode!
+    var footer:vwAddAccountFooter?
     
-    var optionArray:[String] = []{
+    var presenter:FetchACHPresenter!
+    var achNodeArray:[ACHNode] = []{
         didSet{
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter = FetchACHPresenter.init(delegate: self)
+        self.presenter.sendFetchACRequest()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
+        
+        btnNext.isEnabled = false
+        
+        let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
+        self.lblDebitFromDetail.text = "$"+String(currentUser!.amount) + " available for transfer"
+
         configureTableView()
-        optionArray = ["1","2"]
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnNext_pressed(_ sender: UIButton) {
+        let vc = self.getControllerWithIdentifier("TransferDetailViewController") as! TransferDetailViewController
+        vc.node = selectedNode
+        vc.amount = footer!.amountTextField.text!
+        self.navigationController?.pushViewController(vc, animated: false)
     }
-    */
+    
+}
 
+extension TransferCreditToViewController:FetchACHDelegates{
+    func didSentFetchACH(data: [ACHNode]) {
+        achNodeArray = data
+    }
 }
 
 extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSource {
@@ -51,26 +69,26 @@ extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return optionArray.count
+        return achNodeArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCell") as! BankCell
-//        cell.bindData(option: optionArray[indexPath.row])
-        cell.imgCheckbox.isHidden = indexPath.row == 0
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = Colors.LightGray251
-        cell.selectedBackgroundView = bgColorView
+        cell.bindData(data: achNodeArray[indexPath.row])
+        cell.imgCheckbox.isHidden = selectedNode == nil || selectedNode.account_num != achNodeArray[indexPath.row].account_num
+        cell.backgroundColor = cell.imgCheckbox.isHidden ? UIColor.clear : Colors.LightGray251
     
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = vwAddAccountFooter.instantiateFromNib()
-        footer.btnAddBank.addTarget(self, action: #selector(addBank), for: .touchUpInside)
-        footer.lblAddBank.text = "Add the receiver bank account "
-        footer.amountTextField.isHidden = optionArray.count == 0
+        if footer == nil{
+            footer = vwAddAccountFooter.instantiateFromNib()
+            footer!.btnAddBank.addTarget(self, action: #selector(addBank), for: .touchUpInside)
+            footer!.lblAddBank.text = "Add the receiver bank account "
+            footer!.amountTextField.isHidden = false// achNodeArray.count == 0
+            footer!.amountTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
+        }
         return footer
     }
  
@@ -79,14 +97,20 @@ extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return optionArray.count == 0 ? 56 : 156
+        return achNodeArray.count == 0 ? 56 : 156
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedNode = achNodeArray[indexPath.row]
+        self.tableView.reloadData()
+        btnNext.isEnabled = footer!.amountTextField.text!.count > 0
+    }
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        btnNext.isEnabled = footer!.amountTextField.text!.count > 0 && selectedNode != nil
     }
     
     @objc func addBank(){
-        optionArray = ["1","2"]
-//        self.navigationController?.pushViewController(self.getControllerWithIdentifier(""), animated: true)
+        self.navigationController?.pushViewController(self.getControllerWithIdentifier("TransferViewController"), animated: true)
     }
 }

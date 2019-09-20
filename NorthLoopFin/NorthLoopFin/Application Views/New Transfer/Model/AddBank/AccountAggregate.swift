@@ -12,14 +12,18 @@ struct AccountAggregateData: Codable {
     let errorCode,httpCode: String
     let success: Bool
     let statusCode: Int
+    let nodeCount: Int
     let mfa: MFA?
+    let nodes: [NodeData]
 
      enum CodingKeys: String, CodingKey {
         case success
         case statusCode
         case mfa
+        case nodes
         case errorCode = "error_code"
         case httpCode = "http_code"
+        case nodeCount = "node_count"
     }
     
     init(from decoder: Decoder) throws {
@@ -29,10 +33,11 @@ struct AccountAggregateData: Codable {
         httpCode = try val.decodeIfPresent(String.self, forKey: .httpCode) ?? ""
         success = try val.decodeIfPresent(Bool.self, forKey: .success) ?? false
         statusCode = try val.decodeIfPresent(Int.self, forKey: .statusCode) ?? 0
+        nodeCount = try val.decodeIfPresent(Int.self, forKey: .nodeCount) ?? 0
         mfa = try val.decodeIfPresent(MFA.self, forKey: .mfa) ?? nil
+        nodes = try val.decodeIfPresent(Array<NodeData>.self, forKey: .nodes) ?? []
     }
 }
-
 
 struct AccountAggregate: Codable {
     let data: AccountAggregateData
@@ -68,6 +73,18 @@ struct MFA: Codable {
     }
 }
 
+struct NodeData: Codable {
+    let info: ACHNode
+    
+    enum CodingKeys: String, CodingKey {
+        case info
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        info = try values.decodeIfPresent(ACHNode.self, forKey: .info)!
+    }
+}
 
 
 protocol AccountAggregateDelegate:BaseViewProtocol {

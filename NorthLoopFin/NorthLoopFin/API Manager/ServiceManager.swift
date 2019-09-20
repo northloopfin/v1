@@ -314,7 +314,7 @@ class ServiceManager: NSObject  {
             
             // Checking whether API Response contains Success response or Error Response
             if( (error == nil) && (responseObject != nil)){
-//                print(self.getJsonStringFor(dictionary: responseObject))
+                print(self.getJsonStringFor(dictionary: responseObject))
                 if let jsonData = self.getJsonStringFor(dictionary: responseObject!).data(using: .utf8)
                 {
                     do {

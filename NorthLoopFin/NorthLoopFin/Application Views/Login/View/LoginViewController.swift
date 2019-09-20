@@ -224,7 +224,7 @@ extension LoginViewController:LoginDelegate{
         // save email and password only if remember is enabled
         logEventsHelper.logEventWithName(name: "Login", andProperties: ["Event": loginType])
         if data.isSignupCompleted{
-            if data.isVerified{
+//            if data.isVerified{
                 //if user is verified
                 if self.rememberMeCheckBox.isChecked{
                     UserDefaults.saveToUserDefault(self.emailTextField!.text as AnyObject, key: AppConstants.UserDefaultKeyForEmail)
@@ -241,10 +241,10 @@ extension LoginViewController:LoginDelegate{
                     }
                 }
                 self.zendeskPresenter.sendZendeskTokenRequest()
-            }else{
-                //if user is not verified
-                self.moveToWaitList()
-            }
+//            }else{
+//                //if user is not verified
+//                self.moveToWaitList()
+//            }
         }else{
             let completeToken = data.accessToken
             //We are storing this accestoken here teporarily, Will store access token

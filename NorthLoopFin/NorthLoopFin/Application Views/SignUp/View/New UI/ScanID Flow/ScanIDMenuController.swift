@@ -14,6 +14,7 @@ class ScanIDMenuController: BaseViewController {
     @IBOutlet weak var menuTable: UITableView!
     @IBOutlet weak var customProgressView: ProgressView!
     @IBOutlet weak var btnNext: RippleButton!
+    @IBOutlet var vwFooter: UIView!
     
     var optionArray:[clsScanOption] = []
     var dicTypeImages = Dictionary<String,[UIImage]>()
@@ -35,6 +36,10 @@ class ScanIDMenuController: BaseViewController {
         super.viewDidAppear(animated)
         self.retrieveDBImages()
         self.setBtnNextState(false)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     func prepareView(){
@@ -114,6 +119,11 @@ class ScanIDMenuController: BaseViewController {
         }
     }
     
+    @IBAction func policy_pressed(_ sender: UIButton) {
+        openScanIDPrivacy()
+    }
+    
+    
     func setBtnNextState(_ forAlert: Bool){
         var isEnabled = true
         for name in [AppConstants.SelectIDTYPES.PASSPORT.rawValue, AppConstants.SelectIDTYPES.I20.rawValue, AppConstants.SelectIDTYPES.F1VISA.rawValue, AppConstants.SelectIDTYPES.ADDRESSPROOF.rawValue] {
@@ -185,6 +195,7 @@ extension ScanIDMenuController:UITableViewDelegate,UITableViewDataSource {
         self.menuTable.rowHeight = 82;
         self.menuTable.delegate = self
         self.menuTable.dataSource = self
+        self.menuTable.tableFooterView = vwFooter
         self.menuTable.registerTableViewCell(tableViewCell: ScanOptionCell.self)
     }
     
@@ -205,10 +216,6 @@ extension ScanIDMenuController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 82
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
