@@ -426,10 +426,6 @@
 		EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04727322E09F9800D5B834 /* DeletedACHNode.swift */; };
 		EA188F80233507D000128877 /* ScanIDPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA188F7F233507D000128877 /* ScanIDPolicy.swift */; };
 		EA188F82233507E300128877 /* ScanIDPolicy.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA188F81233507E300128877 /* ScanIDPolicy.xib */; };
-		EA1902DE230D6474002FE7FC /* FetchCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902DD230D6474002FE7FC /* FetchCashback.swift */; };
-		EA1902E0230D65AB002FE7FC /* FetchCashbackRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */; };
-		EA1902E3230D666C002FE7FC /* FetchCashbackAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */; };
-		EA1902E4230D666C002FE7FC /* FetchCashbackBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902E2230D666C002FE7FC /* FetchCashbackBusinessModel.swift */; };
 		EA1902E6230D6746002FE7FC /* FetchCashbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902E5230D6746002FE7FC /* FetchCashbackPresenter.swift */; };
 		EA1902E9230D6F92002FE7FC /* CashbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1902E7230D6F91002FE7FC /* CashbackCell.swift */; };
 		EA1902EA230D6F92002FE7FC /* CashbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1902E8230D6F91002FE7FC /* CashbackCell.xib */; };
@@ -479,6 +475,18 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA22BB0B233890F90061CA6F /* CampusCashbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB09233890F90061CA6F /* CampusCashbackCell.swift */; };
+		EA22BB0C233890F90061CA6F /* CampusCashbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA22BB0A233890F90061CA6F /* CampusCashbackCell.xib */; };
+		EA22BB0E233896100061CA6F /* CampusCashbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB0D233896100061CA6F /* CampusCashbackController.swift */; };
+		EA22BB1D2338CB330061CA6F /* FetchCashbackRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB152338CB320061CA6F /* FetchCashbackRequestModel.swift */; };
+		EA22BB1E2338CB330061CA6F /* FetchCashbackBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB162338CB320061CA6F /* FetchCashbackBusinessModel.swift */; };
+		EA22BB1F2338CB330061CA6F /* FetchCashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB172338CB320061CA6F /* FetchCashback.swift */; };
+		EA22BB202338CB330061CA6F /* FetchCashbackAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB182338CB330061CA6F /* FetchCashbackAPIRequest.swift */; };
+		EA22BB252338CB750061CA6F /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB212338CB740061CA6F /* Campus.swift */; };
+		EA22BB262338CB750061CA6F /* CampusBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB222338CB740061CA6F /* CampusBusinessLogic.swift */; };
+		EA22BB272338CB750061CA6F /* CampusAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB232338CB740061CA6F /* CampusAPIRequest.swift */; };
+		EA22BB282338CB750061CA6F /* CampusRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB242338CB750061CA6F /* CampusRequestModel.swift */; };
+		EA22BB2A2338CB990061CA6F /* CampusListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB292338CB990061CA6F /* CampusListPresenter.swift */; };
 		EA22BDB9232794A60022BACD /* BankCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BDB7232794A60022BACD /* BankCollectionCell.swift */; };
 		EA22BDBA232794A60022BACD /* BankCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA22BDB8232794A60022BACD /* BankCollectionCell.xib */; };
 		EA22BDBC2327963A0022BACD /* AddBankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BDBB2327963A0022BACD /* AddBankController.swift */; };
@@ -576,6 +584,16 @@
 		EAE5603F22FD8529009B2C2E /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */; };
 		EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */; };
 		EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		EAEFB6292338EAC000547EC6 /* CampusVoteAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6252338EAC000547EC6 /* CampusVoteAPIRequest.swift */; };
+		EAEFB62A2338EAC000547EC6 /* CampusVote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6262338EAC000547EC6 /* CampusVote.swift */; };
+		EAEFB62B2338EAC000547EC6 /* CampusVoteBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6272338EAC000547EC6 /* CampusVoteBusinessModel.swift */; };
+		EAEFB62C2338EAC000547EC6 /* CampusVoteRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6282338EAC000547EC6 /* CampusVoteRequestModel.swift */; };
+		EAEFB62E2338EB7500547EC6 /* CampusVotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB62D2338EB7500547EC6 /* CampusVotePresenter.swift */; };
+		EAEFB6342338F25300547EC6 /* CampusVoteStatusRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6302338F25200547EC6 /* CampusVoteStatusRequestModel.swift */; };
+		EAEFB6352338F25300547EC6 /* CampusVoteStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6312338F25200547EC6 /* CampusVoteStatus.swift */; };
+		EAEFB6362338F25300547EC6 /* CampusVoteStatusBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6322338F25200547EC6 /* CampusVoteStatusBusinessModel.swift */; };
+		EAEFB6372338F25300547EC6 /* CampusVoteStatusAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6332338F25200547EC6 /* CampusVoteStatusAPIRequest.swift */; };
+		EAEFB6392338F27500547EC6 /* CampusVoteStatusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEFB6382338F27400547EC6 /* CampusVoteStatusPresenter.swift */; };
 		F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */; };
 		F49A0011230B1FB30099ACD4 /* TransferDebitFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */; };
 		F4AA0C1B2305AB9200CDF5C0 /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */; };
@@ -1045,10 +1063,6 @@
 		EA04727322E09F9800D5B834 /* DeletedACHNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletedACHNode.swift; sourceTree = "<group>"; };
 		EA188F7F233507D000128877 /* ScanIDPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanIDPolicy.swift; sourceTree = "<group>"; };
 		EA188F81233507E300128877 /* ScanIDPolicy.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanIDPolicy.xib; sourceTree = "<group>"; };
-		EA1902DD230D6474002FE7FC /* FetchCashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCashback.swift; sourceTree = "<group>"; };
-		EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCashbackRequestModel.swift; sourceTree = "<group>"; };
-		EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashbackAPIRequest.swift; sourceTree = "<group>"; };
-		EA1902E2230D666C002FE7FC /* FetchCashbackBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashbackBusinessModel.swift; sourceTree = "<group>"; };
 		EA1902E5230D6746002FE7FC /* FetchCashbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCashbackPresenter.swift; sourceTree = "<group>"; };
 		EA1902E7230D6F91002FE7FC /* CashbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackCell.swift; sourceTree = "<group>"; };
 		EA1902E8230D6F91002FE7FC /* CashbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CashbackCell.xib; sourceTree = "<group>"; };
@@ -1115,6 +1129,18 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA22BB09233890F90061CA6F /* CampusCashbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCashbackCell.swift; sourceTree = "<group>"; };
+		EA22BB0A233890F90061CA6F /* CampusCashbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampusCashbackCell.xib; sourceTree = "<group>"; };
+		EA22BB0D233896100061CA6F /* CampusCashbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCashbackController.swift; sourceTree = "<group>"; };
+		EA22BB152338CB320061CA6F /* FetchCashbackRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashbackRequestModel.swift; sourceTree = "<group>"; };
+		EA22BB162338CB320061CA6F /* FetchCashbackBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashbackBusinessModel.swift; sourceTree = "<group>"; };
+		EA22BB172338CB320061CA6F /* FetchCashback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashback.swift; sourceTree = "<group>"; };
+		EA22BB182338CB330061CA6F /* FetchCashbackAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCashbackAPIRequest.swift; sourceTree = "<group>"; };
+		EA22BB212338CB740061CA6F /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		EA22BB222338CB740061CA6F /* CampusBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusBusinessLogic.swift; sourceTree = "<group>"; };
+		EA22BB232338CB740061CA6F /* CampusAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusAPIRequest.swift; sourceTree = "<group>"; };
+		EA22BB242338CB750061CA6F /* CampusRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusRequestModel.swift; sourceTree = "<group>"; };
+		EA22BB292338CB990061CA6F /* CampusListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusListPresenter.swift; sourceTree = "<group>"; };
 		EA22BDB7232794A60022BACD /* BankCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionCell.swift; sourceTree = "<group>"; };
 		EA22BDB8232794A60022BACD /* BankCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCollectionCell.xib; sourceTree = "<group>"; };
 		EA22BDBB2327963A0022BACD /* AddBankController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankController.swift; sourceTree = "<group>"; };
@@ -1219,6 +1245,16 @@
 		EAE5603C22FD8528009B2C2E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		EAE5603D22FD8528009B2C2E /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		EAEFB6252338EAC000547EC6 /* CampusVoteAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteAPIRequest.swift; sourceTree = "<group>"; };
+		EAEFB6262338EAC000547EC6 /* CampusVote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVote.swift; sourceTree = "<group>"; };
+		EAEFB6272338EAC000547EC6 /* CampusVoteBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteBusinessModel.swift; sourceTree = "<group>"; };
+		EAEFB6282338EAC000547EC6 /* CampusVoteRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteRequestModel.swift; sourceTree = "<group>"; };
+		EAEFB62D2338EB7500547EC6 /* CampusVotePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVotePresenter.swift; sourceTree = "<group>"; };
+		EAEFB6302338F25200547EC6 /* CampusVoteStatusRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteStatusRequestModel.swift; sourceTree = "<group>"; };
+		EAEFB6312338F25200547EC6 /* CampusVoteStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteStatus.swift; sourceTree = "<group>"; };
+		EAEFB6322338F25200547EC6 /* CampusVoteStatusBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteStatusBusinessModel.swift; sourceTree = "<group>"; };
+		EAEFB6332338F25200547EC6 /* CampusVoteStatusAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteStatusAPIRequest.swift; sourceTree = "<group>"; };
+		EAEFB6382338F27400547EC6 /* CampusVoteStatusPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusVoteStatusPresenter.swift; sourceTree = "<group>"; };
 		F41A6A6923068F170053AF0D /* CurrentBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBalanceViewController.swift; sourceTree = "<group>"; };
 		F49A0010230B1FB30099ACD4 /* TransferDebitFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDebitFromViewController.swift; sourceTree = "<group>"; };
 		F4AA0C1A2305AB9200CDF5C0 /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
@@ -2895,6 +2931,7 @@
 		EA1902D9230D63D8002FE7FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EAEFB6242338EAC000547EC6 /* CampusVote */,
 				EA1902DA230D63D8002FE7FC /* Redeem */,
 				EA1902DB230D63D8002FE7FC /* Fetch */,
 			);
@@ -2915,10 +2952,9 @@
 		EA1902DB230D63D8002FE7FC /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
-				EA1902DD230D6474002FE7FC /* FetchCashback.swift */,
-				EA1902DF230D65AB002FE7FC /* FetchCashbackRequestModel.swift */,
-				EA1902E1230D666C002FE7FC /* FetchCashbackAPIRequest.swift */,
-				EA1902E2230D666C002FE7FC /* FetchCashbackBusinessModel.swift */,
+				EA22BB0F2338CB320061CA6F /* CampusList */,
+				EA22BB142338CB320061CA6F /* Cashback */,
+				EAEFB62F2338F25200547EC6 /* CampusVoteStatus */,
 			);
 			path = Fetch;
 			sourceTree = "<group>";
@@ -2927,7 +2963,10 @@
 			isa = PBXGroup;
 			children = (
 				EA1902E5230D6746002FE7FC /* FetchCashbackPresenter.swift */,
+				EA22BB292338CB990061CA6F /* CampusListPresenter.swift */,
 				EA1902F3230D77CE002FE7FC /* RedeemCashbackPresenter.swift */,
+				EAEFB62D2338EB7500547EC6 /* CampusVotePresenter.swift */,
+				EAEFB6382338F27400547EC6 /* CampusVoteStatusPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -3011,6 +3050,28 @@
 				EA1FC12B22F1526C002A7103 /* ISPCertificatePinning.h */,
 			);
 			path = SSLCertificatePinning;
+			sourceTree = "<group>";
+		};
+		EA22BB0F2338CB320061CA6F /* CampusList */ = {
+			isa = PBXGroup;
+			children = (
+				EA22BB212338CB740061CA6F /* Campus.swift */,
+				EA22BB232338CB740061CA6F /* CampusAPIRequest.swift */,
+				EA22BB222338CB740061CA6F /* CampusBusinessLogic.swift */,
+				EA22BB242338CB750061CA6F /* CampusRequestModel.swift */,
+			);
+			path = CampusList;
+			sourceTree = "<group>";
+		};
+		EA22BB142338CB320061CA6F /* Cashback */ = {
+			isa = PBXGroup;
+			children = (
+				EA22BB152338CB320061CA6F /* FetchCashbackRequestModel.swift */,
+				EA22BB162338CB320061CA6F /* FetchCashbackBusinessModel.swift */,
+				EA22BB172338CB320061CA6F /* FetchCashback.swift */,
+				EA22BB182338CB330061CA6F /* FetchCashbackAPIRequest.swift */,
+			);
+			path = Cashback;
 			sourceTree = "<group>";
 		};
 		EA24B32023164FFD0091D307 /* Currency Protect */ = {
@@ -3188,6 +3249,9 @@
 				EA39484B2302B517007BFEF5 /* CashbackController.swift */,
 				EA1902E7230D6F91002FE7FC /* CashbackCell.swift */,
 				EA1902E8230D6F91002FE7FC /* CashbackCell.xib */,
+				EA22BB09233890F90061CA6F /* CampusCashbackCell.swift */,
+				EA22BB0A233890F90061CA6F /* CampusCashbackCell.xib */,
+				EA22BB0D233896100061CA6F /* CampusCashbackController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3377,6 +3441,29 @@
 				EAE5603E22FD8528009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift */,
 			);
 			path = FloatingLabelTextField;
+			sourceTree = "<group>";
+		};
+		EAEFB6242338EAC000547EC6 /* CampusVote */ = {
+			isa = PBXGroup;
+			children = (
+				EAEFB6252338EAC000547EC6 /* CampusVoteAPIRequest.swift */,
+				EAEFB6262338EAC000547EC6 /* CampusVote.swift */,
+				EAEFB6272338EAC000547EC6 /* CampusVoteBusinessModel.swift */,
+				EAEFB6282338EAC000547EC6 /* CampusVoteRequestModel.swift */,
+			);
+			path = CampusVote;
+			sourceTree = "<group>";
+		};
+		EAEFB62F2338F25200547EC6 /* CampusVoteStatus */ = {
+			isa = PBXGroup;
+			children = (
+				EAEFB6302338F25200547EC6 /* CampusVoteStatusRequestModel.swift */,
+				EAEFB6312338F25200547EC6 /* CampusVoteStatus.swift */,
+				EAEFB6322338F25200547EC6 /* CampusVoteStatusBusinessModel.swift */,
+				EAEFB6332338F25200547EC6 /* CampusVoteStatusAPIRequest.swift */,
+			);
+			name = CampusVoteStatus;
+			path = ../CampusVoteStatus;
 			sourceTree = "<group>";
 		};
 		F41A6A67230689580053AF0D /* Current Balance */ = {
@@ -3645,6 +3732,7 @@
 				EACA2EAA232FB13F00891475 /* camera-flash@2x.png in Resources */,
 				EA1BA843232626AC0047D831 /* DebitFromCell.xib in Resources */,
 				1D180D9E229E9FF600FC3390 /* ATMTableViewCell.xib in Resources */,
+				EA22BB0C233890F90061CA6F /* CampusCashbackCell.xib in Resources */,
 				EA04726522E0725E00D5B834 /* ACHAccountCell.xib in Resources */,
 				4B15362222DDA914009CE548 /* createAcc.gif in Resources */,
 				EA1FC14322F1526C002A7103 /* ComodoCaLimitedRsaCertificationAuthority.der in Resources */,
@@ -3853,7 +3941,9 @@
 				EAB3064A23214993009EFD8D /* RequestCreditCardRequestModel.swift in Sources */,
 				1D180DA1229EA01500FC3390 /* ATMFirstTableViewCell.swift in Sources */,
 				1D29C84722A916F40092E3EB /* ChangeAddressAPIRequest.swift in Sources */,
+				EAEFB62C2338EAC000547EC6 /* CampusVoteRequestModel.swift in Sources */,
 				EA27E216230FC3DD00B7160F /* UpgradeDelegates.swift in Sources */,
+				EA22BB272338CB750061CA6F /* CampusAPIRequest.swift in Sources */,
 				1D055D46229C02DE0078CD33 /* FetchACH.swift in Sources */,
 				1D180DAE229FC44800FC3390 /* AccountAPIRequest.swift in Sources */,
 				1D478CA5228E900500503136 /* SignupAuthRquestModel.swift in Sources */,
@@ -3871,6 +3961,7 @@
 				1D844092228A9E0400A77BBF /* TransactionDetailRequestModel.swift in Sources */,
 				1DF64E3721E8B432008774CE /* GoalsViewController.swift in Sources */,
 				1D9F4600228AC156009D76FC /* CardRequestModel.swift in Sources */,
+				EAEFB6352338F25300547EC6 /* CampusVoteStatus.swift in Sources */,
 				EA194A8223320BAB005507FC /* AccountAggregateBusinessLogic.swift in Sources */,
 				4BFFE3D322BB50AD00D85610 /* AgreementViewController.swift in Sources */,
 				1D8440882289556A00A77BBF /* AccountInfoBusinessLogic.swift in Sources */,
@@ -3880,6 +3971,7 @@
 				1D81CE4322253DF300B61037 /* LogEventsHelper.swift in Sources */,
 				4BFBC87C22BB80AF00B23B68 /* ShareAccountDetailsRequestModel.swift in Sources */,
 				EA24B35A23165E740091D307 /* FetchWireListBusinessLogic.swift in Sources */,
+				EA22BB0E233896100061CA6F /* CampusCashbackController.swift in Sources */,
 				4B07A87122C5CCEF004C65B2 /* SetAppSettingsRequestModel.swift in Sources */,
 				297FB9FA21B65240008D60CE /* AppUtility.swift in Sources */,
 				1DF64E3B21E8B456008774CE /* ExpensesViewController.swift in Sources */,
@@ -3938,6 +4030,7 @@
 				84D129B522FCD666000C82A6 /* AnalysisCategoryTableHeader.swift in Sources */,
 				EA4ED03622E5D39100D1F438 /* CardAuthData.swift in Sources */,
 				EABA3BDD231E9422007A914E /* OnboardingVC.swift in Sources */,
+				EAEFB6342338F25300547EC6 /* CampusVoteStatusRequestModel.swift in Sources */,
 				EA1902E9230D6F92002FE7FC /* CashbackCell.swift in Sources */,
 				1D055D3A229C00790078CD33 /* LinkACH.swift in Sources */,
 				1D8189F421C0AF96000C8F5F /* HomeViewController.swift in Sources */,
@@ -3948,6 +4041,7 @@
 				EA194A8323320BAB005507FC /* AccountAggregateRequestModel.swift in Sources */,
 				1DE6D93F22A0CF5C00014572 /* TappableUILabel.swift in Sources */,
 				1D5AB2DF22A6767400DB3B70 /* UpdateCardRequestModel.swift in Sources */,
+				EAEFB62B2338EAC000547EC6 /* CampusVoteBusinessModel.swift in Sources */,
 				1D5AB2DC22A6764D00DB3B70 /* UpdateCardPresenter.swift in Sources */,
 				1DFE47FD21D5F129003EFECA /* Colors.swift in Sources */,
 				4BE8338922CB178300765F05 /* CheckUpdateResponse.swift in Sources */,
@@ -3958,6 +4052,7 @@
 				EA04726E22E08FB600D5B834 /* DeleteACHBusinessLogic.swift in Sources */,
 				EA24B34F23165D5C0091D307 /* WireList.swift in Sources */,
 				1DCDF266228ED0ED00ABDCB1 /* SignupFlowData.swift in Sources */,
+				EA22BB282338CB750061CA6F /* CampusRequestModel.swift in Sources */,
 				1DF64E2F21E8B3ED008774CE /* TransferViewController.swift in Sources */,
 				84D129B022FCD666000C82A6 /* AnalysisPeriod.swift in Sources */,
 				EAA385A02313A57E004DD8D2 /* ConfirmUpgradeController.swift in Sources */,
@@ -4017,6 +4112,7 @@
 				1D0C2ADE22045EAB00527FAB /* User.swift in Sources */,
 				1DF64E3E21E8E00B008774CE /* UserDefaults.swift in Sources */,
 				1D4AD77022843B70007A9C2F /* LoginPresenter.swift in Sources */,
+				EA22BB0B233890F90061CA6F /* CampusCashbackCell.swift in Sources */,
 				EAB3064B23214993009EFD8D /* RequestCreditCardAPIRequest.swift in Sources */,
 				EA24B369231688EF0091D307 /* ClaimRefundAPIRequest.swift in Sources */,
 				297FB9D921B55465008D60CE /* ApiRequestProtocol.swift in Sources */,
@@ -4025,7 +4121,6 @@
 				1D180DAA229FC42000FC3390 /* AccountPresenter.swift in Sources */,
 				1D180DA4229FAA6F00FC3390 /* NewPinViewController.swift in Sources */,
 				1D180D7B229E540500FC3390 /* ZendeskDelegates.swift in Sources */,
-				EA1902E0230D65AB002FE7FC /* FetchCashbackRequestModel.swift in Sources */,
 				1D11FE1F220D742A00234E6D /* ForgetPasswordViewController.swift in Sources */,
 				EA27E213230FC35800B7160F /* CarouselCell.swift in Sources */,
 				4BFDF89322B9E8430066860D /* FetchUniversityRequestModel.swift in Sources */,
@@ -4038,7 +4133,6 @@
 				EA22BDB9232794A60022BACD /* BankCollectionCell.swift in Sources */,
 				1DCDF26A228ED1F600ABDCB1 /* SignupFlowAlDoc.swift in Sources */,
 				EA04726F22E08FB600D5B834 /* DeleteACHRequestModel.swift in Sources */,
-				EA1902DE230D6474002FE7FC /* FetchCashback.swift in Sources */,
 				EA8D0CF0232BA54E002013BD /* ScanVisaController.swift in Sources */,
 				EAB3064923214993009EFD8D /* FetchCreditCardRequestModel.swift in Sources */,
 				4BFBC88422BB8AEF00B23B68 /* GetAppSettingsPresenter.swift in Sources */,
@@ -4052,7 +4146,9 @@
 				1D8189F621C0B0CF000C8F5F /* UIViewExtension.swift in Sources */,
 				EAE5604022FD8529009B2C2E /* UITextField+fixCaretPosition.swift in Sources */,
 				1D5AB31922A7CF2500DB3B70 /* TwoFAVerifyAPIRequest.swift in Sources */,
+				EA22BB262338CB750061CA6F /* CampusBusinessLogic.swift in Sources */,
 				EA04727222E09F1500D5B834 /* DeleteACH.swift in Sources */,
+				EAEFB6392338F27500547EC6 /* CampusVoteStatusPresenter.swift in Sources */,
 				84D129B222FCD666000C82A6 /* AnalysisCategories.swift in Sources */,
 				1D5AB2E822A67DF700DB3B70 /* UpdateCardPreferenceBody.swift in Sources */,
 				EA04726822E0806400D5B834 /* DeleteACHPresenter.swift in Sources */,
@@ -4070,17 +4166,20 @@
 				1D915C142208305300223480 /* NotificationName+Extension.swift in Sources */,
 				1DF64E3321E8B40B008774CE /* MyAccountViewController.swift in Sources */,
 				4BFDF88622B8D64F0066860D /* UpgradeRequestModel.swift in Sources */,
+				EA22BB1F2338CB330061CA6F /* FetchCashback.swift in Sources */,
 				1D055D30229BD6F50078CD33 /* LinkACHRquestModel.swift in Sources */,
 				EA1AB69023180DCC0021B59D /* Referral.swift in Sources */,
 				4B07A87922C5CF36004C65B2 /* SetAppSettingsPresenter.swift in Sources */,
 				1D29C83D22A90FE00092E3EB /* LostCardConfirmationViewController.swift in Sources */,
 				1D055D48229C031C0078CD33 /* ACHNode.swift in Sources */,
 				84D129B722FCD666000C82A6 /* AnalysisCategoryTableViewCell.swift in Sources */,
+				EA22BB1D2338CB330061CA6F /* FetchCashbackRequestModel.swift in Sources */,
 				1D180D8A229E762B00FC3390 /* ATMFinderRequestModel.swift in Sources */,
 				4BFBC88022BB80EC00B23B68 /* ShareAccountDetailResponse.swift in Sources */,
 				1D180DA6229FAE6100FC3390 /* SucessViewController.swift in Sources */,
 				1D055D2E229BD6E30078CD33 /* LinkACHPresenter.swift in Sources */,
 				EA8D0D04232BA692002013BD /* InstitutionsRequestModel.swift in Sources */,
+				EAEFB62E2338EB7500547EC6 /* CampusVotePresenter.swift in Sources */,
 				EACA2EA2232FB13F00891475 /* ViewUtils.m in Sources */,
 				1DF64E1D21E60527008774CE /* MyCardOtionsModel.swift in Sources */,
 				297FB9D021B53211008D60CE /* ReachabilityManager.swift in Sources */,
@@ -4091,6 +4190,7 @@
 				F4C1BF102301C0EC00FC1DC1 /* CitizenshipViewController.swift in Sources */,
 				EA1FC14D22F1526C002A7103 /* AMPDatabaseHelper.m in Sources */,
 				1D9F45FC228AC10F009D76FC /* CardBusinessLogic.swift in Sources */,
+				EA22BB202338CB330061CA6F /* FetchCashbackAPIRequest.swift in Sources */,
 				EA8D0CF4232BA54E002013BD /* ScanOptionCell.swift in Sources */,
 				1D72718E21F085520084A57E /* AddAccountViewController.swift in Sources */,
 				EA194A8023320BAB005507FC /* AccountAggregate.swift in Sources */,
@@ -4176,6 +4276,7 @@
 				1D5AB31722A7CF0D00DB3B70 /* TwoFAVerifyRequestModel.swift in Sources */,
 				1D055D32229BD7090078CD33 /* LinkACHAPIRequest.swift in Sources */,
 				EA24B35B23165E740091D307 /* FetchWireListAPIRequest.swift in Sources */,
+				EAEFB6362338F25300547EC6 /* CampusVoteStatusBusinessModel.swift in Sources */,
 				EA8D0D09232BA6C1002013BD /* InstitutionsPresenter.swift in Sources */,
 				1D67DB0321C7A89C00AA7F29 /* UIColorExtension.swift in Sources */,
 				1D35383B2223E58E00716A94 /* Country.swift in Sources */,
@@ -4185,6 +4286,7 @@
 				4493B54A22D7063B00A8C58F /* CheckAddressPresenter.swift in Sources */,
 				1D8440582288074900A77BBF /* BasicInformation.swift in Sources */,
 				1D259D92228AE0C10053D0AB /* CardData.swift in Sources */,
+				EAEFB62A2338EAC000547EC6 /* CampusVote.swift in Sources */,
 				1D5AB2ED22A791B300DB3B70 /* SetPinAPIRequest.swift in Sources */,
 				4BFDF89922B9E8920066860D /* FetchUniversityResponse.swift in Sources */,
 				1D9AF08D22A5309900A9055F /* TransactionListUser.swift in Sources */,
@@ -4204,7 +4306,6 @@
 				EA1FC14722F1526C002A7103 /* AMPRevenue.m in Sources */,
 				1D913CDE228F61F10075B16D /* SignupSynapseRequestModel.swift in Sources */,
 				4BB0B3EF22C09CEA00D9A4FE /* BioMetricHelper.swift in Sources */,
-				EA1902E3230D666C002FE7FC /* FetchCashbackAPIRequest.swift in Sources */,
 				84E26B1E231EB2D1005D5F4C /* Date+Diff.swift in Sources */,
 				1DF31A74228D6396001ACE61 /* SignUpStepFirst.swift in Sources */,
 				EAB3064623214993009EFD8D /* FetchCreditCardAPIRequest.swift in Sources */,
@@ -4217,11 +4318,11 @@
 				297FB9E021B55484008D60CE /* ServiceManager.swift in Sources */,
 				1D055D26229BCAC00078CD33 /* ResetPasswordAPIRequest.swift in Sources */,
 				1DFE481321DA3ACE003EFECA /* PhoneVerifyCheck.swift in Sources */,
+				EA22BB2A2338CB990061CA6F /* CampusListPresenter.swift in Sources */,
 				EA24B32F23164FFE0091D307 /* WireRateController.swift in Sources */,
 				1D8440822289545A00A77BBF /* Recipient.swift in Sources */,
 				1D9AF08B22A5308900A9055F /* TransactionListFrom.swift in Sources */,
 				EA194A8523320BD4005507FC /* AccountAggregatePresenter.swift in Sources */,
-				EA1902E4230D666C002FE7FC /* FetchCashbackBusinessModel.swift in Sources */,
 				1D8440732289541A00A77BBF /* AccountInfoRequestModel.swift in Sources */,
 				1D3E554421F1AFB000557825 /* ConfirmedViewController.swift in Sources */,
 				1D5AB31122A7C26700DB3B70 /* TwoFAResponse.swift in Sources */,
@@ -4286,6 +4387,7 @@
 				1D11FE21221126B700234E6D /* CommonButton.swift in Sources */,
 				1D29C84122A916B00092E3EB /* ChangeAddressPresenter.swift in Sources */,
 				4BFDF88822B8D6630066860D /* UpgradeBusinessLogic.swift in Sources */,
+				EAEFB6372338F25300547EC6 /* CampusVoteStatusAPIRequest.swift in Sources */,
 				1D29C84F22A917440092E3EB /* ChangePhoneAPIRequest.swift in Sources */,
 				1D180D68229CF5AB00FC3390 /* TransferSuceessViewController.swift in Sources */,
 				1D180D92229E76B300FC3390 /* ATMLocation.swift in Sources */,
@@ -4316,6 +4418,8 @@
 				1D29C83F22A916A00092E3EB /* ChangePhonePresenter.swift in Sources */,
 				1D165F53222D18AA00D06914 /* RealmHelper.swift in Sources */,
 				1DFE480921D7446C003EFECA /* PhoneVerificationStartPresenter.swift in Sources */,
+				EA22BB252338CB750061CA6F /* Campus.swift in Sources */,
+				EAEFB6292338EAC000547EC6 /* CampusVoteAPIRequest.swift in Sources */,
 				1D51758B21C6700500BCF9E4 /* TransactionDetailHistoryCell.swift in Sources */,
 				1DF64E4021E8E01A008774CE /* UserInformationUtility.swift in Sources */,
 				1D72719621F0A3FA0084A57E /* DirectDepositViewController.swift in Sources */,
@@ -4330,6 +4434,7 @@
 				297FB9CD21B52E99008D60CE /* AppLaunchSetup.swift in Sources */,
 				1D055D4C229C38DE0078CD33 /* TransferConfirmationViewController.swift in Sources */,
 				EA4ED03122E5D1C400D1F438 /* CardAuthRequestModel.swift in Sources */,
+				EA22BB1E2338CB330061CA6F /* FetchCashbackBusinessModel.swift in Sources */,
 				1DE6D94722A0D30500014572 /* DisputeTransactionPresenter.swift in Sources */,
 				EA24B345231658B80091D307 /* WireTransfer.swift in Sources */,
 				297FB9D421B5322D008D60CE /* BaseViewProtocol.swift in Sources */,

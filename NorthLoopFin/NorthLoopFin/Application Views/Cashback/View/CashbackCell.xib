@@ -28,10 +28,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ba0-0P-iSe">
-                        <rect key="frame" x="20" y="9" width="55" height="55"/>
+                        <rect key="frame" x="25" y="6.5" width="58" height="58"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="55" id="d3g-Q4-kHw"/>
-                            <constraint firstAttribute="width" constant="55" id="wIO-Fe-cvN"/>
+                            <constraint firstAttribute="height" constant="58" id="d3g-Q4-kHw"/>
+                            <constraint firstAttribute="width" constant="58" id="wIO-Fe-cvN"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -39,34 +39,49 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iu7-Kd-g2W">
-                        <rect key="frame" x="91" y="17" width="213" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iu7-Kd-g2W" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                        <rect key="frame" x="103" y="14.5" width="201" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Ft6-W4-VDj"/>
+                            <constraint firstAttribute="height" constant="16" id="Ft6-W4-VDj"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
-                        <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
+                        <color key="textColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                <real key="value" value="0.53000000000000003"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-MJ-vAV">
-                        <rect key="frame" x="91" y="38" width="213" height="21"/>
+                        <rect key="frame" x="103" y="40.5" width="201" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="OiW-VQ-P78"/>
+                            <constraint firstAttribute="height" constant="16" id="OiW-VQ-P78"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                        <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                        <color key="textColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X6N-PY-Chb" userLabel="Line View">
+                        <rect key="frame" x="25" y="71.5" width="270" height="1"/>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="yRz-Zc-T6E"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iu7-Kd-g2W" firstAttribute="leading" secondItem="ba0-0P-iSe" secondAttribute="trailing" constant="16" id="4Fm-Eh-hcF"/>
+                    <constraint firstItem="iu7-Kd-g2W" firstAttribute="leading" secondItem="ba0-0P-iSe" secondAttribute="trailing" constant="20" id="4Fm-Eh-hcF"/>
                     <constraint firstItem="iu7-Kd-g2W" firstAttribute="top" secondItem="ba0-0P-iSe" secondAttribute="top" constant="8" id="9Wl-vF-3os"/>
-                    <constraint firstItem="c1c-MJ-vAV" firstAttribute="leading" secondItem="ba0-0P-iSe" secondAttribute="trailing" constant="16" id="Agy-LV-ARs"/>
-                    <constraint firstItem="ba0-0P-iSe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="O7i-KK-ueP"/>
+                    <constraint firstItem="c1c-MJ-vAV" firstAttribute="leading" secondItem="ba0-0P-iSe" secondAttribute="trailing" constant="20" id="Agy-LV-ARs"/>
+                    <constraint firstItem="ba0-0P-iSe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-1" id="O7i-KK-ueP"/>
                     <constraint firstAttribute="trailing" secondItem="iu7-Kd-g2W" secondAttribute="trailing" constant="16" id="Qr6-LR-Xch"/>
+                    <constraint firstItem="X6N-PY-Chb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="TGM-xq-FRH"/>
+                    <constraint firstItem="c1c-MJ-vAV" firstAttribute="bottom" secondItem="ba0-0P-iSe" secondAttribute="bottom" constant="-8" id="dIU-Ju-658"/>
                     <constraint firstAttribute="trailing" secondItem="c1c-MJ-vAV" secondAttribute="trailing" constant="16" id="nLY-Kg-V3b"/>
-                    <constraint firstItem="ba0-0P-iSe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qCD-Gd-Nh9"/>
-                    <constraint firstItem="c1c-MJ-vAV" firstAttribute="top" secondItem="iu7-Kd-g2W" secondAttribute="bottom" id="zJR-fF-YX0"/>
+                    <constraint firstItem="ba0-0P-iSe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="qCD-Gd-Nh9"/>
+                    <constraint firstAttribute="trailing" secondItem="X6N-PY-Chb" secondAttribute="trailing" constant="25" id="sNE-EN-rNm"/>
+                    <constraint firstAttribute="bottom" secondItem="X6N-PY-Chb" secondAttribute="bottom" id="v5E-tV-zcr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

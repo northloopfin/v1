@@ -4314,83 +4314,18 @@ the transactions correspond to such terms. This payment authorization is valid a
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-EM-gjy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PP-oP-VUD">
-                                <rect key="frame" x="25" y="311.5" width="325" height="97"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghs-Iz-FVe">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="57"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Earned Cashback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-JS-rcU">
-                                                <rect key="frame" x="14" y="18" width="200" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="96Q-gD-NEv"/>
-                                                    <constraint firstAttribute="width" constant="200" id="KO1-ar-bO3"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhw-f7-6Tp">
-                                                <rect key="frame" x="214" y="18" width="89" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="AnH-et-bXQ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="22"/>
-                                                <color key="textColor" red="0.69019607843137254" green="0.28627450980392155" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="Kz5-jR-mj6"/>
-                                            <constraint firstItem="OOM-JS-rcU" firstAttribute="centerY" secondItem="Ghs-Iz-FVe" secondAttribute="centerY" id="TQ8-Sn-b3j"/>
-                                            <constraint firstAttribute="trailing" secondItem="zhw-f7-6Tp" secondAttribute="trailing" constant="22" id="f25-yH-vqe"/>
-                                            <constraint firstItem="zhw-f7-6Tp" firstAttribute="centerY" secondItem="Ghs-Iz-FVe" secondAttribute="centerY" id="gYP-vW-lPB"/>
-                                            <constraint firstItem="zhw-f7-6Tp" firstAttribute="leading" secondItem="OOM-JS-rcU" secondAttribute="trailing" id="rMF-nd-YOp"/>
-                                            <constraint firstItem="OOM-JS-rcU" firstAttribute="leading" secondItem="Ghs-Iz-FVe" secondAttribute="leading" constant="14" id="tMQ-5h-A1W"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1V-xX-AoL" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="57" width="325" height="40"/>
-                                        <color key="backgroundColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
-                                        <state key="normal" title="Redeem"/>
-                                        <connections>
-                                            <action selector="btnRedeem_pressed:" destination="21C-gV-uT9" eventType="touchUpInside" id="qgu-zi-dhk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Ghs-Iz-FVe" secondAttribute="trailing" id="LJI-rb-Hox"/>
-                                    <constraint firstAttribute="trailing" secondItem="d1V-xX-AoL" secondAttribute="trailing" id="Q7n-EB-mVw"/>
-                                    <constraint firstAttribute="height" constant="97" id="Y1O-8m-cVU"/>
-                                    <constraint firstItem="d1V-xX-AoL" firstAttribute="leading" secondItem="3PP-oP-VUD" secondAttribute="leading" id="Yd3-eq-CMs"/>
-                                    <constraint firstAttribute="bottom" secondItem="d1V-xX-AoL" secondAttribute="bottom" id="aq8-Wy-LgI"/>
-                                    <constraint firstItem="Ghs-Iz-FVe" firstAttribute="leading" secondItem="3PP-oP-VUD" secondAttribute="leading" id="bhk-KX-OTW"/>
-                                    <constraint firstItem="d1V-xX-AoL" firstAttribute="top" secondItem="Ghs-Iz-FVe" secondAttribute="bottom" id="lbh-4f-trM"/>
-                                    <constraint firstItem="Ghs-Iz-FVe" firstAttribute="top" secondItem="3PP-oP-VUD" secondAttribute="top" id="oVc-83-joy"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cashback" translatesAutoresizingMaskIntoConstraints="NO" id="rvO-6m-OMd">
-                                <rect key="frame" x="59.5" y="77" width="256.00000000000011" height="206.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rvO-6m-OMd" secondAttribute="height" multiplier="644:519" id="OZi-cG-Liz"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQ2-qY-RzI">
-                                <rect key="frame" x="25" y="438.5" width="325" height="208.5"/>
+                                <rect key="frame" x="0.0" y="203.5" width="375" height="463.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41a-qw-vWj">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-UW-hLs">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="40"/>
-                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="375" id="wk8-S5-Ti5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
                                                 <state key="normal" title="General">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -4402,12 +4337,12 @@ the transactions correspond to such terms. This payment authorization is valid a
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGB-mC-H7z">
-                                                <rect key="frame" x="162.5" y="0.0" width="162.5" height="40"/>
-                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
-                                                <state key="normal" title="Restaurants">
+                                                <rect key="frame" x="375" y="0.0" width="0.0" height="40"/>
+                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
+                                                <state key="normal" title="Campus Cashback">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <state key="selected" title="General">
+                                                <state key="selected" title="Campus Cashback">
                                                     <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -4423,30 +4358,71 @@ the transactions correspond to such terms. This payment authorization is valid a
                                             <constraint firstItem="eGB-mC-H7z" firstAttribute="leading" secondItem="YRJ-UW-hLs" secondAttribute="trailing" id="Jtt-Zl-PDB"/>
                                             <constraint firstAttribute="height" constant="40" id="Mr4-w9-SbQ"/>
                                             <constraint firstAttribute="bottom" secondItem="YRJ-UW-hLs" secondAttribute="bottom" id="XBH-mE-5bL"/>
-                                            <constraint firstItem="YRJ-UW-hLs" firstAttribute="width" secondItem="41a-qw-vWj" secondAttribute="width" multiplier="1/2" id="YTa-D0-8RV"/>
                                             <constraint firstAttribute="bottom" secondItem="eGB-mC-H7z" secondAttribute="bottom" id="cv2-eJ-gcl"/>
                                             <constraint firstAttribute="trailing" secondItem="eGB-mC-H7z" secondAttribute="trailing" id="uTR-oS-bqO"/>
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVN-bY-j8z">
-                                        <rect key="frame" x="0.0" y="40" width="325" height="168.5"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="423.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7T-gX-jeG">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="9"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
                                                 <color key="backgroundColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="9" id="vi0-9c-2vj"/>
+                                                    <constraint firstAttribute="height" constant="2" id="vi0-9c-2vj"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bm-LP-FcB">
-                                                <rect key="frame" x="162.5" y="0.0" width="162.5" height="9"/>
+                                                <rect key="frame" x="375" y="0.0" width="0.0" height="2"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="9" id="du2-Ux-MYE"/>
+                                                    <constraint firstAttribute="height" constant="2" id="du2-Ux-MYE"/>
+                                                </constraints>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWo-8J-Jo6">
+                                                <rect key="frame" x="25" y="323.5" width="325" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-98-hhd" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="15" width="325" height="70"/>
+                                                        <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="70" id="azy-8I-FGm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
+                                                        <state key="normal">
+                                                            <string key="title">Share location to see special offers 
+for you</string>
+                                                            <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                                <real key="value" value="0.53000000000000003"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.96470588235294119" green="0.90980392156862744" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="btnVote_pressed:" destination="21C-gV-uT9" eventType="touchUpInside" id="xhm-cP-lGT"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="BGG-Vq-bbs"/>
+                                                    <constraint firstItem="Hr5-98-hhd" firstAttribute="leading" secondItem="dWo-8J-Jo6" secondAttribute="leading" id="fRi-Jd-try"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hr5-98-hhd" secondAttribute="trailing" id="gWK-ca-nkc"/>
+                                                    <constraint firstItem="Hr5-98-hhd" firstAttribute="centerY" secondItem="dWo-8J-Jo6" secondAttribute="centerY" id="q5H-Ru-mxG"/>
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmr-Zc-59M">
-                                                <rect key="frame" x="0.0" y="9" width="325" height="159.5"/>
+                                                <rect key="frame" x="0.0" y="2" width="375" height="421.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="21C-gV-uT9" id="WJA-EH-GFD"/>
@@ -4458,11 +4434,13 @@ the transactions correspond to such terms. This payment authorization is valid a
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cmr-Zc-59M" secondAttribute="trailing" id="0IH-xi-xwW"/>
                                             <constraint firstItem="cmr-Zc-59M" firstAttribute="leading" secondItem="FVN-bY-j8z" secondAttribute="leading" id="3Zq-R2-kcD"/>
+                                            <constraint firstItem="dWo-8J-Jo6" firstAttribute="leading" secondItem="FVN-bY-j8z" secondAttribute="leading" constant="25" id="7Vk-m5-etM"/>
                                             <constraint firstAttribute="trailing" secondItem="4bm-LP-FcB" secondAttribute="trailing" id="LZX-zD-02C"/>
                                             <constraint firstItem="cmr-Zc-59M" firstAttribute="top" secondItem="b7T-gX-jeG" secondAttribute="bottom" id="M06-u8-eB8"/>
                                             <constraint firstItem="b7T-gX-jeG" firstAttribute="top" secondItem="FVN-bY-j8z" secondAttribute="top" id="Y32-XE-SoX"/>
-                                            <constraint firstItem="b7T-gX-jeG" firstAttribute="width" secondItem="FVN-bY-j8z" secondAttribute="width" multiplier="1/2" id="ZoW-Ja-EFg"/>
+                                            <constraint firstAttribute="bottom" secondItem="dWo-8J-Jo6" secondAttribute="bottom" id="egw-fE-IV7"/>
                                             <constraint firstItem="4bm-LP-FcB" firstAttribute="leading" secondItem="b7T-gX-jeG" secondAttribute="trailing" id="o2f-Qi-KHL"/>
+                                            <constraint firstAttribute="trailing" secondItem="dWo-8J-Jo6" secondAttribute="trailing" constant="25" id="pVi-3b-gSF"/>
                                             <constraint firstAttribute="bottom" secondItem="cmr-Zc-59M" secondAttribute="bottom" id="tGm-Jz-fbt"/>
                                             <constraint firstItem="b7T-gX-jeG" firstAttribute="leading" secondItem="FVN-bY-j8z" secondAttribute="leading" id="tKf-bt-9Vg"/>
                                             <constraint firstItem="4bm-LP-FcB" firstAttribute="top" secondItem="FVN-bY-j8z" secondAttribute="top" id="tr7-vN-a3p"/>
@@ -4477,26 +4455,97 @@ the transactions correspond to such terms. This payment authorization is valid a
                                     <constraint firstAttribute="trailing" secondItem="FVN-bY-j8z" secondAttribute="trailing" id="d4s-MN-m43"/>
                                     <constraint firstItem="41a-qw-vWj" firstAttribute="top" secondItem="SQ2-qY-RzI" secondAttribute="top" id="fWq-Gl-s6D"/>
                                     <constraint firstItem="41a-qw-vWj" firstAttribute="leading" secondItem="SQ2-qY-RzI" secondAttribute="leading" id="oWV-17-gTT"/>
+                                    <constraint firstItem="b7T-gX-jeG" firstAttribute="width" secondItem="YRJ-UW-hLs" secondAttribute="width" id="rKW-UI-hh8"/>
                                     <constraint firstAttribute="bottom" secondItem="FVN-bY-j8z" secondAttribute="bottom" id="vpm-Da-PfP"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtk-NI-ck1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="203.5"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PP-oP-VUD">
+                                        <rect key="frame" x="0.0" y="52" width="375" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earned Cashback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOM-JS-rcU" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="87.5" y="0.0" width="200" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="96Q-gD-NEv"/>
+                                                    <constraint firstAttribute="width" constant="200" id="KO1-ar-bO3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                        <real key="value" value="0.46999999999999997"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhw-f7-6Tp" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="112.5" y="31" width="150" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="AnH-et-bXQ"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Ss7-wL-4Rh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="46"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                        <real key="value" value="1.53"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1V-xX-AoL" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                                <rect key="frame" x="97.5" y="93" width="180" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="E9a-Rm-9bD"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Q1t-X2-1Py"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
+                                                <state key="normal" title="REDEEM">
+                                                    <color key="titleColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnRedeem_pressed:" destination="21C-gV-uT9" eventType="touchUpInside" id="qgu-zi-dhk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zhw-f7-6Tp" firstAttribute="top" secondItem="OOM-JS-rcU" secondAttribute="bottom" constant="10" id="EzE-Ou-hWg"/>
+                                            <constraint firstItem="zhw-f7-6Tp" firstAttribute="centerX" secondItem="3PP-oP-VUD" secondAttribute="centerX" id="GLl-SO-9sT"/>
+                                            <constraint firstAttribute="height" constant="130" id="Y1O-8m-cVU"/>
+                                            <constraint firstItem="OOM-JS-rcU" firstAttribute="top" secondItem="3PP-oP-VUD" secondAttribute="top" id="ZLn-gT-4ob"/>
+                                            <constraint firstItem="d1V-xX-AoL" firstAttribute="centerX" secondItem="3PP-oP-VUD" secondAttribute="centerX" id="cch-bb-xyA"/>
+                                            <constraint firstItem="d1V-xX-AoL" firstAttribute="top" secondItem="zhw-f7-6Tp" secondAttribute="bottom" constant="15" id="pu2-mF-xpK"/>
+                                            <constraint firstItem="OOM-JS-rcU" firstAttribute="centerX" secondItem="3PP-oP-VUD" secondAttribute="centerX" id="xGO-T9-SXU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3PP-oP-VUD" firstAttribute="width" secondItem="qtk-NI-ck1" secondAttribute="width" id="ApQ-l9-lgc"/>
+                                    <constraint firstItem="3PP-oP-VUD" firstAttribute="centerX" secondItem="qtk-NI-ck1" secondAttribute="centerX" id="Ntw-sB-Koo"/>
+                                    <constraint firstItem="3PP-oP-VUD" firstAttribute="centerY" secondItem="qtk-NI-ck1" secondAttribute="centerY" constant="15" id="PmP-26-Z5h"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="07l-ja-wJn" firstAttribute="trailing" secondItem="iBO-EM-gjy" secondAttribute="trailing" id="6dJ-od-QLA"/>
-                            <constraint firstItem="07l-ja-wJn" firstAttribute="trailing" secondItem="SQ2-qY-RzI" secondAttribute="trailing" constant="25" id="GqD-mE-iKM"/>
-                            <constraint firstItem="3PP-oP-VUD" firstAttribute="top" secondItem="rvO-6m-OMd" secondAttribute="bottom" constant="28" id="HUE-9W-dOB"/>
-                            <constraint firstItem="07l-ja-wJn" firstAttribute="bottom" secondItem="SQ2-qY-RzI" secondAttribute="bottom" constant="20" id="MVl-ct-bpj"/>
-                            <constraint firstItem="rvO-6m-OMd" firstAttribute="centerX" secondItem="VfV-ad-qSf" secondAttribute="centerX" id="SIz-iP-d2E"/>
-                            <constraint firstItem="iBO-EM-gjy" firstAttribute="top" secondItem="VfV-ad-qSf" secondAttribute="top" id="Sd6-4z-pAF"/>
-                            <constraint firstItem="rvO-6m-OMd" firstAttribute="top" secondItem="VfV-ad-qSf" secondAttribute="top" constant="77" id="UkW-gK-MbM"/>
-                            <constraint firstItem="SQ2-qY-RzI" firstAttribute="leading" secondItem="07l-ja-wJn" secondAttribute="leading" constant="25" id="V4v-gN-CQZ"/>
-                            <constraint firstItem="SQ2-qY-RzI" firstAttribute="top" secondItem="3PP-oP-VUD" secondAttribute="bottom" constant="30" id="XSk-c2-h4O"/>
-                            <constraint firstItem="07l-ja-wJn" firstAttribute="bottom" secondItem="iBO-EM-gjy" secondAttribute="bottom" id="gao-6W-MrT"/>
-                            <constraint firstItem="iBO-EM-gjy" firstAttribute="leading" secondItem="VfV-ad-qSf" secondAttribute="leading" id="mYI-W1-O0c"/>
-                            <constraint firstItem="rvO-6m-OMd" firstAttribute="width" secondItem="VfV-ad-qSf" secondAttribute="width" multiplier="256/375" id="rBY-Cu-mNF"/>
-                            <constraint firstItem="07l-ja-wJn" firstAttribute="trailing" secondItem="3PP-oP-VUD" secondAttribute="trailing" constant="25" id="tLD-jq-zOz"/>
-                            <constraint firstItem="3PP-oP-VUD" firstAttribute="leading" secondItem="07l-ja-wJn" secondAttribute="leading" constant="25" id="xJe-6V-2Ju"/>
+                            <constraint firstItem="07l-ja-wJn" firstAttribute="bottom" secondItem="SQ2-qY-RzI" secondAttribute="bottom" id="1eG-8r-cQo"/>
+                            <constraint firstItem="SQ2-qY-RzI" firstAttribute="top" secondItem="qtk-NI-ck1" secondAttribute="bottom" id="ZKT-rj-Wii"/>
+                            <constraint firstItem="qtk-NI-ck1" firstAttribute="height" secondItem="VfV-ad-qSf" secondAttribute="height" multiplier="248/812" id="hIb-Uz-ZEq"/>
+                            <constraint firstItem="qtk-NI-ck1" firstAttribute="top" secondItem="VfV-ad-qSf" secondAttribute="top" id="mf1-O3-aVW"/>
+                            <constraint firstItem="07l-ja-wJn" firstAttribute="trailing" secondItem="SQ2-qY-RzI" secondAttribute="trailing" id="oyh-zt-QKc"/>
+                            <constraint firstItem="SQ2-qY-RzI" firstAttribute="leading" secondItem="07l-ja-wJn" secondAttribute="leading" id="szf-f8-1UG"/>
+                            <constraint firstItem="qtk-NI-ck1" firstAttribute="trailing" secondItem="07l-ja-wJn" secondAttribute="trailing" id="xfS-6L-GA0"/>
+                            <constraint firstItem="qtk-NI-ck1" firstAttribute="leading" secondItem="07l-ja-wJn" secondAttribute="leading" id="z9C-0N-m3o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="07l-ja-wJn"/>
                     </view>
@@ -4504,16 +4553,18 @@ the transactions correspond to such terms. This payment authorization is valid a
                         <outlet property="btnGeneral" destination="YRJ-UW-hLs" id="vbV-FW-1dL"/>
                         <outlet property="btnRedeem" destination="d1V-xX-AoL" id="ncf-rT-Cse"/>
                         <outlet property="btnRestaurant" destination="eGB-mC-H7z" id="Flm-CM-gnt"/>
+                        <outlet property="constGeneralTabWidth" destination="wk8-S5-Ti5" id="NSI-ss-LHY"/>
                         <outlet property="constSelectionUnderlineLeading" destination="tKf-bt-9Vg" id="Kgk-Ya-g5p"/>
                         <outlet property="lblCashbackAmount" destination="zhw-f7-6Tp" id="o45-Zq-PwE"/>
                         <outlet property="tableView" destination="cmr-Zc-59M" id="yG8-wR-rI4"/>
+                        <outlet property="vwCampusVote" destination="dWo-8J-Jo6" id="a0P-Sv-MjM"/>
                         <outlet property="vwCashbackDetail" destination="FVN-bY-j8z" id="F75-n8-gra"/>
                         <outlet property="vwCashbackSummary" destination="3PP-oP-VUD" id="kAo-Pl-Qf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eN-OX-fmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="-55"/>
+            <point key="canvasLocation" x="1566" y="-90"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="obu-Np-rRO">
@@ -9330,6 +9381,92 @@ The Internal Revenue Service does not require your consent to any provision of t
             </objects>
             <point key="canvasLocation" x="4910" y="-1699"/>
         </scene>
+        <!--Campus Cashback Controller-->
+        <scene sceneID="L0v-VQ-ihz">
+            <objects>
+                <viewController storyboardIdentifier="CampusCashbackController" id="beQ-vu-q9i" customClass="CampusCashbackController" customModule="NorthLoopFin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OKh-Za-422">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-PZ-cHL" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="25" y="44" width="325" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="SSA-dE-54B"/>
+                                </constraints>
+                                <string key="text">Pick your top 3 places to get 
+maximum cashback</string>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="toA-yS-ovC">
+                                <rect key="frame" x="25" y="132" width="325" height="465"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="beQ-vu-q9i" id="xSF-M1-EkC"/>
+                                    <outlet property="delegate" destination="beQ-vu-q9i" id="L2G-JP-qfs"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdY-GU-beB">
+                                <rect key="frame" x="25" y="597" width="325" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-QT-M3F" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12.5" width="325" height="45"/>
+                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="fJb-Mc-qxd"/>
+                                        </constraints>
+                                        <state key="normal" title="DONE"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnDone_pressed:" destination="beQ-vu-q9i" eventType="touchUpInside" id="L3N-Lm-LJ4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Pad-QT-M3F" firstAttribute="leading" secondItem="YdY-GU-beB" secondAttribute="leading" id="FG5-p2-6D7"/>
+                                    <constraint firstItem="Pad-QT-M3F" firstAttribute="centerY" secondItem="YdY-GU-beB" secondAttribute="centerY" id="pmc-EW-QJG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pad-QT-M3F" secondAttribute="trailing" id="vpZ-ci-975"/>
+                                    <constraint firstAttribute="height" constant="70" id="zjz-LC-BVe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="toA-yS-ovC" secondAttribute="trailing" constant="25" id="7cj-9K-iZd"/>
+                            <constraint firstItem="YdY-GU-beB" firstAttribute="leading" secondItem="cru-Ut-h5f" secondAttribute="leading" constant="25" id="KBg-O1-sce"/>
+                            <constraint firstItem="YdY-GU-beB" firstAttribute="top" secondItem="toA-yS-ovC" secondAttribute="bottom" id="VHj-SY-a0J"/>
+                            <constraint firstItem="cru-Ut-h5f" firstAttribute="trailing" secondItem="9PC-PZ-cHL" secondAttribute="trailing" constant="25" id="VX7-vE-CD7"/>
+                            <constraint firstItem="9PC-PZ-cHL" firstAttribute="leading" secondItem="cru-Ut-h5f" secondAttribute="leading" constant="25" id="Yak-56-Adv"/>
+                            <constraint firstItem="YdY-GU-beB" firstAttribute="bottom" secondItem="cru-Ut-h5f" secondAttribute="bottom" id="d6m-XC-FXN"/>
+                            <constraint firstItem="toA-yS-ovC" firstAttribute="top" secondItem="9PC-PZ-cHL" secondAttribute="bottom" constant="23" id="k18-Gl-UQw"/>
+                            <constraint firstItem="9PC-PZ-cHL" firstAttribute="top" secondItem="cru-Ut-h5f" secondAttribute="top" constant="24" id="n2N-Tb-ft0"/>
+                            <constraint firstItem="toA-yS-ovC" firstAttribute="leading" secondItem="cru-Ut-h5f" secondAttribute="leading" constant="25" id="u6e-NF-m8Q"/>
+                            <constraint firstItem="cru-Ut-h5f" firstAttribute="trailing" secondItem="YdY-GU-beB" secondAttribute="trailing" constant="25" id="u87-Pb-LE3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cru-Ut-h5f"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnDone" destination="Pad-QT-M3F" id="FTv-co-hZA"/>
+                        <outlet property="constSaveHeight" destination="zjz-LC-BVe" id="aBM-aC-dS8"/>
+                        <outlet property="tableView" destination="toA-yS-ovC" id="T3e-Cl-Wp5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BBz-Oc-ult" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2381.5999999999999" y="-71.514242878560722"/>
+        </scene>
         <!--Analysis View Controller-->
         <scene sceneID="lDr-UP-PhG">
             <objects>
@@ -9526,7 +9663,7 @@ The Internal Revenue Service does not require your consent to any provision of t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjw-Ns-oLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="-54"/>
+            <point key="canvasLocation" x="3142" y="-90"/>
         </scene>
         <!--Verify Identity View Controller-->
         <scene sceneID="VWM-0d-1sN">
@@ -11616,7 +11753,7 @@ security code?</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan your ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8A-wh-aHh" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="115" width="136" height="31"/>
+                                <rect key="frame" x="25" y="115" width="144" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -11627,7 +11764,7 @@ security code?</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You'll need to take photos of the following documents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1V-jU-7Ty" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="229" width="325" height="17.5"/>
+                                <rect key="frame" x="25" y="227.5" width="337" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -11638,14 +11775,14 @@ security code?</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-xu-a5Z" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="12" y="186" width="351" height="8"/>
+                                <rect key="frame" x="12" y="184.5" width="351" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="wXq-KT-As3"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pKa-vx-24v">
-                                <rect key="frame" x="25" y="261.5" width="325" height="405.5"/>
+                                <rect key="frame" x="25" y="259" width="325" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -13118,7 +13255,6 @@ No credit history required</string>
         <image name="homeBg" width="375" height="326"/>
         <image name="ic_backward" width="8" height="14"/>
         <image name="ic_base_rate" width="32" height="32"/>
-        <image name="ic_cashback" width="644" height="519"/>
         <image name="ic_close" width="40" height="40"/>
         <image name="ic_coming_soon" width="320" height="205"/>
         <image name="ic_currency_project" width="60" height="65"/>
