@@ -311,7 +311,6 @@ class ServiceManager: NSObject  {
     fileprivate func dataTaskWithRequestAndSessionManager<T:Codable>(_ request:URLRequest, sessionManager:AFHTTPSessionManager, returningClass: T.Type) -> Void {
         
         sessionManager.dataTask(with: request, uploadProgress: nil, downloadProgress: nil) { (response, responseObject, error) in
-            
             // Checking whether API Response contains Success response or Error Response
             if( (error == nil) && (responseObject != nil)){
                 print(self.getJsonStringFor(dictionary: responseObject))
@@ -331,8 +330,10 @@ class ServiceManager: NSObject  {
                         self.delegate?.onError(error! as NSError , errorObject: responseObject as AnyObject?)
                     }
                 }
-            }else {
+            }else if error != nil{
                 self.delegate?.onError(error! as NSError , errorObject: responseObject as AnyObject?)
+            }else{
+                self.delegate?.onStatusError(response)
             }
             }.resume()
     }

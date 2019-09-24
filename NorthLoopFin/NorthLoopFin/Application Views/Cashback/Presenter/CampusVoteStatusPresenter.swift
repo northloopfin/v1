@@ -20,7 +20,6 @@ class CampusVoteStatusPresenter: ResponseCallback{
     
     //    Send Login Request to Business Login
     func sendCampusVoteStatusRequest(){
-        self.delegate?.showLoader()
         let currentUser:User=UserInformationUtility.sharedInstance.getCurrentUser()!
         let requestModel = CampusVoteStatusRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())

@@ -48,6 +48,7 @@ struct Endpoints{
         case CAMPUSPOLL = "campus/poll"
         case CAMPUSVOTE = "campus/vote"
         case CAMPUSSTATUS = "campus/status"
+        case CAMPUSSUNIVERSITY = "campus/university/list"
 //      case ANALYSISOPTIONS = "http://18.219.212.170/spend_by_categories/"
         case ANALYSISOPTIONS = "http://nolo-load-vpc-f927b74b2d6466e5.elb.us-east-2.amazonaws.com/spend_by_categories/"
         case ANALYSISTOTALSPENT = "http://nolo-load-vpc-f927b74b2d6466e5.elb.us-east-2.amazonaws.com/m_to_date_spend/"

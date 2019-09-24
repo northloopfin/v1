@@ -13,11 +13,7 @@ class CampusCashbackController: BaseViewController {
 
     var campusPresenter: CampusPresenter!
     var campusVotePresenter: CampusVotePresenter!
-    var campusArr:[Campus] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var campusArr:[Campus] = []
     var selectedCampus:[String] = []
     
     @IBOutlet weak var btnDone: RippleButton!
@@ -27,13 +23,13 @@ class CampusCashbackController: BaseViewController {
         super.viewDidLoad()
         self.setupRightNavigationBar()
         self.configureTable()
-        self.getCampusList()
+//        self.getCampusList()
         // Do any additional setup after loading the view.
     }
     
     func getCampusList() {
         self.campusPresenter = CampusPresenter.init(delegate: self)
-        self.campusPresenter.sendCampusRequest()
+        self.campusPresenter.sendCampusRequest(name: "")
 //        self.btnRedeem.isEnabled = false
     }
     @IBAction func btnDone_pressed(_ sender: UIButton) {
@@ -86,10 +82,21 @@ extension CampusCashbackController: CampusDelegate{
             campusArr = data.values
         }
     }
+    
+    func didFetchUniversities(data: [String]) {
+        
+    }
+    
+    func emptyCampus() {
+    }
 }
 
 extension CampusCashbackController: CampusVoteDelegate{
     func didCampusVote(data: CampusVote) {
-        self.showAlert(title: "", message: data.message)
+        self.toast(message: "Thanks for voting!")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.navigationController?.popViewController(animated: true)
+        })
+//        self.showAlert(title: "", message: data.message)
     }
 }

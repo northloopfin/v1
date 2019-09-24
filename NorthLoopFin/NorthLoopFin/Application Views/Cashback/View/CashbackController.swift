@@ -9,6 +9,8 @@
 
 import Foundation
 import MFSideMenu
+import DropDown
+import IQKeyboardManagerSwift
 
 class CashbackController: BaseViewController {
     
@@ -17,6 +19,7 @@ class CashbackController: BaseViewController {
     @IBOutlet weak var constSelectionUnderlineLeading: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tblCampus: UITableView!
     @IBOutlet weak var btnRedeem: RippleButton!
     @IBOutlet weak var lblCashbackAmount: UILabel!
     @IBOutlet weak var btnRestaurant: UIButton!
@@ -25,18 +28,33 @@ class CashbackController: BaseViewController {
     var campusPresenter: CampusPresenter!
     var campusStatusPresenter: CampusVoteStatusPresenter!
     var redeemPresenter: RedeemCashbackPresenter!
-    
-    var transactions: [CashbackTransaction] = [] {
+    var status: CampusVoteStatusData! = nil{
         didSet {
-            self.tableView.reloadData()
+            if campusArr.count > 0{
+                constVoteNowHeight.constant = status.voted ? 100 : 100
+            }
         }
     }
+ 
+    var campusArr:[Campus] = [] {
+        didSet {
+            self.tblCampus.reloadData()
+            if status != nil, campusArr.count > 0{
+                constVoteNowHeight.constant = status.voted ? 100 : 100
+            }
+        }
+    }
+    let dropDown = DropDown()
+
     @IBOutlet weak var vwCampusVote: UIView!
     @IBOutlet weak var constGeneralTabWidth: NSLayoutConstraint!
+    @IBOutlet weak var constVoteNowHeight: NSLayoutConstraint!
+    @IBOutlet weak var txtUniversity: UITextField!
+    @IBOutlet weak var constUniversityHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.constGeneralTabWidth.constant = self.view.frame.size.width
+        self.constGeneralTabWidth.constant = self.view.frame.size.width/2
         self.prepareView()
         self.setupRightNavigationBar()
         self.configureTable()
@@ -65,6 +83,24 @@ class CashbackController: BaseViewController {
     func prepareView(){
         styleContainer(vw: vwCashbackDetail)
         styleContainer(vw: vwCashbackSummary)
+        self.campusPresenter = CampusPresenter.init(delegate: self)
+    }
+    
+    func setupUniversityField(){
+        let placeholderColor=Colors.DustyGray155155155
+        let placeholderFont = UIFont.init(name: "Calibri", size: 16)
+        let textfieldBorderColor = Colors.Mercury226226226//UIColor.init(red: 226, green: 226, blue: 226)
+        let textFieldBorderWidth = 1.0
+        let textfieldCorber = 5.0
+        
+        self.txtUniversity.textColor=Colors.DustyGray155155155
+        self.txtUniversity.font=AppFonts.textBoxCalibri16
+        self.txtUniversity.applyAttributesWithValues(placeholderText: "University", placeholderColor: placeholderColor, placeHolderFont: placeholderFont!, textFieldBorderColor: textfieldBorderColor, textFieldBorderWidth: CGFloat(textFieldBorderWidth), textfieldCorber: CGFloat(textfieldCorber))
+        self.txtUniversity.setLeftPaddingPoints(19)
+        
+        self.txtUniversity.inputView = UIView.init(frame: CGRect.zero)
+        self.txtUniversity.inputAccessoryView = UIView.init(frame: CGRect.zero)
+        self.txtUniversity.setRightIcon(UIImage.init(named: "chevron")!)
     }
     
     func styleContainer(vw:UIView){
@@ -82,16 +118,17 @@ class CashbackController: BaseViewController {
         self.btnRedeem.isEnabled = false
     }
     
+    func getUniversityList() {
+        self.campusPresenter.sendUniversityRequest()
+    }
+    
     func getCampusList() {
-        self.campusPresenter = CampusPresenter.init(delegate: self)
-        self.campusPresenter.sendCampusRequest()
-        self.btnRedeem.isEnabled = false
+        self.campusPresenter.sendCampusRequest(name: self.txtUniversity.text!)
     }
 
     func getCampusStatus() {
         self.campusStatusPresenter = CampusVoteStatusPresenter.init(delegate: self)
         self.campusStatusPresenter.sendCampusVoteStatusRequest()
-        self.btnRedeem.isEnabled = false
     }
     
     @IBAction func general_clicked(_ sender: UIButton) {
@@ -122,11 +159,24 @@ class CashbackController: BaseViewController {
     }
     
     @IBAction func btnVote_pressed(_ sender: UIButton) {
-        self.navigationController?.pushViewController(self.getControllerWithIdentifier("CampusCashbackController"), animated: true)
-
+        if (campusArr.count == 0){
+            self.showAlert(title: "", message: "Please select university")
+        }else{
+            let vc = self.getControllerWithIdentifier("CampusCashbackController") as! CampusCashbackController
+            vc.campusArr = self.campusArr
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
+extension CashbackController:UITextFieldDelegate{
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        IQKeyboardManager.shared.resignFirstResponder()
+        self.dropDown.show()
+        return false
+    }
+}
 
 extension CashbackController: FetchCashbackDelegate{
     func didFetchCashback(data: [CashbackDetail]) {
@@ -150,43 +200,77 @@ extension CashbackController: RedeemCashbackDelegate{
 
 extension CashbackController: CampusDelegate{
     func didFetchCampus(data: CampusData) {
-        if data.values.count > 0 {
-            self.constGeneralTabWidth.constant = self.view.frame.size.width/2
+        if txtUniversity.text?.count == 0 && data.values.count == 0 {
+            getUniversityList()
+        }else if data.values.count > 0{
+            if txtUniversity.text?.count == 0{
+                constUniversityHeight.constant = 0
+            }
+            campusArr = data.values
             getCampusStatus()
         }
+    }
+    
+    func emptyCampus() {
+        if txtUniversity.text?.count == 0{
+            getUniversityList()
+        }
+    }
+    
+    func didFetchUniversities(data: [String]) {
+        setupUniversityField()
+        constUniversityHeight.constant = 60
+        dropDown.anchorView = self.txtUniversity
+        dropDown.dataSource = data
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.txtUniversity.text=item
+            self.dropDown.hide()
+            self.getCampusList()
+        }
+        getCampusStatus()
     }
 }
 
 extension CashbackController: CampusVoteStatusDelegate{
     func didCampusVoteStatus(data: CampusVoteStatus) {
-        self.vwCampusVote.isHidden = data.data.voted
+        status = data.data
     }
 }
 
 extension CashbackController: UITableViewDelegate,UITableViewDataSource {
     func configureTable(){
         self.tableView.register(UINib(nibName:"CashbackCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CashbackCell")
+        self.tblCampus.register(UINib(nibName:"CampusCashbackCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CampusCashbackCell")
         self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return tableView == tblCampus ? campusArr.count : 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CashbackCell", for: indexPath) as! CashbackCell
-        if indexPath.row == 0 {
-            cell.imgPreview.image = UIImage(named: "ic_amazon_prime")
-            cell.lblTitle.text = "Amazon Prime Student"
-            cell.lblSubTitle.text = "Premium users only"
+        if (tableView != self.tblCampus){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CashbackCell", for: indexPath) as! CashbackCell
+            if indexPath.row == 0 {
+                cell.imgPreview.image = UIImage(named: "ic_amazon_prime")
+                cell.lblTitle.text = "Amazon Prime Student"
+                cell.lblSubTitle.text = "Premium users only"
+            }
+            if indexPath.row == 1{
+                cell.imgPreview.image = UIImage(named: "ic_starbucks")
+                cell.lblTitle.text = "Starbucks"
+                cell.lblSubTitle.text = "3% cashback on all purchases"
+            }
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CampusCashbackCell", for: indexPath) as! CampusCashbackCell
+            cell.bindData(data: campusArr[indexPath.row], selected: false)
+            cell.lblCount.text = String(indexPath.row+1)
+            cell.selectionStyle = .none
+            return cell
         }
-        if indexPath.row == 1{
-            cell.imgPreview.image = UIImage(named: "ic_starbucks")
-            cell.lblTitle.text = "Starbucks"
-            cell.lblSubTitle.text = "3% cashback on all purchases"
-        }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -194,9 +278,11 @@ extension CashbackController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            guard let url = URL(string: "https://northloop.zendesk.com/hc/en-us/articles/360032248712") else { return }
-            UIApplication.shared.open(url)
+        if tableView == self.tableView{
+            if indexPath.row == 0 {
+                guard let url = URL(string: "https://northloop.zendesk.com/hc/en-us/articles/360032248712") else { return }
+                UIApplication.shared.open(url)
+            }
         }
     }
 }

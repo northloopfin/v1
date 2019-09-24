@@ -24,7 +24,7 @@ class CampusAPIRequest:ApiRequestProtocol {
      */
     func makeAPIRequest(withReqFormData reqFromData: CampusRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
         
-        self.apiRequestUrl = reqFromData.getEndPoint()
+        self.apiRequestUrl = reqFromData.apiUrl
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
         ServiceManager.sharedInstance.requestGETWithURL(self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: CampusData.self)

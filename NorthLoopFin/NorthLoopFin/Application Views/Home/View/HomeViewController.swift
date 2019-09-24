@@ -284,6 +284,7 @@ extension HomeViewController:HomeDelegate{
         if error.getErrorMessage().contains("phone") {
             self.navigateToOTP()
         }
+//        self.showTabBar()
     }
     func didFetchedAccountInfo(data:Account){
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()

@@ -6,6 +6,7 @@ import Foundation
 protocol ApiResponseReceiver{
     func onSuccess<T: Codable>(_ response:T) -> Void
     func onError(_ errorResponse:NSError , errorObject:AnyObject?) -> Void
+    func onStatusError(_ urlResponse: URLResponse) ->Void 
 }
 
 class ResponseWrapper : ApiResponseReceiver  {
@@ -38,6 +39,11 @@ class ResponseWrapper : ApiResponseReceiver  {
         let errorModel : ErrorModel = ErrorTransformer.getErrorModel(fromErrorObject: errorObject,errorResponse: errorResponse, errorResolver: self.errorResolver!)
         self.delegate.servicesManagerError(error : errorModel)
     }
-    
+
+    func onStatusError(_ urlResponse: URLResponse) ->Void {
+        let errorModel : ErrorModel = ErrorTransformer.getStatusErrorModel(response: urlResponse)
+        self.delegate.servicesManagerError(error : errorModel)
+    }
+
 }
 

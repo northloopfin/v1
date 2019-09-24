@@ -10,15 +10,17 @@ import Foundation
 
 protocol CampusDelegate:BaseViewProtocol {
     func didFetchCampus(data:CampusData)
-    
+    func emptyCampus()
+    func didFetchUniversities(data:[String])
 }
 
 struct Campus: Codable {
-    let id,name,logo: String
+    let id,name,logo,campus: String
     let cashback_percentage: Double
     let vote_percentage: Double
     
     enum CodingKeys: String, CodingKey {
+        case campus
         case id
         case name
         case logo
@@ -29,6 +31,7 @@ struct Campus: Codable {
     init(from decoder: Decoder) throws {
         let val = try decoder.container(keyedBy: CodingKeys.self)
         
+        campus = try val.decodeIfPresent(String.self, forKey: .campus) ?? ""
         name = try val.decodeIfPresent(String.self, forKey: .name) ?? ""
         logo = try val.decodeIfPresent(String.self, forKey: .logo) ?? ""
         id = try val.decodeIfPresent(String.self, forKey: .id) ?? ""

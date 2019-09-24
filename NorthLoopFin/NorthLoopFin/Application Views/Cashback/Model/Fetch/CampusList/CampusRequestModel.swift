@@ -72,7 +72,11 @@ class CampusRequestModel {
      
      -returns: String containg end point
      */
-    func getEndPoint()->String{
-        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.CAMPUSPOLL.rawValue
+    func getEndPoint(uni:String)->String{
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.CAMPUSPOLL.rawValue + (uni.count > 0 ? "/" + (uni.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) : "")
+    }
+    
+    func getEndPointUniversity()->String{
+        return Endpoints.Base_Url!  +  Endpoints.APIEndpoints.CAMPUSSUNIVERSITY.rawValue
     }
 }
