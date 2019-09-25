@@ -9,7 +9,7 @@
 import Foundation
 
 struct AccountAggregateData: Codable {
-    let errorCode,httpCode: String
+    let errorCode,httpCode,access_token: String
     let success: Bool
     let statusCode: Int
     let nodeCount: Int
@@ -21,6 +21,7 @@ struct AccountAggregateData: Codable {
         case statusCode
         case mfa
         case nodes
+        case access_token
         case errorCode = "error_code"
         case httpCode = "http_code"
         case nodeCount = "node_count"
@@ -29,6 +30,7 @@ struct AccountAggregateData: Codable {
     init(from decoder: Decoder) throws {
         let val = try decoder.container(keyedBy: CodingKeys.self)
         
+        access_token =  try val.decodeIfPresent(String.self, forKey: .access_token) ?? ""
         errorCode = try val.decodeIfPresent(String.self, forKey: .errorCode) ?? ""
         httpCode = try val.decodeIfPresent(String.self, forKey: .httpCode) ?? ""
         success = try val.decodeIfPresent(Bool.self, forKey: .success) ?? false
@@ -75,14 +77,17 @@ struct MFA: Codable {
 
 struct NodeData: Codable {
     let info: ACHNode
-    
+    let nodeid: String
+
     enum CodingKeys: String, CodingKey {
         case info
+        case nodeid = "_id"
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         info = try values.decodeIfPresent(ACHNode.self, forKey: .info)!
+        nodeid = try values.decodeIfPresent(String.self, forKey: .nodeid) ?? ""
     }
 }
 

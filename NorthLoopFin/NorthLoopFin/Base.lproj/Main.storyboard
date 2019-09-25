@@ -1196,10 +1196,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-xo-vSO" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="203.5" width="325" height="34"/>
+                                <rect key="frame" x="25" y="203.5" width="46" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50X-HH-94b">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1215,7 +1215,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
-                                <rect key="frame" x="25" y="262.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="262.5" width="46" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
@@ -1236,7 +1236,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-pn-kP6">
-                                        <rect key="frame" x="8" y="0.0" width="317" height="69"/>
+                                        <rect key="frame" x="8" y="0.0" width="38" height="69"/>
                                         <connections>
                                             <action selector="scanFrontClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="dJh-Wf-QZR"/>
                                         </connections>
@@ -1257,10 +1257,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
-                                <rect key="frame" x="25" y="348.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="348.5" width="46" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="69"/>
                                         <connections>
                                             <action selector="scanBackClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="uLY-ls-sWh"/>
                                         </connections>
@@ -1299,7 +1299,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Na-LzZ" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
+                                <rect key="frame" x="25" y="497.5" width="46" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jp4-O9-PWE"/>

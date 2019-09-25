@@ -475,6 +475,11 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA2134CD233B40790022E32D /* DeleteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134C9233B40780022E32D /* DeleteNode.swift */; };
+		EA2134CE233B40790022E32D /* DeleteNodeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134CA233B40780022E32D /* DeleteNodeAPIRequest.swift */; };
+		EA2134CF233B40790022E32D /* DeleteNodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134CB233B40780022E32D /* DeleteNodeRequestModel.swift */; };
+		EA2134D0233B40790022E32D /* DeleteNodeBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134CC233B40780022E32D /* DeleteNodeBusinessLogic.swift */; };
+		EA2134D2233B408C0022E32D /* DeleteNodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134D1233B408B0022E32D /* DeleteNodePresenter.swift */; };
 		EA22BB0B233890F90061CA6F /* CampusCashbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB09233890F90061CA6F /* CampusCashbackCell.swift */; };
 		EA22BB0C233890F90061CA6F /* CampusCashbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA22BB0A233890F90061CA6F /* CampusCashbackCell.xib */; };
 		EA22BB0E233896100061CA6F /* CampusCashbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BB0D233896100061CA6F /* CampusCashbackController.swift */; };
@@ -1129,6 +1134,11 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA2134C9233B40780022E32D /* DeleteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNode.swift; sourceTree = "<group>"; };
+		EA2134CA233B40780022E32D /* DeleteNodeAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNodeAPIRequest.swift; sourceTree = "<group>"; };
+		EA2134CB233B40780022E32D /* DeleteNodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNodeRequestModel.swift; sourceTree = "<group>"; };
+		EA2134CC233B40780022E32D /* DeleteNodeBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNodeBusinessLogic.swift; sourceTree = "<group>"; };
+		EA2134D1233B408B0022E32D /* DeleteNodePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNodePresenter.swift; sourceTree = "<group>"; };
 		EA22BB09233890F90061CA6F /* CampusCashbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCashbackCell.swift; sourceTree = "<group>"; };
 		EA22BB0A233890F90061CA6F /* CampusCashbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampusCashbackCell.xib; sourceTree = "<group>"; };
 		EA22BB0D233896100061CA6F /* CampusCashbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCashbackController.swift; sourceTree = "<group>"; };
@@ -3052,6 +3062,17 @@
 			path = SSLCertificatePinning;
 			sourceTree = "<group>";
 		};
+		EA2134C8233B40780022E32D /* DeleteNode */ = {
+			isa = PBXGroup;
+			children = (
+				EA2134C9233B40780022E32D /* DeleteNode.swift */,
+				EA2134CA233B40780022E32D /* DeleteNodeAPIRequest.swift */,
+				EA2134CB233B40780022E32D /* DeleteNodeRequestModel.swift */,
+				EA2134CC233B40780022E32D /* DeleteNodeBusinessLogic.swift */,
+			);
+			path = DeleteNode;
+			sourceTree = "<group>";
+		};
 		EA22BB0F2338CB320061CA6F /* CampusList */ = {
 			isa = PBXGroup;
 			children = (
@@ -3310,6 +3331,7 @@
 			children = (
 				EA194A8423320BD3005507FC /* AccountAggregatePresenter.swift */,
 				EA8D0D08232BA6C1002013BD /* InstitutionsPresenter.swift */,
+				EA2134D1233B408B0022E32D /* DeleteNodePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -3566,6 +3588,7 @@
 			children = (
 				F4EE1B8A230C6D3900CCA1E6 /* TransferDetailCellModel.swift */,
 				EA194A7B23320BAB005507FC /* AddBank */,
+				EA2134C8233B40780022E32D /* DeleteNode */,
 				EA8D0CFE232BA691002013BD /* Institutions */,
 			);
 			path = Model;
@@ -3930,6 +3953,7 @@
 				4BFA951922CDF1F200E16B6D /* ProgressView.swift in Sources */,
 				4BF9D77322CC8D4A00F8EDBA /* PromoCodeViewController.swift in Sources */,
 				EA1FC15022F1526C002A7103 /* AMPURLConnection.m in Sources */,
+				EA2134CE233B40790022E32D /* DeleteNodeAPIRequest.swift in Sources */,
 				EA1FC14E22F1526C002A7103 /* AMPDeviceInfo.m in Sources */,
 				1D8189F821C0CC6F000C8F5F /* GradientView.swift in Sources */,
 				4BFFE3D122BB4B7300D85610 /* RangeExtension.swift in Sources */,
@@ -3999,6 +4023,7 @@
 				1D19D31E2295882E008D367E /* Account.swift in Sources */,
 				EA8D0CF2232BA54E002013BD /* ScanI20Controller.swift in Sources */,
 				1D818A0421C105BC000C8F5F /* HomeTableCell.swift in Sources */,
+				EA2134D0233B40790022E32D /* DeleteNodeBusinessLogic.swift in Sources */,
 				1D8440862289552600A77BBF /* AccountInfoApiRequest.swift in Sources */,
 				EACA2EAB232FB13F00891475 /* LLSimpleCamera.m in Sources */,
 				1D913CE2228F624E0075B16D /* SignupSynapseBusinessLogic.swift in Sources */,
@@ -4178,6 +4203,7 @@
 				4BFBC88022BB80EC00B23B68 /* ShareAccountDetailResponse.swift in Sources */,
 				1D180DA6229FAE6100FC3390 /* SucessViewController.swift in Sources */,
 				1D055D2E229BD6E30078CD33 /* LinkACHPresenter.swift in Sources */,
+				EA2134CD233B40790022E32D /* DeleteNode.swift in Sources */,
 				EA8D0D04232BA692002013BD /* InstitutionsRequestModel.swift in Sources */,
 				EAEFB62E2338EB7500547EC6 /* CampusVotePresenter.swift in Sources */,
 				EACA2EA2232FB13F00891475 /* ViewUtils.m in Sources */,
@@ -4232,6 +4258,7 @@
 				4BFBC88622BB8B3500B23B68 /* GetAppSettingsRequestModel.swift in Sources */,
 				8469EF7222F6462700B861F1 /* AddressVerificationTableViewCell.swift in Sources */,
 				1DD066F0221BC1D000E1AD6D /* SelectIDType.swift in Sources */,
+				EA2134CF233B40790022E32D /* DeleteNodeRequestModel.swift in Sources */,
 				1D259D94228AE0D50053D0AB /* CardPreferences.swift in Sources */,
 				1D478CA9228E902C00503136 /* SignupAuthAPIRequest.swift in Sources */,
 				1DF64E2721E88964008774CE /* SideMenuDelgates.swift in Sources */,
@@ -4446,6 +4473,7 @@
 				1D180D79229E53C500FC3390 /* ZendeskPresenter.swift in Sources */,
 				297FB9E721B554F8008D60CE /* ErrorTransformer.swift in Sources */,
 				4B29324222C610D800C4D7E2 /* WebViewController.swift in Sources */,
+				EA2134D2233B408C0022E32D /* DeleteNodePresenter.swift in Sources */,
 				1D8440832289545A00A77BBF /* TransactionHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

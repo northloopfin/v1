@@ -87,7 +87,7 @@ extension TransferConfirmationViewController:HomeDelegate{
         if (data.data.info.balance.amount.isLess(than: Double(self.amount) ?? 0.0)){
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.INSUFFICIENT_BALANCE.rawValue)
         }else{
-            self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (ach?.nodeID)!)
+            self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (ach?.node_id)!)
         }
     }
 }

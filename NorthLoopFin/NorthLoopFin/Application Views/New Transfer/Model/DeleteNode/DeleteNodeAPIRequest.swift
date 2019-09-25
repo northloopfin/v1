@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DeleteACHAPIRequest:ApiRequestProtocol {
+class DeleteNodeAPIRequest:ApiRequestProtocol {
     
     //MARK:- local properties
     var apiRequestUrl:String!
@@ -22,13 +22,12 @@ class DeleteACHAPIRequest:ApiRequestProtocol {
      - parameter errorResolver: ErrorResolver contains all error handling with posiible error codes
      - parameter responseCallback: ResponseCallback used to throw callback on recieving response
      */
-    func makeAPIRequest(withReqFormData reqFromData: DeleteACHRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
+    func makeAPIRequest(withReqFormData reqFromData: DeleteNodeRequestModel, errorResolver: ErrorResolver, responseCallback: ResponseCallback) {
         
         self.apiRequestUrl = reqFromData.getEndPoint()
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        ServiceManager.sharedInstance.requestDELETEWithURLUrlencoded(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: DeleteACH.self)
-//        (self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: FetchACH.self)
+        ServiceManager.sharedInstance.requestDELETEWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: DeleteNode.self)
     }
     
     /**

@@ -28,10 +28,11 @@ class AddBankController: BaseViewController {
             self.tableView.reloadData()
         }
     }
+    var deleteNodePresenter:DeleteNodePresenter!
     var addAccountPresenter:AccountAggregatePresenter!
     var selectedBank:Institutions!
     var aggregateData:AccountAggregateData!
-    var selectedNode:ACHNode!
+    var selectedNodeId:String = ""
 
     @IBOutlet weak var txtSecurityAnswer: SkyFloatingLabelTextField!
     @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
@@ -81,7 +82,7 @@ class AddBankController: BaseViewController {
             self.addAccountPresenter = AccountAggregatePresenter(delegate: self)
             self.addAccountPresenter.sendAccountAggregateRequest(bank: "fake", id: txtUserId.text!, password: txtPassword.text!)
         }else{
-            self.addAccountPresenter.sendMFARequest(token: aggregateData.mfa!.accessToken, answer: txtSecurityAnswer.text!)
+            self.addAccountPresenter.sendMFARequest(token: aggregateData.access_token, answer: txtSecurityAnswer.text!)
         }
 //        closeVerification()
 //        self.navigationController?.popViewController(animated: true)
@@ -97,8 +98,19 @@ class AddBankController: BaseViewController {
     }
     
     @IBAction func btnConfirm_pressed(_ sender: UIButton) {
-        self.showAlert(title: "", message: "Acount Linked Successfully!")
-        closeVerification()
+        self.deleteNodePresenter = DeleteNodePresenter(delegate: self)
+        var nodeIds:[String] = []
+        for node in aggregateData.nodes{
+            if node.nodeid != selectedNodeId{
+                nodeIds.append(node.nodeid)
+            }
+        }
+        if nodeIds.count > 0 {
+            self.deleteNodePresenter.deleteNodeRequest(nodeids: nodeIds)
+        }else{
+            self.showAlert(title: "", message: "Acount Linked Successfully!")
+            closeVerification()
+        }
     }
     
     func openVerification(){
@@ -141,28 +153,37 @@ class AddBankController: BaseViewController {
 extension AddBankController:AccountAggregateDelegate{
     func didFetchAccountAggregate(data: AccountAggregate) {
         aggregateData = data.data
-        if data.data.statusCode == 202{
-//            if data.message.count > 0{
-//                self.showAlert(title: "", message: data.message)
-//            }
-            self.vwBankLogin.isHidden = true
-            self.vwSecurityQuestion.isHidden = false
-            self.lblVerificationTitle.text = data.data.mfa?.message
-            self.btnVerifyContinue.isEnabled = false
-            self.txtSecurityAnswer.text = ""
-        }else if data.data.statusCode == 200{
-            if data.data.nodes.count > 1{
-                selectedNode = nil
+        if aggregateData.statusCode == 200{
+//            if data.data.nodes.count > 1{
+                selectedNodeId = ""
                 btnConfirm.isEnabled = false
                 self.constTableAccountSelect.constant = CGFloat(aggregateData.nodes.count) * self.tableView.rowHeight
                 self.vwSecurityQuestion.isHidden = true
                 self.vwAccountSelection.isHidden = false
                 self.tableAccountSelect.reloadData()
-            }else{
-                self.showAlert(title: "", message: "Acount Linked Successfully!")
-                closeVerification()
+//            }else{
+//                self.showAlert(title: "", message: "Acount Linked Successfully!")
+//                closeVerification()
+//            }
+        }else{
+            if data.data.access_token.count > 0{
+                //            if data.message.count > 0{
+                //                self.showAlert(title: "", message: data.message)
+                //            }
+                self.vwBankLogin.isHidden = true
+                self.vwSecurityQuestion.isHidden = false
+                self.lblVerificationTitle.text = data.message
+                self.btnVerifyContinue.isEnabled = false
+                self.txtSecurityAnswer.text = ""
             }
         }
+    }
+}
+
+extension AddBankController:DeleteNodeDelegate{
+    func didDeleteNode(data: DeleteNode) {
+        self.showAlert(title: "", message: "Acount Linked Successfully!")
+        closeVerification()
     }
 }
 
@@ -232,7 +253,7 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
         
         if tableView == tableAccountSelect {
             cell.bindData(data: aggregateData.nodes[indexPath.row].info)
-            cell.imgCheckbox.isHidden = selectedNode == nil || selectedNode.account_num != aggregateData.nodes[indexPath.row].info.account_num
+            cell.imgCheckbox.isHidden = selectedNodeId != aggregateData.nodes[indexPath.row].nodeid
         }else{
             //        cell.bindData(option: optionArray[indexPath.row])
             cell.bindData(data: banks[indexPath.row])
@@ -257,7 +278,7 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == tableAccountSelect {
             btnConfirm.isEnabled = true
-            selectedNode = aggregateData.nodes[indexPath.row].info
+            selectedNodeId = aggregateData.nodes[indexPath.row].nodeid
             self.tableAccountSelect.reloadData()
         }else{
             selectedBank = banks[indexPath.row]
