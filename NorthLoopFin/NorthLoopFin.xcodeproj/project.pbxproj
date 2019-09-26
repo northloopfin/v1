@@ -475,6 +475,9 @@
 		EA1FC15122F1526C002A7103 /* ComodoRsaCA.der in Resources */ = {isa = PBXBuildFile; fileRef = EA1FC13822F1526C002A7103 /* ComodoRsaCA.der */; };
 		EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC13B22F1526C002A7103 /* AMPConstants.m */; };
 		EA1FC15322F1526C002A7103 /* Amplitude.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC14022F1526C002A7103 /* Amplitude.m */; };
+		EA2035C1233CBB9E00864BCB /* MyAccountOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2035BF233CBB9E00864BCB /* MyAccountOptionCell.swift */; };
+		EA2035C2233CBB9E00864BCB /* MyAccountOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2035C0233CBB9E00864BCB /* MyAccountOptionCell.xib */; };
+		EA2035C6233CBEB200864BCB /* MyAccountOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2035C5233CBEB100864BCB /* MyAccountOptionsModel.swift */; };
 		EA2134CD233B40790022E32D /* DeleteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134C9233B40780022E32D /* DeleteNode.swift */; };
 		EA2134CE233B40790022E32D /* DeleteNodeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134CA233B40780022E32D /* DeleteNodeAPIRequest.swift */; };
 		EA2134CF233B40790022E32D /* DeleteNodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2134CB233B40780022E32D /* DeleteNodeRequestModel.swift */; };
@@ -1134,6 +1137,9 @@
 		EA1FC13E22F1526C002A7103 /* AMPURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPURLSession.h; sourceTree = "<group>"; };
 		EA1FC13F22F1526C002A7103 /* AMPTrackingOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPTrackingOptions.h; sourceTree = "<group>"; };
 		EA1FC14022F1526C002A7103 /* Amplitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amplitude.m; sourceTree = "<group>"; };
+		EA2035BF233CBB9E00864BCB /* MyAccountOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountOptionCell.swift; sourceTree = "<group>"; };
+		EA2035C0233CBB9E00864BCB /* MyAccountOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAccountOptionCell.xib; sourceTree = "<group>"; };
+		EA2035C5233CBEB100864BCB /* MyAccountOptionsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountOptionsModel.swift; sourceTree = "<group>"; };
 		EA2134C9233B40780022E32D /* DeleteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNode.swift; sourceTree = "<group>"; };
 		EA2134CA233B40780022E32D /* DeleteNodeAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNodeAPIRequest.swift; sourceTree = "<group>"; };
 		EA2134CB233B40780022E32D /* DeleteNodeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteNodeRequestModel.swift; sourceTree = "<group>"; };
@@ -1546,6 +1552,7 @@
 				1D180DB5229FC53C00FC3390 /* TransferDetails.swift */,
 				1D180DB7229FC54E00FC3390 /* DometicTransferDetails.swift */,
 				1D180DB9229FC56C00FC3390 /* InternationalTransferDetails.swift */,
+				EA2035C5233CBEB100864BCB /* MyAccountOptionsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2415,6 +2422,8 @@
 				1D180DBB229FC98B00FC3390 /* MyAccountDelegates.swift */,
 				4BFDF87322B217FB0066860D /* AccountDetailViewController.swift */,
 				EA1ACCB5232B9A510022482B /* ChangePasswordController.swift */,
+				EA2035BF233CBB9E00864BCB /* MyAccountOptionCell.swift */,
+				EA2035C0233CBB9E00864BCB /* MyAccountOptionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3763,6 +3772,7 @@
 				EACA2EA3232FB13F00891475 /* camera-switch@2x.png in Resources */,
 				EA188F82233507E300128877 /* ScanIDPolicy.xib in Resources */,
 				EA24B32C23164FFE0091D307 /* CurrencyProtectCell.xib in Resources */,
+				EA2035C2233CBB9E00864BCB /* MyAccountOptionCell.xib in Resources */,
 				EA1E5B1E2330E9150077BE94 /* camera-flash-off@2x in Resources */,
 				1D818A0921C1065A000C8F5F /* HomeTableSectionCell.xib in Resources */,
 				1D51758C21C6700500BCF9E4 /* TransactionDetailHistoryCell.xib in Resources */,
@@ -4048,6 +4058,7 @@
 				1D55EE82228593CE0003BEDB /* LoginApiRequest.swift in Sources */,
 				1D818A0B21C10E3E000C8F5F /* UITableViewExtension.swift in Sources */,
 				1D5AB31B22A7CF3800DB3B70 /* TwoFAVerifyBusinessModel.swift in Sources */,
+				EA2035C6233CBEB200864BCB /* MyAccountOptionsModel.swift in Sources */,
 				4BF4C35422B0C42D00743580 /* DateExtension.swift in Sources */,
 				1D44CCFF228EF0B7007382F2 /* UIDeviceHelper.swift in Sources */,
 				1DFE480B21D745DF003EFECA /* SignupDelegates.swift in Sources */,
@@ -4428,6 +4439,7 @@
 				1D29C84B22A917210092E3EB /* ChangeAddressResponse.swift in Sources */,
 				EA04727422E09F9800D5B834 /* DeletedACHNode.swift in Sources */,
 				EA1BA84F232678460047D831 /* BankCell.swift in Sources */,
+				EA2035C1233CBB9E00864BCB /* MyAccountOptionCell.swift in Sources */,
 				EA1FC15222F1526C002A7103 /* AMPConstants.m in Sources */,
 				EA313415231CF54600A77FDE /* RoutingVerificationPresenter.swift in Sources */,
 				4BFBC88822BB8B4E00B23B68 /* GetAppSettingsAPIRequest.swift in Sources */,

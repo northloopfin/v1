@@ -11,7 +11,7 @@ import AlertHelperKit
 
 class AccountDetailViewController: BaseViewController {
 
-    @IBOutlet weak var nameLbl: LabelWithLetterSpace!
+    @IBOutlet weak var bankName: UITextView!
     @IBOutlet weak var accountNumberLbl: LabelWithLetterSpace!
     @IBOutlet weak var rountingNumberLbl: LabelWithLetterSpace!
     @IBOutlet weak var swiftNumberLbl: LabelWithLetterSpace!
@@ -53,17 +53,6 @@ class AccountDetailViewController: BaseViewController {
     func prepareView(){
         self.setNavigationBarTitle(title: "Account Details")
         self.setupRightNavigationBar()
-        self.nameLbl.textColor = Colors.Taupe776857
-        self.accountNumberLbl.textColor = Colors.Taupe776857
-        self.rountingNumberLbl.textColor = Colors.Taupe776857
-        self.swiftNumberLbl.textColor = Colors.Taupe776857
-        
-        
-        //set font
-        self.nameLbl.font = AppFonts.textBoxCalibri16
-        self.accountNumberLbl.font = AppFonts.textBoxCalibri16
-        self.rountingNumberLbl.font = AppFonts.textBoxCalibri16
-        self.swiftNumberLbl.font = AppFonts.textBoxCalibri16
     }
 }
 
@@ -71,10 +60,30 @@ extension AccountDetailViewController:UserTransferDetailDelegate{
     func didFetchUserTransactionDetail(data: UserTransferDetailData) {
         let domesticAccountDetails = data.transferDetails.domestic
         let internationalAccountDetails = data.transferDetails.international
-        self.nameLbl.text = "Name: "+domesticAccountDetails.bankName
-        self.accountNumberLbl.text = "Account No: "+domesticAccountDetails.accountNumber
-        self.rountingNumberLbl.text = "Routing No: "+domesticAccountDetails.routing
-        self.swiftNumberLbl.text = "Swift No: "+internationalAccountDetails.swift
+        self.bankName.text = domesticAccountDetails.bankName
+        self.accountNumberLbl.attributedText = getAttributed(title: "Account No", value: domesticAccountDetails.accountNumber)
+        self.rountingNumberLbl.attributedText = getAttributed(title:"Routing No", value: domesticAccountDetails.routing)
+        self.swiftNumberLbl.attributedText = getAttributed(title:"Swift No", value: internationalAccountDetails.swift)
+    }
+    
+    func getAttributed(title:String, value:String) -> NSMutableAttributedString{
+        let str = NSAttributedString(
+            string: title + " :  ",
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: AppFonts.calibri14
+            ]
+        )
+        let str2 = NSAttributedString(
+            string: value,
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: AppFonts.calibriBold16
+            ]
+        )
+        
+        let combination = NSMutableAttributedString()
+        combination.append(str)
+        combination.append(str2)
+        return combination
     }
     
 }

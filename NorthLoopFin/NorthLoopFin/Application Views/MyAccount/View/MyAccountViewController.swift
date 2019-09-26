@@ -10,11 +10,11 @@ import UIKit
 import AlertHelperKit
 
 class MyAccountViewController: BaseViewController {
-    @IBOutlet weak var customViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var customView: CommonTable!
+    @IBOutlet weak var tableView: UITableView!
     
     var resetPresenter:ResetPasswordPresenter!
     var twoFApresenter:TwoFAPresenter!
+    var dataSource:[MyAccountOptionsModel] = []
 
     // var to track which option is clicked
     var isChangePhoneClicked:Bool=false
@@ -24,10 +24,8 @@ class MyAccountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
-        self.customView.delegate=self
         self.resetPresenter = ResetPasswordPresenter.init(delegate: self)
         self.twoFApresenter = TwoFAPresenter.init(delegate: self)
-
     }
     
     func resetChangeOptionVar(){
@@ -37,33 +35,50 @@ class MyAccountViewController: BaseViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        let shadowOffst = CGSize.init(width: 0, height: -55)
-        let shadowOpacity = 0.1
-        let shadowRadius = 49
-        let shadowColor = Colors.Taupe776857
-        self.customView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
-        self.customView.containerView.layer.roundCorners(radius: 15.0)
     }
     
     func prepareView(){
-        
-        var dataSource:[String] = []
-        dataSource.append(AppConstants.ProfileOptions.ACCOUNTDETAIL.rawValue)
-        dataSource.append(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue)
-        dataSource.append(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue)
-        dataSource.append(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue)
-        dataSource.append(AppConstants.ProfileOptions.APPSETTINGS.rawValue)
-        dataSource.append(AppConstants.ProfileOptions.LOGOUT.rawValue)
-
-        customView.dataSource = dataSource
-        customViewHeightConstraint.constant = CGFloat(dataSource.count*70)
         self.setNavigationBarTitle(title: "My Account")
         self.setupRightNavigationBar()
-        
+
+        dataSource.append(MyAccountOptionsModel.init(AppConstants.ProfileOptions.ACCOUNTDETAIL.rawValue, image: "ic_account_detail"))
+        dataSource.append(MyAccountOptionsModel.init(AppConstants.ProfileOptions.CHANGEADDRESS.rawValue, image: "ic_change_address"))
+        dataSource.append(MyAccountOptionsModel.init(AppConstants.ProfileOptions.CHANGEPASSWORD.rawValue, image: "ic_change_password"))
+        dataSource.append(MyAccountOptionsModel.init(AppConstants.ProfileOptions.CHANGEPHONENUMBER.rawValue, image: "ic_change_phone"))
+        dataSource.append(MyAccountOptionsModel.init(AppConstants.ProfileOptions.APPSETTINGS.rawValue, image: "ic_app_setting"))
+        dataSource.append(MyAccountOptionsModel.init(AppConstants.ProfileOptions.LOGOUT.rawValue, image: "ic_logout"))
+        configureTableView()
     }
 }
 
-extension MyAccountViewController:CommonTableDelegate{
+
+extension MyAccountViewController:UITableViewDelegate,UITableViewDataSource{
+    func configureTableView(){
+        self.tableView.rowHeight = 84
+        self.tableView.registerTableViewCell(tableViewCell: MyAccountOptionCell.self)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: MyAccountOptionCell = tableView.dequeueReusableCell(withIdentifier: "MyAccountOptionCell") as! MyAccountOptionCell
+        let option = dataSource[indexPath.row]
+        cell.lblTitle.text = option.option
+        cell.imgPreview.image = UIImage(named: option.imageName)
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return self.tableView.rowHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectOption(optionVal: indexPath.row)
+    }
+    
     func didSelectOption(optionVal: Int) {
         self.resetChangeOptionVar()
         switch optionVal {
@@ -76,8 +91,8 @@ extension MyAccountViewController:CommonTableDelegate{
             self.showConfirmPopUp()
         case 2:
             self.navigationController?.pushViewController(self.getControllerWithIdentifier("ChangePasswordController"), animated: true)
-//            self.isChangePasswordClicked=true
-//            self.showConfirmPopUp()
+            //            self.isChangePasswordClicked=true
+        //            self.showConfirmPopUp()
         case 3:
             //change Phone Number
             self.isChangePhoneClicked=true
@@ -127,7 +142,7 @@ extension MyAccountViewController:CommonTableDelegate{
                     self.performActionAccordingToSelectedOptionToChangeWhenNoAuth()
                 }else{
                     self.initiateBiometric()
-
+                    
                 }
             }
         }
@@ -200,14 +215,15 @@ extension MyAccountViewController:CommonTableDelegate{
         vc.screenThatInitiatedThisFlow = AppConstants.Screens.CHANGEADDRESS
         self.navigationController?.pushViewController(vc, animated: false)
     }
-}
 
+}
 
 extension MyAccountViewController: ResetPasswordDelegate{
     func didSentResetPasswordRequest(){
         self.showAlert(title: AppConstants.ErrorHandlingKeys.SUCESS_TITLE.rawValue, message: AppConstants.ErrorMessages.RESET_EMAIL_SENT.rawValue)
     }
 }
+
 extension MyAccountViewController:TwoFADelegates{
     func didGetOTP() {
         //move to OTP screen
