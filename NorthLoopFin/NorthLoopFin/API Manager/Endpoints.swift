@@ -45,6 +45,7 @@ struct Endpoints{
         case CHECKADDRESS = "https://api.lob.com/v1/us_verifications"
         case CREDITCARD = "banking/creditCard"
         case ACCOUNTAGGREGATE = "banking/account-aggregate"
+        case ACHDEBIT = "banking/ach-debit/transaction"
         case CAMPUSPOLL = "campus/poll"
         case CAMPUSVOTE = "campus/vote"
         case CAMPUSSTATUS = "campus/status"

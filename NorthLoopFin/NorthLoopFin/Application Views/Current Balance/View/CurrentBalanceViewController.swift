@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MFSideMenu
 
 class CurrentBalanceViewController: BaseViewController {
 
@@ -15,6 +16,7 @@ class CurrentBalanceViewController: BaseViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRightNavigationBar()
         let currentUser = UserInformationUtility.sharedInstance.getCurrentUser()
         self.balanceLabel.text = "$"+String(currentUser!.amount)
 
@@ -29,14 +31,17 @@ class CurrentBalanceViewController: BaseViewController {
     @IBAction func transferButtonAction(_ sender: Any) {
         AppDelegate.getDelegate().isAddFlow = false
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func setupRightNavigationBar(){
+        let leftBarItem = UIBarButtonItem()
+        leftBarItem.style = UIBarButtonItem.Style.plain
+        leftBarItem.target = self
+        leftBarItem.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.action = #selector(self.openMenu)
+        navigationItem.leftBarButtonItem = leftBarItem
     }
-    */
 
+    @objc func openMenu(){
+        self.menuContainerViewController.setMenuState(MFSideMenuStateLeftMenuOpen, completion: {})
+    }
 }

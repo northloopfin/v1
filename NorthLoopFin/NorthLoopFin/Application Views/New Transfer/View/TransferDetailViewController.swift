@@ -16,9 +16,11 @@ class TransferDetailViewController: BaseViewController {
     
     var accountInfoPresenter : AccountInfoPresenter!
     var presenter:ACHTransactionPresenter!
+    var achDebitpresenter:ACHDebitTransactionPresenter!
 
     var data:[TransferDetailCellModel]=[]
     var amount:String = ""
+    var addFund:Bool = false
     var node:ACHNode!
     
     @IBOutlet weak var bottomView: UIView!
@@ -28,8 +30,6 @@ class TransferDetailViewController: BaseViewController {
         self.prepareView()
         self.tableView.reloadData()
         
-        presenter = ACHTransactionPresenter.init(delegate: self)
-        accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
 
         // Do any additional setup after loading the view.
     }
@@ -37,8 +37,10 @@ class TransferDetailViewController: BaseViewController {
     func prepareView()
     {
         configureTableView()
-        let row1 = TransferDetailCellModel.init(AppConstants.TransferDetail.FROM.rawValue, detailValue: "North Loop Bank")
-        let row2 = TransferDetailCellModel.init(AppConstants.TransferDetail.TO.rawValue, detailValue: node.nickname)
+        let from = addFund ? node.nickname : "North Loop Bank"
+        let to = addFund ? "North Loop Bank": node.nickname
+        let row1 = TransferDetailCellModel.init(AppConstants.TransferDetail.FROM.rawValue, detailValue: from)
+        let row2 = TransferDetailCellModel.init(AppConstants.TransferDetail.TO.rawValue, detailValue: to)
         let row3 = TransferDetailCellModel.init(AppConstants.TransferDetail.TIME.rawValue, detailValue: "1 - 2 business days")
         let row4 = TransferDetailCellModel.init(AppConstants.TransferDetail.FEES.rawValue, detailValue: "$ 0.00")
         let row5 = TransferDetailCellModel.init(AppConstants.TransferDetail.TOTALAMOUNT.rawValue, detailValue: "$ " + amount)
@@ -52,7 +54,16 @@ class TransferDetailViewController: BaseViewController {
     }
 
     @IBAction func transferAmountButtonAction(_ sender: Any) {
-        accountInfoPresenter.getAccountInfo()
+        if addFund {
+            achDebitpresenter = ACHDebitTransactionPresenter.init(delegate: self)
+            achDebitpresenter.sendACHDebitTransactionRequest(amount: amount, nodeID: node.node_id)
+        }else{
+            accountInfoPresenter = AccountInfoPresenter.init(delegate: self)
+            accountInfoPresenter.getAccountInfo()
+        }
+    }
+    @IBAction func cancel_pressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -65,6 +76,7 @@ extension TransferDetailViewController:HomeDelegate{
         if (data.data.info.balance.amount.isLess(than: Double(self.amount) ?? 0.0)){
             self.showAlert(title: AppConstants.ErrorHandlingKeys.ERROR_TITLE.rawValue, message: AppConstants.ErrorMessages.INSUFFICIENT_BALANCE.rawValue)
         }else{
+            presenter = ACHTransactionPresenter.init(delegate: self)
             self.presenter.sendACHTransactionRequest(amount: amount, nodeID: (node.node_id))
         }
     }
@@ -79,6 +91,14 @@ extension TransferDetailViewController:ACHTransactionDelegates{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "TransferSuceessViewController") as! TransferSuceessViewController
         self.navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
+extension TransferDetailViewController:ACHDebitTransactionDelegate{
+    func didFetchACHDebitTransaction(data: TransactionDetail) {
+        if data.data.statusCode == 200 {
+            self.moveToSucessScreen()
+        }
     }
 }
 

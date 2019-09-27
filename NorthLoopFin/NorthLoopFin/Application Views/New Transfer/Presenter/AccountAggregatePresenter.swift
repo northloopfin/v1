@@ -18,7 +18,6 @@ class AccountAggregatePresenter: ResponseCallback{
         self.delegate = responseDelegate
     }
     
-    //    Send Login Request to Business Login
     func sendAccountAggregateRequest(bank:String,id:String,password:String){
         self.delegate?.showLoader()
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
@@ -65,3 +64,5 @@ class AccountAggregatePresenter: ResponseCallback{
         self.delegate?.showErrorAlert(error.getErrorTitle(), alertMessage:  error.getErrorMessage())
     }
 }
+
+

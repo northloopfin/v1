@@ -91,6 +91,12 @@ class BaseViewController: UIViewController, BaseViewProtocol {
         self.present(alertController, animated: true, completion: nil)
     }
 
+    func showAlertWithHandler(title: String, message: String,delegate : @escaping (UIAlertAction) ->Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: delegate))
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     func showActionSheet(title : String, message : String, titleArray : [String],delegate : @escaping (UIAlertAction) ->Void) {
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.actionSheet)
         for values in titleArray{

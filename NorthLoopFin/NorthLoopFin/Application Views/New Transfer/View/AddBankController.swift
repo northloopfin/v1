@@ -109,7 +109,7 @@ class AddBankController: BaseViewController {
             self.deleteNodePresenter.deleteNodeRequest(nodeids: nodeIds)
         }else{
             self.showAlert(title: "", message: "Acount Linked Successfully!")
-            closeVerification()
+            showLinkSucceeed()
         }
     }
     
@@ -128,7 +128,6 @@ class AddBankController: BaseViewController {
                 self.imgBankLogo.setImageWith(url)
             }
         }
-
     }
     
     func closeVerification(){
@@ -148,42 +147,39 @@ class AddBankController: BaseViewController {
         }
         self.tableView.reloadData()
     }
+    
+    func showLinkSucceeed(){
+        self.showAlertWithHandler(title: "", message: "Acount Linked Successfully!") { (action: UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
 extension AddBankController:AccountAggregateDelegate{
     func didFetchAccountAggregate(data: AccountAggregate) {
         aggregateData = data.data
-        if aggregateData.statusCode == 200{
-//            if data.data.nodes.count > 1{
-                selectedNodeId = ""
-                btnConfirm.isEnabled = false
-                self.constTableAccountSelect.constant = CGFloat(aggregateData.nodes.count) * self.tableView.rowHeight
-                self.vwSecurityQuestion.isHidden = true
-                self.vwAccountSelection.isHidden = false
-                self.tableAccountSelect.reloadData()
-//            }else{
-//                self.showAlert(title: "", message: "Acount Linked Successfully!")
-//                closeVerification()
-//            }
-        }else{
-            if data.data.access_token.count > 0{
-                //            if data.message.count > 0{
-                //                self.showAlert(title: "", message: data.message)
-                //            }
-                self.vwBankLogin.isHidden = true
-                self.vwSecurityQuestion.isHidden = false
-                self.lblVerificationTitle.text = data.message
-                self.btnVerifyContinue.isEnabled = false
-                self.txtSecurityAnswer.text = ""
-            }
+        if data.data.access_token.count > 0{
+            // display security question/anwer popup
+            self.vwBankLogin.isHidden = true
+            self.vwSecurityQuestion.isHidden = false
+            self.lblVerificationTitle.text = data.message
+            self.btnVerifyContinue.isEnabled = false
+            self.txtSecurityAnswer.text = ""
+        }else if aggregateData.nodes.count > 1 {
+            // display account selection popup
+            selectedNodeId = ""
+            btnConfirm.isEnabled = false
+            self.constTableAccountSelect.constant = CGFloat(aggregateData.nodes.count) * self.tableView.rowHeight
+            self.vwSecurityQuestion.isHidden = true
+            self.vwAccountSelection.isHidden = false
+            self.tableAccountSelect.reloadData()
         }
     }
 }
 
 extension AddBankController:DeleteNodeDelegate{
     func didDeleteNode(data: DeleteNode) {
-        self.showAlert(title: "", message: "Acount Linked Successfully!")
-        closeVerification()
+        showLinkSucceeed()
     }
 }
 

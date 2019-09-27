@@ -498,6 +498,11 @@
 		EA22BDB9232794A60022BACD /* BankCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BDB7232794A60022BACD /* BankCollectionCell.swift */; };
 		EA22BDBA232794A60022BACD /* BankCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA22BDB8232794A60022BACD /* BankCollectionCell.xib */; };
 		EA22BDBC2327963A0022BACD /* AddBankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22BDBB2327963A0022BACD /* AddBankController.swift */; };
+		EA235889233DE5FE007EE604 /* ACHDebitTransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA235885233DE5FD007EE604 /* ACHDebitTransactionBusinessModel.swift */; };
+		EA23588A233DE5FE007EE604 /* ACHDebitTransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA235886233DE5FD007EE604 /* ACHDebitTransactionRequestModel.swift */; };
+		EA23588B233DE5FE007EE604 /* ACHDebitTransactionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA235887233DE5FD007EE604 /* ACHDebitTransactionDelegate.swift */; };
+		EA23588C233DE5FE007EE604 /* ACHDebitTransactionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA235888233DE5FD007EE604 /* ACHDebitTransactionAPIRequest.swift */; };
+		EA23588E233DE60B007EE604 /* ACHDebitTransactionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA23588D233DE60A007EE604 /* ACHDebitTransactionPresenter.swift */; };
 		EA24B32C23164FFE0091D307 /* CurrencyProtectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA24B32523164FFE0091D307 /* CurrencyProtectCell.xib */; };
 		EA24B32D23164FFE0091D307 /* CurrencyProtectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24B32623164FFE0091D307 /* CurrencyProtectCell.swift */; };
 		EA24B32E23164FFE0091D307 /* CurrencyProtectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24B32723164FFE0091D307 /* CurrencyProtectController.swift */; };
@@ -1160,6 +1165,11 @@
 		EA22BDB7232794A60022BACD /* BankCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionCell.swift; sourceTree = "<group>"; };
 		EA22BDB8232794A60022BACD /* BankCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCollectionCell.xib; sourceTree = "<group>"; };
 		EA22BDBB2327963A0022BACD /* AddBankController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankController.swift; sourceTree = "<group>"; };
+		EA235885233DE5FD007EE604 /* ACHDebitTransactionBusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHDebitTransactionBusinessModel.swift; sourceTree = "<group>"; };
+		EA235886233DE5FD007EE604 /* ACHDebitTransactionRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHDebitTransactionRequestModel.swift; sourceTree = "<group>"; };
+		EA235887233DE5FD007EE604 /* ACHDebitTransactionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHDebitTransactionDelegate.swift; sourceTree = "<group>"; };
+		EA235888233DE5FD007EE604 /* ACHDebitTransactionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHDebitTransactionAPIRequest.swift; sourceTree = "<group>"; };
+		EA23588D233DE60A007EE604 /* ACHDebitTransactionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACHDebitTransactionPresenter.swift; sourceTree = "<group>"; };
 		EA24B32523164FFE0091D307 /* CurrencyProtectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyProtectCell.xib; sourceTree = "<group>"; };
 		EA24B32623164FFE0091D307 /* CurrencyProtectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProtectCell.swift; sourceTree = "<group>"; };
 		EA24B32723164FFE0091D307 /* CurrencyProtectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProtectController.swift; sourceTree = "<group>"; };
@@ -3104,6 +3114,17 @@
 			path = Cashback;
 			sourceTree = "<group>";
 		};
+		EA235884233DE5FD007EE604 /* ACH-Debit */ = {
+			isa = PBXGroup;
+			children = (
+				EA235885233DE5FD007EE604 /* ACHDebitTransactionBusinessModel.swift */,
+				EA235886233DE5FD007EE604 /* ACHDebitTransactionRequestModel.swift */,
+				EA235887233DE5FD007EE604 /* ACHDebitTransactionDelegate.swift */,
+				EA235888233DE5FD007EE604 /* ACHDebitTransactionAPIRequest.swift */,
+			);
+			path = "ACH-Debit";
+			sourceTree = "<group>";
+		};
 		EA24B32023164FFD0091D307 /* Currency Protect */ = {
 			isa = PBXGroup;
 			children = (
@@ -3341,6 +3362,7 @@
 				EA194A8423320BD3005507FC /* AccountAggregatePresenter.swift */,
 				EA8D0D08232BA6C1002013BD /* InstitutionsPresenter.swift */,
 				EA2134D1233B408B0022E32D /* DeleteNodePresenter.swift */,
+				EA23588D233DE60A007EE604 /* ACHDebitTransactionPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -3596,6 +3618,7 @@
 			isa = PBXGroup;
 			children = (
 				F4EE1B8A230C6D3900CCA1E6 /* TransferDetailCellModel.swift */,
+				EA235884233DE5FD007EE604 /* ACH-Debit */,
 				EA194A7B23320BAB005507FC /* AddBank */,
 				EA2134C8233B40780022E32D /* DeleteNode */,
 				EA8D0CFE232BA691002013BD /* Institutions */,
@@ -3951,6 +3974,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D259D98228BDEAB0053D0AB /* TransactionDetailData.swift in Sources */,
+				EA23588A233DE5FE007EE604 /* ACHDebitTransactionRequestModel.swift in Sources */,
 				EAE5604122FD8529009B2C2E /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				EAB3064423214993009EFD8D /* RequestCreditCardPresenter.swift in Sources */,
 				4BFBC88E22BB8CF600B23B68 /* SettingsDelegates.swift in Sources */,
@@ -4261,6 +4285,7 @@
 				4B15361922DDA2B0009CE548 /* UIImage+Gif.swift in Sources */,
 				297FB99E21B51A32008D60CE /* AppDelegate.swift in Sources */,
 				EA1902EF230D76A6002FE7FC /* RedeemCashbackBusinessModel.swift in Sources */,
+				EA23588C233DE5FE007EE604 /* ACHDebitTransactionAPIRequest.swift in Sources */,
 				EA6858D32302842000EEC67D /* UIButtonExtension.swift in Sources */,
 				1D79792722A10926003F36A4 /* LocationService.swift in Sources */,
 				EA8984B422FC491A00B4C33C /* HomeTabController.swift in Sources */,
@@ -4288,6 +4313,7 @@
 				1D180D72229E4D5500FC3390 /* ZendeskBusiness.swift in Sources */,
 				EAB3064823214993009EFD8D /* FetchCreditCardBusinessLogic.swift in Sources */,
 				1D818A0721C1063B000C8F5F /* HomeTableSectionCell.swift in Sources */,
+				EA235889233DE5FE007EE604 /* ACHDebitTransactionBusinessModel.swift in Sources */,
 				F41A6A6A23068F170053AF0D /* CurrentBalanceViewController.swift in Sources */,
 				EA1BA85123267B8B0047D831 /* TransferCreditToViewController.swift in Sources */,
 				1DF64E2121E61824008774CE /* SideMenuViewController.swift in Sources */,
@@ -4331,6 +4357,7 @@
 				EA04726122E070F800D5B834 /* ViewAccountsViewController.swift in Sources */,
 				1D259DA4228BE1630053D0AB /* TransactionDetailRecipient.swift in Sources */,
 				EACA2EA4232FB13F00891475 /* LLSimpleCamera+Helper.m in Sources */,
+				EA23588B233DE5FE007EE604 /* ACHDebitTransactionDelegate.swift in Sources */,
 				1D9EFE0521C8DCEC004C1C77 /* UINavigationBarExtenion.swift in Sources */,
 				1D5AB2F322A7965E00DB3B70 /* SetPinPresenter.swift in Sources */,
 				EA9E843722E88FE7009D95CD /* IP+Extension.swift in Sources */,
@@ -4447,6 +4474,7 @@
 				1DFE481121DA393A003EFECA /* PhoneVerificationCheckAPIRequest.swift in Sources */,
 				EA24B366231688EF0091D307 /* ClaimRefundRequestModel.swift in Sources */,
 				1D180DB6229FC53C00FC3390 /* TransferDetails.swift in Sources */,
+				EA23588E233DE60B007EE604 /* ACHDebitTransactionPresenter.swift in Sources */,
 				EA8D0CF1232BA54E002013BD /* ScanPassportController.swift in Sources */,
 				4BFBC87E22BB80DA00B23B68 /* ShareAccountDetailsBusinessLogic.swift in Sources */,
 				1DC6A76C21F5AA1700C38205 /* Fonts.swift in Sources */,
