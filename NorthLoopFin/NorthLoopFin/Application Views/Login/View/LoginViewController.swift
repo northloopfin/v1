@@ -23,10 +23,14 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var rememberMeCheckBox: CheckBox!
     @IBOutlet weak var showPasswordBtn: UIButton!
     
+    @IBOutlet weak var termsAgreementLbl: LabelWithLetterSpace!
+    @IBOutlet weak var termsPolicyCheckBox: CheckBox!
+
     var loginPresenter:LoginPresenter!
     var zendeskPresenter:ZendeskPresenter!
     var isRememberMeSelected:Bool = false
     var loginType = "Password"
+    var isTermsPolicyChecked:Bool=false
 
     
     @IBAction func forgetPasswordClicked(_ sender: Any) {
@@ -51,6 +55,12 @@ class LoginViewController: BaseViewController {
     @IBAction func valueChanged(_ sender: Any) {
         let check = sender as! CheckBox
         self.isRememberMeSelected = check.isChecked
+    }
+    
+    @IBAction func checkBoxvalueChanged(_ sender: Any) {
+        let check = sender as! CheckBox
+        self.isTermsPolicyChecked = check.isChecked
+        checkMandatoryFields()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +98,13 @@ class LoginViewController: BaseViewController {
         self.rememberMeCheckBox.isChecked=self.isRememberMeSelected
         //self.rememberMeCheckBox.borderStyle = .roundedSquare(radius: 8)
         
+        self.termsAgreementLbl.underLineText(fullText: self.termsAgreementLbl.text ?? "", underlinedText: "Terms of Service and Privacy Policy")
+        self.termsPolicyCheckBox.style = .tick
+        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 3)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
+        self.termsAgreementLbl.addGestureRecognizer(tap)
+        self.termsAgreementLbl.isUserInteractionEnabled = true
+
         self.passwordTextfield.isSecureTextEntry=true
         self.loginBtn.isEnabled=false
         self.mainTitleLbl.textColor=Colors.MainTitleColor
@@ -129,6 +146,19 @@ class LoginViewController: BaseViewController {
             checkMandatoryFields()
         }
     }
+    
+    @objc func tapLabel(tap: UITapGestureRecognizer) {
+        if let rangeForDeposit = self.termsAgreementLbl.text?.range(of: "Terms of Service and Privacy Policy")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.termsAgreementLbl, inRange: rangeForDeposit) {
+                // Substring tapped
+                //open deposit agreement
+                let vc = self.getControllerWithIdentifier( "AgreementViewController") as! AgreementViewController
+                vc.agreementType = AppConstants.AGREEMENTTYPE.ACCOUNT
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
+        }
+    }
+
     //change appearance of done button
     func changeApperanceOfDone(){
         self.loginBtn.isEnabled=true
@@ -196,17 +226,19 @@ class LoginViewController: BaseViewController {
 //MARK: UITextFiled Delegates
 extension LoginViewController:UITextFieldDelegate{
     fileprivate func checkMandatoryFields() {
-        if (!(self.emailTextField.text?.isEmpty)! && !(self.passwordTextfield.text?.isEmpty)!)// && !(self.emailTextField.text?.isEmpty)! )
+        if (!(self.emailTextField.text?.isEmpty)! && !(self.passwordTextfield.text?.isEmpty)! && isTermsPolicyChecked)// && !(self.emailTextField.text?.isEmpty)! )
         {
             
             self.changeApperanceOfDone()
+        }else{
+            self.inactivateDoneBtn()
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (!(self.emailTextField.text?.isEmpty)! && !(self.passwordTextfield.text?.isEmpty)!){
         self.view.endEditing(true)
-        self.loginClicked(loginBtn)
+        if (!(self.emailTextField.text?.isEmpty)! && !(self.passwordTextfield.text?.isEmpty)! && isTermsPolicyChecked){
+            self.loginClicked(loginBtn)
         }
         return false
     }

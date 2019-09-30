@@ -1196,10 +1196,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-xo-vSO" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="203.5" width="46" height="34"/>
+                                <rect key="frame" x="25" y="203.5" width="325" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50X-HH-94b">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1215,7 +1215,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-RS-fdv">
-                                <rect key="frame" x="25" y="262.5" width="46" height="69"/>
+                                <rect key="frame" x="25" y="262.5" width="325" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-V7-90t">
                                         <rect key="frame" x="21" y="17.5" width="59" height="34"/>
@@ -1236,7 +1236,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x81-pn-kP6">
-                                        <rect key="frame" x="8" y="0.0" width="38" height="69"/>
+                                        <rect key="frame" x="8" y="0.0" width="317" height="69"/>
                                         <connections>
                                             <action selector="scanFrontClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="dJh-Wf-QZR"/>
                                         </connections>
@@ -1257,10 +1257,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAm-rZ-EwB">
-                                <rect key="frame" x="25" y="348.5" width="46" height="69"/>
+                                <rect key="frame" x="25" y="348.5" width="325" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-rp-sZl">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="69"/>
                                         <connections>
                                             <action selector="scanBackClicked:" destination="V93-oX-EQZ" eventType="touchUpInside" id="uLY-ls-sWh"/>
                                         </connections>
@@ -1299,7 +1299,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-Na-LzZ" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="497.5" width="46" height="45"/>
+                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jp4-O9-PWE"/>
@@ -1392,10 +1392,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-vg-Owi" customClass="UIScrollView">
-                                <rect key="frame" x="25" y="194.5" width="325" height="34"/>
+                                <rect key="frame" x="25" y="194.5" width="126" height="34"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-Kp-deV">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="34"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1411,7 +1411,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-xW-A7B">
-                                <rect key="frame" x="25" y="253.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="253.5" width="126" height="69"/>
                                 <subviews>
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scanFrontId" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-ev-rK7">
                                         <rect key="frame" x="21" y="12" width="60" height="45"/>
@@ -1432,7 +1432,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-HS-rum">
-                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="Pbq-ka-Xqp"/>
                                         </connections>
@@ -1453,10 +1453,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PX-9n-Y8b">
-                                <rect key="frame" x="25" y="332.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="332.5" width="126" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFs-V2-k3t">
-                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="2o1-DH-qN9"/>
                                         </connections>
@@ -1497,7 +1497,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCy-ip-oLr" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="497.5" width="325" height="45"/>
+                                <rect key="frame" x="25" y="497.5" width="126" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="PUf-ZF-Lkh"/>
@@ -1513,10 +1513,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KH5-E1-Z8N">
-                                <rect key="frame" x="25" y="411.5" width="325" height="69"/>
+                                <rect key="frame" x="25" y="411.5" width="126" height="69"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-Pw-XBa">
-                                        <rect key="frame" x="96" y="0.0" width="229" height="69"/>
+                                        <rect key="frame" x="96" y="0.0" width="30" height="69"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="takeImageClicked:" destination="h2s-SS-yUA" eventType="touchUpInside" id="y2h-87-oBI"/>
@@ -1558,7 +1558,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-NH-3af" customClass="ProgressView" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="12" y="141.5" width="351" height="8"/>
+                                <rect key="frame" x="12" y="141.5" width="152" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="jXF-Fi-w20"/>
@@ -5456,7 +5456,7 @@ up and site back and relax.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gy8-Hi-yGt" customClass="RippleButton" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="381" width="325" height="45"/>
+                                <rect key="frame" x="25" y="431" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.68865770100000001" green="0.28693383929999999" blue="0.583830297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7uA-x8-xEK"/>
@@ -5481,7 +5481,7 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-OD-yLW">
-                                <rect key="frame" x="25" y="461" width="325" height="45"/>
+                                <rect key="frame" x="25" y="511" width="325" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="WZq-MR-K2a"/>
@@ -5525,8 +5525,61 @@ up and site back and relax.</string>
                                     <outlet property="delegate" destination="Osz-9E-BWI" id="whS-EA-3Oh"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POl-S0-an7">
+                                <rect key="frame" x="0.0" y="283" width="375" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xE7-jV-wyQ" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="8" width="24" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="BUZ-ZB-WA2"/>
+                                            <constraint firstAttribute="height" constant="24" id="h5H-xT-OR3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="uncheckedBorderColor">
+                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
+                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
+                                                <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="checkBoxvalueChanged:" destination="Osz-9E-BWI" eventType="valueChanged" id="3xM-P9-Kup"/>
+                                        </connections>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="I have read and agree to the Terms of Service and Privacy Policy" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-pX-T0Y" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                        <rect key="frame" x="64" y="0.0" width="291" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="T6V-kL-hSo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FTD-LL-7cF"/>
+                                    <constraint firstItem="xE7-jV-wyQ" firstAttribute="leading" secondItem="POl-S0-an7" secondAttribute="leading" constant="25" id="JkX-x1-SId"/>
+                                    <constraint firstItem="xE7-jV-wyQ" firstAttribute="top" secondItem="POl-S0-an7" secondAttribute="top" constant="8" id="MF2-Gg-jCF"/>
+                                    <constraint firstItem="0Or-pX-T0Y" firstAttribute="leading" secondItem="xE7-jV-wyQ" secondAttribute="trailing" constant="15" id="OIY-8l-fP3"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Or-pX-T0Y" secondAttribute="trailing" constant="20" id="n3s-bQ-b1B"/>
+                                    <constraint firstItem="0Or-pX-T0Y" firstAttribute="top" secondItem="POl-S0-an7" secondAttribute="top" id="nNP-cg-GXl"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHA-q3-GWQ" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="179.5" y="434" width="16" height="19"/>
+                                <rect key="frame" x="179.5" y="484" width="16" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="JdV-PM-fba"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="y8R-gk-xoR"/>
@@ -5548,7 +5601,7 @@ up and site back and relax.</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-OH-9h8" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="126" y="328" width="123" height="31"/>
+                                <rect key="frame" x="126" y="378" width="123" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QWi-eE-eHQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="WYe-i4-xGb"/>
@@ -5567,12 +5620,10 @@ up and site back and relax.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-lY-QMx" customClass="UIButtonWithSpacing" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="55" y="280" width="108" height="31"/>
+                                <rect key="frame" x="55" y="330" width="108" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="8GE-Kv-yBG"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="Kcp-cX-Tph"/>
                                     <constraint firstAttribute="height" constant="31" id="LyW-Ht-OzD"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="glF-vd-GCf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="15"/>
                                 <state key="normal" title="Remember me">
@@ -5603,7 +5654,7 @@ up and site back and relax.</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vla-3W-ISn" customClass="CheckBox" customModule="NorthLoopFin" customModuleProvider="target">
-                                <rect key="frame" x="25" y="283" width="25" height="25"/>
+                                <rect key="frame" x="25" y="333" width="25" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -5643,6 +5694,7 @@ up and site back and relax.</string>
                         <constraints>
                             <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" secondItem="gy8-Hi-yGt" secondAttribute="trailing" constant="25" id="1G1-UD-TZh"/>
                             <constraint firstItem="E8Q-r1-RkV" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="6ak-Y0-MdL"/>
+                            <constraint firstItem="POl-S0-an7" firstAttribute="top" secondItem="GLl-Nt-dZh" secondAttribute="bottom" constant="10" id="AHD-TX-eav"/>
                             <constraint firstItem="gy8-Hi-yGt" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="AjN-Lr-YQI"/>
                             <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E8Q-r1-RkV" secondAttribute="trailing" symbolic="YES" id="BWB-oO-i5P"/>
                             <constraint firstItem="E8Q-r1-RkV" firstAttribute="top" secondItem="LMG-Zb-GLr" secondAttribute="bottom" constant="20" id="Bxf-DD-6Sm"/>
@@ -5657,20 +5709,22 @@ up and site back and relax.</string>
                             <constraint firstItem="CAg-OH-9h8" firstAttribute="centerX" secondItem="SQc-V8-KDu" secondAttribute="centerX" id="Mmz-Hn-jMM"/>
                             <constraint firstItem="LMG-Zb-GLr" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="Nvl-80-fFd"/>
                             <constraint firstItem="Srp-Bt-mJa" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" id="OaU-fX-LeE"/>
-                            <constraint firstItem="Vla-3W-ISn" firstAttribute="top" secondItem="GLl-Nt-dZh" secondAttribute="bottom" constant="10" id="Q7i-m7-0ve"/>
                             <constraint firstItem="Srp-Bt-mJa" firstAttribute="top" secondItem="SQc-V8-KDu" secondAttribute="top" id="R98-WB-ihh"/>
                             <constraint firstItem="Vla-3W-ISn" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="ScW-uy-ubb"/>
                             <constraint firstItem="fgQ-Qe-dSd" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="U6I-a9-XLL"/>
+                            <constraint firstItem="Vla-3W-ISn" firstAttribute="top" secondItem="POl-S0-an7" secondAttribute="bottom" constant="10" id="UYo-ac-oTf"/>
                             <constraint firstItem="YHA-q3-GWQ" firstAttribute="top" secondItem="gy8-Hi-yGt" secondAttribute="bottom" constant="8" id="Xgv-dM-67o"/>
                             <constraint firstItem="gy8-Hi-yGt" firstAttribute="top" secondItem="CAg-OH-9h8" secondAttribute="bottom" constant="22" id="alL-Q0-8El"/>
                             <constraint firstItem="NXW-u0-7Do" firstAttribute="trailing" secondItem="GLl-Nt-dZh" secondAttribute="trailing" constant="-15" id="dvk-rp-eth"/>
                             <constraint firstItem="GLl-Nt-dZh" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" constant="25" id="eiG-7p-kys"/>
                             <constraint firstItem="CAg-OH-9h8" firstAttribute="top" secondItem="xjh-lY-QMx" secondAttribute="bottom" constant="17" id="fcf-h1-Mdf"/>
                             <constraint firstItem="PhY-OD-yLW" firstAttribute="top" secondItem="YHA-q3-GWQ" secondAttribute="bottom" constant="8" id="gnf-55-wue"/>
-                            <constraint firstItem="xjh-lY-QMx" firstAttribute="top" secondItem="GLl-Nt-dZh" secondAttribute="bottom" constant="7" id="hGh-n0-LFB"/>
                             <constraint firstItem="LMG-Zb-GLr" firstAttribute="top" secondItem="EmF-Hm-mGN" secondAttribute="top" constant="30" id="hs2-5A-l2u"/>
                             <constraint firstItem="YHA-q3-GWQ" firstAttribute="centerX" secondItem="SQc-V8-KDu" secondAttribute="centerX" id="mAq-kD-iEg"/>
+                            <constraint firstItem="xjh-lY-QMx" firstAttribute="top" secondItem="POl-S0-an7" secondAttribute="bottom" constant="7" id="mx0-KL-t0l"/>
                             <constraint firstItem="EmF-Hm-mGN" firstAttribute="trailing" secondItem="GLl-Nt-dZh" secondAttribute="trailing" constant="25" id="nbd-bN-440"/>
+                            <constraint firstItem="POl-S0-an7" firstAttribute="leading" secondItem="EmF-Hm-mGN" secondAttribute="leading" id="ss2-gT-uTG"/>
+                            <constraint firstItem="POl-S0-an7" firstAttribute="trailing" secondItem="EmF-Hm-mGN" secondAttribute="trailing" id="wkI-Nm-71w"/>
                             <constraint firstItem="xjh-lY-QMx" firstAttribute="leading" secondItem="Vla-3W-ISn" secondAttribute="trailing" constant="5" id="xkU-Ed-WCQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EmF-Hm-mGN"/>
@@ -5693,6 +5747,8 @@ up and site back and relax.</string>
                         <outlet property="passwordTextfield" destination="GLl-Nt-dZh" id="0TR-1a-mb7"/>
                         <outlet property="rememberMeCheckBox" destination="Vla-3W-ISn" id="Ddj-cs-NrA"/>
                         <outlet property="showPasswordBtn" destination="NXW-u0-7Do" id="Oot-tC-6uD"/>
+                        <outlet property="termsAgreementLbl" destination="0Or-pX-T0Y" id="00D-yM-axO"/>
+                        <outlet property="termsPolicyCheckBox" destination="xE7-jV-wyQ" id="NwW-hm-9VG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9f-59-tQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10398,7 +10454,7 @@ maximum cashback</string>
                                 <rect key="frame" x="0.0" y="20" width="375" height="105"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-H1-m7B" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="84" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="89.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="EPO-Sg-ycj"/>
                                         </constraints>
@@ -10412,7 +10468,7 @@ maximum cashback</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debit from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A5-Jq-W4Q" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="75" width="70.5" height="17"/>
+                                        <rect key="frame" x="25" y="75" width="75" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="r1e-9L-tKR"/>
                                         </constraints>
@@ -10533,7 +10589,7 @@ maximum cashback</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer takes 1-2 bussiness days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oz-fU-6zR" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                                                <rect key="frame" x="162" y="67.5" width="159.5" height="13"/>
+                                                                <rect key="frame" x="162" y="67.5" width="182.5" height="13"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="13" id="O8u-9m-aad"/>
                                                                 </constraints>
@@ -10802,7 +10858,7 @@ maximum cashback</string>
                                 <rect key="frame" x="0.0" y="20" width="375" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your bank" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPB-sE-Fjh" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="25" width="172.5" height="25"/>
+                                        <rect key="frame" x="25" y="25" width="188" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="KpR-sa-V82"/>
                                         </constraints>
