@@ -19,6 +19,7 @@ class AddBankController: BaseViewController {
     @IBOutlet weak var lblPhone: LabelWithLetterSpace!
     @IBOutlet weak var imgBankLogo: UIImageView!
     @IBOutlet weak var vwVerifyAccount: UIView!
+    
     var institutionsPresenter:InstitutionsPresenter!
     var topBanks:[clsInstitutions] = []
     var institutionData:InstitutionsData!
@@ -27,6 +28,33 @@ class AddBankController: BaseViewController {
             self.tableView.reloadData()
         }
     }
+    var deleteNodePresenter:DeleteNodePresenter!
+    var addAccountPresenter:AccountAggregatePresenter!
+    var selectedBank:Institutions!
+    var aggregateData:AccountAggregateData!
+    var selectedNodeId:String = ""
+
+    @IBOutlet weak var txtSecurityAnswer: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtPassword: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtUserId: SkyFloatingLabelTextField!
+    @IBOutlet weak var lblVerificationTitle: LabelWithLetterSpace!
+    @IBOutlet weak var vwBankLogin: UIView!
+    @IBOutlet weak var vwSecurityQuestion: UIView!
+    @IBOutlet weak var lblErrorDescription: LabelWithLetterSpace!
+    @IBOutlet weak var vwError: UIView!
+    
+    @IBOutlet weak var tableAccountSelect: UITableView!
+    @IBOutlet weak var vwAccountSelection: UIView!
+    @IBAction func textChanged(_ sender: UITextField) {
+        if self.vwBankLogin.isHidden {
+            self.btnVerifyContinue.isEnabled = txtSecurityAnswer.text!.count > 0
+        }else{
+            self.btnVerifyContinue.isEnabled = txtUserId.text!.count > 0 && txtPassword.text!.count > 0
+        }
+    }
+    
+    @IBOutlet weak var constTableAccountSelect: NSLayoutConstraint!
+    @IBOutlet weak var btnConfirm: RippleButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +78,14 @@ class AddBankController: BaseViewController {
     }
     
     @IBAction func btnVerifyContinue_pressed(_ sender: UIButton) {
-        closeVerification()
-        self.navigationController?.popViewController(animated: true)
+        if !self.vwBankLogin.isHidden {
+            self.addAccountPresenter = AccountAggregatePresenter(delegate: self)
+            self.addAccountPresenter.sendAccountAggregateRequest(bank: "fake", id: txtUserId.text!, password: txtPassword.text!)
+        }else{
+            self.addAccountPresenter.sendMFARequest(token: aggregateData.access_token, answer: txtSecurityAnswer.text!)
+        }
+//        closeVerification()
+//        self.navigationController?.popViewController(animated: true)
 //        self.getControllerWithIdentifier(<#T##identifier: String##String#>)
     }
     
@@ -63,8 +97,37 @@ class AddBankController: BaseViewController {
         closeVerification()
     }
     
+    @IBAction func btnConfirm_pressed(_ sender: UIButton) {
+        self.deleteNodePresenter = DeleteNodePresenter(delegate: self)
+        var nodeIds:[String] = []
+        for node in aggregateData.nodes{
+            if node.nodeid != selectedNodeId{
+                nodeIds.append(node.nodeid)
+            }
+        }
+        if nodeIds.count > 0 {
+            self.deleteNodePresenter.deleteNodeRequest(nodeids: nodeIds)
+        }else{
+            self.showAlert(title: "", message: "Acount Linked Successfully!")
+            showLinkSucceeed()
+        }
+    }
+    
     func openVerification(){
+        self.btnVerifyContinue.isEnabled = false
+        self.vwBankLogin.isHidden = false
+        self.vwSecurityQuestion.isHidden = true
         self.vwVerifyAccount.isHidden = false
+        self.vwAccountSelection.isHidden = true
+        self.txtSecurityAnswer.text = ""
+        self.txtUserId.text = ""
+        self.txtPassword.text = ""
+        lblVerificationTitle.text = "Please enter your online banking username and password"
+        if let imgUrl = selectedBank.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let url = URL(string:imgUrl){
+                self.imgBankLogo.setImageWith(url)
+            }
+        }
     }
     
     func closeVerification(){
@@ -83,6 +146,40 @@ class AddBankController: BaseViewController {
             banks = institutionData.values
         }
         self.tableView.reloadData()
+    }
+    
+    func showLinkSucceeed(){
+        self.showAlertWithHandler(title: "", message: "Acount Linked Successfully!") { (action: UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+}
+
+extension AddBankController:AccountAggregateDelegate{
+    func didFetchAccountAggregate(data: AccountAggregate) {
+        aggregateData = data.data
+        if data.data.access_token.count > 0{
+            // display security question/anwer popup
+            self.vwBankLogin.isHidden = true
+            self.vwSecurityQuestion.isHidden = false
+            self.lblVerificationTitle.text = data.message
+            self.btnVerifyContinue.isEnabled = false
+            self.txtSecurityAnswer.text = ""
+        }else if aggregateData.nodes.count > 1 {
+            // display account selection popup
+            selectedNodeId = ""
+            btnConfirm.isEnabled = false
+            self.constTableAccountSelect.constant = CGFloat(aggregateData.nodes.count) * self.tableView.rowHeight
+            self.vwSecurityQuestion.isHidden = true
+            self.vwAccountSelection.isHidden = false
+            self.tableAccountSelect.reloadData()
+        }
+    }
+}
+
+extension AddBankController:DeleteNodeDelegate{
+    func didDeleteNode(data: DeleteNode) {
+        showLinkSucceeed()
     }
 }
 
@@ -133,17 +230,31 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.registerTableViewCell(tableViewCell: BankCell.self)
+        self.tableAccountSelect.registerTableViewCell(tableViewCell: BankCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return banks.count
+        if tableView == self.tableView {
+            return banks.count
+        } else{
+            if aggregateData != nil{
+                return aggregateData.nodes.count
+            }
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BankCell") as! BankCell
-        //        cell.bindData(option: optionArray[indexPath.row])
-        cell.bindData(data: banks[indexPath.row])
-        cell.imgCheckbox.isHidden = true
+        
+        if tableView == tableAccountSelect {
+            cell.bindData(data: aggregateData.nodes[indexPath.row].info)
+            cell.imgCheckbox.isHidden = selectedNodeId != aggregateData.nodes[indexPath.row].nodeid
+        }else{
+            //        cell.bindData(option: optionArray[indexPath.row])
+            cell.bindData(data: banks[indexPath.row])
+            cell.imgCheckbox.isHidden = true
+        }
         let bgColorView = UIView()
         bgColorView.backgroundColor = Colors.LightGray251
         cell.selectedBackgroundView = bgColorView
@@ -161,7 +272,14 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        openVerification()
+        if tableView == tableAccountSelect {
+            btnConfirm.isEnabled = true
+            selectedNodeId = aggregateData.nodes[indexPath.row].nodeid
+            self.tableAccountSelect.reloadData()
+        }else{
+            selectedBank = banks[indexPath.row]
+            openVerification()
+        }
     }
 }
 

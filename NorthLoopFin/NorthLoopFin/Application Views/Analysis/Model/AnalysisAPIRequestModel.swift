@@ -77,11 +77,15 @@ class AnalysisAPIRequestModel {
     
     func setEndPoint(userID:String, year:String, month:String) {
 //        let testUserID = "5d37c889b942fe1de4005938"
-        apiRequestUrl = Endpoints.APIEndpoints.ANALYSISOPTIONS.rawValue + userID + "/" + year + "/" + month
+        apiRequestUrl = Endpoints.APIEndpoints.ANALYSISOPTIONS.rawValue + "spend_by_categories/" + userID + "/" + year + "/" + month
     }
 
     func setEndPointTotalSpent(userID:String, year:String, month:String) {
         apiRequestUrl = Endpoints.APIEndpoints.ANALYSISTOTALSPENT.rawValue + userID + "/" + year + "/" + month
+    }
+    
+    func setEndPointCategory(category:String, userID:String, year:String, month:String) {
+        apiRequestUrl = Endpoints.APIEndpoints.ANALYSISOPTIONS.rawValue + "spend_by_category/" + userID + "/" + category + "/" + year + "/" + month + "/trans"
     }
 
     func getEndPoint() -> String {

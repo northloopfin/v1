@@ -56,16 +56,17 @@ class AnalysisViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         configureTable()
         self.setupRightNavigationBar()
         let tap = UITapGestureRecognizer(target: self, action: #selector(hidePeriodPicker))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        getAnalysisDetail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupUI()
-        getAnalysisDetail()
         self.navigationController?.navigationBar.makeTransparent()
     }
     
@@ -169,6 +170,8 @@ class AnalysisViewController: BaseViewController {
     
 extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, CalendarTableViewCellDelegate {
     func configureTable(){
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName:"AnalysisCategoryTableViewCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "AnalysisCategoryTableViewCell")
         tableView.register(UINib(nibName:"AnalysisCategoryTableHeader", bundle: Bundle(for: type(of: self))), forHeaderFooterViewReuseIdentifier: "AnalysisCategoryTableHeader")
         tableViewDate.register(UINib(nibName:"CalendarTableViewCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CalendarTableViewCell")
@@ -187,6 +190,7 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnalysisCategoryTableViewCell", for: indexPath) as! AnalysisCategoryTableViewCell
         cell.category = analysisOptions[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -205,6 +209,13 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableView == tableViewDate ? 0 : 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = self.getControllerWithIdentifier("AnalysisCategoryDetailVC") as! AnalysisCategoryDetailVC
+        vc.period = dateOptions[selectedDateIndexPath!.row]
+        vc.category = analysisOptions[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func onPeriod(_ cell:UITableViewCell) {
@@ -228,7 +239,6 @@ extension AnalysisViewController: UITableViewDelegate,UITableViewDataSource, Cal
             selectCurrentDate()
         }
     }
-    
 }
 
 extension AnalysisViewController:AnalysisPresenterDelegate {
@@ -253,6 +263,10 @@ extension AnalysisViewController:AnalysisPresenterDelegate {
     func didFetchAnalysisTotalSpent(_ totalSpent: AnalysisTotalSpent) {
         labelTotalSpent.text = "" //"Total " + sumCurrency + " spent"
         labelSpent.text = "$" + String(totalSpent.sumAmount)
+    }
+    
+    func didFetchAnalysisCategory(_ values: AnalysisCategory) {
+        
     }
 }
 

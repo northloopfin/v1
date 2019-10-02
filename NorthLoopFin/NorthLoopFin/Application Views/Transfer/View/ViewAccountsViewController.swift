@@ -53,7 +53,7 @@ extension ViewAccountsViewController:UITableViewDelegate,UITableViewDataSource{
 
 extension ViewAccountsViewController:ACHCellDelegate{
     func removeClicked(data:ACHNode){
-        presenter.deleteACRequest(nodeid: data.nodeID)
+        presenter.deleteACRequest(nodeid: data.node_id)
     }
 }
 
@@ -63,7 +63,7 @@ extension ViewAccountsViewController:DeleteACHDelegates{
         var index = -1
         for node in achNodeArray {
             index += 1
-            if node.nodeID == data.nodeID{
+            if node.node_id == data.nodeID{
                 achNodeArray.remove(at: index)
                 break
             }

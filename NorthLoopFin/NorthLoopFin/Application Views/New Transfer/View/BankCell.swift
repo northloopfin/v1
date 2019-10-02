@@ -38,4 +38,14 @@ class BankCell: UITableViewCell {
             }
         }
     }
+    
+    func bindData(data:ACHNode){
+        self.bankName.text = data.nickname
+        self.imgBank.image = nil
+        if let imgUrl = data.bank_logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let url = URL(string:imgUrl){
+                self.imgBank.setImageWith(url)
+            }
+        }
+    }
 }

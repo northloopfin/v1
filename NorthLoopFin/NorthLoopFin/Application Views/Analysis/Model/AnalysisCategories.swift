@@ -24,15 +24,42 @@ struct AnalysisOption: Codable {
     }
 }
 
+struct AnalysisCategory: Codable {
+    let data: [AnalysisCategoryData]
+}
+struct AnalysisCategoryData: Codable {
+    let toMerchantCategory,toMerchantName, transId: String
+    let sumAmount: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case toMerchantCategory = "to_merchant_category"
+        case sumAmount = "amount_amount"
+        case toMerchantName = "to_merchant_name"
+        case transId = "trans_id"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        toMerchantName = try values.decodeIfPresent(String.self, forKey: .toMerchantName) ?? ""
+        sumAmount = try values.decodeIfPresent(Double.self, forKey: .sumAmount) ?? 0
+        toMerchantCategory = try values.decodeIfPresent(String.self, forKey: .toMerchantCategory) ?? ""
+        transId = try values.decodeIfPresent(String.self, forKey: .transId) ?? ""
+    }
+}
+
 struct UserAnalysisCategory {
     let categoryKey: String
+    var categoryForTrans: String
     let sumAmount: Double
     var categoryTitle: String
     var categoryIcon: String
     var categotyColor: UIColor
-    
+    subscription_service
+    retail
+    transfer
     init(_ analysisOption: AnalysisOption) {
         self.categoryKey = analysisOption.toMerchantCategory
+        self.categoryForTrans = analysisOption.toMerchantCategory
         self.sumAmount = analysisOption.sumAmount
         switch analysisOption.toMerchantCategory {
         case "subscription_service":
@@ -51,6 +78,7 @@ struct UserAnalysisCategory {
             self.categotyColor = UIColor(red: 179/255, green: 102/255, blue: 211/255, alpha: 1.0)
             break
         case "travel/transportation":
+            self.categoryForTrans = "Travel"
             self.categoryTitle = "Travel"
             self.categoryIcon = "icon_travel"
             self.categotyColor = UIColor(red: 98/255, green: 134/255, blue: 237/255, alpha: 1.0)
@@ -71,6 +99,7 @@ struct UserAnalysisCategory {
             self.categotyColor = UIColor(red: 244/255, green: 140/255, blue: 55/255, alpha: 1.0)
             break
         case "grocery":
+            self.categoryForTrans = "grocery"
             self.categoryTitle = "Groceries"
             self.categoryIcon = "icon_groceries"
             self.categotyColor = UIColor(red: 234/255, green: 202/255, blue: 10/255, alpha: 1.0)
@@ -101,6 +130,7 @@ struct UserAnalysisCategory {
             self.categotyColor = UIColor(red: 252/255, green: 119/255, blue: 136/255, alpha: 1.0)
             break
         default:
+            self.categoryForTrans = "other"
             self.categoryTitle = "Other"
             self.categoryIcon = "icon_miscellaneous"
             self.categotyColor = .gray

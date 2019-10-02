@@ -31,6 +31,17 @@ class ErrorTransformer {
         return errorModel
     }
     
+    class func getStatusErrorModel(response:URLResponse) -> ErrorModel {
+        let errorModel : ErrorModel = ErrorModel()
+        errorModel.setErrorMessage(AppConstants.ErrorMessages.GENERIC_ERROR_MESSAGE.rawValue)
+        if let httpResponse = response as? HTTPURLResponse {
+            print("Status Code: \(httpResponse.statusCode)")
+            errorModel.setStatusCode(httpResponse.statusCode)
+        }
+
+        return errorModel
+    }
+    
     class func errorMessageForUnknownError(_ errorResponseCode : Int)->String
     {
         switch errorResponseCode {

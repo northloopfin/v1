@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri Bold.ttf">
+            <string>Calibri-Bold</string>
+        </array>
+        <array key="Calibri.ttf">
+            <string>Calibri</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CampusCashbackCell" id="KGk-i7-Jjw" customClass="CampusCashbackCell" customModule="NorthLoopFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3K-54-MRm">
+                        <rect key="frame" x="3" y="6" width="314" height="93"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IjT-Er-EZX">
+                                <rect key="frame" x="20" y="14.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="DEU-6c-hxb"/>
+                                    <constraint firstAttribute="height" constant="64" id="vdu-BC-6oB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6g-Kv-se8" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
+                                <rect key="frame" x="88" y="16.5" width="221" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="fL0-rA-buI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="16"/>
+                                <color key="textColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.53000000000000003"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjI-Ws-nQr">
+                                <rect key="frame" x="88" y="38.5" width="221" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="puy-JO-bpF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
+                                <color key="textColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XV3-7m-u3Q">
+                                <rect key="frame" x="88" y="58.5" width="200" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="D6j-38-Q4a"/>
+                                    <constraint firstAttribute="width" constant="200" id="Wpx-AD-c0u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="98.30%" image="ic_like">
+                                    <color key="titleColor" red="0.1803921568627451" green="0.5725490196078431" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIb-UO-e6a">
+                                <rect key="frame" x="20" y="21.5" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="37c-nI-XbI"/>
+                                    <constraint firstAttribute="height" constant="50" id="BbH-gv-1sQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="24"/>
+                                <color key="textColor" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.69019607839999997" green="0.28627450980000002" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A6g-Kv-se8" firstAttribute="top" secondItem="IjT-Er-EZX" secondAttribute="top" constant="2" id="2nr-GK-e8y"/>
+                            <constraint firstItem="IjT-Er-EZX" firstAttribute="centerY" secondItem="i3K-54-MRm" secondAttribute="centerY" id="5P0-ys-fn0"/>
+                            <constraint firstAttribute="trailing" secondItem="sjI-Ws-nQr" secondAttribute="trailing" constant="5" id="5V4-sK-rsB"/>
+                            <constraint firstAttribute="height" constant="93" id="PDq-8R-k9S"/>
+                            <constraint firstItem="sjI-Ws-nQr" firstAttribute="leading" secondItem="A6g-Kv-se8" secondAttribute="leading" id="Xxf-bB-Ok1"/>
+                            <constraint firstItem="aIb-UO-e6a" firstAttribute="centerY" secondItem="i3K-54-MRm" secondAttribute="centerY" id="Zim-rl-xfv"/>
+                            <constraint firstItem="XV3-7m-u3Q" firstAttribute="top" secondItem="sjI-Ws-nQr" secondAttribute="bottom" constant="4" id="aW9-3l-bnB"/>
+                            <constraint firstItem="sjI-Ws-nQr" firstAttribute="top" secondItem="A6g-Kv-se8" secondAttribute="bottom" constant="6" id="bGw-Fr-9jC"/>
+                            <constraint firstAttribute="trailing" secondItem="A6g-Kv-se8" secondAttribute="trailing" constant="5" id="ho1-wA-H5N"/>
+                            <constraint firstItem="aIb-UO-e6a" firstAttribute="leading" secondItem="IjT-Er-EZX" secondAttribute="leading" id="iuS-aO-xL7"/>
+                            <constraint firstItem="XV3-7m-u3Q" firstAttribute="leading" secondItem="sjI-Ws-nQr" secondAttribute="leading" id="jWJ-5O-l7N"/>
+                            <constraint firstItem="IjT-Er-EZX" firstAttribute="leading" secondItem="i3K-54-MRm" secondAttribute="leading" constant="20" id="kEf-ja-OEO"/>
+                            <constraint firstItem="A6g-Kv-se8" firstAttribute="leading" secondItem="aIb-UO-e6a" secondAttribute="trailing" constant="18" id="ty1-yJ-tRF"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="i3K-54-MRm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Mah-Oa-gaH"/>
+                    <constraint firstAttribute="trailing" secondItem="i3K-54-MRm" secondAttribute="trailing" constant="3" id="OMv-Mj-a1o"/>
+                    <constraint firstItem="i3K-54-MRm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UQs-NQ-0s7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnLike" destination="XV3-7m-u3Q" id="95U-y3-z5l"/>
+                <outlet property="imgPreview" destination="IjT-Er-EZX" id="IqR-Ud-MJD"/>
+                <outlet property="lblCount" destination="aIb-UO-e6a" id="3AQ-il-DfI"/>
+                <outlet property="lblSubTitle" destination="sjI-Ws-nQr" id="VLb-Ba-nVr"/>
+                <outlet property="lblTitle" destination="A6g-Kv-se8" id="xYs-xa-QAr"/>
+                <outlet property="vwContent" destination="i3K-54-MRm" id="5YB-Mh-sHv"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="39.508928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_like" width="16" height="15"/>
+    </resources>
+</document>

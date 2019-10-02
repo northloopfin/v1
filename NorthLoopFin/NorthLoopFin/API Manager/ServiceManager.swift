@@ -265,7 +265,7 @@ class ServiceManager: NSObject  {
      - parameter failureBlock:      return failure response
      */
     
-    func requestDELETEWithURL<T:Codable>(_ urlString:String, andRequestDictionary requestDictionary:[String : AnyObject], requestHeader:[String:AnyObject], responseCallBack:ApiResponseReceiver , returningClass:T.Type) -> Void{
+    func requestDELETEWithURLUrlencoded<T:Codable>(_ urlString:String, andRequestDictionary requestDictionary:[String : AnyObject], requestHeader:[String:AnyObject], responseCallBack:ApiResponseReceiver , returningClass:T.Type) -> Void{
         
         self.delegate = responseCallBack
         
@@ -301,6 +301,42 @@ class ServiceManager: NSObject  {
         }
     }
     
+    func requestDELETEWithURL<T:Codable>(_ urlString:String, andRequestDictionary requestDictionary:[String : AnyObject], requestHeader:[String:AnyObject], responseCallBack:ApiResponseReceiver , returningClass:T.Type) -> Void{
+        
+        self.delegate = responseCallBack
+        
+        // Checking the rechability of Network
+        if ReachabilityManager.shared.isNetworkAvailable {
+            
+            // Instantiate session manager Object
+            let manager:AFHTTPSessionManager = self.sessionManager()
+            
+            //Iterating request header dictionary and adding into API Manager
+            for (key, value) in requestHeader {
+                manager.requestSerializer.setValue(value as? String, forHTTPHeaderField: key)
+            }
+            
+            var error:NSError?
+
+            // Creating Immutable PUT NSURL Request
+            var request:URLRequest = manager.requestSerializer.request(withMethod: "DELETE", urlString: urlString, parameters: requestDictionary, error: &error) as URLRequest
+            
+            do{
+                let postData = try JSONSerialization.data(withJSONObject: requestDictionary, options: [])
+                request.httpBody = postData as Data
+            }
+            catch let err {
+                print("Err", err)
+            }
+            // Calling Api with NSURLRequest and session Manager and fetching Response from server
+            self.dataTaskWithRequestAndSessionManager(request, sessionManager: manager, returningClass:returningClass)
+        }else{
+            
+            // Generating common network error
+            self.delegate?.onError(self.getNetworkError() , errorObject: nil)
+        }
+    }
+    
     
     /**
      Calling Api with NSURLRequest and session Manager and fetching Response from server
@@ -311,12 +347,13 @@ class ServiceManager: NSObject  {
     fileprivate func dataTaskWithRequestAndSessionManager<T:Codable>(_ request:URLRequest, sessionManager:AFHTTPSessionManager, returningClass: T.Type) -> Void {
         
         sessionManager.dataTask(with: request, uploadProgress: nil, downloadProgress: nil) { (response, responseObject, error) in
-            
             // Checking whether API Response contains Success response or Error Response
             if( (error == nil) && (responseObject != nil)){
-//                print(self.getJsonStringFor(dictionary: responseObject))
                 if let jsonData = self.getJsonStringFor(dictionary: responseObject!).data(using: .utf8)
                 {
+                    if jsonData.count < 1000 {
+                        print(self.getJsonStringFor(dictionary: responseObject))
+                    }
                     do {
                         let decoder = JSONDecoder()
                         if let result = try? decoder.decode(T.self, from: jsonData){
@@ -331,8 +368,10 @@ class ServiceManager: NSObject  {
                         self.delegate?.onError(error! as NSError , errorObject: responseObject as AnyObject?)
                     }
                 }
-            }else {
+            }else if error != nil{
                 self.delegate?.onError(error! as NSError , errorObject: responseObject as AnyObject?)
+            }else{
+                self.delegate?.onStatusError(response)
             }
             }.resume()
     }

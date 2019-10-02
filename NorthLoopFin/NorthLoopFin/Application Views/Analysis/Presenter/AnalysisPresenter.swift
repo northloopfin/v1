@@ -11,6 +11,7 @@ import UIKit
 protocol AnalysisPresenterDelegate:BaseViewProtocol {
     func didFetchAnalysisCategories(_ categories:[UserAnalysisCategory])
     func didFetchAnalysisTotalSpent(_ totalSpent:AnalysisTotalSpent)
+    func didFetchAnalysisCategory(_ values:AnalysisCategory)
 }
 
 class AnalysisPresenter:ResponseCallback {
@@ -39,6 +40,14 @@ class AnalysisPresenter:ResponseCallback {
         self.businessLogic.performFetchAnalysisCategories(withRequestModel:requestModel, returningClass: AnalysisTotalData.self, presenterDelegate:self)
     }
     
+    func fetchCategoryAnalysis(category:String, month:String, year:String) {
+        self.delegate?.showLoader()
+        let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
+        let requestModel = AnalysisAPIRequestModel.Builder().build()
+        requestModel.setEndPointCategory(category: category, userID: currentUser.userID, year: year, month: month)
+        self.businessLogic.performFetchAnalysisCategories(withRequestModel:requestModel, returningClass: AnalysisCategory.self, presenterDelegate:self)
+    }
+    
     //    MARK: Response Delegates
     func servicesManagerSuccessResponse<T>(responseObject: T) where T : Decodable, T : Encodable {
         self.delegate?.hideLoader()
@@ -51,6 +60,10 @@ class AnalysisPresenter:ResponseCallback {
         }else if let response = responseObject as? AnalysisTotalData {
             if response.data.count > 0{
                 self.delegate?.didFetchAnalysisTotalSpent(response.data[0])
+            }
+        }else if let response = responseObject as? AnalysisCategory {
+            if response.data.count > 0{
+                self.delegate?.didFetchAnalysisCategory(response)
             }
         }
     }

@@ -27,7 +27,7 @@ class DeleteACHAPIRequest:ApiRequestProtocol {
         self.apiRequestUrl = reqFromData.getEndPoint()
         print(self.apiRequestUrl)
         let responseWrapper = ResponseWrapper(errorResolver: errorResolver, responseCallBack: responseCallback)
-        ServiceManager.sharedInstance.requestDELETEWithURL(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: DeleteACH.self)
+        ServiceManager.sharedInstance.requestDELETEWithURLUrlencoded(self.apiRequestUrl, andRequestDictionary: reqFromData.requestQueryParams, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: DeleteACH.self)
 //        (self.apiRequestUrl, requestHeader: reqFromData.requestHeader, responseCallBack: responseWrapper, returningClass: FetchACH.self)
     }
     

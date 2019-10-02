@@ -47,31 +47,25 @@ class SettingsViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        self.constTopMargin.constant = 50 * (self.view.frame.size.height/667)
+//        self.constTopMargin.constant = 50 * (self.view.frame.size.height/667)
     }
     
     func prepareView(){
         let option1 = MyCardOtionsModel.init(AppConstants.SettingsOptions.LOWBALANCEALERT.rawValue, isSwitch: true,isSelected: false)
         let option2 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true, isSelected: false)
         let option3 = MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true, isSelected: false)
-        let option4 = MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false, isSelected: true)
         let option5 = MyCardOtionsModel.init(AppConstants.SettingsOptions.TIPHINT.rawValue, isSwitch: true, isSelected: false)
+        let option4 = MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false, isSelected: true)
         data.append(option1)
         data.append(option2)
         data.append(option3)
-        data.append(option4)
         data.append(option5)
-//        customViewHeightConstraint.constant = CGFloat(data.count*70)
+        data.append(option4)
+        //        customViewHeightConstraint.constant = CGFloat(data.count*70)
         
-        let shadowOffst = CGSize.init(width: 0, height: -55)
-        let shadowOpacity = 0.1
-        let shadowRadius = 49
-        let shadowColor = Colors.PurpleColor17673149
-        self.optionsTableView.layer.addShadowAndRoundedCorners(roundedCorner: 15.0, shadowOffset: shadowOffst, shadowOpacity: Float(shadowOpacity), shadowRadius: CGFloat(shadowRadius), shadowColor: shadowColor.cgColor)
         self.setNavigationBarTitle(title: "Settings")
         self.setupRightNavigationBar()
         self.configureTableView()
-        
     }
     
     @IBAction func tipValueClicked(_ sender: UIButton) {
@@ -90,10 +84,7 @@ class SettingsViewController: BaseViewController {
 
 extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
     func configureTableView(){
-        self.optionsTableView.rowHeight = (self.view.frame.size.height * (70/667));
-        if self.optionsTableView.rowHeight > 70 {
-            self.optionsTableView.rowHeight = 70
-        }
+        self.optionsTableView.rowHeight = 70
         self.optionsTableView.delegate=self
         self.optionsTableView.dataSource=self
         self.optionsTableView.registerTableViewCell(tableViewCell: MyCardTableCell.self)
@@ -108,18 +99,30 @@ extension SettingsViewController:UITableViewDelegate,UITableViewDataSource{
         cell.lock.tag = indexPath.row
         cell.delegate=self
         cell.bindData(data: data[indexPath.row], delegate: self)
+        cell.selectionStyle = .none
+        if indexPath.row == 3 {
+            if vwTip.isHidden {
+                vwTip.removeFromSuperview()
+            }else{
+                var fr = vwTip.frame
+                fr.origin.y = 65
+                fr.origin.x = 00
+                vwTip.frame = fr
+                cell.contentView.addSubview(vwTip)
+            }
+        }
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return self.optionsTableView.rowHeight
+        return indexPath.row == 3 && !vwTip.isHidden ? 140 : self.optionsTableView.rowHeight
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 3{
+        if indexPath.row == 4{
             //Check for update clicked.. call api to check
             self.checkForAppUpdate()
         }
@@ -147,7 +150,7 @@ extension SettingsViewController:MyCardTableCellDelegate{
         case 2:
             self.isDealsOffersOn=isOn
             //Deal and Offers
-        case 4:
+        case 3:
             self.isTipOn=isOn
             self.vwTip.isHidden = !isOn
 //            self.constTipView.constant = self.isTipOn ? getTipViewHeight() : 0;
@@ -155,6 +158,10 @@ extension SettingsViewController:MyCardTableCellDelegate{
             if tipPercentage != 0 && containerView.viewWithTag(tipPercentage) != nil {
                 self.tipValueClicked(containerView.viewWithTag(tipPercentage) as! UIButton)
             }
+            var option = self.data[3]
+            option.isSwitchSelected = self.isTipOn
+            self.data[3] = option
+            self.optionsTableView.reloadData()
             //Tip
         default:
             break
@@ -189,15 +196,15 @@ extension SettingsViewController:SettingsDelegates{
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.LOWBALANCEALERT.rawValue, isSwitch: true,isSelected: data.lowBalance))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.TRANSACTIONALERT.rawValue, isSwitch: true,isSelected: data.transaction))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.DEALSOFFERS.rawValue, isSwitch: true,isSelected: data.dealsOffers))
-        self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false,isSelected: data.dealsOffers))
         self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.TIPHINT.rawValue, isSwitch: true,isSelected: data.tipSuggestion))
+        self.data.append(MyCardOtionsModel.init(AppConstants.SettingsOptions.CHECKFORUPDATE.rawValue, isSwitch: false,isSelected: data.dealsOffers))
         self.isLowAlertOn = data.lowBalance
         self.isTransactionOn = data.transaction
         self.isDealsOffersOn = data.dealsOffers
         self.isTipOn = data.tipSuggestion
         tipPercentage = data.tipPercentage
-        if tipPercentage != 0 && containerView.viewWithTag(tipPercentage) != nil {
-            self.tipValueClicked(containerView.viewWithTag(tipPercentage) as! UIButton)
+        if tipPercentage != 0 && vwTip.viewWithTag(tipPercentage) != nil {
+            self.tipValueClicked(vwTip.viewWithTag(tipPercentage) as! UIButton)
         }
         self.vwTip.isHidden = !self.isTipOn
 //        self.constTipView.constant  = self.isTipOn ? getTipViewHeight() : 0;
