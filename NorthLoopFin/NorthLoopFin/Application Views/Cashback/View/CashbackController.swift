@@ -246,7 +246,7 @@ extension CashbackController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableView == tblCampus ? campusArr.count : 2
+        return tableView == tblCampus ? campusArr.count : 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -262,7 +262,12 @@ extension CashbackController: UITableViewDelegate,UITableViewDataSource {
                 cell.lblTitle.text = "Starbucks"
                 cell.lblSubTitle.text = "3% cashback on all purchases"
             }
-            
+            if indexPath.row == 2{
+                cell.imgPreview.image = UIImage(named: "ic_sweetgreen")
+                cell.lblTitle.text = "Sweetgreen"
+                cell.lblSubTitle.text = "3% cashback on all purchases"
+            }
+            cell.selectionStyle = .none
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CampusCashbackCell", for: indexPath) as! CampusCashbackCell
