@@ -49,12 +49,17 @@ class AddBankController: BaseViewController {
         if self.vwBankLogin.isHidden {
             self.btnVerifyContinue.isEnabled = txtSecurityAnswer.text!.count > 0
         }else{
-            self.btnVerifyContinue.isEnabled = txtUserId.text!.count > 0 && txtPassword.text!.count > 0
+            self.btnVerifyContinue.isEnabled = txtUserId.text!.count > 0 && txtPassword.text!.count > 0 && isTermsPolicyChecked
         }
     }
     
     @IBOutlet weak var constTableAccountSelect: NSLayoutConstraint!
     @IBOutlet weak var btnConfirm: RippleButton!
+    
+    @IBOutlet weak var termsAgreementLbl: LabelWithLetterSpace!
+    @IBOutlet weak var termsPolicyCheckBox: CheckBox!
+    var isTermsPolicyChecked:Bool=false
+    @IBOutlet weak var vwTerms: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +79,29 @@ class AddBankController: BaseViewController {
         topBanks.append(clsInstitutions(name: "Capital One", code: "capone", image: "https://cdn.synapsepay.com/bank_logos_v3p1/CapitalOne360_v.png"))
         topBanks.append(clsInstitutions(name: "HSBC USA", code: "hsbc", image: ""))
         self.collectionView.reloadData()
+        
+        self.termsAgreementLbl.underLineText(fullText: self.termsAgreementLbl.text ?? "", underlinedText: "Terms of Service and Privacy Policy")
+        self.termsPolicyCheckBox.style = .tick
+        self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 3)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
+        self.termsAgreementLbl.addGestureRecognizer(tap)
+        self.termsAgreementLbl.isUserInteractionEnabled = true
+
         // Do any additional setup after loading the view.
     }
+    
+    @objc func tapLabel(tap: UITapGestureRecognizer) {
+        if let rangeForDeposit = self.termsAgreementLbl.text?.range(of: "Terms of Service and Privacy Policy")?.nsRange{
+            if tap.didTapAttributedTextInLabel(label: self.termsAgreementLbl, inRange: rangeForDeposit) {
+                // Substring tapped
+                //open deposit agreement
+                let vc = self.getControllerWithIdentifier( "AgreementViewController") as! AgreementViewController
+                vc.agreementType = AppConstants.AGREEMENTTYPE.ACCOUNT
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
+        }
+    }
+
     
     @IBAction func btnVerifyContinue_pressed(_ sender: UIButton) {
         if !self.vwBankLogin.isHidden {
@@ -116,6 +142,7 @@ class AddBankController: BaseViewController {
     func openVerification(){
         self.btnVerifyContinue.isEnabled = false
         self.vwBankLogin.isHidden = false
+        self.vwTerms.isHidden = false
         self.vwSecurityQuestion.isHidden = true
         self.vwVerifyAccount.isHidden = false
         self.vwAccountSelection.isHidden = true
@@ -153,6 +180,13 @@ class AddBankController: BaseViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    @IBAction func checkBoxvalueChanged(_ sender: Any) {
+        let check = sender as! CheckBox
+        self.isTermsPolicyChecked = check.isChecked
+        textChanged(self.txtPassword)
+    }
+
 }
 
 extension AddBankController:AccountAggregateDelegate{
@@ -161,6 +195,7 @@ extension AddBankController:AccountAggregateDelegate{
         if data.data.access_token.count > 0{
             // display security question/anwer popup
             self.vwBankLogin.isHidden = true
+            self.vwTerms.isHidden = true
             self.vwSecurityQuestion.isHidden = false
             self.lblVerificationTitle.text = data.message
             self.btnVerifyContinue.isEnabled = false

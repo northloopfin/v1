@@ -36,12 +36,13 @@ class CurrentBalanceViewController: BaseViewController {
         let leftBarItem = UIBarButtonItem()
         leftBarItem.style = UIBarButtonItem.Style.plain
         leftBarItem.target = self
-        leftBarItem.image = UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal)
+        leftBarItem.image = UIImage(named: "Back")?.withRenderingMode(.alwaysTemplate)
         leftBarItem.action = #selector(self.openMenu)
+        leftBarItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = leftBarItem
     }
 
     @objc func openMenu(){
-        self.menuContainerViewController.setMenuState(MFSideMenuStateLeftMenuOpen, completion: {})
+        self.navigationController?.popViewController(animated: false)
     }
 }

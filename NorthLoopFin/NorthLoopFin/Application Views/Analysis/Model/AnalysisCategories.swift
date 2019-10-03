@@ -54,9 +54,6 @@ struct UserAnalysisCategory {
     var categoryTitle: String
     var categoryIcon: String
     var categotyColor: UIColor
-    subscription_service
-    retail
-    transfer
     init(_ analysisOption: AnalysisOption) {
         self.categoryKey = analysisOption.toMerchantCategory
         self.categoryForTrans = analysisOption.toMerchantCategory

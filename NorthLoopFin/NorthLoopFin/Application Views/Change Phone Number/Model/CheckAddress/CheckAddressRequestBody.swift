@@ -54,10 +54,25 @@ class VerifiedAddress {
                 if let zipcode = components["zipcode"] {
                     self.zipcode = zipcode
                 }
+                if let sec_des = components["secondary_designator"]{
+                    self.house = sec_des + " "
+                }
+                if let sec_numb = components["secondary_number"]{
+                    self.house = self.house + sec_numb
+                }
+                if let primary_number = components["primary_number"]{
+                    self.street = primary_number + " "
+                }
+                if let street_name = components["street_name"]{
+                    self.street = self.street + street_name + " "
+                }
+                if let street_suffix = components["street_suffix"]{
+                    self.street = self.street + street_suffix
+                }
             }
-            if let delivery_line_1 = option["delivery_line_1"] as? String {
-                self.street = delivery_line_1
-            }
+//            if let delivery_line_1 = option["delivery_line_1"] as? String {
+//                self.street = delivery_line_1
+//            }
             if let analysis = option["analysis"] as? [String:String] {
                 if let dpvMatchCode = analysis["dpv_match_code"] {
                     self.dpv_match_code = dpvMatchCode

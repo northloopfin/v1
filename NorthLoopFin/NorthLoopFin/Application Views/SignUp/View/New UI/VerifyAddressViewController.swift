@@ -46,7 +46,7 @@ class VerifyAddressViewController: BaseViewController {
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
             let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
-            let addess:SignupFlowAddress = SignupFlowAddress.init(street: self.streetAddress.text!, city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country,houseNumber: self.houseNumbertextfield.text!)
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: getStreetCombine(), city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country,houseNumber: self.houseNumbertextfield.text!)
 
             if let _  = self.signupFlowData{
                 self.signupFlowData.address = addess
@@ -155,9 +155,23 @@ class VerifyAddressViewController: BaseViewController {
         return updateAddressRequestBody
     }
     
+    func getStreetCombine() -> String{
+        let houseNo = self.houseNumbertextfield.text ?? ""
+        let street = self.streetAddress.text ?? ""
+
+        let numbersRange = self.streetAddress.text!.rangeOfCharacter(from: .decimalDigits)
+        let hasNumbers = (numbersRange != nil)
+        if hasNumbers {
+            return street + " " + houseNo
+        }else{
+            return houseNo + " " + street
+        }
+    }
+    
     func createCheckAddressRequestBody() -> CheckAddress {
+
         let checkAddress:CheckAddress = CheckAddress.init(
-            street: self.streetAddress.text ?? "",
+            street: getStreetCombine(),
             city: self.cityTextfield.text ?? "",
             state: self.textState.text ?? "",
             zipcode: self.zipTextfield.text ?? "")
@@ -199,13 +213,13 @@ class VerifyAddressViewController: BaseViewController {
     func fetchDatafromRealmIfAny(){
         
         if self.basicInfo.count > 0{
-            self.doneBtn.isEnabled=true
             let info = self.basicInfo.first!
             self.streetAddress.text = info.streetAddress
             self.houseNumbertextfield.text = info.houseNumber
             self.cityTextfield.text = info.city
             self.textState.text = info.state
             self.zipTextfield.text = info.zip
+            self.checkForMandatoryField()
         }
     }
     
@@ -411,13 +425,12 @@ extension VerifyAddressViewController:CheckAddressDelegate {
                         ],
                         [
                             verifiedAddress.street,
-                            self.houseNumbertextfield.text ?? "",
+                            verifiedAddress.house,
                             verifiedAddress.city,
                             verifiedAddress.state,
                             verifiedAddress.zipcode
                         ]
                     ]
-                verifiedAddress.house = self.houseNumbertextfield.text ?? ""
                 self.present(vc, animated: true, completion: nil)
             }
         }
@@ -426,6 +439,9 @@ extension VerifyAddressViewController:CheckAddressDelegate {
     func compareAddress(_ verifiedAddress:VerifiedAddress) -> Bool {
         var isEqual = true
         if verifiedAddress.street != self.streetAddress.text {
+            isEqual = false
+        }
+        if verifiedAddress.house != self.houseNumbertextfield.text {
             isEqual = false
         }
         if verifiedAddress.city != self.cityTextfield.text {
@@ -444,6 +460,7 @@ extension VerifyAddressViewController:CheckAddressDelegate {
 extension VerifyAddressViewController:AddressVerificationViewDelegate {
     func uprovedVerifiedAddress() {
         self.streetAddress.text = verifiedAddress?.street ?? ""
+        self.houseNumbertextfield.text = verifiedAddress?.house ?? ""
         self.cityTextfield.text = verifiedAddress?.city ?? ""
         self.textState.text = verifiedAddress?.state ?? ""
         self.zipTextfield.text = verifiedAddress?.zipcode ?? ""
@@ -465,13 +482,13 @@ extension VerifyAddressViewController:HomeDelegate{
     
     func didFetchedAccountInfo(data:Account){
         // check isVerified key and open screen accordingly
-        if data.data.isVerified{
+//        if data.data.isVerified{
             // yes user is verified..move to Home
-            AppUtility.moveToHomeScreen()
-        }else{
+//            AppUtility.moveToHomeScreen()
+//        }else{
             //no..move to waitlist
             self.moveToWaitList()
-        }
+//        }
     }
         
 }

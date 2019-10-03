@@ -20,7 +20,7 @@ class SignupFlowAddress: Codable {
     init(street: String, city: String, state: String, zip: String,countty:String,houseNumber:String) {
         self.city = city
         self.state = state
-        self.street = houseNumber + " " + street
+        self.street = street
         self.zip = zip
         self.country = countty
     }
