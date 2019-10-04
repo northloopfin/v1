@@ -46,7 +46,7 @@ class VerifyAddressViewController: BaseViewController {
     func updateSignupFlowData(){
         if let _ = self.signupFlowData{
             let addressFromPreviousScreen:SignupFlowAddress = self.signupFlowData.address
-            let addess:SignupFlowAddress = SignupFlowAddress.init(street: getStreetCombine(), city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country,houseNumber: self.houseNumbertextfield.text!)
+            let addess:SignupFlowAddress = SignupFlowAddress.init(street: getStreetCombineForSignup(), city: self.cityTextfield.text!, state: self.textState.text!, zip: self.zipTextfield.text!,countty: addressFromPreviousScreen.country,houseNumber: self.houseNumbertextfield.text!)
 
             if let _  = self.signupFlowData{
                 self.signupFlowData.address = addess
@@ -159,6 +159,26 @@ class VerifyAddressViewController: BaseViewController {
         let houseNo = self.houseNumbertextfield.text ?? ""
         let street = self.streetAddress.text ?? ""
 
+        let numbersRange = self.streetAddress.text!.rangeOfCharacter(from: .decimalDigits)
+        let hasNumbers = (numbersRange != nil)
+        if hasNumbers {
+            return street + " " + houseNo
+        }else{
+            return houseNo + " " + street
+        }
+    }
+    
+    func getStreetCombineForSignup() -> String{
+        if verifiedAddress != nil {
+            let add = verifiedAddress?.street_line_1 ?? ""
+            if add.count > 0{
+                return add
+            }
+        }
+        
+        let houseNo = self.houseNumbertextfield.text ?? ""
+        let street = self.streetAddress.text ?? ""
+        
         let numbersRange = self.streetAddress.text!.rangeOfCharacter(from: .decimalDigits)
         let hasNumbers = (numbersRange != nil)
         if hasNumbers {

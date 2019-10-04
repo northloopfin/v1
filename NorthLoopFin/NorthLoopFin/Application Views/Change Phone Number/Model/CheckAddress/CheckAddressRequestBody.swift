@@ -32,10 +32,11 @@ class CheckAddress: Codable {
 
 // MARK: - VerifiedAddress
 class VerifiedAddress {
-    var street, house, city, state, zipcode, dpv_match_code: String
+    var street, street_line_1, house, city, state, zipcode, dpv_match_code: String
     
     init(data:Any) {
         self.street = ""
+        self.street_line_1 = ""
         self.house = ""
         self.city = ""
         self.state = ""
@@ -70,9 +71,11 @@ class VerifiedAddress {
                     self.street = self.street + street_suffix
                 }
             }
-//            if let delivery_line_1 = option["delivery_line_1"] as? String {
-//                self.street = delivery_line_1
-//            }
+            if let delivery_line_1 = option["delivery_line_1"] as? String {
+                self.street_line_1 = delivery_line_1
+            }else{
+                self.street_line_1 = self.street
+            }
             if let analysis = option["analysis"] as? [String:String] {
                 if let dpvMatchCode = analysis["dpv_match_code"] {
                     self.dpv_match_code = dpvMatchCode
