@@ -19,9 +19,7 @@ class RoutingVerificationPresenter: ResponseCallback{
     }
     
     //    Send Login Request to Business Login
-    func sendRoutingVerificationRequest(routing number:String){
-        self.delegate?.showLoader()
-        
+    func sendRoutingVerificationRequest(routing number:String){        
         let requestModel = RoutingVerificationRequestModel.Builder()
             .addRequestHeader(key: "Content-Type", value: "application/json")
             .addRequestQueryParams(key: "routing_num", value: number as AnyObject)

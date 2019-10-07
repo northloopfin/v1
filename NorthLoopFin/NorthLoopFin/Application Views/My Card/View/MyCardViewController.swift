@@ -219,11 +219,6 @@ extension MyCardViewController:CardDelegates{
             UserInformationUtility.sharedInstance.saveUser(model: currentUser!)
         }
         
-        if !self.cardActivated {
-            self.cardActivated = true
-            self.vwActivateCard.tag = 1
-        }
-        
         self.vwVirtualCard.isUserInteractionEnabled = true
         self.vwActivateCard.isHidden = true
         print(data.data.status)
@@ -253,8 +248,16 @@ extension MyCardViewController:CardDelegates{
             if self.cardAuthData == nil {
                 self.getCardAuth()
             } else {
-//                self.getCardInfo()
+                if !self.cardActivated {
+                    self.cardActivated = true
+                    self.vwActivateCard.tag = 1
+                    self.getCardInfo()
+                }
             }
+        }
+        if !self.cardActivated {
+            self.cardActivated = true
+            self.vwActivateCard.tag = 1
         }
     }
 }

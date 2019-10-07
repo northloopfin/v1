@@ -14,6 +14,7 @@ class BankCell: UITableViewCell {
     @IBOutlet weak var imgCheckbox: UIImageView!
     @IBOutlet weak var bankName: LabelWithLetterSpace!
     @IBOutlet weak var imgBank: UIImageView!
+    @IBOutlet weak var btnDelete: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +32,7 @@ class BankCell: UITableViewCell {
     
     func bindData(data:Institutions){
         self.bankName.text = data.bankName
+        self.btnDelete.isHidden = true
         self.imgBank.image = nil
         if let imgUrl = data.logo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
             if let url = URL(string:imgUrl){

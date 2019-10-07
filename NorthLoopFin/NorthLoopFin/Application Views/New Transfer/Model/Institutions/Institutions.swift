@@ -38,6 +38,13 @@ struct Institutions: Codable {
         case is_active
     }
     
+    init(name:String, code:String, image:String) {
+        bankCode = code
+        bankName = name
+        logo = image
+        is_active = true
+    }
+    
     init(from decoder: Decoder) throws {
         let val = try decoder.container(keyedBy: CodingKeys.self)
         

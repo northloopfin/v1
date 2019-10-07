@@ -25,7 +25,8 @@ class TransferDebitFromViewController: BaseViewController {
     var footer:vwAddAccountFooter?
     var presenter:FetchACHPresenter!
     var achNodeArray:[ACHNode] = []
-    
+    var deletePresenter:DeleteACHPresenter!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nextButton.isEnabled = false
@@ -81,7 +82,10 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
         cell.bindData(data: achNodeArray[indexPath.row])
         cell.imgCheckbox.isHidden = selectedNode == nil || selectedNode.account_num != achNodeArray[indexPath.row].account_num
         cell.backgroundColor = cell.imgCheckbox.isHidden ? UIColor.clear : Colors.LightGray251
-        
+        cell.btnDelete.tag = indexPath.row
+        cell.btnDelete.addTarget(self, action: #selector(btnDelete_pressed(button:)), for: .touchUpInside)
+        cell.btnDelete.isHidden = false
+
         return cell
     }
 
@@ -123,16 +127,30 @@ extension TransferDebitFromViewController:UITableViewDelegate,UITableViewDataSou
     @objc func addBank(){
         self.tableView.reloadData(); self.navigationController?.pushViewController(self.getControllerWithIdentifier("AddBankController"), animated: true)
     }
+    
+    
+    @objc func btnDelete_pressed(button: UIButton){
+        self.deletePresenter = DeleteACHPresenter.init(delegate: self)
+        self.deletePresenter.deleteACRequest(nodeid: achNodeArray[button.tag].node_id)
+    }
 }
 
-public extension UIView {
-    
-    class func instantiateFromNib<T: UIView>(viewType: T.Type) -> T {
-        return Bundle.main.loadNibNamed(String(describing: viewType), owner: nil, options: nil)?.first as! T
+
+
+extension TransferDebitFromViewController:DeleteACHDelegates{
+    func didDeleteACH(data:DeletedACHNode){
+        var index = -1
+        for node in achNodeArray {
+            index += 1
+            if node.node_id == data.nodeID{
+                if selectedNode.node_id == data.nodeID{
+                    selectedNode = nil
+                    nextButton.isEnabled = false
+                }
+                achNodeArray.remove(at: index)
+                break
+            }
+        }
+        self.tableView.reloadData()
     }
-    
-    class func instantiateFromNib() -> Self {
-        return instantiateFromNib(viewType: self)
-    }
-    
 }

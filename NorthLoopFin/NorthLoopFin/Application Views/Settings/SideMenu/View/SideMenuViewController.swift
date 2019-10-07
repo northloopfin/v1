@@ -42,7 +42,7 @@ class SideMenuViewController: UIViewController {
         self.data.append(AppConstants.SideMenuOptions.HELP.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.FEEDBACK.rawValue)
         self.data.append(AppConstants.SideMenuOptions.REFER.rawValue)
-//        self.data.append(AppConstants.SideMenuOptions.CREDITCARD.rawValue)
+        self.data.append(AppConstants.SideMenuOptions.CREDITCARD.rawValue)
 //        self.data.append(AppConstants.SideMenuOptions.ADDFUNDTRANSFER.rawValue)
     }
 }
@@ -126,7 +126,7 @@ extension SideMenuViewController{
         case .HELP:
             self.navigateToHelp()
         case .TRANSFER:
-            self.navigateToTransfer()
+            self.navigateToAddFund() //navigateToTransfer()
         case .MYACCOUNT:
             self.navigateToMyAccount()
         case .PREMIUM:

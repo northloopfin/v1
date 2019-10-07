@@ -25,7 +25,6 @@ class AddBankController: BaseViewController {
     var institutionData:InstitutionsData!
     var banks:[Institutions] = []{
         didSet{
-            self.tableView.reloadData()
         }
     }
     var deleteNodePresenter:DeleteNodePresenter!
@@ -64,22 +63,16 @@ class AddBankController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupRightNavigationBar()
-        configureTableView()
-        configureCollectionView()
         institutionsPresenter = InstitutionsPresenter(delegate: self)
         institutionsPresenter.sendInstitutionsRequest()
         
-        topBanks.append(clsInstitutions(name: "Chase", code: "chase", image: "https://cdn.synapsepay.com/bank_logos_v3p1/chase_v.png"))
-        topBanks.append(clsInstitutions(name: "Bank of America", code: "bofa", image: "https://cdn.synapsepay.com/bank_logos_v3p1/bankofamerica_v.png"))
-        topBanks.append(clsInstitutions(name: "Wells Fargo", code: "wells", image: "https://cdn.synapsepay.com/bank_logos_v3p1/wells fargo_v.png"))
-        topBanks.append(clsInstitutions(name: "Citibank", code: "citi", image: "https://cdn.synapsepay.com/bank_logos_v3p1/Citibank_v.png"))
-        topBanks.append(clsInstitutions(name: "PNC", code: "pnc", image: "https://cdn.synapsepay.com/bank_logos_v3p1/pnc bank_v.png"))
-        topBanks.append(clsInstitutions(name: "US Bank", code: "us", image: "https://cdn.synapsepay.com/bank_logos_v3p1/us_v.png"))
-        topBanks.append(clsInstitutions(name: "TD Bank", code: "td", image: "https://cdn.synapsepay.com/bank_logos_v3p1/TD_v.png"))
-        topBanks.append(clsInstitutions(name: "Capital One", code: "capone", image: "https://cdn.synapsepay.com/bank_logos_v3p1/CapitalOne360_v.png"))
-        topBanks.append(clsInstitutions(name: "HSBC USA", code: "hsbc", image: ""))
-        self.collectionView.reloadData()
-        
+//        banks.append(Institutions(name: "HSBC USA", code: "hsbc", image: ""))
+//        self.collectionView.reloadData()
+        configureTableView()
+        configureCollectionView()
+        getTopBanks()
+        self.tableView.reloadData()
+
         self.termsAgreementLbl.underLineText(fullText: self.termsAgreementLbl.text ?? "", underlinedText: "Terms of Service and Privacy Policy")
         self.termsPolicyCheckBox.style = .tick
         self.termsPolicyCheckBox.borderStyle = .roundedSquare(radius: 3)
@@ -170,7 +163,7 @@ class AddBankController: BaseViewController {
                 }
             }
         }else{
-            banks = institutionData.values
+            getTopBanks()
         }
         self.tableView.reloadData()
     }
@@ -187,6 +180,17 @@ class AddBankController: BaseViewController {
         textChanged(self.txtPassword)
     }
 
+    func getTopBanks(){
+        banks = []
+        banks.append(Institutions(name: "Chase", code: "chase", image: "https://cdn.synapsepay.com/bank_logos_v3p1/chase_v.png"))
+        banks.append(Institutions(name: "Bank of America", code: "bofa", image: "https://cdn.synapsepay.com/bank_logos_v3p1/bankofamerica_v.png"))
+        banks.append(Institutions(name: "Wells Fargo", code: "wells", image: "https://cdn.synapsepay.com/bank_logos_v3p1/wells fargo_v.png"))
+        banks.append(Institutions(name: "Citibank", code: "citi", image: "https://cdn.synapsepay.com/bank_logos_v3p1/Citibank_v.png"))
+        banks.append(Institutions(name: "PNC", code: "pnc", image: "https://cdn.synapsepay.com/bank_logos_v3p1/pnc bank_v.png"))
+        banks.append(Institutions(name: "US Bank", code: "us", image: "https://cdn.synapsepay.com/bank_logos_v3p1/us_v.png"))
+        banks.append(Institutions(name: "TD Bank", code: "td", image: "https://cdn.synapsepay.com/bank_logos_v3p1/TD_v.png"))
+        banks.append(Institutions(name: "Capital One", code: "capone", image: "https://cdn.synapsepay.com/bank_logos_v3p1/CapitalOne360_v.png"))
+    }
 }
 
 extension AddBankController:AccountAggregateDelegate{
@@ -294,7 +298,6 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
         bgColorView.backgroundColor = Colors.LightGray251
         cell.selectedBackgroundView = bgColorView
         
-        
         return cell
     }
  
@@ -321,6 +324,5 @@ extension AddBankController:UITableViewDelegate,UITableViewDataSource {
 extension AddBankController:InstitutionsDelegate{
     func didFetchInstitutions(data: InstitutionsData) {
         institutionData = data
-        self.banks = data.values
     }
 }

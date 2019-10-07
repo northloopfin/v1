@@ -44,7 +44,6 @@ class TransferViewController: BaseViewController {
         if Validations.isValidRoutingNumber(routingNumber: self.rountingNumberTextField.text!){
             self.vwError.isHidden = true
             // Yes Valid
-            spinner.startAnimating()
             self.presenter.sendLinkACRequest(nickname: self.nicknameTextField.text!, accountNo: self.bankAccountNumberTextfield.text!, rountingNo: self.rountingNumberTextField.text!)
         }else{
             self.vwError.isHidden = false

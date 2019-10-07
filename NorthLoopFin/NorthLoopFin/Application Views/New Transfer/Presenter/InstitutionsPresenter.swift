@@ -19,9 +19,7 @@ class InstitutionsPresenter: ResponseCallback{
     }
     
     //    Send Login Request to Business Login
-    func sendInstitutionsRequest(){
-        self.delegate?.showLoader()
-        
+    func sendInstitutionsRequest(){        
         let requestModel = InstitutionsRequestModel.Builder()
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())
             .build()

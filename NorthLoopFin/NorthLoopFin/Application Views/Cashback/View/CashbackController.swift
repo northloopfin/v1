@@ -44,6 +44,8 @@ class CashbackController: BaseViewController {
             }
         }
     }
+    var optionArray:[clsScanOption] = []
+
     let dropDown = DropDown()
 
     @IBOutlet weak var vwCampusVote: UIView!
@@ -84,6 +86,20 @@ class CashbackController: BaseViewController {
         styleContainer(vw: vwCashbackDetail)
         styleContainer(vw: vwCashbackSummary)
         self.campusPresenter = CampusPresenter.init(delegate: self)
+        
+        optionArray.append(clsScanOption("Amazon Prime Student", "Premium users only", "ic_amazon_prime"))
+        optionArray.append(clsScanOption("Sweetgreen", "5% cashback on all purchases", "ic_sweetgreen"))
+        optionArray.append(clsScanOption("Starbucks", "3% cashback on all purchases", "ic_starbucks"))
+        optionArray.append(clsScanOption("Philz Coffee", "3% cashback on all purchases", "ic_philz_coffee"))
+        optionArray.append(clsScanOption("Insomnia Cookies", "3% cashback on all purchases", "ic_insomnia_cookies"))
+        optionArray.append(clsScanOption("Equinox", "5% cashback on all purchases", "ic_equinox"))
+        optionArray.append(clsScanOption("Nike", "1% cashback on all purchases", "ic_nike"))
+        optionArray.append(clsScanOption("Dominos", "1% cashback on all purchases", "ic_dominos"))
+        optionArray.append(clsScanOption("Einstein Bros Bagels", "5% cashback on all purchases", "ic_einstein_bros_bagels"))
+        optionArray.append(clsScanOption("Qdoba", "5% cashback on all purchases", "ic_qdoba"))
+        optionArray.append(clsScanOption("Chipotle", "5% cashback on all purchases", "ic_chipotle"))
+        optionArray.append(clsScanOption("Netflix", "5% cashback on all purchases", "ic_netflix"))
+        optionArray.append(clsScanOption("Spotify", "5% cashback on all purchases", "ic_spotify"))
     }
     
     func setupUniversityField(){
@@ -246,27 +262,17 @@ extension CashbackController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableView == tblCampus ? campusArr.count : 3
+        return tableView == tblCampus ? campusArr.count : optionArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (tableView != self.tblCampus){
             let cell = tableView.dequeueReusableCell(withIdentifier: "CashbackCell", for: indexPath) as! CashbackCell
-            if indexPath.row == 0 {
-                cell.imgPreview.image = UIImage(named: "ic_amazon_prime")
-                cell.lblTitle.text = "Amazon Prime Student"
-                cell.lblSubTitle.text = "Premium users only"
-            }
-            if indexPath.row == 1{
-                cell.imgPreview.image = UIImage(named: "ic_starbucks")
-                cell.lblTitle.text = "Starbucks"
-                cell.lblSubTitle.text = "3% cashback on all purchases"
-            }
-            if indexPath.row == 2{
-                cell.imgPreview.image = UIImage(named: "ic_sweetgreen")
-                cell.lblTitle.text = "Sweetgreen"
-                cell.lblSubTitle.text = "3% cashback on all purchases"
-            }
+            let option = optionArray[indexPath.row]
+            cell.imgPreview.image = UIImage(named: option.imgName)
+            cell.lblTitle.text = option.title
+            cell.lblSubTitle.text = option.subTitle
+ 
             cell.selectionStyle = .none
             return cell
         }else{

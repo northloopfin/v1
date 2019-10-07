@@ -28,7 +28,7 @@ struct AnalysisCategory: Codable {
     let data: [AnalysisCategoryData]
 }
 struct AnalysisCategoryData: Codable {
-    let toMerchantCategory,toMerchantName, transId: String
+    let toMerchantCategory,toMerchantName, transId, toMerchantLogo: String
     let sumAmount: Double
     
     enum CodingKeys: String, CodingKey {
@@ -36,6 +36,7 @@ struct AnalysisCategoryData: Codable {
         case sumAmount = "amount_amount"
         case toMerchantName = "to_merchant_name"
         case transId = "trans_id"
+        case toMerchantLogo = "to_merchant_logo"
     }
     
     init(from decoder: Decoder) throws {
@@ -43,6 +44,7 @@ struct AnalysisCategoryData: Codable {
         toMerchantName = try values.decodeIfPresent(String.self, forKey: .toMerchantName) ?? ""
         sumAmount = try values.decodeIfPresent(Double.self, forKey: .sumAmount) ?? 0
         toMerchantCategory = try values.decodeIfPresent(String.self, forKey: .toMerchantCategory) ?? ""
+        toMerchantLogo = try values.decodeIfPresent(String.self, forKey: .toMerchantLogo) ?? ""
         transId = try values.decodeIfPresent(String.self, forKey: .transId) ?? ""
     }
 }

@@ -17,7 +17,7 @@ class TransferCreditToViewController: BaseViewController {
     @IBOutlet weak var btnNext: RippleButton!
     var selectedNode:ACHNode!
     var footer:vwAddAccountFooter?
-    
+    var deletePresenter:DeleteACHPresenter!
     var presenter:FetchACHPresenter!
     var achNodeArray:[ACHNode] = []{
         didSet{
@@ -77,7 +77,10 @@ extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSour
         cell.bindData(data: achNodeArray[indexPath.row])
         cell.imgCheckbox.isHidden = selectedNode == nil || selectedNode.account_num != achNodeArray[indexPath.row].account_num
         cell.backgroundColor = cell.imgCheckbox.isHidden ? UIColor.clear : Colors.LightGray251
-    
+        cell.btnDelete.tag = indexPath.row
+        cell.btnDelete.addTarget(self, action: #selector(btnDelete_pressed(button:)), for: .touchUpInside)
+        cell.btnDelete.isHidden = false
+
         return cell
     }
     
@@ -110,7 +113,26 @@ extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSour
         btnNext.isEnabled = footer!.amountTextField.text!.count > 0 && selectedNode != nil
     }
     
+    @objc func btnDelete_pressed(button: UIButton){
+        self.deletePresenter = DeleteACHPresenter.init(delegate: self)
+        self.deletePresenter.deleteACRequest(nodeid: achNodeArray[button.tag].node_id)
+    }
+    
     @objc func addBank(){
         self.navigationController?.pushViewController(self.getControllerWithIdentifier("TransferViewController"), animated: true)
+    }
+}
+
+extension TransferCreditToViewController:DeleteACHDelegates{
+    func didDeleteACH(data:DeletedACHNode){
+        var index = -1
+        for node in achNodeArray {
+            index += 1
+            if node.node_id == data.nodeID{
+                achNodeArray.remove(at: index)
+                break
+            }
+        }
+        self.tableView.reloadData()
     }
 }

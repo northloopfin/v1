@@ -146,3 +146,13 @@ extension UIViewController{
         return vc
     }
 }
+
+public extension UIView {
+    class func instantiateFromNib<T: UIView>(viewType: T.Type) -> T {
+        return Bundle.main.loadNibNamed(String(describing: viewType), owner: nil, options: nil)?.first as! T
+    }
+    
+    class func instantiateFromNib() -> Self {
+        return instantiateFromNib(viewType: self)
+    }
+}

@@ -12,6 +12,7 @@ class AnalysisCategoryDetailCell: UITableViewCell {
 
     @IBOutlet weak var lblAmount: LabelWithLetterSpace!
     @IBOutlet weak var lblTitle: LabelWithLetterSpace!
+    @IBOutlet weak var imgLogo: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,12 @@ class AnalysisCategoryDetailCell: UITableViewCell {
     
     func bindData(data:AnalysisCategoryData){
         lblTitle.text = data.toMerchantName
-        lblAmount.text = "$" + String(data.sumAmount) 
+        lblAmount.text = "$" + String(data.sumAmount)
+        self.imgLogo.image = nil
+        if let imgUrl = data.toMerchantLogo.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let url = URL(string:imgUrl){
+                self.imgLogo.setImageWith(url)
+            }
+        }
     }
 }

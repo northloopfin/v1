@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mem-hn-tEN" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                        <rect key="frame" x="25" y="20.5" width="180" height="22"/>
+                        <rect key="frame" x="80" y="20.5" width="135" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="N7D-hj-BCk"/>
                         </constraints>
@@ -38,11 +38,29 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Yj-nm-v2A">
+                        <rect key="frame" x="25" y="11.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Z0d-SW-WHv"/>
+                            <constraint firstAttribute="height" constant="40" id="ZSp-bf-0bb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTf-VL-HE8" customClass="LabelWithLetterSpace" customModule="NorthLoopFin" customModuleProvider="target">
-                        <rect key="frame" x="205" y="19" width="90" height="25"/>
+                        <rect key="frame" x="215" y="19" width="80" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Az1-4l-LgZ"/>
-                            <constraint firstAttribute="width" constant="90" id="O9E-JY-pSe"/>
+                            <constraint firstAttribute="width" constant="80" id="O9E-JY-pSe"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,10 +81,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="06C-G1-n4m" secondAttribute="bottom" id="9lN-GA-SDG"/>
+                    <constraint firstItem="Mem-hn-tEN" firstAttribute="leading" secondItem="7Yj-nm-v2A" secondAttribute="trailing" constant="15" id="KeG-cL-9Nq"/>
                     <constraint firstAttribute="trailing" secondItem="CTf-VL-HE8" secondAttribute="trailing" constant="25" id="Q6X-xZ-0sT"/>
                     <constraint firstItem="CTf-VL-HE8" firstAttribute="centerY" secondItem="Mem-hn-tEN" secondAttribute="centerY" id="Sgw-3T-7D4"/>
+                    <constraint firstItem="7Yj-nm-v2A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="YhY-pG-hYH"/>
                     <constraint firstAttribute="trailing" secondItem="06C-G1-n4m" secondAttribute="trailing" constant="25" id="hBG-1j-IcG"/>
-                    <constraint firstItem="Mem-hn-tEN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="lcW-EI-PbQ"/>
+                    <constraint firstItem="7Yj-nm-v2A" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mLz-Sb-Unc"/>
                     <constraint firstItem="06C-G1-n4m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="qd2-w0-ryc"/>
                     <constraint firstItem="Mem-hn-tEN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vAv-g2-hMs"/>
                     <constraint firstItem="CTf-VL-HE8" firstAttribute="leading" secondItem="Mem-hn-tEN" secondAttribute="trailing" id="xwM-Sw-K9B"/>
@@ -74,6 +94,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="imgLogo" destination="7Yj-nm-v2A" id="CCS-eC-9KY"/>
                 <outlet property="lblAmount" destination="CTf-VL-HE8" id="stl-25-rdf"/>
                 <outlet property="lblTitle" destination="Mem-hn-tEN" id="0zq-SS-hHS"/>
             </connections>
