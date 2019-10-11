@@ -351,7 +351,7 @@ class ServiceManager: NSObject  {
             if( (error == nil) && (responseObject != nil)){
                 if let jsonData = self.getJsonStringFor(dictionary: responseObject!).data(using: .utf8)
                 {
-                    if jsonData.count < 1000 {
+                    if jsonData.count < 2000 {
                         print(self.getJsonStringFor(dictionary: responseObject))
                     }
                     do {

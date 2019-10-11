@@ -88,7 +88,7 @@ extension TransferCreditToViewController:UITableViewDelegate,UITableViewDataSour
         if footer == nil{
             footer = vwAddAccountFooter.instantiateFromNib()
             footer!.btnAddBank.addTarget(self, action: #selector(addBank), for: .touchUpInside)
-            footer!.lblAddBank.text = "Add the receiver bank account "
+            footer!.lblAddBank.text = "Add a bank account"
             footer!.amountTextField.isHidden = false// achNodeArray.count == 0
             footer!.amountTextField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         }
