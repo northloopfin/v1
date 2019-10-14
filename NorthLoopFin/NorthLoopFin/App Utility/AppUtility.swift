@@ -346,15 +346,18 @@ class AppUtility {
     }
     
     class func encryptString(input:String)->String{
-        let publicKeyString:String = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxy7xFpupeVxgUiaPneI1WAioSIeL6+/NAIIjbvDOvdTCNUeI//ob4bfdGLYlXpXOor/5POqfheZnHzkTu6BhDQqGZBc2BLaARlqx0s+twIadPwzqOJETzmp7r5U5ZioluOGDw4CF+JKRL6sBOaYr5wJ3BemZOXqQE7SAqIsi6Sej2ijGzVFq4tR3gogAdMKjGhzDwthqzZViZN1Zhzb8jsX/aCY+OWq9IUp4iX41fYmpfI9klVKnneAuVAIOPhI5zMaZ7JiQ+88ZQngTi6IhieyGIjvfG7FTsLNoYEqu1OeKw3SRt+HSs+LpnO3P9wwWODZtr07H7oxNJDAIoXITPwIDAQAB"
-
+        let publicKeyString:String = """
+-----BEGIN RSA PUBLIC KEY-----
+MEgCQQCKWGgLK1s7Zpav57A9y5W44WnP2y6M4lJR/WdarSJoH5j8XjT+kYZwBQgu
+DALKudDM5tDg1HkQcwjIK1O5iZTnAgMBAAE=
+-----END RSA PUBLIC KEY-----
+"""
         var base64String = ""
         
         do {
-            let publicKey = try PublicKey(pemEncoded: publicKeyString)//try PublicKey(pemNamed: publicKeyString)
+            let publicKey = try PublicKey(pemEncoded: publicKeyString)
             let clear = try ClearMessage(string: input, using: .utf8)
             let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
-            //let data = encrypted.data
             base64String = encrypted.base64String
         }catch{
             print(error)

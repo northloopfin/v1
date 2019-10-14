@@ -99,7 +99,7 @@ class AddBankController: BaseViewController {
     @IBAction func btnVerifyContinue_pressed(_ sender: UIButton) {
         if !self.vwBankLogin.isHidden {
             self.addAccountPresenter = AccountAggregatePresenter(delegate: self)
-            self.addAccountPresenter.sendAccountAggregateRequest(bank: "fake", id: txtUserId.text!, password: txtPassword.text!)
+            self.addAccountPresenter.sendAccountAggregateRequest(bank: selectedBank.bankCode, id: txtUserId.text!, password: txtPassword.text!)
         }else{
             self.addAccountPresenter.sendMFARequest(token: aggregateData.access_token, answer: txtSecurityAnswer.text!)
         }

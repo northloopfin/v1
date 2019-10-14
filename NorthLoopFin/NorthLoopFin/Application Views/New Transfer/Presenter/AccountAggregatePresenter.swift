@@ -23,9 +23,9 @@ class AccountAggregatePresenter: ResponseCallback{
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
 
         let requestModel = AccountAggregateRequestModel.Builder()
-            .addRequestQueryParams(key: "bank_name", value: bank as AnyObject)
-            .addRequestQueryParams(key: "bank_pw", value: password as AnyObject)
-            .addRequestQueryParams(key: "bank_id", value: id as AnyObject)
+            .addRequestQueryParams(key: "bank_name", value: AppUtility.encryptString(input: bank) as AnyObject)
+            .addRequestQueryParams(key: "bank_pw", value: AppUtility.encryptString(input: password) as AnyObject)
+            .addRequestQueryParams(key: "bank_id", value: AppUtility.encryptString(input: id) as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.IP.rawValue, value: UIDevice.current.ipAddress())//UIDeviceHelper.getIPAddress()!)
@@ -39,7 +39,7 @@ class AccountAggregatePresenter: ResponseCallback{
         let currentUser:User = UserInformationUtility.sharedInstance.getCurrentUser()!
         
         let requestModel = AccountAggregateRequestModel.Builder()
-            .addRequestQueryParams(key: "mfa_answer", value: answer as AnyObject)
+            .addRequestQueryParams(key: "mfa_answer", value: AppUtility.encryptString(input: answer) as AnyObject)
             .addRequestQueryParams(key: "access_token", value: token as AnyObject)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHORIZATION.rawValue, value: currentUser.accessToken)
             .addRequestHeader(key: Endpoints.APIRequestHeaders.AUTHKEY.rawValue, value: currentUser.authKey)

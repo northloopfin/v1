@@ -59,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(2)
         self.initialViewController()
         
+        print(AppUtility.encryptString(input: "North Loop Bank"))
+        
         // Line to catch exceptions
         //NSSetUncaughtExceptionHandler(uncaughtExceptionHandler);exce
         NSSetUncaughtExceptionHandler { (exception) in
